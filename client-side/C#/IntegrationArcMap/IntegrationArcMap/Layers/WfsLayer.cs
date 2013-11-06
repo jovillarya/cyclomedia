@@ -40,9 +40,9 @@ namespace IntegrationArcMap.Layers
     private double _minimumScale;
     private IMappedFeature _mappedFeature;
 
-    public override string FieldName
+    public override string[] FieldNames
     {
-      get { return "image_url"; }
+      get { return new[] {"image_url"}; }
     }
 
     public override string Name
@@ -279,7 +279,7 @@ namespace IntegrationArcMap.Layers
                 markerSymbol = uniqueValueRenderer.DefaultSymbol;
               }
 
-              uniqueValueRenderer.AddValue(classValue, FieldName, markerSymbol);
+              uniqueValueRenderer.AddValue(classValue, FieldNames[0], markerSymbol);
               uniqueValueRenderer.set_Label(classValue, label);
               uniqueValueRenderer.set_Symbol(classValue, markerSymbol);
               _addedImage = true;
@@ -297,7 +297,7 @@ namespace IntegrationArcMap.Layers
           {
             _feature = _featureCursor.NextFeature();
             IFields fields = _featureCursor.Fields;
-            int fieldIndex = fields.FindField(FieldName);
+            int fieldIndex = fields.FindField(FieldNames[0]);
 
             while ((_feature != null) && ((_getImageThread == null) || (!_getImageThread.IsAlive)))
             {

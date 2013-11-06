@@ -1,11 +1,12 @@
-﻿using System.Xml.Linq;
+﻿using System.Collections.Generic;
+using System.Xml.Linq;
 
 namespace IntegrationArcMap.Model.Atlas
 {
   /// <summary>
   /// 
   /// </summary>
-  public class Images
+  public class Images : List<Image>
   {
     /// <summary>
     /// Default empty constructor
@@ -30,7 +31,13 @@ namespace IntegrationArcMap.Model.Atlas
     /// <param name="mappedFeatureElement"></param>
     public void Update(XElement mappedFeatureElement)
     {
-      // empty
+      IEnumerable<XElement> elements = mappedFeatureElement.Descendants(Namespaces.AtlasNs + "Image");
+
+      foreach (var xElement in elements)
+      {
+        var image = new Image(xElement);
+        Add(image);
+      }
     }
   }
 }

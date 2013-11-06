@@ -34,7 +34,10 @@ namespace IntegrationArcMap.Model.Atlas
                    {"ProductType", esriFieldType.esriFieldTypeString},
                    {"IsAuthorized", esriFieldType.esriFieldTypeString},
                    {"ExpiredAt", esriFieldType.esriFieldTypeDate},
-                   {"Year", esriFieldType.esriFieldTypeInteger}
+                   {"Year", esriFieldType.esriFieldTypeInteger},
+                   {"PIP", esriFieldType.esriFieldTypeString},
+                   {"PIP1Yaw", esriFieldType.esriFieldTypeDouble},
+                   {"PIP2Yaw", esriFieldType.esriFieldTypeDouble}
                  };
       }
     }
@@ -133,7 +136,7 @@ namespace IntegrationArcMap.Model.Atlas
         OrientationPrecision = (orPrecElement == null) ? (double?) null : double.Parse(orPrecElement.Value.Trim(), _ci);
         GroundLevelOffset = (grLevOffElement == null) ? (double?) null : double.Parse(grLevOffElement.Value.Trim(), _ci);
         RecorderDirection = (recDirElement == null) ? (double?) null : double.Parse(recDirElement.Value.Trim(), _ci);
-        Images = (imagesElement == null) ? new Images() : new Images(mappedFeatureElement);
+        Images = (imagesElement == null) ? new Images() : new Images(imagesElement);
         IsAuthorized = (isAuthorizedElement == null) ? (bool?) null : bool.Parse(isAuthorizedElement.Value.Trim());
 
         ProductType = (prodTypeElement == null)
@@ -204,6 +207,15 @@ namespace IntegrationArcMap.Model.Atlas
             var thisDateTime = (DateTime) RecordedAt;
             result = thisDateTime.Year;
           }
+          break;
+        case "PIP":
+          result = (Images.Count >= 2).ToString();
+          break;
+        case "PIP1Yaw":
+          result = (Images.Count >= 1) ? Images[0].Yaw : null;
+          break;
+        case "PIP2Yaw":
+          result = (Images.Count >= 2) ? Images[1].Yaw : null;
           break;
       }
 

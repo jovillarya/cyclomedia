@@ -111,20 +111,9 @@ namespace IntegrationArcMap.WebClient
 
       if ((!string.IsNullOrEmpty(Username)) && (!string.IsNullOrEmpty(Password)))
       {
-        IActiveView activeView = ArcUtils.ActiveView;
-        IEnvelope extent = activeView.Extent;
-
-        IEnvelope testExtent = new EnvelopeClass
-          {
-            XMin = extent.XMin,
-            YMin = extent.YMin,
-            XMax = extent.XMin + TestSize,
-            YMax = extent.YMin + TestSize
-          };
-
         var webClient = ClientWeb.Instance;
-        var recordings = webClient.GetByBbox(testExtent, WfsRequest);
-        Credentials = (recordings.Count >= 0);
+        var elements = webClient.CheckAuthorization();
+        Credentials = (elements.Count >= 0);
       }
 
       return Credentials;

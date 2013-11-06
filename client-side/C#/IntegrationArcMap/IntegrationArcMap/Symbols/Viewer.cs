@@ -53,6 +53,14 @@ namespace IntegrationArcMap.Symbols
 
       _location = location;
       _arrow = Arrow.Create(location, angle, hFov, color);
+
+      foreach (var viewer in Viewers.Values)
+      {
+        if (viewer != this)
+        {
+          viewer._arrow.SetActive(false);
+        }
+      }
     }
 
     public void Update(double angle, double hFov)
@@ -68,9 +76,12 @@ namespace IntegrationArcMap.Symbols
       _imageId = imageId;
     }
 
-    public void BlinkArrow()
+    public void SetActive()
     {
-      _arrow.DrawBlinking();
+      foreach (var viewer in Viewers.Values)
+      {
+        viewer._arrow.SetActive(viewer == this);
+      }
     }
 
     public static List<string> ImageIds
@@ -99,6 +110,14 @@ namespace IntegrationArcMap.Symbols
       }
 
       Viewers.Clear();
+    }
+
+    public static void Redraw()
+    {
+      foreach (var viewer in Viewers.Values)
+      {
+        viewer._arrow.Redraw();
+      }
     }
 
     public static void Add(uint viewerId, string imageId, CycloMediaLayer layer)

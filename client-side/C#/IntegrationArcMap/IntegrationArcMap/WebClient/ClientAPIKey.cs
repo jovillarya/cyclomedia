@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Xml.Serialization;
 using IntegrationArcMap.Utilities;
 
@@ -16,7 +17,11 @@ namespace IntegrationArcMap.WebClient
 
     public static string FileName
     {
-      get { return Path.Combine(ArcUtils.FileDir, "GSClientAPIKey.xml"); }
+      get
+      {
+        string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+        return string.Format(@"{0}\ArcGIS\GSClientAPIKey.xml", folderPath);
+      }
     }
 
     public static ClientAPIKey Instance

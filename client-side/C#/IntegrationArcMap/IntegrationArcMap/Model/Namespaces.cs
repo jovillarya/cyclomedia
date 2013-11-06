@@ -32,5 +32,10 @@ namespace IntegrationArcMap.Model
     /// The xlink namespace
     /// </summary>
     public static XNamespace XlinkNs = XNamespace.Get("http://www.w3.org/1999/xlink");
+
+    /// <summary>
+    /// The CycloMedia namespace
+    /// </summary>
+    public static XNamespace CycloMediaNs = XNamespace.Get("http://atlas.cyclomedia.com");
   }
 }

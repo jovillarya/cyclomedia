@@ -129,6 +129,7 @@ namespace IntegrationArcMap.Forms
       txtPassword.Text = _login.Password;
       txtUsername.Text = _login.Username;
       ckEnableSmartClick.Checked = _config.SmartClickEnabled;
+      ckDetailImages.Checked = _config.DetailImagesEnabled;
 
       if (!_login.Credentials)
       {
@@ -220,6 +221,7 @@ namespace IntegrationArcMap.Forms
         _config.DistanceCycloramaVectorLayer = distLayer;
         _config.RecordingsService = txtRecordingService.Text;
         _config.SmartClickEnabled = ckEnableSmartClick.Checked;
+        _config.DetailImagesEnabled = ckDetailImages.Checked;
         _config.Save();
         FrmGlobespotter.UpdateParameters();
 
@@ -333,6 +335,11 @@ namespace IntegrationArcMap.Forms
     }
 
     private void ckEnableSmartClick_Click(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void ckDetailImages_Click(object sender, EventArgs e)
     {
       btnApply.Enabled = true;
     }

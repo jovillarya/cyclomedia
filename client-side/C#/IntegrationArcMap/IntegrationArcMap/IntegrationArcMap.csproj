@@ -100,7 +100,8 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <Private>True</Private>
     </Reference>
-    <Reference Include="GlobeSpotterAPI">
+    <Reference Include="GlobeSpotterAPI, Version=2.8.0.0, Culture=neutral, PublicKeyToken=40e543d64118bdd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\GlobeSpotterAPI.dll</HintPath>
     </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
@@ -148,6 +149,7 @@
     <Compile Include="Forms\FrmSmartClick.Designer.cs">
       <DependentUpon>FrmSmartClick.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Atlas\Image.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

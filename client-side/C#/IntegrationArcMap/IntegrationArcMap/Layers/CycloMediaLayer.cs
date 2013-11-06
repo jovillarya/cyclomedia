@@ -7,6 +7,7 @@ using System.Threading;
 using System.Xml.Linq;
 using IntegrationArcMap.Model;
 using IntegrationArcMap.Model.Shape;
+using IntegrationArcMap.Symbols;
 using IntegrationArcMap.Utilities;
 using IntegrationArcMap.WebClient;
 using ESRI.ArcGIS.ADF;
@@ -48,7 +49,7 @@ namespace IntegrationArcMap.Layers
     private Thread _refreshDataThread;
     private bool _isVisibleInGlobespotter;
 
-    public abstract string FieldName { get; }
+    public abstract string[] FieldNames { get; }
     public abstract string Name { get; }
     public abstract string FcName { get; }
     public abstract Color Color { get; set; }
@@ -183,10 +184,14 @@ namespace IntegrationArcMap.Layers
             DefaultSymbol = markerSymbol as ISymbol,
             DefaultLabel = string.Empty,
             UseDefaultSymbol = this is WfsLayer,
-            FieldCount = 1
+            FieldCount = FieldNames.Length
           };
 
-        renderer.set_Field(0, FieldName);
+        for (int i = 0; i < FieldNames.Length; i++)
+        {
+          renderer.set_Field(i, FieldNames[i]);
+        }
+
         var geoFeatureLayer = _layer as IGeoFeatureLayer;
         geoFeatureLayer.Renderer = renderer as IFeatureRenderer;
         // ReSharper restore CSharpWarnings::CS0612
@@ -397,10 +402,13 @@ namespace IntegrationArcMap.Layers
         fieldsEdit = CreateGeometryField(fieldsEdit, shapeFieldName, spatialReference, esriGeometryType);
         fieldsEdit = fields.Aggregate(fieldsEdit, (current, field) => CreateField(current, field.Key, field.Value));
 
-        if ((!string.IsNullOrEmpty(FieldName)) &&
-            (!fields.Aggregate(false, (current, field) => (field.Key == FieldName) || current)))
+        foreach (var fieldName in FieldNames)
         {
-          CreateField(fieldsEdit, FieldName, esriFieldType.esriFieldTypeString);
+          if ((!string.IsNullOrEmpty(fieldName)) &&
+              (!fields.Aggregate(false, (current, field) => (field.Key == fieldName) || current)))
+          {
+            CreateField(fieldsEdit, fieldName, esriFieldType.esriFieldTypeString);
+          }
         }
 
         IFeatureWorkspace featureWorkspace = _cycloMediaGroupLayer.FeatureWorkspace;
@@ -749,6 +757,7 @@ namespace IntegrationArcMap.Layers
         ITrackCancel cancel = new TrackCancelClass();
         Layer.Draw(esriDrawPhase.esriDPGeography, display, cancel);
         display.FinishDrawing();
+        Viewer.Redraw();
       }
       catch (Exception ex)
       {

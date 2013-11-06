@@ -78,6 +78,11 @@ namespace IntegrationArcMap.WebClient
     /// </summary>
     public uint DistanceCycloramaVectorLayer { get; set; }
 
+    /// <summary>
+    /// Detail images
+    /// </summary>
+    public bool DetailImagesEnabled { get; set; }
+
     private static ClientConfig Create()
     {
       DateTime dateTime = DateTime.Now;
@@ -89,6 +94,7 @@ namespace IntegrationArcMap.WebClient
           MaxViewers = 3,
           DistanceCycloramaVectorLayer = 30,
           SmartClickEnabled = false,
+          DetailImagesEnabled = false,
           YearFrom = year - 3,
           YearTo = year - 1
         };

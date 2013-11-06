@@ -165,6 +165,7 @@
       this.ckDetailImages.TabIndex = 18;
       this.ckDetailImages.Text = "Detail images";
       this.ckDetailImages.UseVisualStyleBackColor = true;
+      this.ckDetailImages.Click += new System.EventHandler(this.ckDetailImages_Click);
       // 
       // nudDistVectLayerViewer
       // 
@@ -300,7 +301,7 @@
       this.btnOk.Name = "btnOk";
       this.btnOk.Size = new System.Drawing.Size(75, 25);
       this.btnOk.TabIndex = 10;
-      this.btnOk.Text = "Ok";
+      this.btnOk.Text = "OK";
       this.btnOk.UseVisualStyleBackColor = true;
       this.btnOk.Click += new System.EventHandler(this.BtnOk_Click);
       // 

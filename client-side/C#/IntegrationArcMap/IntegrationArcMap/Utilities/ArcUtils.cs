@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Drawing2D;
+using System.Drawing.Imaging;
 using System.IO;
 using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.ArcMapUI;
@@ -265,6 +267,52 @@ namespace IntegrationArcMap.Utilities
       return result;
     }
 
+    public static ISymbol GetPipSymbol(int sizeLayer, Color color)
+    {
+      var size025 = sizeLayer;
+      var size05 = size025 * 2;
+      var size075 = size025 * 3;
+      var size = size025 * 4;
+      var size15 = size025 * 6;
+      var size25 = size025 * 10;
+      var size275 = size025 * 11;
+      var size3 = size025 * 12;
+      var bitmap = new Bitmap(size3, size3);
+      const int sizeLine = 2;
+      color = Color.FromArgb(255, color);
+
+      using (Graphics ga = Graphics.FromImage(bitmap))
+      {
+        var points = new PointF[6];
+        points[0] = new PointF(size05, size025);
+        points[1] = new PointF(size25, size025);
+        points[2] = new PointF(size15, size15);
+        points[3] = new PointF(size25, size275);
+        points[4] = new PointF(size05, size275);
+        points[5] = new PointF(size15, size15);
+        var pathd = new GraphicsPath();
+        pathd.AddPolygon(points);
+        ga.Clear(Color.White);
+        ga.FillPath(Brushes.Yellow, pathd);
+        ga.DrawPath(new Pen(Brushes.Gray, sizeLine), pathd);
+        ga.DrawEllipse(new Pen(color, sizeLine), size, size, size, size);
+        ga.FillEllipse(new SolidBrush(color), size, size, size, size);
+        pathd.Dispose();
+      }
+
+      // ReSharper disable CSharpWarnings::CS0612
+      Bitmap bitmap8B = bitmap.To8BppIndexed();
+      string tempPath = Path.GetTempPath();
+      string writePath = Path.Combine(tempPath, string.Format("{0}pip.bmp", color.Name));
+      bitmap8B.Save(writePath, ImageFormat.Bmp);
+      IPictureMarkerSymbol symbol = new PictureMarkerSymbolClass();
+      symbol.CreateMarkerSymbolFromFile(esriIPictureType.esriIPictureBitmap, writePath);
+      symbol.Size = size075;
+      symbol.BitmapTransparencyColor = Converter.ToRGBColor(Color.White);
+      return symbol as ISymbol;
+      // ReSharper restore CSharpWarnings::CS0612
+    }
+
     private static RgbColor GetColorFromSymbol(ISymbol symbol)
     {
       RgbColor rgbColor = null;
@@ -321,6 +369,26 @@ namespace IntegrationArcMap.Utilities
               SetColorToSymbol(symbol, color);
               // ReSharper restore UseIndexedProperty
             }
+          }
+        }
+      }
+    }
+
+    public static void SetSymbolToLayer(ILayer layer, ISymbol symbol, string classValue)
+    {
+      if (layer != null)
+      {
+        var geoFeatureLayer = layer as IGeoFeatureLayer;
+
+        if (geoFeatureLayer != null)
+        {
+          var uniqueValueRenderer = geoFeatureLayer.Renderer as IUniqueValueRenderer;
+
+          if (uniqueValueRenderer != null)
+          {
+            // ReSharper disable UseIndexedProperty
+            uniqueValueRenderer.set_Symbol(classValue, symbol);
+            // ReSharper restore UseIndexedProperty
           }
         }
       }

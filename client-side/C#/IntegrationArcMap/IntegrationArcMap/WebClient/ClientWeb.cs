@@ -28,6 +28,8 @@ namespace IntegrationArcMap.WebClient
 
     private const string CapabilityString = "{0}?REQUEST=GetCapabilities&VERSION={1}&SERVICE=WFS";
 
+    private const string AuthorizationService = "https://atlas.cyclomedia.com/Authorization/GlobeSpotter";
+
     private const int BufferImageLengthService = 2048;
     private const int XmlConfig = 0;
     private const int DownloadImageConfig = 1;
@@ -102,6 +104,13 @@ namespace IntegrationArcMap.WebClient
       }
 
       return result;
+    }
+
+    public List<XElement> CheckAuthorization()
+    {
+      string postItem = string.Format("<Authorization />");
+      var xml = (string)PostRequest(AuthorizationService, GetXmlCallback, postItem, XmlConfig);
+      return ParseXml(xml, (Namespaces.CycloMediaNs + "Permission"));
     }
 
     public List<XElement> GetByBbox(IEnvelope envelope, string wfsRequest)

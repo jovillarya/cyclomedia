@@ -132,7 +132,6 @@ namespace IntegrationArcMap.AddIns
         if (CycloMediaGroupLayer == null)
         {
           GsShowInCyclorama.AddToMenu();
-          GsCycloMediaOptions.AddToMenu();
           FrmCycloMediaOptions.CheckOpenCredentials();
           CycloMediaGroupLayer = new CycloMediaGroupLayer();
         }
@@ -157,7 +156,6 @@ namespace IntegrationArcMap.AddIns
       if (CycloMediaGroupLayer != null)
       {
         GsShowInCyclorama.RemoveFromMenu();
-        GsCycloMediaOptions.RemoveFromMenu();
         FrmCycloMediaOptions.CloseForm();
         FrmSmartClick.Close();
         CycloMediaGroupLayer cycloLayer = CycloMediaGroupLayer;
@@ -206,6 +204,7 @@ namespace IntegrationArcMap.AddIns
         CycloMediaLayer.LayerRemoveEvent += OnLayerRemoved;
         GsRecentDataLayer.AddToMenu();
         GsHistoricalDataLayer.AddToMenu();
+        GsCycloMediaOptions.AddToMenu();
         FrmSmartClick.Close();
       }
       catch (Exception ex)
@@ -280,6 +279,7 @@ namespace IntegrationArcMap.AddIns
         CycloMediaLayer.LayerRemoveEvent -= OnLayerRemoved;
         GsRecentDataLayer.RemoveFromMenu();
         GsHistoricalDataLayer.RemoveFromMenu();
+        GsCycloMediaOptions.RemoveFromMenu();
       }
     }
 

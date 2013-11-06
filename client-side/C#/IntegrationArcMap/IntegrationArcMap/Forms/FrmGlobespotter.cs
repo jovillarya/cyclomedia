@@ -237,7 +237,11 @@ namespace IntegrationArcMap.Forms
     {
       _imageId = string.Empty;
       _layer = layer;
-      _colorYears.Add(year);
+
+      if (!_colorYears.Contains(year))
+      {
+        _colorYears.Add(year);
+      }
 
       if ((!layer.UseDateRange) && (year != null))
       {
@@ -355,6 +359,7 @@ namespace IntegrationArcMap.Forms
       if (ApiReady)
       {
         _api.SetMeasurementSmartClickModeEnabled(_clientConfig.SmartClickEnabled);
+        _api.SetViewerDetailImagesVisible(_clientConfig.DetailImagesEnabled);
 
         if (!_clientConfig.SmartClickEnabled)
         {
@@ -559,8 +564,10 @@ namespace IntegrationArcMap.Forms
         _api.SetViewerSaveImageEnabled(true);
         _api.SetViewerOverlayAlphaEnabled(true);
         _api.SetViewerShowLocationEnabled(true);
-        _api.SetViewerDetailImagesVisible(true);
+        _api.SetViewerDetailImagesVisible(_clientConfig.DetailImagesEnabled);
         _api.SetMeasurementSmartClickModeEnabled(_clientConfig.SmartClickEnabled);
+        _api.SetContextMenuEnabled(true);
+        _api.SetKeyboardEnabled(true);
 
         UpdateCol();
 
@@ -733,7 +740,7 @@ namespace IntegrationArcMap.Forms
     public void OnViewerActive(uint viewerId)
     {
       Viewer viewer = Viewer.Get(viewerId);
-      viewer.BlinkArrow();
+      viewer.SetActive();
     }
 
     public void OnViewerInactive(uint viewerId)
@@ -989,7 +996,13 @@ namespace IntegrationArcMap.Forms
       activeView.Refresh();
 
       Viewer viewer = Viewer.Get(viewerId);
-      viewer.BlinkArrow();
+      viewer.SetActive();
+    }
+
+    public void OnDetailImagesVisibilityChanged(bool value)
+    {
+      _clientConfig.DetailImagesEnabled = value;
+      _clientConfig.Save();
     }
 
     #endregion

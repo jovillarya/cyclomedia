@@ -1,6 +1,6 @@
 ﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns"
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Name>IntegrationArcMap</Name>
+  <Name>Cyclorama</Name>
   <AddInID>{601756f1-d4d0-4279-abad-47338704585c}</AddInID>
   <Description>ArcMap Integration for Cyclorama's</Description>
   <Version>0.10.2</Version>
