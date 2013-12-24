@@ -58,6 +58,8 @@ namespace IntegrationArcMap.Layers
     public abstract bool UseDateRange { get; }
     public abstract string WfsRequest { get; }
 
+    public bool Visible { get; set; }
+
     protected abstract IMappedFeature CreateMappedFeature(XElement mappedFeatureElement);
     protected abstract bool Filter(IMappedFeature mappedFeature);
     protected abstract void PostEntryStep();
@@ -83,6 +85,13 @@ namespace IntegrationArcMap.Layers
     public bool IsVisible
     {
       get { return (_layer != null) && _layer.Visible; }
+      set
+      {
+        if (_layer != null)
+        {
+          _layer.Visible = value;
+        }
+      }
     }
 
     public bool IsVisibleInGlobespotter
@@ -112,6 +121,7 @@ namespace IntegrationArcMap.Layers
       _cycloMediaGroupLayer = layer;
       _isVisibleInGlobespotter = true;
       IActiveView activeView = ArcUtils.ActiveView;
+      Visible = false;
 
       if (activeView != null)
       {
@@ -326,6 +336,43 @@ namespace IntegrationArcMap.Layers
       return result;
     }
 
+    public List<double> GetLocationInfo(string imageId)
+    {
+      var result = new List<double>();
+
+      string[] fields =
+        {
+          "LongitudePrecision", "LatitudePrecision", "HeightPrecision", "RecorderDirection",
+          "GroundLevelOffset", "Height"
+        };
+
+      IQueryFilter filter = new QueryFilterClass
+        {
+          WhereClause = string.Format("ImageId = '{0}'", imageId),
+          SubFields = string.Format("{0}, {1}", fields.Aggregate(string.Empty, (current, field) => string.Format
+            ("{0}{1}{2}", current, string.IsNullOrEmpty(current) ? string.Empty : ", ", field)), "Location")
+        };
+
+      var existsResult = FeatureClass.Search(filter, false);
+      IFeature feature;
+      // ReSharper disable UseIndexedProperty
+
+      while ((feature = existsResult.NextFeature()) != null)
+      {
+        result.AddRange(fields.Select(existsResult.FindField).Select(id => (double) feature.get_Value(id)));
+        var point = feature.Shape as IPoint;
+
+        if (point != null)
+        {
+          result.Add(point.X);
+          result.Add(point.Y);
+        }
+      }
+
+      // ReSharper restore UseIndexedProperty
+      return result;
+    }
+
     public virtual double GetHeight(double x, double y)
     {
       return 0.0;
@@ -526,6 +573,7 @@ namespace IntegrationArcMap.Layers
         XName objectName = mapFeature.Name;
         IFeatureWorkspace featureWorkspace = _cycloMediaGroupLayer.FeatureWorkspace;
         var workspaceEdit = featureWorkspace as IWorkspaceEdit;
+        var spatialCacheManager = featureWorkspace as ISpatialCacheManager3;
 
         if (workspaceEdit != null)
         {
@@ -604,6 +652,11 @@ namespace IntegrationArcMap.Layers
           }
 
           workspaceEdit.StopEditing(true);
+
+          if (spatialCacheManager != null)
+          {
+            spatialCacheManager.FillCache(envelope);
+          }
           // ReSharper restore UseIndexedProperty
         }
       }

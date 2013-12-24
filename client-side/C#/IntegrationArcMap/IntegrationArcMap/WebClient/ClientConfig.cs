@@ -10,6 +10,8 @@ namespace IntegrationArcMap.WebClient
     private static readonly XmlSerializer XmlClientConfig;
     private static ClientConfig _clientConfig;
 
+    private string _baseUrl;
+
     static ClientConfig()
     {
       XmlClientConfig = new XmlSerializer(typeof(ClientConfig));
@@ -55,7 +57,11 @@ namespace IntegrationArcMap.WebClient
     /// <summary>
     /// Service info
     /// </summary>
-    public string RecordingsService { get; set; }
+    public string BaseUrl
+    {
+      get { return (_baseUrl = (string.IsNullOrEmpty(_baseUrl) ? "https://atlas.cyclomedia.com" : _baseUrl)); }
+      set { _baseUrl = value; }
+    }
 
     /// <summary>
     /// Cyclorama values
@@ -83,6 +89,11 @@ namespace IntegrationArcMap.WebClient
     /// </summary>
     public bool DetailImagesEnabled { get; set; }
 
+    /// <summary>
+    /// Spatial references
+    /// </summary>
+    public SpatialReference SpatialReference { get; set; }
+
     private static ClientConfig Create()
     {
       DateTime dateTime = DateTime.Now;
@@ -90,7 +101,7 @@ namespace IntegrationArcMap.WebClient
 
       var result = new ClientConfig
         {
-          RecordingsService = "https://atlas.cyclomedia.com/recordings/wfs",
+          BaseUrl = "https://atlas.cyclomedia.com",
           MaxViewers = 3,
           DistanceCycloramaVectorLayer = 30,
           SmartClickEnabled = false,

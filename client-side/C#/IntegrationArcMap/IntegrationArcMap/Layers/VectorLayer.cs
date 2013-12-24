@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Threading;
 using IntegrationArcMap.AddIns;
+using IntegrationArcMap.Forms;
 using IntegrationArcMap.Symbols;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Carto;
@@ -15,6 +16,7 @@ using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.TrackingAnalyst;
 using ESRI.ArcGIS.SystemUI;
 using GlobeSpotterAPI;
+using IntegrationArcMap.WebClient;
 using MeasurementPoint = IntegrationArcMap.Symbols.MeasurementPoint;
 
 namespace IntegrationArcMap.Layers
@@ -145,9 +147,11 @@ namespace IntegrationArcMap.Layers
     {
       get
       {
-        ISpatialReference mapSpatialReference = ArcUtils.SpatialReference;
-        bool zCoord = mapSpatialReference.ZCoordinateUnit != null;
-        bool sameFactoryCode = SpatialReference.FactoryCode == mapSpatialReference.FactoryCode;
+        ClientConfig config = ClientConfig.Instance;
+        SpatialReference spatRel = config.SpatialReference;
+        ISpatialReference gsSpatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
+        bool zCoord = gsSpatialReference.ZCoordinateUnit != null;
+        bool sameFactoryCode = SpatialReference.FactoryCode == gsSpatialReference.FactoryCode;
         return (sameFactoryCode || zCoord) && GeometryDef.HasZ;
       }
     }
@@ -267,7 +271,7 @@ namespace IntegrationArcMap.Layers
       }
     }
 
-    public string GetGmlFromLocation(List<RecordingLocation> recordingLocations, double distance, out Color color)
+    public string GetGmlFromLocation(List<RecordingLocation> recordingLocations, double distance, out Color color, SpatialReference cyclSpatialRef)
     {
       string result = WfsHeader;
       // ReSharper disable UseIndexedProperty
@@ -276,7 +280,9 @@ namespace IntegrationArcMap.Layers
       {
         IGeometry geometryBag = new GeometryBagClass();
         var geometryCollection = geometryBag as IGeometryCollection;
-        ISpatialReference mapSpatialReference = ArcUtils.SpatialReference;
+        ClientConfig config = ClientConfig.Instance;
+        SpatialReference spatRel = config.SpatialReference;
+        ISpatialReference gsSpatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
 
         foreach (var recordingLocation in recordingLocations)
         {
@@ -289,7 +295,7 @@ namespace IntegrationArcMap.Layers
               XMax = x + distance,
               YMin = y - distance,
               YMax = y + distance,
-              SpatialReference = mapSpatialReference
+              SpatialReference = gsSpatialReference
             };
 
           envelope.Project(SpatialReference);
@@ -323,7 +329,7 @@ namespace IntegrationArcMap.Layers
 
             if (geometry != null)
             {
-              geometry.Project(mapSpatialReference);
+              geometry.Project((cyclSpatialRef == null) ? gsSpatialReference : cyclSpatialRef.SpatialRef);
 
               if (!HasZ)
               {
@@ -806,9 +812,19 @@ namespace IntegrationArcMap.Layers
         ICommand command = tool.Command;
         string category = tool.Category;
 
-        if (((command is IEditTool) || (category != "Editor")) && (category != "CycloMedia"))
+        if (!FrmMeasurement.IsPointOpen())
         {
-          OnSketchFinished();
+          if (((command is IEditTool) || (category != "Editor")) && (category != "CycloMedia"))
+          {
+            OnSketchFinished();
+          }
+        }
+        else
+        {
+          if ((!(command is IEditTool)) && (category == "Editor"))
+          {
+            FrmMeasurement.DoCloseMeasurementPoint();
+          }
         }
 
         if (category == "Editor")

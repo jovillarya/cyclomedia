@@ -3,18 +3,14 @@
   <Name>Cyclorama</Name>
   <AddInID>{601756f1-d4d0-4279-abad-47338704585c}</AddInID>
   <Description>ArcMap Integration for Cyclorama's</Description>
-  <Version>0.10.2</Version>
+  <Version>0.12.3</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
-  <Author>HBr</Author>
+  <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>30-10-2013</Date>
+  <Date>24-12-2013</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />
-    <Target name="Desktop"
-            version="10.1" />
-    <Target name="Desktop"
-            version="10.2" />
   </Targets>
   <AddIn language="CLR"
          library="IntegrationArcMap.dll"
@@ -63,6 +59,16 @@
                 onDemand="false">
           <Help heading="show in Cyclorama">Show in Cyclorama</Help>
         </Button>
+        <Button id="CycloMedia_IntegrationArcMap_GsMeasurementDetail"
+                class="GsMeasurementDetail"
+                message="Show measurement detail information"
+                caption="Show measurement detail information"
+                tip="Show measurement detail information"
+                category="CycloMedia"
+                onDemand="false"
+                image="Images\GsSelectionCopySelectedFeatures.png">
+          <Help heading="show measurement detail information">Show measurement detail information</Help>
+        </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsRecentDataLayer"
                 class="GsRecentDataLayer"
                 message="Add recent cyclorama layer to the map"
@@ -103,6 +109,16 @@
                 image="Images\GsRecordingHistory.png">
           <Help heading="CycloMedia Recording History">CycloMedia Recording History</Help>
         </Button>
+        <Button id="CycloMedia_IntegrationArcMap_GsHelp"
+                class="GsHelp"
+                message="Help information about GlobeSpotter - Arcmap Add-in"
+                caption="Help information about GlobeSpotter - Arcmap Add-in"
+                tip="Help information about GlobeSpotter - Arcmap Add-in"
+                category="CycloMedia"
+                onDemand="false"
+                image="Images\GsHelp.png">
+          <Help heading="Help information about GlobeSpotter - Arcmap Add-in">Help information about GlobeSpotter - Arcmap Add-in</Help>
+        </Button>
       </Commands>
       <Toolbars>
         <Toolbar id="CycloMedia_IntegrationArcMap_CycloMediaToolbar"
@@ -114,6 +130,8 @@
             <Button refID="CycloMedia_IntegrationArcMap_GsRecordingHistory" />
             <Tool refID="CycloMedia_IntegrationArcMap_GsOpenLocation" />
             <Button refID="CycloMedia_IntegrationArcMap_GsCycloMediaOptions" />
+            <Button refID="CycloMedia_IntegrationArcMap_GsMeasurementDetail" />
+            <Button refID="CycloMedia_IntegrationArcMap_GsHelp" />
           </Items>
         </Toolbar>
       </Toolbars>
@@ -134,13 +152,13 @@
                             state="pinned"
                             position="float" />
         </DockableWindow>
-        <DockableWindow id="IntegrationArcMap_GsFrmSmartClick"
-                class="GsFrmSmartClick"
-                caption="Smart click results">
-          <InitialPlacement height="100"
-                            width="300"
+        <DockableWindow id="IntegrationArcMap_GsFrmMeasurement"
+                        class="GsFrmMeasurement"
+                        caption="Selected Measurement Details">
+          <InitialPlacement height="481"
+                            width="276"
                             state="pinned"
-                            position="float" />
+                            position="right" />
         </DockableWindow>
       </DockableWindows>
     </ArcMap>

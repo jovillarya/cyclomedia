@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
+using ESRI.ArcGIS.esriSystem;
 using IntegrationArcMap.AddIns;
 using IntegrationArcMap.Layers;
 using IntegrationArcMap.Symbols;
@@ -51,6 +54,7 @@ namespace IntegrationArcMap.Forms
     private bool _drawPoint;
     private bool _observationAdded;
     private bool _toInitialize;
+    private Point3D _lookAtCoord;
     private SortedDictionary<int, int> _yearMonth;
 
     #endregion
@@ -84,6 +88,7 @@ namespace IntegrationArcMap.Forms
       _restartImages = new List<string>();
       _yearMonth = null;
       _toInitialize = false;
+      _lookAtCoord = null;
 
       CycloMediaLayer.HistoricalDateChanged += OnHistoricalDateChanged;
     }
@@ -113,6 +118,11 @@ namespace IntegrationArcMap.Forms
     private bool ApiReady
     {
       get { return ((_api != null) && _api.GetAPIReadyState()); }
+    }
+
+    private bool Started
+    {
+      get { return (_api != null); }
     }
 
     #endregion
@@ -164,49 +174,66 @@ namespace IntegrationArcMap.Forms
 
     private void Clear()
     {
-      foreach (var layer in _vectorLayers)
+      if (_api != null)
       {
-        _api.RemoveLayer(layer.Value);
-      }
-
-      foreach (var layer in _wfsLayers)
-      {
-        uint? layerId = layer.Value;
-
-        if (layerId != null)
+        foreach (var layer in _vectorLayers)
         {
-          _api.RemoveLayer((uint) layerId);
+          _api.RemoveLayer(layer.Value);
         }
+
+        foreach (var layer in _wfsLayers)
+        {
+          uint? layerId = layer.Value;
+
+          if (layerId != null)
+          {
+            _api.RemoveLayer((uint) layerId);
+          }
+        }
+
+        _vectorLayers.Clear();
+        _wfsLayers.Clear();
+        CloseGlobespotter();
+
+        VectorLayer.LayerAddEvent -= OnAddVectorLayer;
+        VectorLayer.LayerRemoveEvent -= OnRemoveVectorLayer;
+        VectorLayer.LayerChangedEvent -= OnRefreshVectorLayer;
+
+        VectorLayer.FeatureStartEditEvent -= OnStartEditFeature;
+        VectorLayer.FeatureUpdateEditEvent -= OnUpdateEditFeature;
+        VectorLayer.FeatureDeleteEvent -= OnDeleteFeature;
+
+        VectorLayer.StopEditEvent -= OnStopEdit;
+        VectorLayer.StartMeasurementEvent -= OnStartMeasurement;
+
+        VectorLayer.SketchCreateEvent -= OnCreateSketch;
+        VectorLayer.SketchModifiedEvent -= OnModifiedSketch;
+        VectorLayer.SketchFinishedEvent -= OnSketchFinished;
+
+        CycloMediaLayer.LayerAddedEvent -= OnAddCycloMediaLayer;
+        CycloMediaLayer.LayerChangedEvent -= OnRefreshCycloMediaLayer;
+        CycloMediaLayer.LayerRemoveEvent -= OnRemoveCycloMediaLayer;
+
+        FrmRecordingHistory.DateRangeChangedDelegate -= OnDateRangeChanged;
+
+        IActiveViewEvents_Event events = ArcUtils.ActiveViewEvents;
+
+        if (events != null)
+        {
+          events.ViewRefreshed -= OnViewRefreshed;
+        }
+
+        if (_api.gui != null)
+        {
+          if (plGlobespotter.Controls.Contains(_api.gui))
+          {
+            plGlobespotter.Controls.Remove(_api.gui);
+            _api.gui.Dispose();
+          }
+        }
+
+        _api = null;
       }
-
-      _vectorLayers.Clear();
-      _wfsLayers.Clear();
-      CloseGlobespotter();
-
-      VectorLayer.LayerAddEvent -= OnAddVectorLayer;
-      VectorLayer.LayerRemoveEvent -= OnRemoveVectorLayer;
-      VectorLayer.LayerChangedEvent -= OnRefreshVectorLayer;
-
-      VectorLayer.FeatureStartEditEvent -= OnStartEditFeature;
-      VectorLayer.FeatureUpdateEditEvent -= OnUpdateEditFeature;
-      VectorLayer.FeatureDeleteEvent -= OnDeleteFeature;
-
-      VectorLayer.StopEditEvent -= OnStopEdit;
-      VectorLayer.StartMeasurementEvent -= OnStartMeasurement;
-
-      VectorLayer.SketchCreateEvent -= OnCreateSketch;
-      VectorLayer.SketchModifiedEvent -= OnModifiedSketch;
-      VectorLayer.SketchFinishedEvent -= OnSketchFinished;
-
-      CycloMediaLayer.LayerAddedEvent -= OnAddCycloMediaLayer;
-      CycloMediaLayer.LayerChangedEvent -= OnRefreshCycloMediaLayer;
-      CycloMediaLayer.LayerRemoveEvent -= OnRemoveCycloMediaLayer;
-
-      FrmRecordingHistory.DateRangeChangedDelegate -= OnDateRangeChanged;
-
-      plGlobespotter.Controls.Remove(_api.gui);
-      _api.gui.Dispose();
-      _api = null;
     }
 
     private void ShowLoc(string imageId, CycloMediaLayer layer, bool replace)
@@ -361,10 +388,10 @@ namespace IntegrationArcMap.Forms
         _api.SetMeasurementSmartClickModeEnabled(_clientConfig.SmartClickEnabled);
         _api.SetViewerDetailImagesVisible(_clientConfig.DetailImagesEnabled);
 
-        if (!_clientConfig.SmartClickEnabled)
-        {
-          FrmSmartClick.Close();
-        }
+        //if (!_clientConfig.SmartClickEnabled)
+        //{
+        //  FrmSmartClick.Close();
+        //}
 
         _api.SetMaxViewers(_clientConfig.MaxViewers);
         OnRefreshVectorLayer(null);
@@ -526,6 +553,11 @@ namespace IntegrationArcMap.Forms
       return Instance.GetViewerScreen();
     }
 
+    public static bool IsStarted()
+    {
+      return Instance.Started;
+    }
+
     #endregion
 
     #region IAPIClient Members
@@ -537,13 +569,14 @@ namespace IntegrationArcMap.Forms
     {
       if (_api != null)
       {
-        string epsgCode = ArcUtils.EpsgCode;
+        SpatialReference spatialRef = _clientConfig.SpatialReference;
+        string epsgCode = (spatialRef == null) ? ArcUtils.EpsgCode : spatialRef.SRSName;
         _api.SetAPIKey(_clientAPIKey.APIKey);
         _api.SetUserNamePassword(_clientLogin.Username, _clientLogin.Password);
         _api.SetSrsNameViewer(epsgCode);
         _api.SetSrsNameAddress(epsgCode);
         _api.SetAdressLanguageCode("nl");
-        _api.SetServiceURL(_clientConfig.RecordingsService, ServiceUrlType.URL_RECORDING_LOCATION_SERVICE);
+        _api.SetServiceURL(_clientConfig.BaseUrl, ServiceUrlType.URL_BASE);
       }
     }
 
@@ -590,6 +623,13 @@ namespace IntegrationArcMap.Forms
         CycloMediaLayer.LayerChangedEvent += OnRefreshCycloMediaLayer;
         CycloMediaLayer.LayerRemoveEvent += OnRemoveCycloMediaLayer;
 
+        IActiveViewEvents_Event events = ArcUtils.ActiveViewEvents;
+
+        if (events != null)
+        {
+          events.ViewRefreshed += OnViewRefreshed;
+        }
+
         FrmRecordingHistory.DateRangeChangedDelegate += OnDateRangeChanged;
         var extension = GsExtension.GetExtension();
 
@@ -627,11 +667,8 @@ namespace IntegrationArcMap.Forms
 
       if ((viewer != null) && (_api != null))
       {
-        if (_clientConfig.SmartClickEnabled)
-        {
-          FrmSmartClick.DeleteImageIdColor(viewer.ImageId);
-        }
-
+        FrmMeasurement.RemoveImageIdColor(viewer.ImageId);
+        MeasurementPoint.RemoveObsColor(viewer.ImageId);
         string imageId = _api.GetImageID(viewerId);
         viewer.Update(imageId);
       }
@@ -655,11 +692,8 @@ namespace IntegrationArcMap.Forms
         Color color = _api.GetViewerBorderColor(viewerId);
         viewer.Set(location, angle, hFov, color);
         OnRefreshVectorLayer(null);
-
-        if (_clientConfig.SmartClickEnabled)
-        {
-          FrmSmartClick.SetImageIdColor(viewer.ImageId, color);
-        }
+        FrmMeasurement.AddImageIdColor(viewer.ImageId, color);
+        MeasurementPoint.UpdateObsColor(viewer.ImageId, color);
 
         foreach (var wfsLayer in _wfsLayers)
         {
@@ -667,6 +701,13 @@ namespace IntegrationArcMap.Forms
           {
             AddWfsLay(wfsLayer.Key);
           }
+        }
+
+        if (_lookAtCoord != null)
+        {
+          _api.LookAtCoordinate(viewerId, _lookAtCoord.x, _lookAtCoord.y, _lookAtCoord.z);
+          OnShowLocationRequested(viewerId, _lookAtCoord);
+          _lookAtCoord = null;
         }
 
         if (_restartImages.Contains(_imageId))
@@ -762,12 +803,9 @@ namespace IntegrationArcMap.Forms
 
     public void OnViewerRemoved(uint viewerId)
     {
-      if (_clientConfig.SmartClickEnabled)
-      {
-        Viewer viewer = Viewer.Get(viewerId);
-        FrmSmartClick.DeleteImageIdColor(viewer.ImageId);
-      }
-
+      Viewer viewer = Viewer.Get(viewerId);
+      FrmMeasurement.RemoveImageIdColor(viewer.ImageId);
+      MeasurementPoint.RemoveObsColor(viewer.ImageId);
       Viewer.Delete(viewerId);
       int nrImages = Viewer.ImageIds.Count;
       _api.SetViewerWindowBorderVisible(nrImages >= 2);
@@ -804,11 +842,6 @@ namespace IntegrationArcMap.Forms
       if (measurement != null)
       {
         measurement.Close();
-
-        if (!measurement.IsPointMeasurement)
-        {
-          FrmSmartClick.Close();
-        }
       }
     }
 
@@ -824,7 +857,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnMeasurementCanceled(int entityId)
     {
-      // empty
+      FrmMeasurement.RemoveMeasurement(entityId);
     }
 
     public void OnMeasurementModeChanged(bool mode)
@@ -854,18 +887,18 @@ namespace IntegrationArcMap.Forms
     {
       if (_api != null)
       {
-        if ((!_clientConfig.SmartClickEnabled) || (!_observationAdded))
+        Measurement measurement = Measurement.Get(entityId);
+
+//        if ((!_clientConfig.SmartClickEnabled) || (!_observationAdded))
+        if ((!measurement.IsPointMeasurement) || (!_observationAdded))
+//        if (!_observationAdded)
         {
           MeasurementPointUpdated(entityId, pointId);
         }
-        else
-        {
-          PointMeasurementData entityData = _api.GetMeasurementPointData(entityId, pointId);
-          var measurementPoint = entityData.measurementPoint;
-          FrmSmartClick.FinishedBitmap(measurementPoint);
-          FrmSmartClick.Enable();
-        }
 
+        PointMeasurementData entityData = _api.GetMeasurementPointData(entityId, pointId);
+        var measurementPoint = entityData.measurementPoint;
+        FrmMeasurement.UpdateMeasurementPoint(this, measurementPoint, entityId, pointId);
         _observationAdded = false;
       }
     }
@@ -877,6 +910,7 @@ namespace IntegrationArcMap.Forms
       if (measurement != null)
       {
         measurement.RemovePoint(pointId);
+        FrmMeasurement.RemoveMeasurementPoint(entityId, pointId);
       }
     }
 
@@ -912,27 +946,19 @@ namespace IntegrationArcMap.Forms
     {
       _observationAdded = true;
       ObservationMeasurementData observation = _api.GetMeasurementPointObservationData(entityId, pointId, imageId);
-
-      if (match != null)
-      {
-        FrmSmartClick.LoadBitmap(match, this, entityId, pointId, observation.measurementObservation);
-      }
-      else
-      {
-        FrmSmartClick.AddObservation(entityId, pointId, observation.measurementObservation);
-      }
+      FrmMeasurement.AddObservation(match, this, entityId, pointId, observation.measurementObservation);
     }
 
     public void OnMeasurementPointObservationUpdated(int entityId, int pointId, string imageId)
     {
       _observationAdded = true;
       ObservationMeasurementData observation = _api.GetMeasurementPointObservationData(entityId, pointId, imageId);
-      FrmSmartClick.UpdateObservation(entityId, pointId, observation.measurementObservation);
+      FrmMeasurement.UpdateObservation(entityId, pointId, observation.measurementObservation);
     }
 
     public void OnMeasurementPointObservationRemoved(int entityId, int pointId, string imageId)
     {
-      FrmSmartClick.RemovedObservation(entityId, pointId, imageId);
+      FrmMeasurement.RemoveObservation(entityId, pointId, imageId);
     }
 
     public void OnDividerPositionChanged(double position)
@@ -957,7 +983,32 @@ namespace IntegrationArcMap.Forms
 
     public void OnOpenImageResult(string input, bool opened, string imageId)
     {
-      // empty
+      try
+      {
+        if (!string.IsNullOrEmpty(input))
+        {
+          if (input.Contains("Vector3D"))
+          {
+            input = input.Remove(0, 9);
+            input = input.Remove(input.Length - 1, 1);
+            var seperator = new[] {", "};
+            string[] split = input.Split(seperator, StringSplitOptions.None);
+
+            if (split.Length == 3)
+            {
+              CultureInfo ci = CultureInfo.InvariantCulture;
+              var point3D = new Point3D(double.Parse(split[0], ci), double.Parse(split[1], ci),
+                                        double.Parse(split[2], ci));
+              uint viewerId = _api.GetActiveViewer();
+              OnShowLocationRequested(viewerId, point3D);
+            }
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Trace.WriteLine(string.Format("Exception occured, message: {0}", ex.Message));
+      }
     }
 
     public void OnOpenNearestImageResult(string input, bool opened, string imageId)
@@ -982,13 +1033,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnShowLocationRequested(uint viewerId, Point3D point3D)
     {
-      IPoint point = new PointClass
-        {
-          X = point3D.x,
-          Y = point3D.y,
-          Z = point3D.z
-        };
-
+      IPoint point = ArcUtils.GsToMapPoint(point3D.x, point3D.y, point3D.z);
       IActiveView activeView = ArcUtils.ActiveView;
       IEnvelope envelope = activeView.Extent;
       envelope.CenterAt(point);
@@ -1125,12 +1170,13 @@ namespace IntegrationArcMap.Forms
     {
       List<RecordingLocation> locations = Viewer.Locations;
       double distanceVectorLayer = _clientConfig.DistanceCycloramaVectorLayer;
-      return vectorLayer.GetGmlFromLocation(locations, distanceVectorLayer, out color);
+      return vectorLayer.GetGmlFromLocation(locations, distanceVectorLayer, out color, _clientConfig.SpatialReference);
     }
 
     private void AddVectorLayer(VectorLayer vectorLayer, string gml, Color color)
     {
-      string srsName = vectorLayer.EpsgCode;
+      SpatialReference spatRel = _clientConfig.SpatialReference;
+      string srsName = (spatRel == null) ? vectorLayer.EpsgCode : spatRel.SRSName;
       string layerName = vectorLayer.Name;
       const int minZoomLevel = 7;
       uint layerId = _api.AddGMLLayer(layerName, gml, srsName, color, true, false, minZoomLevel);
@@ -1340,7 +1386,7 @@ namespace IntegrationArcMap.Forms
     {
       _drawingSketch = false;
       Measurement.RemoveAll();
-      FrmSmartClick.Close();
+      FrmMeasurement.Close();
     }
 
     private void OnCreateSketch(IEditSketch3 sketch)
@@ -1484,6 +1530,14 @@ namespace IntegrationArcMap.Forms
       }
     }
 
+    public void EnableMeasurementSeries()
+    {
+      if (_api != null)
+      {
+        _api.SetMeasurementSeriesModeEnabled(true);
+      }
+    }
+
     public void RemoveMeasurementPoint(int entityId, int pointId)
     {
       if (_api != null)
@@ -1510,12 +1564,8 @@ namespace IntegrationArcMap.Forms
       if (_api != null)
       {
         _api.OpenMeasurementPoint(entityId, pointId);
-
-        if (_clientConfig.SmartClickEnabled)
-        {
-          PointMeasurementData pointMeasurementData = _api.GetMeasurementPointData(entityId, pointId);
-          FrmSmartClick.OpenMeasurementPoint(entityId, pointId, pointMeasurementData.measurementPoint);
-        }
+        PointMeasurementData pointMeasurementData = _api.GetMeasurementPointData(entityId, pointId);
+        FrmMeasurement.OpenMeasurementPoint(entityId, pointId, this, pointMeasurementData.measurementPoint);
       }
     }
 
@@ -1540,11 +1590,7 @@ namespace IntegrationArcMap.Forms
       if (_api != null)
       {
         _api.CloseMeasurementPoint(entityId, pointId);
-
-        if (_clientConfig.SmartClickEnabled)
-        {
-          FrmSmartClick.CloseMeasurementPoint(entityId, pointId);
-        }
+        FrmMeasurement.CloseMeasurementPoint(entityId, pointId);
       }
     }
 
@@ -1644,6 +1690,108 @@ namespace IntegrationArcMap.Forms
       return result;
     }
 
+    public void LookAtMeasurement(string imageId, double x, double y, double z)
+    {
+      if (_api != null)
+      {
+        _lookAtCoord = new Point3D(x, y, z);
+        _frmGlobespotter.SelectImageMeasurement(imageId);
+      }
+    }
+
+    public void LookAtMeasurement(double x, double y, double z)
+    {
+      if (_api != null)
+      {
+        int[] viewerIds = _api.GetViewerIDs();
+
+        foreach (var viewerId in viewerIds)
+        {
+          _api.LookAtCoordinate((uint) viewerId, x, y, z);
+        }
+      }
+    }
+
+    public void OpenNearestImage(double x, double y, double z)
+    {
+      if (_api != null)
+      {
+        CultureInfo ci = CultureInfo.InvariantCulture;
+        string coordinate = string.Format(ci, "{0:#0.#},{1:#0.#},{2:#0.#}", x, y, z);
+        _api.OpenNearestImage(coordinate, 1);
+      }
+    }
+
+    public List<MeasurementObservation> GetObservationPoints(int entityId, int pointId)
+    {
+      var observations = new List<MeasurementObservation>();
+
+      if (_api != null)
+      {
+        string[] imageIds = _api.GetMeasurementPointObservationImageIDs(entityId, pointId);
+
+        if (imageIds != null)
+        {
+          observations.AddRange(from imageId in imageIds
+                                select _api.GetMeasurementPointObservationData(entityId, pointId, imageId)
+                                into obsData
+                                where obsData != null
+                                select obsData.measurementObservation);
+        }
+      }
+
+      return observations;
+    }
+
+    public GlobeSpotterAPI.MeasurementPoint GetMeasurementData(int entityId, int pointId)
+    {
+      GlobeSpotterAPI.MeasurementPoint measurementPoint = null;
+
+      if (_api != null)
+      {
+        PointMeasurementData data = _api.GetMeasurementPointData(entityId, pointId);
+
+        if (data != null)
+        {
+          measurementPoint = data.measurementPoint;
+        }
+      }
+
+      return measurementPoint;
+    }
+
+    public int GetMeasurementPointIndex(int entityId, int pointId)
+    {
+      int result = 0;
+
+      if (_api != null)
+      {
+        result = _api.GetMeasurementPointIndex(entityId, pointId);
+      }
+
+      return result;
+    }
+
     #endregion
+
+    private void OnViewRefreshed(IActiveView view, esriViewDrawPhase phase, object data, IEnvelope envelope)
+    {
+      if (_api != null)
+      {
+        IMap map = ArcUtils.Map;
+        esriUnits units = map.DistanceUnits;
+        string stunit = units.ToString();
+        stunit = stunit.Replace("esri", " ");
+        string label = _api.getLengthUnitLabel();
+
+        if (label != stunit)
+        {
+          IUnitConverter converter = new UnitConverterClass();
+          double conversion = converter.ConvertUnits(1, units, esriUnits.esriMeters);
+          _api.setLengthUnitLabel(stunit);
+          _api.setLengthUnitFactor(conversion);
+        }
+      }
+    }
   }
 }

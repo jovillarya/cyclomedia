@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
+using ESRI.ArcGIS.ArcMapUI;
+using ESRI.ArcGIS.Display;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.DataSourcesGDB;
@@ -63,6 +66,12 @@ namespace IntegrationArcMap.Layers
     {
       CreateWorkspace();
       CreateLayers();
+      var avEvents = ArcUtils.ActiveViewEvents;
+
+      if (avEvents != null)
+      {
+        avEvents.ContentsChanged += OnContentChanged;
+      }
     }
 
     public CycloMediaLayer GetLayer(ILayer layer)
@@ -174,6 +183,13 @@ namespace IntegrationArcMap.Layers
         }
 
         activeView.PartialRefresh(esriViewDrawPhase.esriViewGeography, null, null);
+      }
+
+      var avEvents = ArcUtils.ActiveViewEvents;
+
+      if (avEvents != null)
+      {
+        avEvents.ContentsChanged -= OnContentChanged;
       }
     }
 
@@ -371,6 +387,45 @@ namespace IntegrationArcMap.Layers
             layer = layert;
             result = layer.GetFeatureFromPoint(x, y);
           }
+        }
+      }
+
+      return result;
+    }
+
+    private void OnContentChanged()
+    {
+      CycloMediaLayer changedLayer = Layers.Aggregate<CycloMediaLayer, CycloMediaLayer>
+        (null, (current, layer) => (layer.IsVisible && (!layer.Visible)) ? layer : current);
+      CycloMediaLayer refreshLayer = null;
+
+      foreach (var layer in Layers)
+      {
+        bool visible = ((changedLayer == null) || (layer == changedLayer)) && layer.IsVisible;
+        refreshLayer = (layer.IsVisible != visible) ? layer : refreshLayer;
+        layer.IsVisible = visible;
+        layer.Visible = layer.IsVisible;
+      }
+
+      if ((refreshLayer != null))
+      {
+        IMap map = ArcUtils.Map;
+        map.MapScale = map.MapScale - 1;
+        IActiveView activeView = ArcUtils.ActiveView;
+        activeView.Refresh();
+        activeView.ContentsChanged();
+      }
+    }
+
+    public List<double> GetLocationInfo(string imageId)
+    {
+      var result = new List<double>();
+
+      foreach (var layer in Layers)
+      {
+        if (result.Count == 0)
+        {
+          result.AddRange(layer.GetLocationInfo(imageId));
         }
       }
 

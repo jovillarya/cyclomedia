@@ -12,7 +12,9 @@ using ESRI.ArcGIS.Editor;
 using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.esriSystem;
+using IntegrationArcMap.WebClient;
 using Path = System.IO.Path;
+using Point = ESRI.ArcGIS.Geometry.Point;
 
 namespace IntegrationArcMap.Utilities
 {
@@ -72,12 +74,12 @@ namespace IntegrationArcMap.Utilities
 
     public static ISpatialReference SpatialReference
     {
-      get { return Map.SpatialReference; }
+      get { return (Map == null) ? null : Map.SpatialReference; }
     }
 
     public static string EpsgCode
     {
-      get { return string.Format("EPSG:{0}", SpatialReference.FactoryCode); }
+      get { return string.Format("EPSG:{0}", (SpatialReference == null) ? 0 : SpatialReference.FactoryCode); }
     }
 
     public static IEditor3 Editor
@@ -462,6 +464,16 @@ namespace IntegrationArcMap.Utilities
       {
         Trace.WriteLine(ex.Message, "ArcUtils.OnActiveViewChanged");
       }
+    }
+
+    public static IPoint GsToMapPoint(double x, double y, double z)
+    {
+      ClientConfig config = ClientConfig.Instance;
+      SpatialReference spatRel = config.SpatialReference;
+      ISpatialReference gsSpatialReference = (spatRel == null) ? SpatialReference : spatRel.SpatialRef;
+      IPoint point = new Point { X = x, Y = y, Z = z, SpatialReference = gsSpatialReference };
+      point.Project(SpatialReference);
+      return point;
     }
   }
 }

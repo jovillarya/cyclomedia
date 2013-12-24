@@ -36,6 +36,8 @@
       this.lblPassword = new System.Windows.Forms.Label();
       this.lblUsername = new System.Windows.Forms.Label();
       this.tbCycloramaViewer = new System.Windows.Forms.TabPage();
+      this.cbSpatialReferences = new System.Windows.Forms.ComboBox();
+      this.lblSpatialReference = new System.Windows.Forms.Label();
       this.ckDetailImages = new System.Windows.Forms.CheckBox();
       this.nudDistVectLayerViewer = new System.Windows.Forms.NumericUpDown();
       this.nudMaxViewers = new System.Windows.Forms.NumericUpDown();
@@ -44,8 +46,10 @@
       this.tbMeasurement = new System.Windows.Forms.TabPage();
       this.ckEnableSmartClick = new System.Windows.Forms.CheckBox();
       this.tbServices = new System.Windows.Forms.TabPage();
-      this.txtRecordingService = new System.Windows.Forms.TextBox();
-      this.lblRecordingService = new System.Windows.Forms.Label();
+      this.txtBaseUrl = new System.Windows.Forms.TextBox();
+      this.lblBaseUrl = new System.Windows.Forms.Label();
+      this.tbAbout = new System.Windows.Forms.TabPage();
+      this.lblAbout = new System.Windows.Forms.Label();
       this.btnOk = new System.Windows.Forms.Button();
       this.btnCancel = new System.Windows.Forms.Button();
       this.btnApply = new System.Windows.Forms.Button();
@@ -56,6 +60,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.nudMaxViewers)).BeginInit();
       this.tbMeasurement.SuspendLayout();
       this.tbServices.SuspendLayout();
+      this.tbAbout.SuspendLayout();
       this.SuspendLayout();
       // 
       // tcSettings
@@ -66,6 +71,7 @@
       this.tcSettings.Controls.Add(this.tbCycloramaViewer);
       this.tcSettings.Controls.Add(this.tbMeasurement);
       this.tcSettings.Controls.Add(this.tbServices);
+      this.tcSettings.Controls.Add(this.tbAbout);
       this.tcSettings.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tcSettings.Location = new System.Drawing.Point(5, 5);
       this.tcSettings.Multiline = true;
@@ -142,6 +148,8 @@
       // 
       // tbCycloramaViewer
       // 
+      this.tbCycloramaViewer.Controls.Add(this.cbSpatialReferences);
+      this.tbCycloramaViewer.Controls.Add(this.lblSpatialReference);
       this.tbCycloramaViewer.Controls.Add(this.ckDetailImages);
       this.tbCycloramaViewer.Controls.Add(this.nudDistVectLayerViewer);
       this.tbCycloramaViewer.Controls.Add(this.nudMaxViewers);
@@ -156,10 +164,30 @@
       this.tbCycloramaViewer.Text = "Cyclorama viewer";
       this.tbCycloramaViewer.UseVisualStyleBackColor = true;
       // 
+      // cbSpatialReferences
+      // 
+      this.cbSpatialReferences.FormattingEnabled = true;
+      this.cbSpatialReferences.Location = new System.Drawing.Point(140, 45);
+      this.cbSpatialReferences.Name = "cbSpatialReferences";
+      this.cbSpatialReferences.Size = new System.Drawing.Size(250, 22);
+      this.cbSpatialReferences.Sorted = true;
+      this.cbSpatialReferences.TabIndex = 20;
+      this.cbSpatialReferences.Click += new System.EventHandler(this.cbSpatialReferences_Click);
+      // 
+      // lblSpatialReference
+      // 
+      this.lblSpatialReference.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblSpatialReference.Location = new System.Drawing.Point(5, 45);
+      this.lblSpatialReference.Name = "lblSpatialReference";
+      this.lblSpatialReference.Size = new System.Drawing.Size(130, 22);
+      this.lblSpatialReference.TabIndex = 19;
+      this.lblSpatialReference.Text = "SpatialReference:";
+      this.lblSpatialReference.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      // 
       // ckDetailImages
       // 
       this.ckDetailImages.AutoSize = true;
-      this.ckDetailImages.Location = new System.Drawing.Point(205, 5);
+      this.ckDetailImages.Location = new System.Drawing.Point(301, 5);
       this.ckDetailImages.Name = "ckDetailImages";
       this.ckDetailImages.Size = new System.Drawing.Size(89, 18);
       this.ckDetailImages.TabIndex = 18;
@@ -266,8 +294,8 @@
       // 
       // tbServices
       // 
-      this.tbServices.Controls.Add(this.txtRecordingService);
-      this.tbServices.Controls.Add(this.lblRecordingService);
+      this.tbServices.Controls.Add(this.txtBaseUrl);
+      this.tbServices.Controls.Add(this.lblBaseUrl);
       this.tbServices.Location = new System.Drawing.Point(4, 23);
       this.tbServices.Name = "tbServices";
       this.tbServices.Size = new System.Drawing.Size(397, 78);
@@ -275,24 +303,43 @@
       this.tbServices.Text = "Services";
       this.tbServices.UseVisualStyleBackColor = true;
       // 
-      // txtRecordingService
+      // txtBaseUrl
       // 
-      this.txtRecordingService.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtRecordingService.Location = new System.Drawing.Point(110, 5);
-      this.txtRecordingService.Name = "txtRecordingService";
-      this.txtRecordingService.Size = new System.Drawing.Size(280, 20);
-      this.txtRecordingService.TabIndex = 1;
-      this.txtRecordingService.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRecordingService_KeyUp);
+      this.txtBaseUrl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtBaseUrl.Location = new System.Drawing.Point(110, 5);
+      this.txtBaseUrl.Name = "txtBaseUrl";
+      this.txtBaseUrl.Size = new System.Drawing.Size(280, 20);
+      this.txtBaseUrl.TabIndex = 1;
+      this.txtBaseUrl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRecordingService_KeyUp);
       // 
-      // lblRecordingService
+      // lblBaseUrl
       // 
-      this.lblRecordingService.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblRecordingService.Location = new System.Drawing.Point(5, 5);
-      this.lblRecordingService.Name = "lblRecordingService";
-      this.lblRecordingService.Size = new System.Drawing.Size(100, 22);
-      this.lblRecordingService.TabIndex = 18;
-      this.lblRecordingService.Text = "Recording service:";
-      this.lblRecordingService.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblBaseUrl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblBaseUrl.Location = new System.Drawing.Point(5, 5);
+      this.lblBaseUrl.Name = "lblBaseUrl";
+      this.lblBaseUrl.Size = new System.Drawing.Size(100, 22);
+      this.lblBaseUrl.TabIndex = 18;
+      this.lblBaseUrl.Text = "Base url:";
+      this.lblBaseUrl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      // 
+      // tbAbout
+      // 
+      this.tbAbout.Controls.Add(this.lblAbout);
+      this.tbAbout.Location = new System.Drawing.Point(4, 23);
+      this.tbAbout.Name = "tbAbout";
+      this.tbAbout.Size = new System.Drawing.Size(397, 78);
+      this.tbAbout.TabIndex = 4;
+      this.tbAbout.Text = "About";
+      this.tbAbout.UseVisualStyleBackColor = true;
+      // 
+      // lblAbout
+      // 
+      this.lblAbout.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblAbout.Location = new System.Drawing.Point(5, 5);
+      this.lblAbout.Name = "lblAbout";
+      this.lblAbout.Size = new System.Drawing.Size(387, 68);
+      this.lblAbout.TabIndex = 19;
+      this.lblAbout.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // btnOk
       // 
@@ -344,7 +391,6 @@
       this.ShowIcon = false;
       this.ShowInTaskbar = false;
       this.Text = "CycloMedia Options";
-      this.TopMost = true;
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCycloMediaOptions_FormClosed);
       this.Load += new System.EventHandler(this.FrmCycloMediaOptions_Load);
       this.tcSettings.ResumeLayout(false);
@@ -358,6 +404,7 @@
       this.tbMeasurement.PerformLayout();
       this.tbServices.ResumeLayout(false);
       this.tbServices.PerformLayout();
+      this.tbAbout.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -376,8 +423,8 @@
     private System.Windows.Forms.TabPage tbMeasurement;
     private System.Windows.Forms.CheckBox ckEnableSmartClick;
     private System.Windows.Forms.TabPage tbServices;
-    private System.Windows.Forms.TextBox txtRecordingService;
-    private System.Windows.Forms.Label lblRecordingService;
+    private System.Windows.Forms.TextBox txtBaseUrl;
+    private System.Windows.Forms.Label lblBaseUrl;
     private System.Windows.Forms.Button btnOk;
     private System.Windows.Forms.Button btnCancel;
     private System.Windows.Forms.Button btnApply;
@@ -385,5 +432,9 @@
     private System.Windows.Forms.NumericUpDown nudMaxViewers;
     private System.Windows.Forms.NumericUpDown nudDistVectLayerViewer;
     private System.Windows.Forms.CheckBox ckDetailImages;
+    private System.Windows.Forms.Label lblSpatialReference;
+    private System.Windows.Forms.ComboBox cbSpatialReferences;
+    private System.Windows.Forms.TabPage tbAbout;
+    private System.Windows.Forms.Label lblAbout;
   }
 }

@@ -10,6 +10,7 @@ using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.ADF.Connection.Local;
 using GlobeSpotterAPI;
+using IntegrationArcMap.WebClient;
 using Point = ESRI.ArcGIS.Geometry.Point;
 using Timer = System.Threading.Timer;
 
@@ -48,7 +49,18 @@ namespace IntegrationArcMap.Symbols
 
       double x = location.X;
       double y = location.Y;
-      _point = new Point {X = x, Y = y};
+      ClientConfig config = ClientConfig.Instance;
+      SpatialReference spatRel = config.SpatialReference;
+      ISpatialReference spatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
+
+      _point = new Point
+        {
+          X = x,
+          Y = y,
+          SpatialReference = spatialReference
+        };
+
+      _point.Project(ArcUtils.SpatialReference);
       var avEvents = ArcUtils.ActiveViewEvents;
 
       if (avEvents != null)

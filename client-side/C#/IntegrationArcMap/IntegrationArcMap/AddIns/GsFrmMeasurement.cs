@@ -1,22 +1,22 @@
 ﻿using System;
-using IntegrationArcMap.Forms;
 using ESRI.ArcGIS.Desktop.AddIns;
+using IntegrationArcMap.Forms;
 
 namespace IntegrationArcMap.AddIns
 {
   /// <summary>
   /// The settings docked window
   /// </summary>
-  class GsFrmSmartClick : DockableWindow
+  class GsFrmMeasurement : DockableWindow
   {
     protected override IntPtr OnCreateChild()
     {
-      return FrmSmartClick.FrmHandle;
+      return FrmMeasurement.FrmHandle;
     }
 
     protected override void Dispose(bool disposing)
     {
-      FrmSmartClick.DisposeFrm(disposing);
+      FrmMeasurement.DisposeFrm(disposing);
       base.Dispose(disposing);
     }
   }

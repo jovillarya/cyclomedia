@@ -1,10 +1,10 @@
 ﻿using System;
 using System.IO;
 using System.Xml.Serialization;
-using IntegrationArcMap.Utilities;
 
 namespace IntegrationArcMap.WebClient
 {
+  // ReSharper disable InconsistentNaming
   public class ClientAPIKey
   {
     private static readonly XmlSerializer XmlClientAPIKey;
@@ -61,5 +61,7 @@ namespace IntegrationArcMap.WebClient
           APIKey = string.Empty
         };
     }
+
+    // ReSharper restore InconsistentNaming
   }
 }

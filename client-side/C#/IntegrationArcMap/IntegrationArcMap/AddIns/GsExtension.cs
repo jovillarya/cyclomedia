@@ -157,7 +157,8 @@ namespace IntegrationArcMap.AddIns
       {
         GsShowInCyclorama.RemoveFromMenu();
         FrmCycloMediaOptions.CloseForm();
-        FrmSmartClick.Close();
+        FrmHelp.CloseForm();
+        FrmMeasurement.Close();
         CycloMediaGroupLayer cycloLayer = CycloMediaGroupLayer;
         CycloMediaGroupLayer = null;
         cycloLayer.Dispose();
@@ -177,6 +178,7 @@ namespace IntegrationArcMap.AddIns
       }
 
       FrmCycloMediaOptions.CloseForm();
+      FrmHelp.CloseForm();
     }
 
     private void OpenDocument()
@@ -205,7 +207,8 @@ namespace IntegrationArcMap.AddIns
         GsRecentDataLayer.AddToMenu();
         GsHistoricalDataLayer.AddToMenu();
         GsCycloMediaOptions.AddToMenu();
-        FrmSmartClick.Close();
+        GsMeasurementDetail.AddToMenu();
+        FrmMeasurement.Close();
       }
       catch (Exception ex)
       {
@@ -280,6 +283,7 @@ namespace IntegrationArcMap.AddIns
         GsRecentDataLayer.RemoveFromMenu();
         GsHistoricalDataLayer.RemoveFromMenu();
         GsCycloMediaOptions.RemoveFromMenu();
+        GsMeasurementDetail.RemoveFromMenu();
       }
     }
 
@@ -291,7 +295,6 @@ namespace IntegrationArcMap.AddIns
         {
           FrmCycloMediaOptions.OpenIfNoCredentials();
           FrmGlobespotter.CheckVisible();
-          FrmSmartClick.CheckVisible();
         }
       }
     }

@@ -2,10 +2,10 @@
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("GsInstaller")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Installer for the ArcMap integration for Cycloramas")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CycloMedia")]
-[assembly: AssemblyProduct("GsInstaller")]
+[assembly: AssemblyProduct("ArcMap Integration for Cycloramas")]
 [assembly: AssemblyCopyright("Copyright © CycloMedia 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -14,5 +14,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("813739fd-f291-467f-ba44-bf2ff2d75417")]
 
-[assembly: AssemblyVersion("0.10.2.0")]
-[assembly: AssemblyFileVersion("0.10.2.0")]
+[assembly: AssemblyVersion("0.12.3.3938")]
+[assembly: AssemblyFileVersion("0.12.3.3938")]

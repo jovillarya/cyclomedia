@@ -104,27 +104,48 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\GlobeSpotterAPI.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Build.Conversion.v3.5" />
+    <Reference Include="PDFLibNet">
+      <HintPath>..\..\Libs\PDFLibNet.dll</HintPath>
+    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddIns\GsHelp.cs" />
+    <Compile Include="AddIns\GsMeasurementDetail.cs" />
+    <Compile Include="AddIns\GsFrmMeasurement.cs" />
     <Compile Include="AddIns\GsRecordingHistory.cs" />
-    <Compile Include="AddIns\GsFrmSmartClick.cs" />
     <Compile Include="AddIns\GsAddLayer.cs" />
     <Compile Include="AddIns\GsShowInCyclorama.cs" />
     <Compile Include="AddIns\GsHistoricalDataLayer.cs" />
     <Compile Include="AddIns\GsRecentDataLayer.cs" />
     <Compile Include="AddIns\GsFrmAddLayer.cs" />
     <Compile Include="AddIns\GsFrmGlobespotter.cs" />
+    <Compile Include="Forms\FrmHelp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmHelp.Designer.cs">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WebClient\SpatialReference.cs" />
+    <Compile Include="WebClient\SpatialReferences.cs" />
     <Compile Include="Elements\GlobespotterFrameClass.cs" />
+    <Compile Include="Forms\FrmMeasurement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMeasurement.Designer.cs">
+      <DependentUpon>FrmMeasurement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmCycloMediaOptions.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,12 +163,6 @@
     </Compile>
     <Compile Include="Forms\FrmRecordingHistory.Designer.cs">
       <DependentUpon>FrmRecordingHistory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmSmartClick.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmSmartClick.Designer.cs">
-      <DependentUpon>FrmSmartClick.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Atlas\Image.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -248,6 +263,12 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmHelp.resx">
+      <DependentUpon>FrmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMeasurement.resx">
+      <DependentUpon>FrmMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAddLayer.resx">
       <DependentUpon>FrmAddLayer.cs</DependentUpon>
     </EmbeddedResource>
@@ -262,9 +283,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmGlobespotter.resx">
       <DependentUpon>FrmGlobespotter.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmSmartClick.resx">
-      <DependentUpon>FrmSmartClick.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -283,7 +301,14 @@
     <EmbeddedResource Include="Images\GsCycloMediaLayers.png" />
     <EmbeddedResource Include="Images\GsContentsLayers.png" />
     <AddInContent Include="Images\GsRecordingHistory.png" />
+    <AddInContent Include="Images\GsFocus.png" />
+    <AddInContent Include="Images\GsHelp.png" />
+    <Content Include="Images\GsOpen.png" />
+    <AddInContent Include="Images\GsSelectionCopySelectedFeatures.png" />
+    <None Include="Images\LeftArrow.png" />
+    <None Include="Images\RightArrow.png" />
     <Content Include="Release notes.txt" />
+    <EmbeddedResource Include="User Manual ArcMap Add-In.pdf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RangeControl\RangeControl.csproj">

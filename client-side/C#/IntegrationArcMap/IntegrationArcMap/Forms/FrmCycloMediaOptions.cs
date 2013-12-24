@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Diagnostics;
 using System.Drawing;
 using System.Net;
+using System.Reflection;
 using System.Windows.Forms;
 using IntegrationArcMap.AddIns;
 using IntegrationArcMap.Utilities;
@@ -40,7 +42,17 @@ namespace IntegrationArcMap.Forms
       txtUsername.Font = (Font) font.Clone();
       nudMaxViewers.Font = (Font) font.Clone();
       nudDistVectLayerViewer.Font = (Font) font.Clone();
-      txtRecordingService.Font = (Font) font.Clone();
+      txtBaseUrl.Font = (Font) font.Clone();
+      cbSpatialReferences.Font = (Font) font.Clone();
+      Type type = GetType();
+      Assembly assembly = type.Assembly;
+      AssemblyName assName = assembly.GetName();
+      string location = assembly.Location;
+      Version version = assName.Version;
+      FileVersionInfo info = FileVersionInfo.GetVersionInfo(location);
+      string product = info.ProductName;
+      string copyright = info.LegalCopyright;
+      lblAbout.Text = string.Format("{0}{3}{1}{3}Version: {2}.", product, copyright, version, Environment.NewLine);
       btnApply.Enabled = false;
       btnOk.Select();
     }
@@ -123,13 +135,28 @@ namespace IntegrationArcMap.Forms
     private void LoadData()
     {
       lblLoginStatus.Text = _login.Credentials ? LoginSuccessfully : LoginFailed;
-      txtRecordingService.Text = _config.RecordingsService;
+      txtBaseUrl.Text = _config.BaseUrl;
       nudMaxViewers.Value = _config.MaxViewers;
       nudDistVectLayerViewer.Value = _config.DistanceCycloramaVectorLayer;
       txtPassword.Text = _login.Password;
       txtUsername.Text = _login.Username;
       ckEnableSmartClick.Checked = _config.SmartClickEnabled;
       ckDetailImages.Checked = _config.DetailImagesEnabled;
+      SpatialReferences spatialReferences = SpatialReferences.Instance;
+
+      foreach (var spatialReference in spatialReferences)
+      {
+        if (spatialReference.KnownInArcMap)
+        {
+          cbSpatialReferences.Items.Add(spatialReference);
+        }
+      }
+
+      SpatialReference configSpat = _config.SpatialReference;
+      SpatialReference spatialRef =
+        spatialReferences.GetItem((configSpat == null) ? ArcUtils.EpsgCode : configSpat.SRSName);
+      cbSpatialReferences.SelectedItem = spatialRef;
+      _config.SpatialReference = spatialRef;
 
       if (!_login.Credentials)
       {
@@ -214,18 +241,21 @@ namespace IntegrationArcMap.Forms
 
       if (_login.Credentials || loginSucces)
       {
+        SpatialReference spat = _config.SpatialReference;
         var maxViewers = (uint) nudMaxViewers.Value;
         var distLayer = (uint) nudDistVectLayerViewer.Value;
-        bool restart = (_config.RecordingsService != txtRecordingService.Text);
+        bool restart = (_config.BaseUrl != txtBaseUrl.Text);
+        restart = restart || ((spat == null) || (spat.ToString() != cbSpatialReferences.SelectedItem.ToString()));
+        _config.SpatialReference = (SpatialReference) cbSpatialReferences.SelectedItem;
         _config.MaxViewers = maxViewers;
         _config.DistanceCycloramaVectorLayer = distLayer;
-        _config.RecordingsService = txtRecordingService.Text;
+        _config.BaseUrl = txtBaseUrl.Text;
         _config.SmartClickEnabled = ckEnableSmartClick.Checked;
         _config.DetailImagesEnabled = ckDetailImages.Checked;
         _config.Save();
         FrmGlobespotter.UpdateParameters();
 
-        if (restart)
+        if (restart && FrmGlobespotter.IsStarted())
         {
           FrmGlobespotter.Restart();
         }
@@ -340,6 +370,11 @@ namespace IntegrationArcMap.Forms
     }
 
     private void ckDetailImages_Click(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void cbSpatialReferences_Click(object sender, EventArgs e)
     {
       btnApply.Enabled = true;
     }

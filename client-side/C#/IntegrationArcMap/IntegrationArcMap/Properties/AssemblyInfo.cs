@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("IntegrationArcMap")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Cyclorama ArcMap Integration")]
+[assembly: AssemblyDescription("Integration in ArcMap for Cycloramas")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CycloMedia")]
-[assembly: AssemblyProduct("IntegrationArcMap")]
+[assembly: AssemblyProduct("ArcMap Integration for Cycloramas")]
 [assembly: AssemblyCopyright("Copyright © CycloMedia 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -14,5 +14,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("601756f1-d4d0-4279-abad-47338704585c")]
 
-[assembly: AssemblyVersion("0.10.2.0")]
-[assembly: AssemblyFileVersion("0.10.2.0")]
+[assembly: AssemblyVersion("0.12.3.3938")]
+[assembly: AssemblyFileVersion("0.12.3.3938")]

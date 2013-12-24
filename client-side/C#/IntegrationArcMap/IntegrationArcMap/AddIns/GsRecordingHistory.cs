@@ -21,7 +21,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception e)
       {
-        MessageBox.Show(e.Message, "Globespotter integration Addin Error.");
+        MessageBox.Show(e.Message, "GsRecordingHistory.OnClick");
       }
     }
 
@@ -30,20 +30,24 @@ namespace IntegrationArcMap.AddIns
       try
       {
         GsExtension extension = GsExtension.GetExtension();
-        CycloMediaGroupLayer cyclGroupLayer = extension.CycloMediaGroupLayer;
-        bool historicalEnabled = cyclGroupLayer.HistoricalLayerEnabled;
 
-        if (!historicalEnabled && FrmRecordingHistory.IsVisible)
+        if (extension != null)
         {
-          FrmRecordingHistory.CloseForm();
-        }
+          CycloMediaGroupLayer cyclGroupLayer = extension.CycloMediaGroupLayer;
+          bool historicalEnabled = (cyclGroupLayer != null) && cyclGroupLayer.HistoricalLayerEnabled;
 
-        Enabled = ((ArcMap.Application != null) && extension.Enabled && historicalEnabled);
-        Checked = FrmRecordingHistory.IsVisible;
+          if (!historicalEnabled && FrmRecordingHistory.IsVisible)
+          {
+            FrmRecordingHistory.CloseForm();
+          }
+
+          Enabled = ((ArcMap.Application != null) && extension.Enabled && historicalEnabled);
+          Checked = FrmRecordingHistory.IsVisible;
+        }
       }
       catch (Exception ex)
       {
-        Trace.WriteLine(ex.Message, "GsClientConfigSettings.OnUpdate");
+        Trace.WriteLine(ex.Message, "GsRecordingHistory.OnUpdate");
       }
     }
   }

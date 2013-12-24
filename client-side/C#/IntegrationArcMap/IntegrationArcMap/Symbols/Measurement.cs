@@ -5,6 +5,8 @@ using IntegrationArcMap.Forms;
 using IntegrationArcMap.Layers;
 using ESRI.ArcGIS.Geometry;
 using GlobeSpotterAPI;
+using IntegrationArcMap.Utilities;
+using IntegrationArcMap.WebClient;
 
 namespace IntegrationArcMap.Symbols
 {
@@ -299,6 +301,18 @@ namespace IntegrationArcMap.Symbols
       return result;
     }
 
+    public int GetMeasurementPointIndex(int pointId)
+    {
+      int result = 0;
+
+      if (_frmGlobespotter != null)
+      {
+        result = _frmGlobespotter.GetMeasurementPointIndex(_entityId, pointId);
+      }
+
+      return result;
+    }
+
     public void UpdateMeasurementPoints(IGeometry geometry)
     {
       if ((geometry != null) && (_frmGlobespotter != null))
@@ -358,7 +372,19 @@ namespace IntegrationArcMap.Symbols
 
             foreach (var point in toAdd)
             {
-              _frmGlobespotter.CreateMeasurementPoint(_entityId, point);
+              IPoint gsPoint = new Point
+                {
+                  X = point.X,
+                  Y = point.Y,
+                  Z = point.Z,
+                  SpatialReference = ArcUtils.SpatialReference
+                };
+
+              ClientConfig config = ClientConfig.Instance;
+              SpatialReference spatRel = config.SpatialReference;
+              ISpatialReference spatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
+              gsPoint.Project(spatialReference);
+              _frmGlobespotter.CreateMeasurementPoint(_entityId, gsPoint);
             }
 
             if (!IsPointMeasurement)

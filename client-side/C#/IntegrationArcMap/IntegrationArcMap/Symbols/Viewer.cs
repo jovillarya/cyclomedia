@@ -13,14 +13,11 @@ namespace IntegrationArcMap.Symbols
     private static readonly Dictionary<uint, Viewer> Viewers;
 
     private Arrow _arrow;
-    private RecordingLocation _location;
-    private string _imageId;
     private CycloMediaLayer _layer;
 
-    public string ImageId
-    {
-      get { return _imageId; }
-    }
+    public RecordingLocation Location { get; private set; }
+
+    public string ImageId { get; private set; }
 
     static Viewer()
     {
@@ -30,8 +27,8 @@ namespace IntegrationArcMap.Symbols
     private Viewer(string imageId, CycloMediaLayer layer)
     {
       _arrow = null;
-      _location = null;
-      _imageId = imageId;
+      Location = null;
+      ImageId = imageId;
       _layer = layer;
     }
 
@@ -51,7 +48,7 @@ namespace IntegrationArcMap.Symbols
         _arrow.Dispose();
       }
 
-      _location = location;
+      Location = location;
       _arrow = Arrow.Create(location, angle, hFov, color);
 
       foreach (var viewer in Viewers.Values)
@@ -73,7 +70,7 @@ namespace IntegrationArcMap.Symbols
 
     public void Update(string imageId)
     {
-      _imageId = imageId;
+      ImageId = imageId;
     }
 
     public void SetActive()
@@ -91,7 +88,7 @@ namespace IntegrationArcMap.Symbols
 
     public static List<RecordingLocation> Locations
     {
-      get { return Viewers.Select(viewer => viewer.Value._location).ToList(); }
+      get { return Viewers.Select(viewer => viewer.Value.Location).ToList(); }
     }
 
     public static Viewer Get(uint viewerId)

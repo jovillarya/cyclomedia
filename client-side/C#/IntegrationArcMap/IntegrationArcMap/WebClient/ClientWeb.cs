@@ -46,9 +46,14 @@ namespace IntegrationArcMap.WebClient
     private readonly CultureInfo _ci;
     private readonly ClientLogin _clientLogin;
     private readonly ClientConfig _clientConfig;
-    private readonly ClientAPIKey _clientAPIKey;
+    private readonly ClientAPIKey _clientApiKey;
 
     #endregion
+
+    private string RecordingService
+    {
+      get { return string.Format("{0}/recordings/wfs", _clientConfig.BaseUrl); }
+    }
 
     #region Constructor
 
@@ -57,7 +62,7 @@ namespace IntegrationArcMap.WebClient
       _ci = CultureInfo.InvariantCulture;
       _clientLogin = ClientLogin.Instance;
       _clientConfig = ClientConfig.Instance;
-      _clientAPIKey = ClientAPIKey.Instance;
+      _clientApiKey = ClientAPIKey.Instance;
     }
 
     #endregion
@@ -75,7 +80,7 @@ namespace IntegrationArcMap.WebClient
 
     public List<XElement> GetByImageId(string imageId)
     {
-      string remoteLocation = string.Format(RecordingRequest, _clientConfig.RecordingsService, imageId);
+      string remoteLocation = string.Format(RecordingRequest, RecordingService, imageId);
       var xml = (string) GetRequest(remoteLocation, GetXmlCallback, XmlConfig);
       return ParseXml(xml, (Namespaces.GmlNs + "featureMembers"));
     }
@@ -99,7 +104,7 @@ namespace IntegrationArcMap.WebClient
         string postItem = string.Format(_ci, cycloMediaLayer.WfsRequest, epsgCode, envelope.XMin, envelope.YMin,
                                         envelope.XMax,
                                         envelope.YMax, DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:00-00:00"));
-        var xml = (string) PostRequest(_clientConfig.RecordingsService, GetXmlCallback, postItem, XmlConfig);
+        var xml = (string)PostRequest(RecordingService, GetXmlCallback, postItem, XmlConfig);
         result = ParseXml(xml, (Namespaces.GmlNs + "featureMembers"));
       }
 
@@ -108,7 +113,7 @@ namespace IntegrationArcMap.WebClient
 
     public List<XElement> CheckAuthorization()
     {
-      string postItem = string.Format("<Authorization />");
+      const string postItem = @"<Authorization />";
       var xml = (string)PostRequest(AuthorizationService, GetXmlCallback, postItem, XmlConfig);
       return ParseXml(xml, (Namespaces.CycloMediaNs + "Permission"));
     }
@@ -118,7 +123,7 @@ namespace IntegrationArcMap.WebClient
       string epsgCode = ArcUtils.EpsgCode;
       string postItem = string.Format(_ci, wfsRequest, epsgCode, envelope.XMin, envelope.YMin, envelope.XMax,
                                       envelope.YMax, DateTime.UtcNow.ToString("yyyy-MM-ddTHH:mm:00-00:00"));
-      var xml = (string) PostRequest(_clientConfig.RecordingsService, GetXmlCallback, postItem, XmlConfig);
+      var xml = (string)PostRequest(RecordingService, GetXmlCallback, postItem, XmlConfig);
       return ParseXml(xml, (Namespaces.GmlNs + "featureMembers"));
     }
 
@@ -157,6 +162,8 @@ namespace IntegrationArcMap.WebClient
       object result = null;
       bool download = false;
       int retry = 0;
+      WebRequest request = OpenWebRequest(remoteLocation, WebRequestMethods.Http.Get, 0);
+      var state = new ClientState {Request = request};
 
       while ((download == false) && (retry < _retryTimeService[configId]))
       {
@@ -164,8 +171,6 @@ namespace IntegrationArcMap.WebClient
         {
           lock (this)
           {
-            WebRequest request = OpenWebRequest(remoteLocation, WebRequestMethods.Http.Get, 0);
-            var state = new ClientState {Request = request};
             ManualResetEvent waitObject = state.OperationComplete;
             request.BeginGetResponse(asyncCallback, state);
 
@@ -220,6 +225,12 @@ namespace IntegrationArcMap.WebClient
       object result = null;
       bool download = false;
       int retry = 0;
+      var bytes = (new UTF8Encoding()).GetBytes(postItem);
+      WebRequest request = OpenWebRequest(remoteLocation, WebRequestMethods.Http.Post, bytes.Length);
+      var state = new ClientState {Request = request};
+      var reqstream = request.GetRequestStream();
+      reqstream.Write(bytes, 0, bytes.Length);
+      reqstream.Close();
 
       while ((download == false) && (retry < _retryTimeService[configId]))
       {
@@ -227,12 +238,6 @@ namespace IntegrationArcMap.WebClient
         {
           lock (this)
           {
-            var bytes = (new UTF8Encoding()).GetBytes(postItem);
-            WebRequest request = OpenWebRequest(remoteLocation, WebRequestMethods.Http.Post, bytes.Length);
-            var state = new ClientState {Request = request};
-            var reqstream = request.GetRequestStream();
-            reqstream.Write(bytes, 0, bytes.Length);
-            reqstream.Close();
             ManualResetEvent waitObject = state.OperationComplete;
             request.BeginGetResponse(asyncCallback, state);
 
@@ -292,7 +297,7 @@ namespace IntegrationArcMap.WebClient
       request.Pipelined = true;
       request.PreAuthenticate = true;
       request.ContentType = "text/xml";
-      request.Headers.Add("ApiKey", _clientAPIKey.APIKey);
+      request.Headers.Add("ApiKey", _clientApiKey.APIKey);
       return request;
     }
 
