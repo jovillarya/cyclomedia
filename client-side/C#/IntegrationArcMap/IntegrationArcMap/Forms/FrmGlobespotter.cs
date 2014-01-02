@@ -1176,7 +1176,7 @@ namespace IntegrationArcMap.Forms
     private void AddVectorLayer(VectorLayer vectorLayer, string gml, Color color)
     {
       SpatialReference spatRel = _clientConfig.SpatialReference;
-      string srsName = (spatRel == null) ? vectorLayer.EpsgCode : spatRel.SRSName;
+      string srsName = (spatRel == null) ? ArcUtils.EpsgCode : spatRel.SRSName;
       string layerName = vectorLayer.Name;
       const int minZoomLevel = 7;
       uint layerId = _api.AddGMLLayer(layerName, gml, srsName, color, true, false, minZoomLevel);

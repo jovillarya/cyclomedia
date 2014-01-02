@@ -82,6 +82,36 @@ namespace IntegrationArcMap.Layers
       get { return _layer ?? (_layer = GetLayer()); }
     }
 
+    public IGeometryDef GeometryDef
+    {
+      get
+      {
+        IGeometryDef result = null;
+
+        if (FeatureClass != null)
+        {
+          // ReSharper disable UseIndexedProperty
+          IFields fields = FeatureClass.Fields;
+          int fieldId = fields.FindField(FeatureClass.ShapeFieldName);
+          IField field = fields.get_Field(fieldId);
+          result = field.GeometryDef;
+          // ReSharper restore UseIndexedProperty
+        }
+
+        return result;
+      }
+    }
+
+    public ISpatialReference SpatialReference
+    {
+      get { return (GeometryDef == null) ? null : GeometryDef.SpatialReference; }
+    }
+
+    public string EpsgCode
+    {
+      get { return string.Format("EPSG:{0}", (SpatialReference == null) ? 0 : SpatialReference.FactoryCode); }
+    }
+
     public bool IsVisible
     {
       get { return (_layer != null) && _layer.Visible; }
@@ -307,10 +337,21 @@ namespace IntegrationArcMap.Layers
       {
         IMappedFeature mapFeature = CreateMappedFeature(null);
         string objectId = mapFeature.ObjectId;
-        IDisplayTransformation dispTrans = activeView.ScreenDisplay.DisplayTransformation;
+        IScreenDisplay screenDisplay = activeView.ScreenDisplay;
+        IDisplayTransformation dispTrans = screenDisplay.DisplayTransformation;
         IPoint pointLu = dispTrans.ToMapPoint(x - SizeLayer, y - SizeLayer);
         IPoint pointRd = dispTrans.ToMapPoint(x + SizeLayer, y + SizeLayer);
-        IEnvelope envelope = new EnvelopeClass {XMin = pointLu.X, XMax = pointRd.X, YMin = pointLu.Y, YMax = pointRd.Y};
+
+        IEnvelope envelope = new EnvelopeClass
+          {
+            XMin = pointLu.X,
+            XMax = pointRd.X,
+            YMin = pointLu.Y,
+            YMax = pointRd.Y,
+            SpatialReference = ArcUtils.SpatialReference
+          };
+
+        envelope.Project(SpatialReference);
 
         ISpatialFilter spatialFilter = new SpatialFilterClass
                                          {
@@ -695,8 +736,10 @@ namespace IntegrationArcMap.Layers
                 if ((_getDataThread == null) || (!_getDataThread.IsAlive))
                 {
                   _lastextent = extent;
+                  IEnvelope getEnv = extent.Envelope;
+                  getEnv.Project(SpatialReference);
                   _getDataThread = new Thread(GetDataWfs);
-                  _getDataThread.Start(extent);
+                  _getDataThread.Start(getEnv);
                 }
               }
             }

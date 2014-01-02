@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading;
-using ESRI.ArcGIS.ArcMapUI;
-using ESRI.ArcGIS.Display;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.DataSourcesGDB;

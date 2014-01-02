@@ -7,7 +7,6 @@ using System.Xml;
 using System.Threading;
 using System.ComponentModel;
 using System.Drawing.Drawing2D;
-using RangeSelector;
 
 namespace RangeControl
 {

@@ -1,5 +1,5 @@
-﻿using System;
-using System.IO;
+﻿using System.IO;
+using System.Reflection;
 using System.Xml.Serialization;
 
 namespace IntegrationArcMap.WebClient
@@ -13,15 +13,6 @@ namespace IntegrationArcMap.WebClient
     static ClientAPIKey()
     {
       XmlClientAPIKey = new XmlSerializer(typeof (ClientAPIKey));
-    }
-
-    public static string FileName
-    {
-      get
-      {
-        string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        return string.Format(@"{0}\ArcGIS\GSClientAPIKey.xml", folderPath);
-      }
     }
 
     public static ClientAPIKey Instance
@@ -39,11 +30,14 @@ namespace IntegrationArcMap.WebClient
 
     public static ClientAPIKey Load()
     {
-      if (File.Exists(FileName))
+      Assembly thisAssembly = Assembly.GetExecutingAssembly();
+      const string manualPath = @"IntegrationArcMap.Doc.GSClientAPIKey.xml";
+      Stream manualStream = thisAssembly.GetManifestResourceStream(manualPath);
+
+      if (manualStream != null)
       {
-        var streamFile = new FileStream(FileName, FileMode.OpenOrCreate);
-        _clientAPIKey = (ClientAPIKey) XmlClientAPIKey.Deserialize(streamFile);
-        streamFile.Close();
+        _clientAPIKey = (ClientAPIKey) XmlClientAPIKey.Deserialize(manualStream);
+        manualStream.Close();
       }
 
       return _clientAPIKey;

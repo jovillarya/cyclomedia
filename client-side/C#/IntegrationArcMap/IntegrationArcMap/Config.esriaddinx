@@ -3,11 +3,11 @@
   <Name>Cyclorama</Name>
   <AddInID>{601756f1-d4d0-4279-abad-47338704585c}</AddInID>
   <Description>ArcMap Integration for Cyclorama's</Description>
-  <Version>0.12.3</Version>
+  <Version>0.12.4</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
   <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>24-12-2013</Date>
+  <Date>02-01-2014</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />

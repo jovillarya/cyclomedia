@@ -87,7 +87,7 @@ namespace IntegrationArcMap.WebClient
 
     public List<XElement> GetByBbox(IEnvelope envelope, CycloMediaLayer cycloMediaLayer)
     {
-      string epsgCode = ArcUtils.EpsgCode;
+      string epsgCode = cycloMediaLayer.EpsgCode;
       List<XElement> result;
 
       if (cycloMediaLayer is WfsLayer)

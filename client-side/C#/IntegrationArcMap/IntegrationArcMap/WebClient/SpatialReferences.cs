@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Xml.Serialization;
 
 namespace IntegrationArcMap.WebClient
@@ -16,15 +16,6 @@ namespace IntegrationArcMap.WebClient
     static SpatialReferences()
     {
       XmlSpatialReferences = new XmlSerializer(typeof (SpatialReferences));
-    }
-
-    public static string FileName
-    {
-      get
-      {
-        string folderPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-        return string.Format(@"{0}\ArcGIS\GSSpatialReferences.xml", folderPath);
-      }
     }
 
     public static SpatialReferences Instance
@@ -42,12 +33,14 @@ namespace IntegrationArcMap.WebClient
 
     public static SpatialReferences Load()
     {
-      if (File.Exists(FileName))
+      Assembly thisAssembly = Assembly.GetExecutingAssembly();
+      const string manualPath = @"IntegrationArcMap.Doc.GSSpatialReferences.xml";
+      Stream manualStream = thisAssembly.GetManifestResourceStream(manualPath);
+
+      if (manualStream != null)
       {
-        FileStream streamFile = File.OpenRead(FileName);
-        //var streamFile = new FileStream(FileName, FileMode.Open);
-        _spatialReferences = (SpatialReferences) XmlSpatialReferences.Deserialize(streamFile);
-        streamFile.Close();
+        _spatialReferences = (SpatialReferences) XmlSpatialReferences.Deserialize(manualStream);
+        manualStream.Close();
       }
 
       return _spatialReferences;

@@ -161,17 +161,6 @@ namespace IntegrationArcMap.Layers
       get { return GeometryDef.SpatialReference; }
     }
 
-    public string EpsgCode
-    {
-      get
-      {
-//        int factoryCode = SpatialReference.FactoryCode;
-        string epsgCode = ArcUtils.EpsgCode;
-        return epsgCode;
-//        return (factoryCode == 0) ? epsgCode : string.Format("EPSG:{0}", factoryCode);
-      }
-    }
-
     public static IList<IFeature> EditFeatures
     {
       get { return _editFeatures ?? (_editFeatures = new List<IFeature>()); }

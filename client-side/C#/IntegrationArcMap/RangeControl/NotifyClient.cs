@@ -1,4 +1,4 @@
-﻿namespace RangeSelector
+﻿namespace RangeControl
 {
   /// <RangeSelectorControl_Resize>
   /// The below is the small Notification class that can be used by the client

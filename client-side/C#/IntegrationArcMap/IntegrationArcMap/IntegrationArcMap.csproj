@@ -303,12 +303,14 @@
     <AddInContent Include="Images\GsRecordingHistory.png" />
     <AddInContent Include="Images\GsFocus.png" />
     <AddInContent Include="Images\GsHelp.png" />
+    <EmbeddedResource Include="Doc\GSClientAPIKey.xml" />
+    <EmbeddedResource Include="Doc\GSSpatialReferences.xml" />
     <Content Include="Images\GsOpen.png" />
     <AddInContent Include="Images\GsSelectionCopySelectedFeatures.png" />
     <None Include="Images\LeftArrow.png" />
     <None Include="Images\RightArrow.png" />
     <Content Include="Release notes.txt" />
-    <EmbeddedResource Include="User Manual ArcMap Add-In.pdf" />
+    <EmbeddedResource Include="Doc\User Manual ArcMap Add-In.pdf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RangeControl\RangeControl.csproj">

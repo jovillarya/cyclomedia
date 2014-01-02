@@ -4,8 +4,6 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Xml.Serialization;
 using IntegrationArcMap.Utilities;
-using ESRI.ArcGIS.Carto;
-using ESRI.ArcGIS.Geometry;
 using Path = System.IO.Path;
 
 namespace IntegrationArcMap.WebClient
@@ -13,15 +11,7 @@ namespace IntegrationArcMap.WebClient
   public class ClientLogin
   {
     private const string CheckWord = "1234567890!";
-    private const int TestSize = 10;
     private const int HashSize = 32; // SHA256
-
-    private const string WfsRequest =
-      "<wfs:GetFeature service=\"WFS\" version=\"1.1.0\" resultType=\"results\" outputFormat=\"text/xml; subtype=gml/3.1.1\" xmlns:wfs=\"http://www.opengis.net/wfs\">" +
-      "<wfs:Query typeName=\"atlas:Recording\" srsName=\"{0}\" xmlns:atlas=\"http://www.cyclomedia.com/atlas\"><ogc:Filter xmlns:ogc=\"http://www.opengis.net/ogc\">" +
-      "<ogc:And><ogc:BBOX><gml:Envelope srsName=\"{0}\" xmlns:gml=\"http://www.opengis.net/gml\"><gml:lowerCorner>{1} {2}</gml:lowerCorner>" +
-      "<gml:upperCorner>{3} {4}</gml:upperCorner></gml:Envelope></ogc:BBOX><ogc:PropertyIsNull><ogc:PropertyName>expiredAt</ogc:PropertyName></ogc:PropertyIsNull>" +
-      "</ogc:And></ogc:Filter></wfs:Query></wfs:GetFeature>";
 
     private static readonly XmlSerializer XmlClientLogin;
     private static readonly byte[] Salt;
