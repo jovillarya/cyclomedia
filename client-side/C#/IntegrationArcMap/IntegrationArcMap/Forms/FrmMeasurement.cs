@@ -984,13 +984,13 @@ namespace IntegrationArcMap.Forms
     {
       if (_opened)
       {
-        DoClosePoint(false);
-
         if (_commandItem != null)
         {
           ArcMap.Application.CurrentTool = _commandItem;
           _commandItem = null;
         }
+
+        DoClosePoint(false);
       }
       else
       {

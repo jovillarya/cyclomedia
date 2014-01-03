@@ -13,10 +13,7 @@ using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.SystemUI;
 using GlobeSpotterAPI;
-using IntegrationArcMap.WebClient;
 using stdole;
-
-using Point = ESRI.ArcGIS.Geometry.Point;
 using APIMeasurementPoint = GlobeSpotterAPI.MeasurementPoint;
 
 namespace IntegrationArcMap.Symbols

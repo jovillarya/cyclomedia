@@ -137,6 +137,7 @@
     <Compile Include="Forms\FrmHelp.Designer.cs">
       <DependentUpon>FrmHelp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utilities\GsColor.cs" />
     <Compile Include="WebClient\SpatialReference.cs" />
     <Compile Include="WebClient\SpatialReferences.cs" />
     <Compile Include="Elements\GlobespotterFrameClass.cs" />

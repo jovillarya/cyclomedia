@@ -275,9 +275,11 @@ namespace IntegrationArcMap.Forms
         _recentLayers.Add((int) year);
       }
 
+      UpdateCol();
+
       if (ApiReady)
       {
-        UpdateCol();
+        //UpdateCol();
       }
       else
       {
@@ -312,8 +314,10 @@ namespace IntegrationArcMap.Forms
             if (dateTime != null)
             {
               var dateTime2 = (DateTime) dateTime;
-              string dateString = dateTime2.ToString("yyyy-MM-dd");
-              Color color = _api.getRecordingLocationColorFromDate(dateString);
+              //string dateString = dateTime2.ToString("yyyy-MM-dd");
+              //Color color = _api.getRecordingLocationColorFromDate(dateString);
+              int year = dateTime2.Year;
+              Color color = GsColor.GetColor(year);
               _layer.UpdateColor(color, colorYear);
             }
 
@@ -1665,14 +1669,15 @@ namespace IntegrationArcMap.Forms
 
     private Color GetCol(int year)
     {
-      Color result = Color.Transparent;
+      Color result = GsColor.GetColor(year);
+//      Color result = Color.Transparent;
 
-      if (_api != null)
-      {
-        var dateTime = new DateTime(year, 1, 1);
-        string dateString = dateTime.ToString("yyyy-MM-dd");
-        result = _api.getRecordingLocationColorFromDate(dateString);
-      }
+//      if (_api != null)
+//      {
+//        var dateTime = new DateTime(year, 1, 1);
+//        string dateString = dateTime.ToString("yyyy-MM-dd");
+//        result = _api.getRecordingLocationColorFromDate(dateString);
+//      }
 
       return result;
     }
