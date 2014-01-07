@@ -61,12 +61,20 @@ namespace IntegrationArcMap.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized string similar to Initialize API failed.
         /// </summary>
-        internal static System.Drawing.Bitmap GsCheck {
+        internal static string FrmGlobespotter_OnAPIFailed_Initialize_API_failed {
             get {
-                object obj = ResourceManager.GetObject("GsCheck", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetString("FrmGlobespotter_OnAPIFailed_Initialize_API_failed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Globespotter integration Addin Error..
+        /// </summary>
+        internal static string GsCycloMediaOptions_OnClick_Globespotter_integration_Addin_Error_ {
+            get {
+                return ResourceManager.GetString("GsCycloMediaOptions_OnClick_Globespotter_integration_Addin_Error_", resourceCulture);
             }
         }
         
@@ -87,6 +95,24 @@ namespace IntegrationArcMap.Properties {
             get {
                 object obj = ResourceManager.GetObject("LeftArrow", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password must be at least 8 characters..
+        /// </summary>
+        internal static string Login_CreateAes_Password_must_be_at_least_8_characters_ {
+            get {
+                return ResourceManager.GetString("Login_CreateAes_Password_must_be_at_least_8_characters_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Salt must be at least 8 bytes..
+        /// </summary>
+        internal static string Login_CreateAes_Salt_must_be_at_least_8_bytes_ {
+            get {
+                return ResourceManager.GetString("Login_CreateAes_Salt_must_be_at_least_8_bytes_", resourceCulture);
             }
         }
         

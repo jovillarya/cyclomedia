@@ -1,14 +1,32 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Xml.Linq;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Model;
 using IntegrationArcMap.Model.Atlas;
 using IntegrationArcMap.Utilities;
-using IntegrationArcMap.WebClient;
 using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Display;
@@ -19,6 +37,11 @@ namespace IntegrationArcMap.Layers
 {
   public class HistoricalLayer : CycloMediaLayer
   {
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private static Color _color;
     private static double _minimumScale;
     private static SortedDictionary<int, Color> _yearToColor;
@@ -27,6 +50,13 @@ namespace IntegrationArcMap.Layers
     public override string Name { get { return "Historical Recordings"; } }
     public override string FcName { get { return "FCHistoricalRecordings"; } }
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     private static SortedDictionary<int, Color> YearToColor
     {
       get { return _yearToColor ?? (_yearToColor = new SortedDictionary<int, Color>()); }
@@ -71,6 +101,13 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    #endregion
+
+    #region functions (protected)
+
+    // =========================================================================
+    // Functions (Protected)
+    // =========================================================================
     protected override IMappedFeature CreateMappedFeature(XElement mappedFeatureElement)
     {
       return new Recording(mappedFeatureElement);
@@ -106,12 +143,6 @@ namespace IntegrationArcMap.Layers
       }
 
       return result;
-    }
-
-    private bool YearInsideRange(int year)
-    {
-      ClientConfig clientConfig = ClientConfig.Instance;
-      return (year >= clientConfig.YearFrom) && (year < clientConfig.YearTo);
     }
 
     protected override void PostEntryStep()
@@ -176,6 +207,7 @@ namespace IntegrationArcMap.Layers
           foreach (var value in added)
           {
             // ReSharper disable CSharpWarnings::CS0612
+            // ReSharper disable CSharpWarnings::CS0618
 
             var symbol = new SimpleMarkerSymbol
               {
@@ -183,6 +215,7 @@ namespace IntegrationArcMap.Layers
                 Size = SizeLayer
               };
 
+            // ReSharper restore CSharpWarnings::CS0618
             // ReSharper restore CSharpWarnings::CS0612
             var markerSymbol = symbol as ISymbol;
             string classValue = string.Format("{0}, {1}", value, false);
@@ -274,6 +307,26 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    #endregion
+
+    #region functions (private)
+
+    // =========================================================================
+    // Functions (Private)
+    // =========================================================================
+    private bool YearInsideRange(int year)
+    {
+      Config config = Config.Instance;
+      return (year >= config.YearFrom) && (year < config.YearTo);
+    }
+
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     static HistoricalLayer()
     {
       _color = Color.Transparent;
@@ -285,5 +338,7 @@ namespace IntegrationArcMap.Layers
     {
       // empty
     }
+
+    #endregion
   }
 }

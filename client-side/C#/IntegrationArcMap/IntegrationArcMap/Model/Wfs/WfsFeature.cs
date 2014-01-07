@@ -1,4 +1,22 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System.Collections.Generic;
 using System.Xml.Linq;
 using IntegrationArcMap.Model.Capabilities;
 using IntegrationArcMap.Model.Shape;
@@ -9,10 +27,15 @@ using Point = IntegrationArcMap.Model.Shape.Point;
 namespace IntegrationArcMap.Model.Wfs
 {
   /// <summary>
-  /// 
+  /// This class contains the wfs feature information
   /// </summary>
   public class WfsFeature : IMappedFeature
   {
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private Dictionary<string, esriFieldType> _fields;
     private esriGeometryType _esriGeometryType;
     private string _shapeFieldName;
@@ -20,6 +43,13 @@ namespace IntegrationArcMap.Model.Wfs
     private Dictionary<string, string> _values; 
     private readonly FeatureType _featureType;
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     public Dictionary<string, esriFieldType> Fields
     {
       get { return _fields ?? (_fields = new Dictionary<string, esriFieldType>()); }
@@ -68,6 +98,13 @@ namespace IntegrationArcMap.Model.Wfs
     public string Id { get; private set; }
     public IShape Shape { get; private set; }
 
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     /// <summary>
     /// Default empty constructor
     /// </summary>
@@ -78,20 +115,27 @@ namespace IntegrationArcMap.Model.Wfs
     }
 
     /// <summary>
-    /// 
+    /// Constructor with xml parsing
     /// </summary>
-    /// <param name="mappedFeatureElement"></param>
-    /// <param name="featureType"></param>
+    /// <param name="mappedFeatureElement">xml</param>
+    /// <param name="featureType">featureType</param>
     public WfsFeature(XElement mappedFeatureElement, FeatureType featureType)
     {
       _featureType = featureType;
       Update(mappedFeatureElement);
     }
 
+    #endregion
+
+    #region functions
+
+    // =========================================================================
+    // Functions
+    // =========================================================================
     /// <summary>
-    /// 
+    /// xml parsing
     /// </summary>
-    /// <param name="mappedFeatureElement"></param>
+    /// <param name="mappedFeatureElement">xml</param>
     public void Update(XElement mappedFeatureElement)
     {
       Id = string.Empty;
@@ -166,6 +210,11 @@ namespace IntegrationArcMap.Model.Wfs
       }
     }
 
+    /// <summary>
+    /// This function returns the value of a field.
+    /// </summary>
+    /// <param name="name">The name of the field</param>
+    /// <returns>The value</returns>
     public object FieldToItem(string name)
     {
       object result = null;
@@ -177,5 +226,7 @@ namespace IntegrationArcMap.Model.Wfs
 
       return result;
     }
+
+    #endregion
   }
 }

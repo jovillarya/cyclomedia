@@ -1,4 +1,22 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Drawing;
 using System.Globalization;
 using System.IO;
@@ -11,12 +29,18 @@ namespace IntegrationArcMap.Forms
 {
   public partial class FrmHelp : Form
   {
+    #region members
+
     // =========================================================================
     // Members
     // =========================================================================
     private static FrmHelp _frmHelp;
     private PDFWrapper _pdfDoc;
     private readonly CultureInfo _ci;
+
+    #endregion
+
+    #region constructor
 
     // =========================================================================
     // Constructor
@@ -29,6 +53,10 @@ namespace IntegrationArcMap.Forms
       txtNumber.Font = (Font) font.Clone();
     }
 
+    #endregion
+
+    #region properties
+
     // =========================================================================
     // Properties
     // =========================================================================
@@ -36,6 +64,10 @@ namespace IntegrationArcMap.Forms
     {
       get { return _frmHelp != null; }
     }
+
+    #endregion
+
+    #region functions
 
     // =========================================================================
     // Functions
@@ -97,6 +129,10 @@ namespace IntegrationArcMap.Forms
       }
     }
 
+    #endregion
+
+    #region event handlers
+
     // =========================================================================
     // Eventhandlers
     // =========================================================================
@@ -140,5 +176,7 @@ namespace IntegrationArcMap.Forms
         LoadPage();
       }
     }
+
+    #endregion
   }
 }

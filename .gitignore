@@ -1,11 +1,11 @@
-/client-side/C#/IntegrationArcMap/GsInstaller/bin
-/client-side/C#/IntegrationArcMap/GsInstaller/obj
-/client-side/C#/IntegrationArcMap/GsInstaller/GsInstaller.user
 /client-side/C#/IntegrationArcMap/IntegrationArcMap/bin
-/client-side/C#/IntegrationArcMap/IntegrationArcMap/Doc/GSClientAPIKey.xml
+/client-side/C#/IntegrationArcMap/IntegrationArcMap/Doc/APIKey.xml
 /client-side/C#/IntegrationArcMap/IntegrationArcMap/obj
 /client-side/C#/IntegrationArcMap/IntegrationArcMap/IntegrationArcMap.csproj.user
 /client-side/C#/IntegrationArcMap/IntegrationArcMap.suo
+/client-side/C#/IntegrationArcMap/IntegrationInstaller/bin
+/client-side/C#/IntegrationArcMap/IntegrationInstaller/obj
+/client-side/C#/IntegrationArcMap/IntegrationInstaller/IntegrationInstaller.user
 /client-side/C#/IntegrationArcMap/RangeControl/bin
 /client-side/C#/IntegrationArcMap/RangeControl/obj
 /client-side/C#/IntegrationArcMap/RangeControl/RangeControl.user

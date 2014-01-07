@@ -1,4 +1,22 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Drawing2D;
@@ -12,7 +30,7 @@ using ESRI.ArcGIS.Editor;
 using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.esriSystem;
-using IntegrationArcMap.WebClient;
+using IntegrationArcMap.Client;
 using Path = System.IO.Path;
 using Point = ESRI.ArcGIS.Geometry.Point;
 
@@ -20,12 +38,24 @@ namespace IntegrationArcMap.Utilities
 {
   class ArcUtils
   {
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private static IActiveView _activeView;
     private static IMxDocument _mxDocument;
     private static IMap _map;
     private static IEditor3 _editor;
     private static IEditTool _editTool;
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     public static string FileDir
     {
       get
@@ -141,6 +171,13 @@ namespace IntegrationArcMap.Utilities
       get { return Editor as IEditEvents5_Event; }
     }
 
+    #endregion
+
+    #region functions (public)
+
+    // =========================================================================
+    // Functions (Public)
+    // =========================================================================
     public static void SetZOffset()
     {
       var sketch = Editor as IEditSketch3;
@@ -260,7 +297,9 @@ namespace IntegrationArcMap.Utilities
           if (rgbColor != null)
           {
             // ReSharper disable CSharpWarnings::CS0612
+            // ReSharper disable CSharpWarnings::CS0618
             result = Converter.FromRGBColor(rgbColor);
+            // ReSharper restore CSharpWarnings::CS0618
             // ReSharper restore CSharpWarnings::CS0612
           }
         }
@@ -396,10 +435,29 @@ namespace IntegrationArcMap.Utilities
       }
     }
 
+    public static IPoint GsToMapPoint(double x, double y, double z)
+    {
+      Config config = Config.Instance;
+      SpatialReference spatRel = config.SpatialReference;
+      ISpatialReference gsSpatialReference = (spatRel == null) ? SpatialReference : spatRel.SpatialRef;
+      IPoint point = new Point { X = x, Y = y, Z = z, SpatialReference = gsSpatialReference };
+      point.Project(SpatialReference);
+      return point;
+    }
+
+    #endregion
+
+    #region functions (private)
+
+    // =========================================================================
+    // Functions (Private)
+    // =========================================================================
     private static void SetColorToSymbol(ISymbol symbol, Color color)
     {
       // ReSharper disable CSharpWarnings::CS0612
+      // ReSharper disable CSharpWarnings::CS0618
       IRgbColor rgbColor = Converter.ToRGBColor(color);
+      // ReSharper restore CSharpWarnings::CS0618
       // ReSharper restore CSharpWarnings::CS0612
 
       if (symbol is ISimpleFillSymbol)
@@ -445,6 +503,13 @@ namespace IntegrationArcMap.Utilities
       return _mxDocument;
     }
 
+    #endregion
+
+    #region event handlers
+
+    // =========================================================================
+    // Event handlers
+    // =========================================================================
     private static void OnActiveViewChanged()
     {
       try
@@ -466,14 +531,6 @@ namespace IntegrationArcMap.Utilities
       }
     }
 
-    public static IPoint GsToMapPoint(double x, double y, double z)
-    {
-      ClientConfig config = ClientConfig.Instance;
-      SpatialReference spatRel = config.SpatialReference;
-      ISpatialReference gsSpatialReference = (spatRel == null) ? SpatialReference : spatRel.SpatialRef;
-      IPoint point = new Point { X = x, Y = y, Z = z, SpatialReference = gsSpatialReference };
-      point.Project(SpatialReference);
-      return point;
-    }
+    #endregion
   }
 }

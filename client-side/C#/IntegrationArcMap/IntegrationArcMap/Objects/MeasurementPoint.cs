@@ -1,29 +1,63 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Globalization;
-using IntegrationArcMap.AddIns;
-using IntegrationArcMap.Utilities;
+using ESRI.ArcGIS.ADF.Connection.Local;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Display;
-using ESRI.ArcGIS.ADF.Connection.Local;
 using ESRI.ArcGIS.Editor;
 using ESRI.ArcGIS.Framework;
 using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.SystemUI;
+using IntegrationArcMap.AddIns;
+using IntegrationArcMap.Utilities;
 using GlobeSpotterAPI;
 using stdole;
-using APIMeasurementPoint = GlobeSpotterAPI.MeasurementPoint;
+using MeasurementPointS = GlobeSpotterAPI.MeasurementPoint;
 
-namespace IntegrationArcMap.Symbols
+namespace IntegrationArcMap.Objects
 {
   class MeasurementPoint: IDisposable
   {
+    #region constants
+
+    // =========================================================================
+    // Constants
+    // =========================================================================
     private const double PointSize = 5.0;
     private const double FontSize = 8;
 
+    #endregion
+
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
+    private static readonly Dictionary<string, Color> ObsColor;
+
     private readonly Measurement _measurement;
+    private readonly Dictionary<string, double[]> _observations;
+
     private IEnvelope _envelope;
     private IEnvelope _oldEnvelope;
     private IPoint _point;
@@ -31,9 +65,14 @@ namespace IntegrationArcMap.Symbols
     private int _intId;
     private bool _added;
     private bool _open;
-    private readonly Dictionary<string, double[]> _observations;
-    private static readonly Dictionary<string, Color> ObsColor; 
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     public int PointId { get; private set; }
 
     public int M
@@ -56,6 +95,33 @@ namespace IntegrationArcMap.Symbols
       get { return (_point == null); }
     }
 
+    public bool IsFirstNumber
+    {
+      get { return _intId == 1; }
+    }
+
+    public bool IsLastNumber
+    {
+      get { return ((_measurement == null) || (_intId == _measurement.Count)); }
+    }
+
+    public MeasurementPoint PreviousPoint
+    {
+      get { return ((_measurement != null) && (!IsFirstNumber)) ? _measurement.GetPointByNr(_intId - 2) : null; }
+    }
+
+    public MeasurementPoint NextPoint
+    {
+      get { return ((_measurement != null) && (!IsLastNumber)) ? _measurement.GetPointByNr(_intId) : null; }
+    }
+
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     static MeasurementPoint()
     {
       ObsColor = new Dictionary<string, Color>();
@@ -75,6 +141,13 @@ namespace IntegrationArcMap.Symbols
       _observations = new Dictionary<string, double[]>();
     }
 
+    #endregion
+
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
     public static void UpdateObsColor(string imageId, Color color)
     {
       if (ObsColor.ContainsKey(imageId))
@@ -87,25 +160,32 @@ namespace IntegrationArcMap.Symbols
       }
     }
 
+    public static void RemoveObsColor(string imageId)
+    {
+      if (ObsColor.ContainsKey(imageId))
+      {
+        ObsColor.Remove(imageId);
+      }
+    }
+
+    #endregion
+
+    #region functions (public)
+
+    // =========================================================================
+    // Functions (Public)
+    // =========================================================================
     public void UpdateObservation(string imageId, double x, double y, double z)
     {
       IPoint point = ArcUtils.GsToMapPoint(x, y, z);
 
       if (_observations.ContainsKey(imageId))
       {
-        _observations[imageId] = new[] {point.X, point.Y, point.Z};
+        _observations[imageId] = new[] { point.X, point.Y, point.Z };
       }
       else
       {
-        _observations.Add(imageId, new[] {point.X, point.Y, point.Z});
-      }
-    }
-
-    public static void RemoveObsColor(string imageId)
-    {
-      if (ObsColor.ContainsKey(imageId))
-      {
-        ObsColor.Remove(imageId);
+        _observations.Add(imageId, new[] { point.X, point.Y, point.Z });
       }
     }
 
@@ -176,31 +256,11 @@ namespace IntegrationArcMap.Symbols
       _intId = intId;
     }
 
-    public bool IsFirstNumber
-    {
-      get { return _intId == 1; }
-    }
-
-    public bool IsLastNumber
-    {
-      get { return ((_measurement == null) || (_intId == _measurement.Count)); }
-    }
-
-    public MeasurementPoint PreviousPoint
-    {
-      get { return ((_measurement != null) && (!IsFirstNumber)) ? _measurement.GetPointByNr(_intId - 2) : null; }
-    }
-
-    public MeasurementPoint NextPoint
-    {
-      get { return ((_measurement != null) && (!IsLastNumber)) ? _measurement.GetPointByNr(_intId) : null; }
-    }
-
     public void UpdatePoint(PointMeasurementData measurementData, int index)
     {
       _index = index;
       bool notCreated = NotCreated;
-      APIMeasurementPoint measurementPoint = measurementData.measurementPoint;
+      MeasurementPointS measurementPoint = measurementData.measurementPoint;
       double x = measurementPoint.x;
       double y = measurementPoint.y;
       double z = measurementPoint.z;
@@ -397,13 +457,6 @@ namespace IntegrationArcMap.Symbols
       Update();
     }
 
-    private bool InsideDistance(IPoint point, double dinstance, bool includeZ)
-    {
-      return ((_point != null) && (point != null)) &&
-             ((Math.Abs(_point.X - point.X) < dinstance) && (Math.Abs(_point.Y - point.Y) < dinstance) &&
-              ((!includeZ) || (Math.Abs(_point.Z - point.Z) < dinstance)));
-    }
-
     public bool IsSame(IPoint point)
     {
       return IsSame(point, true);
@@ -413,6 +466,20 @@ namespace IntegrationArcMap.Symbols
     {
       const double distance = 0.01;
       return InsideDistance(point, distance, includeZ);
+    }
+
+    #endregion
+
+    #region functions (private)
+
+    // =========================================================================
+    // Functions (Private)
+    // =========================================================================
+    private bool InsideDistance(IPoint point, double dinstance, bool includeZ)
+    {
+      return ((_point != null) && (point != null)) &&
+             ((Math.Abs(_point.X - point.X) < dinstance) && (Math.Abs(_point.Y - point.Y) < dinstance) &&
+              ((!includeZ) || (Math.Abs(_point.Z - point.Z) < dinstance)));
     }
 
     private void Update()
@@ -436,6 +503,13 @@ namespace IntegrationArcMap.Symbols
       }
     }
 
+    #endregion
+
+    #region event handlers
+
+    // =========================================================================
+    // Event handlers
+    // =========================================================================
     private void AvEventsAfterDraw(IDisplay display, esriViewDrawPhase phase)
     {
       try
@@ -525,5 +599,7 @@ namespace IntegrationArcMap.Symbols
         Trace.WriteLine(ex.Message, "MeasurementPoint.avEventsAfterDraw");
       }
     }
+
+    #endregion
   }
 }

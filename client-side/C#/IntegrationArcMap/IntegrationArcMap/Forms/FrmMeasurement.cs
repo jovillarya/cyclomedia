@@ -1,23 +1,43 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
 using IntegrationArcMap.AddIns;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Layers;
-using IntegrationArcMap.Symbols;
+using IntegrationArcMap.Objects;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Framework;
 using GlobeSpotterAPI;
-using IntegrationArcMap.WebClient;
 using MeasurementPoint = GlobeSpotterAPI.MeasurementPoint;
-using MeasurementPointS = IntegrationArcMap.Symbols.MeasurementPoint;
+using MeasurementPointS = IntegrationArcMap.Objects.MeasurementPoint;
 
 namespace IntegrationArcMap.Forms
 {
   public partial class FrmMeasurement : UserControl
   {
+    #region members
+
     // =========================================================================
     // Members
     // =========================================================================
@@ -28,7 +48,7 @@ namespace IntegrationArcMap.Forms
     private readonly List<Bitmap> _idBitmap;
     private readonly Dictionary<string, Color> _imageIdColor;
     private readonly CultureInfo _ci;
-    private readonly ClientConfig _config;
+    private readonly Config _config;
 
     private MeasurementPoint _measurementPoint;
     private MeasurementPointS _measurementPointS;
@@ -39,6 +59,13 @@ namespace IntegrationArcMap.Forms
     private int _pointId;
     private int? _lastPointIdUpd;
 
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     public FrmMeasurement()
     {
       InitializeComponent();
@@ -54,7 +81,7 @@ namespace IntegrationArcMap.Forms
       _commandItem = null;
       _measurementPointS = null;
       _lastPointIdUpd = null;
-      _config = ClientConfig.Instance;
+      _config = Config.Instance;
 
       Font font = SystemFonts.MenuFont;
       lvObservations.Font = (Font) font.Clone();
@@ -64,6 +91,10 @@ namespace IntegrationArcMap.Forms
       txtPositionStd.Font = (Font) font.Clone();
       txtNumber.Font = (Font) font.Clone();
     }
+
+    #endregion
+
+    #region properties
 
     // =========================================================================
     // Properties
@@ -82,6 +113,10 @@ namespace IntegrationArcMap.Forms
     {
       get { return Instance.Handle; }
     }
+
+    #endregion
+
+    #region functions (static)
 
     // =========================================================================
     // Static Functions
@@ -186,6 +221,10 @@ namespace IntegrationArcMap.Forms
     {
       return Window.IsVisible();
     }
+
+    #endregion
+
+    #region functions (private)
 
     // =========================================================================
     // Private Functions
@@ -827,6 +866,10 @@ namespace IntegrationArcMap.Forms
       }
     }
 
+    #endregion
+
+    #region event handlers
+
     // =========================================================================
     // Event handlers
     // =========================================================================
@@ -925,6 +968,11 @@ namespace IntegrationArcMap.Forms
       }
     }
 
+    private void lvObservations_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      btnShow.Enabled = (lvObservations.SelectedIndices.Count >= 1);
+    }
+
     private void pctImages_MouseClick(object sender, MouseEventArgs e)
     {
       int nrImages = _idBitmap.Count;
@@ -951,11 +999,6 @@ namespace IntegrationArcMap.Forms
     private void btnShow_Click(object sender, EventArgs e)
     {
       OpenSelectedImage();
-    }
-
-    private void lvObservations_SelectedIndexChanged(object sender, EventArgs e)
-    {
-      btnShow.Enabled = (lvObservations.SelectedIndices.Count >= 1);
     }
 
     private void pctImages_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -1016,5 +1059,7 @@ namespace IntegrationArcMap.Forms
     {
       OpenNewPoint(_measurementPointS.NextPoint);
     }
+
+    #endregion
   }
 }

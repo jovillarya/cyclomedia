@@ -1,4 +1,22 @@
-﻿using System.Xml.Linq;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System.Xml.Linq;
 
 namespace IntegrationArcMap.Model
 {
@@ -8,6 +26,11 @@ namespace IntegrationArcMap.Model
   /// </summary>
   public class Namespaces
   {
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     /// <summary>
     /// The Web Feature Service namespace
     /// </summary>
@@ -37,5 +60,7 @@ namespace IntegrationArcMap.Model
     /// The CycloMedia namespace
     /// </summary>
     public static XNamespace CycloMediaNs = XNamespace.Get("http://atlas.cyclomedia.com");
+
+    #endregion
   }
 }

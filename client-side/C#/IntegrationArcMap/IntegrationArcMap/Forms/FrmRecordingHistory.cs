@@ -1,11 +1,29 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Utilities;
-using IntegrationArcMap.WebClient;
 
 namespace IntegrationArcMap.Forms
 {
@@ -13,6 +31,8 @@ namespace IntegrationArcMap.Forms
 
   public sealed partial class FrmRecordingHistory : Form
   {
+    #region members
+
     // =========================================================================
     // Members
     // =========================================================================
@@ -22,8 +42,15 @@ namespace IntegrationArcMap.Forms
     private static SortedDictionary<int, int> _yearMonth;
 
     private readonly CultureInfo _ci;
-    private readonly ClientConfig _config;    
+    private readonly Config _config;
 
+    #endregion
+
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (static)
+    // =========================================================================
     public static void OnChangeDateRange(SortedDictionary<int, int> yearMonth)
     {
       _yearMonth = yearMonth;
@@ -63,6 +90,13 @@ namespace IntegrationArcMap.Forms
       get { return _frmRecordingHistory != null; }
     }
 
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     static FrmRecordingHistory()
     {
       _yearMonth = null;
@@ -71,7 +105,7 @@ namespace IntegrationArcMap.Forms
     public FrmRecordingHistory()
     {
       InitializeComponent();
-      _config = ClientConfig.Instance;
+      _config = Config.Instance;
       _ci = CultureInfo.InvariantCulture;
       Font font = SystemFonts.MenuFont;
       Font = (Font) font.Clone();
@@ -79,6 +113,13 @@ namespace IntegrationArcMap.Forms
       ChangeDateRange();
     }
 
+    #endregion
+
+    #region event handlers
+
+    // =========================================================================
+    // Event handlers
+    // =========================================================================
     private void rsRecordingSelector_MouseUp(object sender, MouseEventArgs e)
     {
       string yearFrom, yearTo;
@@ -111,6 +152,13 @@ namespace IntegrationArcMap.Forms
       ChangeDateRange();
     }
 
+    #endregion
+
+    #region functions (private)
+
+    // =========================================================================
+    // Functions (private)
+    // =========================================================================
     private void ChangeDateRange()
     {
       int yFrom = _config.YearFrom;
@@ -191,5 +239,7 @@ namespace IntegrationArcMap.Forms
                ? null
                : (int?) _yearMonth.ElementAt(start ? 0 : (_yearMonth.Count - 1)).Key;
     }
+
+    #endregion
   }
 }

@@ -1,10 +1,33 @@
-﻿using System.Drawing;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System.Drawing;
 using System.Drawing.Imaging;
 
 namespace IntegrationArcMap.Utilities
 {
   public class MakeTransparant
   {
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
     public static Bitmap ApplySrc(Bitmap input)
     {
       var newBitmap = (Bitmap) input.Clone();
@@ -53,6 +76,13 @@ namespace IntegrationArcMap.Utilities
       return newBitmap;
     }
 
+    #endregion
+
+    #region functions (private static)
+
+    // =========================================================================
+    // Functions (Private Static)
+    // =========================================================================
     private static bool IsTransparant(Color pixel)
     {
       return ((pixel.A <= 35) && (pixel.R >= 93) && (pixel.R <= 163) && (pixel.B >= 93) && (pixel.B <= 163) &&
@@ -73,8 +103,8 @@ namespace IntegrationArcMap.Utilities
 
     internal static BitmapData LockImage(Bitmap image)
     {
-      return (image == null) ? null : image.LockBits(new Rectangle
-                                                       (0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, image.PixelFormat);
+      return (image == null) ? null : image.LockBits
+        (new Rectangle(0, 0, image.Width, image.Height), ImageLockMode.ReadWrite, image.PixelFormat);
     }
 
     internal static void UnlockImage(Bitmap image, BitmapData imageData)
@@ -146,5 +176,7 @@ namespace IntegrationArcMap.Utilities
         }
       }
     }
+
+    #endregion
   }
 }

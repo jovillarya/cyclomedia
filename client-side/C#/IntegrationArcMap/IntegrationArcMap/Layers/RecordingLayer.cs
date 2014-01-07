@@ -1,4 +1,22 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
@@ -17,6 +35,11 @@ namespace IntegrationArcMap.Layers
 {
   public class RecordingLayer : CycloMediaLayer
   {
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private static Color _color;
     private static double _minimumScale;
     private static SortedDictionary<int, Color> _yearToColor;
@@ -25,6 +48,13 @@ namespace IntegrationArcMap.Layers
     public override string Name { get { return "Recent Recordings"; } }
     public override string FcName { get { return "FCRecentRecordings"; } }
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     private static SortedDictionary<int, Color> YearToColor
     {
       get { return _yearToColor ?? (_yearToColor = new SortedDictionary<int, Color>()); }
@@ -68,6 +98,13 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    #endregion
+
+    #region functions (protected)
+
+    // =========================================================================
+    // Functions (Protected)
+    // =========================================================================
     protected override IMappedFeature CreateMappedFeature(XElement mappedFeatureElement)
     {
       return new Recording(mappedFeatureElement);
@@ -244,18 +281,6 @@ namespace IntegrationArcMap.Layers
       }
     }
 
-    static RecordingLayer()
-    {
-      _color = Color.Transparent;
-      _minimumScale = 2000.0;
-    }
-
-    public RecordingLayer(CycloMediaGroupLayer layer)
-      : base(layer)
-    {
-      // empty
-    }
-
     public override DateTime? GetDate()
     {
       DateTime? result = null;
@@ -264,12 +289,12 @@ namespace IntegrationArcMap.Layers
       IEnvelope envelope = activeView.Extent;
 
       ISpatialFilter spatialFilter = new SpatialFilterClass
-        {
-          Geometry = envelope,
-          GeometryField = FeatureClass.ShapeFieldName,
-          SpatialRel = esriSpatialRelEnum.esriSpatialRelContains,
-          SubFields = objectId
-        };
+      {
+        Geometry = envelope,
+        GeometryField = FeatureClass.ShapeFieldName,
+        SpatialRel = esriSpatialRelEnum.esriSpatialRelContains,
+        SubFields = objectId
+      };
 
       var existsResult = FeatureClass.Search(spatialFilter, false);
       IFeature feature = existsResult.NextFeature();
@@ -301,15 +326,15 @@ namespace IntegrationArcMap.Layers
         double xMax = x + searchBox;
         double yMin = y - searchBox;
         double yMax = y + searchBox;
-        IEnvelope envelope = new EnvelopeClass {XMin = xMin, XMax = xMax, YMin = yMin, YMax = yMax};
+        IEnvelope envelope = new EnvelopeClass { XMin = xMin, XMax = xMax, YMin = yMin, YMax = yMax };
 
         ISpatialFilter spatialFilter = new SpatialFilterClass
-          {
-            Geometry = envelope,
-            GeometryField = FeatureClass.ShapeFieldName,
-            SpatialRel = esriSpatialRelEnum.esriSpatialRelContains,
-            SubFields = string.Format("{0},{1}", height, groundLevelOffset)
-          };
+        {
+          Geometry = envelope,
+          GeometryField = FeatureClass.ShapeFieldName,
+          SpatialRel = esriSpatialRelEnum.esriSpatialRelContains,
+          SubFields = string.Format("{0},{1}", height, groundLevelOffset)
+        };
 
         var existsResult = FeatureClass.Search(spatialFilter, false);
         IFeature feature;
@@ -320,17 +345,38 @@ namespace IntegrationArcMap.Layers
         {
           int heightId = existsResult.FindField(height);
           int groundLevelOffsetId = existsResult.FindField(groundLevelOffset);
-          var heightValue = (double) feature.get_Value(heightId);
-          var groundLevelOffsetValue = (double) feature.get_Value(groundLevelOffsetId);
+          var heightValue = (double)feature.get_Value(heightId);
+          var groundLevelOffsetValue = (double)feature.get_Value(groundLevelOffsetId);
           result = result + heightValue - groundLevelOffsetValue;
           count++;
         }
 
-        result = result/Math.Max(count, 1);
+        result = result / Math.Max(count, 1);
         // ReSharper restore UseIndexedProperty
       }
 
       return result;
     }
+
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
+    static RecordingLayer()
+    {
+      _color = Color.Transparent;
+      _minimumScale = 2000.0;
+    }
+
+    public RecordingLayer(CycloMediaGroupLayer layer)
+      : base(layer)
+    {
+      // empty
+    }
+
+    #endregion
   }
 }

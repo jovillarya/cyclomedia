@@ -1,4 +1,22 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -17,14 +35,14 @@ using stdole;
 
 namespace IntegrationArcMap.AddIns
 {
-  public delegate void LoginReloadDelegate();
+  public delegate void OpenDocumentDelegate();
 
   /// <summary>
   /// The extension of the cyclomedia layers
   /// </summary>
   public class GsExtension : Extension
   {
-    public static event LoginReloadDelegate LoginReloadEvent;
+    public static event OpenDocumentDelegate OpenDocumentEvent;
 
     private static GsExtension _extension;
 
@@ -34,6 +52,8 @@ namespace IntegrationArcMap.AddIns
     {
       get { return (State == ExtensionState.Enabled); }
     }
+
+    #region event handlers
 
     protected override void OnStartup()
     {
@@ -95,29 +115,60 @@ namespace IntegrationArcMap.AddIns
       return State;
     }
 
+    #endregion
+
+    #region functions
+
     internal bool InsideScale()
     {
       return (CycloMediaGroupLayer != null) && CycloMediaGroupLayer.InsideScale;
     }
 
-    internal static GsExtension GetExtension()
+    private bool ContainsCycloMediaLayer()
     {
-      if (_extension == null)
+      // ReSharper disable UseIndexedProperty
+      bool result = false;
+      IMap map = ArcUtils.Map;
+      var layers = map.get_Layers();
+      ILayer layer;
+
+      while ((layer = layers.Next()) != null)
       {
-        try
+        result = ((CycloMediaGroupLayer == null)
+                    ? (layer.Name == "CycloMedia")
+                    : CycloMediaGroupLayer.IsKnownName(layer.Name)) || result;
+      }
+
+      // ReSharper restore UseIndexedProperty
+      return result;
+    }
+
+    private void CloseCycloMediaLayer(bool closeDocument)
+    {
+      if (CycloMediaGroupLayer != null)
+      {
+        if ((!ContainsCycloMediaLayer()) || closeDocument)
         {
-          // ReSharper disable SuspiciousTypeConversion.Global
-          UID extId = new UIDClass {Value = ThisAddIn.IDs.GsExtension};
-          _extension = ArcMap.Application.FindExtensionByCLSID(extId) as GsExtension;
-          // ReSharper restore SuspiciousTypeConversion.Global
-        }
-        catch (Exception ex)
-        {
-          Trace.WriteLine(ex.Message, "GsExtension.GetExtension");
+          RemoveLayers();
         }
       }
 
-      return _extension;
+      if (closeDocument)
+      {
+        var arcEvents = ArcUtils.ActiveViewEvents;
+
+        if (arcEvents != null)
+        {
+          arcEvents.ItemDeleted -= ItemDeleted;
+          arcEvents.AfterDraw -= Afterdraw;
+        }
+
+        CycloMediaLayer.LayerRemoveEvent -= OnLayerRemoved;
+        GsRecentDataLayer.RemoveFromMenu();
+        GsHistoricalDataLayer.RemoveFromMenu();
+        GsCycloMediaOptions.RemoveFromMenu();
+        GsMeasurementDetail.RemoveFromMenu();
+      }
     }
 
     public void AddLayers()
@@ -181,6 +232,10 @@ namespace IntegrationArcMap.AddIns
       FrmHelp.CloseForm();
     }
 
+    #endregion
+
+    #region other event handlers
+
     private void OpenDocument()
     {
       try
@@ -193,9 +248,9 @@ namespace IntegrationArcMap.AddIns
           arcEvents.AfterDraw += Afterdraw;
         }
 
-        if (LoginReloadEvent != null)
+        if (OpenDocumentEvent != null)
         {
-          LoginReloadEvent();
+          OpenDocumentEvent();
         }
 
         if (ContainsCycloMediaLayer())
@@ -237,53 +292,6 @@ namespace IntegrationArcMap.AddIns
       catch (Exception ex)
       {
         Trace.WriteLine(ex.Message, "GsExtension.ItemDeleted");
-      }
-    }
-
-    private bool ContainsCycloMediaLayer()
-    {
-      // ReSharper disable UseIndexedProperty
-      bool result = false;
-      IMap map = ArcUtils.Map;
-      var layers = map.get_Layers();
-      ILayer layer;
-
-      while ((layer = layers.Next()) != null)
-      {
-        result = ((CycloMediaGroupLayer == null)
-                    ? (layer.Name == "CycloMedia")
-                    : CycloMediaGroupLayer.IsKnownName(layer.Name)) || result;
-      }
-
-      // ReSharper restore UseIndexedProperty
-      return result;
-    }
-
-    private void CloseCycloMediaLayer(bool closeDocument)
-    {
-      if (CycloMediaGroupLayer != null)
-      {
-        if ((!ContainsCycloMediaLayer()) || closeDocument)
-        {
-          RemoveLayers();
-        }
-      }
-
-      if (closeDocument)
-      {
-        var arcEvents = ArcUtils.ActiveViewEvents;
-
-        if (arcEvents != null)
-        {
-          arcEvents.ItemDeleted -= ItemDeleted;
-          arcEvents.AfterDraw -= Afterdraw;
-        }
-
-        CycloMediaLayer.LayerRemoveEvent -= OnLayerRemoved;
-        GsRecentDataLayer.RemoveFromMenu();
-        GsHistoricalDataLayer.RemoveFromMenu();
-        GsCycloMediaOptions.RemoveFromMenu();
-        GsMeasurementDetail.RemoveFromMenu();
       }
     }
 
@@ -419,6 +427,28 @@ namespace IntegrationArcMap.AddIns
       {
         Trace.WriteLine(ex.Message, "GsExtension.OnActiveViewChanged");
       }
+    }
+
+    #endregion
+
+    internal static GsExtension GetExtension()
+    {
+      if (_extension == null)
+      {
+        try
+        {
+          // ReSharper disable SuspiciousTypeConversion.Global
+          UID extId = new UIDClass { Value = ThisAddIn.IDs.GsExtension };
+          _extension = ArcMap.Application.FindExtensionByCLSID(extId) as GsExtension;
+          // ReSharper restore SuspiciousTypeConversion.Global
+        }
+        catch (Exception ex)
+        {
+          Trace.WriteLine(ex.Message, "GsExtension.GetExtension");
+        }
+      }
+
+      return _extension;
     }
   }
 }

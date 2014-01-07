@@ -1,4 +1,22 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using IntegrationArcMap.Utilities;
@@ -13,11 +31,23 @@ namespace IntegrationArcMap.Layers
 {
   public class CycloMediaGroupLayer: IDisposable
   {
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private IList<CycloMediaLayer> _allLayers; 
     private IList<CycloMediaLayer> _currentLayers;
     private IFeatureWorkspace _featureWorkspace;
     private IGroupLayer _groupLayer;
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     public string Name { get { return "CycloMedia"; } }
 
     public IGroupLayer GroupLayer
@@ -59,6 +89,13 @@ namespace IntegrationArcMap.Layers
       get { return Layers.Aggregate(false, (current, layer) => layer.InsideScale || current); }
     }
 
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     public CycloMediaGroupLayer()
     {
       CreateWorkspace();
@@ -71,6 +108,13 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    #endregion
+
+    #region functions (public)
+
+    // =========================================================================
+    // Functions (public)
+    // =========================================================================
     public CycloMediaLayer GetLayer(ILayer layer)
     {
       return Layers.Aggregate<CycloMediaLayer, CycloMediaLayer>(null,
@@ -114,35 +158,7 @@ namespace IntegrationArcMap.Layers
         }
       }
     }
-/*
-    public void RemoveRecordingLayers()
-    {
-      int i = 0;
 
-      while (Layers.Count != i)
-      {
-        CycloMediaLayer layer = Layers[i];
-
-        if (layer is WfsLayer)
-        {
-          i++;
-        }
-        else
-        {
-          Layers.Remove(layer);
-          layer.Dispose();
-        }
-      }
-
-      IActiveView activeView = ArcUtils.ActiveView;
-
-      if (activeView != null)
-      {
-        activeView.ContentsChanged();
-        activeView.Refresh();
-      }
-    }
-*/
     public bool IsKnownName(string name)
     {
       return Layers.Aggregate((name == Name), (current, layer) => (layer.Name == name) || current);
@@ -190,6 +206,48 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    public string GetFeatureFromPoint(int x, int y, out CycloMediaLayer layer)
+    {
+      string result = string.Empty;
+      layer = null;
+
+      foreach (var layert in Layers)
+      {
+        if (string.IsNullOrEmpty(result))
+        {
+          if ((layert.IsVisible) && (!(layert is WfsLayer)))
+          {
+            layer = layert;
+            result = layer.GetFeatureFromPoint(x, y);
+          }
+        }
+      }
+
+      return result;
+    }
+
+    public List<double> GetLocationInfo(string imageId)
+    {
+      var result = new List<double>();
+
+      foreach (var layer in Layers)
+      {
+        if (result.Count == 0)
+        {
+          result.AddRange(layer.GetLocationInfo(imageId));
+        }
+      }
+
+      return result;
+    }
+
+    #endregion
+
+    #region functions (private)
+
+    // =========================================================================
+    // Functions (private)
+    // =========================================================================
     private void CreateLayers()
     {
       if (GroupLayer == null)
@@ -370,26 +428,13 @@ namespace IntegrationArcMap.Layers
       return result;
     }
 
-    public string GetFeatureFromPoint(int x, int y, out CycloMediaLayer layer)
-    {
-      string result = string.Empty;
-      layer = null;
+    #endregion
 
-      foreach (var layert in Layers)
-      {
-        if (string.IsNullOrEmpty(result))
-        {
-          if ((layert.IsVisible) && (!(layert is WfsLayer)))
-          {
-            layer = layert;
-            result = layer.GetFeatureFromPoint(x, y);
-          }
-        }
-      }
+    #region event handlers
 
-      return result;
-    }
-
+    // =========================================================================
+    // Event handlers
+    // =========================================================================
     private void OnContentChanged()
     {
       CycloMediaLayer changedLayer = Layers.Aggregate<CycloMediaLayer, CycloMediaLayer>
@@ -414,19 +459,6 @@ namespace IntegrationArcMap.Layers
       }
     }
 
-    public List<double> GetLocationInfo(string imageId)
-    {
-      var result = new List<double>();
-
-      foreach (var layer in Layers)
-      {
-        if (result.Count == 0)
-        {
-          result.AddRange(layer.GetLocationInfo(imageId));
-        }
-      }
-
-      return result;
-    }
+    #endregion
   }
 }

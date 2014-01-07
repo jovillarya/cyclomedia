@@ -1,23 +1,45 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Threading;
-using IntegrationArcMap.AddIns;
-using IntegrationArcMap.Layers;
-using IntegrationArcMap.Utilities;
+using ESRI.ArcGIS.ADF.Connection.Local;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Geometry;
-using ESRI.ArcGIS.ADF.Connection.Local;
+using IntegrationArcMap.AddIns;
+using IntegrationArcMap.Client;
+using IntegrationArcMap.Layers;
+using IntegrationArcMap.Utilities;
 using GlobeSpotterAPI;
-using IntegrationArcMap.WebClient;
 using Point = ESRI.ArcGIS.Geometry.Point;
-using Timer = System.Threading.Timer;
 
-namespace IntegrationArcMap.Symbols
+namespace IntegrationArcMap.Objects
 {
   class Arrow: IDisposable
   {
+    #region constants
+
+    // =========================================================================
+    // Constants
+    // =========================================================================
     private const double BorderSizeArrow = 1;
     private const double BorderSizeBlinkingArrow = 2.5;
     private const int ArrowSize = 48;
@@ -27,6 +49,13 @@ namespace IntegrationArcMap.Symbols
     private const int MaxTimeUpdate = 100;
     private const int BlinkTime = 200;
 
+    #endregion
+
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private readonly IPoint _point;
     private readonly Color _color;
 
@@ -38,6 +67,13 @@ namespace IntegrationArcMap.Symbols
     private bool _toUpdateArrow;
     private bool _active;
 
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     private Arrow(RecordingLocation location, double angle, double hFov, Color color)
     {
       _angle = angle;
@@ -49,7 +85,7 @@ namespace IntegrationArcMap.Symbols
 
       double x = location.X;
       double y = location.Y;
-      ClientConfig config = ClientConfig.Instance;
+      Config config = Config.Instance;
       SpatialReference spatRel = config.SpatialReference;
       ISpatialReference spatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
 
@@ -72,6 +108,13 @@ namespace IntegrationArcMap.Symbols
       Redraw();
     }
 
+    #endregion
+
+    #region functions (public)
+
+    // =========================================================================
+    // Functions (Public)
+    // =========================================================================
     public void Dispose()
     {
       var avEvents = ArcUtils.ActiveViewEvents;
@@ -130,11 +173,25 @@ namespace IntegrationArcMap.Symbols
       }
     }
 
+    #endregion
+
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
     public static Arrow Create(RecordingLocation location, double angle, double hFov, Color color)
     {
       return new Arrow(location, angle, hFov, color);
     }
 
+    #endregion
+
+    #region thread functions
+
+    // =========================================================================
+    // Thread functions
+    // =========================================================================
     private void Redraw(object eventInfo)
     {
       IActiveView activeView = ArcUtils.ActiveView;
@@ -171,6 +228,13 @@ namespace IntegrationArcMap.Symbols
       Redraw();
     }
 
+    #endregion
+
+    #region event handlers
+
+    // =========================================================================
+    // event handlers
+    // =========================================================================
     private void OnMeasurementCreated(IGeometry geometry)
     {
       ToForeGround();
@@ -253,6 +317,13 @@ namespace IntegrationArcMap.Symbols
       }
     }
 
+    #endregion
+
+    #region functions (private)
+
+    // =========================================================================
+    // Functions (Private)
+    // =========================================================================
     private void ToForeGround()
     {
       var avEvents = ArcUtils.ActiveViewEvents;
@@ -273,5 +344,7 @@ namespace IntegrationArcMap.Symbols
       _updateTimer = new Timer(redrawTimerCallBack, redrawEvent, MaxTimeUpdate, -1);
       _toUpdateArrow = false;
     }
+
+    #endregion
   }
 }

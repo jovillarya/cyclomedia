@@ -1,4 +1,22 @@
-﻿using System.Globalization;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System.Globalization;
 using System.Xml.Linq;
 
 namespace IntegrationArcMap.Model.Shape
@@ -8,14 +26,33 @@ namespace IntegrationArcMap.Model.Shape
   /// </summary>
   public class Point : BaseShape
   {
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private readonly CultureInfo _ci;
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     public double X { get; set; }
     public double Y { get; set; }
     public double Z { get; set; }
 
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     /// <summary>
-    /// 
+    /// Default empty constructor
     /// </summary>
     public Point()
     {
@@ -27,9 +64,9 @@ namespace IntegrationArcMap.Model.Shape
     }
 
     /// <summary>
-    /// 
+    /// Constructor with xml parsing
     /// </summary>
-    /// <param name="mappedFeatureElement"></param>
+    /// <param name="mappedFeatureElement">xml</param>
     public Point(XElement mappedFeatureElement)
     {
       _ci = CultureInfo.InvariantCulture;
@@ -37,10 +74,17 @@ namespace IntegrationArcMap.Model.Shape
       Update(mappedFeatureElement);
     }
 
+    #endregion
+
+    #region functions
+
+    // =========================================================================
+    // Functions
+    // =========================================================================
     /// <summary>
-    /// 
+    /// xml parsing
     /// </summary>
-    /// <param name="mappedFeatureElement"></param>
+    /// <param name="mappedFeatureElement">xml</param>
     public new void Update(XElement mappedFeatureElement)
     {
       XElement pointElement = mappedFeatureElement.Element(Namespaces.GmlNs + "Point");
@@ -71,5 +115,7 @@ namespace IntegrationArcMap.Model.Shape
         }
       }
     }
+
+    #endregion
   }
 }

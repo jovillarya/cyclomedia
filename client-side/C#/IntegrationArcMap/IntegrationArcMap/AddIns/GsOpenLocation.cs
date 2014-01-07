@@ -1,4 +1,22 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
@@ -14,14 +32,20 @@ namespace IntegrationArcMap.AddIns
   /// </summary>
   public class GsOpenLocation : Tool
   {
+    #region members
+
     private Cursor _thisCursor;
+
+    #endregion
+
+    #region event handlers
 
     protected override void OnActivate()
     {
       if (_thisCursor == null)
       {
         Type thisType = GetType();
-        string cursorPath = string.Format(@"IntegrationArcMap.Cursors.{0}.cur", thisType.Name);
+        string cursorPath = string.Format(@"IntegrationArcMap.Images.{0}.cur", thisType.Name);
         Assembly thisAssembly = Assembly.GetAssembly(thisType);
         Stream cursorStream = thisAssembly.GetManifestResourceStream(cursorPath);
 
@@ -85,6 +109,16 @@ namespace IntegrationArcMap.AddIns
       base.OnMouseUp(arg);
     }
 
+    #endregion
+
+    #region Functions
+
+    /// <summary>
+    /// This function calculates the imageId for location on the screen
+    /// </summary>
+    /// <param name="arg">The mouse arguments</param>
+    /// <param name="layer">The layer where the point has been found</param>
+    /// <returns>The imageId of the point</returns>
     private static string GetImageIdFromPoint(MouseEventArgs arg, out CycloMediaLayer layer)
     {
       layer = null;
@@ -101,5 +135,7 @@ namespace IntegrationArcMap.AddIns
 
       return result;
     }
+
+    #endregion
   }
 }

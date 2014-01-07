@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GsInstaller", "GsInstaller\GsInstaller.csproj", "{93288D40-161C-4587-AD31-552577A7A8BF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegrationInstaller", "IntegrationInstaller\IntegrationInstaller.csproj", "{93288D40-161C-4587-AD31-552577A7A8BF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RangeControl", "RangeControl\RangeControl.csproj", "{3927DD62-1164-484B-9DAD-192DD87986FB}"
 EndProject

@@ -1,4 +1,22 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -7,12 +25,12 @@ using System.Linq;
 using System.Threading;
 using System.Xml.Linq;
 using IntegrationArcMap.AddIns;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Model;
 using IntegrationArcMap.Model.Capabilities;
 using IntegrationArcMap.Model.Wfs;
 using IntegrationArcMap.Utilities;
-using IntegrationArcMap.WebClient;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.Geodatabase;
@@ -20,15 +38,22 @@ using ESRI.ArcGIS.ADF.COMSupport;
 using stdole;
 
 // ReSharper disable CSharpWarnings::CS0612
+// ReSharper disable CSharpWarnings::CS0618
 using Converter = ESRI.ArcGIS.ADF.Converter;
+// ReSharper restore CSharpWarnings::CS0618
 // ReSharper restore CSharpWarnings::CS0612
 
 namespace IntegrationArcMap.Layers
 {
   public class WfsLayer : CycloMediaLayer
   {
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private readonly object _getImageLock;
-    private readonly ClientWeb _clientWeb;
+    private readonly Web _web;
     private readonly Dictionary<string, Image> _imageToAdd;
 
     private string _name;
@@ -40,6 +65,13 @@ namespace IntegrationArcMap.Layers
     private double _minimumScale;
     private IMappedFeature _mappedFeature;
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     public override string[] FieldNames
     {
       get { return new[] {"image_url"}; }
@@ -141,37 +173,6 @@ namespace IntegrationArcMap.Layers
       get { return string.Empty; }
     }
 
-    protected override IMappedFeature CreateMappedFeature(XElement mappedFeatureElement)
-    {
-      if (_mappedFeature == null)
-      {
-        _mappedFeature = new WfsFeature(mappedFeatureElement, FeatureType);
-      }
-      else
-      {
-        _mappedFeature.Update(mappedFeatureElement);
-      }
-
-      return _mappedFeature;
-    }
-
-    protected override bool Filter(IMappedFeature mappedFeature)
-    {
-      return true;
-    }
-
-    public override string ToString()
-    {
-      Name name = FeatureType.Name;
-      return name.Value;
-    }
-
-    public string Url { get; private set; }
-    public string Version { get; private set; }
-    public FeatureType FeatureType { get; private set; }
-    public int MinZoomLevel { get; private set; }
-    public bool UseProxy { get; private set; }
-
     public string TypeName
     {
       get
@@ -192,17 +193,36 @@ namespace IntegrationArcMap.Layers
       }
     }
 
-    private WfsLayer(CycloMediaGroupLayer layer)
-      : base(layer)
+    public string Url { get; private set; }
+    public string Version { get; private set; }
+    public FeatureType FeatureType { get; private set; }
+    public int MinZoomLevel { get; private set; }
+    public bool UseProxy { get; private set; }
+
+    #endregion
+
+    #region functions (protected)
+
+    // =========================================================================
+    // Functions (Protected)
+    // =========================================================================
+    protected override IMappedFeature CreateMappedFeature(XElement mappedFeatureElement)
     {
-      _clientWeb = ClientWeb.Instance;
-      _imageToAdd = new Dictionary<string, Image>();
-      _getImageLock = new object();
-      _getImageThread = null;
-      _refreshDataThread = null;
-      _addedImage = false;
-      _minimumScale = 0.0;
-      _mappedFeature = null;
+      if (_mappedFeature == null)
+      {
+        _mappedFeature = new WfsFeature(mappedFeatureElement, FeatureType);
+      }
+      else
+      {
+        _mappedFeature.Update(mappedFeatureElement);
+      }
+
+      return _mappedFeature;
+    }
+
+    protected override bool Filter(IMappedFeature mappedFeature)
+    {
+      return true;
     }
 
     protected override void PostEntryStep()
@@ -233,8 +253,8 @@ namespace IntegrationArcMap.Layers
               if (image != null)
               {
                 image = MakeTransparant.ApplySrc(image as Bitmap);
-                int size = Math.Min(image.Width, image.Height)*4;
-                var imageDst = new Bitmap(size, size);                
+                int size = Math.Min(image.Width, image.Height) * 4;
+                var imageDst = new Bitmap(size, size);
 
                 using (Graphics graphics = Graphics.FromImage(imageDst))
                 {
@@ -249,15 +269,17 @@ namespace IntegrationArcMap.Layers
                 }
 
                 imageDst = MakeTransparant.ApplyDst(imageDst);
+                // ReSharper disable CSharpWarnings::CS0618
 
                 markerSymbol = new PictureMarkerSymbolClass
-                  {
-                    Size = Math.Min(image.Width, image.Height),
-                    BitmapTransparencyColor = Converter.ToRGBColor(Color.White),
-                    Picture = OLE.GetIPictureDispFromBitmap(imageDst) as IPictureDisp
-                  };
+                {
+                  Size = Math.Min(image.Width, image.Height),
+                  BitmapTransparencyColor = Converter.ToRGBColor(Color.White),
+                  Picture = OLE.GetIPictureDispFromBitmap(imageDst) as IPictureDisp
+                };
               }
 
+              // ReSharper restore CSharpWarnings::CS0618
               if (!string.IsNullOrEmpty(classValue))
               {
                 string[] splitSign = classValue.Split('/');
@@ -301,8 +323,8 @@ namespace IntegrationArcMap.Layers
 
             while ((_feature != null) && ((_getImageThread == null) || (!_getImageThread.IsAlive)))
             {
-              //Test to see if this value was added
-              //to the renderer. If not, add it.
+              // Test to see if this value was added
+              // to the renderer. If not, add it.
               var classValue = _feature.get_Value(fieldIndex) as string;
               bool valFound = false;
 
@@ -310,13 +332,13 @@ namespace IntegrationArcMap.Layers
               {
                 if (uniqueValueRenderer.get_Value(i) == classValue)
                 {
-                  //Exit the loop if the value was found.
+                  // Exit the loop if the value was found.
                   valFound = true;
                   break;
                 }
               }
 
-              //If the value was not found, it is new and it will be added.
+              // If the value was not found, it is new and it will be added.
               if (!valFound)
               {
                 _getImageThread = new Thread(GetImage);
@@ -348,6 +370,19 @@ namespace IntegrationArcMap.Layers
       // ReSharper restore UseIndexedProperty
     }
 
+    #endregion
+
+    #region functions (public)
+
+    // =========================================================================
+    // Functions (Public)
+    // =========================================================================
+    public override string ToString()
+    {
+      Name name = FeatureType.Name;
+      return name.Value;
+    }
+
     public void AddToGlobespotter(string name, int minZoomLevel, bool useProxy, Color color)
     {
       _name = name;
@@ -364,6 +399,33 @@ namespace IntegrationArcMap.Layers
                                             (current, otherSrs) => (otherSrs == srsName) || current);
     }
 
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
+    private WfsLayer(CycloMediaGroupLayer layer)
+      : base(layer)
+    {
+      _web = Web.Instance;
+      _imageToAdd = new Dictionary<string, Image>();
+      _getImageLock = new object();
+      _getImageThread = null;
+      _refreshDataThread = null;
+      _addedImage = false;
+      _minimumScale = 0.0;
+      _mappedFeature = null;
+    }
+
+    #endregion
+
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
     public static IList<WfsLayer> GetCapabilities(string url, string version)
     {
       if (url.Substring(url.Length - 1) == "?")
@@ -371,8 +433,8 @@ namespace IntegrationArcMap.Layers
         url = url.Substring(0, url.Length - 1);
       }
 
-      ClientWeb clientWfs = ClientWeb.Instance;
-      List<XElement> elements = clientWfs.GetCapabilities(url, version);
+      Web web = Web.Instance;
+      List<XElement> elements = web.GetCapabilities(url, version);
       GsExtension extension = GsExtension.GetExtension();
       CycloMediaGroupLayer cycloMediaGroupLayer = (extension == null) ? null : extension.CycloMediaGroupLayer;
 
@@ -387,6 +449,13 @@ namespace IntegrationArcMap.Layers
                 }).ToList();
     }
 
+    #endregion
+
+    #region thread functions
+
+    // =========================================================================
+    // Thread functions
+    // =========================================================================
     private void GetImage(object content)
     {
       lock (_getImageLock)
@@ -399,7 +468,7 @@ namespace IntegrationArcMap.Layers
 
           try
           {
-            image = _clientWeb.DownloadImage(classValue);
+            image = _web.DownloadImage(classValue);
           }
           catch (Exception ex)
           {
@@ -432,5 +501,7 @@ namespace IntegrationArcMap.Layers
         Trace.WriteLine(ex.Message, "WfsLayer.RefreshData");
       }
     }
+
+    #endregion
   }
 }

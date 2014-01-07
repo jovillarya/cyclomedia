@@ -1,4 +1,22 @@
-﻿using System.Collections.Generic;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Linq;
 using System.Drawing.Imaging;
@@ -8,6 +26,11 @@ namespace IntegrationArcMap.Utilities
 {
   public static class ImageExtensions
   {
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
     public static ColorPalette InsertPallette(this ColorPalette palette, List<Color> colors)
     {
       if (colors != null)
@@ -64,17 +87,21 @@ namespace IntegrationArcMap.Utilities
         }
 
         destination.Palette = destination.Palette.InsertPallette(colors);
-        var list = destination.Palette.Entries.ToList();
 
-        for (var y = destination.Height; y-- > 0; )
+        if (destination.Palette != null)
         {
-          for (var x = destination.Width; x-- > 0; )
+          var list = destination.Palette.Entries.ToList();
+
+          for (var y = destination.Height; y-- > 0;)
           {
-            var pixelIndex = y * destination.Width + x;
-            var sourceIndex = 4 * pixelIndex;
-            var color = Color.FromArgb(sourceBuffer[3 + sourceIndex], sourceBuffer[2 + sourceIndex],
-                                       sourceBuffer[1 + sourceIndex], sourceBuffer[0 + sourceIndex]);
-            destinationBuffer[pixelIndex] = (byte) list.IndexOf(color);
+            for (var x = destination.Width; x-- > 0;)
+            {
+              var pixelIndex = y*destination.Width + x;
+              var sourceIndex = 4*pixelIndex;
+              var color = Color.FromArgb(sourceBuffer[3 + sourceIndex], sourceBuffer[2 + sourceIndex],
+                sourceBuffer[1 + sourceIndex], sourceBuffer[0 + sourceIndex]);
+              destinationBuffer[pixelIndex] = (byte) list.IndexOf(color);
+            }
           }
         }
 
@@ -84,5 +111,7 @@ namespace IntegrationArcMap.Utilities
 
       return destination;
     }
+
+    #endregion
   }
 }

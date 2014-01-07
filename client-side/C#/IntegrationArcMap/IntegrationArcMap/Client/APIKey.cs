@@ -16,32 +16,22 @@
  * License along with this library.
  */
 
-using System.Globalization;
-using System.Xml.Linq;
+using System.IO;
+using System.Reflection;
+using System.Xml.Serialization;
 
-namespace IntegrationArcMap.Model.Capabilities
+namespace IntegrationArcMap.Client
 {
-  /// <summary>
-  /// This class contains the wfs point info
-  /// </summary>
-  public class Point
+  // ReSharper disable InconsistentNaming
+  public class APIKey
   {
     #region members
 
     // =========================================================================
     // Members
     // =========================================================================
-    private readonly CultureInfo _ci;
-
-    #endregion
-
-    #region properties
-
-    // =========================================================================
-    // Properties
-    // =========================================================================
-    public double X { get; set; }
-    public double Y { get; set; }
+    private static readonly XmlSerializer XmlAPIKey;
+    private static APIKey _apiKey;
 
     #endregion
 
@@ -50,48 +40,75 @@ namespace IntegrationArcMap.Model.Capabilities
     // =========================================================================
     // Constructor
     // =========================================================================
-    /// <summary>
-    /// Default empty constructor
-    /// </summary>
-    public Point()
+    static APIKey()
     {
-      _ci = CultureInfo.InvariantCulture;
-      X = 0.0;
-      Y = 0.0;
-    }
-
-    /// <summary>
-    /// Constructor with xml parsing
-    /// </summary>
-    /// <param name="element">xml</param>
-    public Point(XElement element)
-    {
-      _ci = CultureInfo.InvariantCulture;
-      Update(element);
+      XmlAPIKey = new XmlSerializer(typeof (APIKey));
     }
 
     #endregion
 
-    #region functions
+    #region properties
 
     // =========================================================================
-    // Functions
+    // Properties
     // =========================================================================
     /// <summary>
-    /// xml parsing
+    /// API Key
     /// </summary>
-    /// <param name="element">xml</param>
-    public void Update(XElement element)
+    [XmlElement("APIKey")]
+    public string Value { get; set; }
+
+    public static APIKey Instance
     {
-      if (element != null)
+      get
       {
-        string position = element.Value.Trim();
-        string[] values = position.Split(' ');
-        X = (values.Length >= 1) ? double.Parse(values[0], _ci) : 0.0;
-        Y = (values.Length >= 2) ? double.Parse(values[1], _ci) : 0.0;
+        if (_apiKey == null)
+        {
+          Load();
+        }
+
+        return _apiKey ?? (_apiKey = Create());
       }
     }
 
     #endregion
+
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
+    public static APIKey Load()
+    {
+      Assembly thisAssembly = Assembly.GetExecutingAssembly();
+      const string manualPath = @"IntegrationArcMap.Doc.APIKey.xml";
+      Stream manualStream = thisAssembly.GetManifestResourceStream(manualPath);
+
+      if (manualStream != null)
+      {
+        _apiKey = (APIKey) XmlAPIKey.Deserialize(manualStream);
+        manualStream.Close();
+      }
+
+      return _apiKey;
+    }
+
+    #endregion
+
+    #region functions (private static)
+
+    // =========================================================================
+    // Functions (Private static)
+    // =========================================================================
+    private static APIKey Create()
+    {
+      return new APIKey
+        {
+          Value = string.Empty
+        };
+    }
+
+    #endregion
   }
+  // ReSharper restore InconsistentNaming
 }

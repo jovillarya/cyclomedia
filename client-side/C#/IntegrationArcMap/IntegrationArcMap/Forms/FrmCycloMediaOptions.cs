@@ -1,12 +1,30 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
 using IntegrationArcMap.AddIns;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Utilities;
-using IntegrationArcMap.WebClient;
 
 namespace IntegrationArcMap.Forms
 {
@@ -18,14 +36,20 @@ namespace IntegrationArcMap.Forms
     private const string LoginFailed = "Login Failed";
     private const string LoginSuccessfully = "Login Successfully";
 
+    #region members
+
     // =========================================================================
     // Members
     // =========================================================================
     private static FrmCycloMediaOptions _frmCycloMediaOptions;
-    private static ClientLogin _login;
+    private static Login _login;
 
-    private ClientConfig _config;
+    private Config _config;
     private bool _mssgBoxShow;
+
+    #endregion
+
+    #region constructor
 
     // =========================================================================
     // Constructor
@@ -34,8 +58,8 @@ namespace IntegrationArcMap.Forms
     {
       InitializeComponent();
       _mssgBoxShow = false;
-      _config = ClientConfig.Instance;
-      GsExtension.LoginReloadEvent += LoginReload;
+      _config = Config.Instance;
+      GsExtension.OpenDocumentEvent += LoginReload;
       Font font = SystemFonts.MenuFont;
       tcSettings.Font = (Font) font.Clone();
       txtPassword.Font = (Font) font.Clone();
@@ -59,8 +83,12 @@ namespace IntegrationArcMap.Forms
 
     static FrmCycloMediaOptions()
     {
-      _login = ClientLogin.Instance;
+      _login = Client.Login.Instance;
     }
+
+    #endregion
+
+    #region properties
 
     // =========================================================================
     // Properties
@@ -69,6 +97,10 @@ namespace IntegrationArcMap.Forms
     {
       get { return _frmCycloMediaOptions != null; }
     }
+
+    #endregion
+
+    #region functions
 
     // =========================================================================
     // Functions
@@ -187,8 +219,8 @@ namespace IntegrationArcMap.Forms
 
     private void LoginReload()
     {
-      _login = ClientLogin.Load();
-      _config = ClientConfig.Load();
+      _login = Client.Login.Load();
+      _config = Config.Load();
       lblLoginStatus.Text = _login.Check() ? LoginSuccessfully : LoginFailed;
       LoadData();
     }
@@ -269,6 +301,10 @@ namespace IntegrationArcMap.Forms
       btnApply.Enabled = false;
     }
 
+    #endregion
+
+    #region event handlers
+
     // =========================================================================
     // Eventhandlers
     // =========================================================================
@@ -330,18 +366,18 @@ namespace IntegrationArcMap.Forms
 
     private void FrmCycloMediaOptions_FormClosed(object sender, FormClosedEventArgs e)
     {
-      GsExtension.LoginReloadEvent -= LoginReload;
+      GsExtension.OpenDocumentEvent -= LoginReload;
       _frmCycloMediaOptions = null;
-    }
-
-    private void txtRecordingService_KeyUp(object sender, KeyEventArgs e)
-    {
-      btnApply.Enabled = true;
     }
 
     private void tcSettings_Click(object sender, EventArgs e)
     {
       btnOk.Select();
+    }
+
+    private void txtRecordingService_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
     }
 
     private void nudMaxViewers_KeyUp(object sender, KeyEventArgs e)
@@ -378,5 +414,7 @@ namespace IntegrationArcMap.Forms
     {
       btnApply.Enabled = true;
     }
+
+    #endregion
   }
 }

@@ -3,11 +3,11 @@
   <Name>Cyclorama</Name>
   <AddInID>{601756f1-d4d0-4279-abad-47338704585c}</AddInID>
   <Description>ArcMap Integration for Cyclorama's</Description>
-  <Version>0.12.5</Version>
+  <Version>0.12.6</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
   <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>03-01-2014</Date>
+  <Date>07-01-2014</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />
@@ -40,16 +40,6 @@
               image="Images\GsOpenLocation.png">
           <Help heading="Open location">Opens the location in a Cyclorama</Help>
         </Tool>
-        <Button id="CycloMedia_IntegrationArcMap_GsAddLayer"
-                class="GsAddLayer"
-                message="Add Cyclorama layer"
-                caption="Add Cyclorama layer"
-                tip="Add Cyclorama layer"
-                category="CycloMedia"
-                onDemand="false"
-                image="Images\GsAddLayer.png">
-          <Help heading="Add Cyclorama layer">Add Cyclorama layer</Help>
-        </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsShowInCyclorama"
                 class="GsShowInCyclorama"
                 message="Show in Cyclorama"
@@ -66,7 +56,7 @@
                 tip="Show measurement detail information"
                 category="CycloMedia"
                 onDemand="false"
-                image="Images\GsSelectionCopySelectedFeatures.png">
+                image="Images\GsMeasurementDetail.png">
           <Help heading="show measurement detail information">Show measurement detail information</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsRecentDataLayer"
@@ -143,14 +133,6 @@
                             width="600"
                             state="pinned"
                             position="bottom" />
-        </DockableWindow>
-        <DockableWindow id="IntegrationArcMap_GsFrmAddLayer"
-                class="GsFrmAddLayer"
-                caption="Add custom layer">
-          <InitialPlacement height="250"
-                            width="450"
-                            state="pinned"
-                            position="float" />
         </DockableWindow>
         <DockableWindow id="IntegrationArcMap_GsFrmMeasurement"
                         class="GsFrmMeasurement"

@@ -1,15 +1,33 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading;
 using System.Xml.Linq;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Model;
 using IntegrationArcMap.Model.Shape;
-using IntegrationArcMap.Symbols;
+using IntegrationArcMap.Objects;
 using IntegrationArcMap.Utilities;
-using IntegrationArcMap.WebClient;
 using ESRI.ArcGIS.ADF;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Display;
@@ -22,18 +40,24 @@ using ShapePoint = IntegrationArcMap.Model.Shape.Point;
 
 namespace IntegrationArcMap.Layers
 {
+  // ===========================================================================
+  // Delegates
+  // ===========================================================================
   public delegate void CycloMediaLayerAddedDelegate(CycloMediaLayer cycloMediaLayer);
   public delegate void CycloMediaLayerChangedDelegate(CycloMediaLayer cycloMediaLayer);
   public delegate void CycloMediaLayerRemoveDelegate(CycloMediaLayer cycloMediaLayer);
-
   public delegate void HistoricalDateDelegate(SortedDictionary<int, int> yearMonth);
 
   public abstract class CycloMediaLayer : IDisposable
   {
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     public static event CycloMediaLayerAddedDelegate LayerAddedEvent;
     public static event CycloMediaLayerChangedDelegate LayerChangedEvent;
     public static event CycloMediaLayerRemoveDelegate LayerRemoveEvent;
-
     public static event HistoricalDateDelegate HistoricalDateChanged;
 
     private static SortedDictionary<int, int> _yearMonth;
@@ -49,6 +73,13 @@ namespace IntegrationArcMap.Layers
     private Thread _refreshDataThread;
     private bool _isVisibleInGlobespotter;
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     public abstract string[] FieldNames { get; }
     public abstract string Name { get; }
     public abstract string FcName { get; }
@@ -59,23 +90,6 @@ namespace IntegrationArcMap.Layers
     public abstract string WfsRequest { get; }
 
     public bool Visible { get; set; }
-
-    protected abstract IMappedFeature CreateMappedFeature(XElement mappedFeatureElement);
-    protected abstract bool Filter(IMappedFeature mappedFeature);
-    protected abstract void PostEntryStep();
-
-    protected static SortedDictionary<int, int> YearMonth
-    {
-      get { return _yearMonth ?? (_yearMonth = new SortedDictionary<int, int>()); }
-    }
-
-    protected static void ChangeHistoricalDate()
-    {
-      if (HistoricalDateChanged != null)
-      {
-        HistoricalDateChanged(YearMonth);
-      }
-    }
 
     public ILayer Layer
     {
@@ -143,6 +157,27 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    public IFeatureClass FeatureClass
+    {
+      get { return _featureClass ?? (_featureClass = OpenFeatureClassInWorkspace()); }
+    }
+
+    protected abstract IMappedFeature CreateMappedFeature(XElement mappedFeatureElement);
+    protected abstract bool Filter(IMappedFeature mappedFeature);
+    protected abstract void PostEntryStep();
+
+    protected static SortedDictionary<int, int> YearMonth
+    {
+      get { return _yearMonth ?? (_yearMonth = new SortedDictionary<int, int>()); }
+    }
+
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     protected CycloMediaLayer(CycloMediaGroupLayer layer)
     {
       _getDataLock = new object();
@@ -159,11 +194,13 @@ namespace IntegrationArcMap.Layers
       }
     }
 
-    public IFeatureClass FeatureClass
-    {
-      get { return _featureClass ?? (_featureClass = OpenFeatureClassInWorkspace()); }
-    }
+    #endregion
 
+    #region functions (public)
+
+    // =========================================================================
+    // Functions (Public)
+    // =========================================================================
     public void AddToLayers()
     {
       IList<CycloMediaLayer> layers = _cycloMediaGroupLayer.Layers;
@@ -175,21 +212,6 @@ namespace IntegrationArcMap.Layers
 
       CreateFeatureLayer();
       Refresh();
-    }
-
-    public virtual void UpdateColor(Color color, int? year)
-    {
-      if (year == null)
-      {
-        Color = color;
-        ArcUtils.SetColorToLayer(Layer, color);
-        Refresh();
-      }
-    }
-
-    public virtual DateTime? GetDate()
-    {
-      return null;
     }
 
     public void CreateFeatureLayer()
@@ -213,11 +235,13 @@ namespace IntegrationArcMap.Layers
           featureLayer.FeatureClass = featureClass;
         }
 
+        // ReSharper disable CSharpWarnings::CS0618
         var markerSymbol = new SimpleMarkerSymbol
           {
             Color = Converter.ToRGBColor(Color),
             Size = SizeLayer
           };
+        // ReSharper restore CSharpWarnings::CS0618
 
         IUniqueValueRenderer renderer = new UniqueValueRendererClass
           {
@@ -280,23 +304,6 @@ namespace IntegrationArcMap.Layers
       Remove();
     }
 
-    protected virtual void Remove()
-    {
-      var avEvents = ArcUtils.ActiveViewEvents;
-
-      if (LayerRemoveEvent != null)
-      {
-        LayerRemoveEvent(this);
-      }
-
-      if (avEvents != null)
-      {
-        avEvents.ViewRefreshed -= OnViewRefreshed;
-        avEvents.ContentsChanged -= OnContentChanged;
-        avEvents.ItemDeleted -= OnItemDeleted;
-      }
-    }
-
     public void Refresh()
     {
       IActiveView activeView = ArcUtils.ActiveView;
@@ -308,24 +315,6 @@ namespace IntegrationArcMap.Layers
         activeView.PartialRefresh(esriViewDrawPhase.esriViewForeground, Layer, null);
         activeView.ContentsChanged();
       }
-    }
-
-    private IFeatureClass OpenFeatureClassInWorkspace()
-    {
-      IFeatureClass result = null;
-      IFeatureWorkspace featureWorkspace = _cycloMediaGroupLayer.FeatureWorkspace;
-      var workspace = featureWorkspace as IWorkspace2;
-      // ReSharper disable UseIndexedProperty
-
-      if (workspace != null)
-      {
-        result = workspace.get_NameExists(esriDatasetType.esriDTFeatureClass, FcName)
-                   ? featureWorkspace.OpenFeatureClass(FcName)
-                   : CreateFeatureClass();
-      }
-
-      // ReSharper restore UseIndexedProperty
-      return result;
     }
 
     public string GetFeatureFromPoint(int x, int y)
@@ -412,11 +401,6 @@ namespace IntegrationArcMap.Layers
 
       // ReSharper restore UseIndexedProperty
       return result;
-    }
-
-    public virtual double GetHeight(double x, double y)
-    {
-      return 0.0;
     }
 
     public void AddZToSketch(IEditSketch3 sketch)
@@ -507,34 +491,73 @@ namespace IntegrationArcMap.Layers
       return result;
     }
 
-    private static IFieldsEdit CreateField(IFieldsEdit fieldsEdit, string fieldName, esriFieldType esriFieldType)
+    public virtual void UpdateColor(Color color, int? year)
     {
-      // ReSharper disable UseObjectOrCollectionInitializer
-      IFieldEdit fieldEdit = new FieldClass();
-      fieldEdit.Type_2 = esriFieldType;
-      fieldEdit.Name_2 = fieldName;
-      fieldEdit.AliasName_2 = fieldName;
-      fieldsEdit.AddField(fieldEdit);
-      return fieldsEdit;
-      // ReSharper restore UseObjectOrCollectionInitializer
+      if (year == null)
+      {
+        Color = color;
+        ArcUtils.SetColorToLayer(Layer, color);
+        Refresh();
+      }
     }
 
-    private static IFieldsEdit CreateGeometryField(IFieldsEdit fieldsEdit, string fieldName,
-                                                   ISpatialReference spatialReference, esriGeometryType esriGeometryType)
+    public virtual DateTime? GetDate()
     {
-      // ReSharper disable UseObjectOrCollectionInitializer
-      IGeometryDefEdit geometryDefEdit = new GeometryDefClass();
-      geometryDefEdit.GeometryType_2 = esriGeometryType;
-      geometryDefEdit.SpatialReference_2 = spatialReference;
+      return null;
+    }
 
-      IFieldEdit fieldEdit = new FieldClass();
-      fieldEdit.Type_2 = esriFieldType.esriFieldTypeGeometry;
-      fieldEdit.Name_2 = fieldName;
-      fieldEdit.AliasName_2 = fieldName;
-      fieldEdit.GeometryDef_2 = geometryDefEdit;
-      fieldsEdit.AddField(fieldEdit);
-      return fieldsEdit;
-      // ReSharper restore UseObjectOrCollectionInitializer
+    public virtual double GetHeight(double x, double y)
+    {
+      return 0.0;
+    }
+
+    #endregion
+
+    #region functions (protected)
+
+    // =========================================================================
+    // Functions (Protected)
+    // =========================================================================
+    protected virtual void Remove()
+    {
+      var avEvents = ArcUtils.ActiveViewEvents;
+
+      if (LayerRemoveEvent != null)
+      {
+        LayerRemoveEvent(this);
+      }
+
+      if (avEvents != null)
+      {
+        avEvents.ViewRefreshed -= OnViewRefreshed;
+        avEvents.ContentsChanged -= OnContentChanged;
+        avEvents.ItemDeleted -= OnItemDeleted;
+      }
+    }
+
+    #endregion
+
+    #region functions (private)
+
+    // =========================================================================
+    // Functions (Private)
+    // =========================================================================
+    private IFeatureClass OpenFeatureClassInWorkspace()
+    {
+      IFeatureClass result = null;
+      IFeatureWorkspace featureWorkspace = _cycloMediaGroupLayer.FeatureWorkspace;
+      var workspace = featureWorkspace as IWorkspace2;
+      // ReSharper disable UseIndexedProperty
+
+      if (workspace != null)
+      {
+        result = workspace.get_NameExists(esriDatasetType.esriDTFeatureClass, FcName)
+                   ? featureWorkspace.OpenFeatureClass(FcName)
+                   : CreateFeatureClass();
+      }
+
+      // ReSharper restore UseIndexedProperty
+      return result;
     }
 
     private ILayer GetLayer()
@@ -705,6 +728,13 @@ namespace IntegrationArcMap.Layers
       // ReSharper restore PossibleMultipleEnumeration
     }
 
+    #endregion
+
+    #region event handlers
+
+    // =========================================================================
+    // Event handlers
+    // =========================================================================
     private void OnViewRefreshed(IActiveView view, esriViewDrawPhase phase, object data, IEnvelope envelope)
     {
       try
@@ -806,6 +836,13 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    #endregion
+
+    #region thread functions
+
+    // =========================================================================
+    // Thread functions
+    // =========================================================================
     private void GetDataWfs(object context)
     {
       try
@@ -816,8 +853,8 @@ namespace IntegrationArcMap.Layers
 
           if (extent != null)
           {
-            ClientWeb webClient = ClientWeb.Instance;
-            _addData = webClient.GetByBbox(extent, this);
+            Web web = Web.Instance;
+            _addData = web.GetByBbox(extent, this);
 
             if (_addData.Count >= 1)
             {
@@ -860,5 +897,52 @@ namespace IntegrationArcMap.Layers
         Trace.WriteLine(ex.Message, "CycloMediaLayer.RefreshDataWfs");
       }
     }
+
+    #endregion
+
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
+    protected static void ChangeHistoricalDate()
+    {
+      if (HistoricalDateChanged != null)
+      {
+        HistoricalDateChanged(YearMonth);
+      }
+    }
+
+    private static IFieldsEdit CreateField(IFieldsEdit fieldsEdit, string fieldName, esriFieldType esriFieldType)
+    {
+      // ReSharper disable UseObjectOrCollectionInitializer
+      IFieldEdit fieldEdit = new FieldClass();
+      fieldEdit.Type_2 = esriFieldType;
+      fieldEdit.Name_2 = fieldName;
+      fieldEdit.AliasName_2 = fieldName;
+      fieldsEdit.AddField(fieldEdit);
+      return fieldsEdit;
+      // ReSharper restore UseObjectOrCollectionInitializer
+    }
+
+    private static IFieldsEdit CreateGeometryField(IFieldsEdit fieldsEdit, string fieldName,
+                                                   ISpatialReference spatialReference, esriGeometryType esriGeometryType)
+    {
+      // ReSharper disable UseObjectOrCollectionInitializer
+      IGeometryDefEdit geometryDefEdit = new GeometryDefClass();
+      geometryDefEdit.GeometryType_2 = esriGeometryType;
+      geometryDefEdit.SpatialReference_2 = spatialReference;
+
+      IFieldEdit fieldEdit = new FieldClass();
+      fieldEdit.Type_2 = esriFieldType.esriFieldTypeGeometry;
+      fieldEdit.Name_2 = fieldName;
+      fieldEdit.AliasName_2 = fieldName;
+      fieldEdit.GeometryDef_2 = geometryDefEdit;
+      fieldsEdit.AddField(fieldEdit);
+      return fieldsEdit;
+      // ReSharper restore UseObjectOrCollectionInitializer
+    }
+
+    #endregion
   }
 }

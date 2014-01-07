@@ -1,12 +1,31 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Threading;
 using IntegrationArcMap.AddIns;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
-using IntegrationArcMap.Symbols;
+using IntegrationArcMap.Objects;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Editor;
@@ -16,11 +35,13 @@ using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.TrackingAnalyst;
 using ESRI.ArcGIS.SystemUI;
 using GlobeSpotterAPI;
-using IntegrationArcMap.WebClient;
-using MeasurementPoint = IntegrationArcMap.Symbols.MeasurementPoint;
+using MeasurementPoint = IntegrationArcMap.Objects.MeasurementPoint;
 
 namespace IntegrationArcMap.Layers
 {
+  // ===========================================================================
+  // Delegates
+  // ===========================================================================
   public delegate void VectorLayerAddDelegate(VectorLayer layer);
   public delegate void VectorLayerChangedDelegate(VectorLayer layer);
   public delegate void VectorLayerRemoveDelegate(VectorLayer layer);
@@ -36,6 +57,9 @@ namespace IntegrationArcMap.Layers
   public delegate void SketchModifiedDelegate(IGeometry geometry);
   public delegate void SketchFinishedDelegate();
 
+  // ===========================================================================
+  // Type of layer
+  // ===========================================================================
   public enum TypeOfLayer
   {
     None = 0,
@@ -46,10 +70,22 @@ namespace IntegrationArcMap.Layers
 
   public class VectorLayer
   {
+    #region constants
+
+    // =========================================================================
+    // Constants
+    // =========================================================================
     private const string WfsHeader =
       "<wfs:FeatureCollection xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:wfs=\"http://www.opengis.net/wfs\" xmlns:gml=\"http://www.opengis.net/gml\">";
     private const string WfsFinished = "</wfs:FeatureCollection>";
 
+    #endregion
+
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     public static event VectorLayerAddDelegate LayerAddEvent;
     public static event VectorLayerRemoveDelegate LayerRemoveEvent;
     public static event VectorLayerChangedDelegate LayerChangedEvent;
@@ -76,12 +112,26 @@ namespace IntegrationArcMap.Layers
     private string _gml;
     private Color _color;
 
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     static VectorLayer()
     {
       _editToolCheckTimer = null;
       _beforeTool = null;
     }
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     public bool GmlChanged { get; private set; }
 
     public string Name
@@ -147,7 +197,7 @@ namespace IntegrationArcMap.Layers
     {
       get
       {
-        ClientConfig config = ClientConfig.Instance;
+        Config config = Config.Instance;
         SpatialReference spatRel = config.SpatialReference;
         ISpatialReference gsSpatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
         bool zCoord = gsSpatialReference.ZCoordinateUnit != null;
@@ -171,6 +221,13 @@ namespace IntegrationArcMap.Layers
       get { return _layers ?? (_layers = DetectVectorLayers(true)); }
     }
 
+    #endregion
+
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
     public static VectorLayer GetLayer(ILayer layer)
     {
       return Layers.Aggregate<VectorLayer, VectorLayer>(null,
@@ -250,8 +307,6 @@ namespace IntegrationArcMap.Layers
         editEvents.OnSketchModified += OnSketchModified;
         editEvents.OnSketchFinished += OnSketchFinished;
         editEvents.OnCurrentTaskChanged += OnCurrentTaskChanged;
-        //editEvents.OnCurrentTaskChanged += OnCurrentTaskChanged;
-        //editEvents.OnCurrentLayerChanged += OnCurrentLayerChanged;
       }
 
       if (editEvents5 != null)
@@ -260,6 +315,13 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    #endregion
+
+    #region functions (public)
+
+    // =========================================================================
+    // Functions (Public)
+    // =========================================================================
     public string GetGmlFromLocation(List<RecordingLocation> recordingLocations, double distance, out Color color, SpatialReference cyclSpatialRef)
     {
       string result = WfsHeader;
@@ -269,7 +331,7 @@ namespace IntegrationArcMap.Layers
       {
         IGeometry geometryBag = new GeometryBagClass();
         var geometryCollection = geometryBag as IGeometryCollection;
-        ClientConfig config = ClientConfig.Instance;
+        Config config = Config.Instance;
         SpatialReference spatRel = config.SpatialReference;
         ISpatialReference gsSpatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
 
@@ -377,6 +439,13 @@ namespace IntegrationArcMap.Layers
       return (_gml = newGml);
     }
 
+    #endregion
+
+    #region event handlers
+
+    // =========================================================================
+    // Event handlers
+    // =========================================================================
     private static void OpenDocument()
     {
       try
@@ -647,8 +716,8 @@ namespace IntegrationArcMap.Layers
         {
           IGeometry geometry = sketch.Geometry;
           IPoint lastPoint = sketch.LastPoint;
-          // ReSharper disable CompareOfFloatsByEqualityOperator
           IEditTask task = editor.CurrentTask;
+          // ReSharper disable CompareOfFloatsByEqualityOperator
 
           if (task != null)
           {
@@ -790,6 +859,30 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    public static void OnVertexSelectionChanged()
+    {
+      IEditor3 editor = ArcUtils.Editor;
+      var sketch = editor as IEditSketch3;
+
+      if (sketch != null)
+      {
+        IGeometry geometry = sketch.Geometry;
+        Measurement measurement = Measurement.Get(geometry, false);
+
+        if (measurement != null)
+        {
+          measurement.CheckSelectedVertex();
+        }
+      }
+    }
+
+    #endregion
+
+    #region thread functions
+
+    // =========================================================================
+    // Thread functions
+    // =========================================================================
     private static void EditToolCheck(object context)
     {
       IApplication application = ArcMap.Application;
@@ -834,21 +927,6 @@ namespace IntegrationArcMap.Layers
       }
     }
 
-    public static void OnVertexSelectionChanged()
-    {
-      IEditor3 editor = ArcUtils.Editor;
-      var sketch = editor as IEditSketch3;
-
-      if (sketch != null)
-      {
-        IGeometry geometry = sketch.Geometry;
-        Measurement measurement = Measurement.Get(geometry, false);
-
-        if (measurement != null)
-        {
-          measurement.CheckSelectedVertex();
-        }
-      }
-    }
+    #endregion
   }
 }

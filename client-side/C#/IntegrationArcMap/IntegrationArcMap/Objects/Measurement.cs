@@ -1,26 +1,54 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Layers;
+using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Geometry;
 using GlobeSpotterAPI;
-using IntegrationArcMap.Utilities;
-using IntegrationArcMap.WebClient;
 
-namespace IntegrationArcMap.Symbols
+namespace IntegrationArcMap.Objects
 {
   class Measurement : SortedDictionary<int, MeasurementPoint>, IDisposable
   {
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private static readonly Dictionary<int, Measurement> Measurements;
     private static Measurement _open;
 
     private readonly FrmGlobespotter _frmGlobespotter;
-    private readonly string _entityType;
     private readonly TypeOfLayer _typeOfLayer;
-    private readonly string _name;
     private readonly int _entityId;
 
+    #endregion
+
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     public static Measurement Sketch { get; private set; }
     public bool DrawPoint { get; private set; }
 
@@ -39,6 +67,13 @@ namespace IntegrationArcMap.Symbols
       get { return (_open == this); }
     }
 
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
     static Measurement()
     {
       Measurements = new Dictionary<int, Measurement>();
@@ -46,15 +81,13 @@ namespace IntegrationArcMap.Symbols
       Sketch = null;
     }
 
-    private Measurement(int entityId, string entityType, string name, FrmGlobespotter frmGlobespotter, bool drawPoint)
+    private Measurement(int entityId, string entityType, FrmGlobespotter frmGlobespotter, bool drawPoint)
     {
-      _name = name;
       _entityId = entityId;
-      _entityType = entityType;
       _frmGlobespotter = frmGlobespotter;
       DrawPoint = drawPoint;
 
-      switch (_entityType)
+      switch (entityType)
       {
         case "pointMeasurement":
           _typeOfLayer = TypeOfLayer.Point;
@@ -71,6 +104,13 @@ namespace IntegrationArcMap.Symbols
       }
     }
 
+    #endregion
+
+    #region functions (public)
+
+    // =========================================================================
+    // Functions (Public)
+    // =========================================================================
     public void Dispose()
     {
       foreach (var element in this)
@@ -354,7 +394,7 @@ namespace IntegrationArcMap.Symbols
             }
           }
 
-          if (toRemove.Aggregate(false, (current, romove) => romove.Value || current) || (toAdd.Count >= 1))
+          if (toRemove.Aggregate(false, (current, remove) => remove.Value || current) || (toAdd.Count >= 1))
           {
             if (!IsPointMeasurement)
             {
@@ -380,7 +420,7 @@ namespace IntegrationArcMap.Symbols
                   SpatialReference = ArcUtils.SpatialReference
                 };
 
-              ClientConfig config = ClientConfig.Instance;
+              Config config = Config.Instance;
               SpatialReference spatRel = config.SpatialReference;
               ISpatialReference spatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
               gsPoint.Project(spatialReference);
@@ -396,6 +436,13 @@ namespace IntegrationArcMap.Symbols
       }
     }
 
+    #endregion
+
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
     public static void CloseOpenMeasurement()
     {
       if (_open != null)
@@ -466,9 +513,9 @@ namespace IntegrationArcMap.Symbols
       return result;
     }
 
-    public static void Add(int entityId, string entityType, string name, FrmGlobespotter frmGlobespotter, bool drawPoint)
+    public static void Add(int entityId, string entityType, FrmGlobespotter frmGlobespotter, bool drawPoint)
     {
-      Measurements.Add(entityId, new Measurement(entityId, entityType, name, frmGlobespotter, drawPoint));
+      Measurements.Add(entityId, new Measurement(entityId, entityType, frmGlobespotter, drawPoint));
     }
 
     public static void RemoveAll()
@@ -533,5 +580,7 @@ namespace IntegrationArcMap.Symbols
 
       return result;
     }
+
+    #endregion
   }
 }

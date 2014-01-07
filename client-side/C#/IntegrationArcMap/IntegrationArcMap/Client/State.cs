@@ -16,34 +16,23 @@
  * License along with this library.
  */
 
-using System.Xml.Linq;
+using System;
+using System.Net;
+using System.Threading;
 
-namespace IntegrationArcMap.Model.Shape
+namespace IntegrationArcMap.Client
 {
-  /// <summary>
-  /// Base class for GSML2 shapes (points, lines, polygons)
-  /// </summary>
-  public class BaseShape : IShape
+  class State
   {
     #region properties
 
     // =========================================================================
     // Properties
     // =========================================================================
-    /// <summary>
-    /// The shape id
-    /// </summary>
-    public string Id { get; set; }
-
-    /// <summary>
-    /// The spatial reference name
-    /// </summary>
-    public string SrsName { get; set; }
-
-    /// <summary>
-    /// The shape type
-    /// </summary>
-    public ShapeType Type { get; set; }
+    public ManualResetEvent OperationComplete { get; private set; }
+    public WebRequest Request { get; set; }
+    public object Result { get; set; }
+    public Exception OperationException { get; set; }
 
     #endregion
 
@@ -52,36 +41,10 @@ namespace IntegrationArcMap.Model.Shape
     // =========================================================================
     // Constructor
     // =========================================================================
-    /// <summary>
-    /// Default empty constructor
-    /// </summary>
-    public void Update()
+    public State()
     {
-      // empty
-    }
-
-    /// <summary>
-    /// Constructor with xml parsing
-    /// </summary>
-    /// <param name="mappedFeatureElement">xml</param>
-    public void Update(XElement mappedFeatureElement)
-    {
-      // empty
-    }
-
-    #endregion
-
-    #region functions
-
-    // =========================================================================
-    // Functions
-    // =========================================================================
-    /// <summary>
-    /// A template method used to save the entity
-    /// </summary>
-    public void Save()
-    {
-      // empty
+      OperationComplete = new ManualResetEvent(false);
+      OperationException = null;
     }
 
     #endregion

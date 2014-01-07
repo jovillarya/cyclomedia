@@ -1,73 +1,79 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.IO;
-using System.Security.Cryptography;
 using System.Text;
 using System.Xml.Serialization;
+using System.Security.Cryptography;
+using IntegrationArcMap.Properties;
 using IntegrationArcMap.Utilities;
-using Path = System.IO.Path;
 
-namespace IntegrationArcMap.WebClient
+namespace IntegrationArcMap.Client
 {
-  public class ClientLogin
+  [XmlRoot("ClientLogin")]
+  public class Login
   {
+    #region constants
+
+    // =========================================================================
+    // Constants
+    // =========================================================================
     private const string CheckWord = "1234567890!";
     private const int HashSize = 32; // SHA256
 
-    private static readonly XmlSerializer XmlClientLogin;
+    #endregion
+
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
+    private static readonly XmlSerializer XmlLogin;
     private static readonly byte[] Salt;
 
-    private static ClientLogin _clientLogin;
+    private static Login _login;
 
-    public ClientLogin()
+    #endregion
+
+    #region constructor
+
+    // =========================================================================
+    // Constructor
+    // =========================================================================
+    static Login()
+    {
+      XmlLogin = new XmlSerializer(typeof(Login));
+      Salt = new byte[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 };
+    }
+
+    public Login()
     {
       Credentials = false;
     }
 
-    static ClientLogin()
-    {
-      XmlClientLogin = new XmlSerializer(typeof(ClientLogin));
-      Salt = new byte[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 0};
-    }
+    #endregion
 
-    public static string FileName
-    {
-      get { return Path.Combine(ArcUtils.FileDir, "GSClientLogin.xml"); }
-    }
+    #region properties
 
-    public static ClientLogin Instance
-    {
-      get
-      {
-        if (_clientLogin == null)
-        {
-          Load();
-        }
-
-        return _clientLogin ?? (_clientLogin = new ClientLogin());
-      }
-    }
-
-    public static ClientLogin Load()
-    {
-      if (File.Exists(FileName))
-      {
-        var streamFile = new FileStream(FileName, FileMode.OpenOrCreate);
-        _clientLogin = (ClientLogin)XmlClientLogin.Deserialize(streamFile);
-        streamFile.Close();
-      }
-
-      return _clientLogin;
-    }
-
-    public void SetLoginCredentials(string userName, string password)
-    {
-      Username = userName;
-      Password = password;
-      FileStream streamFile = File.Open(FileName, FileMode.Create);
-      XmlClientLogin.Serialize(streamFile, this);
-      streamFile.Close();
-    }
-
+    // =========================================================================
+    // Properties
+    // =========================================================================
     [XmlIgnore]
     public string Username { get; private set; }
 
@@ -95,21 +101,83 @@ namespace IntegrationArcMap.WebClient
       }
     }
 
+    public static string FileName
+    {
+      get { return Path.Combine(ArcUtils.FileDir, "GSClientLogin.xml"); }
+    }
+
+    public static Login Instance
+    {
+      get
+      {
+        if (_login == null)
+        {
+          Load();
+        }
+
+        return _login ?? (_login = new Login());
+      }
+    }
+
+    #endregion
+
+    #region functions (public)
+
+    // =========================================================================
+    // Functions (Public)
+    // =========================================================================
+    public void SetLoginCredentials(string userName, string password)
+    {
+      Username = userName;
+      Password = password;
+      FileStream streamFile = File.Open(FileName, FileMode.Create);
+      XmlLogin.Serialize(streamFile, this);
+      streamFile.Close();
+    }
+
     public bool Check()
     {
       Credentials = false;
 
       if ((!string.IsNullOrEmpty(Username)) && (!string.IsNullOrEmpty(Password)))
       {
-        var webClient = ClientWeb.Instance;
-        var elements = webClient.CheckAuthorization();
+        var web = Web.Instance;
+        var elements = web.CheckAuthorization();
         Credentials = (elements.Count >= 0);
       }
 
       return Credentials;
     }
 
-    /// <summary>Performs encryption with random IV (prepended to output), and includes hash of plaintext for verification.</summary>
+    #endregion
+
+    #region functions (static)
+
+    // =========================================================================
+    // Functions (Static)
+    // =========================================================================
+    public static Login Load()
+    {
+      if (File.Exists(FileName))
+      {
+        var streamFile = new FileStream(FileName, FileMode.OpenOrCreate);
+        _login = (Login) XmlLogin.Deserialize(streamFile);
+        streamFile.Close();
+      }
+
+      return _login;
+    }
+
+    #endregion
+
+    #region functions (Private static)
+
+    // =========================================================================
+    // Functions (Private static)
+    // =========================================================================
+    /// <summary>
+    /// Performs encryption with random IV (prepended to output), and includes hash of plaintext for verification.
+    /// </summary>
     private static byte[] Encrypt(string password, byte[] passwordSalt, byte[] plainText)
     {
       // Construct message with hash
@@ -186,12 +254,12 @@ namespace IntegrationArcMap.WebClient
       // Salt may not be needed if password is safe
       if (password.Length < 8)
       {
-        throw new ArgumentException("Password must be at least 8 characters.", "password");
+        throw new ArgumentException(Resources.Login_CreateAes_Password_must_be_at_least_8_characters_, "password");
       }
 
       if (salt.Length < 8)
       {
-        throw new ArgumentException("Salt must be at least 8 bytes.", "salt");
+        throw new ArgumentException(Resources.Login_CreateAes_Salt_must_be_at_least_8_bytes_, "salt");
       }
 
       #pragma warning disable 612,618
@@ -214,5 +282,7 @@ namespace IntegrationArcMap.WebClient
 
       return result;
     }
+
+    #endregion
   }
 }

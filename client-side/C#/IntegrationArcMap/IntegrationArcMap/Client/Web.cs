@@ -1,25 +1,46 @@
-﻿using System;
+﻿/*
+ * Integration in ArcMap for Cycloramas
+ * Copyright (c) 2014, CycloMedia, All rights reserved.
+ * 
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Lesser General Public
+ * License as published by the Free Software Foundation; either
+ * version 3.0 of the License, or (at your option) any later version.
+ * 
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Lesser General Public License for more details.
+ * 
+ * You should have received a copy of the GNU Lesser General Public
+ * License along with this library.
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Net;
-using System.IO;
 using System.Text;
 using System.Threading;
 using System.Xml;
 using System.Xml.Linq;
+using ESRI.ArcGIS.Geometry;
 using IntegrationArcMap.Layers;
 using IntegrationArcMap.Model;
 using IntegrationArcMap.Utilities;
-using ESRI.ArcGIS.Geometry;
 
-namespace IntegrationArcMap.WebClient
+namespace IntegrationArcMap.Client
 {
-  public class ClientWeb
+  public class Web
   {
-    #region Requests
+    #region constants
 
+    // =========================================================================
+    // Constants
+    // =========================================================================
     private const string RecordingRequest =
       "{0}?service=WFS&version=1.1.0&request=GetFeature&srsname=EPSG:4258&featureid={1}&TYPENAME=atlas:Recording";
 
@@ -34,50 +55,63 @@ namespace IntegrationArcMap.WebClient
     private const int XmlConfig = 0;
     private const int DownloadImageConfig = 1;
 
+    #endregion
+
+    #region members
+
+    // =========================================================================
+    // Members
+    // =========================================================================
     private readonly int[] _waitTimeInternalServerError = {5000, 0};
     private readonly int[] _timeOutService = {3000, 1000};
     private readonly int[] _retryTimeService = {3, 1};
 
-    #endregion
+    private static Web _web;
 
-    #region Members
-
-    private static ClientWeb _clientWfs;
     private readonly CultureInfo _ci;
-    private readonly ClientLogin _clientLogin;
-    private readonly ClientConfig _clientConfig;
-    private readonly ClientAPIKey _clientApiKey;
+    private readonly Login _login;
+    private readonly Config _config;
+    private readonly APIKey _apiKey;
 
     #endregion
 
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
     private string RecordingService
     {
-      get { return string.Format("{0}/recordings/wfs", _clientConfig.BaseUrl); }
+      get { return string.Format("{0}/recordings/wfs", _config.BaseUrl); }
     }
+
+    public static Web Instance
+    {
+      get { return _web ?? (_web = new Web()); }
+    }
+
+    #endregion
 
     #region Constructor
 
-    private ClientWeb()
+    // =========================================================================
+    // Constructor
+    // =========================================================================
+    private Web()
     {
       _ci = CultureInfo.InvariantCulture;
-      _clientLogin = ClientLogin.Instance;
-      _clientConfig = ClientConfig.Instance;
-      _clientApiKey = ClientAPIKey.Instance;
-    }
-
-    #endregion
-
-    #region Instance
-
-    public static ClientWeb Instance
-    {
-      get { return _clientWfs ?? (_clientWfs = new ClientWeb()); }
+      _login = Login.Instance;
+      _config = Config.Instance;
+      _apiKey = APIKey.Instance;
     }
 
     #endregion
 
     #region interface functions
 
+    // =========================================================================
+    // Interface functions
+    // =========================================================================
     public List<XElement> GetByImageId(string imageId)
     {
       string remoteLocation = string.Format(RecordingRequest, RecordingService, imageId);
@@ -142,8 +176,11 @@ namespace IntegrationArcMap.WebClient
 
     #endregion
 
-    #region parseXML
+    #region parse XML
 
+    // =========================================================================
+    // Parse XML
+    // =========================================================================
     private static List<XElement> ParseXml(string xml, XName xName)
     {
       var stringReader = new StringReader(xml);
@@ -157,13 +194,16 @@ namespace IntegrationArcMap.WebClient
 
     #region wfs request functions
 
+    // =========================================================================
+    // wfs request functions
+    // =========================================================================
     private object GetRequest(string remoteLocation, AsyncCallback asyncCallback, int configId)
     {
       object result = null;
       bool download = false;
       int retry = 0;
       WebRequest request = OpenWebRequest(remoteLocation, WebRequestMethods.Http.Get, 0);
-      var state = new ClientState {Request = request};
+      var state = new State {Request = request};
 
       while ((download == false) && (retry < _retryTimeService[configId]))
       {
@@ -227,7 +267,7 @@ namespace IntegrationArcMap.WebClient
       int retry = 0;
       var bytes = (new UTF8Encoding()).GetBytes(postItem);
       WebRequest request = OpenWebRequest(remoteLocation, WebRequestMethods.Http.Post, bytes.Length);
-      var state = new ClientState {Request = request};
+      var state = new State {Request = request};
       var reqstream = request.GetRequestStream();
       reqstream.Write(bytes, 0, bytes.Length);
       reqstream.Close();
@@ -290,20 +330,27 @@ namespace IntegrationArcMap.WebClient
     private WebRequest OpenWebRequest(string remoteLocation, string webRequest, int length)
     {
       var request = (HttpWebRequest) WebRequest.Create(remoteLocation);
-      request.Credentials = new NetworkCredential(_clientLogin.Username, _clientLogin.Password);
+      request.Credentials = new NetworkCredential(_login.Username, _login.Password);
       request.Method = webRequest;
       request.ContentLength = length;
       request.KeepAlive = true;
       request.Pipelined = true;
       request.PreAuthenticate = true;
       request.ContentType = "text/xml";
-      request.Headers.Add("ApiKey", _clientApiKey.APIKey);
+      request.Headers.Add("ApiKey", _apiKey.Value);
       return request;
     }
 
+    #endregion
+
+    #region call back functions
+
+    // =========================================================================
+    // Call back functions
+    // =========================================================================
     private static void GetXmlCallback(IAsyncResult ar)
     {
-      var state = (ClientState) ar.AsyncState;
+      var state = (State) ar.AsyncState;
 
       try
       {
@@ -326,9 +373,9 @@ namespace IntegrationArcMap.WebClient
       }
     }
 
-    private void GetImageCallback(IAsyncResult ar)
+    private static void GetImageCallback(IAsyncResult ar)
     {
-      var state = (ClientState) ar.AsyncState;
+      var state = (State) ar.AsyncState;
 
       try
       {

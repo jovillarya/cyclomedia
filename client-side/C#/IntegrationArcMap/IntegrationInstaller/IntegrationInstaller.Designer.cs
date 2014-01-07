@@ -1,6 +1,6 @@
-﻿namespace GsInstaller
+﻿namespace IntegrationInstaller
 {
-  partial class GsInstaller
+  partial class IntegrationInstaller
   {
     /// <summary>
     /// Required designer variable.

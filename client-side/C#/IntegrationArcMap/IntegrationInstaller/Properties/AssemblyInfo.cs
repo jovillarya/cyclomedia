@@ -1,8 +1,8 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("GsInstaller")]
-[assembly: AssemblyDescription("Installer for the ArcMap integration for Cycloramas")]
+[assembly: AssemblyTitle("Installer for the CycloMedia ArcMap Integration")]
+[assembly: AssemblyDescription("Installer for the CycloMedia ArcMap integration for Cycloramas")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CycloMedia")]
 [assembly: AssemblyProduct("ArcMap Integration for Cycloramas")]
@@ -14,5 +14,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("813739fd-f291-467f-ba44-bf2ff2d75417")]
 
-[assembly: AssemblyVersion("0.12.5.3981")]
-[assembly: AssemblyFileVersion("0.12.5.3981")]
+[assembly: AssemblyVersion("0.12.6.3986")]
+[assembly: AssemblyFileVersion("0.12.6.3986")]
