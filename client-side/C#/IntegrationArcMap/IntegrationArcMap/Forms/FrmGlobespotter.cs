@@ -79,7 +79,7 @@ namespace IntegrationArcMap.Forms
     private SortedDictionary<int, int> _yearMonth;
     // ReSharper restore InconsistentNaming
 
-    private static readonly IList<Color> Colors = new List<Color>
+    private readonly IList<Color> _colors = new List<Color>
     {
       Color.FromArgb(0x80B3FF),
       Color.FromArgb(0x0067FF),
@@ -137,6 +137,7 @@ namespace IntegrationArcMap.Forms
       _lookAtCoord = null;
 
       CycloMediaLayer.HistoricalDateChanged += OnHistoricalDateChanged;
+      FrmRecordingHistory.DateRangeChanged += OnDateRangeChanged;
     }
 
     #endregion
@@ -260,8 +261,6 @@ namespace IntegrationArcMap.Forms
         CycloMediaLayer.LayerChangedEvent -= OnRefreshCycloMediaLayer;
         CycloMediaLayer.LayerRemoveEvent -= OnRemoveCycloMediaLayer;
 
-        FrmRecordingHistory.DateRangeChangedDelegate -= OnDateRangeChanged;
-
         IActiveViewEvents_Event events = ArcUtils.ActiveViewEvents;
 
         if (events != null)
@@ -357,7 +356,7 @@ namespace IntegrationArcMap.Forms
             {
               var dateTime2 = (DateTime) dateTime;
               int year = dateTime2.Year;
-              Color color = GetColor(year);
+              Color color = GetCol(year);
               _layer.UpdateColor(color, colorYear);
             }
 
@@ -473,6 +472,16 @@ namespace IntegrationArcMap.Forms
       }
     }
 
+    private Color GetCol(int year)
+    {
+      DateTime now = DateTime.Now;
+      int nowYear = now.Year;
+      int yearDiff = nowYear - year;
+      int nrColors = _colors.Count;
+      int index = Math.Min(yearDiff, (nrColors - 1));
+      return _colors[index];
+    }
+
     #endregion
 
     #region public static functions
@@ -553,12 +562,7 @@ namespace IntegrationArcMap.Forms
 
     public static Color GetColor(int year)
     {
-      DateTime now = DateTime.Now;
-      int nowYear = now.Year;
-      int yearDiff = nowYear - year;
-      int nrColors = Colors.Count;
-      int index = Math.Min(yearDiff, (nrColors - 1));
-      return Colors[index];
+      return Instance.GetCol(year);
     }
 
     public static void ShowLocation(string imageId, CycloMediaLayer layer)
@@ -673,7 +677,6 @@ namespace IntegrationArcMap.Forms
           events.ViewRefreshed += OnViewRefreshed;
         }
 
-        FrmRecordingHistory.DateRangeChangedDelegate += OnDateRangeChanged;
         var extension = GsExtension.GetExtension();
 
         if (extension != null)
@@ -1314,11 +1317,7 @@ namespace IntegrationArcMap.Forms
     private void OnHistoricalDateChanged(SortedDictionary<int, int> yearMonth)
     {
       _yearMonth = yearMonth;
-
-      if (ApiReady)
-      {
-        FrmRecordingHistory.OnChangeDateRange(yearMonth);
-      }
+      FrmRecordingHistory.OnChangeDateRange(yearMonth);
     }
 
     private void RefreshVisibleLayers()

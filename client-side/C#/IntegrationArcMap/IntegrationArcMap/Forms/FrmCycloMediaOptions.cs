@@ -269,7 +269,8 @@ namespace IntegrationArcMap.Forms
 
     private void Save(bool close)
     {
-      bool loginSucces = ((txtUsername.Text != _login.Username) || (txtPassword.Text != _login.Password)) && Login();
+      bool usernameChanged = (txtUsername.Text != _login.Username) || (txtPassword.Text != _login.Password);
+      bool loginSucces = usernameChanged && Login();
 
       if (_login.Credentials || loginSucces)
       {
@@ -278,6 +279,7 @@ namespace IntegrationArcMap.Forms
         var distLayer = (uint) nudDistVectLayerViewer.Value;
         bool restart = (_config.BaseUrl != txtBaseUrl.Text);
         restart = restart || ((spat == null) || (spat.ToString() != cbSpatialReferences.SelectedItem.ToString()));
+        restart = restart || usernameChanged;
         _config.SpatialReference = (SpatialReference) cbSpatialReferences.SelectedItem;
         _config.MaxViewers = maxViewers;
         _config.DistanceCycloramaVectorLayer = distLayer;

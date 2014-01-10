@@ -81,13 +81,13 @@
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsCycloMediaOptions"
                 class="GsCycloMediaOptions"
-                message="Cyclorama Options"
-                caption="Cyclorama Options..."
-                tip="Cyclorama Options"
+                message="CycloMedia Options"
+                caption="CycloMedia Options..."
+                tip="CycloMedia Options"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsCycloMediaOptions.png">
-          <Help heading="Cyclorama Options">Cyclorama Options</Help>
+          <Help heading="CycloMedia Options">CycloMedia Options</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsRecordingHistory"
                 class="GsRecordingHistory"

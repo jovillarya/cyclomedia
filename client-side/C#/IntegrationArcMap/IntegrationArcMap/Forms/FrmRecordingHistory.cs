@@ -36,7 +36,7 @@ namespace IntegrationArcMap.Forms
     // =========================================================================
     // Members
     // =========================================================================
-    public static event DateRangeChangedDelegate DateRangeChangedDelegate;
+    public static event DateRangeChangedDelegate DateRangeChanged;
 
     private static FrmRecordingHistory _frmRecordingHistory;
     private static SortedDictionary<int, int> _yearMonth;
@@ -134,9 +134,9 @@ namespace IntegrationArcMap.Forms
           _config.YearTo = yTo;
           _config.Save();
 
-          if (DateRangeChangedDelegate != null)
+          if (DateRangeChanged != null)
           {
-            DateRangeChangedDelegate();
+            DateRangeChanged();
           }
         }
       }
