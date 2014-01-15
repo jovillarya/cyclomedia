@@ -1,31 +1,31 @@
 ﻿<ESRI.Configuration xmlns="http://schemas.esri.com/Desktop/AddIns"
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <Name>Cyclorama</Name>
+  <Name>GlobeSpotter for ArcGIS Desktop</Name>
   <AddInID>{601756f1-d4d0-4279-abad-47338704585c}</AddInID>
-  <Description>ArcMap Integration for Cyclorama's</Description>
-  <Version>0.12.6</Version>
+  <Description>GlobeSpotter Integration for ArcGIS Desktop</Description>
+  <Version>0.12.9</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
   <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>07-01-2014</Date>
+  <Date>15-01-2014</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />
   </Targets>
   <AddIn language="CLR"
-         library="IntegrationArcMap.dll"
+         library="GlobeSpotterForArcGISDesktop.dll"
          namespace="IntegrationArcMap.AddIns">
     <ArcMap>
       <Extensions>
         <Extension id="CycloMedia_IntegrationArcMap_GsExtension"
                    class="GsExtension"
-                   productName="CycloMedia Cyclorama - ArcMap integration"
+                   productName="GlobeSpotter for ArcGIS Desktop"
                    showInExtensionDialog="true"
                    autoLoad="true">
           <Description>
-            CycloMedia Cyclorama - ArcMap integration
-            Copyright © CycloMedia Technology 2013
-            This extension contains the CycloMedia Cyclorama integration.
+            GlobeSpotter Integration for ArcGIS Desktop
+            Copyright © CycloMedia Technology 2014
+            This extension contains the GlobeSpotter Integration for ArcGIS Desktop.
           </Description>
         </Extension>
       </Extensions>
@@ -81,13 +81,13 @@
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsCycloMediaOptions"
                 class="GsCycloMediaOptions"
-                message="CycloMedia Options"
-                caption="CycloMedia Options..."
-                tip="CycloMedia Options"
+                message="GlobeSpotter for ArcGIS Desktop Options"
+                caption="GlobeSpotter for ArcGIS Desktop Options..."
+                tip="GlobeSpotter for ArcGIS Desktop Options"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsCycloMediaOptions.png">
-          <Help heading="CycloMedia Options">CycloMedia Options</Help>
+          <Help heading="GlobeSpotter for ArcGIS Desktop Options">GlobeSpotter for ArcGIS Desktop Options</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsRecordingHistory"
                 class="GsRecordingHistory"
@@ -101,13 +101,13 @@
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsHelp"
                 class="GsHelp"
-                message="Help information about GlobeSpotter - Arcmap Add-in"
-                caption="Help information about GlobeSpotter - Arcmap Add-in"
-                tip="Help information about GlobeSpotter - Arcmap Add-in"
+                message="Help information about GlobeSpotter for ArcGIS Desktop"
+                caption="Help information about GlobeSpotter for ArcGIS Desktop"
+                tip="Help information about GlobeSpotter for ArcGIS Desktop"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsHelp.png">
-          <Help heading="Help information about GlobeSpotter - Arcmap Add-in">Help information about GlobeSpotter - Arcmap Add-in</Help>
+          <Help heading="Help information about GlobeSpotter for ArcGIS Desktop">Help information about GlobeSpotter for ArcGIS Desktop</Help>
         </Button>
       </Commands>
       <Toolbars>
@@ -127,8 +127,8 @@
       </Toolbars>
       <DockableWindows>
         <DockableWindow id="IntegrationArcMap_GsFrmGlobespotter"
-                class="GsFrmGlobespotter"
-                caption="Cyclorama Viewer">
+                        class="GsFrmGlobespotter"
+                        caption="Cyclorama Viewer">
           <InitialPlacement height="600"
                             width="600"
                             state="pinned"

@@ -72,7 +72,15 @@ namespace IntegrationArcMap.AddIns
       {
         IEditor3 editor = ArcUtils.Editor;
         Enabled = (editor.EditState == esriEditState.esriStateEditing);
-        Checked = FrmMeasurement.IsVisible();
+        bool visible = FrmMeasurement.IsVisible();
+
+        if (!Enabled && visible)
+        {
+          FrmMeasurement.Close();
+          visible = false;
+        }
+
+        Checked = visible;
       }
       catch (Exception ex)
       {

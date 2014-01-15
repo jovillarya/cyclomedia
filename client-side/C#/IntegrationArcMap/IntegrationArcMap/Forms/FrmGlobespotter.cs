@@ -183,7 +183,7 @@ namespace IntegrationArcMap.Forms
     {
       lock (this)
       {
-        if (String.IsNullOrEmpty(_imageId))
+        if (string.IsNullOrEmpty(_imageId))
         {
           var closeGlobespotter = new Thread(CloseGlobespotter);
           closeGlobespotter.Start();
@@ -617,7 +617,31 @@ namespace IntegrationArcMap.Forms
       if (_api != null)
       {
         SpatialReference spatialRef = _config.SpatialReference;
-        string epsgCode = (spatialRef == null) ? ArcUtils.EpsgCode : spatialRef.SRSName;
+        string epsgCode = ArcUtils.EpsgCode;
+
+        if ((spatialRef != null) && spatialRef.KnownInArcMap)
+        {
+          epsgCode = spatialRef.SRSName;
+        }
+        else
+        {
+          SpatialReferences spatialReferences = SpatialReferences.Instance;
+          spatialRef = spatialReferences.GetItem(epsgCode);
+
+          if ((spatialRef == null) || (!spatialRef.KnownInArcMap))
+          {
+            spatialRef = spatialReferences.Aggregate<SpatialReference, SpatialReference>(null,
+              (current, spatialReference) => spatialReference.KnownInArcMap ? spatialReference : current);
+          }
+
+          if (spatialRef != null)
+          {
+            epsgCode = spatialRef.SRSName;
+            _config.SpatialReference = spatialRef;
+            _config.Save();
+          }
+        }
+
         _api.SetAPIKey(_apiKey.Value);
         _api.SetUserNamePassword(_login.Username, _login.Password);
         _api.SetSrsNameViewer(epsgCode);

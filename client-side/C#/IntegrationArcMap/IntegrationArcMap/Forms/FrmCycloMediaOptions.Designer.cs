@@ -390,7 +390,7 @@
       this.Name = "FrmCycloMediaOptions";
       this.ShowIcon = false;
       this.ShowInTaskbar = false;
-      this.Text = "CycloMedia Options";
+      this.Text = "GlobeSpotter for ArcGIS Desktop Options";
       this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmCycloMediaOptions_FormClosed);
       this.Load += new System.EventHandler(this.FrmCycloMediaOptions_Load);
       this.tcSettings.ResumeLayout(false);

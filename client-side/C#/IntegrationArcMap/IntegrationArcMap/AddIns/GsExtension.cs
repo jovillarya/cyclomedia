@@ -17,21 +17,14 @@
  */
 
 using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Drawing;
-using ESRI.ArcGIS.ADF.COMSupport;
-using ESRI.ArcGIS.ArcMapUI;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Desktop.AddIns;
 using ESRI.ArcGIS.Display;
-using ESRI.ArcGIS.Framework;
-using ESRI.ArcGIS.Geometry;
 using ESRI.ArcGIS.esriSystem;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Layers;
 using IntegrationArcMap.Utilities;
-using stdole;
 
 namespace IntegrationArcMap.AddIns
 {
@@ -320,6 +313,11 @@ namespace IntegrationArcMap.AddIns
 
     private void OnActiveViewChanged()
     {
+      // *****************************************************************
+      // Disabled: This code adds the cyclorama images to the layout view,
+      // some problems with customers who have a custom layout view
+      // *****************************************************************
+      /*
       try
       {
         IApplication application = ArcMap.Application;
@@ -396,8 +394,10 @@ namespace IntegrationArcMap.AddIns
                       var olePictElem = pictElement as IOlePictureElement;
 
                       // ReSharper disable CSharpWarnings::CS0612
+                      // ReSharper disable CSharpWarnings::CS0618
                       var pictDisp = OLE.GetIPictureDispFromBitmap(bitmap) as IPictureDisp;
                       olePictElem.ImportPicture(pictDisp);
+                      // ReSharper restore CSharpWarnings::CS0618
                       // ReSharper restore CSharpWarnings::CS0612
 
                       var element = pictElement as IElement;
@@ -427,6 +427,7 @@ namespace IntegrationArcMap.AddIns
       {
         Trace.WriteLine(ex.Message, "GsExtension.OnActiveViewChanged");
       }
+      */
     }
 
     #endregion

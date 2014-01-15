@@ -414,7 +414,14 @@ namespace IntegrationArcMap.Layers
 
                   if (dataset != null)
                   {
-                    result = dataset.Workspace as IFeatureWorkspace;
+                    try
+                    {
+                      result = dataset.Workspace as IFeatureWorkspace;
+                    }
+                    catch
+                    {
+                      result = null;
+                    }
                   }
                 }
               }
@@ -437,6 +444,15 @@ namespace IntegrationArcMap.Layers
     // =========================================================================
     private void OnContentChanged()
     {
+      foreach (var layer in AllLayers)
+      {
+        if (!Layers.Aggregate(false, (current, visLayer) => current || (visLayer == layer)))
+        {
+          layer.IsVisible = true;
+          layer.Visible = false;
+        }
+      }
+
       CycloMediaLayer changedLayer = Layers.Aggregate<CycloMediaLayer, CycloMediaLayer>
         (null, (current, layer) => (layer.IsVisible && (!layer.Visible)) ? layer : current);
       CycloMediaLayer refreshLayer = null;

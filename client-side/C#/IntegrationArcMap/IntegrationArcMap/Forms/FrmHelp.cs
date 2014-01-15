@@ -145,7 +145,7 @@ namespace IntegrationArcMap.Forms
     {
       Type thisType = GetType();
       Assembly thisAssembly = Assembly.GetAssembly(thisType);
-      const string manualPath = @"IntegrationArcMap.Doc.User Manual ArcMap Add-In.pdf";
+      const string manualPath = @"IntegrationArcMap.Doc.GlobeSpotter for ArcGIS Desktop User Manual.pdf";
       Stream manualStream = thisAssembly.GetManifestResourceStream(manualPath);
 
       if (manualStream != null)

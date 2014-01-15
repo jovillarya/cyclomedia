@@ -18,7 +18,9 @@
 
 using System;
 using System.Xml.Serialization;
+using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Geometry;
+using IntegrationArcMap.Utilities;
 
 namespace IntegrationArcMap.Client
 {
@@ -42,6 +44,8 @@ namespace IntegrationArcMap.Client
     public string Name { get; set; }
 
     public string SRSName { get; set; }
+
+    public Bounds NativeBounds { get; set; }
 
     public string ESRICompatibleName { get; set; }
     // ReSharper restore InconsistentNaming
@@ -73,6 +77,40 @@ namespace IntegrationArcMap.Client
               catch (ArgumentException)
               {
                 _spatialReference = null;
+              }
+            }
+          }
+        }
+
+        if (_spatialReference != null)
+        {
+          IActiveView activeView = ArcUtils.ActiveView;
+          IEnvelope envelope = activeView.Extent;
+          ISpatialReference spatEnv = envelope.SpatialReference;
+
+          if (spatEnv.FactoryCode != _spatialReference.FactoryCode)
+          {
+            IEnvelope copyEnvelope = envelope.Envelope;
+            copyEnvelope.Project(_spatialReference);
+
+            if (copyEnvelope.IsEmpty)
+            {
+              _spatialReference = null;
+            }
+            else
+            {
+              if (NativeBounds != null)
+              {
+                double xMin = NativeBounds.MinX;
+                double yMin = NativeBounds.MinY;
+                double xMax = NativeBounds.MaxX;
+                double yMax = NativeBounds.MaxY;
+
+                if ((copyEnvelope.XMin < xMin) || (copyEnvelope.XMax > xMax) || (copyEnvelope.YMin < yMin) ||
+                    (copyEnvelope.YMax > yMax))
+                {
+                  _spatialReference = null;
+                }
               }
             }
           }

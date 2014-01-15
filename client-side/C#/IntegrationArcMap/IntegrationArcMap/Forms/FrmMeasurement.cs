@@ -55,6 +55,7 @@ namespace IntegrationArcMap.Forms
     private FrmGlobespotter _frmGlobespotter;
     private ICommandItem _commandItem;
     private bool _opened;
+    private bool _goToClicked;
     private int _entityId;
     private int _pointId;
     private int? _lastPointIdUpd;
@@ -82,6 +83,7 @@ namespace IntegrationArcMap.Forms
       _measurementPointS = null;
       _lastPointIdUpd = null;
       _config = Config.Instance;
+      _goToClicked = false;
 
       Font font = SystemFonts.MenuFont;
       lvObservations.Font = (Font) font.Clone();
@@ -431,8 +433,8 @@ namespace IntegrationArcMap.Forms
 
       if ((_entityId != entityId) || (_pointId != pointId))
       {
-        AddObservations(entityId, pointId);
         UpdatePoint(_frmGlobespotter, measurementPoint, entityId, pointId, true);
+        AddObservations(entityId, pointId);
       }
 
       _measurementPoint = measurementPoint;
@@ -494,7 +496,7 @@ namespace IntegrationArcMap.Forms
           AddObservations(entityId, pointId);
         }
 
-        if ((entityId != _entityId) ||
+        if ((entityId != _entityId) || _goToClicked ||
             (((pointId != _pointId) && (!smartClick)) || ((_lastPointIdUpd > _pointId) && smartClick)))
         {
           ClearForm(false);
@@ -1052,12 +1054,16 @@ namespace IntegrationArcMap.Forms
 
     private void btnPrev_Click(object sender, EventArgs e)
     {
+      _goToClicked = true;
       OpenNewPoint(_measurementPointS.PreviousPoint);
+      _goToClicked = false;
     }
 
     private void btnNext_Click(object sender, EventArgs e)
     {
+      _goToClicked = true;
       OpenNewPoint(_measurementPointS.NextPoint);
+      _goToClicked = false;
     }
 
     #endregion

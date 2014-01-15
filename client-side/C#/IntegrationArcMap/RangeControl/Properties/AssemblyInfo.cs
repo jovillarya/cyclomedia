@@ -7,10 +7,10 @@ using System.Runtime.InteropServices;
 // associated with an assembly.
 //
 [assembly: AssemblyTitle("RangeControl")]
-[assembly: AssemblyDescription("RangeControl component for the ArcMap integration")]
+[assembly: AssemblyDescription("RangeControl component for the GlobeSpotter integration for ArcGIS Desktop")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CycloMedia")]
-[assembly: AssemblyProduct("ArcMap Integration for Cycloramas")]
+[assembly: AssemblyProduct("GlobeSpotter for ArcGIS Desktop")]
 [assembly: AssemblyCopyright("Copyright © CycloMedia 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -30,8 +30,8 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 //
-[assembly: AssemblyVersion("0.12.7.3991")]
-[assembly: AssemblyFileVersion("0.12.7.3991")]
+[assembly: AssemblyVersion("0.12.9.3998")]
+[assembly: AssemblyFileVersion("0.12.9.3998")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 

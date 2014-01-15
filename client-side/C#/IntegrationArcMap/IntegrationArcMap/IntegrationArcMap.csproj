@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IntegrationArcMap</RootNamespace>
-    <AssemblyName>IntegrationArcMap</AssemblyName>
+    <AssemblyName>GlobeSpotterForArcGISDesktop</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
@@ -127,6 +127,7 @@
     <Compile Include="AddIns\GsHistoricalDataLayer.cs" />
     <Compile Include="AddIns\GsRecentDataLayer.cs" />
     <Compile Include="AddIns\GsFrmGlobespotter.cs" />
+    <Compile Include="Client\Bounds.cs" />
     <Compile Include="Forms\FrmHelp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +273,8 @@
     <AddInContent Include="Images\GsCycloMediaOptions.png" />
     <AddInContent Include="Images\GsHistoricalDataLayer.png" />
     <AddInContent Include="Images\GsRecentDataLayer.png" />
+    <EmbeddedResource Include="Doc\GlobeSpotter for ArcGIS Desktop User Manual.pdf" />
+    <None Include="GlobeSpotter for ArcGIS Desktop Installation Manual.pdf" />
     <None Include="Images\GsDelete.png" />
     <AddInContent Include="Images\GsRecordingHistory.png" />
     <AddInContent Include="Images\GsHelp.png" />
@@ -281,8 +284,6 @@
     <None Include="Images\LeftArrow.png" />
     <None Include="Images\RightArrow.png" />
     <Content Include="LGPL-3.0.txt" />
-    <EmbeddedResource Include="Doc\User Manual ArcMap Add-In.pdf" />
-    <None Include="Installation Manual ArcMap Add-In.pdf" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RangeControl\RangeControl.csproj">

@@ -1,11 +1,11 @@
 ﻿using System.Reflection;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("Installer for the CycloMedia ArcMap Integration")]
-[assembly: AssemblyDescription("Installer for the CycloMedia ArcMap integration for Cycloramas")]
+[assembly: AssemblyTitle("Installer for GlobeSpotter for ArcGIS Desktop")]
+[assembly: AssemblyDescription("Installer for the GlobeSpotter integration for ArcGIS Desktop")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CycloMedia")]
-[assembly: AssemblyProduct("ArcMap Integration for Cycloramas")]
+[assembly: AssemblyProduct("GlobeSpotter for ArcGIS Desktop")]
 [assembly: AssemblyCopyright("Copyright © CycloMedia 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -14,5 +14,5 @@ using System.Runtime.InteropServices;
 
 [assembly: Guid("813739fd-f291-467f-ba44-bf2ff2d75417")]
 
-[assembly: AssemblyVersion("0.12.7.3991")]
-[assembly: AssemblyFileVersion("0.12.7.3991")]
+[assembly: AssemblyVersion("0.12.9.3998")]
+[assembly: AssemblyFileVersion("0.12.9.3998")]

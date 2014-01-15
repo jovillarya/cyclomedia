@@ -578,8 +578,15 @@ namespace IntegrationArcMap.Layers
           {
             if (layer is IFeatureLayer)
             {
-              result = layer;
-              leave = true;
+              if (layer.Valid)
+              {
+                result = layer;
+                leave = true;
+              }
+              else
+              {
+                map.DeleteLayer(layer);
+              }
             }
             else
             {
