@@ -342,6 +342,7 @@ namespace IntegrationArcMap.Utilities
       }
 
       // ReSharper disable CSharpWarnings::CS0612
+      // ReSharper disable CSharpWarnings::CS0618
       Bitmap bitmap8B = bitmap.To8BppIndexed();
       string tempPath = Path.GetTempPath();
       string writePath = Path.Combine(tempPath, string.Format("{0}pip.bmp", color.Name));
@@ -351,6 +352,47 @@ namespace IntegrationArcMap.Utilities
       symbol.Size = size075;
       symbol.BitmapTransparencyColor = Converter.ToRGBColor(Color.White);
       return symbol as ISymbol;
+      // ReSharper restore CSharpWarnings::CS0618
+      // ReSharper restore CSharpWarnings::CS0612
+    }
+
+    public static ISymbol GetForbiddenSymbol(int sizeLayer, Color color)
+    {
+      var size025 = sizeLayer;
+      var size075 = size025*3;
+      var size = size025*4;
+      var size15 = size025*6;
+      var size175 = size025*7;
+      var size3 = size025*12;
+      var bitmap = new Bitmap(size3, size3);
+      const int sizeLine2 = 2;
+      const int sizeLine3 = 3;
+      const int sizeLine6 = 6;
+      color = Color.FromArgb(255, color);
+
+      using (Graphics ga = Graphics.FromImage(bitmap))
+      {
+        ga.Clear(Color.White);
+        ga.DrawEllipse(new Pen(color, sizeLine2), size, size, size, size);
+        ga.FillEllipse(new SolidBrush(color), size, size, size, size);
+        ga.DrawEllipse(new Pen(Color.Red, sizeLine2), size15, size15, size075, size075);
+        ga.FillEllipse(Brushes.Red, size15, size15, size075, size075);
+        ga.DrawRectangle(new Pen(Color.WhiteSmoke, sizeLine2), size15 + sizeLine3, size175, size075 - sizeLine6, size025);
+        ga.FillRectangle(Brushes.WhiteSmoke, size15 + sizeLine3, size175, size075 - sizeLine6, size025);
+      }
+
+      // ReSharper disable CSharpWarnings::CS0612
+      // ReSharper disable CSharpWarnings::CS0618
+      Bitmap bitmap8B = bitmap.To8BppIndexed();
+      string tempPath = Path.GetTempPath();
+      string writePath = Path.Combine(tempPath, string.Format("{0}forbidden.bmp", color.Name));
+      bitmap8B.Save(writePath, ImageFormat.Bmp);
+      IPictureMarkerSymbol symbol = new PictureMarkerSymbolClass();
+      symbol.CreateMarkerSymbolFromFile(esriIPictureType.esriIPictureBitmap, writePath);
+      symbol.Size = size075;
+      symbol.BitmapTransparencyColor = Converter.ToRGBColor(Color.White);
+      return symbol as ISymbol;
+      // ReSharper restore CSharpWarnings::CS0618
       // ReSharper restore CSharpWarnings::CS0612
     }
 

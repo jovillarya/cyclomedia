@@ -227,6 +227,36 @@ namespace IntegrationArcMap.Model.Wfs
       return result;
     }
 
+    /// <summary>
+    /// This function updates the value of a field.
+    /// </summary>
+    /// <param name="name">The name of the field</param>
+    /// <param name="item">The item of the field</param>
+    public void UpdateItem(string name, object item)
+    {
+      if (Values.ContainsKey(name))
+      {
+        Values[name] = (string) item;
+      }
+
+      if (name == ShapeFieldName)
+      {
+        var point = item as IPoint;
+
+        if (point != null)
+        {
+          Shape = new Point
+          {
+            X = point.X,
+            Y = point.Y,
+            Z = point.Z,
+            Type = ShapeType.Point,
+            SrsName = (point.SpatialReference == null) ? string.Empty : point.SpatialReference.Name
+          };
+        }
+      }
+    }
+
     #endregion
   }
 }

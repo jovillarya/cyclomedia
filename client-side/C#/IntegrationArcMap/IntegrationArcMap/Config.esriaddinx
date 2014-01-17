@@ -3,11 +3,11 @@
   <Name>GlobeSpotter for ArcGIS Desktop</Name>
   <AddInID>{601756f1-d4d0-4279-abad-47338704585c}</AddInID>
   <Description>GlobeSpotter Integration for ArcGIS Desktop</Description>
-  <Version>0.12.9</Version>
+  <Version>0.12.10</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
   <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>15-01-2014</Date>
+  <Date>17-01-2014</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />

@@ -218,14 +218,12 @@ namespace IntegrationArcMap.Layers
     {
       if (Layer == null)
       {
-        // ReSharper disable UseIndexedProperty
-        // ReSharper disable CSharpWarnings::CS0612
         _layer = new FeatureLayerClass
-          {
-            Name = Name,
-            MinimumScale = MinimumScale,
-            Visible = true
-          };
+        {
+          Name = Name,
+          MinimumScale = MinimumScale,
+          Visible = true
+        };
 
         IFeatureClass featureClass = OpenFeatureClassInWorkspace();
 
@@ -235,31 +233,11 @@ namespace IntegrationArcMap.Layers
           featureLayer.FeatureClass = featureClass;
         }
 
-        // ReSharper disable CSharpWarnings::CS0618
-        var markerSymbol = new SimpleMarkerSymbol
-          {
-            Color = Converter.ToRGBColor(Color),
-            Size = SizeLayer
-          };
-        // ReSharper restore CSharpWarnings::CS0618
-
-        IUniqueValueRenderer renderer = new UniqueValueRendererClass
-          {
-            DefaultSymbol = markerSymbol as ISymbol,
-            DefaultLabel = string.Empty,
-            UseDefaultSymbol = this is WfsLayer,
-            FieldCount = FieldNames.Length
-          };
-
-        for (int i = 0; i < FieldNames.Length; i++)
-        {
-          renderer.set_Field(i, FieldNames[i]);
-        }
-
-        var geoFeatureLayer = _layer as IGeoFeatureLayer;
-        geoFeatureLayer.Renderer = renderer as IFeatureRenderer;
-        // ReSharper restore CSharpWarnings::CS0612
-        // ReSharper restore UseIndexedProperty
+        CreateUniqueValueRenderer();
+      }
+      else
+      {
+        CreateUniqueValueRenderer();
       }
 
       if (_cycloMediaGroupLayer != null)
@@ -366,37 +344,39 @@ namespace IntegrationArcMap.Layers
       return result;
     }
 
-    public List<double> GetLocationInfo(string imageId)
+    public IMappedFeature GetLocationInfo(string imageId)
     {
-      var result = new List<double>();
-
-      string[] fields =
-        {
-          "LongitudePrecision", "LatitudePrecision", "HeightPrecision", "RecorderDirection",
-          "GroundLevelOffset", "Height"
-        };
+      IMappedFeature result = CreateMappedFeature(null);
+      var fields = result.Fields;
+      string shapeFieldName = result.ShapeFieldName;
 
       IQueryFilter filter = new QueryFilterClass
-        {
-          WhereClause = string.Format("ImageId = '{0}'", imageId),
-          SubFields = string.Format("{0}, {1}", fields.Aggregate(string.Empty, (current, field) => string.Format
-            ("{0}{1}{2}", current, string.IsNullOrEmpty(current) ? string.Empty : ", ", field)), "Location")
-        };
+      {
+        WhereClause = string.Format("ImageId = '{0}'", imageId),
+        SubFields = string.Format("{0}, {1}", fields.Aggregate(string.Empty, (current, field) => string.Format
+          ("{0}{1}{2}", current, string.IsNullOrEmpty(current) ? string.Empty : ", ", field.Key)), shapeFieldName)
+      };
 
       var existsResult = FeatureClass.Search(filter, false);
-      IFeature feature;
+      IFeature feature = existsResult.NextFeature();
       // ReSharper disable UseIndexedProperty
 
-      while ((feature = existsResult.NextFeature()) != null)
+      if (feature != null)
       {
-        result.AddRange(fields.Select(existsResult.FindField).Select(id => (double) feature.get_Value(id)));
-        var point = feature.Shape as IPoint;
-
-        if (point != null)
+        foreach (var field in fields)
         {
-          result.Add(point.X);
-          result.Add(point.Y);
+          string name = field.Key;
+          int nameId = existsResult.FindField(name);
+          object item = feature.get_Value(nameId);
+          result.UpdateItem(name, item);
         }
+
+        var point = feature.Shape as IPoint;
+        result.UpdateItem(shapeFieldName, point);
+      }
+      else
+      {
+        result = null;
       }
 
       // ReSharper restore UseIndexedProperty
@@ -491,6 +471,11 @@ namespace IntegrationArcMap.Layers
       return result;
     }
 
+    public void MakeEmpty()
+    {
+      MakeEmpty(FeatureClass);
+    }
+
     public virtual void UpdateColor(Color color, int? year)
     {
       if (year == null)
@@ -542,6 +527,39 @@ namespace IntegrationArcMap.Layers
     // =========================================================================
     // Functions (Private)
     // =========================================================================
+    private void CreateUniqueValueRenderer()
+    {
+      var markerSymbol = new SimpleMarkerSymbol
+      {
+        // ReSharper disable CSharpWarnings::CS0618
+        Color = Converter.ToRGBColor(Color),
+        Size = SizeLayer
+        // ReSharper restore CSharpWarnings::CS0618
+      };
+
+      IUniqueValueRenderer renderer = new UniqueValueRendererClass
+      {
+        DefaultSymbol = markerSymbol as ISymbol,
+        DefaultLabel = string.Empty,
+        UseDefaultSymbol = this is WfsLayer,
+        FieldCount = FieldNames.Length
+      };
+
+      for (int i = 0; i < FieldNames.Length; i++)
+      {
+        // ReSharper disable UseIndexedProperty
+        renderer.set_Field(i, FieldNames[i]);
+        // ReSharper restore UseIndexedProperty
+      }
+
+      var geoFeatureLayer = _layer as IGeoFeatureLayer;
+
+      if (geoFeatureLayer != null)
+      {
+        geoFeatureLayer.Renderer = renderer as IFeatureRenderer;
+      }
+    }
+
     private IFeatureClass OpenFeatureClassInWorkspace()
     {
       IFeatureClass result = null;
@@ -557,6 +575,7 @@ namespace IntegrationArcMap.Layers
       }
 
       // ReSharper restore UseIndexedProperty
+      MakeEmpty(result);
       return result;
     }
 
@@ -599,6 +618,37 @@ namespace IntegrationArcMap.Layers
       }
 
       return result;
+    }
+
+    private void MakeEmpty(IFeatureClass featureClass)
+    {
+      if (featureClass != null)
+      {
+        IFeatureWorkspace featureWorkspace = _cycloMediaGroupLayer.FeatureWorkspace;
+        var workspaceEdit = featureWorkspace as IWorkspaceEdit;
+        var spatialCacheManager = featureWorkspace as ISpatialCacheManager3;
+
+        if (workspaceEdit != null)
+        {
+          workspaceEdit.StartEditing(false);
+          var existsResult = featureClass.Search(null, false);
+          IFeature feature;
+
+          while ((feature = existsResult.NextFeature()) != null)
+          {
+            feature.Delete();
+          }
+
+          workspaceEdit.StopEditing(true);
+
+          if (spatialCacheManager != null)
+          {
+            IActiveView activeView = ArcUtils.ActiveView;
+            IEnvelope envelope = activeView.Extent;
+            spatialCacheManager.FillCache(envelope);
+          }
+        }
+      }
     }
 
     /// <summary>

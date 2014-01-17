@@ -271,6 +271,90 @@ namespace IntegrationArcMap.Model.Atlas
       return result;
     }
 
+    /// <summary>
+    /// This function updates the value of a field.
+    /// </summary>
+    /// <param name="name">The name of the field</param>
+    /// <param name="item">The item of the field</param>
+    public void UpdateItem(string name, object item)
+    {
+      if (item != null)
+      {
+        switch (name)
+        {
+          case "Id":
+            Id = (string) item;
+            break;
+          case "ImageId":
+            ImageId = (string) item;
+            break;
+          case "RecordedAt":
+            RecordedAt = (DateTime?) item;
+            break;
+          case "Height":
+            Height = new Height {Value = (double) item};
+            break;
+          case "LatitudePrecision":
+            LatitudePrecision = (double?) item;
+            break;
+          case "LongitudePrecision":
+            LongitudePrecision = (double?) item;
+            break;
+          case "HeightPrecision":
+            HeightPrecision = (double?) item;
+            break;
+          case "Orientation":
+            Orientation = (double?) item;
+            break;
+          case "OrientationPrecision":
+            OrientationPrecision = (double?) item;
+            break;
+          case "GroundLevelOffset":
+            GroundLevelOffset = (double?) item;
+            break;
+          case "RecorderDirection":
+            RecorderDirection = (double?) item;
+            break;
+          case "ProductType":
+            ProductType = (ProductType) Enum.Parse(typeof (ProductType), (string) item);
+            break;
+          case "IsAuthorized":
+            IsAuthorized = bool.Parse((string) item);
+            break;
+          case "ExpiredAt":
+            ExpiredAt = (DateTime?) item;
+            break;
+          case "Year":
+            // empty
+            break;
+          case "PIP":
+            // empty
+            break;
+          case "PIP1Yaw":
+            // empty
+            break;
+          case "PIP2Yaw":
+            // empty
+            break;
+          case "Location":
+            var point = item as IPoint;
+
+            if (point != null)
+            {
+              Shape = new Point
+              {
+                X = point.X,
+                Y = point.Y,
+                Z = point.Z,
+                Type = ShapeType.Point,
+                SrsName = (point.SpatialReference == null) ? string.Empty : point.SpatialReference.Name
+              };
+            }
+            break;
+        }
+      }
+    }
+
     #endregion
   }
 }

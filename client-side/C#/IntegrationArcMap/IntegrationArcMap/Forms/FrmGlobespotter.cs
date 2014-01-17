@@ -534,6 +534,11 @@ namespace IntegrationArcMap.Forms
       {
         _frmGlobespotter.Clear();
       }
+
+      if (_frmGlobespotter != null)
+      {
+        _frmGlobespotter._imageId = string.Empty;
+      }
     }
 
     public static void Restart()
@@ -557,7 +562,11 @@ namespace IntegrationArcMap.Forms
 
       Instance._restartImages.AddRange(imageIds);
       ShutDown(true);
-      ShowLocation(imageId, layer);
+
+      if (!string.IsNullOrEmpty(imageId))
+      {
+        ShowLocation(imageId, layer);
+      }
     }
 
     public static Color GetColor(int year)

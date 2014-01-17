@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using IntegrationArcMap.Model;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.DataSourcesGDB;
@@ -226,19 +227,25 @@ namespace IntegrationArcMap.Layers
       return result;
     }
 
-    public List<double> GetLocationInfo(string imageId)
+    public IMappedFeature GetLocationInfo(string imageId)
     {
-      var result = new List<double>();
+      return Layers.Select(layer => layer.GetLocationInfo(imageId)).Aggregate<IMappedFeature, IMappedFeature>
+        (null, (current, mappedFeature) => mappedFeature ?? current);
+    }
 
-      foreach (var layer in Layers)
+    public void MakeEmpty()
+    {
+      foreach (var layer in AllLayers)
       {
-        if (result.Count == 0)
-        {
-          result.AddRange(layer.GetLocationInfo(imageId));
-        }
+        layer.MakeEmpty();
       }
 
-      return result;
+      IActiveView activeView = ArcUtils.ActiveView;
+
+      if (activeView != null)
+      {
+        activeView.Refresh();
+      }
     }
 
     #endregion

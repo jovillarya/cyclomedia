@@ -25,10 +25,13 @@ using System.Windows.Forms;
 using IntegrationArcMap.AddIns;
 using IntegrationArcMap.Client;
 using IntegrationArcMap.Layers;
+using IntegrationArcMap.Model;
+using IntegrationArcMap.Model.Atlas;
 using IntegrationArcMap.Objects;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Framework;
 using GlobeSpotterAPI;
+using Image = System.Drawing.Image;
 using MeasurementPoint = GlobeSpotterAPI.MeasurementPoint;
 using MeasurementPointS = IntegrationArcMap.Objects.MeasurementPoint;
 
@@ -242,10 +245,11 @@ namespace IntegrationArcMap.Forms
       string imageId = observation.imageId;
       GsExtension extension = GsExtension.GetExtension();
       CycloMediaGroupLayer groupLayer = extension.CycloMediaGroupLayer;
-      List<double> stdLocations = groupLayer.GetLocationInfo(imageId);
-      double stdX = stdLocations.Count >= 1 ? stdLocations[0] : 0;
-      double stdY = stdLocations.Count >= 2 ? stdLocations[1] : 0;
-      double stdZ = stdLocations.Count >= 3 ? stdLocations[2] : 0;
+      IMappedFeature locationInfo = groupLayer.GetLocationInfo(imageId);
+      var recordingInfo = locationInfo as Recording;
+      double stdX = (recordingInfo == null) ? 0 : (recordingInfo.LongitudePrecision ?? 0);
+      double stdY = (recordingInfo == null) ? 0 : (recordingInfo.LatitudePrecision ?? 0);
+      double stdZ = (recordingInfo == null) ? 0 : (recordingInfo.HeightPrecision ?? 0);
       string std = string.Format("{0:0.00} {1:0.00} {2:0.00}", stdX, stdY, stdZ);
 
       if ((_entityId != entityId) || (_pointId != pointId))

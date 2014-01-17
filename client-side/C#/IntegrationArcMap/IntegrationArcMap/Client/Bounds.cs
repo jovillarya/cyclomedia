@@ -20,12 +20,31 @@ namespace IntegrationArcMap.Client
 {
   public class Bounds
   {
+    #region properties
+
+    // =========================================================================
+    // Properties
+    // =========================================================================
+    /// <summary>
+    /// Min X value
+    /// </summary>
     public double MinX { get; set; }
 
+    /// <summary>
+    /// Min Y value
+    /// </summary>
     public double MinY { get; set; }
 
+    /// <summary>
+    /// Max X value
+    /// </summary>
     public double MaxX { get; set; }
 
+    /// <summary>
+    /// Max Y value
+    /// </summary>
     public double MaxY { get; set; }
+
+    #endregion
   }
 }

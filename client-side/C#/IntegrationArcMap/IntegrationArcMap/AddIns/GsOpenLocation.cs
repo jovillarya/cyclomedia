@@ -24,6 +24,9 @@ using System.Reflection;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Layers;
 using ESRI.ArcGIS.Desktop.AddIns;
+using IntegrationArcMap.Model;
+using IntegrationArcMap.Model.Atlas;
+using IntegrationArcMap.Properties;
 
 namespace IntegrationArcMap.AddIns
 {
@@ -98,7 +101,20 @@ namespace IntegrationArcMap.AddIns
 
         if ((!string.IsNullOrEmpty(imageId)) && (layer != null))
         {
-          FrmGlobespotter.ShowLocation(imageId, layer);
+          IMappedFeature mappedFeature = layer.GetLocationInfo(imageId);
+          var recording = mappedFeature as Recording;
+
+          if (recording != null)
+          {
+            if ((recording.IsAuthorized == null) || ((bool) recording.IsAuthorized))
+            {
+              FrmGlobespotter.ShowLocation(imageId, layer);
+            }
+            else
+            {
+              MessageBox.Show(Resources.GsOpenLocation_OnMouseUp_You_are_not_authorized_to_view_the_image_);
+            }
+          }
         }
       }
       catch(Exception ex)

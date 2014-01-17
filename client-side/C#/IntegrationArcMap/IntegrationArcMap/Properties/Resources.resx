@@ -139,4 +139,7 @@
   <data name="Login_CreateAes_Salt_must_be_at_least_8_bytes_" xml:space="preserve">
     <value>Salt must be at least 8 bytes.</value>
   </data>
+  <data name="GsOpenLocation_OnMouseUp_You_are_not_authorized_to_view_the_image_" xml:space="preserve">
+    <value>You are not authorized to view the image.</value>
+  </data>
 </root>

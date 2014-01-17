@@ -89,6 +89,15 @@ namespace IntegrationArcMap.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You are not authorized to view the image..
+        /// </summary>
+        internal static string GsOpenLocation_OnMouseUp_You_are_not_authorized_to_view_the_image_ {
+            get {
+                return ResourceManager.GetString("GsOpenLocation_OnMouseUp_You_are_not_authorized_to_view_the_image_", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap LeftArrow {

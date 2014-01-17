@@ -24,6 +24,7 @@ using System.Reflection;
 using System.Windows.Forms;
 using IntegrationArcMap.AddIns;
 using IntegrationArcMap.Client;
+using IntegrationArcMap.Layers;
 using IntegrationArcMap.Utilities;
 
 namespace IntegrationArcMap.Forms
@@ -278,9 +279,11 @@ namespace IntegrationArcMap.Forms
         var maxViewers = (uint) nudMaxViewers.Value;
         var distLayer = (uint) nudDistVectLayerViewer.Value;
         bool restart = (_config.BaseUrl != txtBaseUrl.Text);
-        restart = restart || ((spat == null) || (spat.ToString() != cbSpatialReferences.SelectedItem.ToString()));
+        var selectedItem = (SpatialReference) cbSpatialReferences.SelectedItem;
+        restart = restart ||
+                  ((spat == null) || ((selectedItem != null) && (spat.ToString() != selectedItem.ToString())));
         restart = restart || usernameChanged;
-        _config.SpatialReference = (SpatialReference) cbSpatialReferences.SelectedItem;
+        _config.SpatialReference = selectedItem ?? _config.SpatialReference;
         _config.MaxViewers = maxViewers;
         _config.DistanceCycloramaVectorLayer = distLayer;
         _config.BaseUrl = txtBaseUrl.Text;
@@ -288,6 +291,17 @@ namespace IntegrationArcMap.Forms
         _config.DetailImagesEnabled = ckDetailImages.Checked;
         _config.Save();
         FrmGlobespotter.UpdateParameters();
+
+        if (usernameChanged)
+        {
+          GsExtension extension = GsExtension.GetExtension();
+          CycloMediaGroupLayer groupLayer = extension.CycloMediaGroupLayer;
+
+          if (groupLayer != null)
+          {
+            groupLayer.MakeEmpty();
+          }
+        }
 
         if (restart && FrmGlobespotter.IsStarted())
         {

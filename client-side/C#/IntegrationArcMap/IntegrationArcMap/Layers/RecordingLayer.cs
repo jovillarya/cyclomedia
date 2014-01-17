@@ -44,6 +44,7 @@ namespace IntegrationArcMap.Layers
     private static double _minimumScale;
     private static SortedDictionary<int, Color> _yearToColor;
     private static List<int> _yearPip;
+    private static List<int> _yearForbidden; 
 
     public override string Name { get { return "Recent Recordings"; } }
     public override string FcName { get { return "FCRecentRecordings"; } }
@@ -65,6 +66,11 @@ namespace IntegrationArcMap.Layers
       get { return _yearPip ?? (_yearPip = new List<int>()); }
     }
 
+    private static List<int> YearForbidden
+    {
+      get { return _yearForbidden ?? (_yearForbidden = new List<int>()); }
+    }
+
     public override Color Color
     {
       get { return _color; }
@@ -79,7 +85,7 @@ namespace IntegrationArcMap.Layers
 
     public override string[] FieldNames
     {
-      get { return new[] {"Year", "PIP"}; }
+      get { return new[] {"Year", "PIP", "IsAuthorized"}; }
     }
 
     public override int SizeLayer { get { return 7; } }
@@ -145,6 +151,7 @@ namespace IntegrationArcMap.Layers
     {
       const string objectId = "RecordedAt";
       const string object2Id = "PIP";
+      const string object3Id = "IsAuthorized";
       IActiveView activeView = ArcUtils.ActiveView;
       IEnvelope envelope = activeView.Extent;
 
@@ -153,13 +160,14 @@ namespace IntegrationArcMap.Layers
           Geometry = envelope,
           GeometryField = FeatureClass.ShapeFieldName,
           SpatialRel = esriSpatialRelEnum.esriSpatialRelContains,
-          SubFields = string.Format("{0},{1}", objectId, object2Id)
+          SubFields = string.Format("{0},{1},{2}", objectId, object2Id, object3Id)
         };
 
       var existsResult = FeatureClass.Search(spatialFilter, false);
       IFeature feature;
       var added = new List<int>();
       var pipAdded = new List<int>();
+      var forbiddenAdded = new List<int>();
 
       while ((feature = existsResult.NextFeature()) != null)
       {
@@ -177,7 +185,6 @@ namespace IntegrationArcMap.Layers
 
         int pipId = existsResult.FindField(object2Id);
         object pipValue = feature.get_Value(pipId);
-        // ReSharper restore UseIndexedProperty
 
         if (pipValue != null)
         {
@@ -187,6 +194,21 @@ namespace IntegrationArcMap.Layers
           {
             YearPip.Add(year);
             pipAdded.Add(year);
+          }
+        }
+
+        int forbiddenId = existsResult.FindField(object3Id);
+        object forbiddenValue = feature.get_Value(forbiddenId);
+        // ReSharper restore UseIndexedProperty
+
+        if (forbiddenValue != null)
+        {
+          bool forbidden = !bool.Parse((string) forbiddenValue);
+
+          if (forbidden && (!YearForbidden.Contains(year)))
+          {
+            YearForbidden.Add(year);
+            forbiddenAdded.Add(year);
           }
         }
       }
@@ -203,6 +225,7 @@ namespace IntegrationArcMap.Layers
           foreach (var value in added)
           {
             // ReSharper disable CSharpWarnings::CS0612
+            // ReSharper disable CSharpWarnings::CS0618
 
             var symbol = new SimpleMarkerSymbol
               {
@@ -210,9 +233,10 @@ namespace IntegrationArcMap.Layers
                 Size = SizeLayer
               };
 
+            // ReSharper restore CSharpWarnings::CS0618
             // ReSharper restore CSharpWarnings::CS0612
             var markerSymbol = symbol as ISymbol;
-            string classValue = string.Format("{0}, {1}", value, false);
+            string classValue = string.Format("{0}, {1}, {2}", value, false, true);
             uniqueValueRenderer.AddValue(classValue, string.Empty, markerSymbol);
 
             // ReSharper disable UseIndexedProperty
@@ -233,13 +257,40 @@ namespace IntegrationArcMap.Layers
 
             Color color = YearToColor.ContainsKey(value) ? YearToColor[value] : Color.Transparent;
             ISymbol symbol = ArcUtils.GetPipSymbol(SizeLayer, color);
-            string classValue = string.Format("{0}, {1}", value, true);
+            string classValue = string.Format("{0}, {1}, {2}", value, true, true);
             uniqueValueRenderer.AddValue(classValue, string.Empty, symbol);
 
             // ReSharper disable UseIndexedProperty
             string label = string.Format("{0} (Detail images)", value);
             uniqueValueRenderer.set_Label(classValue, label);
             // ReSharper restore UseIndexedProperty
+            activeView.ContentsChanged();
+          }
+
+          foreach (var value in forbiddenAdded)
+          {
+            Color color = YearToColor.ContainsKey(value) ? YearToColor[value] : Color.Transparent;
+            ISymbol symbol = ArcUtils.GetForbiddenSymbol(SizeLayer, color);
+            string classValue = string.Format("{0}, {1}, {2}", value, false, false);
+            uniqueValueRenderer.AddValue(classValue, string.Empty, symbol);
+
+            // ReSharper disable UseIndexedProperty
+            string label = string.Format("{0} (No Authorization)", value);
+            uniqueValueRenderer.set_Label(classValue, label);
+            // ReSharper restore UseIndexedProperty
+
+            if (pipAdded.Contains(value))
+            {
+              classValue = string.Format("{0}, {1}, {2}", value, true, false);
+              uniqueValueRenderer.AddValue(classValue, string.Empty, symbol);
+
+              // ReSharper disable UseIndexedProperty
+              label = string.Format("{0} (Detail images, No Authorization)", value);
+              uniqueValueRenderer.set_Label(classValue, label);
+              // ReSharper restore UseIndexedProperty
+            }
+
+            activeView.ContentsChanged();
           }
         }
       }
@@ -255,6 +306,7 @@ namespace IntegrationArcMap.Layers
       base.Remove();
       YearToColor.Clear();
       YearPip.Clear();
+      YearForbidden.Clear();
     }
 
     public override void UpdateColor(Color color, int? year)
@@ -265,15 +317,28 @@ namespace IntegrationArcMap.Layers
 
         if (YearToColor.ContainsKey(doYear))
         {
-          string classValue = string.Format("{0}, {1}", doYear, false);
+          string classValue = string.Format("{0}, {1}, {2}", doYear, false, true);
           YearToColor[doYear] = color;
           ArcUtils.SetColorToLayer(Layer, color, classValue);
 
           if (YearPip.Contains(doYear))
           {
-            classValue = string.Format("{0}, {1}", doYear, true);
+            classValue = string.Format("{0}, {1}, {2}", doYear, true, true);
             ISymbol symbol = ArcUtils.GetPipSymbol(SizeLayer, color);
             ArcUtils.SetSymbolToLayer(Layer, symbol, classValue);
+          }
+
+          if (YearForbidden.Contains(doYear))
+          {
+            classValue = string.Format("{0}, {1}, {2}", doYear, false, false);
+            ISymbol symbol = ArcUtils.GetForbiddenSymbol(SizeLayer, color);
+            ArcUtils.SetSymbolToLayer(Layer, symbol, classValue);
+
+            if (YearPip.Contains(doYear))
+            {
+              classValue = string.Format("{0}, {1}, {2}", doYear, true, false);
+              ArcUtils.SetSymbolToLayer(Layer, symbol, classValue);
+            }
           }
 
           Refresh();

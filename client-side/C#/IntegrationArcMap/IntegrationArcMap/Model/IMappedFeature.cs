@@ -49,6 +49,7 @@ namespace IntegrationArcMap.Model
     // Functions
     // =========================================================================
     object FieldToItem(string name);
+    void UpdateItem(string name, object item);
     void Update(XElement mappedFeatureElement);
 
     #endregion
