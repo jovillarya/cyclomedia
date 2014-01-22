@@ -128,6 +128,12 @@
     <Compile Include="AddIns\GsRecentDataLayer.cs" />
     <Compile Include="AddIns\GsFrmGlobespotter.cs" />
     <Compile Include="Client\Bounds.cs" />
+    <Compile Include="Forms\FrmAgreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAgreement.Designer.cs">
+      <DependentUpon>FrmAgreement.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmHelp.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -247,6 +253,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmAgreement.resx">
+      <DependentUpon>FrmAgreement.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmHelp.resx">
       <DependentUpon>FrmHelp.cs</DependentUpon>
     </EmbeddedResource>
@@ -283,6 +292,7 @@
     <AddInContent Include="Images\GsMeasurementDetail.png" />
     <None Include="Images\LeftArrow.png" />
     <None Include="Images\RightArrow.png" />
+    <EmbeddedResource Include="Doc\Agreement.txt" />
     <Content Include="LGPL-3.0.txt" />
   </ItemGroup>
   <ItemGroup>

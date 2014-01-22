@@ -22,6 +22,7 @@ using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Desktop.AddIns;
 using ESRI.ArcGIS.Display;
 using ESRI.ArcGIS.esriSystem;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Layers;
 using IntegrationArcMap.Utilities;
@@ -50,6 +51,7 @@ namespace IntegrationArcMap.AddIns
 
     protected override void OnStartup()
     {
+      Config.AgreementChangedDelegate += AgreementChangedDelegate;
       _extension = this;
       base.OnStartup();
     }
@@ -70,6 +72,7 @@ namespace IntegrationArcMap.AddIns
         Trace.WriteLine(ex.Message, "GsExtension.OnShutdown");
       }
 
+      Config.AgreementChangedDelegate -= AgreementChangedDelegate;
       base.OnShutdown();
     }
 
@@ -78,6 +81,13 @@ namespace IntegrationArcMap.AddIns
       try
       {
         State = state;
+        Config config = Config.Instance;
+
+        if (!config.Agreement)
+        {
+          FrmAgreement.OpenForm();
+          State = ExtensionState.Disabled;
+        }
 
         if (Enabled)
         {
@@ -100,7 +110,7 @@ namespace IntegrationArcMap.AddIns
         Trace.WriteLine(ex.Message, "GsExtension.OnSetState");
       }
 
-      return base.OnSetState(state);
+      return base.OnSetState(State);
     }
 
     protected override ExtensionState OnGetState()
@@ -115,6 +125,11 @@ namespace IntegrationArcMap.AddIns
     internal bool InsideScale()
     {
       return (CycloMediaGroupLayer != null) && CycloMediaGroupLayer.InsideScale;
+    }
+
+    private void AgreementChangedDelegate(bool value)
+    {
+      OnSetState(value ? ExtensionState.Enabled : ExtensionState.Disabled);
     }
 
     private bool ContainsCycloMediaLayer()

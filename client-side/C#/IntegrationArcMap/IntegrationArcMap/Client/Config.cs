@@ -23,6 +23,8 @@ using IntegrationArcMap.Utilities;
 
 namespace IntegrationArcMap.Client
 {
+  public delegate void AgreementChangedDelegate(bool value);
+
   [XmlRoot("ClientConfig")]
   public class Config
   {
@@ -31,10 +33,13 @@ namespace IntegrationArcMap.Client
     // =========================================================================
     // Members
     // =========================================================================
+    public static event AgreementChangedDelegate AgreementChangedDelegate;
+
     private static readonly XmlSerializer XmlConfig;
     private static Config _config;
 
     private string _baseUrl;
+    private bool _agreement;
 
     #endregion
 
@@ -94,6 +99,19 @@ namespace IntegrationArcMap.Client
     /// Spatial references
     /// </summary>
     public SpatialReference SpatialReference { get; set; }
+
+    /// <summary>
+    /// Agreement
+    /// </summary>
+    public bool Agreement
+    {
+      get { return _agreement; }
+      set
+      {
+        _agreement = value;
+        AgreementChangedDelegate(_agreement);
+      }
+    }
 
     public static string FileName
     {

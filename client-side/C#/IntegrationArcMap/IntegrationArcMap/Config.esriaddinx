@@ -2,12 +2,14 @@
                     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Name>GlobeSpotter for ArcGIS Desktop</Name>
   <AddInID>{601756f1-d4d0-4279-abad-47338704585c}</AddInID>
-  <Description>GlobeSpotter Integration for ArcGIS Desktop</Description>
-  <Version>0.12.10</Version>
+  <Description>GlobeSpotter for ArcGIS Desktop
+Copyright © CycloMedia Technology 2014
+  </Description>
+  <Version>0.12.11</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
   <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>17-01-2014</Date>
+  <Date>20-01-2014</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />
@@ -23,9 +25,9 @@
                    showInExtensionDialog="true"
                    autoLoad="true">
           <Description>
-            GlobeSpotter Integration for ArcGIS Desktop
+            GlobeSpotter for ArcGIS Desktop
             Copyright © CycloMedia Technology 2014
-            This extension contains the GlobeSpotter Integration for ArcGIS Desktop.
+            This extension contains the GlobeSpotter for ArcGIS Desktop.
           </Description>
         </Extension>
       </Extensions>
@@ -81,13 +83,13 @@
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsCycloMediaOptions"
                 class="GsCycloMediaOptions"
-                message="GlobeSpotter for ArcGIS Desktop Options"
-                caption="GlobeSpotter for ArcGIS Desktop Options..."
-                tip="GlobeSpotter for ArcGIS Desktop Options"
+                message="GlobeSpotter for ArcGIS Desktop"
+                caption="GlobeSpotter for ArcGIS Desktop..."
+                tip="GlobeSpotter for ArcGIS Desktop"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsCycloMediaOptions.png">
-          <Help heading="GlobeSpotter for ArcGIS Desktop Options">GlobeSpotter for ArcGIS Desktop Options</Help>
+          <Help heading="GlobeSpotter for ArcGIS Desktop">GlobeSpotter for ArcGIS Desktop</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsRecordingHistory"
                 class="GsRecordingHistory"
@@ -112,7 +114,7 @@
       </Commands>
       <Toolbars>
         <Toolbar id="CycloMedia_IntegrationArcMap_CycloMediaToolbar"
-                 caption="Cyclorama"
+                 caption="GlobeSpotter"
                  showInitially="false">
           <Items>
             <Button refID="CycloMedia_IntegrationArcMap_GsRecentDataLayer" />

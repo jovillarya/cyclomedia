@@ -19,6 +19,7 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
@@ -57,10 +58,13 @@ namespace IntegrationArcMap.Forms
     // =========================================================================
     public FrmCycloMediaOptions()
     {
+      // Initialize
       InitializeComponent();
       _mssgBoxShow = false;
       _config = Config.Instance;
       GsExtension.OpenDocumentEvent += LoginReload;
+
+      // Fonts
       Font font = SystemFonts.MenuFont;
       tcSettings.Font = (Font) font.Clone();
       txtPassword.Font = (Font) font.Clone();
@@ -69,15 +73,34 @@ namespace IntegrationArcMap.Forms
       nudDistVectLayerViewer.Font = (Font) font.Clone();
       txtBaseUrl.Font = (Font) font.Clone();
       cbSpatialReferences.Font = (Font) font.Clone();
+      txtAgreement.Font = (Font) font.Clone();
+
+      // Assembly info
       Type type = GetType();
       Assembly assembly = type.Assembly;
-      AssemblyName assName = assembly.GetName();
       string location = assembly.Location;
-      Version version = assName.Version;
       FileVersionInfo info = FileVersionInfo.GetVersionInfo(location);
+      AssemblyName assName = assembly.GetName();
+
+      // Version info
       string product = info.ProductName;
       string copyright = info.LegalCopyright;
-      lblAbout.Text = string.Format("{0}{3}{1}{3}Version: {2}.", product, copyright, version, Environment.NewLine);
+      Version version = assName.Version;
+      rtbAbout.Text = string.Format("{0}{3}{1}{3}Version: {2}.{3}http://www.cyclomedia.com/", product, copyright, version, Environment.NewLine);
+
+      // Agreement
+      const string agreementPath = "IntegrationArcMap.Doc.Agreement.txt";
+      Stream agreementStream = assembly.GetManifestResourceStream(agreementPath);
+
+      if (agreementStream != null)
+      {
+        var reader = new StreamReader(agreementStream);
+        string agreement = reader.ReadToEnd();
+        reader.Close();
+        txtAgreement.Text = agreement;
+      }
+
+      // Initialize
       btnApply.Enabled = false;
       btnOk.Select();
     }
@@ -429,6 +452,11 @@ namespace IntegrationArcMap.Forms
     private void cbSpatialReferences_Click(object sender, EventArgs e)
     {
       btnApply.Enabled = true;
+    }
+
+    private void rtbAbout_LinkClicked(object sender, LinkClickedEventArgs e)
+    {
+      Process.Start(e.LinkText);
     }
 
     #endregion
