@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ESRI.ArcGIS.ArcMapUI;
 using IntegrationArcMap.Model;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Carto;
@@ -472,13 +473,27 @@ namespace IntegrationArcMap.Layers
         layer.Visible = layer.IsVisible;
       }
 
-      if ((refreshLayer != null))
+      if (refreshLayer != null)
       {
-        IMap map = ArcUtils.Map;
-        map.MapScale = map.MapScale - 1;
+        IMxDocument document = ArcUtils.MxDocument;
         IActiveView activeView = ArcUtils.ActiveView;
-        activeView.Refresh();
-        activeView.ContentsChanged();
+
+        if (document != null)
+        {
+          // ReSharper disable UseIndexedProperty
+          IContentsView contentView = document.get_ContentsView(0);
+          // ReSharper restore UseIndexedProperty
+
+          if (contentView != null)
+          {
+            contentView.Refresh(_groupLayer);
+          }
+        }
+
+        if (activeView != null)
+        {
+          activeView.Refresh();
+        }
       }
     }
 

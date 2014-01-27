@@ -158,6 +158,8 @@ namespace IntegrationArcMap.Objects
       {
         ObsColor.Add(imageId, color);
       }
+
+      Measurement.Update();
     }
 
     public static void RemoveObsColor(string imageId)
@@ -166,6 +168,8 @@ namespace IntegrationArcMap.Objects
       {
         ObsColor.Remove(imageId);
       }
+
+      Measurement.Update();
     }
 
     #endregion
@@ -468,21 +472,7 @@ namespace IntegrationArcMap.Objects
       return InsideDistance(point, distance, includeZ);
     }
 
-    #endregion
-
-    #region functions (private)
-
-    // =========================================================================
-    // Functions (Private)
-    // =========================================================================
-    private bool InsideDistance(IPoint point, double dinstance, bool includeZ)
-    {
-      return ((_point != null) && (point != null)) &&
-             ((Math.Abs(_point.X - point.X) < dinstance) && (Math.Abs(_point.Y - point.Y) < dinstance) &&
-              ((!includeZ) || (Math.Abs(_point.Z - point.Z) < dinstance)));
-    }
-
-    private void Update()
+    public void Update()
     {
       GsExtension extension = GsExtension.GetExtension();
       IActiveView activeView = ArcUtils.ActiveView;
@@ -498,9 +488,23 @@ namespace IntegrationArcMap.Objects
 
         if (_envelope != null)
         {
-          screenDisplay.Invalidate(_envelope, true, (short) esriScreenCache.esriNoScreenCache);
+          screenDisplay.Invalidate(_envelope, true, (short)esriScreenCache.esriNoScreenCache);
         }
       }
+    }
+
+    #endregion
+
+    #region functions (private)
+
+    // =========================================================================
+    // Functions (Private)
+    // =========================================================================
+    private bool InsideDistance(IPoint point, double dinstance, bool includeZ)
+    {
+      return ((_point != null) && (point != null)) &&
+             ((Math.Abs(_point.X - point.X) < dinstance) && (Math.Abs(_point.Y - point.Y) < dinstance) &&
+              ((!includeZ) || (Math.Abs(_point.Z - point.Z) < dinstance)));
     }
 
     #endregion

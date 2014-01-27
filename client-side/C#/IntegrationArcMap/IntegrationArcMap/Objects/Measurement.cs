@@ -513,6 +513,18 @@ namespace IntegrationArcMap.Objects
       return result;
     }
 
+    public static void Update()
+    {
+      foreach (var measurement in Measurements)
+      {
+        foreach (var measurementPoint in measurement.Value)
+        {
+          var point = measurementPoint.Value;
+          point.Update();
+        }
+      }
+    }
+
     public static void Add(int entityId, string entityType, FrmGlobespotter frmGlobespotter, bool drawPoint)
     {
       Measurements.Add(entityId, new Measurement(entityId, entityType, frmGlobespotter, drawPoint));

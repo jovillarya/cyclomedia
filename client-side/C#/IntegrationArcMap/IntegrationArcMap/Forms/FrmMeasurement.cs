@@ -649,7 +649,17 @@ namespace IntegrationArcMap.Forms
     {
       if (lvObservations.Items.Count >= 1)
       {
-        lvObservations.RedrawItems(0, lvObservations.Items.Count - 1, true);
+        if (lvObservations.Visible)
+        {
+          lvObservations.RedrawItems(0, lvObservations.Items.Count - 1, true);
+        }
+        else
+        {
+          for (int i = 0; i < lvObservations.Items.Count; i++)
+          {
+            DrawRectangleImage(i);
+          }
+        }
       }
     }
 
@@ -807,7 +817,13 @@ namespace IntegrationArcMap.Forms
       }
       else
       {
+        bool visible = lvObservations.Visible;
         lvObservations.Visible = open || (_measurementPoint == null);
+
+        if (visible && (!lvObservations.Visible))
+        {
+          RedrawObservationList();
+        }
       }
 
       if (pctImages.InvokeRequired)
@@ -1058,16 +1074,22 @@ namespace IntegrationArcMap.Forms
 
     private void btnPrev_Click(object sender, EventArgs e)
     {
-      _goToClicked = true;
-      OpenNewPoint(_measurementPointS.PreviousPoint);
-      _goToClicked = false;
+      if (_measurementPointS != null)
+      {
+        _goToClicked = true;
+        OpenNewPoint(_measurementPointS.PreviousPoint);
+        _goToClicked = false;
+      }
     }
 
     private void btnNext_Click(object sender, EventArgs e)
     {
-      _goToClicked = true;
-      OpenNewPoint(_measurementPointS.NextPoint);
-      _goToClicked = false;
+      if (_measurementPointS != null)
+      {
+        _goToClicked = true;
+        OpenNewPoint(_measurementPointS.NextPoint);
+        _goToClicked = false;
+      }
     }
 
     #endregion

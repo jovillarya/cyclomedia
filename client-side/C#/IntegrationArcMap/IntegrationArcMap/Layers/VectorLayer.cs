@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Threading;
 using IntegrationArcMap.AddIns;
@@ -375,6 +376,21 @@ namespace IntegrationArcMap.Layers
 
           if (!EditFeatures.Contains(feature))
           {
+            IFields fields = feature.Fields;
+            var fieldvalues = new Dictionary<string, string>();
+
+            for (int j = 0; j < fields.FieldCount; j++)
+            {
+              IField field = fields.Field[j];
+              string name = field.Name;
+              int id = featureCursor.FindField(name);
+
+              string value = (id != shapeId)
+                ? feature.get_Value(id).ToString()
+                : _featureClass.ShapeType.ToString().Replace("esriGeometry", string.Empty);
+              fieldvalues.Add(name, value);
+            }
+
             var shapeVar = feature.get_Value(shapeId);
             var geometry = shapeVar as IGeometry;
 
@@ -424,8 +440,10 @@ namespace IntegrationArcMap.Layers
             gml = gml.Replace(",1.#QNAN", string.Empty);
             gml = gml.Replace("<", "<gml:");
             gml = gml.Replace("<gml:/", "</gml:");
-            result = string.Format("{0}<gml:featureMember><xs:Geometry>{1}</xs:Geometry></gml:featureMember>", result,
-                                   gml);
+            string fieldValueStr = fieldvalues.Aggregate(string.Empty,
+              (current, fieldvalue) => string.Format("{0}<{1}>{2}</{1}>", current, fieldvalue.Key, fieldvalue.Value));
+            result = string.Format("{0}<gml:featureMember><xs:Geometry>{1}{2}</xs:Geometry></gml:featureMember>", result,
+              fieldValueStr, gml);
           }
         }
       }
