@@ -12,7 +12,5 @@
 /client-side/C#/IntegrationArcMap/Setup/Debug
 /client-side/C#/IntegrationArcMap/Setup/Release
 /client-side/C#/IntegrationArcMap/.svn
-/client-side/C#/Libs
-/client-side/C#/Doc
-/client-side/C#/Setup
-/client-side/C#/Pictures
+/client-side/C#/Doc/.svn
+/client-side/C#/Libs/.svn
