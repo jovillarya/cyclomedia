@@ -218,6 +218,7 @@ namespace IntegrationArcMap.AddIns
         FrmCycloMediaOptions.CloseForm();
         FrmHelp.CloseForm();
         FrmMeasurement.Close();
+        FrmIdentify.Close();
         CycloMediaGroupLayer cycloLayer = CycloMediaGroupLayer;
         CycloMediaGroupLayer = null;
         cycloLayer.Dispose();
@@ -272,6 +273,7 @@ namespace IntegrationArcMap.AddIns
         GsCycloMediaOptions.AddToMenu();
         GsMeasurementDetail.AddToMenu();
         FrmMeasurement.Close();
+        FrmIdentify.Close();
       }
       catch (Exception ex)
       {

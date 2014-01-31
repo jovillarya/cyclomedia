@@ -5,11 +5,11 @@
   <Description>GlobeSpotter for ArcGIS Desktop
 Copyright © CycloMedia Technology 2014
   </Description>
-  <Version>0.12.12</Version>
+  <Version>1.0.0</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
   <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>27-01-2014</Date>
+  <Date>31-01-2014</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />
@@ -143,6 +143,14 @@ Copyright © CycloMedia Technology 2014
                             width="276"
                             state="pinned"
                             position="right" />
+        </DockableWindow>
+        <DockableWindow id="IntegrationArcMap_GsFrmIdentify"
+                class="GsFrmIdentify"
+                caption="Feature Properties">
+          <InitialPlacement height="300"
+                            width="300"
+                            state="unpinned"
+                            position="float" />
         </DockableWindow>
       </DockableWindows>
     </ArcMap>

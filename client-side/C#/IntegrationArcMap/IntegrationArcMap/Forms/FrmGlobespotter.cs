@@ -529,6 +529,7 @@ namespace IntegrationArcMap.Forms
     public static void ShutDown(bool includeGlobespotter)
     {
       Viewer.Clear(Instance);
+      FrmIdentify.Close();
 
       if ((_frmGlobespotter != null) && includeGlobespotter)
       {
@@ -1095,7 +1096,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnFeatureClicked(Dictionary<string, string> featureData)
     {
-      // empty
+      FrmIdentify.Show(featureData);
     }
 
     public void OnAutoCompleteResult(string result, string[] matches)
@@ -1125,6 +1126,26 @@ namespace IntegrationArcMap.Forms
     {
       _config.DetailImagesEnabled = value;
       _config.Save();
+    }
+
+    public void OnMeasurementHeightLevelChanged(int entityId, double level)
+    {
+      // empty
+    }
+
+    public void OnMeasurementPointHeightLevelChanged(int entityId, int pointId, double level)
+    {
+      // empty
+    }
+
+    public void OnMapBrightnessChanged(double value)
+    {
+      // empty
+    }
+
+    public void OnMapContrastChanged(double value)
+    {
+      // empty
     }
 
     #endregion
@@ -1818,14 +1839,14 @@ namespace IntegrationArcMap.Forms
         esriUnits units = map.DistanceUnits;
         string stunit = units.ToString();
         stunit = stunit.Replace("esri", " ");
-        string label = _api.getLengthUnitLabel();
+        string label = _api.GetLengthUnitLabel();
 
         if (label != stunit)
         {
           IUnitConverter converter = new UnitConverterClass();
           double conversion = converter.ConvertUnits(1, units, esriUnits.esriMeters);
-          _api.setLengthUnitLabel(stunit);
-          _api.setLengthUnitFactor(conversion);
+          _api.SetLengthUnitLabel(stunit);
+          _api.SetLengthUnitFactor(conversion);
         }
       }
     }

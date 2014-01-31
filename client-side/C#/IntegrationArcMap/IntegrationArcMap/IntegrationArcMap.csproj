@@ -63,9 +63,6 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <Private>True</Private>
     </Reference>
-    <Reference Include="ESRI.ArcGIS.Controls, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <Private>True</Private>
@@ -116,12 +113,14 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddIns\GsFrmIdentify.cs" />
     <Compile Include="AddIns\GsHelp.cs" />
     <Compile Include="AddIns\GsMeasurementDetail.cs" />
     <Compile Include="AddIns\GsFrmMeasurement.cs" />
@@ -145,6 +144,12 @@
     </Compile>
     <Compile Include="Client\SpatialReference.cs" />
     <Compile Include="Client\SpatialReferences.cs" />
+    <Compile Include="Forms\FrmIdentify.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmIdentify.Designer.cs">
+      <DependentUpon>FrmIdentify.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmMeasurement.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -261,6 +266,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmHelp.resx">
       <DependentUpon>FrmHelp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmIdentify.resx">
+      <DependentUpon>FrmIdentify.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmMeasurement.resx">
       <DependentUpon>FrmMeasurement.cs</DependentUpon>

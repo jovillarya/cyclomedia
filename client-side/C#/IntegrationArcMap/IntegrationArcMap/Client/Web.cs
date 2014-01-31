@@ -338,6 +338,13 @@ namespace IntegrationArcMap.Client
       request.PreAuthenticate = true;
       request.ContentType = "text/xml";
       request.Headers.Add("ApiKey", _apiKey.Value);
+
+      if (request.ServicePoint != null)
+      {
+        request.ServicePoint.ConnectionLeaseTimeout = 5000;
+        request.ServicePoint.MaxIdleTime = 5000;
+      }
+
       return request;
     }
 

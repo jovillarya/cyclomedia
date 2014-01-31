@@ -268,7 +268,7 @@ namespace IntegrationArcMap.Forms
 
         if (responce != null)
         {
-          if (responce.StatusCode == HttpStatusCode.Unauthorized)
+          if ((responce.StatusCode == HttpStatusCode.Unauthorized) || (responce.StatusCode == HttpStatusCode.Forbidden))
           {
             txtUsername.Focus();
           }
@@ -315,17 +315,6 @@ namespace IntegrationArcMap.Forms
         _config.Save();
         FrmGlobespotter.UpdateParameters();
 
-        if (usernameChanged)
-        {
-          GsExtension extension = GsExtension.GetExtension();
-          CycloMediaGroupLayer groupLayer = extension.CycloMediaGroupLayer;
-
-          if (groupLayer != null)
-          {
-            groupLayer.MakeEmpty();
-          }
-        }
-
         if (restart && FrmGlobespotter.IsStarted())
         {
           FrmGlobespotter.Restart();
@@ -334,6 +323,17 @@ namespace IntegrationArcMap.Forms
         if (close)
         {
           Close();
+        }
+      }
+
+      if (usernameChanged)
+      {
+        GsExtension extension = GsExtension.GetExtension();
+        CycloMediaGroupLayer groupLayer = extension.CycloMediaGroupLayer;
+
+        if (groupLayer != null)
+        {
+          groupLayer.MakeEmpty();
         }
       }
 

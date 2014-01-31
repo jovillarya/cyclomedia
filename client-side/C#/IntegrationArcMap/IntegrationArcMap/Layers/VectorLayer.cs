@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
 using System.Threading;
 using IntegrationArcMap.AddIns;
@@ -377,7 +376,7 @@ namespace IntegrationArcMap.Layers
           if (!EditFeatures.Contains(feature))
           {
             IFields fields = feature.Fields;
-            var fieldvalues = new Dictionary<string, string>();
+            var fieldvalues = new Dictionary<string, string> {{"FEATURECLASSNAME", _featureClass.AliasName}};
 
             for (int j = 0; j < fields.FieldCount; j++)
             {
