@@ -374,7 +374,7 @@ namespace IntegrationArcMap.Forms
 
       if (_login.Credentials)
       {
-        _api = new API(InitType.REMOTE);
+        _api = _config.SwfUrlDefault ? new API(_config.InitType) : new API(_config.InitType, _config.SwfUrl);
         plGlobespotter.Controls.Add(_api.gui);
         _api.Initialize(this);
       }
@@ -657,7 +657,11 @@ namespace IntegrationArcMap.Forms
         _api.SetSrsNameViewer(epsgCode);
         _api.SetSrsNameAddress(epsgCode);
         _api.SetAdressLanguageCode("nl");
-        _api.SetServiceURL(_config.BaseUrl, ServiceUrlType.URL_BASE);
+
+        if (!_config.BaseUrlDefault)
+        {
+          _api.SetServiceURL(_config.BaseUrl, ServiceUrlType.URL_BASE);
+        }
       }
     }
 

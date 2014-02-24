@@ -49,7 +49,7 @@ namespace IntegrationArcMap.Client
 
     private const string CapabilityString = "{0}?REQUEST=GetCapabilities&VERSION={1}&SERVICE=WFS";
 
-    private const string AuthorizationService = "https://atlas.cyclomedia.com/Authorization/GlobeSpotter";
+    private const string AuthorizationRequest = "{0}/Authorization/GlobeSpotter";
 
     private const int BufferImageLengthService = 2048;
     private const int XmlConfig = 0;
@@ -80,9 +80,14 @@ namespace IntegrationArcMap.Client
     // =========================================================================
     // Properties
     // =========================================================================
+    private string BaseUrl
+    {
+      get { return (_config.BaseUrlDefault ? "https://atlas.cyclomedia.com" : _config.BaseUrl); }
+    }
+
     private string RecordingService
     {
-      get { return string.Format("{0}/recordings/wfs", _config.BaseUrl); }
+      get { return string.Format("{0}/recordings/wfs", BaseUrl); }
     }
 
     public static Web Instance
@@ -148,7 +153,8 @@ namespace IntegrationArcMap.Client
     public List<XElement> CheckAuthorization()
     {
       const string postItem = @"<Authorization />";
-      var xml = (string)PostRequest(AuthorizationService, GetXmlCallback, postItem, XmlConfig);
+      string authorizationService = string.Format(AuthorizationRequest, BaseUrl);
+      var xml = (string)PostRequest(authorizationService, GetXmlCallback, postItem, XmlConfig);
       return ParseXml(xml, (Namespaces.CycloMediaNs + "Permission"));
     }
 

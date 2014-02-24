@@ -71,7 +71,11 @@ namespace IntegrationArcMap.Forms
       txtUsername.Font = (Font) font.Clone();
       nudMaxViewers.Font = (Font) font.Clone();
       nudDistVectLayerViewer.Font = (Font) font.Clone();
-      txtBaseUrl.Font = (Font) font.Clone();
+      txtBaseUrlLocation.Font = (Font) font.Clone();
+      txtSwfUrlLocation.Font = (Font) font.Clone();
+      grRemoteLocal.Font = (Font) font.Clone();
+      grBaseUrl.Font = (Font) font.Clone();
+      grSwfUrl.Font = (Font) font.Clone();
       cbSpatialReferences.Font = (Font) font.Clone();
       txtAgreement.Font = (Font) font.Clone();
 
@@ -191,7 +195,18 @@ namespace IntegrationArcMap.Forms
     private void LoadData()
     {
       lblLoginStatus.Text = _login.Credentials ? LoginSuccessfully : LoginFailed;
-      txtBaseUrl.Text = _config.BaseUrl;
+
+      bool apply = btnApply.Enabled;
+      ckDefaultBaseUrl.Checked = _config.BaseUrlDefault;
+      ckDefaultSwfUrl.Checked = _config.SwfUrlDefault;
+      txtBaseUrlLocation.Text = _config.BaseUrlDefault ? string.Empty : _config.BaseUrl;
+      txtSwfUrlLocation.Text = _config.SwfUrlDefault ? string.Empty : _config.SwfUrl;
+      txtBaseUrlLocation.Enabled = !_config.BaseUrlDefault;
+      txtSwfUrlLocation.Enabled = !_config.SwfUrlDefault;
+      rbLocal.Checked = _config.SwfLocal;
+      rbRemote.Checked = !_config.SwfLocal;
+      btnApply.Enabled = apply;
+
       nudMaxViewers.Value = _config.MaxViewers;
       nudDistVectLayerViewer.Value = _config.DistanceCycloramaVectorLayer;
       txtPassword.Text = _login.Password;
@@ -301,7 +316,9 @@ namespace IntegrationArcMap.Forms
         SpatialReference spat = _config.SpatialReference;
         var maxViewers = (uint) nudMaxViewers.Value;
         var distLayer = (uint) nudDistVectLayerViewer.Value;
-        bool restart = (_config.BaseUrl != txtBaseUrl.Text);
+        bool restart = (_config.BaseUrlDefault != ckDefaultBaseUrl.Checked) || (_config.BaseUrl != txtBaseUrlLocation.Text);
+        restart = restart || (_config.SwfUrlDefault != ckDefaultSwfUrl.Checked) || (_config.SwfUrl != txtSwfUrlLocation.Text);
+        restart = restart || (_config.SwfLocal != rbLocal.Checked);
         var selectedItem = (SpatialReference) cbSpatialReferences.SelectedItem;
         restart = restart ||
                   ((spat == null) || ((selectedItem != null) && (spat.ToString() != selectedItem.ToString())));
@@ -309,7 +326,11 @@ namespace IntegrationArcMap.Forms
         _config.SpatialReference = selectedItem ?? _config.SpatialReference;
         _config.MaxViewers = maxViewers;
         _config.DistanceCycloramaVectorLayer = distLayer;
-        _config.BaseUrl = txtBaseUrl.Text;
+        _config.BaseUrl = txtBaseUrlLocation.Text;
+        _config.SwfLocal = rbLocal.Checked;
+        _config.SwfUrl = txtSwfUrlLocation.Text;
+        _config.BaseUrlDefault = ckDefaultBaseUrl.Checked;
+        _config.SwfUrlDefault = ckDefaultSwfUrl.Checked;
         _config.SmartClickEnabled = ckEnableSmartClick.Checked;
         _config.DetailImagesEnabled = ckDetailImages.Checked;
         _config.Save();
@@ -395,14 +416,6 @@ namespace IntegrationArcMap.Forms
       btnApply.Enabled = true;
     }
 
-    private void tcSettings_Selected(object sender, TabControlEventArgs e)
-    {
-      if (!_login.Credentials)
-      {
-        tcSettings.SelectedTab = tbLogin;
-      }
-    }
-
     private void FrmCycloMediaOptions_FormClosed(object sender, FormClosedEventArgs e)
     {
       GsExtension.OpenDocumentEvent -= LoginReload;
@@ -412,11 +425,6 @@ namespace IntegrationArcMap.Forms
     private void tcSettings_Click(object sender, EventArgs e)
     {
       btnOk.Select();
-    }
-
-    private void txtRecordingService_KeyUp(object sender, KeyEventArgs e)
-    {
-      btnApply.Enabled = true;
     }
 
     private void nudMaxViewers_KeyUp(object sender, KeyEventArgs e)
@@ -457,6 +465,35 @@ namespace IntegrationArcMap.Forms
     private void rtbAbout_LinkClicked(object sender, LinkClickedEventArgs e)
     {
       Process.Start(e.LinkText);
+    }
+
+    private void ckDefaultBaseUrl_CheckedChanged(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
+      txtBaseUrlLocation.Text = ckDefaultBaseUrl.Checked ? string.Empty : _config.BaseUrl;
+      txtBaseUrlLocation.Enabled = !ckDefaultBaseUrl.Checked;
+    }
+
+    private void ckDefaultSwfUrl_CheckedChanged(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
+      txtSwfUrlLocation.Text = ckDefaultSwfUrl.Checked ? string.Empty : _config.SwfUrl;
+      txtSwfUrlLocation.Enabled = !ckDefaultSwfUrl.Checked;
+    }
+
+    private void txtBaseUrlLocation_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void txtSwfUrlLocation_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void rbLocal_CheckedChanged(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
     }
 
     #endregion

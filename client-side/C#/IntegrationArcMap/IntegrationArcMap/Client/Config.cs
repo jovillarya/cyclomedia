@@ -19,6 +19,7 @@
 using System;
 using System.IO;
 using System.Xml.Serialization;
+using GlobeSpotterAPI;
 using IntegrationArcMap.Utilities;
 
 namespace IntegrationArcMap.Client
@@ -38,7 +39,9 @@ namespace IntegrationArcMap.Client
     private static readonly XmlSerializer XmlConfig;
     private static Config _config;
 
-    private string _baseUrl;
+    private bool? _baseUrlDefault;
+    private bool? _swfUrlDefault;
+    private bool? _swfLocal;
     private bool _agreement;
 
     #endregion
@@ -63,10 +66,52 @@ namespace IntegrationArcMap.Client
     /// <summary>
     /// Service info
     /// </summary>
-    public string BaseUrl
+    public string BaseUrl { get; set; }
+
+    /// <summary>
+    /// BaseUrlDefault flag
+    /// </summary>
+    public bool BaseUrlDefault
     {
-      get { return (_baseUrl = (string.IsNullOrEmpty(_baseUrl) ? "https://atlas.cyclomedia.com" : _baseUrl)); }
-      set { _baseUrl = value; }
+      get
+      {
+        return (_baseUrlDefault == null)
+          ? (string.IsNullOrEmpty(BaseUrl) || (BaseUrl == "https://atlas.cyclomedia.com"))
+          : ((bool)_baseUrlDefault);
+      }
+      set { _baseUrlDefault = value; }
+    }
+
+    /// <summary>
+    /// swf name
+    /// </summary>
+    public string SwfUrl { get; set; }
+
+    /// <summary>
+    /// swfDefault flag
+    /// </summary>
+    public bool SwfUrlDefault
+    {
+      get { return (_swfUrlDefault == null) ? (string.IsNullOrEmpty(SwfUrl)) : ((bool) _swfUrlDefault); }
+      set { _swfUrlDefault = value; }
+    }
+
+    /// <summary>
+    /// swfLocal flag
+    /// </summary>
+    public bool SwfLocal
+    {
+      get { return (_swfLocal != null) && ((bool) _swfLocal); }
+      set { _swfLocal = value; }
+    }
+
+    /// <summary>
+    /// initType (local / remote)
+    /// </summary>
+    [XmlIgnore]
+    public InitType InitType
+    {
+      get { return SwfLocal ? InitType.LOCAL : InitType.REMOTE; }
     }
 
     /// <summary>
@@ -178,13 +223,19 @@ namespace IntegrationArcMap.Client
 
       var result = new Config
       {
-        BaseUrl = "https://atlas.cyclomedia.com",
+        BaseUrl = string.Empty,
+        BaseUrlDefault = true,
+        SwfUrl = string.Empty,
+        SwfUrlDefault = true,
+        SwfLocal = false,
         MaxViewers = 3,
-        DistanceCycloramaVectorLayer = 30,
         SmartClickEnabled = false,
-        DetailImagesEnabled = false,
         YearFrom = year - 3,
-        YearTo = year - 1
+        YearTo = year - 1,
+        DistanceCycloramaVectorLayer = 30,
+        DetailImagesEnabled = false,
+        SpatialReference = null,
+        Agreement = false
       };
 
       result.Save();

@@ -46,9 +46,19 @@
       this.tbMeasurement = new System.Windows.Forms.TabPage();
       this.ckEnableSmartClick = new System.Windows.Forms.CheckBox();
       this.tbServices = new System.Windows.Forms.TabPage();
-      this.txtBaseUrl = new System.Windows.Forms.TextBox();
-      this.lblBaseUrl = new System.Windows.Forms.Label();
+      this.grBaseUrl = new System.Windows.Forms.GroupBox();
+      this.lblLocationBaseUrl = new System.Windows.Forms.Label();
+      this.ckDefaultBaseUrl = new System.Windows.Forms.CheckBox();
+      this.txtBaseUrlLocation = new System.Windows.Forms.TextBox();
+      this.grSwfUrl = new System.Windows.Forms.GroupBox();
+      this.grRemoteLocal = new System.Windows.Forms.GroupBox();
+      this.rbLocal = new System.Windows.Forms.RadioButton();
+      this.rbRemote = new System.Windows.Forms.RadioButton();
+      this.lblLocationSwfUrl = new System.Windows.Forms.Label();
+      this.ckDefaultSwfUrl = new System.Windows.Forms.CheckBox();
+      this.txtSwfUrlLocation = new System.Windows.Forms.TextBox();
       this.tbAbout = new System.Windows.Forms.TabPage();
+      this.rtbAbout = new System.Windows.Forms.RichTextBox();
       this.tbAgreement = new System.Windows.Forms.TabPage();
       this.txtAgreement = new System.Windows.Forms.TextBox();
       this.btnOk = new System.Windows.Forms.Button();
@@ -56,7 +66,6 @@
       this.btnApply = new System.Windows.Forms.Button();
       this.plSettings = new System.Windows.Forms.Panel();
       this.plButtons = new System.Windows.Forms.Panel();
-      this.rtbAbout = new System.Windows.Forms.RichTextBox();
       this.tcSettings.SuspendLayout();
       this.tbLogin.SuspendLayout();
       this.tbCycloramaViewer.SuspendLayout();
@@ -64,6 +73,9 @@
       ((System.ComponentModel.ISupportInitialize)(this.nudMaxViewers)).BeginInit();
       this.tbMeasurement.SuspendLayout();
       this.tbServices.SuspendLayout();
+      this.grBaseUrl.SuspendLayout();
+      this.grSwfUrl.SuspendLayout();
+      this.grRemoteLocal.SuspendLayout();
       this.tbAbout.SuspendLayout();
       this.tbAgreement.SuspendLayout();
       this.plSettings.SuspendLayout();
@@ -86,7 +98,6 @@
       this.tcSettings.SelectedIndex = 0;
       this.tcSettings.Size = new System.Drawing.Size(420, 405);
       this.tcSettings.TabIndex = 0;
-      this.tcSettings.Selected += new System.Windows.Forms.TabControlEventHandler(this.tcSettings_Selected);
       this.tcSettings.Click += new System.EventHandler(this.tcSettings_Click);
       // 
       // tbLogin
@@ -301,8 +312,8 @@
       // 
       // tbServices
       // 
-      this.tbServices.Controls.Add(this.txtBaseUrl);
-      this.tbServices.Controls.Add(this.lblBaseUrl);
+      this.tbServices.Controls.Add(this.grBaseUrl);
+      this.tbServices.Controls.Add(this.grSwfUrl);
       this.tbServices.Location = new System.Drawing.Point(4, 23);
       this.tbServices.Name = "tbServices";
       this.tbServices.Size = new System.Drawing.Size(412, 378);
@@ -310,24 +321,126 @@
       this.tbServices.Text = "Services";
       this.tbServices.UseVisualStyleBackColor = true;
       // 
-      // txtBaseUrl
+      // grBaseUrl
       // 
-      this.txtBaseUrl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtBaseUrl.Location = new System.Drawing.Point(110, 5);
-      this.txtBaseUrl.Name = "txtBaseUrl";
-      this.txtBaseUrl.Size = new System.Drawing.Size(295, 20);
-      this.txtBaseUrl.TabIndex = 1;
-      this.txtBaseUrl.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRecordingService_KeyUp);
+      this.grBaseUrl.Controls.Add(this.lblLocationBaseUrl);
+      this.grBaseUrl.Controls.Add(this.ckDefaultBaseUrl);
+      this.grBaseUrl.Controls.Add(this.txtBaseUrlLocation);
+      this.grBaseUrl.Location = new System.Drawing.Point(3, 3);
+      this.grBaseUrl.Name = "grBaseUrl";
+      this.grBaseUrl.Size = new System.Drawing.Size(406, 65);
+      this.grBaseUrl.TabIndex = 23;
+      this.grBaseUrl.TabStop = false;
+      this.grBaseUrl.Text = "Base url";
       // 
-      // lblBaseUrl
+      // lblLocationBaseUrl
       // 
-      this.lblBaseUrl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblBaseUrl.Location = new System.Drawing.Point(5, 5);
-      this.lblBaseUrl.Name = "lblBaseUrl";
-      this.lblBaseUrl.Size = new System.Drawing.Size(100, 22);
-      this.lblBaseUrl.TabIndex = 18;
-      this.lblBaseUrl.Text = "Base url:";
-      this.lblBaseUrl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblLocationBaseUrl.AutoSize = true;
+      this.lblLocationBaseUrl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblLocationBaseUrl.Location = new System.Drawing.Point(3, 37);
+      this.lblLocationBaseUrl.Name = "lblLocationBaseUrl";
+      this.lblLocationBaseUrl.Size = new System.Drawing.Size(51, 14);
+      this.lblLocationBaseUrl.TabIndex = 22;
+      this.lblLocationBaseUrl.Text = "Location:";
+      this.lblLocationBaseUrl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      // 
+      // ckDefaultBaseUrl
+      // 
+      this.ckDefaultBaseUrl.AutoSize = true;
+      this.ckDefaultBaseUrl.Location = new System.Drawing.Point(3, 15);
+      this.ckDefaultBaseUrl.Name = "ckDefaultBaseUrl";
+      this.ckDefaultBaseUrl.Size = new System.Drawing.Size(81, 18);
+      this.ckDefaultBaseUrl.TabIndex = 20;
+      this.ckDefaultBaseUrl.Text = "Use default";
+      this.ckDefaultBaseUrl.UseVisualStyleBackColor = true;
+      this.ckDefaultBaseUrl.CheckedChanged += new System.EventHandler(this.ckDefaultBaseUrl_CheckedChanged);
+      // 
+      // txtBaseUrlLocation
+      // 
+      this.txtBaseUrlLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtBaseUrlLocation.Location = new System.Drawing.Point(82, 37);
+      this.txtBaseUrlLocation.Name = "txtBaseUrlLocation";
+      this.txtBaseUrlLocation.Size = new System.Drawing.Size(320, 20);
+      this.txtBaseUrlLocation.TabIndex = 21;
+      this.txtBaseUrlLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBaseUrlLocation_KeyUp);
+      // 
+      // grSwfUrl
+      // 
+      this.grSwfUrl.Controls.Add(this.grRemoteLocal);
+      this.grSwfUrl.Controls.Add(this.lblLocationSwfUrl);
+      this.grSwfUrl.Controls.Add(this.ckDefaultSwfUrl);
+      this.grSwfUrl.Controls.Add(this.txtSwfUrlLocation);
+      this.grSwfUrl.Location = new System.Drawing.Point(3, 68);
+      this.grSwfUrl.Name = "grSwfUrl";
+      this.grSwfUrl.Size = new System.Drawing.Size(406, 90);
+      this.grSwfUrl.TabIndex = 22;
+      this.grSwfUrl.TabStop = false;
+      this.grSwfUrl.Text = "swf";
+      // 
+      // grRemoteLocal
+      // 
+      this.grRemoteLocal.Controls.Add(this.rbLocal);
+      this.grRemoteLocal.Controls.Add(this.rbRemote);
+      this.grRemoteLocal.Location = new System.Drawing.Point(82, 7);
+      this.grRemoteLocal.Name = "grRemoteLocal";
+      this.grRemoteLocal.Size = new System.Drawing.Size(120, 54);
+      this.grRemoteLocal.TabIndex = 24;
+      this.grRemoteLocal.TabStop = false;
+      this.grRemoteLocal.Text = "URL / Path";
+      // 
+      // rbLocal
+      // 
+      this.rbLocal.AutoSize = true;
+      this.rbLocal.Location = new System.Drawing.Point(3, 33);
+      this.rbLocal.Name = "rbLocal";
+      this.rbLocal.Size = new System.Drawing.Size(46, 18);
+      this.rbLocal.TabIndex = 24;
+      this.rbLocal.TabStop = true;
+      this.rbLocal.Text = "Path";
+      this.rbLocal.UseVisualStyleBackColor = true;
+      this.rbLocal.CheckedChanged += new System.EventHandler(this.rbLocal_CheckedChanged);
+      // 
+      // rbRemote
+      // 
+      this.rbRemote.AutoSize = true;
+      this.rbRemote.Location = new System.Drawing.Point(3, 13);
+      this.rbRemote.Name = "rbRemote";
+      this.rbRemote.Size = new System.Drawing.Size(45, 18);
+      this.rbRemote.TabIndex = 23;
+      this.rbRemote.TabStop = true;
+      this.rbRemote.Text = "URL";
+      this.rbRemote.UseVisualStyleBackColor = true;
+      // 
+      // lblLocationSwfUrl
+      // 
+      this.lblLocationSwfUrl.AutoSize = true;
+      this.lblLocationSwfUrl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblLocationSwfUrl.Location = new System.Drawing.Point(3, 62);
+      this.lblLocationSwfUrl.Name = "lblLocationSwfUrl";
+      this.lblLocationSwfUrl.Size = new System.Drawing.Size(51, 14);
+      this.lblLocationSwfUrl.TabIndex = 22;
+      this.lblLocationSwfUrl.Text = "Location:";
+      this.lblLocationSwfUrl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      // 
+      // ckDefaultSwfUrl
+      // 
+      this.ckDefaultSwfUrl.AutoSize = true;
+      this.ckDefaultSwfUrl.Location = new System.Drawing.Point(3, 15);
+      this.ckDefaultSwfUrl.Name = "ckDefaultSwfUrl";
+      this.ckDefaultSwfUrl.Size = new System.Drawing.Size(81, 18);
+      this.ckDefaultSwfUrl.TabIndex = 20;
+      this.ckDefaultSwfUrl.Text = "Use default";
+      this.ckDefaultSwfUrl.UseVisualStyleBackColor = true;
+      this.ckDefaultSwfUrl.CheckedChanged += new System.EventHandler(this.ckDefaultSwfUrl_CheckedChanged);
+      // 
+      // txtSwfUrlLocation
+      // 
+      this.txtSwfUrlLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtSwfUrlLocation.Location = new System.Drawing.Point(82, 62);
+      this.txtSwfUrlLocation.Name = "txtSwfUrlLocation";
+      this.txtSwfUrlLocation.Size = new System.Drawing.Size(320, 20);
+      this.txtSwfUrlLocation.TabIndex = 21;
+      this.txtSwfUrlLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSwfUrlLocation_KeyUp);
       // 
       // tbAbout
       // 
@@ -338,6 +451,18 @@
       this.tbAbout.TabIndex = 4;
       this.tbAbout.Text = "About";
       this.tbAbout.UseVisualStyleBackColor = true;
+      // 
+      // rtbAbout
+      // 
+      this.rtbAbout.BackColor = System.Drawing.SystemColors.Window;
+      this.rtbAbout.BorderStyle = System.Windows.Forms.BorderStyle.None;
+      this.rtbAbout.Location = new System.Drawing.Point(5, 5);
+      this.rtbAbout.Name = "rtbAbout";
+      this.rtbAbout.ReadOnly = true;
+      this.rtbAbout.Size = new System.Drawing.Size(402, 68);
+      this.rtbAbout.TabIndex = 20;
+      this.rtbAbout.Text = "";
+      this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
       // 
       // tbAgreement
       // 
@@ -414,18 +539,6 @@
       this.plButtons.Size = new System.Drawing.Size(420, 35);
       this.plButtons.TabIndex = 14;
       // 
-      // rtbAbout
-      // 
-      this.rtbAbout.BackColor = System.Drawing.SystemColors.Window;
-      this.rtbAbout.BorderStyle = System.Windows.Forms.BorderStyle.None;
-      this.rtbAbout.Location = new System.Drawing.Point(5, 5);
-      this.rtbAbout.Name = "rtbAbout";
-      this.rtbAbout.ReadOnly = true;
-      this.rtbAbout.Size = new System.Drawing.Size(402, 68);
-      this.rtbAbout.TabIndex = 20;
-      this.rtbAbout.Text = "";
-      this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
-      // 
       // FrmCycloMediaOptions
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -453,7 +566,12 @@
       this.tbMeasurement.ResumeLayout(false);
       this.tbMeasurement.PerformLayout();
       this.tbServices.ResumeLayout(false);
-      this.tbServices.PerformLayout();
+      this.grBaseUrl.ResumeLayout(false);
+      this.grBaseUrl.PerformLayout();
+      this.grSwfUrl.ResumeLayout(false);
+      this.grSwfUrl.PerformLayout();
+      this.grRemoteLocal.ResumeLayout(false);
+      this.grRemoteLocal.PerformLayout();
       this.tbAbout.ResumeLayout(false);
       this.tbAgreement.ResumeLayout(false);
       this.tbAgreement.PerformLayout();
@@ -477,8 +595,6 @@
     private System.Windows.Forms.TabPage tbMeasurement;
     private System.Windows.Forms.CheckBox ckEnableSmartClick;
     private System.Windows.Forms.TabPage tbServices;
-    private System.Windows.Forms.TextBox txtBaseUrl;
-    private System.Windows.Forms.Label lblBaseUrl;
     private System.Windows.Forms.Button btnOk;
     private System.Windows.Forms.Button btnCancel;
     private System.Windows.Forms.Button btnApply;
@@ -494,5 +610,16 @@
     private System.Windows.Forms.Panel plSettings;
     private System.Windows.Forms.Panel plButtons;
     private System.Windows.Forms.RichTextBox rtbAbout;
+    private System.Windows.Forms.CheckBox ckDefaultSwfUrl;
+    private System.Windows.Forms.TextBox txtSwfUrlLocation;
+    private System.Windows.Forms.GroupBox grSwfUrl;
+    private System.Windows.Forms.Label lblLocationSwfUrl;
+    private System.Windows.Forms.GroupBox grBaseUrl;
+    private System.Windows.Forms.Label lblLocationBaseUrl;
+    private System.Windows.Forms.CheckBox ckDefaultBaseUrl;
+    private System.Windows.Forms.TextBox txtBaseUrlLocation;
+    private System.Windows.Forms.GroupBox grRemoteLocal;
+    private System.Windows.Forms.RadioButton rbRemote;
+    private System.Windows.Forms.RadioButton rbLocal;
   }
 }
