@@ -334,11 +334,14 @@ namespace IntegrationArcMap.Forms
         _config.SmartClickEnabled = ckEnableSmartClick.Checked;
         _config.DetailImagesEnabled = ckDetailImages.Checked;
         _config.Save();
-        FrmGlobespotter.UpdateParameters();
 
         if (restart && FrmGlobespotter.IsStarted())
         {
           FrmGlobespotter.Restart();
+        }
+        else
+        {
+          FrmGlobespotter.UpdateParameters();
         }
 
         if (close)

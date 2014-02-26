@@ -224,10 +224,10 @@ namespace IntegrationArcMap.Client
       var result = new Config
       {
         BaseUrl = string.Empty,
-        BaseUrlDefault = true,
+        _baseUrlDefault = true,
         SwfUrl = string.Empty,
-        SwfUrlDefault = true,
-        SwfLocal = false,
+        _swfUrlDefault = true,
+        _swfLocal = false,
         MaxViewers = 3,
         SmartClickEnabled = false,
         YearFrom = year - 3,
@@ -235,7 +235,7 @@ namespace IntegrationArcMap.Client
         DistanceCycloramaVectorLayer = 30,
         DetailImagesEnabled = false,
         SpatialReference = null,
-        Agreement = false
+        _agreement = false
       };
 
       result.Save();
