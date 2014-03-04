@@ -104,7 +104,7 @@ namespace IntegrationArcMap.Client
     public static SpatialReferences Load()
     {
       Assembly thisAssembly = Assembly.GetExecutingAssembly();
-      const string manualPath = @"IntegrationArcMap.Doc.SpatialReferences.xml";
+      const string manualPath = @"IntegrationArcMap.Doc.GlobeSpotterSpatialReferences.xml";
       Stream manualStream = thisAssembly.GetManifestResourceStream(manualPath);
 
       if (manualStream != null)

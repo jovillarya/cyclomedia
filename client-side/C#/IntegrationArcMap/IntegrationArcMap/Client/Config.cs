@@ -19,7 +19,6 @@
 using System;
 using System.IO;
 using System.Xml.Serialization;
-using GlobeSpotterAPI;
 using IntegrationArcMap.Utilities;
 
 namespace IntegrationArcMap.Client
@@ -41,7 +40,6 @@ namespace IntegrationArcMap.Client
 
     private bool? _baseUrlDefault;
     private bool? _swfUrlDefault;
-    private bool? _swfLocal;
     private bool _agreement;
 
     #endregion
@@ -94,24 +92,6 @@ namespace IntegrationArcMap.Client
     {
       get { return (_swfUrlDefault == null) ? (string.IsNullOrEmpty(SwfUrl)) : ((bool) _swfUrlDefault); }
       set { _swfUrlDefault = value; }
-    }
-
-    /// <summary>
-    /// swfLocal flag
-    /// </summary>
-    public bool SwfLocal
-    {
-      get { return (_swfLocal != null) && ((bool) _swfLocal); }
-      set { _swfLocal = value; }
-    }
-
-    /// <summary>
-    /// initType (local / remote)
-    /// </summary>
-    [XmlIgnore]
-    public InitType InitType
-    {
-      get { return SwfLocal ? InitType.LOCAL : InitType.REMOTE; }
     }
 
     /// <summary>
@@ -227,7 +207,6 @@ namespace IntegrationArcMap.Client
         _baseUrlDefault = true,
         SwfUrl = string.Empty,
         _swfUrlDefault = true,
-        _swfLocal = false,
         MaxViewers = 3,
         SmartClickEnabled = false,
         YearFrom = year - 3,

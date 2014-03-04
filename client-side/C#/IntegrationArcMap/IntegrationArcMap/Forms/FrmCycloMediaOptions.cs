@@ -38,6 +38,9 @@ namespace IntegrationArcMap.Forms
     private const string LoginFailed = "Login Failed";
     private const string LoginSuccessfully = "Login Successfully";
 
+    private const string MeasuringSupported = "Measuring supported";
+    private const string MeasuringNotSupported = "Measuring not supported";
+
     #region members
 
     // =========================================================================
@@ -73,7 +76,8 @@ namespace IntegrationArcMap.Forms
       nudDistVectLayerViewer.Font = (Font) font.Clone();
       txtBaseUrlLocation.Font = (Font) font.Clone();
       txtSwfUrlLocation.Font = (Font) font.Clone();
-      grRemoteLocal.Font = (Font) font.Clone();
+      grCoordinateSystems.Font = (Font) font.Clone();
+      grGeneral.Font = (Font) font.Clone();
       grBaseUrl.Font = (Font) font.Clone();
       grSwfUrl.Font = (Font) font.Clone();
       cbSpatialReferences.Font = (Font) font.Clone();
@@ -203,8 +207,6 @@ namespace IntegrationArcMap.Forms
       txtSwfUrlLocation.Text = _config.SwfUrlDefault ? string.Empty : _config.SwfUrl;
       txtBaseUrlLocation.Enabled = !_config.BaseUrlDefault;
       txtSwfUrlLocation.Enabled = !_config.SwfUrlDefault;
-      rbLocal.Checked = _config.SwfLocal;
-      rbRemote.Checked = !_config.SwfLocal;
       btnApply.Enabled = apply;
 
       nudMaxViewers.Value = _config.MaxViewers;
@@ -318,7 +320,6 @@ namespace IntegrationArcMap.Forms
         var distLayer = (uint) nudDistVectLayerViewer.Value;
         bool restart = (_config.BaseUrlDefault != ckDefaultBaseUrl.Checked) || (_config.BaseUrl != txtBaseUrlLocation.Text);
         restart = restart || (_config.SwfUrlDefault != ckDefaultSwfUrl.Checked) || (_config.SwfUrl != txtSwfUrlLocation.Text);
-        restart = restart || (_config.SwfLocal != rbLocal.Checked);
         var selectedItem = (SpatialReference) cbSpatialReferences.SelectedItem;
         restart = restart ||
                   ((spat == null) || ((selectedItem != null) && (spat.ToString() != selectedItem.ToString())));
@@ -327,7 +328,6 @@ namespace IntegrationArcMap.Forms
         _config.MaxViewers = maxViewers;
         _config.DistanceCycloramaVectorLayer = distLayer;
         _config.BaseUrl = txtBaseUrlLocation.Text;
-        _config.SwfLocal = rbLocal.Checked;
         _config.SwfUrl = txtSwfUrlLocation.Text;
         _config.BaseUrlDefault = ckDefaultBaseUrl.Checked;
         _config.SwfUrlDefault = ckDefaultSwfUrl.Checked;
@@ -465,6 +465,14 @@ namespace IntegrationArcMap.Forms
       btnApply.Enabled = true;
     }
 
+    private void cbSpatialReferences_SelectedIndexChanged(object sender, EventArgs e)
+    {
+      var selectedItem = (SpatialReference) cbSpatialReferences.SelectedItem;
+      lblMeasuringSupported.Text = (selectedItem == null)
+        ? MeasuringNotSupported
+        : (selectedItem.CanMeasuring ? MeasuringSupported : MeasuringNotSupported);
+    }
+
     private void rtbAbout_LinkClicked(object sender, LinkClickedEventArgs e)
     {
       Process.Start(e.LinkText);
@@ -490,11 +498,6 @@ namespace IntegrationArcMap.Forms
     }
 
     private void txtSwfUrlLocation_KeyUp(object sender, KeyEventArgs e)
-    {
-      btnApply.Enabled = true;
-    }
-
-    private void rbLocal_CheckedChanged(object sender, EventArgs e)
     {
       btnApply.Enabled = true;
     }

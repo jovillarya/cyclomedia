@@ -1338,6 +1338,11 @@
             </summary>
             <param name="value">the value of the contrast</param>
         </member>
+        <member name="M:GlobeSpotterAPI.IAPIClient.OnObliqueImageChanged">
+            <summary>
+            Oblique image changed
+            </summary>
+        </member>
         <member name="T:GlobeSpotterAPI.AbstractAPIClient">
             <summary>
             If the user does not want to implement the whole Basic API, this class can be implemented instead of IAPIClient.
@@ -1605,6 +1610,10 @@
             <summary>
             </summary>
             <param name="value"></param>
+        </member>
+        <member name="M:GlobeSpotterAPI.AbstractAPIClient.OnObliqueImageChanged">
+            <summary>
+            </summary>
         </member>
         <member name="T:GlobeSpotterAPI.InitType">
             <summary>

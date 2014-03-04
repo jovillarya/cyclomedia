@@ -35,25 +35,23 @@
       this.txtUsername = new System.Windows.Forms.TextBox();
       this.lblPassword = new System.Windows.Forms.Label();
       this.lblUsername = new System.Windows.Forms.Label();
-      this.tbCycloramaViewer = new System.Windows.Forms.TabPage();
-      this.cbSpatialReferences = new System.Windows.Forms.ComboBox();
-      this.lblSpatialReference = new System.Windows.Forms.Label();
-      this.ckDetailImages = new System.Windows.Forms.CheckBox();
-      this.nudDistVectLayerViewer = new System.Windows.Forms.NumericUpDown();
-      this.nudMaxViewers = new System.Windows.Forms.NumericUpDown();
-      this.lblDistVectLayerViewer = new System.Windows.Forms.Label();
-      this.lblMaxViewers = new System.Windows.Forms.Label();
-      this.tbMeasurement = new System.Windows.Forms.TabPage();
+      this.tbSettings = new System.Windows.Forms.TabPage();
+      this.grGeneral = new System.Windows.Forms.GroupBox();
       this.ckEnableSmartClick = new System.Windows.Forms.CheckBox();
-      this.tbServices = new System.Windows.Forms.TabPage();
+      this.lblMaximumCycloramaViewers = new System.Windows.Forms.Label();
+      this.nudMaxViewers = new System.Windows.Forms.NumericUpDown();
+      this.ckDetailImages = new System.Windows.Forms.CheckBox();
+      this.lblDistVectLayerViewer = new System.Windows.Forms.Label();
+      this.nudDistVectLayerViewer = new System.Windows.Forms.NumericUpDown();
+      this.grCoordinateSystems = new System.Windows.Forms.GroupBox();
+      this.lblCoordinateSystemCycloramaViewer = new System.Windows.Forms.Label();
+      this.cbSpatialReferences = new System.Windows.Forms.ComboBox();
+      this.tbConfiguration = new System.Windows.Forms.TabPage();
       this.grBaseUrl = new System.Windows.Forms.GroupBox();
       this.lblLocationBaseUrl = new System.Windows.Forms.Label();
       this.ckDefaultBaseUrl = new System.Windows.Forms.CheckBox();
       this.txtBaseUrlLocation = new System.Windows.Forms.TextBox();
       this.grSwfUrl = new System.Windows.Forms.GroupBox();
-      this.grRemoteLocal = new System.Windows.Forms.GroupBox();
-      this.rbLocal = new System.Windows.Forms.RadioButton();
-      this.rbRemote = new System.Windows.Forms.RadioButton();
       this.lblLocationSwfUrl = new System.Windows.Forms.Label();
       this.ckDefaultSwfUrl = new System.Windows.Forms.CheckBox();
       this.txtSwfUrlLocation = new System.Windows.Forms.TextBox();
@@ -66,16 +64,17 @@
       this.btnApply = new System.Windows.Forms.Button();
       this.plSettings = new System.Windows.Forms.Panel();
       this.plButtons = new System.Windows.Forms.Panel();
+      this.lblMeasuringSupported = new System.Windows.Forms.Label();
       this.tcSettings.SuspendLayout();
       this.tbLogin.SuspendLayout();
-      this.tbCycloramaViewer.SuspendLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.nudDistVectLayerViewer)).BeginInit();
+      this.tbSettings.SuspendLayout();
+      this.grGeneral.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.nudMaxViewers)).BeginInit();
-      this.tbMeasurement.SuspendLayout();
-      this.tbServices.SuspendLayout();
+      ((System.ComponentModel.ISupportInitialize)(this.nudDistVectLayerViewer)).BeginInit();
+      this.grCoordinateSystems.SuspendLayout();
+      this.tbConfiguration.SuspendLayout();
       this.grBaseUrl.SuspendLayout();
       this.grSwfUrl.SuspendLayout();
-      this.grRemoteLocal.SuspendLayout();
       this.tbAbout.SuspendLayout();
       this.tbAgreement.SuspendLayout();
       this.plSettings.SuspendLayout();
@@ -85,9 +84,8 @@
       // tcSettings
       // 
       this.tcSettings.Controls.Add(this.tbLogin);
-      this.tcSettings.Controls.Add(this.tbCycloramaViewer);
-      this.tcSettings.Controls.Add(this.tbMeasurement);
-      this.tcSettings.Controls.Add(this.tbServices);
+      this.tcSettings.Controls.Add(this.tbSettings);
+      this.tcSettings.Controls.Add(this.tbConfiguration);
       this.tcSettings.Controls.Add(this.tbAbout);
       this.tcSettings.Controls.Add(this.tbAgreement);
       this.tcSettings.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -164,89 +162,60 @@
       this.lblUsername.Text = "Username:";
       this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
-      // tbCycloramaViewer
+      // tbSettings
       // 
-      this.tbCycloramaViewer.Controls.Add(this.cbSpatialReferences);
-      this.tbCycloramaViewer.Controls.Add(this.lblSpatialReference);
-      this.tbCycloramaViewer.Controls.Add(this.ckDetailImages);
-      this.tbCycloramaViewer.Controls.Add(this.nudDistVectLayerViewer);
-      this.tbCycloramaViewer.Controls.Add(this.nudMaxViewers);
-      this.tbCycloramaViewer.Controls.Add(this.lblDistVectLayerViewer);
-      this.tbCycloramaViewer.Controls.Add(this.lblMaxViewers);
-      this.tbCycloramaViewer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.tbCycloramaViewer.Location = new System.Drawing.Point(4, 23);
-      this.tbCycloramaViewer.Name = "tbCycloramaViewer";
-      this.tbCycloramaViewer.Padding = new System.Windows.Forms.Padding(3);
-      this.tbCycloramaViewer.Size = new System.Drawing.Size(412, 378);
-      this.tbCycloramaViewer.TabIndex = 1;
-      this.tbCycloramaViewer.Text = "Cyclorama viewer";
-      this.tbCycloramaViewer.UseVisualStyleBackColor = true;
+      this.tbSettings.Controls.Add(this.grGeneral);
+      this.tbSettings.Controls.Add(this.grCoordinateSystems);
+      this.tbSettings.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.tbSettings.Location = new System.Drawing.Point(4, 23);
+      this.tbSettings.Name = "tbSettings";
+      this.tbSettings.Padding = new System.Windows.Forms.Padding(3);
+      this.tbSettings.Size = new System.Drawing.Size(412, 378);
+      this.tbSettings.TabIndex = 1;
+      this.tbSettings.Text = "Settings";
+      this.tbSettings.UseVisualStyleBackColor = true;
       // 
-      // cbSpatialReferences
+      // grGeneral
       // 
-      this.cbSpatialReferences.FormattingEnabled = true;
-      this.cbSpatialReferences.Location = new System.Drawing.Point(140, 45);
-      this.cbSpatialReferences.Name = "cbSpatialReferences";
-      this.cbSpatialReferences.Size = new System.Drawing.Size(265, 22);
-      this.cbSpatialReferences.Sorted = true;
-      this.cbSpatialReferences.TabIndex = 20;
-      this.cbSpatialReferences.Click += new System.EventHandler(this.cbSpatialReferences_Click);
+      this.grGeneral.Controls.Add(this.ckEnableSmartClick);
+      this.grGeneral.Controls.Add(this.lblMaximumCycloramaViewers);
+      this.grGeneral.Controls.Add(this.nudMaxViewers);
+      this.grGeneral.Controls.Add(this.ckDetailImages);
+      this.grGeneral.Controls.Add(this.lblDistVectLayerViewer);
+      this.grGeneral.Controls.Add(this.nudDistVectLayerViewer);
+      this.grGeneral.Location = new System.Drawing.Point(3, 73);
+      this.grGeneral.Name = "grGeneral";
+      this.grGeneral.Size = new System.Drawing.Size(406, 115);
+      this.grGeneral.TabIndex = 22;
+      this.grGeneral.TabStop = false;
+      this.grGeneral.Text = "General";
       // 
-      // lblSpatialReference
+      // ckEnableSmartClick
       // 
-      this.lblSpatialReference.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblSpatialReference.Location = new System.Drawing.Point(5, 45);
-      this.lblSpatialReference.Name = "lblSpatialReference";
-      this.lblSpatialReference.Size = new System.Drawing.Size(130, 22);
-      this.lblSpatialReference.TabIndex = 19;
-      this.lblSpatialReference.Text = "SpatialReference:";
-      this.lblSpatialReference.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.ckEnableSmartClick.AutoSize = true;
+      this.ckEnableSmartClick.Location = new System.Drawing.Point(3, 90);
+      this.ckEnableSmartClick.Name = "ckEnableSmartClick";
+      this.ckEnableSmartClick.Size = new System.Drawing.Size(188, 18);
+      this.ckEnableSmartClick.TabIndex = 19;
+      this.ckEnableSmartClick.Text = "Enable Smart Click measurements";
+      this.ckEnableSmartClick.UseVisualStyleBackColor = true;
+      this.ckEnableSmartClick.Click += new System.EventHandler(this.ckEnableSmartClick_Click);
       // 
-      // ckDetailImages
+      // lblMaximumCycloramaViewers
       // 
-      this.ckDetailImages.AutoSize = true;
-      this.ckDetailImages.Location = new System.Drawing.Point(301, 5);
-      this.ckDetailImages.Name = "ckDetailImages";
-      this.ckDetailImages.Size = new System.Drawing.Size(89, 18);
-      this.ckDetailImages.TabIndex = 18;
-      this.ckDetailImages.Text = "Detail images";
-      this.ckDetailImages.UseVisualStyleBackColor = true;
-      this.ckDetailImages.Click += new System.EventHandler(this.ckDetailImages_Click);
-      // 
-      // nudDistVectLayerViewer
-      // 
-      this.nudDistVectLayerViewer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.nudDistVectLayerViewer.Increment = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-      this.nudDistVectLayerViewer.Location = new System.Drawing.Point(140, 25);
-      this.nudDistVectLayerViewer.Maximum = new decimal(new int[] {
-            999,
-            0,
-            0,
-            0});
-      this.nudDistVectLayerViewer.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-      this.nudDistVectLayerViewer.Name = "nudDistVectLayerViewer";
-      this.nudDistVectLayerViewer.Size = new System.Drawing.Size(50, 20);
-      this.nudDistVectLayerViewer.TabIndex = 17;
-      this.nudDistVectLayerViewer.Value = new decimal(new int[] {
-            30,
-            0,
-            0,
-            0});
-      this.nudDistVectLayerViewer.Click += new System.EventHandler(this.nudDistVectLayerViewer_Click);
-      this.nudDistVectLayerViewer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nudDistVectLayerViewer_KeyUp);
+      this.lblMaximumCycloramaViewers.AutoSize = true;
+      this.lblMaximumCycloramaViewers.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblMaximumCycloramaViewers.Location = new System.Drawing.Point(3, 15);
+      this.lblMaximumCycloramaViewers.Name = "lblMaximumCycloramaViewers";
+      this.lblMaximumCycloramaViewers.Size = new System.Drawing.Size(151, 14);
+      this.lblMaximumCycloramaViewers.TabIndex = 13;
+      this.lblMaximumCycloramaViewers.Text = "Maximum Cyclorama viewers:";
+      this.lblMaximumCycloramaViewers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // nudMaxViewers
       // 
       this.nudMaxViewers.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.nudMaxViewers.Location = new System.Drawing.Point(140, 5);
+      this.nudMaxViewers.Location = new System.Drawing.Point(160, 15);
       this.nudMaxViewers.Maximum = new decimal(new int[] {
             6,
             0,
@@ -268,58 +237,103 @@
       this.nudMaxViewers.Click += new System.EventHandler(this.nudMaxViewers_Click);
       this.nudMaxViewers.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nudMaxViewers_KeyUp);
       // 
+      // ckDetailImages
+      // 
+      this.ckDetailImages.AutoSize = true;
+      this.ckDetailImages.Location = new System.Drawing.Point(3, 65);
+      this.ckDetailImages.Name = "ckDetailImages";
+      this.ckDetailImages.Size = new System.Drawing.Size(120, 18);
+      this.ckDetailImages.TabIndex = 18;
+      this.ckDetailImages.Text = "Show detail images";
+      this.ckDetailImages.UseVisualStyleBackColor = true;
+      this.ckDetailImages.Click += new System.EventHandler(this.ckDetailImages_Click);
+      // 
       // lblDistVectLayerViewer
       // 
+      this.lblDistVectLayerViewer.AutoSize = true;
       this.lblDistVectLayerViewer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblDistVectLayerViewer.Location = new System.Drawing.Point(5, 25);
+      this.lblDistVectLayerViewer.Location = new System.Drawing.Point(3, 40);
       this.lblDistVectLayerViewer.Name = "lblDistVectLayerViewer";
-      this.lblDistVectLayerViewer.Size = new System.Drawing.Size(130, 22);
+      this.lblDistVectLayerViewer.Size = new System.Drawing.Size(135, 14);
       this.lblDistVectLayerViewer.TabIndex = 15;
-      this.lblDistVectLayerViewer.Text = "Dist. vect. layer - viewer:";
+      this.lblDistVectLayerViewer.Text = "Overlay draw distance[m]:";
       this.lblDistVectLayerViewer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
-      // lblMaxViewers
+      // nudDistVectLayerViewer
       // 
-      this.lblMaxViewers.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblMaxViewers.Location = new System.Drawing.Point(5, 5);
-      this.lblMaxViewers.Name = "lblMaxViewers";
-      this.lblMaxViewers.Size = new System.Drawing.Size(75, 22);
-      this.lblMaxViewers.TabIndex = 13;
-      this.lblMaxViewers.Text = "Max viewers:";
-      this.lblMaxViewers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.nudDistVectLayerViewer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.nudDistVectLayerViewer.Increment = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+      this.nudDistVectLayerViewer.Location = new System.Drawing.Point(160, 40);
+      this.nudDistVectLayerViewer.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+      this.nudDistVectLayerViewer.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
+      this.nudDistVectLayerViewer.Name = "nudDistVectLayerViewer";
+      this.nudDistVectLayerViewer.Size = new System.Drawing.Size(50, 20);
+      this.nudDistVectLayerViewer.TabIndex = 17;
+      this.nudDistVectLayerViewer.Value = new decimal(new int[] {
+            30,
+            0,
+            0,
+            0});
+      this.nudDistVectLayerViewer.Click += new System.EventHandler(this.nudDistVectLayerViewer_Click);
+      this.nudDistVectLayerViewer.KeyUp += new System.Windows.Forms.KeyEventHandler(this.nudDistVectLayerViewer_KeyUp);
       // 
-      // tbMeasurement
+      // grCoordinateSystems
       // 
-      this.tbMeasurement.Controls.Add(this.ckEnableSmartClick);
-      this.tbMeasurement.Location = new System.Drawing.Point(4, 23);
-      this.tbMeasurement.Name = "tbMeasurement";
-      this.tbMeasurement.Padding = new System.Windows.Forms.Padding(3);
-      this.tbMeasurement.Size = new System.Drawing.Size(412, 378);
-      this.tbMeasurement.TabIndex = 2;
-      this.tbMeasurement.Text = "Measurement";
-      this.tbMeasurement.UseVisualStyleBackColor = true;
+      this.grCoordinateSystems.Controls.Add(this.lblMeasuringSupported);
+      this.grCoordinateSystems.Controls.Add(this.lblCoordinateSystemCycloramaViewer);
+      this.grCoordinateSystems.Controls.Add(this.cbSpatialReferences);
+      this.grCoordinateSystems.Location = new System.Drawing.Point(3, 3);
+      this.grCoordinateSystems.Name = "grCoordinateSystems";
+      this.grCoordinateSystems.Size = new System.Drawing.Size(406, 70);
+      this.grCoordinateSystems.TabIndex = 21;
+      this.grCoordinateSystems.TabStop = false;
+      this.grCoordinateSystems.Text = "Coordinate systems";
       // 
-      // ckEnableSmartClick
+      // lblCoordinateSystemCycloramaViewer
       // 
-      this.ckEnableSmartClick.AutoSize = true;
-      this.ckEnableSmartClick.Location = new System.Drawing.Point(5, 5);
-      this.ckEnableSmartClick.Name = "ckEnableSmartClick";
-      this.ckEnableSmartClick.Size = new System.Drawing.Size(188, 18);
-      this.ckEnableSmartClick.TabIndex = 1;
-      this.ckEnableSmartClick.Text = "Enable Smart Click measurements";
-      this.ckEnableSmartClick.UseVisualStyleBackColor = true;
-      this.ckEnableSmartClick.Click += new System.EventHandler(this.ckEnableSmartClick_Click);
+      this.lblCoordinateSystemCycloramaViewer.AutoSize = true;
+      this.lblCoordinateSystemCycloramaViewer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblCoordinateSystemCycloramaViewer.Location = new System.Drawing.Point(3, 15);
+      this.lblCoordinateSystemCycloramaViewer.Name = "lblCoordinateSystemCycloramaViewer";
+      this.lblCoordinateSystemCycloramaViewer.Size = new System.Drawing.Size(98, 14);
+      this.lblCoordinateSystemCycloramaViewer.TabIndex = 19;
+      this.lblCoordinateSystemCycloramaViewer.Text = "Cyclorama viewer:";
+      this.lblCoordinateSystemCycloramaViewer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
-      // tbServices
+      // cbSpatialReferences
       // 
-      this.tbServices.Controls.Add(this.grBaseUrl);
-      this.tbServices.Controls.Add(this.grSwfUrl);
-      this.tbServices.Location = new System.Drawing.Point(4, 23);
-      this.tbServices.Name = "tbServices";
-      this.tbServices.Size = new System.Drawing.Size(412, 378);
-      this.tbServices.TabIndex = 3;
-      this.tbServices.Text = "Services";
-      this.tbServices.UseVisualStyleBackColor = true;
+      this.cbSpatialReferences.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+      this.cbSpatialReferences.FormattingEnabled = true;
+      this.cbSpatialReferences.Location = new System.Drawing.Point(160, 15);
+      this.cbSpatialReferences.Name = "cbSpatialReferences";
+      this.cbSpatialReferences.Size = new System.Drawing.Size(242, 22);
+      this.cbSpatialReferences.Sorted = true;
+      this.cbSpatialReferences.TabIndex = 20;
+      this.cbSpatialReferences.SelectedIndexChanged += new System.EventHandler(this.cbSpatialReferences_SelectedIndexChanged);
+      this.cbSpatialReferences.Click += new System.EventHandler(this.cbSpatialReferences_Click);
+      // 
+      // tbConfiguration
+      // 
+      this.tbConfiguration.Controls.Add(this.grBaseUrl);
+      this.tbConfiguration.Controls.Add(this.grSwfUrl);
+      this.tbConfiguration.Location = new System.Drawing.Point(4, 23);
+      this.tbConfiguration.Name = "tbConfiguration";
+      this.tbConfiguration.Size = new System.Drawing.Size(412, 378);
+      this.tbConfiguration.TabIndex = 3;
+      this.tbConfiguration.Text = "Configuration";
+      this.tbConfiguration.UseVisualStyleBackColor = true;
       // 
       // grBaseUrl
       // 
@@ -366,56 +380,21 @@
       // 
       // grSwfUrl
       // 
-      this.grSwfUrl.Controls.Add(this.grRemoteLocal);
       this.grSwfUrl.Controls.Add(this.lblLocationSwfUrl);
       this.grSwfUrl.Controls.Add(this.ckDefaultSwfUrl);
       this.grSwfUrl.Controls.Add(this.txtSwfUrlLocation);
       this.grSwfUrl.Location = new System.Drawing.Point(3, 68);
       this.grSwfUrl.Name = "grSwfUrl";
-      this.grSwfUrl.Size = new System.Drawing.Size(406, 90);
+      this.grSwfUrl.Size = new System.Drawing.Size(406, 65);
       this.grSwfUrl.TabIndex = 22;
       this.grSwfUrl.TabStop = false;
       this.grSwfUrl.Text = "swf";
-      // 
-      // grRemoteLocal
-      // 
-      this.grRemoteLocal.Controls.Add(this.rbLocal);
-      this.grRemoteLocal.Controls.Add(this.rbRemote);
-      this.grRemoteLocal.Location = new System.Drawing.Point(82, 7);
-      this.grRemoteLocal.Name = "grRemoteLocal";
-      this.grRemoteLocal.Size = new System.Drawing.Size(120, 54);
-      this.grRemoteLocal.TabIndex = 24;
-      this.grRemoteLocal.TabStop = false;
-      this.grRemoteLocal.Text = "URL / Path";
-      // 
-      // rbLocal
-      // 
-      this.rbLocal.AutoSize = true;
-      this.rbLocal.Location = new System.Drawing.Point(3, 33);
-      this.rbLocal.Name = "rbLocal";
-      this.rbLocal.Size = new System.Drawing.Size(46, 18);
-      this.rbLocal.TabIndex = 24;
-      this.rbLocal.TabStop = true;
-      this.rbLocal.Text = "Path";
-      this.rbLocal.UseVisualStyleBackColor = true;
-      this.rbLocal.CheckedChanged += new System.EventHandler(this.rbLocal_CheckedChanged);
-      // 
-      // rbRemote
-      // 
-      this.rbRemote.AutoSize = true;
-      this.rbRemote.Location = new System.Drawing.Point(3, 13);
-      this.rbRemote.Name = "rbRemote";
-      this.rbRemote.Size = new System.Drawing.Size(45, 18);
-      this.rbRemote.TabIndex = 23;
-      this.rbRemote.TabStop = true;
-      this.rbRemote.Text = "URL";
-      this.rbRemote.UseVisualStyleBackColor = true;
       // 
       // lblLocationSwfUrl
       // 
       this.lblLocationSwfUrl.AutoSize = true;
       this.lblLocationSwfUrl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblLocationSwfUrl.Location = new System.Drawing.Point(3, 62);
+      this.lblLocationSwfUrl.Location = new System.Drawing.Point(3, 37);
       this.lblLocationSwfUrl.Name = "lblLocationSwfUrl";
       this.lblLocationSwfUrl.Size = new System.Drawing.Size(51, 14);
       this.lblLocationSwfUrl.TabIndex = 22;
@@ -436,7 +415,7 @@
       // txtSwfUrlLocation
       // 
       this.txtSwfUrlLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtSwfUrlLocation.Location = new System.Drawing.Point(82, 62);
+      this.txtSwfUrlLocation.Location = new System.Drawing.Point(82, 37);
       this.txtSwfUrlLocation.Name = "txtSwfUrlLocation";
       this.txtSwfUrlLocation.Size = new System.Drawing.Size(320, 20);
       this.txtSwfUrlLocation.TabIndex = 21;
@@ -539,6 +518,15 @@
       this.plButtons.Size = new System.Drawing.Size(420, 35);
       this.plButtons.TabIndex = 14;
       // 
+      // lblMeasuringSupported
+      // 
+      this.lblMeasuringSupported.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblMeasuringSupported.Location = new System.Drawing.Point(160, 40);
+      this.lblMeasuringSupported.Name = "lblMeasuringSupported";
+      this.lblMeasuringSupported.Size = new System.Drawing.Size(242, 22);
+      this.lblMeasuringSupported.TabIndex = 21;
+      this.lblMeasuringSupported.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      // 
       // FrmCycloMediaOptions
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -559,19 +547,18 @@
       this.tcSettings.ResumeLayout(false);
       this.tbLogin.ResumeLayout(false);
       this.tbLogin.PerformLayout();
-      this.tbCycloramaViewer.ResumeLayout(false);
-      this.tbCycloramaViewer.PerformLayout();
-      ((System.ComponentModel.ISupportInitialize)(this.nudDistVectLayerViewer)).EndInit();
+      this.tbSettings.ResumeLayout(false);
+      this.grGeneral.ResumeLayout(false);
+      this.grGeneral.PerformLayout();
       ((System.ComponentModel.ISupportInitialize)(this.nudMaxViewers)).EndInit();
-      this.tbMeasurement.ResumeLayout(false);
-      this.tbMeasurement.PerformLayout();
-      this.tbServices.ResumeLayout(false);
+      ((System.ComponentModel.ISupportInitialize)(this.nudDistVectLayerViewer)).EndInit();
+      this.grCoordinateSystems.ResumeLayout(false);
+      this.grCoordinateSystems.PerformLayout();
+      this.tbConfiguration.ResumeLayout(false);
       this.grBaseUrl.ResumeLayout(false);
       this.grBaseUrl.PerformLayout();
       this.grSwfUrl.ResumeLayout(false);
       this.grSwfUrl.PerformLayout();
-      this.grRemoteLocal.ResumeLayout(false);
-      this.grRemoteLocal.PerformLayout();
       this.tbAbout.ResumeLayout(false);
       this.tbAgreement.ResumeLayout(false);
       this.tbAgreement.PerformLayout();
@@ -589,12 +576,10 @@
     private System.Windows.Forms.TextBox txtUsername;
     private System.Windows.Forms.Label lblPassword;
     private System.Windows.Forms.Label lblUsername;
-    private System.Windows.Forms.TabPage tbCycloramaViewer;
+    private System.Windows.Forms.TabPage tbSettings;
     private System.Windows.Forms.Label lblDistVectLayerViewer;
-    private System.Windows.Forms.Label lblMaxViewers;
-    private System.Windows.Forms.TabPage tbMeasurement;
-    private System.Windows.Forms.CheckBox ckEnableSmartClick;
-    private System.Windows.Forms.TabPage tbServices;
+    private System.Windows.Forms.Label lblMaximumCycloramaViewers;
+    private System.Windows.Forms.TabPage tbConfiguration;
     private System.Windows.Forms.Button btnOk;
     private System.Windows.Forms.Button btnCancel;
     private System.Windows.Forms.Button btnApply;
@@ -602,7 +587,7 @@
     private System.Windows.Forms.NumericUpDown nudMaxViewers;
     private System.Windows.Forms.NumericUpDown nudDistVectLayerViewer;
     private System.Windows.Forms.CheckBox ckDetailImages;
-    private System.Windows.Forms.Label lblSpatialReference;
+    private System.Windows.Forms.Label lblCoordinateSystemCycloramaViewer;
     private System.Windows.Forms.ComboBox cbSpatialReferences;
     private System.Windows.Forms.TabPage tbAbout;
     private System.Windows.Forms.TabPage tbAgreement;
@@ -618,8 +603,9 @@
     private System.Windows.Forms.Label lblLocationBaseUrl;
     private System.Windows.Forms.CheckBox ckDefaultBaseUrl;
     private System.Windows.Forms.TextBox txtBaseUrlLocation;
-    private System.Windows.Forms.GroupBox grRemoteLocal;
-    private System.Windows.Forms.RadioButton rbRemote;
-    private System.Windows.Forms.RadioButton rbLocal;
+    private System.Windows.Forms.GroupBox grCoordinateSystems;
+    private System.Windows.Forms.GroupBox grGeneral;
+    private System.Windows.Forms.CheckBox ckEnableSmartClick;
+    private System.Windows.Forms.Label lblMeasuringSupported;
   }
 }

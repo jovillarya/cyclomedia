@@ -374,7 +374,7 @@ namespace IntegrationArcMap.Forms
 
       if (_login.Credentials)
       {
-        _api = _config.SwfUrlDefault ? new API(_config.InitType) : new API(_config.InitType, _config.SwfUrl);
+        _api = _config.SwfUrlDefault ? new API(InitType.REMOTE) : new API(InitType.REMOTE, _config.SwfUrl);
         plGlobespotter.Controls.Add(_api.gui);
         _api.Initialize(this);
       }
@@ -1148,6 +1148,11 @@ namespace IntegrationArcMap.Forms
     }
 
     public void OnMapContrastChanged(double value)
+    {
+      // empty
+    }
+
+    public void OnObliqueImageChanged()
     {
       // empty
     }

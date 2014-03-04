@@ -463,7 +463,7 @@ namespace IntegrationArcMap.Objects
 
     public bool IsSame(IPoint point)
     {
-      return IsSame(point, true);
+      return IsSame(point, (_point != null) && (!double.IsNaN(_point.Z)));
     }
 
     public bool IsSame(IPoint point, bool includeZ)

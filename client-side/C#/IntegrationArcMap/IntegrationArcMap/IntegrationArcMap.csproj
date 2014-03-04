@@ -299,11 +299,11 @@
     <AddInContent Include="Images\GsRecordingHistory.png" />
     <AddInContent Include="Images\GsHelp.png" />
     <EmbeddedResource Include="Doc\APIKey.xml" />
-    <EmbeddedResource Include="Doc\SpatialReferences.xml" />
     <AddInContent Include="Images\GsMeasurementDetail.png" />
     <None Include="Images\LeftArrow.png" />
     <None Include="Images\RightArrow.png" />
     <EmbeddedResource Include="Doc\Agreement.txt" />
+    <EmbeddedResource Include="Doc\GlobeSpotterSpatialReferences.xml" />
     <Content Include="LGPL-3.0.txt" />
   </ItemGroup>
   <ItemGroup>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <SpatialReferences version="1.0" xmlns="https://www.globespotter.com/gsc" xmlns:xlink="http://www.w3.org/1999/xlink">
     <SpatialReference>
         <Name>CH1903+ / LV95</Name>
@@ -439,6 +439,26 @@
         </WGSBounds>
         <Proj4>+proj=utm +zone=35 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs</Proj4>
         <ESRICompatibleName>EUREF_FIN_TM35FIN</ESRICompatibleName>
+    </SpatialReference>
+    <SpatialReference>
+        <Name>DHDN / Soldner Berlin</Name>
+        <SRSName>EPSG:3068</SRSName>
+        <SRSDimension>2</SRSDimension>
+        <Units>m</Units>
+        <NativeBounds>
+            <MinX>2816.9273</MinX>
+            <MinY>300.1350</MinY>
+            <MaxX>49855.0971</MaxX>
+            <MaxY>39377.9521</MaxY>
+        </NativeBounds>
+        <WGSBounds>
+            <MinX>13.08</MinX>
+            <MinY>52.33</MinY>
+            <MaxX>13.77</MaxX>
+            <MaxY>52.68</MaxY>
+        </WGSBounds>
+        <Proj4>+proj=cass +lat_0=52.41864827777778 +lon_0=13.62720366666667 +x_0=40000 +y_0=10000 +ellps=bessel +datum=potsdam +units=m +no_defs</Proj4>
+        <ESRICompatibleName>DHDN_Soldner_Berlin</ESRICompatibleName>
     </SpatialReference>
     <SpatialReference>
         <Name>ETRS-GK19FIN_OLD</Name>
@@ -2769,7 +2789,26 @@
         <Proj4>+proj=merc +ellps=WGS84 +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +no_defs</Proj4>
         <CompatibleSRSNames>EPSG:3857</CompatibleSRSNames>
     </SpatialReference>
-  
+    <SpatialReference>
+        <Name>NAD83 / Maryland (ftUS)</Name>
+        <SRSName>EPSG:2248</SRSName>
+        <SRSDimension>2</SRSDimension>
+        <Units>ft</Units>
+        <NativeBounds>
+            <MinX>593655.7373</MinX>
+            <MinY>84146.0734</MinY>
+            <MaxX>1895381.6422</MaxX>
+            <MaxY>757391.3704</MaxY>
+        </NativeBounds>
+        <WGSBounds>
+            <MinX>-79.4900</MinX>
+            <MinY>37.8800</MinY>
+            <MaxX>-74.9800</MaxX>
+            <MaxY>39.7200</MaxY>
+        </WGSBounds>
+        <Proj4>+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=399999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs</Proj4>
+        <ESRICompatibleName>NAD83_Maryland_ftUS</ESRICompatibleName>
+    </SpatialReference>  
     <SpatialReference>
         <Name>NAD83 / Maryland</Name>
         <SRSName>EPSG:26985</SRSName>

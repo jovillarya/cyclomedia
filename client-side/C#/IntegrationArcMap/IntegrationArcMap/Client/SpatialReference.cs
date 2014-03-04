@@ -45,10 +45,18 @@ namespace IntegrationArcMap.Client
 
     public string SRSName { get; set; }
 
+    public string Units { get; set; }
+
     public Bounds NativeBounds { get; set; }
 
     public string ESRICompatibleName { get; set; }
     // ReSharper restore InconsistentNaming
+
+    [XmlIgnore]
+    public bool CanMeasuring
+    {
+      get { return ((Units == "m") || (Units == "ft")); }
+    }
 
     [XmlIgnore]
     public ISpatialReference SpatialRef
