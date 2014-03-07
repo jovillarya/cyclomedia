@@ -44,6 +44,7 @@
       this.lblDistVectLayerViewer = new System.Windows.Forms.Label();
       this.nudDistVectLayerViewer = new System.Windows.Forms.NumericUpDown();
       this.grCoordinateSystems = new System.Windows.Forms.GroupBox();
+      this.lblMeasuringSupported = new System.Windows.Forms.Label();
       this.lblCoordinateSystemCycloramaViewer = new System.Windows.Forms.Label();
       this.cbSpatialReferences = new System.Windows.Forms.ComboBox();
       this.tbConfiguration = new System.Windows.Forms.TabPage();
@@ -64,7 +65,6 @@
       this.btnApply = new System.Windows.Forms.Button();
       this.plSettings = new System.Windows.Forms.Panel();
       this.plButtons = new System.Windows.Forms.Panel();
-      this.lblMeasuringSupported = new System.Windows.Forms.Label();
       this.tcSettings.SuspendLayout();
       this.tbLogin.SuspendLayout();
       this.tbSettings.SuspendLayout();
@@ -121,7 +121,7 @@
       this.lblLoginStatus.Name = "lblLoginStatus";
       this.lblLoginStatus.Size = new System.Drawing.Size(150, 22);
       this.lblLoginStatus.TabIndex = 7;
-      this.lblLoginStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+      this.lblLoginStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
       // txtPassword
       // 
@@ -150,7 +150,7 @@
       this.lblPassword.Size = new System.Drawing.Size(60, 22);
       this.lblPassword.TabIndex = 6;
       this.lblPassword.Text = "Password:";
-      this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       // 
       // lblUsername
       // 
@@ -160,7 +160,7 @@
       this.lblUsername.Size = new System.Drawing.Size(60, 22);
       this.lblUsername.TabIndex = 4;
       this.lblUsername.Text = "Username:";
-      this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       // 
       // tbSettings
       // 
@@ -203,14 +203,13 @@
       // 
       // lblMaximumCycloramaViewers
       // 
-      this.lblMaximumCycloramaViewers.AutoSize = true;
       this.lblMaximumCycloramaViewers.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblMaximumCycloramaViewers.Location = new System.Drawing.Point(3, 15);
       this.lblMaximumCycloramaViewers.Name = "lblMaximumCycloramaViewers";
-      this.lblMaximumCycloramaViewers.Size = new System.Drawing.Size(151, 14);
+      this.lblMaximumCycloramaViewers.Size = new System.Drawing.Size(157, 20);
       this.lblMaximumCycloramaViewers.TabIndex = 13;
       this.lblMaximumCycloramaViewers.Text = "Maximum Cyclorama viewers:";
-      this.lblMaximumCycloramaViewers.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblMaximumCycloramaViewers.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       // 
       // nudMaxViewers
       // 
@@ -250,14 +249,13 @@
       // 
       // lblDistVectLayerViewer
       // 
-      this.lblDistVectLayerViewer.AutoSize = true;
       this.lblDistVectLayerViewer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblDistVectLayerViewer.Location = new System.Drawing.Point(3, 40);
       this.lblDistVectLayerViewer.Name = "lblDistVectLayerViewer";
-      this.lblDistVectLayerViewer.Size = new System.Drawing.Size(135, 14);
+      this.lblDistVectLayerViewer.Size = new System.Drawing.Size(157, 20);
       this.lblDistVectLayerViewer.TabIndex = 15;
       this.lblDistVectLayerViewer.Text = "Overlay draw distance[m]:";
-      this.lblDistVectLayerViewer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblDistVectLayerViewer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       // 
       // nudDistVectLayerViewer
       // 
@@ -301,16 +299,24 @@
       this.grCoordinateSystems.TabStop = false;
       this.grCoordinateSystems.Text = "Coordinate systems";
       // 
+      // lblMeasuringSupported
+      // 
+      this.lblMeasuringSupported.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblMeasuringSupported.Location = new System.Drawing.Point(160, 40);
+      this.lblMeasuringSupported.Name = "lblMeasuringSupported";
+      this.lblMeasuringSupported.Size = new System.Drawing.Size(242, 22);
+      this.lblMeasuringSupported.TabIndex = 21;
+      this.lblMeasuringSupported.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      // 
       // lblCoordinateSystemCycloramaViewer
       // 
-      this.lblCoordinateSystemCycloramaViewer.AutoSize = true;
       this.lblCoordinateSystemCycloramaViewer.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblCoordinateSystemCycloramaViewer.Location = new System.Drawing.Point(3, 15);
       this.lblCoordinateSystemCycloramaViewer.Name = "lblCoordinateSystemCycloramaViewer";
-      this.lblCoordinateSystemCycloramaViewer.Size = new System.Drawing.Size(98, 14);
+      this.lblCoordinateSystemCycloramaViewer.Size = new System.Drawing.Size(157, 22);
       this.lblCoordinateSystemCycloramaViewer.TabIndex = 19;
       this.lblCoordinateSystemCycloramaViewer.Text = "Cyclorama viewer:";
-      this.lblCoordinateSystemCycloramaViewer.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblCoordinateSystemCycloramaViewer.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       // 
       // cbSpatialReferences
       // 
@@ -349,14 +355,13 @@
       // 
       // lblLocationBaseUrl
       // 
-      this.lblLocationBaseUrl.AutoSize = true;
       this.lblLocationBaseUrl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblLocationBaseUrl.Location = new System.Drawing.Point(3, 37);
       this.lblLocationBaseUrl.Name = "lblLocationBaseUrl";
-      this.lblLocationBaseUrl.Size = new System.Drawing.Size(51, 14);
+      this.lblLocationBaseUrl.Size = new System.Drawing.Size(79, 20);
       this.lblLocationBaseUrl.TabIndex = 22;
       this.lblLocationBaseUrl.Text = "Location:";
-      this.lblLocationBaseUrl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblLocationBaseUrl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       // 
       // ckDefaultBaseUrl
       // 
@@ -392,14 +397,13 @@
       // 
       // lblLocationSwfUrl
       // 
-      this.lblLocationSwfUrl.AutoSize = true;
       this.lblLocationSwfUrl.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblLocationSwfUrl.Location = new System.Drawing.Point(3, 37);
       this.lblLocationSwfUrl.Name = "lblLocationSwfUrl";
-      this.lblLocationSwfUrl.Size = new System.Drawing.Size(51, 14);
+      this.lblLocationSwfUrl.Size = new System.Drawing.Size(79, 20);
       this.lblLocationSwfUrl.TabIndex = 22;
       this.lblLocationSwfUrl.Text = "Location:";
-      this.lblLocationSwfUrl.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblLocationSwfUrl.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       // 
       // ckDefaultSwfUrl
       // 
@@ -518,15 +522,6 @@
       this.plButtons.Size = new System.Drawing.Size(420, 35);
       this.plButtons.TabIndex = 14;
       // 
-      // lblMeasuringSupported
-      // 
-      this.lblMeasuringSupported.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblMeasuringSupported.Location = new System.Drawing.Point(160, 40);
-      this.lblMeasuringSupported.Name = "lblMeasuringSupported";
-      this.lblMeasuringSupported.Size = new System.Drawing.Size(242, 22);
-      this.lblMeasuringSupported.TabIndex = 21;
-      this.lblMeasuringSupported.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-      // 
       // FrmCycloMediaOptions
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -553,7 +548,6 @@
       ((System.ComponentModel.ISupportInitialize)(this.nudMaxViewers)).EndInit();
       ((System.ComponentModel.ISupportInitialize)(this.nudDistVectLayerViewer)).EndInit();
       this.grCoordinateSystems.ResumeLayout(false);
-      this.grCoordinateSystems.PerformLayout();
       this.tbConfiguration.ResumeLayout(false);
       this.grBaseUrl.ResumeLayout(false);
       this.grBaseUrl.PerformLayout();

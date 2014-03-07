@@ -19,6 +19,7 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using ESRI.ArcGIS.Geometry;
 using IntegrationArcMap.Layers;
 using IntegrationArcMap.Properties;
 using IntegrationArcMap.Utilities;
@@ -74,7 +75,8 @@ namespace IntegrationArcMap.AddIns
       try
       {
         GsExtension extension = GsExtension.GetExtension();
-        Enabled = ((ArcMap.Application != null) && extension.Enabled);
+        ISpatialReference spatialReference = ArcUtils.SpatialReference;
+        Enabled = ((ArcMap.Application != null) && extension.Enabled && (spatialReference != null));
       }
       catch (Exception ex)
       {

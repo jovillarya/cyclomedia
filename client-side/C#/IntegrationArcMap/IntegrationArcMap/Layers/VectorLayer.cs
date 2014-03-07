@@ -202,7 +202,8 @@ namespace IntegrationArcMap.Layers
         ISpatialReference gsSpatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
         bool zCoord = gsSpatialReference.ZCoordinateUnit != null;
         bool sameFactoryCode = SpatialReference.FactoryCode == gsSpatialReference.FactoryCode;
-        return (sameFactoryCode || zCoord) && GeometryDef.HasZ;
+//        return (sameFactoryCode || zCoord) && GeometryDef.HasZ;
+        return ((spatRel == null) || spatRel.CanMeasuring) && GeometryDef.HasZ;
       }
     }
 
