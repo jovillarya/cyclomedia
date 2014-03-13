@@ -96,7 +96,7 @@ namespace IntegrationArcMap.Client
           IEnvelope envelope = activeView.Extent;
           ISpatialReference spatEnv = envelope.SpatialReference;
 
-          if (spatEnv.FactoryCode != _spatialReference.FactoryCode)
+          if ((spatEnv != null) && (spatEnv.FactoryCode != _spatialReference.FactoryCode))
           {
             IEnvelope copyEnvelope = envelope.Envelope;
             copyEnvelope.Project(_spatialReference);
