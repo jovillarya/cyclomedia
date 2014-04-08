@@ -143,7 +143,7 @@ namespace IntegrationArcMap.Client
       {
         var web = Web.Instance;
         var elements = web.CheckAuthorization();
-        Credentials = (elements.Count >= 0);
+        Credentials = (elements.Count >= 1);
       }
 
       return Credentials;

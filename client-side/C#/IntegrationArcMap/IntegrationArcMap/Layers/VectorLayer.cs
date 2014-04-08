@@ -335,6 +335,25 @@ namespace IntegrationArcMap.Layers
         Config config = Config.Instance;
         SpatialReference spatRel = config.SpatialReference;
         ISpatialReference gsSpatialReference = (spatRel == null) ? ArcUtils.SpatialReference : spatRel.SpatialRef;
+        var projCoord = gsSpatialReference as IProjectedCoordinateSystem;
+
+        if (projCoord == null)
+        {
+          var geoCoord = gsSpatialReference as IGeographicCoordinateSystem;
+
+          if (geoCoord != null)
+          {
+            IAngularUnit unit = geoCoord.CoordinateUnit;
+            double factor = unit.ConversionFactor;
+            distance = distance*factor;
+          }
+        }
+        else
+        {
+          ILinearUnit unit = projCoord.CoordinateUnit;
+          double factor = unit.ConversionFactor;
+          distance = distance/factor;
+        }
 
         foreach (var recordingLocation in recordingLocations)
         {

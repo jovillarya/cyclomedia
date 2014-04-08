@@ -48,6 +48,7 @@ namespace IntegrationArcMap.Forms
     // =========================================================================
     private static FrmCycloMediaOptions _frmCycloMediaOptions;
     private static Login _login;
+    private static bool? _smartMeasurementPermissions;
 
     private Config _config;
     private bool _mssgBoxShow;
@@ -116,6 +117,7 @@ namespace IntegrationArcMap.Forms
     static FrmCycloMediaOptions()
     {
       _login = Client.Login.Instance;
+      _smartMeasurementPermissions = null;
     }
 
     #endregion
@@ -184,6 +186,14 @@ namespace IntegrationArcMap.Forms
       }
     }
 
+    public static void ReloadData()
+    {
+      if (_frmCycloMediaOptions != null)
+      {
+        _frmCycloMediaOptions.LoadData();
+      }
+    }
+
     private static void OpenForm()
     {
       if (_frmCycloMediaOptions == null)
@@ -199,6 +209,7 @@ namespace IntegrationArcMap.Forms
     private void LoadData()
     {
       lblLoginStatus.Text = _login.Credentials ? LoginSuccessfully : LoginFailed;
+      _smartMeasurementPermissions = _smartMeasurementPermissions ?? FrmGlobespotter.SmartClickAvailable;
 
       bool apply = btnApply.Enabled;
       ckDefaultBaseUrl.Checked = _config.BaseUrlDefault;
@@ -213,8 +224,10 @@ namespace IntegrationArcMap.Forms
       nudDistVectLayerViewer.Value = _config.DistanceCycloramaVectorLayer;
       txtPassword.Text = _login.Password;
       txtUsername.Text = _login.Username;
-      ckEnableSmartClick.Checked = _config.SmartClickEnabled;
+      ckEnableSmartClick.Checked = ((_smartMeasurementPermissions ?? false) && _config.SmartClickEnabled);
+      ckEnableSmartClick.Enabled = (_smartMeasurementPermissions ?? false);
       ckDetailImages.Checked = _config.DetailImagesEnabled;
+      cbSpatialReferences.Items.Clear();
       SpatialReferences spatialReferences = SpatialReferences.Instance;
 
       foreach (var spatialReference in spatialReferences)
@@ -285,7 +298,8 @@ namespace IntegrationArcMap.Forms
 
         if (responce != null)
         {
-          if ((responce.StatusCode == HttpStatusCode.Unauthorized) || (responce.StatusCode == HttpStatusCode.Forbidden))
+          if ((responce.StatusCode == HttpStatusCode.Unauthorized) || (responce.StatusCode == HttpStatusCode.Forbidden) ||
+              (responce.StatusCode == HttpStatusCode.NotFound))
           {
             txtUsername.Focus();
           }
@@ -310,31 +324,41 @@ namespace IntegrationArcMap.Forms
 
     private void Save(bool close)
     {
+      // determinate smart click permissions
       bool usernameChanged = (txtUsername.Text != _login.Username) || (txtPassword.Text != _login.Password);
-      bool loginSucces = usernameChanged && Login();
+      _smartMeasurementPermissions = usernameChanged ? null : _smartMeasurementPermissions;
+
+      // determinate restart
+      bool baseUrlChanged = (txtBaseUrlLocation.Text != _config.BaseUrl) ||
+                            (ckDefaultBaseUrl.Checked != _config.BaseUrlDefault);
+      bool swfChanged = (_config.SwfUrlDefault != ckDefaultSwfUrl.Checked) || (_config.SwfUrl != txtSwfUrlLocation.Text);
+      SpatialReference spat = _config.SpatialReference;
+      var selectedItem = (SpatialReference) cbSpatialReferences.SelectedItem;
+      bool spatChanged = (spat == null) || ((selectedItem != null) && (spat.ToString() != selectedItem.ToString()));
+      bool restart = usernameChanged || baseUrlChanged || swfChanged || spatChanged;
+
+      // Save values
+      var maxViewers = (uint) nudMaxViewers.Value;
+      var distLayer = (uint) nudDistVectLayerViewer.Value;
+      bool smartClickEnabled = (_smartMeasurementPermissions ?? false)
+        ? ckEnableSmartClick.Checked
+        : _config.SmartClickEnabled;
+      _config.SpatialReference = selectedItem ?? _config.SpatialReference;
+      _config.MaxViewers = maxViewers;
+      _config.DistanceCycloramaVectorLayer = distLayer;
+      _config.BaseUrl = txtBaseUrlLocation.Text;
+      _config.SwfUrl = txtSwfUrlLocation.Text;
+      _config.BaseUrlDefault = ckDefaultBaseUrl.Checked;
+      _config.SwfUrlDefault = ckDefaultSwfUrl.Checked;
+      _config.SmartClickEnabled = smartClickEnabled;
+      _config.DetailImagesEnabled = ckDetailImages.Checked;
+      _config.Save();
+
+      // Check restart GlobeSpotter
+      bool loginSucces = (usernameChanged || baseUrlChanged) && Login();
 
       if (_login.Credentials || loginSucces)
       {
-        SpatialReference spat = _config.SpatialReference;
-        var maxViewers = (uint) nudMaxViewers.Value;
-        var distLayer = (uint) nudDistVectLayerViewer.Value;
-        bool restart = (_config.BaseUrlDefault != ckDefaultBaseUrl.Checked) || (_config.BaseUrl != txtBaseUrlLocation.Text);
-        restart = restart || (_config.SwfUrlDefault != ckDefaultSwfUrl.Checked) || (_config.SwfUrl != txtSwfUrlLocation.Text);
-        var selectedItem = (SpatialReference) cbSpatialReferences.SelectedItem;
-        restart = restart ||
-                  ((spat == null) || ((selectedItem != null) && (spat.ToString() != selectedItem.ToString())));
-        restart = restart || usernameChanged;
-        _config.SpatialReference = selectedItem ?? _config.SpatialReference;
-        _config.MaxViewers = maxViewers;
-        _config.DistanceCycloramaVectorLayer = distLayer;
-        _config.BaseUrl = txtBaseUrlLocation.Text;
-        _config.SwfUrl = txtSwfUrlLocation.Text;
-        _config.BaseUrlDefault = ckDefaultBaseUrl.Checked;
-        _config.SwfUrlDefault = ckDefaultSwfUrl.Checked;
-        _config.SmartClickEnabled = ckEnableSmartClick.Checked;
-        _config.DetailImagesEnabled = ckDetailImages.Checked;
-        _config.Save();
-
         if (restart && FrmGlobespotter.IsStarted())
         {
           FrmGlobespotter.Restart();
@@ -343,13 +367,15 @@ namespace IntegrationArcMap.Forms
         {
           FrmGlobespotter.UpdateParameters();
         }
-
-        if (close)
-        {
-          Close();
-        }
       }
 
+      // Close form
+      if (close)
+      {
+        Close();
+      }
+
+      // Check if the layer has to make empty
       if (usernameChanged)
       {
         GsExtension extension = GsExtension.GetExtension();

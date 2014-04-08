@@ -49,7 +49,7 @@ namespace IntegrationArcMap.Client
 
     private const string CapabilityString = "{0}?REQUEST=GetCapabilities&VERSION={1}&SERVICE=WFS";
 
-    private const string AuthorizationRequest = "{0}/Authorization/GlobeSpotter";
+    private const string AuthorizationRequest = "{0}/configuration/configuration/API";
 
     private const int BufferImageLengthService = 2048;
     private const int XmlConfig = 0;
@@ -154,8 +154,8 @@ namespace IntegrationArcMap.Client
     {
       const string postItem = @"<Authorization />";
       string authorizationService = string.Format(AuthorizationRequest, BaseUrl);
-      var xml = (string)PostRequest(authorizationService, GetXmlCallback, postItem, XmlConfig);
-      return ParseXml(xml, (Namespaces.CycloMediaNs + "Permission"));
+      var xml = (string) PostRequest(authorizationService, GetXmlCallback, postItem, XmlConfig);
+      return ParseXml(xml, (Namespaces.GlobeSpotterNs + "Name"));
     }
 
     public List<XElement> GetByBbox(IEnvelope envelope, string wfsRequest)

@@ -208,7 +208,7 @@ namespace IntegrationArcMap.Client
         SwfUrl = string.Empty,
         _swfUrlDefault = true,
         MaxViewers = 3,
-        SmartClickEnabled = false,
+        SmartClickEnabled = true,
         YearFrom = year - 3,
         YearTo = year - 1,
         DistanceCycloramaVectorLayer = 30,

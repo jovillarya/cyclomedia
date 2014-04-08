@@ -212,6 +212,16 @@
             Permission to use line entities.
             </summary>
         </member>
+        <member name="P:GlobeSpotterAPI.Permissions.MeasurePolygon">
+            <summary>
+            Permission to use polygon entities.
+            </summary>
+        </member>
+        <member name="P:GlobeSpotterAPI.Permissions.MeasureSmartClick">
+            <summary>
+            Permission to use smart click
+            </summary>
+        </member>
         <member name="P:GlobeSpotterAPI.Permissions.AddLayerWFS">
             <summary>
             Permission to use add a WFS/GML layer.

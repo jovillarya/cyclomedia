@@ -77,6 +77,7 @@ namespace IntegrationArcMap.Forms
     private bool _toInitialize;
     private Point3D _lookAtCoord;
     private SortedDictionary<int, int> _yearMonth;
+    private Permissions _permissions;
     // ReSharper restore InconsistentNaming
 
     private readonly IList<Color> _colors = new List<Color>
@@ -162,6 +163,36 @@ namespace IntegrationArcMap.Forms
       get { return _window ?? (_window = GetDocWindow()); }
     }
 
+    private bool PointMeasurementPermissions
+    {
+      get { return (_permissions != null) && _permissions.MeasurePoint; }
+    }
+
+    private bool LineMeasurementPermissions
+    {
+      get { return (_permissions != null) && _permissions.MeasureLine; }
+    }
+
+    private bool PolygonMeasurementPermissions
+    {
+      get { return (_permissions != null) && _permissions.MeasurePolygon; }
+    }
+
+    private bool WfsPermissions
+    {
+      get { return (_permissions != null) && _permissions.AddLayerWFS; }
+    }
+
+    private bool SmartClickMeasurementPermissions
+    {
+      get { return (_permissions != null) && _permissions.MeasureSmartClick; }
+    }
+
+    public static bool? SmartClickAvailable
+    {
+      get { return (Instance._permissions == null) ? null : (bool?) Instance.SmartClickMeasurementPermissions; }
+    }
+
     private bool ApiReady
     {
       get { return ((_api != null) && _api.GetAPIReadyState()); }
@@ -170,6 +201,15 @@ namespace IntegrationArcMap.Forms
     private bool Started
     {
       get { return (_api != null); }
+    }
+
+    private bool MeasurementPermissions
+    {
+      get
+      {
+        return PointMeasurementPermissions || LineMeasurementPermissions || PolygonMeasurementPermissions ||
+               SmartClickMeasurementPermissions;
+      }
     }
 
     #endregion
@@ -428,7 +468,11 @@ namespace IntegrationArcMap.Forms
     {
       if (ApiReady)
       {
-        _api.SetMeasurementSmartClickModeEnabled(_config.SmartClickEnabled);
+        if (SmartClickMeasurementPermissions)
+        {
+          _api.SetMeasurementSmartClickModeEnabled(_config.SmartClickEnabled);
+        }
+
         _api.SetViewerDetailImagesVisible(_config.DetailImagesEnabled);
         _api.SetMaxViewers(_config.MaxViewers);
         OnRefreshVectorLayer(null);
@@ -437,21 +481,24 @@ namespace IntegrationArcMap.Forms
 
     private void AddWfsLay(WfsLayer layer)
     {
-      uint? layerId = null;
+      if (WfsPermissions)
+      {
+        uint? layerId = null;
 
-      if (_api != null)
-      {
-        layerId = _api.AddWFSLayer(layer.Name, layer.Url, layer.TypeName, layer.Version, layer.Color, true, false,
-                                   layer.MinZoomLevel, layer.UseProxy);
-      }
+        if (_api != null)
+        {
+          layerId = _api.AddWFSLayer(layer.Name, layer.Url, layer.TypeName, layer.Version, layer.Color, true, false,
+            layer.MinZoomLevel, layer.UseProxy);
+        }
 
-      if (!_wfsLayers.ContainsKey(layer))
-      {
-        _wfsLayers.Add(layer, layerId);
-      }
-      else
-      {
-        _wfsLayers[layer] = layerId;
+        if (!_wfsLayers.ContainsKey(layer))
+        {
+          _wfsLayers.Add(layer, layerId);
+        }
+        else
+        {
+          _wfsLayers[layer] = layerId;
+        }
       }
     }
 
@@ -539,6 +586,12 @@ namespace IntegrationArcMap.Forms
       if (_frmGlobespotter != null)
       {
         _frmGlobespotter._imageId = string.Empty;
+      }
+
+      if (_frmGlobespotter != null)
+      {
+        _frmGlobespotter._permissions = null;
+        FrmCycloMediaOptions.ReloadData();
       }
     }
 
@@ -669,13 +722,13 @@ namespace IntegrationArcMap.Forms
     {
       if (_api != null)
       {
+        _permissions = _api.GetPermissions();
         _api.SetMaxViewers(_config.MaxViewers);
         _api.SetCloseViewerEnabled(true);
         _api.SetViewerToolBarVisible(false);
         _api.SetViewerToolBarButtonsVisible(true);
         _api.SetViewerTitleBarVisible(false);
         _api.SetViewerWindowBorderVisible(false);
-        _api.SetMeasurementSeriesModeEnabled(true);
         _api.SetHideOverlaysWhenMeasuring(false);
         _api.SetImageInformationEnabled(true);
         _api.SetViewerBrightnessEnabled(true);
@@ -683,9 +736,18 @@ namespace IntegrationArcMap.Forms
         _api.SetViewerOverlayAlphaEnabled(true);
         _api.SetViewerShowLocationEnabled(true);
         _api.SetViewerDetailImagesVisible(_config.DetailImagesEnabled);
-        _api.SetMeasurementSmartClickModeEnabled(_config.SmartClickEnabled);
         _api.SetContextMenuEnabled(true);
         _api.SetKeyboardEnabled(true);
+
+        if (MeasurementPermissions)
+        {
+          _api.SetMeasurementSeriesModeEnabled(true);
+        }
+
+        if (SmartClickMeasurementPermissions)
+        {
+          _api.SetMeasurementSmartClickModeEnabled(_config.SmartClickEnabled);
+        }
 
         UpdateCol();
 
@@ -737,6 +799,7 @@ namespace IntegrationArcMap.Forms
         }
 
         OnHistoricalDateChanged(_yearMonth);
+        FrmCycloMediaOptions.ReloadData();
       }
     }
 
@@ -1163,7 +1226,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnAddVectorLayer(VectorLayer vectorLayer)
     {
-      if ((vectorLayer != null) && vectorLayer.IsVisibleInGlobespotter && (_api != null))
+      if (WfsPermissions && (vectorLayer != null) && vectorLayer.IsVisibleInGlobespotter && (_api != null))
       {
         OnRemoveVectorLayer(vectorLayer);
         Color color;
@@ -1174,7 +1237,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnRemoveVectorLayer(VectorLayer vectorLayer)
     {
-      if ((vectorLayer != null) && (_api != null))
+      if (WfsPermissions && (vectorLayer != null) && (_api != null))
       {
         if (_vectorLayers.ContainsKey(vectorLayer))
         {
@@ -1187,7 +1250,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnRefreshVectorLayer(VectorLayer layer)
     {
-      if (_api != null)
+      if (WfsPermissions && (_api != null))
       {
         if (layer != null)
         {
@@ -1401,28 +1464,34 @@ namespace IntegrationArcMap.Forms
 
     private void OnStartMeasurement(IGeometry geometry)
     {
-      Measurement measurement = Measurement.Sketch;
-      StartMeasurement(geometry, measurement, true);
+      if (MeasurementPermissions)
+      {
+        Measurement measurement = Measurement.Sketch;
+        StartMeasurement(geometry, measurement, true);
+      }
     }
 
     private void OnDeleteFeature(IFeature feature)
     {
-      IGeometry geometry = feature.Shape;
-
-      if (geometry != null)
+      if (MeasurementPermissions)
       {
-        Measurement measurement = Measurement.Get(geometry);
+        IGeometry geometry = feature.Shape;
 
-        if (measurement != null)
+        if (geometry != null)
         {
-          measurement.RemoveMeasurement();
+          Measurement measurement = Measurement.Get(geometry);
+
+          if (measurement != null)
+          {
+            measurement.RemoveMeasurement();
+          }
         }
       }
     }
 
     private void OnStartEditFeature(IEnumFeature features)
     {
-      if (features != null)
+      if (MeasurementPermissions && (features != null))
       {
         features.Reset();
         IFeature feature;
@@ -1454,7 +1523,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnUpdateEditFeature(IFeature feature)
     {
-      if (feature != null)
+      if (MeasurementPermissions && (feature != null))
       {
         IGeometry geometry = feature.Shape;
 
@@ -1472,14 +1541,17 @@ namespace IntegrationArcMap.Forms
 
     private void OnStopEdit()
     {
-      _drawingSketch = false;
-      Measurement.RemoveAll();
-      FrmMeasurement.Close();
+      if (MeasurementPermissions)
+      {
+        _drawingSketch = false;
+        Measurement.RemoveAll();
+        FrmMeasurement.Close();
+      }
     }
 
     private void OnCreateSketch(IEditSketch3 sketch)
     {
-      if ((!_sketchModified) && (!_screenPointAdded) && (_layer != null))
+      if (MeasurementPermissions && (!_sketchModified) && (!_screenPointAdded) && (_layer != null))
       {
         _sketchModified = true;
         _layer.AddZToSketch(sketch);
@@ -1489,32 +1561,38 @@ namespace IntegrationArcMap.Forms
 
     private void OnModifiedSketch(IGeometry geometry)
     {
-      _mapPointAdded = !_screenPointAdded;
-      Measurement measurement = Measurement.Sketch;
-
-      if (geometry != null)
+      if (MeasurementPermissions)
       {
-        if (((!_drawingSketch) && (!geometry.IsEmpty)) || (measurement == null))
+        _mapPointAdded = !_screenPointAdded;
+        Measurement measurement = Measurement.Sketch;
+
+        if (geometry != null)
         {
-          _drawingSketch = true;
-          measurement = StartMeasurement(geometry, measurement, true);
+          if (((!_drawingSketch) && (!geometry.IsEmpty)) || (measurement == null))
+          {
+            _drawingSketch = true;
+            measurement = StartMeasurement(geometry, measurement, true);
+          }
+
+          if (measurement != null)
+          {
+            measurement.UpdateMeasurementPoints(geometry);
+          }
         }
 
-        if (measurement != null)
-        {
-          measurement.UpdateMeasurementPoints(geometry);
-        }
+        _mapPointAdded = false;
       }
-
-      _mapPointAdded = false;
     }
 
     private void OnSketchFinished()
     {
-      _screenPointAdded = false;
-      _mapPointAdded = false;
-      _drawingSketch = false;
-      Measurement.RemoveSketch();
+      if (MeasurementPermissions)
+      {
+        _screenPointAdded = false;
+        _mapPointAdded = false;
+        _drawingSketch = false;
+        Measurement.RemoveSketch();
+      }
     }
 
     #endregion
@@ -1523,39 +1601,42 @@ namespace IntegrationArcMap.Forms
 
     private Measurement StartMeasurement(IGeometry geometry, Measurement measurement, bool sketch)
     {
-      bool measurementExists = false;
-      const string name = "my measurement";
-      var typeOfLayer = Measurement.GetTypeOfLayer(geometry);
-
-      if ((_api != null) && (typeOfLayer != TypeOfLayer.None))
+      if (MeasurementPermissions)
       {
-        if (measurement != null)
-        {
-          if (measurement.IsTypeOfLayer(typeOfLayer))
-          {
-            measurementExists = true;
-            measurement.OpenMeasurement();
-          }
-          else
-          {
-            measurement.RemoveMeasurement();
-          }
-        }
+        bool measurementExists = false;
+        const string name = "my measurement";
+        var typeOfLayer = Measurement.GetTypeOfLayer(geometry);
 
-        if (!measurementExists)
+        if ((_api != null) && (typeOfLayer != TypeOfLayer.None))
         {
-          _measurementName = name;
-          Measurement.CloseOpenMeasurement();
-          int entityId = CreateMeasurement(typeOfLayer);
-          measurement = (entityId == -1) ? null : Measurement.Get(entityId);
-
           if (measurement != null)
           {
-            measurement.Open();
-
-            if (sketch)
+            if (measurement.IsTypeOfLayer(typeOfLayer))
             {
-              measurement.SetSketch();
+              measurementExists = true;
+              measurement.OpenMeasurement();
+            }
+            else
+            {
+              measurement.RemoveMeasurement();
+            }
+          }
+
+          if (!measurementExists)
+          {
+            _measurementName = name;
+            Measurement.CloseOpenMeasurement();
+            int entityId = CreateMeasurement(typeOfLayer);
+            measurement = (entityId == -1) ? null : Measurement.Get(entityId);
+
+            if (measurement != null)
+            {
+              measurement.Open();
+
+              if (sketch)
+              {
+                measurement.SetSketch();
+              }
             }
           }
         }
@@ -1566,7 +1647,7 @@ namespace IntegrationArcMap.Forms
 
     public void CloseMeasurement(int entityId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.CloseMeasurement(entityId);
       }
@@ -1574,7 +1655,7 @@ namespace IntegrationArcMap.Forms
 
     public void RemoveMeasurement(int entityId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.RemoveEntity(entityId);
       }
@@ -1582,7 +1663,7 @@ namespace IntegrationArcMap.Forms
 
     public void OpenMeasurement(int entityId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.OpenMeasurement(entityId);
         _api.SetFocusEntity(entityId);
@@ -1591,7 +1672,7 @@ namespace IntegrationArcMap.Forms
 
     public void DisableMeasurementSeries()
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.SetMeasurementSeriesModeEnabled(false);
       }
@@ -1601,7 +1682,7 @@ namespace IntegrationArcMap.Forms
     {
       bool result = false;
 
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         result = _api.GetMeasurementSeriesModeEnabled();
       }
@@ -1611,7 +1692,7 @@ namespace IntegrationArcMap.Forms
 
     public void EnableMeasurementSeries(int entityId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.NextMeasurementSeries(entityId);
         _api.SetMeasurementSeriesModeEnabled(true);
@@ -1620,7 +1701,7 @@ namespace IntegrationArcMap.Forms
 
     public void EnableMeasurementSeries()
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.SetMeasurementSeriesModeEnabled(true);
       }
@@ -1628,7 +1709,7 @@ namespace IntegrationArcMap.Forms
 
     public void RemoveMeasurementPoint(int entityId, int pointId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.RemoveMeasurementPoint(entityId, pointId);
       }
@@ -1638,7 +1719,7 @@ namespace IntegrationArcMap.Forms
     {
       int result = -1;
 
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         var point3D = new Point3D(point.X, point.Y, point.Z);
         result = _api.CreateMeasurementPoint(entityId, point3D);
@@ -1649,7 +1730,7 @@ namespace IntegrationArcMap.Forms
 
     public void OpenMeasurementPoint(int entityId, int pointId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.OpenMeasurementPoint(entityId, pointId);
         PointMeasurementData pointMeasurementData = _api.GetMeasurementPointData(entityId, pointId);
@@ -1659,7 +1740,7 @@ namespace IntegrationArcMap.Forms
 
     public void AddMeasurementPoint(int entityId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.AddMeasurementPoint(entityId);
       }
@@ -1667,7 +1748,7 @@ namespace IntegrationArcMap.Forms
 
     public void SetFocusEntity(int entityId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.SetFocusEntity(entityId);
       }
@@ -1675,7 +1756,7 @@ namespace IntegrationArcMap.Forms
 
     public void CloseMeasurementPoint(int entityId, int pointId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.CloseMeasurementPoint(entityId, pointId);
         FrmMeasurement.CloseMeasurementPoint(entityId, pointId);
@@ -1689,18 +1770,30 @@ namespace IntegrationArcMap.Forms
       switch (typeOfLayer)
       {
         case TypeOfLayer.Point:
-          entityId = _api.AddPointMeasurement(_measurementName);
-          OpenMeasurement(entityId);
-          AddMeasurementPoint(entityId);
+          if (PointMeasurementPermissions)
+          {
+            entityId = _api.AddPointMeasurement(_measurementName);
+            OpenMeasurement(entityId);
+            AddMeasurementPoint(entityId);
+          }
+
           break;
         case TypeOfLayer.Line:
-          entityId = _api.AddLineMeasurement(_measurementName);
-          OpenMeasurement(entityId);
+          if (LineMeasurementPermissions)
+          {
+            entityId = _api.AddLineMeasurement(_measurementName);
+            OpenMeasurement(entityId);
+          }
+
           break;
         case TypeOfLayer.Polygon:
-          entityId = _api.AddSurfaceMeasurement(_measurementName);
-          _api.SetMeasurementExtrusionEnabled(entityId, false);
-          OpenMeasurement(entityId);
+          if (PolygonMeasurementPermissions)
+          {
+            entityId = _api.AddSurfaceMeasurement(_measurementName);
+            _api.SetMeasurementExtrusionEnabled(entityId, false);
+            OpenMeasurement(entityId);
+          }
+
           break;
       }
 
@@ -1709,23 +1802,26 @@ namespace IntegrationArcMap.Forms
 
     public void MeasurementPointUpdated(int entityId, int pointId)
     {
-      _screenPointAdded = !_mapPointAdded;
-
-      if (_screenPointAdded)
+      if (MeasurementPermissions)
       {
-        ArcUtils.SetZOffset();
+        _screenPointAdded = !_mapPointAdded;
+
+        if (_screenPointAdded)
+        {
+          ArcUtils.SetZOffset();
+        }
+
+        PointMeasurementData measurementData = _api.GetMeasurementPointData(entityId, pointId);
+        Measurement measurement = Measurement.Get(entityId);
+
+        if ((measurementData != null) && (measurement != null))
+        {
+          int index = _api.GetMeasurementPointIndex(entityId, pointId);
+          measurement.UpdatePoint(pointId, measurementData, index);
+        }
+
+        _screenPointAdded = false;
       }
-
-      PointMeasurementData measurementData = _api.GetMeasurementPointData(entityId, pointId);
-      Measurement measurement = Measurement.Get(entityId);
-
-      if ((measurementData != null) && (measurement != null))
-      {
-        int index = _api.GetMeasurementPointIndex(entityId, pointId);
-        measurement.UpdatePoint(pointId, measurementData, index);
-      }
-
-      _screenPointAdded = false;
     }
 
     public void SelectImageMeasurement(string imageId)
@@ -1735,7 +1831,7 @@ namespace IntegrationArcMap.Forms
 
     public void RemoveMeasurementObservation(int entityId, int pointId, string imageId)
     {
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         _api.RemoveMeasurementPointObservation(entityId, pointId, imageId);
       }
@@ -1790,7 +1886,7 @@ namespace IntegrationArcMap.Forms
     {
       var observations = new List<MeasurementObservation>();
 
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         string[] imageIds = _api.GetMeasurementPointObservationImageIDs(entityId, pointId);
 
@@ -1811,7 +1907,7 @@ namespace IntegrationArcMap.Forms
     {
       GsMeasurementPoint measurementPoint = null;
 
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         PointMeasurementData data = _api.GetMeasurementPointData(entityId, pointId);
 
@@ -1828,7 +1924,7 @@ namespace IntegrationArcMap.Forms
     {
       int result = 0;
 
-      if (_api != null)
+      if (MeasurementPermissions && (_api != null))
       {
         result = _api.GetMeasurementPointIndex(entityId, pointId);
       }
@@ -1853,7 +1949,31 @@ namespace IntegrationArcMap.Forms
         if (label != stunit)
         {
           IUnitConverter converter = new UnitConverterClass();
-          double conversion = converter.ConvertUnits(1, units, esriUnits.esriMeters);
+          double factor = converter.ConvertUnits(1, units, esriUnits.esriMeters);
+
+          SpatialReference spatialRef = _config.SpatialReference;
+          ISpatialReference gsSpatialReference = ((spatialRef != null) && spatialRef.KnownInArcMap)
+            ? spatialRef.SpatialRef
+            : ArcUtils.SpatialReference;
+          var projCoord = gsSpatialReference as IProjectedCoordinateSystem;
+          double conversion = 1.0;
+
+          if (projCoord == null)
+          {
+            var geoCoord = gsSpatialReference as IGeographicCoordinateSystem;
+
+            if (geoCoord != null)
+            {
+              IAngularUnit unit = geoCoord.CoordinateUnit;
+              conversion = factor * unit.ConversionFactor;
+            }
+          }
+          else
+          {
+            ILinearUnit unit = projCoord.CoordinateUnit;
+            conversion = factor / unit.ConversionFactor;
+          }
+
           _api.SetLengthUnitLabel(stunit);
           _api.SetLengthUnitFactor(conversion);
         }

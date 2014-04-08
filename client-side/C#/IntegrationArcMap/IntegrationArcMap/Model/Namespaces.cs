@@ -61,6 +61,11 @@ namespace IntegrationArcMap.Model
     /// </summary>
     public static XNamespace CycloMediaNs = XNamespace.Get("http://atlas.cyclomedia.com");
 
+    /// <summary>
+    /// The GlobeSpotter namespace
+    /// </summary>
+    public static XNamespace GlobeSpotterNs = XNamespace.Get("https://www.globespotter.com/gsc");
+
     #endregion
   }
 }
