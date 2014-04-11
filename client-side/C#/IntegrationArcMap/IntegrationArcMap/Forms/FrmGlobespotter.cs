@@ -581,6 +581,7 @@ namespace IntegrationArcMap.Forms
       if ((_frmGlobespotter != null) && includeGlobespotter)
       {
         _frmGlobespotter.Clear();
+        _frmGlobespotter._permissions = null;
       }
 
       if (_frmGlobespotter != null)
@@ -590,7 +591,6 @@ namespace IntegrationArcMap.Forms
 
       if (_frmGlobespotter != null)
       {
-        _frmGlobespotter._permissions = null;
         FrmCycloMediaOptions.ReloadData();
       }
     }
@@ -1774,6 +1774,7 @@ namespace IntegrationArcMap.Forms
           {
             entityId = _api.AddPointMeasurement(_measurementName);
             OpenMeasurement(entityId);
+            DisableMeasurementSeries();
             AddMeasurementPoint(entityId);
           }
 
@@ -1783,6 +1784,7 @@ namespace IntegrationArcMap.Forms
           {
             entityId = _api.AddLineMeasurement(_measurementName);
             OpenMeasurement(entityId);
+            EnableMeasurementSeries(entityId);
           }
 
           break;
@@ -1792,6 +1794,7 @@ namespace IntegrationArcMap.Forms
             entityId = _api.AddSurfaceMeasurement(_measurementName);
             _api.SetMeasurementExtrusionEnabled(entityId, false);
             OpenMeasurement(entityId);
+            EnableMeasurementSeries(entityId);
           }
 
           break;
