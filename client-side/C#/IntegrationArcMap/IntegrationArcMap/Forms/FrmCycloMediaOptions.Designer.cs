@@ -65,6 +65,10 @@
       this.btnApply = new System.Windows.Forms.Button();
       this.plSettings = new System.Windows.Forms.Panel();
       this.plButtons = new System.Windows.Forms.Panel();
+      this.grRecordingService = new System.Windows.Forms.GroupBox();
+      this.lblLocationRecordingService = new System.Windows.Forms.Label();
+      this.ckDefaultRecordingService = new System.Windows.Forms.CheckBox();
+      this.txtRecordingServiceLocation = new System.Windows.Forms.TextBox();
       this.tcSettings.SuspendLayout();
       this.tbLogin.SuspendLayout();
       this.tbSettings.SuspendLayout();
@@ -79,6 +83,7 @@
       this.tbAgreement.SuspendLayout();
       this.plSettings.SuspendLayout();
       this.plButtons.SuspendLayout();
+      this.grRecordingService.SuspendLayout();
       this.SuspendLayout();
       // 
       // tcSettings
@@ -332,6 +337,7 @@
       // 
       // tbConfiguration
       // 
+      this.tbConfiguration.Controls.Add(this.grRecordingService);
       this.tbConfiguration.Controls.Add(this.grBaseUrl);
       this.tbConfiguration.Controls.Add(this.grSwfUrl);
       this.tbConfiguration.Location = new System.Drawing.Point(4, 23);
@@ -388,7 +394,7 @@
       this.grSwfUrl.Controls.Add(this.lblLocationSwfUrl);
       this.grSwfUrl.Controls.Add(this.ckDefaultSwfUrl);
       this.grSwfUrl.Controls.Add(this.txtSwfUrlLocation);
-      this.grSwfUrl.Location = new System.Drawing.Point(3, 68);
+      this.grSwfUrl.Location = new System.Drawing.Point(3, 133);
       this.grSwfUrl.Name = "grSwfUrl";
       this.grSwfUrl.Size = new System.Drawing.Size(406, 65);
       this.grSwfUrl.TabIndex = 22;
@@ -522,6 +528,48 @@
       this.plButtons.Size = new System.Drawing.Size(420, 35);
       this.plButtons.TabIndex = 14;
       // 
+      // grRecordingService
+      // 
+      this.grRecordingService.Controls.Add(this.lblLocationRecordingService);
+      this.grRecordingService.Controls.Add(this.ckDefaultRecordingService);
+      this.grRecordingService.Controls.Add(this.txtRecordingServiceLocation);
+      this.grRecordingService.Location = new System.Drawing.Point(3, 68);
+      this.grRecordingService.Name = "grRecordingService";
+      this.grRecordingService.Size = new System.Drawing.Size(406, 65);
+      this.grRecordingService.TabIndex = 24;
+      this.grRecordingService.TabStop = false;
+      this.grRecordingService.Text = "Recording Service";
+      // 
+      // lblLocationRecordingService
+      // 
+      this.lblLocationRecordingService.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblLocationRecordingService.Location = new System.Drawing.Point(3, 37);
+      this.lblLocationRecordingService.Name = "lblLocationRecordingService";
+      this.lblLocationRecordingService.Size = new System.Drawing.Size(79, 20);
+      this.lblLocationRecordingService.TabIndex = 22;
+      this.lblLocationRecordingService.Text = "Location:";
+      this.lblLocationRecordingService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      // 
+      // ckDefaultRecordingService
+      // 
+      this.ckDefaultRecordingService.AutoSize = true;
+      this.ckDefaultRecordingService.Location = new System.Drawing.Point(3, 15);
+      this.ckDefaultRecordingService.Name = "ckDefaultRecordingService";
+      this.ckDefaultRecordingService.Size = new System.Drawing.Size(81, 18);
+      this.ckDefaultRecordingService.TabIndex = 20;
+      this.ckDefaultRecordingService.Text = "Use default";
+      this.ckDefaultRecordingService.UseVisualStyleBackColor = true;
+      this.ckDefaultRecordingService.CheckedChanged += new System.EventHandler(this.ckDefaultRecordingsService_CheckedChanged);
+      // 
+      // txtRecordingServiceLocation
+      // 
+      this.txtRecordingServiceLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtRecordingServiceLocation.Location = new System.Drawing.Point(82, 37);
+      this.txtRecordingServiceLocation.Name = "txtRecordingServiceLocation";
+      this.txtRecordingServiceLocation.Size = new System.Drawing.Size(320, 20);
+      this.txtRecordingServiceLocation.TabIndex = 21;
+      this.txtRecordingServiceLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRecordingServiceLocation_KeyUp);
+      // 
       // FrmCycloMediaOptions
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -558,6 +606,8 @@
       this.tbAgreement.PerformLayout();
       this.plSettings.ResumeLayout(false);
       this.plButtons.ResumeLayout(false);
+      this.grRecordingService.ResumeLayout(false);
+      this.grRecordingService.PerformLayout();
       this.ResumeLayout(false);
 
     }
@@ -601,5 +651,9 @@
     private System.Windows.Forms.GroupBox grGeneral;
     private System.Windows.Forms.CheckBox ckEnableSmartClick;
     private System.Windows.Forms.Label lblMeasuringSupported;
+    private System.Windows.Forms.GroupBox grRecordingService;
+    private System.Windows.Forms.Label lblLocationRecordingService;
+    private System.Windows.Forms.CheckBox ckDefaultRecordingService;
+    private System.Windows.Forms.TextBox txtRecordingServiceLocation;
   }
 }

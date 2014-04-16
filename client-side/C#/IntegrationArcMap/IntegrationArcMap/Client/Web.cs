@@ -87,7 +87,12 @@ namespace IntegrationArcMap.Client
 
     private string RecordingService
     {
-      get { return string.Format("{0}/recordings/wfs", BaseUrl); }
+      get
+      {
+        return (_config.RecordingsServiceDefault
+          ? string.Format("{0}/recordings/wfs", BaseUrl)
+          : _config.RecordingsService);
+      }
     }
 
     public static Web Instance

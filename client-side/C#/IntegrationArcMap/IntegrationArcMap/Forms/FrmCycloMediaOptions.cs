@@ -76,10 +76,12 @@ namespace IntegrationArcMap.Forms
       nudMaxViewers.Font = (Font) font.Clone();
       nudDistVectLayerViewer.Font = (Font) font.Clone();
       txtBaseUrlLocation.Font = (Font) font.Clone();
+      txtRecordingServiceLocation.Font = (Font) font.Clone();
       txtSwfUrlLocation.Font = (Font) font.Clone();
       grCoordinateSystems.Font = (Font) font.Clone();
       grGeneral.Font = (Font) font.Clone();
       grBaseUrl.Font = (Font) font.Clone();
+      grRecordingService.Font = (Font) font.Clone();
       grSwfUrl.Font = (Font) font.Clone();
       cbSpatialReferences.Font = (Font) font.Clone();
       txtAgreement.Font = (Font) font.Clone();
@@ -213,10 +215,13 @@ namespace IntegrationArcMap.Forms
 
       bool apply = btnApply.Enabled;
       ckDefaultBaseUrl.Checked = _config.BaseUrlDefault;
+      ckDefaultRecordingService.Checked = _config.RecordingsServiceDefault;
       ckDefaultSwfUrl.Checked = _config.SwfUrlDefault;
       txtBaseUrlLocation.Text = _config.BaseUrlDefault ? string.Empty : _config.BaseUrl;
+      txtRecordingServiceLocation.Text = _config.RecordingsServiceDefault ? string.Empty : _config.RecordingsService;
       txtSwfUrlLocation.Text = _config.SwfUrlDefault ? string.Empty : _config.SwfUrl;
       txtBaseUrlLocation.Enabled = !_config.BaseUrlDefault;
+      txtRecordingServiceLocation.Enabled = !_config.RecordingsServiceDefault;
       txtSwfUrlLocation.Enabled = !_config.SwfUrlDefault;
       btnApply.Enabled = apply;
 
@@ -331,11 +336,13 @@ namespace IntegrationArcMap.Forms
       // determinate restart
       bool baseUrlChanged = (txtBaseUrlLocation.Text != _config.BaseUrl) ||
                             (ckDefaultBaseUrl.Checked != _config.BaseUrlDefault);
+      bool recordingServiceChanged = (txtRecordingServiceLocation.Text != _config.RecordingsService) ||
+                                     (ckDefaultRecordingService.Checked != _config.RecordingsServiceDefault);
       bool swfChanged = (_config.SwfUrlDefault != ckDefaultSwfUrl.Checked) || (_config.SwfUrl != txtSwfUrlLocation.Text);
       SpatialReference spat = _config.SpatialReference;
       var selectedItem = (SpatialReference) cbSpatialReferences.SelectedItem;
       bool spatChanged = (spat == null) || ((selectedItem != null) && (spat.ToString() != selectedItem.ToString()));
-      bool restart = usernameChanged || baseUrlChanged || swfChanged || spatChanged;
+      bool restart = usernameChanged || baseUrlChanged || swfChanged || spatChanged || recordingServiceChanged;
 
       // Save values
       var maxViewers = (uint) nudMaxViewers.Value;
@@ -347,8 +354,10 @@ namespace IntegrationArcMap.Forms
       _config.MaxViewers = maxViewers;
       _config.DistanceCycloramaVectorLayer = distLayer;
       _config.BaseUrl = txtBaseUrlLocation.Text;
+      _config.RecordingsService = txtRecordingServiceLocation.Text;
       _config.SwfUrl = txtSwfUrlLocation.Text;
       _config.BaseUrlDefault = ckDefaultBaseUrl.Checked;
+      _config.RecordingsServiceDefault = ckDefaultRecordingService.Checked;
       _config.SwfUrlDefault = ckDefaultSwfUrl.Checked;
       _config.SmartClickEnabled = smartClickEnabled;
       _config.DetailImagesEnabled = ckDetailImages.Checked;
@@ -511,6 +520,13 @@ namespace IntegrationArcMap.Forms
       txtBaseUrlLocation.Enabled = !ckDefaultBaseUrl.Checked;
     }
 
+    private void ckDefaultRecordingsService_CheckedChanged(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
+      txtRecordingServiceLocation.Text = ckDefaultRecordingService.Checked ? string.Empty : _config.RecordingsService;
+      txtRecordingServiceLocation.Enabled = !ckDefaultRecordingService.Checked;
+    }
+
     private void ckDefaultSwfUrl_CheckedChanged(object sender, EventArgs e)
     {
       btnApply.Enabled = true;
@@ -519,6 +535,11 @@ namespace IntegrationArcMap.Forms
     }
 
     private void txtBaseUrlLocation_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void txtRecordingServiceLocation_KeyUp(object sender, KeyEventArgs e)
     {
       btnApply.Enabled = true;
     }

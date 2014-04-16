@@ -711,6 +711,11 @@ namespace IntegrationArcMap.Forms
         _api.SetSrsNameAddress(epsgCode);
         _api.SetAdressLanguageCode("nl");
 
+        if (!_config.RecordingsServiceDefault)
+        {
+          _api.SetServiceURL(_config.RecordingsService, ServiceUrlType.URL_RECORDING_LOCATION_SERVICE);
+        }
+
         if (!_config.BaseUrlDefault)
         {
           _api.SetServiceURL(_config.BaseUrl, ServiceUrlType.URL_BASE);

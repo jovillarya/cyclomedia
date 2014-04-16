@@ -39,6 +39,7 @@ namespace IntegrationArcMap.Client
     private static Config _config;
 
     private bool? _baseUrlDefault;
+    private bool? _recordingsServiceDefault;
     private bool? _swfUrlDefault;
     private bool _agreement;
 
@@ -78,6 +79,25 @@ namespace IntegrationArcMap.Client
           : ((bool)_baseUrlDefault);
       }
       set { _baseUrlDefault = value; }
+    }
+
+    /// <summary>
+    /// Recordings Url
+    /// </summary>
+    public string RecordingsService { get; set; }
+
+    /// <summary>
+    /// BaseUrlDefault flag
+    /// </summary>
+    public bool RecordingsServiceDefault
+    {
+      get
+      {
+        return (_recordingsServiceDefault == null)
+          ? (string.IsNullOrEmpty(RecordingsService) || (RecordingsService == "https://atlas.cyclomedia.com/recordings/wfs"))
+          : ((bool) _recordingsServiceDefault);
+      }
+      set { _recordingsServiceDefault = value; }
     }
 
     /// <summary>
@@ -205,6 +225,8 @@ namespace IntegrationArcMap.Client
       {
         BaseUrl = string.Empty,
         _baseUrlDefault = true,
+        RecordingsService = string.Empty,
+        _recordingsServiceDefault = true,
         SwfUrl = string.Empty,
         _swfUrlDefault = true,
         MaxViewers = 3,
