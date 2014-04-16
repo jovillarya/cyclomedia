@@ -2829,4 +2829,4479 @@
         <Proj4>+proj=lcc +lat_1=39.45 +lat_2=38.3 +lat_0=37.66666666666666 +lon_0=-77 +x_0=400000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs</Proj4>
         <ESRICompatibleName>NAD83_Maryland</ESRICompatibleName>
     </SpatialReference>
+
+	<SpatialReference>
+   <Name>NAD83 / Kentucky North</Name>
+   <SRSName>EPSG:2205</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>351924.0102</MinX>
+       <MinY>27989.8177</MinY>
+       <MaxX>657770.2583</MaxX>
+       <MaxY>183547.8428</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-85.93</MinX>
+       <MinY>37.74</MinY>
+       <MaxX>-82.46</MaxX>
+       <MaxY>39.14</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kentucky_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Kentucky Single Zone</Name>
+   <SRSName>EPSG:3088</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>1171222.7714</MinX>
+       <MinY>1024964.2874</MinY>
+       <MaxX>1837730.927</MaxX>
+       <MaxY>1318102.2482</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-89.42</MinX>
+       <MinY>36.5</MinY>
+       <MaxX>-81.98</MaxX>
+       <MaxY>39.14</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.08333333333334 +lat_2=38.66666666666666 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=1500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kentucky_Single_Zone</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Alabama East</Name>
+   <SRSName>EPSG:26929</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>108635.9019</MinX>
+       <MinY>55812.367</MinY>
+       <MaxX>290090.676</MaxX>
+       <MaxY>499449.4104</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-86.79</MinX>
+       <MinY>31</MinY>
+       <MaxX>-84.89</MaxX>
+       <MaxY>35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=30.5 +lon_0=-85.83333333333333 +k=0.99996 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Alabama_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Alabama West</Name>
+   <SRSName>EPSG:26930</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>505637.6268</MinX>
+       <MinY>22575.3088</MinY>
+       <MaxX>715547.1632</MaxX>
+       <MaxY>555100.5523</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-88.48</MinX>
+       <MinY>30.2</MinY>
+       <MaxX>-86.3</MaxX>
+       <MaxY>35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=30 +lon_0=-87.5 +k=0.999933333 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Alabama_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 1</Name>
+   <SRSName>EPSG:26941</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>1792146.6372</MinX>
+       <MinY>531572.3568</MinY>
+       <MaxX>2171786.5614</MaxX>
+       <MaxY>798892.1071</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.42</MinX>
+       <MinY>39.6</MinY>
+       <MaxX>-120</MaxX>
+       <MaxY>42</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_1</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 2</Name>
+   <SRSName>EPSG:26942</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>1818261.6061</MinX>
+       <MinY>542403.4865</MinY>
+       <MaxX>2215971.2605</MaxX>
+       <MaxY>778520.4568</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.07</MinX>
+       <MinY>38.03</MinY>
+       <MaxX>-119.54</MaxX>
+       <MaxY>40.15</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_2</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 3</Name>
+   <SRSName>EPSG:26943</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>1768687.4008</MinX>
+       <MinY>529837.2364</MinY>
+       <MaxX>2239348.3283</MaxX>
+       <MaxY>747512.3199</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-123.09</MinX>
+       <MinY>36.74</MinY>
+       <MaxX>-117.82</MaxX>
+       <MaxY>38.7</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_3</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 4</Name>
+   <SRSName>EPSG:26944</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>1728790.5125</MinX>
+       <MinY>553800.0274</MinY>
+       <MaxX>2302838.4312</MaxX>
+       <MaxY>754470.0057</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-122</MinX>
+       <MinY>35.78</MinY>
+       <MaxX>-115.65</MaxX>
+       <MaxY>37.58</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_4</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 5</Name>
+   <SRSName>EPSG:26945</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>1685008.1226</MinX>
+       <MinY>422057.8902</MinY>
+       <MaxX>2362781.0759</MaxX>
+       <MaxY>762988.9701</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-121.36</MinX>
+       <MinY>32.75</MinY>
+       <MaxX>-114.13</MaxX>
+       <MaxY>35.81</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_5</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 6</Name>
+   <SRSName>EPSG:26946</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>1822403.232</MinX>
+       <MinY>539569.8358</MinY>
+       <MaxX>2171019.7908</MaxX>
+       <MaxY>713784.0294</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-118.14</MinX>
+       <MinY>32.51</MinY>
+       <MaxX>-114.43</MaxX>
+       <MaxY>34.08</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_6</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arizona East</Name>
+   <SRSName>EPSG:26948</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>65529.7737</MinX>
+       <MinY>37122.7083</MinY>
+       <MaxX>319629.891</MaxX>
+       <MaxY>666598.1236</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-111.72</MinX>
+       <MinY>31.33</MinY>
+       <MaxX>-109.05</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.9999 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arizona_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arizona Central</Name>
+   <SRSName>EPSG:26949</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>78854.8405</MinX>
+       <MinY>37446.9044</MinY>
+       <MaxX>352941.3296</MaxX>
+       <MaxY>666475.742</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-113.33</MinX>
+       <MinY>31.33</MinY>
+       <MaxX>-110.45</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.9999 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arizona_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arizona West</Name>
+   <SRSName>EPSG:26950</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>118912.0884</MinX>
+       <MinY>115743.1913</MinY>
+       <MaxX>329532.2639</MaxX>
+       <MaxY>666199.5535</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-114.75</MinX>
+       <MinY>32.04</MinY>
+       <MaxX>-112.52</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933333 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arizona_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arkansas North</Name>
+   <SRSName>EPSG:26951</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>158936.2595</MinX>
+       <MinY>38812.4046</MinY>
+       <MaxX>615404.3234</MaxX>
+       <MaxY>242425.2429</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-94.63</MinX>
+       <MinY>34.66</MinY>
+       <MaxX>-89.65</MaxX>
+       <MaxY>36.49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.23333333333333 +lat_2=34.93333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=400000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arkansas_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arkansas South</Name>
+   <SRSName>EPSG:26952</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>167305.8182</MinX>
+       <MinY>438690.2176</MinY>
+       <MaxX>581302.8941</MaxX>
+       <MaxY>671557.2595</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-94.49</MinX>
+       <MinY>33</MinY>
+       <MaxX>-90.06</MaxX>
+       <MaxY>35.09</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=34.76666666666667 +lat_2=33.3 +lat_0=32.66666666666666 +lon_0=-92 +x_0=400000 +y_0=400000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arkansas_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Colorado North</Name>
+   <SRSName>EPSG:26953</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>609389.5439</MinX>
+       <MinY>335734.5495</MinY>
+       <MaxX>1210826.617</MaxX>
+       <MaxY>495840.5139</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-109.05</MinX>
+       <MinY>39.56</MinY>
+       <MaxX>-102.05</MaxX>
+       <MaxY>41</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Colorado_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Colorado Central</Name>
+   <SRSName>EPSG:26954</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>603246.041</MinX>
+       <MinY>344586.2954</MinY>
+       <MaxX>1216796.9402</MaxX>
+       <MaxY>561239.7723</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-109.05</MinX>
+       <MinY>38.14</MinY>
+       <MaxX>-102.05</MaxX>
+       <MaxY>40.09</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Colorado_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Colorado South</Name>
+   <SRSName>EPSG:26955</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>598470.4895</MinX>
+       <MinY>347466.3994</MinY>
+       <MaxX>1221437.7996</MaxX>
+       <MaxY>533021.3682</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-109.05</MinX>
+       <MinY>37</MinY>
+       <MaxX>-102.05</MaxX>
+       <MaxY>38.67</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8289 +y_0=304800.6096 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Colorado_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Connecticut</Name>
+   <SRSName>EPSG:26956</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>222284.759</MinX>
+       <MinY>165815.3567</MinY>
+       <MaxX>386474.4972</MaxX>
+       <MaxY>287986.7779</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-73.73</MinX>
+       <MinY>40.95</MinY>
+       <MaxX>-71.78</MaxX>
+       <MaxY>42.05</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096 +y_0=152400.3048 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Connecticut</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Delaware</Name>
+   <SRSName>EPSG:26957</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>168279.2632</MinX>
+       <MinY>48902.5679</MinY>
+       <MaxX>240742.2715</MaxX>
+       <MaxY>204368.9072</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-75.78</MinX>
+       <MinY>38.44</MinY>
+       <MaxX>-74.95</MaxX>
+       <MaxY>39.84</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Delaware</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Florida East</Name>
+   <SRSName>EPSG:26958</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>93520.9467</MinX>
+       <MinY>11058.0634</MinY>
+       <MaxX>299379.9747</MaxX>
+       <MaxY>720347.309</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-82.05</MinX>
+       <MinY>24.43</MinY>
+       <MaxX>-80.02</MaxX>
+       <MaxY>30.83</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941177 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Florida_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Florida West</Name>
+   <SRSName>EPSG:26959</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>82174.727</MinX>
+       <MinY>219250.1788</MinY>
+       <MaxX>286869.4621</MaxX>
+       <MaxY>583003.507</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-83.18</MinX>
+       <MinY>26.31</MinY>
+       <MaxX>-81.13</MaxX>
+       <MaxY>29.59</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941177 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Florida_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Florida North</Name>
+   <SRSName>EPSG:26960</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>294888.0397</MinX>
+       <MinY>33596.069</MinY>
+       <MaxX>838076.838</MaxX>
+       <MaxY>225835.0565</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-87.64</MinX>
+       <MinY>29.28</MinY>
+       <MaxX>-82.05</MaxX>
+       <MaxY>31</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Florida_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Hawaii zone 1</Name>
+   <SRSName>EPSG:26961</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>441002.561</MinX>
+       <MinY>7472.5121</MinY>
+       <MaxX>573747.3242</MaxX>
+       <MaxY>159186.7242</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-156.06</MinX>
+       <MinY>18.9</MinY>
+       <MaxX>-154.8</MaxX>
+       <MaxY>20.27</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=18.83333333333333 +lon_0=-155.5 +k=0.999966667 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Hawaii_zone_1</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Hawaii zone 2</Name>
+   <SRSName>EPSG:26962</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>432888.9744</MinX>
+       <MinY>17475.7958</MinY>
+       <MaxX>572674.8343</MaxX>
+       <MaxY>98322.4345</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-157.31</MinX>
+       <MinY>20.49</MinY>
+       <MaxX>-155.97</MaxX>
+       <MaxY>21.22</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=20.33333333333333 +lon_0=-156.6666666666667 +k=0.999966667 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Hawaii_zone_2</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Hawaii zone 3</Name>
+   <SRSName>EPSG:26963</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>459484.2132</MinX>
+       <MinY>-5117.1443</MinY>
+       <MaxX>549865.7316</MaxX>
+       <MaxY>61343.0135</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-158.39</MinX>
+       <MinY>21.12</MinY>
+       <MaxX>-157.52</MaxX>
+       <MaxY>21.72</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.99999 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Hawaii_zone_3</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Hawaii zone 4</Name>
+   <SRSName>EPSG:26964</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>470026.9666</MinX>
+       <MinY>4074.8128</MinY>
+       <MaxX>521704.5783</MaxX>
+       <MaxY>45058.6986</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-159.79</MinX>
+       <MinY>21.87</MinY>
+       <MaxX>-159.29</MaxX>
+       <MaxY>22.24</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=21.83333333333333 +lon_0=-159.5 +k=0.99999 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Hawaii_zone_4</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Hawaii zone 5</Name>
+   <SRSName>EPSG:26965</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>491381.0118</MinX>
+       <MinY>11444.0622</MinY>
+       <MaxX>513100.8665</MaxX>
+       <MaxY>40236.6807</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-160.25</MinX>
+       <MinY>21.77</MinY>
+       <MaxX>-160.04</MaxX>
+       <MaxY>22.03</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=21.66666666666667 +lon_0=-160.1666666666667 +k=1 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Hawaii_zone_5</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Georgia East</Name>
+   <SRSName>EPSG:26966</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>75658.5275</MinX>
+       <MinY>39504.6841</MinY>
+       <MaxX>332353.9025</MaxX>
+       <MaxY>520899.3469</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-83.46</MinX>
+       <MinY>30.35</MinY>
+       <MaxX>-80.79</MaxX>
+       <MaxY>34.69</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.9999 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Georgia_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Georgia West</Name>
+   <SRSName>EPSG:26967</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>618188.3703</MinX>
+       <MinY>69035.2145</MinY>
+       <MaxX>811853.5799</MaxX>
+       <MaxY>555045.9967</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-85.02</MinX>
+       <MinY>30.62</MinY>
+       <MaxX>-83</MaxX>
+       <MaxY>35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.9999 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Georgia_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Idaho East</Name>
+   <SRSName>EPSG:26968</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>111077.6422</MinX>
+       <MinY>37578.7545</MinY>
+       <MaxX>292512.4383</MaxX>
+       <MaxY>344248.3598</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-113.24</MinX>
+       <MinY>42</MinY>
+       <MaxX>-111.05</MaxX>
+       <MaxY>44.76</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.9999473679999999 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Idaho_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Idaho Central</Name>
+   <SRSName>EPSG:26969</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>392298.6945</MinX>
+       <MinY>37839.0408</MinY>
+       <MaxX>608529.7924</MaxX>
+       <MaxY>450050.4438</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-115.3</MinX>
+       <MinY>42</MinY>
+       <MaxX>-112.69</MaxX>
+       <MaxY>45.71</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.9999473679999999 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Idaho_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Idaho West</Name>
+   <SRSName>EPSG:26970</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>676559.1135</MinX>
+       <MinY>38038.1036</MinY>
+       <MaxX>920126.9609</MaxX>
+       <MaxY>816029.6932</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-117.24</MinX>
+       <MinY>42</MinY>
+       <MaxX>-114.3</MaxX>
+       <MaxY>49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933333 +x_0=800000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Idaho_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Illinois East</Name>
+   <SRSName>EPSG:26971</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>216626.7848</MinX>
+       <MinY>37315.2255</MinY>
+       <MaxX>374175.2666</MaxX>
+       <MaxY>648065.477</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-89.27</MinX>
+       <MinY>37</MinY>
+       <MaxX>-87.5</MaxX>
+       <MaxY>42.5</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.9999749999999999 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Illinois_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Illinois West</Name>
+   <SRSName>EPSG:26972</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>580384.6695</MinX>
+       <MinY>34374.9559</MinY>
+       <MaxX>810116.9093</MaxX>
+       <MaxY>648492.9357</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-91.51</MinX>
+       <MinY>36.97</MinY>
+       <MaxX>-88.93</MaxX>
+       <MaxY>42.5</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941177 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Illinois_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Indiana East</Name>
+   <SRSName>EPSG:26973</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>19727.0888</MinX>
+       <MinY>300290.578</MinY>
+       <MaxX>175292.3807</MaxX>
+       <MaxY>722254.4741</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-86.58</MinX>
+       <MinY>37.95</MinY>
+       <MaxX>-84.81</MaxX>
+       <MaxY>41.75</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999966667 +x_0=100000 +y_0=250000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Indiana_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Indiana West</Name>
+   <SRSName>EPSG:26974</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>811308.3618</MinX>
+       <MinY>280301.123</MinY>
+       <MaxX>974300.9855</MaxX>
+       <MaxY>722341.0915</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-88.09</MinX>
+       <MinY>37.77</MinY>
+       <MaxX>-86.24</MaxX>
+       <MaxY>41.75</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999966667 +x_0=900000 +y_0=250000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Indiana_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Iowa North</Name>
+   <SRSName>EPSG:26975</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>1239327.6454</MinX>
+       <MinY>1044829.5042</MinY>
+       <MaxX>1778097.0161</MaxX>
+       <MaxY>1228643.9963</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-96.64</MinX>
+       <MinY>41.86</MinY>
+       <MaxX>-90.15</MaxX>
+       <MaxY>43.51</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=43.26666666666667 +lat_2=42.06666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=1500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Iowa_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Iowa South</Name>
+   <SRSName>EPSG:26976</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>275804.315</MinX>
+       <MinY>44490.996</MinY>
+       <MaxX>786161.5293</MaxX>
+       <MaxY>230847.0695</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-96.14</MinX>
+       <MinY>40.37</MinY>
+       <MaxX>-90.13</MaxX>
+       <MaxY>42.03</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.78333333333333 +lat_2=40.61666666666667 +lat_0=40 +lon_0=-93.5 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Iowa_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Kansas North</Name>
+   <SRSName>EPSG:26977</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>46909.4823</MinX>
+       <MinY>26320.81</MinY>
+       <MaxX>697322.3508</MaxX>
+       <MaxY>192762.6571</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-102.05</MinX>
+       <MinY>38.52</MinY>
+       <MaxX>-94.59</MaxX>
+       <MaxY>40</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=39.78333333333333 +lat_2=38.71666666666667 +lat_0=38.33333333333334 +lon_0=-98 +x_0=400000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kansas_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Kansas South</Name>
+   <SRSName>EPSG:26978</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>84022.7273</MinX>
+       <MinY>441902.1545</MinY>
+       <MaxX>748002.1172</MaxX>
+       <MaxY>651667.4591</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-102.05</MinX>
+       <MinY>36.99</MinY>
+       <MaxX>-94.59</MaxX>
+       <MaxY>38.87</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.56666666666667 +lat_2=37.26666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=400000 +y_0=400000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kansas_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Kentucky South</Name>
+   <SRSName>EPSG:26980</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>171266.7363</MinX>
+       <MinY>524881.609</MinY>
+       <MaxX>837685.8815</MaxX>
+       <MaxY>691571.1251</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-89.42</MinX>
+       <MinY>36.5</MinY>
+       <MaxX>-81.98</MaxX>
+       <MaxY>38</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000 +y_0=500000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kentucky_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Louisiana North</Name>
+   <SRSName>EPSG:26981</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>851713.5057</MinX>
+       <MinY>38759.8603</MinY>
+       <MaxX>1154026.2022</MaxX>
+       <MaxY>281650.528</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-94.05</MinX>
+       <MinY>30.84</MinY>
+       <MaxX>-90.89</MaxX>
+       <MaxY>33.03</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=32.66666666666666 +lat_2=31.16666666666667 +lat_0=30.5 +lon_0=-92.5 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Louisiana_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Louisiana South</Name>
+   <SRSName>EPSG:26982</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>746684.4047</MinX>
+       <MinY>44833.9825</MinY>
+       <MaxX>1246162.7979</MaxX>
+       <MaxY>282151.6594</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-93.93</MinX>
+       <MinY>28.88</MinY>
+       <MaxX>-88.81</MaxX>
+       <MaxY>31.02</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=30.7 +lat_2=29.3 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Louisiana_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Maine East</Name>
+   <SRSName>EPSG:26983</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>177791.4829</MinX>
+       <MinY>21490.8201</MinY>
+       <MaxX>429444.625</MaxX>
+       <MaxY>422816.1671</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-70.02</MinX>
+       <MinY>43.85</MinY>
+       <MaxX>-66.89</MaxX>
+       <MaxY>47.46</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.9999 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Maine_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Maine West</Name>
+   <SRSName>EPSG:26984</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>825504.0208</MinX>
+       <MinY>16691.7115</MinY>
+       <MaxX>973952.2097</MaxX>
+       <MaxY>415632.1006</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-71.08</MinX>
+       <MinY>42.98</MinY>
+       <MaxX>-69.26</MaxX>
+       <MaxY>46.57</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999966667 +x_0=900000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Maine_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Massachusetts Mainland</Name>
+   <SRSName>EPSG:26986</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>31789.1658</MinX>
+       <MinY>790194.4183</MinY>
+       <MaxX>337250.897</MaxX>
+       <MaxY>961865.1338</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-73.51</MinX>
+       <MinY>41.35</MinY>
+       <MaxX>-69.86</MaxX>
+       <MaxY>42.89</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000 +y_0=750000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Massachusetts_Mainland</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Massachusetts Island</Name>
+   <SRSName>EPSG:26987</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>468964.2543</MinX>
+       <MinY>22277.6643</MinY>
+       <MaxX>550327.9872</MaxX>
+       <MaxY>56813.6354</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-70.87</MinX>
+       <MinY>41.2</MinY>
+       <MaxX>-69.9</MaxX>
+       <MaxY>41.51</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Massachusetts_Island</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Michigan North</Name>
+   <SRSName>EPSG:26988</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>7732321.5661</MinX>
+       <MinY>56516.1847</MinY>
+       <MaxX>8281014.2484</MaxX>
+       <MaxY>396946.4742</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-90.41</MinX>
+       <MinY>45.24</MinY>
+       <MaxX>-83.42</MaxX>
+       <MaxY>48.3</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=8000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Michigan_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Michigan Central</Name>
+   <SRSName>EPSG:26989</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>5780893.8137</MinX>
+       <MinY>57065.6975</MinY>
+       <MaxX>6171113.8267</MaxX>
+       <MaxY>288400.573</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-87.09</MinX>
+       <MinY>43.81</MinY>
+       <MaxX>-82.24</MaxX>
+       <MaxY>45.88</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=6000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Michigan_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Michigan South</Name>
+   <SRSName>EPSG:26990</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>3769348.4233</MinX>
+       <MinY>30263.9062</MinY>
+       <MaxX>4186861.5715</MaxX>
+       <MaxY>300261.6427</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-87.14</MinX>
+       <MinY>41.75</MinY>
+       <MaxX>-82.12</MaxX>
+       <MaxY>44.17</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=4000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Michigan_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Minnesota North</Name>
+   <SRSName>EPSG:26991</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>483133.5811</MinX>
+       <MinY>122090.45</MinY>
+       <MaxX>1077862.8662</MaxX>
+       <MaxY>429389.2273</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-97.24</MinX>
+       <MinY>46.64</MinY>
+       <MaxX>-89.47</MaxX>
+       <MaxY>49.39</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=48.63333333333333 +lat_2=47.03333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Minnesota_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Minnesota Central</Name>
+   <SRSName>EPSG:26992</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>594448.9244</MinX>
+       <MinY>133063.8526</MinY>
+       <MaxX>955352.2768</MaxX>
+       <MaxY>378933.401</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-96.87</MinX>
+       <MinY>45.28</MinY>
+       <MaxX>-92.27</MaxX>
+       <MaxY>47.48</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=47.05 +lat_2=45.61666666666667 +lat_0=45 +lon_0=-94.25 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Minnesota_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Minnesota South</Name>
+   <SRSName>EPSG:26993</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>569531.2442</MinX>
+       <MinY>159380.9288</MinY>
+       <MaxX>1024810.3297</MaxX>
+       <MaxY>391676.3674</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-96.85</MinX>
+       <MinY>43.5</MinY>
+       <MaxX>-91.22</MaxX>
+       <MaxY>45.59</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=45.21666666666667 +lat_2=43.78333333333333 +lat_0=43 +lon_0=-94 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Minnesota_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Mississippi East</Name>
+   <SRSName>EPSG:26994</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>191436.0228</MinX>
+       <MinY>70058.5869</MinY>
+       <MaxX>370661.6319</MaxX>
+       <MaxY>610453.1799</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-89.96</MinX>
+       <MinY>30.13</MinY>
+       <MaxX>-88.1</MaxX>
+       <MaxY>35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.99995 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Mississippi_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Mississippi West</Name>
+   <SRSName>EPSG:26995</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>613412.0887</MinX>
+       <MinY>166629.6027</MinY>
+       <MaxX>791044.8319</MaxX>
+       <MaxY>610288.4205</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-91.24</MinX>
+       <MinY>31</MinY>
+       <MaxX>-89.38</MaxX>
+       <MaxY>35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.99995 +x_0=700000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Mississippi_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Missouri East</Name>
+   <SRSName>EPSG:26996</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>120168.6831</MinX>
+       <MinY>19398.2201</MinY>
+       <MaxX>376224.6645</MaxX>
+       <MaxY>531175.4981</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-91.94</MinX>
+       <MinY>36</MinY>
+       <MaxX>-89.1</MaxX>
+       <MaxY>40.61</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=35.83333333333334 +lon_0=-90.5 +k=0.999933333 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Missouri_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Missouri Central</Name>
+   <SRSName>EPSG:26997</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>386224.1381</MinX>
+       <MinY>74532.5232</MinY>
+       <MaxX>598545.4273</MaxX>
+       <MaxY>530953.9969</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-93.77</MinX>
+       <MinY>36.5</MinY>
+       <MaxX>-91.4</MaxX>
+       <MaxY>40.61</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=35.83333333333334 +lon_0=-92.5 +k=0.999933333 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Missouri_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Missouri West</Name>
+   <SRSName>EPSG:26998</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>735327.3218</MinX>
+       <MinY>37451.2789</MinY>
+       <MaxX>939587.173</MaxX>
+       <MaxY>493986.2637</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-95.78</MinX>
+       <MinY>36.5</MinY>
+       <MaxX>-93.5</MaxX>
+       <MaxY>40.61</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=36.16666666666666 +lon_0=-94.5 +k=0.999941177 +x_0=850000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Missouri_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Montana</Name>
+   <SRSName>EPSG:32100</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>79007.9567</MinX>
+       <MinY>27511.8821</MinY>
+       <MaxX>1036701.0997</MaxX>
+       <MaxY>547834.4743</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-116.04</MinX>
+       <MinY>44.36</MinY>
+       <MaxX>-104.02</MaxX>
+       <MaxY>49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Montana</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Nebraska</Name>
+   <SRSName>EPSG:32104</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>153428.3468</MinX>
+       <MinY>26645.043</MinY>
+       <MaxX>899448.1161</MaxX>
+       <MaxY>361947.0437</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.06</MinX>
+       <MinY>40</MinY>
+       <MaxX>-95.32</MaxX>
+       <MaxY>43</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=43 +lat_2=40 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Nebraska</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Nevada East</Name>
+   <SRSName>EPSG:32107</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>69770.5924</MinX>
+       <MinY>8028661.885</MinY>
+       <MaxX>339966.9596</MaxX>
+       <MaxY>8805835.5551</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-117.01</MinX>
+       <MinY>35</MinY>
+       <MaxX>-114.05</MaxX>
+       <MaxY>42</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.9999 +x_0=200000 +y_0=8000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Nevada_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Nevada Central</Name>
+   <SRSName>EPSG:32108</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>362659.3383</MinX>
+       <MinY>6139743.7688</MinY>
+       <MaxX>650264.3935</MaxX>
+       <MaxY>6694983.7149</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-118.19</MinX>
+       <MinY>36</MinY>
+       <MaxX>-115</MaxX>
+       <MaxY>41</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.9999 +x_0=500000 +y_0=6000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Nevada_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Nevada West</Name>
+   <SRSName>EPSG:32109</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>673859.633</MinX>
+       <MinY>4247236.6449</MinY>
+       <MaxX>940090.9379</MaxX>
+       <MaxY>4805895.685</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-120</MinX>
+       <MinY>36.97</MinY>
+       <MaxX>-117.01</MaxX>
+       <MaxY>42</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.9999 +x_0=800000 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Nevada_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Hampshire</Name>
+   <SRSName>EPSG:32110</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>226805.5479</MinX>
+       <MinY>22603.2298</MinY>
+       <MaxX>383299.7381</MaxX>
+       <MaxY>312712.6906</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-72.56</MinX>
+       <MinY>42.7</MinY>
+       <MaxX>-70.65</MaxX>
+       <MaxY>45.31</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999966667 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Hampshire</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Jersey</Name>
+   <SRSName>EPSG:32111</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>57733.4085</MinX>
+       <MinY>-20167.5315</MinY>
+       <MaxX>203966.8014</MaxX>
+       <MaxY>281066.3612</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-75.56</MinX>
+       <MinY>38.65</MinY>
+       <MaxX>-73.88</MaxX>
+       <MaxY>41.36</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.9999 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Jersey</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Mexico East</Name>
+   <SRSName>EPSG:32112</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>33975.7707</MinX>
+       <MinY>111644.9235</MinY>
+       <MaxX>290984.4259</MaxX>
+       <MaxY>666375.071</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-105.72</MinX>
+       <MinY>32</MinY>
+       <MaxX>-103</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909091 +x_0=165000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Mexico_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Mexico Central</Name>
+   <SRSName>EPSG:32113</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>360771.506</MinX>
+       <MinY>87328.0745</MinY>
+       <MaxX>632597.9589</MaxX>
+       <MaxY>666480.319</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-107.72</MinX>
+       <MinY>31.78</MinY>
+       <MaxX>-104.85</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.9999 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Mexico_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Mexico West</Name>
+   <SRSName>EPSG:32114</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>714210.8375</MinX>
+       <MinY>36977.3011</MinY>
+       <MaxX>920726.7283</MaxX>
+       <MaxY>666173.1978</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-109.05</MinX>
+       <MinY>31.33</MinY>
+       <MaxX>-106.88</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999916667 +x_0=830000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Mexico_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New York East</Name>
+   <SRSName>EPSG:32115</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>35378.7713</MinX>
+       <MinY>227974.7515</MinY>
+       <MaxX>255350.1707</MaxX>
+       <MaxY>689107.7394</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-75.86</MinX>
+       <MinY>40.88</MinY>
+       <MaxX>-73.25</MaxX>
+       <MaxY>45.03</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.9999 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_York_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New York Central</Name>
+   <SRSName>EPSG:32116</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>153346.1079</MinX>
+       <MinY>222752.4681</MinY>
+       <MaxX>375374.5352</MaxX>
+       <MaxY>489823.2918</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-77.75</MinX>
+       <MinY>42</MinY>
+       <MaxX>-75.07</MaxX>
+       <MaxY>44.4</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.9999375 +x_0=250000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_York_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New York West</Name>
+   <SRSName>EPSG:32117</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>252517.6336</MinX>
+       <MinY>222763.806</MinY>
+       <MaxX>450520.1082</MaxX>
+       <MaxY>404984.348</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-79.76</MinX>
+       <MinY>42</MinY>
+       <MaxX>-77.37</MaxX>
+       <MaxY>43.64</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.9999375 +x_0=350000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_York_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New York Long Island</Name>
+   <SRSName>EPSG:32118</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>277102.1637</MinX>
+       <MinY>33718.96</MinY>
+       <MaxX>490794.623</MaxX>
+       <MaxY>129387.2653</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-74.27</MinX>
+       <MinY>40.47</MinY>
+       <MaxX>-71.75</MaxX>
+       <MaxY>41.31</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_York_Long_Island</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / North Carolina</Name>
+   <SRSName>EPSG:32119</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>117107.3758</MinX>
+       <MinY>11491.8435</MinY>
+       <MaxX>940177.4915</MaxX>
+       <MaxY>326719.7326</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-84.32</MinX>
+       <MinY>33.8</MinY>
+       <MaxX>-75.43</MaxX>
+       <MaxY>36.58</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.16666666666666 +lat_2=34.33333333333334 +lat_0=33.75 +lon_0=-79 +x_0=609601.22 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_North_Carolina</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / North Dakota North</Name>
+   <SRSName>EPSG:32120</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>330834.9323</MinX>
+       <MinY>22883.494</MinY>
+       <MaxX>878256.8267</MaxX>
+       <MaxY>228776.945</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.05</MinX>
+       <MinY>47.15</MinY>
+       <MaxX>-96.83</MaxX>
+       <MaxY>49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_North_Dakota_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / North Dakota South</Name>
+   <SRSName>EPSG:32121</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>324736.0741</MinX>
+       <MinY>35492.6157</MinY>
+       <MaxX>904705.3997</MaxX>
+       <MaxY>245626.3002</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.05</MinX>
+       <MinY>45.93</MinY>
+       <MaxX>-96.57</MaxX>
+       <MaxY>47.81</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_North_Dakota_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Ohio North</Name>
+   <SRSName>EPSG:32122</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>403035.4106</MinX>
+       <MinY>50037.9436</MinY>
+       <MaxX>768832.0282</MaxX>
+       <MaxY>297193.4006</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-84.81</MinX>
+       <MinY>40.1</MinY>
+       <MaxX>-80.52</MaxX>
+       <MaxY>42.32</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.7 +lat_2=40.43333333333333 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Ohio_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Ohio South</Name>
+   <SRSName>EPSG:32123</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>398219.4372</MinX>
+       <MinY>45991.4538</MinY>
+       <MaxX>758111.7741</MaxX>
+       <MaxY>263407.7603</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-84.81</MinX>
+       <MinY>38.4</MinY>
+       <MaxX>-80.69</MaxX>
+       <MaxY>40.35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.03333333333333 +lat_2=38.73333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Ohio_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Oklahoma North</Name>
+   <SRSName>EPSG:32124</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>145176.9959</MinX>
+       <MinY>34820.8524</MinY>
+       <MaxX>924814.011</MaxX>
+       <MaxY>234484.772</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-103</MinX>
+       <MinY>35.26</MinY>
+       <MaxX>-94.43</MaxX>
+       <MaxY>37.01</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Oklahoma_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Oklahoma South</Name>
+   <SRSName>EPSG:32125</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>414387.7434</MinX>
+       <MinY>32528.5736</MinY>
+       <MaxX>931270.4859</MaxX>
+       <MaxY>251620.1388</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-100</MinX>
+       <MinY>33.61</MinY>
+       <MaxX>-94.43</MaxX>
+       <MaxY>35.55</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Oklahoma_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Oregon North</Name>
+   <SRSName>EPSG:32126</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>2207116.8067</MinX>
+       <MinY>39214.5883</MinY>
+       <MaxX>2824152.7336</MaxX>
+       <MaxY>299313.5033</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.15</MinX>
+       <MinY>43.96</MinY>
+       <MaxX>-116.46</MaxX>
+       <MaxY>46.29</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Oregon_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Oregon South</Name>
+   <SRSName>EPSG:32127</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>1160413.4105</MinX>
+       <MinY>43511.1118</MinY>
+       <MaxX>1799856.5177</MaxX>
+       <MaxY>329408.4342</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.6</MinX>
+       <MinY>42</MinY>
+       <MaxX>-116.88</MaxX>
+       <MaxY>44.56</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Oregon_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Pennsylvania North</Name>
+   <SRSName>EPSG:32128</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>365568.7301</MinX>
+       <MinY>51873.1803</MinY>
+       <MaxX>858964.887</MaxX>
+       <MaxY>264701.5958</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-80.52</MinX>
+       <MinY>40.6</MinY>
+       <MaxX>-74.69</MaxX>
+       <MaxY>42.51</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.95 +lat_2=40.88333333333333 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Pennsylvania_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Pennsylvania South</Name>
+   <SRSName>EPSG:32129</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>362490.2882</MinX>
+       <MinY>45548.6262</MinY>
+       <MaxX>859794.669</MaxX>
+       <MaxY>209415.9846</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-80.52</MinX>
+       <MinY>39.71</MinY>
+       <MaxX>-74.72</MaxX>
+       <MaxY>41.18</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.96666666666667 +lat_2=39.93333333333333 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Pennsylvania_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Rhode Island</Name>
+   <SRSName>EPSG:32130</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>66407.2099</MinX>
+       <MinY>4149.1392</MinY>
+       <MaxX>133592.7901</MaxX>
+       <MaxY>104107.2603</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-71.9</MinX>
+       <MinY>41.12</MinY>
+       <MaxX>-71.1</MaxX>
+       <MaxY>42.02</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=41.08333333333334 +lon_0=-71.5 +k=0.99999375 +x_0=100000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Rhode_Island</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / South Carolina</Name>
+   <SRSName>EPSG:32133</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>386567.9711</MinX>
+       <MinY>21032.2783</MinY>
+       <MaxX>845860.2339</MaxX>
+       <MaxY>377250.6743</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-83.36</MinX>
+       <MinY>32</MinY>
+       <MaxX>-78.5</MaxX>
+       <MaxY>35.21</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=34.83333333333334 +lat_2=32.5 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609600 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_South_Carolina</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / South Dakota North</Name>
+   <SRSName>EPSG:32134</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>274445.5512</MinX>
+       <MinY>40270.6815</MinY>
+       <MaxX>883189.4294</MaxX>
+       <MaxY>242045.2257</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.07</MinX>
+       <MinY>44.14</MinY>
+       <MaxX>-96.46</MaxX>
+       <MaxY>45.94</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=45.68333333333333 +lat_2=44.41666666666666 +lat_0=43.83333333333334 +lon_0=-100 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_South_Dakota_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / South Dakota South</Name>
+   <SRSName>EPSG:32135</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>292873.9997</MinX>
+       <MinY>24314.9308</MinY>
+       <MaxX>918350.9754</MaxX>
+       <MaxY>278976.8541</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.07</MinX>
+       <MinY>42.49</MinY>
+       <MaxX>-96.46</MaxX>
+       <MaxY>44.78</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=44.4 +lat_2=42.83333333333334 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_South_Dakota_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Tennessee</Name>
+   <SRSName>EPSG:32136</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>205742.0613</MinX>
+       <MinY>82671.0346</MinY>
+       <MaxX>996082.0131</MaxX>
+       <MaxY>268971.7552</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-90.32</MinX>
+       <MinY>35</MinY>
+       <MaxX>-81.66</MaxX>
+       <MaxY>36.68</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Tennessee</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas North</Name>
+   <SRSName>EPSG:32137</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>57317.9837</MinX>
+       <MinY>1035439.5662</MinY>
+       <MaxX>338079.7297</MaxX>
+       <MaxY>1278450.0178</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-103.05</MinX>
+       <MinY>34.31</MinY>
+       <MaxX>-100</MaxX>
+       <MaxY>36.5</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas North Central</Name>
+   <SRSName>EPSG:32138</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>168925.2184</MinX>
+       <MinY>2017265.0981</MinY>
+       <MaxX>1026340.6098</MaxX>
+       <MaxY>2332143.3626</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-103.05</MinX>
+       <MinY>31.74</MinY>
+       <MaxX>-94</MaxX>
+       <MaxY>34.58</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_North_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas Central</Name>
+   <SRSName>EPSG:32139</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>91382.5171</MinX>
+       <MinY>3029793.969</MinY>
+       <MaxX>1359462.1608</MaxX>
+       <MaxY>3307224.937</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-106.63</MinX>
+       <MinY>29.78</MinY>
+       <MaxX>-93.51</MaxX>
+       <MaxY>32.26</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=700000 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas South Central</Name>
+   <SRSName>EPSG:32140</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>8986.6494</MinX>
+       <MinY>4009781.4798</MinY>
+       <MaxX>1109314.0477</MaxX>
+       <MaxY>4328046.4419</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-105</MinX>
+       <MinY>27.82</MinY>
+       <MaxX>-93.83</MaxX>
+       <MaxY>30.66</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=4000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_South_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas South</Name>
+   <SRSName>EPSG:32141</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>129543.4629</MinX>
+       <MinY>5018853.6899</MinY>
+       <MaxX>438372.0279</MaxX>
+       <MaxY>5281817.5368</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-100.2</MinX>
+       <MinY>25.83</MinY>
+       <MaxX>-97.12</MaxX>
+       <MaxY>28.2</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000 +y_0=5000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Utah North</Name>
+   <SRSName>EPSG:32142</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>284027.0557</MinX>
+       <MinY>1026986.1455</MinY>
+       <MaxX>707505.7072</MaxX>
+       <MaxY>1188193.7207</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-114.05</MinX>
+       <MinY>40.55</MinY>
+       <MaxX>-109.05</MaxX>
+       <MaxY>42</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Utah_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Utah Central</Name>
+   <SRSName>EPSG:32143</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>277549.3321</MinX>
+       <MinY>2021431.8387</MinY>
+       <MaxX>713729.3387</MaxX>
+       <MaxY>2308013.4967</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-114.05</MinX>
+       <MinY>38.5</MinY>
+       <MaxX>-109.05</MaxX>
+       <MaxY>41.08</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Utah_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Utah South</Name>
+   <SRSName>EPSG:32144</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>273038.3315</MinX>
+       <MinY>3039851.4748</MinY>
+       <MaxX>718063.289</MaxX>
+       <MaxY>3215389.4067</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-114.05</MinX>
+       <MinY>37</MinY>
+       <MaxX>-109.05</MaxX>
+       <MaxY>38.58</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Utah_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Vermont</Name>
+   <SRSName>EPSG:32145</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>422982.113</MinX>
+       <MinY>22644.6648</MinY>
+       <MaxX>581933.9621</MaxX>
+       <MaxY>278245.053</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-73.44</MinX>
+       <MinY>42.7</MinY>
+       <MaxX>-71.5</MaxX>
+       <MaxY>45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=42.5 +lon_0=-72.5 +k=0.999964286 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Vermont</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Virginia North</Name>
+   <SRSName>EPSG:32146</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>3363434.3107</MinX>
+       <MinY>2012622.8118</MinY>
+       <MaxX>3676208.2257</MaxX>
+       <MaxY>2199835.7224</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-80.05</MinX>
+       <MinY>37.77</MinY>
+       <MaxX>-76.5</MaxX>
+       <MaxY>39.45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000 +y_0=2000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Virginia_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Virginia South</Name>
+   <SRSName>EPSG:32147</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>3036306.1186</MinX>
+       <MinY>1027084.73</MinY>
+       <MaxX>3798176.714</MaxX>
+       <MaxY>1227370.5128</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-83.68</MinX>
+       <MinY>36.53</MinY>
+       <MaxX>-75.17</MaxX>
+       <MaxY>38.27</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000 +y_0=1000000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Virginia_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Washington North</Name>
+   <SRSName>EPSG:32148</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>202656.1791</MinX>
+       <MinY>16031.4207</MinY>
+       <MaxX>788746.9402</MaxX>
+       <MaxY>229671.263</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.75</MinX>
+       <MinY>47.08</MinY>
+       <MaxX>-117.03</MaxX>
+       <MaxY>49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Washington_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Washington South</Name>
+   <SRSName>EPSG:32149</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>187754.6365</MinX>
+       <MinY>30497.7688</MinY>
+       <MaxX>781043.7173</MaxX>
+       <MaxY>259585.0321</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.5</MinX>
+       <MinY>45.55</MinY>
+       <MaxX>-116.9</MaxX>
+       <MaxY>47.6</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Washington_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / West Virginia North</Name>
+   <SRSName>EPSG:32150</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>403546.8531</MinX>
+       <MinY>29270.4606</MinY>
+       <MaxX>753865.5976</MaxX>
+       <MaxY>238890.8448</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-81.76</MinX>
+       <MinY>38.75</MinY>
+       <MaxX>-77.73</MaxX>
+       <MaxY>40.63</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.25 +lat_2=39 +lat_0=38.5 +lon_0=-79.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_West_Virginia_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / West Virginia South</Name>
+   <SRSName>EPSG:32151</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>453513.4977</MinX>
+       <MinY>23502.1706</MinY>
+       <MaxX>773116.7841</MaxX>
+       <MaxY>243745.5465</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-82.65</MinX>
+       <MinY>37.2</MinY>
+       <MaxX>-79.05</MaxX>
+       <MaxY>39.18</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.88333333333333 +lat_2=37.48333333333333 +lat_0=37 +lon_0=-81 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_West_Virginia_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wisconsin North</Name>
+   <SRSName>EPSG:32152</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>374427.4323</MinX>
+       <MinY>24474.5751</MinY>
+       <MaxX>752749.5534</MaxX>
+       <MaxY>239971.2689</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-92.88</MinX>
+       <MinY>45.37</MinY>
+       <MaxX>-88.05</MaxX>
+       <MaxY>47.29</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wisconsin_North</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wisconsin Central</Name>
+   <SRSName>EPSG:32153</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>368962.7036</MinX>
+       <MinY>20394.9761</MinY>
+       <MaxX>900785.9536</MaxX>
+       <MaxY>249710.0915</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-92.88</MinX>
+       <MinY>43.98</MinY>
+       <MaxX>-86.25</MaxX>
+       <MaxY>46.02</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wisconsin_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wisconsin South</Name>
+   <SRSName>EPSG:32154</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>482435.6354</MinX>
+       <MinY>55443.7792</MinY>
+       <MaxX>854813.5999</MaxX>
+       <MaxY>263451.7872</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-91.43</MinX>
+       <MinY>42.49</MinY>
+       <MaxX>-86.9</MaxX>
+       <MaxY>44.33</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wisconsin_South</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wyoming East</Name>
+   <SRSName>EPSG:32155</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>102127.9018</MinX>
+       <MinY>56121.7195</MinY>
+       <MaxX>293945.9252</MaxX>
+       <MaxY>500522.8409</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-106.33</MinX>
+       <MinY>41</MinY>
+       <MaxX>-104.05</MaxX>
+       <MaxY>45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.9999375 +x_0=200000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wyoming_East</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wyoming East Central</Name>
+   <SRSName>EPSG:32156</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>291751.5422</MinX>
+       <MinY>156318.5452</MinY>
+       <MaxX>512174.666</MaxX>
+       <MaxY>600729.364</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-108.62</MinX>
+       <MinY>41</MinY>
+       <MaxX>-106</MaxX>
+       <MaxY>45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.9999375 +x_0=400000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wyoming_East_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wyoming West Central</Name>
+   <SRSName>EPSG:32157</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>480533.7763</MinX>
+       <MinY>56273.7365</MinY>
+       <MaxX>705163.5871</MaxX>
+       <MaxY>500845.478</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-110.17</MinX>
+       <MinY>41</MinY>
+       <MaxX>-107.5</MaxX>
+       <MaxY>45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.9999375 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wyoming_West_Central</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wyoming West</Name>
+   <SRSName>EPSG:32158</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>718673.859</MinX>
+       <MinY>155971.1804</MinY>
+       <MaxX>887776.2423</MaxX>
+       <MaxY>600393.9977</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-111.05</MinX>
+       <MinY>41</MinY>
+       <MaxX>-109.04</MaxX>
+       <MaxY>45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.9999375 +x_0=800000 +y_0=100000 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wyoming_West</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Louisiana Offshore</Name>
+   <SRSName>EPSG:32199</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>m</Units>
+   <NativeBounds>        
+       <MinX>734891.5575</MinX>
+       <MinY>377005.2875</MinY>
+       <MaxX>1246244.44</MaxX>
+       <MaxY>838558.2498</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-94.05</MinX>
+       <MinY>28.88</MinY>
+       <MaxX>-88.81</MaxX>
+       <MaxY>33.03</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.5 +lon_0=-91.33333333333333 +x_0=1000000 +y_0=0 +ellps=GRS80 +datum=NAD83 +units=m +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Louisiana_Offshore</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arizona East (ft)</Name>
+   <SRSName>EPSG:2222</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>214992.6958</MinX>
+       <MinY>121793.6623</MinY>
+       <MaxX>1048654.4981</MaxX>
+       <MaxY>2187001.718</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-111.72</MinX>
+       <MinY>31.33</MinY>
+       <MaxX>-109.05</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-110.1666666666667 +k=0.9999 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arizona_East_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arizona Central (ft)</Name>
+   <SRSName>EPSG:2223</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>258710.1067</MinX>
+       <MinY>122857.2981</MinY>
+       <MaxX>1157943.9948</MaxX>
+       <MaxY>2186600.2033</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-113.33</MinX>
+       <MinY>31.33</MinY>
+       <MaxX>-110.45</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-111.9166666666667 +k=0.9999 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arizona_Central_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arizona West (ft)</Name>
+   <SRSName>EPSG:2224</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>390131.5238</MinX>
+       <MinY>379734.8797</MinY>
+       <MaxX>1081142.5981</MaxX>
+       <MaxY>2185694.0733</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-114.75</MinX>
+       <MinY>32.04</MinY>
+       <MaxX>-112.52</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-113.75 +k=0.999933333 +x_0=213360 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arizona_West_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 1 (ftUS)</Name>
+   <SRSName>EPSG:2225</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>5879734.426</MinX>
+       <MinY>1744000.3076</MinY>
+       <MaxX>7125269.7437</MaxX>
+       <MaxY>2621031.8552</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.42</MinX>
+       <MinY>39.6</MinY>
+       <MaxX>-120</MaxX>
+       <MaxY>42</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.66666666666666 +lat_2=40 +lat_0=39.33333333333334 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_1_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 2 (ftUS)</Name>
+   <SRSName>EPSG:2226</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>5965413.2863</MinX>
+       <MinY>1779535.4389</MinY>
+       <MaxX>7270232.3774</MaxX>
+       <MaxY>2554195.8658</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.07</MinX>
+       <MinY>38.03</MinY>
+       <MaxX>-119.54</MaxX>
+       <MaxY>40.15</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=39.83333333333334 +lat_2=38.33333333333334 +lat_0=37.66666666666666 +lon_0=-122 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_2_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 3 (ftUS)</Name>
+   <SRSName>EPSG:2227</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>5802768.5811</MinX>
+       <MinY>1738307.6666</MinY>
+       <MaxX>7346928.6408</MaxX>
+       <MaxY>2452463.3364</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-123.09</MinX>
+       <MinY>36.74</MinY>
+       <MaxX>-117.82</MaxX>
+       <MaxY>38.7</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.43333333333333 +lat_2=37.06666666666667 +lat_0=36.5 +lon_0=-120.5 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_3_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 4 (ftUS)</Name>
+   <SRSName>EPSG:2228</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>5671873.5402</MinX>
+       <MinY>1816925.5902</MinY>
+       <MaxX>7555229.0868</MaxX>
+       <MaxY>2475290.3439</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-122</MinX>
+       <MinY>35.78</MinY>
+       <MaxX>-115.65</MaxX>
+       <MaxY>37.58</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.25 +lat_2=36 +lat_0=35.33333333333334 +lon_0=-119 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_4_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 5 (ftUS)</Name>
+   <SRSName>EPSG:2229</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>5528230.816</MinX>
+       <MinY>1384701.5952</MinY>
+       <MaxX>7751890.9134</MaxX>
+       <MaxY>2503239.6463</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-121.36</MinX>
+       <MinY>32.75</MinY>
+       <MaxX>-114.13</MaxX>
+       <MaxY>35.81</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=35.46666666666667 +lat_2=34.03333333333333 +lat_0=33.5 +lon_0=-118 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_5_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / California zone 6 (ftUS)</Name>
+   <SRSName>EPSG:2230</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>5979001.2708</MinX>
+       <MinY>1770238.7032</MinY>
+       <MaxX>7122754.0974</MaxX>
+       <MaxY>2341806.4367</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-118.14</MinX>
+       <MinY>32.51</MinY>
+       <MaxX>-114.43</MaxX>
+       <MaxY>34.08</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=33.88333333333333 +lat_2=32.78333333333333 +lat_0=32.16666666666666 +lon_0=-116.25 +x_0=2000000.0001016 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_California_zone_6_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Colorado North (ftUS)</Name>
+   <SRSName>EPSG:2231</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1999305.5283</MinX>
+       <MinY>1101489.101</MinY>
+       <MaxX>3972520.3257</MaxX>
+       <MaxY>1626770.086</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-109.05</MinX>
+       <MinY>39.56</MinY>
+       <MaxX>-102.05</MaxX>
+       <MaxY>41</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.78333333333333 +lat_2=39.71666666666667 +lat_0=39.33333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Colorado_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Colorado Central (ftUS)</Name>
+   <SRSName>EPSG:2232</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1979149.7191</MinX>
+       <MinY>1130530.2041</MinY>
+       <MaxX>3992107.9609</MaxX>
+       <MaxY>1841334.1528</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-109.05</MinX>
+       <MinY>38.14</MinY>
+       <MaxX>-102.05</MaxX>
+       <MaxY>40.09</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=39.75 +lat_2=38.45 +lat_0=37.83333333333334 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Colorado_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Colorado South (ftUS)</Name>
+   <SRSName>EPSG:2233</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1963481.9307</MinX>
+       <MinY>1139979.3453</MinY>
+       <MaxX>4007333.8472</MaxX>
+       <MaxY>1748754.2722</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-109.05</MinX>
+       <MinY>37</MinY>
+       <MaxX>-102.05</MaxX>
+       <MaxY>38.67</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.43333333333333 +lat_2=37.23333333333333 +lat_0=36.66666666666666 +lon_0=-105.5 +x_0=914401.8288036576 +y_0=304800.6096012192 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Colorado_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Connecticut (ftUS)</Name>
+   <SRSName>EPSG:2234</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>729279.2469</MinX>
+       <MinY>544012.5493</MinY>
+       <MaxX>1267958.413</MaxX>
+       <MaxY>944836.6206</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-73.73</MinX>
+       <MinY>40.95</MinY>
+       <MaxX>-71.78</MaxX>
+       <MaxY>42.05</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.86666666666667 +lat_2=41.2 +lat_0=40.83333333333334 +lon_0=-72.75 +x_0=304800.6096012192 +y_0=152400.3048006096 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Connecticut_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Delaware (ftUS)</Name>
+   <SRSName>EPSG:2235</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>552096.2163</MinX>
+       <MinY>160441.1749</MinY>
+       <MaxX>789835.2694</MaxX>
+       <MaxY>670500.323</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-75.78</MinX>
+       <MinY>38.44</MinY>
+       <MaxX>-74.95</MaxX>
+       <MaxY>39.84</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=38 +lon_0=-75.41666666666667 +k=0.999995 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Delaware_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Florida East (ftUS)</Name>
+   <SRSName>EPSG:2236</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>306826.6397</MinX>
+       <MinY>36279.663</MinY>
+       <MaxX>982215.8007</MaxX>
+       <MaxY>2363339.4629</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-82.05</MinX>
+       <MinY>24.43</MinY>
+       <MaxX>-80.02</MaxX>
+       <MaxY>30.83</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=24.33333333333333 +lon_0=-81 +k=0.999941177 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Florida_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Florida West (ftUS)</Name>
+   <SRSName>EPSG:2237</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>269601.5837</MinX>
+       <MinY>719323.295</MinY>
+       <MaxX>941170.894</MaxX>
+       <MaxY>1912737.3391</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-83.18</MinX>
+       <MinY>26.31</MinY>
+       <MaxX>-81.13</MaxX>
+       <MaxY>29.59</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=24.33333333333333 +lon_0=-82 +k=0.999941177 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Florida_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Florida North (ftUS)</Name>
+   <SRSName>EPSG:2238</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>967478.5103</MinX>
+       <MinY>110223.103</MinY>
+       <MaxX>2749590.4261</MaxX>
+       <MaxY>740927.1811</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-87.64</MinX>
+       <MinY>29.28</MinY>
+       <MaxX>-82.05</MaxX>
+       <MaxY>31</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=30.75 +lat_2=29.58333333333333 +lat_0=29 +lon_0=-84.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Florida_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Georgia East (ftUS)</Name>
+   <SRSName>EPSG:2239</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>248223.0193</MinX>
+       <MinY>129608.2845</MinY>
+       <MaxX>1090397.7621</MaxX>
+       <MaxY>1708983.9407</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-83.46</MinX>
+       <MinY>30.35</MinY>
+       <MaxX>-80.79</MaxX>
+       <MaxY>34.69</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=30 +lon_0=-82.16666666666667 +k=0.9999 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Georgia_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Georgia West (ftUS)</Name>
+   <SRSName>EPSG:2240</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2028173.0113</MinX>
+       <MinY>226493.0329</MinY>
+       <MaxX>2663556.2865</MaxX>
+       <MaxY>1821013.4076</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-85.02</MinX>
+       <MinY>30.62</MinY>
+       <MaxX>-83</MaxX>
+       <MaxY>35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=30 +lon_0=-84.16666666666667 +k=0.9999 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Georgia_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Idaho East (ftUS)</Name>
+   <SRSName>EPSG:2241</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>364427.2314</MinX>
+       <MinY>123289.6304</MinY>
+       <MaxX>959684.5585</MaxX>
+       <MaxY>1129421.4938</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-113.24</MinX>
+       <MinY>42</MinY>
+       <MaxX>-111.05</MaxX>
+       <MaxY>44.76</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=41.66666666666666 +lon_0=-112.1666666666667 +k=0.9999473679999999 +x_0=200000.0001016002 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Idaho_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Idaho Central (ftUS)</Name>
+   <SRSName>EPSG:2242</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1287066.6337</MinX>
+       <MinY>124143.5865</MinY>
+       <MaxX>1996484.8277</MaxX>
+       <MaxY>1476540.4978</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-115.3</MinX>
+       <MinY>42</MinY>
+       <MaxX>-112.69</MaxX>
+       <MaxY>45.71</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=41.66666666666666 +lon_0=-114 +k=0.9999473679999999 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Idaho_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Idaho West (ftUS)</Name>
+   <SRSName>EPSG:2243</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2219677.6918</MinX>
+       <MinY>124796.6784</MinY>
+       <MaxX>3018783.2045</MaxX>
+       <MaxY>2677257.4183</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-117.24</MinX>
+       <MinY>42</MinY>
+       <MaxX>-114.3</MaxX>
+       <MaxY>49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=41.66666666666666 +lon_0=-115.75 +k=0.999933333 +x_0=800000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Idaho_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Indiana East (ftUS)</Name>
+   <SRSName>EPSG:2244</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>64721.2901</MinX>
+       <MinY>983120.0046</MinY>
+       <MaxX>575105.0854</MaxX>
+       <MaxY>2367513.2205</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-86.58</MinX>
+       <MinY>37.95</MinY>
+       <MaxX>-84.81</MaxX>
+       <MaxY>41.75</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=37.5 +lon_0=-85.66666666666667 +k=0.999966667 +x_0=99999.99989839978 +y_0=249364.9987299975 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Indiana_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Indiana West (ftUS)</Name>
+   <SRSName>EPSG:2245</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2661767.5171</MinX>
+       <MinY>917537.9343</MinY>
+       <MaxX>3196519.1498</MaxX>
+       <MaxY>2367797.3976</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-88.09</MinX>
+       <MinY>37.77</MinY>
+       <MaxX>-86.24</MaxX>
+       <MaxY>41.75</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=37.5 +lon_0=-87.08333333333333 +k=0.999966667 +x_0=900000 +y_0=249364.9987299975 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Indiana_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Kentucky North (ftUS)</Name>
+   <SRSName>EPSG:2246</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1154604.024</MinX>
+       <MinY>91829.9268</MinY>
+       <MaxX>2158034.5895</MaxX>
+       <MaxY>602189.8808</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-85.93</MinX>
+       <MinY>37.74</MinY>
+       <MaxX>-82.46</MaxX>
+       <MaxY>39.14</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.96666666666667 +lat_2=38.96666666666667 +lat_0=37.5 +lon_0=-84.25 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kentucky_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Kentucky South (ftUS)</Name>
+   <SRSName>EPSG:2247</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>561897.6176</MinX>
+       <MinY>1722049.0791</MinY>
+       <MaxX>2748307.7633</MaxX>
+       <MaxY>2268929.6</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-89.42</MinX>
+       <MinY>36.5</MinY>
+       <MaxX>-81.98</MaxX>
+       <MaxY>38</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.93333333333333 +lat_2=36.73333333333333 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=500000.0001016001 +y_0=500000.0001016001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kentucky_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Massachusetts Mainland (ftUS)</Name>
+   <SRSName>EPSG:2249</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>104294.9553</MinX>
+       <MinY>2592496.1873</MinY>
+       <MaxX>1106463.985</MaxX>
+       <MaxY>3155719.1933</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-73.51</MinX>
+       <MinY>41.35</MinY>
+       <MaxX>-69.86</MaxX>
+       <MaxY>42.89</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=42.68333333333333 +lat_2=41.71666666666667 +lat_0=41 +lon_0=-71.5 +x_0=200000.0001016002 +y_0=750000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Massachusetts_Mainland_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Massachusetts Island (ftUS)</Name>
+   <SRSName>EPSG:2250</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1538593.5579</MinX>
+       <MinY>73089.3038</MinY>
+       <MaxX>1805534.405</MaxX>
+       <MaxY>186396.0688</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-70.87</MinX>
+       <MinY>41.2</MinY>
+       <MaxX>-69.9</MaxX>
+       <MaxY>41.51</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.48333333333333 +lat_2=41.28333333333333 +lat_0=41 +lon_0=-70.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Massachusetts_Island_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Michigan North (ft)</Name>
+   <SRSName>EPSG:2251</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>25368509.075</MinX>
+       <MinY>185420.5533</MinY>
+       <MaxX>27168681.9172</MaxX>
+       <MaxY>1302317.8287</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-90.41</MinX>
+       <MinY>45.24</MinY>
+       <MaxX>-83.42</MaxX>
+       <MaxY>48.3</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=47.08333333333334 +lat_2=45.48333333333333 +lat_0=44.78333333333333 +lon_0=-87 +x_0=7999999.999968001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Michigan_North_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Michigan Central (ft)</Name>
+   <SRSName>EPSG:2252</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>18966187.0529</MinX>
+       <MinY>187223.4171</MinY>
+       <MaxX>20246436.4391</MaxX>
+       <MaxY>946196.1057</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-87.09</MinX>
+       <MinY>43.81</MinY>
+       <MaxX>-82.24</MaxX>
+       <MaxY>45.88</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=45.7 +lat_2=44.18333333333333 +lat_0=43.31666666666667 +lon_0=-84.36666666666666 +x_0=5999999.999976001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Michigan_Central_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Michigan South (ft)</Name>
+   <SRSName>EPSG:2253</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>12366628.6853</MinX>
+       <MinY>99291.031</MinY>
+       <MaxX>13736422.4786</MaxX>
+       <MaxY>985110.3762</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-87.14</MinX>
+       <MinY>41.75</MinY>
+       <MaxX>-82.12</MaxX>
+       <MaxY>44.17</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=43.66666666666666 +lat_2=42.1 +lat_0=41.5 +lon_0=-84.36666666666666 +x_0=3999999.999984 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Michigan_South_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Mississippi East (ftUS)</Name>
+   <SRSName>EPSG:2254</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>628069.6848</MinX>
+       <MinY>229850.5472</MinY>
+       <MaxX>1216079.0375</MaxX>
+       <MaxY>2002795.1411</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-89.96</MinX>
+       <MinY>30.13</MinY>
+       <MaxX>-88.1</MaxX>
+       <MaxY>35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=29.5 +lon_0=-88.83333333333333 +k=0.99995 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Mississippi_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Mississippi West (ftUS)</Name>
+   <SRSName>EPSG:2255</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2012502.8273</MinX>
+       <MinY>546683.9549</MinY>
+       <MaxX>2595286.2522</MaxX>
+       <MaxY>2002254.5929</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-91.24</MinX>
+       <MinY>31</MinY>
+       <MaxX>-89.38</MaxX>
+       <MaxY>35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=29.5 +lon_0=-90.33333333333333 +k=0.99995 +x_0=699999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Mississippi_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Montana (ft)</Name>
+   <SRSName>EPSG:2256</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>259212.4565</MinX>
+       <MinY>90262.0804</MinY>
+       <MaxX>3401250.327</MaxX>
+       <MaxY>1797357.1993</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-116.04</MinX>
+       <MinY>44.36</MinY>
+       <MaxX>-104.02</MaxX>
+       <MaxY>49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=49 +lat_2=45 +lat_0=44.25 +lon_0=-109.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Montana_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Mexico East (ftUS)</Name>
+   <SRSName>EPSG:2257</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>111468.8412</MinX>
+       <MinY>366288.3864</MinY>
+       <MaxX>954671.404</MaxX>
+       <MaxY>2186265.5455</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-105.72</MinX>
+       <MinY>32</MinY>
+       <MaxX>-103</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-104.3333333333333 +k=0.999909091 +x_0=165000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Mexico_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Mexico Central (ftUS)</Name>
+   <SRSName>EPSG:2258</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1183631.1829</MinX>
+       <MinY>286508.8576</MinY>
+       <MaxX>2075448.4705</MaxX>
+       <MaxY>2186610.8465</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-107.72</MinX>
+       <MinY>31.78</MinY>
+       <MaxX>-104.85</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-106.25 +k=0.9999 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Mexico_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Mexico West (ftUS)</Name>
+   <SRSName>EPSG:2259</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2343206.723</MinX>
+       <MinY>121316.362</MinY>
+       <MaxX>3020750.9415</MaxX>
+       <MaxY>2185603.2333</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-109.05</MinX>
+       <MinY>31.33</MinY>
+       <MaxX>-106.88</MaxX>
+       <MaxY>37</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=31 +lon_0=-107.8333333333333 +k=0.999916667 +x_0=830000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Mexico_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New York East (ftUS)</Name>
+   <SRSName>EPSG:2260</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>116071.8523</MinX>
+       <MinY>747947.1638</MinY>
+       <MaxX>837761.3518</MaxX>
+       <MaxY>2260847.6417</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-75.86</MinX>
+       <MinY>40.88</MinY>
+       <MaxX>-73.25</MaxX>
+       <MaxY>45.03</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.9999 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_York_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New York Central (ftUS)</Name>
+   <SRSName>EPSG:2261</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>503103.0219</MinX>
+       <MinY>730813.7225</MinY>
+       <MaxX>1231541.2872</MaxX>
+       <MaxY>1607028.5833</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-77.75</MinX>
+       <MinY>42</MinY>
+       <MaxX>-75.07</MaxX>
+       <MaxY>44.4</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40 +lon_0=-76.58333333333333 +k=0.9999375 +x_0=249999.9998983998 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_York_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New York West (ftUS)</Name>
+   <SRSName>EPSG:2262</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>828468.2698</MinX>
+       <MinY>730850.9202</MinY>
+       <MaxX>1478081.3886</MaxX>
+       <MaxY>1328686.1485</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-79.76</MinX>
+       <MinY>42</MinY>
+       <MaxX>-77.37</MaxX>
+       <MaxY>43.64</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40 +lon_0=-78.58333333333333 +k=0.9999375 +x_0=350000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_York_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New York Long Island (ftUS)</Name>
+   <SRSName>EPSG:2263</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>909126.0155</MinX>
+       <MinY>110626.288</MinY>
+       <MaxX>1610215.359</MaxX>
+       <MaxY>424498.0529</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-74.27</MinX>
+       <MinY>40.47</MinY>
+       <MaxX>-71.75</MaxX>
+       <MaxY>41.31</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.03333333333333 +lat_2=40.66666666666666 +lat_0=40.16666666666666 +lon_0=-74 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_York_Long_Island_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / North Carolina (ftUS)</Name>
+   <SRSName>EPSG:2264</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>384209.7796</MinX>
+       <MinY>37702.8231</MinY>
+       <MaxX>3084565.6507</MaxX>
+       <MaxY>1071912.9892</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-84.32</MinX>
+       <MinY>33.8</MinY>
+       <MaxX>-75.43</MaxX>
+       <MaxY>36.58</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.16666666666666 +lat_2=34.33333333333334 +lat_0=33.75 +lon_0=-79 +x_0=609601.2192024384 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_North_Carolina_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / North Dakota North (ft)</Name>
+   <SRSName>EPSG:2265</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1085416.4444</MinX>
+       <MinY>75077.08</MinY>
+       <MaxX>2881420.035</MaxX>
+       <MaxY>750580.5282</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.05</MinX>
+       <MinY>47.15</MinY>
+       <MaxX>-96.83</MaxX>
+       <MaxY>49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=48.73333333333333 +lat_2=47.43333333333333 +lat_0=47 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_North_Dakota_North_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / North Dakota South (ft)</Name>
+   <SRSName>EPSG:2266</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1065407.0674</MinX>
+       <MinY>116445.5897</MinY>
+       <MaxX>2968193.5686</MaxX>
+       <MaxY>805860.565</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.05</MinX>
+       <MinY>45.93</MinY>
+       <MaxX>-96.57</MaxX>
+       <MaxY>47.81</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=47.48333333333333 +lat_2=46.18333333333333 +lat_0=45.66666666666666 +lon_0=-100.5 +x_0=599999.9999976 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_North_Dakota_South_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Oklahoma North (ftUS)</Name>
+   <SRSName>EPSG:2267</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>476301.5273</MinX>
+       <MinY>114241.4133</MinY>
+       <MaxX>3034160.6344</MaxX>
+       <MaxY>769305.4562</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-103</MinX>
+       <MinY>35.26</MinY>
+       <MaxX>-94.43</MaxX>
+       <MaxY>37.01</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.76666666666667 +lat_2=35.56666666666667 +lat_0=35 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Oklahoma_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Oklahoma South (ftUS)</Name>
+   <SRSName>EPSG:2268</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1359537.1215</MinX>
+       <MinY>106720.8287</MinY>
+       <MaxX>3055343.2525</MaxX>
+       <MaxY>825523.7388</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-100</MinX>
+       <MinY>33.61</MinY>
+       <MaxX>-94.43</MaxX>
+       <MaxY>35.55</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=35.23333333333333 +lat_2=33.93333333333333 +lat_0=33.33333333333334 +lon_0=-98 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Oklahoma_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Oregon North (ft)</Name>
+   <SRSName>EPSG:2269</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>7241196.8729</MinX>
+       <MinY>128656.7859</MinY>
+       <MaxX>9265592.9584</MaxX>
+       <MaxY>981999.6828</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.15</MinX>
+       <MinY>43.96</MinY>
+       <MaxX>-116.46</MaxX>
+       <MaxY>46.29</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=46 +lat_2=44.33333333333334 +lat_0=43.66666666666666 +lon_0=-120.5 +x_0=2500000.0001424 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Oregon_North_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Oregon South (ft)</Name>
+   <SRSName>EPSG:2270</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>3807130.6123</MinX>
+       <MinY>142752.9914</MinY>
+       <MaxX>5905041.0689</MaxX>
+       <MaxY>1080736.3326</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.6</MinX>
+       <MinY>42</MinY>
+       <MaxX>-116.88</MaxX>
+       <MaxY>44.56</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=44 +lat_2=42.33333333333334 +lat_0=41.66666666666666 +lon_0=-120.5 +x_0=1500000.0001464 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Oregon_South_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Pennsylvania North (ftUS)</Name>
+   <SRSName>EPSG:2271</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1199370.0752</MinX>
+       <MinY>170187.259</MinY>
+       <MaxX>2818120.6333</MaxX>
+       <MaxY>868441.8189</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-80.52</MinX>
+       <MinY>40.6</MinY>
+       <MaxX>-74.69</MaxX>
+       <MaxY>42.51</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.95 +lat_2=40.88333333333333 +lat_0=40.16666666666666 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Pennsylvania_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Pennsylvania South (ftUS)</Name>
+   <SRSName>EPSG:2272</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1189270.2206</MinX>
+       <MinY>149437.4511</MinY>
+       <MaxX>2820843.01</MaxX>
+       <MaxY>687058.9427</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-80.52</MinX>
+       <MinY>39.71</MinY>
+       <MaxX>-74.72</MaxX>
+       <MaxY>41.18</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.96666666666667 +lat_2=39.93333333333333 +lat_0=39.33333333333334 +lon_0=-77.75 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Pennsylvania_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / South Carolina (ft)</Name>
+   <SRSName>EPSG:2273</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1268267.6217</MinX>
+       <MinY>69003.5378</MinY>
+       <MaxX>2775132.0011</MaxX>
+       <MaxY>1237699.0627</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-83.36</MinX>
+       <MinY>32</MinY>
+       <MaxX>-78.5</MaxX>
+       <MaxY>35.21</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=34.83333333333334 +lat_2=32.5 +lat_0=31.83333333333333 +lon_0=-81 +x_0=609600 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_South_Carolina_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Tennessee (ftUS)</Name>
+   <SRSName>EPSG:2274</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>675005.4127</MinX>
+       <MinY>271229.8861</MinY>
+       <MaxX>3267979.0713</MaxX>
+       <MaxY>882451.5001</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-90.32</MinX>
+       <MinY>35</MinY>
+       <MaxX>-81.66</MaxX>
+       <MaxY>36.68</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.41666666666666 +lat_2=35.25 +lat_0=34.33333333333334 +lon_0=-86 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Tennessee_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas North (ftUS)</Name>
+   <SRSName>EPSG:2275</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>188050.7519</MinX>
+       <MinY>3397104.6431</MinY>
+       <MaxX>1109183.2467</MaxX>
+       <MaxY>4194381.4331</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-103.05</MinX>
+       <MinY>34.31</MinY>
+       <MaxX>-100</MaxX>
+       <MaxY>36.5</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.18333333333333 +lat_2=34.65 +lat_0=34 +lon_0=-101.5 +x_0=200000.0001016002 +y_0=999999.9998983998 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas North Central (ftUS)</Name>
+   <SRSName>EPSG:2276</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>554215.4874</MinX>
+       <MinY>6618310.5764</MinY>
+       <MaxX>3367252.4841</MaxX>
+       <MaxY>7651373.6825</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-103.05</MinX>
+       <MinY>31.74</MinY>
+       <MaxX>-94</MaxX>
+       <MaxY>34.58</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=33.96666666666667 +lat_2=32.13333333333333 +lat_0=31.66666666666667 +lon_0=-98.5 +x_0=600000 +y_0=2000000.0001016 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_North_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas Central (ftUS)</Name>
+   <SRSName>EPSG:2277</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>299810.8079</MinX>
+       <MinY>9940249.0466</MinY>
+       <MaxX>4460168.7721</MaxX>
+       <MaxY>10850453.8141</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-106.63</MinX>
+       <MinY>29.78</MinY>
+       <MaxX>-93.51</MaxX>
+       <MaxY>32.26</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=31.88333333333333 +lat_2=30.11666666666667 +lat_0=29.66666666666667 +lon_0=-100.3333333333333 +x_0=699999.9998983998 +y_0=3000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas South Central (ftUS)</Name>
+   <SRSName>EPSG:2278</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>29483.6989</MinX>
+       <MinY>13155424.7379</MinY>
+       <MaxX>3639474.5049</MaxX>
+       <MaxY>14199599.0344</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-105</MinX>
+       <MinY>27.82</MinY>
+       <MaxX>-93.83</MaxX>
+       <MaxY>30.66</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=30.28333333333333 +lat_2=28.38333333333333 +lat_0=27.83333333333333 +lon_0=-99 +x_0=600000 +y_0=3999999.9998984 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_South_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Texas South (ftUS)</Name>
+   <SRSName>EPSG:2279</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>425010.5113</MinX>
+       <MinY>16466022.4813</MinY>
+       <MaxX>1438225.5614</MaxX>
+       <MaxY>17328763.0358</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-100.2</MinX>
+       <MinY>25.83</MinY>
+       <MaxX>-97.12</MaxX>
+       <MaxY>28.2</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.66666666666667 +lon_0=-98.5 +x_0=300000.0000000001 +y_0=5000000.0001016 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Texas_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Utah North (ft)</Name>
+   <SRSName>EPSG:2280</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>931847.2962</MinX>
+       <MinY>3369377.1179</MinY>
+       <MaxX>2321212.9506</MaxX>
+       <MaxY>3898273.362</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-114.05</MinX>
+       <MinY>40.55</MinY>
+       <MaxX>-109.05</MaxX>
+       <MaxY>42</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.78333333333333 +lat_2=40.71666666666667 +lat_0=40.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=999999.9999960001 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Utah_North_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Utah Central (ft)</Name>
+   <SRSName>EPSG:2281</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>910594.922</MinX>
+       <MinY>6631994.2215</MinY>
+       <MaxX>2341631.6892</MaxX>
+       <MaxY>7572222.7582</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-114.05</MinX>
+       <MinY>38.5</MinY>
+       <MaxX>-109.05</MaxX>
+       <MaxY>41.08</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.65 +lat_2=39.01666666666667 +lat_0=38.33333333333334 +lon_0=-111.5 +x_0=500000.0001504 +y_0=1999999.999992 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Utah_Central_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Utah South (ft)</Name>
+   <SRSName>EPSG:2282</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>895795.0512</MinX>
+       <MinY>9973265.9935</MinY>
+       <MaxX>2355850.6862</MaxX>
+       <MaxY>10549177.8436</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-114.05</MinX>
+       <MinY>37</MinY>
+       <MaxX>-109.05</MaxX>
+       <MaxY>38.58</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.35 +lat_2=37.21666666666667 +lat_0=36.66666666666666 +lon_0=-111.5 +x_0=500000.0001504 +y_0=2999999.999988 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Utah_South_ft</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Virginia North (ftUS)</Name>
+   <SRSName>EPSG:2283</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>11034867.4013</MinX>
+       <MinY>6603080.0088</MinY>
+       <MaxX>12061026.4873</MaxX>
+       <MaxY>7217294.3663</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-80.05</MinX>
+       <MinY>37.77</MinY>
+       <MaxX>-76.5</MaxX>
+       <MaxY>39.45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=39.2 +lat_2=38.03333333333333 +lat_0=37.66666666666666 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=2000000.0001016 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Virginia_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Virginia South (ftUS)</Name>
+   <SRSName>EPSG:2284</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>9961614.3244</MinX>
+       <MinY>3369693.8181</MinY>
+       <MaxX>12461184.7694</MaxX>
+       <MaxY>4026798.0904</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-83.68</MinX>
+       <MinY>36.53</MinY>
+       <MaxX>-75.17</MaxX>
+       <MaxY>38.27</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.96666666666667 +lat_2=36.76666666666667 +lat_0=36.33333333333334 +lon_0=-78.5 +x_0=3500000.0001016 +y_0=999999.9998983998 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Virginia_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Washington North (ftUS)</Name>
+   <SRSName>EPSG:2285</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>664881.148</MinX>
+       <MinY>52596.4194</MinY>
+       <MaxX>2587747.2534</MaxX>
+       <MaxY>753513.1353</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.75</MinX>
+       <MinY>47.08</MinY>
+       <MaxX>-117.03</MaxX>
+       <MaxY>49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=48.73333333333333 +lat_2=47.5 +lat_0=47 +lon_0=-120.8333333333333 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Washington_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Washington South (ftUS)</Name>
+   <SRSName>EPSG:2286</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>615991.6702</MinX>
+       <MinY>100058.0964</MinY>
+       <MaxX>2562474.2627</MaxX>
+       <MaxY>851655.2261</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-124.5</MinX>
+       <MinY>45.55</MinY>
+       <MaxX>-116.9</MaxX>
+       <MaxY>47.6</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=47.33333333333334 +lat_2=45.83333333333334 +lat_0=45.33333333333334 +lon_0=-120.5 +x_0=500000.0001016001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Washington_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wisconsin North (ftUS)</Name>
+   <SRSName>EPSG:2287</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1228434.0007</MinX>
+       <MinY>80297.0019</MinY>
+       <MaxX>2469645.8263</MaxX>
+       <MaxY>787305.7379</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-92.88</MinX>
+       <MinY>45.37</MinY>
+       <MaxX>-88.05</MaxX>
+       <MaxY>47.29</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=46.76666666666667 +lat_2=45.56666666666667 +lat_0=45.16666666666666 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wisconsin_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wisconsin Central (ftUS)</Name>
+   <SRSName>EPSG:2288</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1210505.1366</MinX>
+       <MinY>66912.5176</MinY>
+       <MaxX>2955328.5829</MaxX>
+       <MaxY>819257.1917</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-92.88</MinX>
+       <MinY>43.98</MinY>
+       <MaxX>-86.25</MaxX>
+       <MaxY>46.02</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=45.5 +lat_2=44.25 +lat_0=43.83333333333334 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wisconsin_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wisconsin South (ftUS)</Name>
+   <SRSName>EPSG:2289</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1582790.914</MinX>
+       <MinY>181901.7988</MinY>
+       <MaxX>2804500.9525</MaxX>
+       <MaxY>864341.4051</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-91.43</MinX>
+       <MinY>42.49</MinY>
+       <MaxX>-86.9</MaxX>
+       <MaxY>44.33</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=44.06666666666667 +lat_2=42.73333333333333 +lat_0=42 +lon_0=-90 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wisconsin_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Kentucky Single Zone (ftUS)</Name>
+   <SRSName>EPSG:3089</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>3842586.709</MinX>
+       <MinY>3362736.9994</MinY>
+       <MaxX>6029288.883</MaxX>
+       <MaxY>4324473.7922</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-89.42</MinX>
+       <MinY>36.5</MinY>
+       <MaxX>-81.98</MaxX>
+       <MaxY>39.14</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=37.08333333333334 +lat_2=38.66666666666666 +lat_0=36.33333333333334 +lon_0=-85.75 +x_0=1500000 +y_0=999999.9998983998 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kentucky_Single_Zone_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Iowa North (ft US)</Name>
+   <SRSName>EPSG:3417</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>4066027.4501</MinX>
+       <MinY>3427911.4651</MinY>
+       <MaxX>5833639.9604</MaxX>
+       <MaxY>4030976.1777</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-96.64</MinX>
+       <MinY>41.86</MinY>
+       <MaxX>-90.15</MaxX>
+       <MaxY>43.51</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=43.26666666666667 +lat_2=42.06666666666667 +lat_0=41.5 +lon_0=-93.5 +x_0=1500000 +y_0=999999.9999898402 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Iowa_North_ft_US</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Iowa South (ft US)</Name>
+   <SRSName>EPSG:3418</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>904867.9901</MinX>
+       <MinY>145967.5428</MinY>
+       <MaxX>2579264.9508</MaxX>
+       <MaxY>757370.7607</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-96.14</MinX>
+       <MinY>40.37</MinY>
+       <MaxX>-90.13</MaxX>
+       <MaxY>42.03</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.78333333333333 +lat_2=40.61666666666667 +lat_0=40 +lon_0=-93.5 +x_0=500000.00001016 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Iowa_South_ft_US</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Kansas North (ft US)</Name>
+   <SRSName>EPSG:3419</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>153902.1932</MinX>
+       <MinY>86354.1908</MinY>
+       <MaxX>2287798.4126</MaxX>
+       <MaxY>632422.1507</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-102.05</MinX>
+       <MinY>38.52</MinY>
+       <MaxX>-94.59</MaxX>
+       <MaxY>40</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=39.78333333333333 +lat_2=38.71666666666667 +lat_0=38.33333333333334 +lon_0=-98 +x_0=399999.99998984 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kansas_North_ft_US</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Kansas South (ft US)</Name>
+   <SRSName>EPSG:3420</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>275664.5644</MinX>
+       <MinY>1449807.3185</MinY>
+       <MaxX>2454070.2794</MaxX>
+       <MaxY>2138012.322</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-102.05</MinX>
+       <MinY>36.99</MinY>
+       <MaxX>-94.59</MaxX>
+       <MaxY>38.87</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.56666666666667 +lat_2=37.26666666666667 +lat_0=36.66666666666666 +lon_0=-98.5 +x_0=399999.99998984 +y_0=399999.99998984 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Kansas_South_ft_US</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Nevada East (ft US)</Name>
+   <SRSName>EPSG:3421</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>228905.6854</MinX>
+       <MinY>26340701.5343</MinY>
+       <MaxX>1115374.9333</MaxX>
+       <MaxY>28890478.8171</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-117.01</MinX>
+       <MinY>35</MinY>
+       <MaxX>-114.05</MaxX>
+       <MaxY>42</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=34.75 +lon_0=-115.5833333333333 +k=0.9999 +x_0=200000.00001016 +y_0=8000000.000010163 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Nevada_East_ft_US</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Nevada Central (ft US)</Name>
+   <SRSName>EPSG:3422</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1189824.8457</MinX>
+       <MinY>20143476.015</MinY>
+       <MaxX>2133409.0976</MaxX>
+       <MaxY>21965125.7381</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-118.19</MinX>
+       <MinY>36</MinY>
+       <MaxX>-115</MaxX>
+       <MaxY>41</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=34.75 +lon_0=-116.6666666666667 +k=0.9999 +x_0=500000.00001016 +y_0=6000000 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Nevada_Central_ft_US</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Nevada West (ft US)</Name>
+   <SRSName>EPSG:3423</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2210821.1459</MinX>
+       <MinY>13934475.5592</MinY>
+       <MaxX>3084281.6856</MaxX>
+       <MaxY>15767342.7597</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-120</MinX>
+       <MinY>36.97</MinY>
+       <MaxX>-117.01</MaxX>
+       <MaxY>42</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=34.75 +lon_0=-118.5833333333333 +k=0.9999 +x_0=800000.0000101599 +y_0=3999999.99998984 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Nevada_West_ft_US</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Jersey (ft US)</Name>
+   <SRSName>EPSG:3424</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>189413.691</MinX>
+       <MinY>-66166.3096</MinY>
+       <MaxX>669181.081</MaxX>
+       <MaxY>922131.8867</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-75.56</MinX>
+       <MinY>38.65</MinY>
+       <MaxX>-73.88</MaxX>
+       <MaxY>41.36</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=38.83333333333334 +lon_0=-74.5 +k=0.9999 +x_0=150000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Jersey_ft_US</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arkansas North (ftUS)</Name>
+   <SRSName>EPSG:3433</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>521443.3781</MinX>
+       <MinY>127337.0308</MinY>
+       <MaxX>2019039.0175</MaxX>
+       <MaxY>795356.8178</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-94.63</MinX>
+       <MinY>34.66</MinY>
+       <MaxX>-89.65</MaxX>
+       <MaxY>36.49</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=36.23333333333333 +lat_2=34.93333333333333 +lat_0=34.33333333333334 +lon_0=-92 +x_0=399999.99998984 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arkansas_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Arkansas South (ftUS)</Name>
+   <SRSName>EPSG:3434</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>548902.5051</MinX>
+       <MinY>1439269.4889</MinY>
+       <MaxX>1907157.9116</MaxX>
+       <MaxY>2203267.4421</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-94.49</MinX>
+       <MinY>33</MinY>
+       <MaxX>-90.06</MaxX>
+       <MaxY>35.09</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=34.76666666666667 +lat_2=33.3 +lat_0=32.66666666666666 +lon_0=-92 +x_0=399999.99998984 +y_0=399999.99998984 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Arkansas_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Illinois East (ftUS)</Name>
+   <SRSName>EPSG:3435</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>710716.3765</MinX>
+       <MinY>122425.0355</MinY>
+       <MaxX>1227606.6873</MaxX>
+       <MaxY>2126194.8191</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-89.27</MinX>
+       <MinY>37</MinY>
+       <MaxX>-87.5</MaxX>
+       <MaxY>42.5</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=36.66666666666666 +lon_0=-88.33333333333333 +k=0.9999749999999999 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Illinois_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Illinois West (ftUS)</Name>
+   <SRSName>EPSG:3436</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1904145.3699</MinX>
+       <MinY>112778.5013</MinY>
+       <MaxX>2657858.5598</MaxX>
+       <MaxY>2127597.24</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-91.51</MinX>
+       <MinY>36.97</MinY>
+       <MaxX>-88.93</MaxX>
+       <MaxY>42.5</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=36.66666666666666 +lon_0=-90.16666666666667 +k=0.999941177 +x_0=699999.9999898402 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Illinois_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / New Hampshire (ftUS)</Name>
+   <SRSName>EPSG:3437</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>744111.2016</MinX>
+       <MinY>74157.4297</MinY>
+       <MaxX>1257542.5575</MaxX>
+       <MaxY>1025958.2191</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-72.56</MinX>
+       <MinY>42.7</MinY>
+       <MaxX>-70.65</MaxX>
+       <MaxY>45.31</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=42.5 +lon_0=-71.66666666666667 +k=0.999966667 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_New_Hampshire_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Louisiana North (ftUS)</Name>
+   <SRSName>EPSG:3451</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2794330.06</MinX>
+       <MinY>127164.6415</MinY>
+       <MaxX>3786167.6317</MaxX>
+       <MaxY>924048.4407</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-94.05</MinX>
+       <MinY>30.84</MinY>
+       <MaxX>-90.89</MaxX>
+       <MaxY>33.03</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=32.66666666666666 +lat_2=31.16666666666667 +lat_0=30.5 +lon_0=-92.5 +x_0=999999.9999898402 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Louisiana_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Louisiana South (ftUS)</Name>
+   <SRSName>EPSG:3452</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2449747.0844</MinX>
+       <MinY>147092.8241</MinY>
+       <MaxX>4088452.4461</MaxX>
+       <MaxY>925692.5692</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-93.93</MinX>
+       <MinY>28.88</MinY>
+       <MaxX>-88.81</MaxX>
+       <MaxY>31.02</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=30.7 +lat_2=29.3 +lat_0=28.5 +lon_0=-91.33333333333333 +x_0=999999.9999898402 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Louisiana_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Louisiana Offshore (ftUS)</Name>
+   <SRSName>EPSG:3453</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2411056.7183</MinX>
+       <MinY>1236891.5142</MinY>
+       <MaxX>4088720.3002</MaxX>
+       <MaxY>2751169.8579</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-94.05</MinX>
+       <MinY>28.88</MinY>
+       <MaxX>-88.81</MaxX>
+       <MaxY>33.03</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=27.83333333333333 +lat_2=26.16666666666667 +lat_0=25.5 +lon_0=-91.33333333333333 +x_0=999999.9999898402 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Louisiana_Offshore_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / South Dakota North (ftUS)</Name>
+   <SRSName>EPSG:3454</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>987918.4217</MinX>
+       <MinY>680557.5791</MinY>
+       <MaxX>2984920.3017</MaxX>
+       <MaxY>1337949.6741</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.07</MinX>
+       <MinY>44.14</MinY>
+       <MaxX>-96.46</MaxX>
+       <MaxY>45.94</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=44.4 +lat_2=42.83333333333334 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_South_Dakota_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / South Dakota South (ftUS)</Name>
+   <SRSName>EPSG:3455</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>960870.7806</MinX>
+       <MinY>79773.2356</MinY>
+       <MaxX>3012956.4918</MaxX>
+       <MaxY>915276.562</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.07</MinX>
+       <MinY>42.49</MinY>
+       <MaxX>-96.46</MaxX>
+       <MaxY>44.78</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=44.4 +lat_2=42.83333333333334 +lat_0=42.33333333333334 +lon_0=-100.3333333333333 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_South_Dakota_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Ohio North (ftUS)</Name>
+   <SRSName>EPSG:3734</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1322292.0096</MinX>
+       <MinY>164166.1532</MinY>
+       <MaxX>2522409.7458</MaxX>
+       <MaxY>975042.0151</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-84.81</MinX>
+       <MinY>40.1</MinY>
+       <MaxX>-80.52</MaxX>
+       <MaxY>42.32</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=41.7 +lat_2=40.43333333333333 +lat_0=39.66666666666666 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Ohio_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Ohio South (ftUS)</Name>
+   <SRSName>EPSG:3735</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1306491.6034</MinX>
+       <MinY>150890.2947</MinY>
+       <MaxX>2487238.379</MaxX>
+       <MaxY>864196.9603</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-84.81</MinX>
+       <MinY>38.4</MinY>
+       <MaxX>-80.69</MaxX>
+       <MaxY>40.35</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.03333333333333 +lat_2=38.73333333333333 +lat_0=38 +lon_0=-82.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Ohio_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wyoming East (ftUS)</Name>
+   <SRSName>EPSG:3736</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>335064.6244</MinX>
+       <MinY>184126.0081</MinY>
+       <MaxX>964387.5896</MaxX>
+       <MaxY>1642132.0206</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-106.33</MinX>
+       <MinY>41</MinY>
+       <MaxX>-104.05</MaxX>
+       <MaxY>45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40.5 +lon_0=-105.1666666666667 +k=0.9999375 +x_0=200000.00001016 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wyoming_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wyoming East Central (ftUS)</Name>
+   <SRSName>EPSG:3737</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>957188.1846</MinX>
+       <MinY>512855.0936</MinY>
+       <MaxX>1680359.7167</MaxX>
+       <MaxY>1970892.9216</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-108.62</MinX>
+       <MinY>41</MinY>
+       <MaxX>-106</MaxX>
+       <MaxY>45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40.5 +lon_0=-107.3333333333333 +k=0.9999375 +x_0=399999.99998984 +y_0=99999.99998983997 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wyoming_East_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wyoming West Central (ftUS)</Name>
+   <SRSName>EPSG:3738</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1576551.2312</MinX>
+       <MinY>184624.7505</MinY>
+       <MaxX>2313524.2019</MaxX>
+       <MaxY>1643190.539</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-110.17</MinX>
+       <MinY>41</MinY>
+       <MaxX>-107.5</MaxX>
+       <MaxY>45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40.5 +lon_0=-108.75 +k=0.9999375 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wyoming_West_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Wyoming West (ftUS)</Name>
+   <SRSName>EPSG:3739</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2357849.1524</MinX>
+       <MinY>511715.4476</MinY>
+       <MaxX>2912645.8884</MaxX>
+       <MaxY>1969792.6406</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-111.05</MinX>
+       <MinY>41</MinY>
+       <MaxX>-109.04</MaxX>
+       <MaxY>45</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=40.5 +lon_0=-110.0833333333333 +k=0.9999375 +x_0=800000.0000101599 +y_0=99999.99998983997 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Wyoming_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Hawaii zone 3 (ftUS)</Name>
+   <SRSName>EPSG:3759</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1507491.1227</MinX>
+       <MinY>-16788.4976</MinY>
+       <MaxX>1804017.821</MaxX>
+       <MaxY>201256.2033</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-158.39</MinX>
+       <MinY>21.12</MinY>
+       <MaxX>-157.52</MaxX>
+       <MaxY>21.72</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=21.16666666666667 +lon_0=-158 +k=0.99999 +x_0=500000.00001016 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Hawaii_zone_3_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Maine East (ftUS)</Name>
+   <SRSName>EPSG:26847</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>583304.2236</MinX>
+       <MinY>70507.799</MinY>
+       <MaxX>1408936.2404</MaxX>
+       <MaxY>1387189.3749</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-70.02</MinX>
+       <MinY>43.85</MinY>
+       <MaxX>-66.89</MaxX>
+       <MaxY>47.46</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=43.66666666666666 +lon_0=-68.5 +k=0.9999 +x_0=300000.0000000001 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Maine_East_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Maine West (ftUS)</Name>
+   <SRSName>EPSG:26848</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>2708341.1081</MinX>
+       <MinY>54762.7235</MinY>
+       <MaxX>3195374.8746</MaxX>
+       <MaxY>1363619.6499</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-71.08</MinX>
+       <MinY>42.98</MinY>
+       <MaxX>-69.26</MaxX>
+       <MaxY>46.57</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=tmerc +lat_0=42.83333333333334 +lon_0=-70.16666666666667 +k=0.999966667 +x_0=900000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Maine_West_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Minnesota North (ftUS)</Name>
+   <SRSName>EPSG:26849</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1585080.7572</MinX>
+       <MinY>400558.418</MinY>
+       <MaxX>3536288.4203</MaxX>
+       <MaxY>1408754.4898</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-97.24</MinX>
+       <MinY>46.64</MinY>
+       <MaxX>-89.47</MaxX>
+       <MaxY>49.39</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=48.63333333333333 +lat_2=47.03333333333333 +lat_0=46.5 +lon_0=-93.09999999999999 +x_0=800000.0000101599 +y_0=99999.99998983997 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Minnesota_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Minnesota Central (ftUS)</Name>
+   <SRSName>EPSG:26850</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1950287.846</MinX>
+       <MinY>436560.3229</MinY>
+       <MaxX>3134351.5948</MaxX>
+       <MaxY>1243217.3332</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-96.87</MinX>
+       <MinY>45.28</MinY>
+       <MaxX>-92.27</MaxX>
+       <MaxY>47.48</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=47.05 +lat_2=45.61666666666667 +lat_0=45 +lon_0=-94.25 +x_0=800000.0000101599 +y_0=99999.99998983997 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Minnesota_Central_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Minnesota South (ftUS)</Name>
+   <SRSName>EPSG:26851</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1868537.0905</MinX>
+       <MinY>522902.2639</MinY>
+       <MaxX>3362231.8901</MaxX>
+       <MaxY>1285024.8821</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-96.85</MinX>
+       <MinY>43.5</MinY>
+       <MaxX>-91.22</MaxX>
+       <MaxY>45.59</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=45.21666666666667 +lat_2=43.78333333333333 +lat_0=43 +lon_0=-94 +x_0=800000.0000101599 +y_0=99999.99998983997 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Minnesota_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / Nebraska (ftUS)</Name>
+   <SRSName>EPSG:26852</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>503372.8346</MinX>
+       <MinY>87417.9453</MinY>
+       <MaxX>2950939.361</MaxX>
+       <MaxY>1187487.926</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-104.06</MinX>
+       <MinY>40</MinY>
+       <MaxX>-95.32</MaxX>
+       <MaxY>43</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=43 +lat_2=40 +lat_0=39.83333333333334 +lon_0=-100 +x_0=500000.00001016 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_Nebraska_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / West Virginia North (ftUS)</Name>
+   <SRSName>EPSG:26853</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1323969.9671</MinX>
+       <MinY>96031.5028</MinY>
+       <MaxX>2473307.3815</MaxX>
+       <MaxY>783761.0467</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-81.76</MinX>
+       <MinY>38.75</MinY>
+       <MaxX>-77.73</MaxX>
+       <MaxY>40.63</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=40.25 +lat_2=39 +lat_0=38.5 +lon_0=-79.5 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_West_Virginia_North_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+<SpatialReference>
+   <Name>NAD83 / West Virginia South (ftUS)</Name>
+   <SRSName>EPSG:26854</SRSName>
+   <SRSDimension>2</SRSDimension>
+   <Units>ft</Units>
+   <NativeBounds>        
+       <MinX>1487902.2004</MinX>
+       <MinY>77106.7048</MinY>
+       <MaxX>2536467.3158</MaxX>
+       <MaxY>799688.5137</MaxY>
+   </NativeBounds>        
+   <WGSBounds>
+       <MinX>-82.65</MinX>
+       <MinY>37.2</MinY>
+       <MaxX>-79.05</MaxX>
+       <MaxY>39.18</MaxY>
+   </WGSBounds>
+   <Proj4>+proj=lcc +lat_1=38.88333333333333 +lat_2=37.48333333333333 +lat_0=37 +lon_0=-81 +x_0=600000 +y_0=0 +ellps=GRS80 +datum=NAD83 +to_meter=0.3048006096012192 +no_defs </Proj4>
+   <ESRICompatibleName>NAD83_West_Virginia_South_ftUS</ESRICompatibleName>
+</SpatialReference>
+
+
 </SpatialReferences>
