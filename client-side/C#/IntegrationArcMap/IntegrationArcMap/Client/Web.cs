@@ -54,6 +54,7 @@ namespace IntegrationArcMap.Client
     private const int BufferImageLengthService = 2048;
     private const int XmlConfig = 0;
     private const int DownloadImageConfig = 1;
+    private const int LeaseTimeOut = 5000;
 
     #endregion
 
@@ -346,14 +347,15 @@ namespace IntegrationArcMap.Client
       request.ContentLength = length;
       request.KeepAlive = true;
       request.Pipelined = true;
+      request.Proxy = WebRequest.GetSystemWebProxy();
       request.PreAuthenticate = true;
       request.ContentType = "text/xml";
       request.Headers.Add("ApiKey", _apiKey.Value);
 
       if (request.ServicePoint != null)
       {
-        request.ServicePoint.ConnectionLeaseTimeout = 5000;
-        request.ServicePoint.MaxIdleTime = 5000;
+        request.ServicePoint.ConnectionLeaseTimeout = LeaseTimeOut;
+        request.ServicePoint.MaxIdleTime = LeaseTimeOut;
       }
 
       return request;
