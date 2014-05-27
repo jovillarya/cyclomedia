@@ -18,7 +18,6 @@
 
 using System.IO;
 using System.Linq;
-using System.Reflection;
 using System.Xml.Serialization;
 using System.Collections.Generic;
 
@@ -36,6 +35,7 @@ namespace IntegrationArcMap.Client
     private static readonly XmlSerializer XmlSpatialReferences;
 
     private static SpatialReferences _spatialReferences;
+    private static Web _web;
 
     #endregion
 
@@ -47,6 +47,7 @@ namespace IntegrationArcMap.Client
     static SpatialReferences()
     {
       XmlSpatialReferences = new XmlSerializer(typeof (SpatialReferences));
+      _web = Web.Instance;
     }
 
     #endregion
@@ -103,14 +104,14 @@ namespace IntegrationArcMap.Client
     // =========================================================================
     public static SpatialReferences Load()
     {
-      Assembly thisAssembly = Assembly.GetExecutingAssembly();
-      const string manualPath = @"IntegrationArcMap.Doc.GlobeSpotterSpatialReferences.xml";
-      Stream manualStream = thisAssembly.GetManifestResourceStream(manualPath);
+      const string url = "https://globespotter.cyclomedia.com/v285/api/config/srs/globespotterspatialreferences.xml";
+      Stream spatialRef = _web.DownloadUrl(url);
 
-      if (manualStream != null)
+      if (spatialRef != null)
       {
-        _spatialReferences = (SpatialReferences) XmlSpatialReferences.Deserialize(manualStream);
-        manualStream.Close();
+        spatialRef.Position = 0;
+        _spatialReferences = (SpatialReferences) XmlSpatialReferences.Deserialize(spatialRef);
+        spatialRef.Close();
       }
 
       return _spatialReferences;

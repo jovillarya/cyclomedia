@@ -182,8 +182,13 @@ namespace IntegrationArcMap.Client
 
     public Image DownloadImage(string url)
     {
-      var imageStream = GetRequest(url, GetImageCallback, DownloadImageConfig) as Stream;
+      var imageStream = GetRequest(url, GetStreamCallback, DownloadImageConfig) as Stream;
       return (imageStream == null) ? null : Image.FromStream(imageStream);
+    }
+
+    public Stream DownloadUrl(string url)
+    {
+      return GetRequest(url, GetStreamCallback, XmlConfig) as Stream;
     }
 
     #endregion
@@ -393,7 +398,7 @@ namespace IntegrationArcMap.Client
       }
     }
 
-    private static void GetImageCallback(IAsyncResult ar)
+    private static void GetStreamCallback(IAsyncResult ar)
     {
       var state = (State) ar.AsyncState;
 

@@ -303,7 +303,6 @@
     <None Include="Images\LeftArrow.png" />
     <None Include="Images\RightArrow.png" />
     <EmbeddedResource Include="Doc\Agreement.txt" />
-    <EmbeddedResource Include="Doc\GlobeSpotterSpatialReferences.xml" />
     <Content Include="LGPL-3.0.txt" />
   </ItemGroup>
   <ItemGroup>
