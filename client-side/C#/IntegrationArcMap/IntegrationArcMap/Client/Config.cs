@@ -75,8 +75,8 @@ namespace IntegrationArcMap.Client
       get
       {
         return (_baseUrlDefault == null)
-          ? (string.IsNullOrEmpty(BaseUrl) || (BaseUrl == "https://atlas.cyclomedia.com"))
-          : ((bool)_baseUrlDefault);
+          ? (string.IsNullOrEmpty(BaseUrl) || (BaseUrl == Urls.BaseUrl))
+          : ((bool) _baseUrlDefault);
       }
       set { _baseUrlDefault = value; }
     }
@@ -94,7 +94,7 @@ namespace IntegrationArcMap.Client
       get
       {
         return (_recordingsServiceDefault == null)
-          ? (string.IsNullOrEmpty(RecordingsService) || (RecordingsService == "https://atlas.cyclomedia.com/recordings/wfs"))
+          ? (string.IsNullOrEmpty(RecordingsService) || (RecordingsService == Urls.RecordingsServiceUrl))
           : ((bool) _recordingsServiceDefault);
       }
       set { _recordingsServiceDefault = value; }

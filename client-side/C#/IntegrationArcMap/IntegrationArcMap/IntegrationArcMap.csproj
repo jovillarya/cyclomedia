@@ -130,6 +130,7 @@
     <Compile Include="AddIns\GsRecentDataLayer.cs" />
     <Compile Include="AddIns\GsFrmGlobespotter.cs" />
     <Compile Include="Client\Bounds.cs" />
+    <Compile Include="Client\Urls.cs" />
     <Compile Include="Forms\FrmAgreement.cs">
       <SubType>Form</SubType>
     </Compile>

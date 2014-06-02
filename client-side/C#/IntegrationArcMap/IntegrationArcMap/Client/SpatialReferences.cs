@@ -33,9 +33,9 @@ namespace IntegrationArcMap.Client
     // Members
     // =========================================================================
     private static readonly XmlSerializer XmlSpatialReferences;
+    private static readonly Web Web;
 
     private static SpatialReferences _spatialReferences;
-    private static Web _web;
 
     #endregion
 
@@ -47,7 +47,7 @@ namespace IntegrationArcMap.Client
     static SpatialReferences()
     {
       XmlSpatialReferences = new XmlSerializer(typeof (SpatialReferences));
-      _web = Web.Instance;
+      Web = Web.Instance;
     }
 
     #endregion
@@ -104,8 +104,7 @@ namespace IntegrationArcMap.Client
     // =========================================================================
     public static SpatialReferences Load()
     {
-      const string url = "https://globespotter.cyclomedia.com/v285/api/config/srs/globespotterspatialreferences.xml";
-      Stream spatialRef = _web.DownloadUrl(url);
+      Stream spatialRef = Web.DownloadSpatialReferences();
 
       if (spatialRef != null)
       {

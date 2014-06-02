@@ -83,7 +83,7 @@ namespace IntegrationArcMap.Client
     // =========================================================================
     private string BaseUrl
     {
-      get { return (_config.BaseUrlDefault ? "https://atlas.cyclomedia.com" : _config.BaseUrl); }
+      get { return (_config.BaseUrlDefault ? Urls.BaseUrl : _config.BaseUrl); }
     }
 
     private string RecordingService
@@ -184,6 +184,14 @@ namespace IntegrationArcMap.Client
     {
       var imageStream = GetRequest(url, GetStreamCallback, DownloadImageConfig) as Stream;
       return (imageStream == null) ? null : Image.FromStream(imageStream);
+    }
+
+    public Stream DownloadSpatialReferences()
+    {
+      string url = _config.SwfUrlDefault
+        ? Urls.SpatialReferencesUrl
+        : _config.SwfUrl.Replace("viewer_api.swf", "config/srs/globespotterspatialreferences.xml");
+      return DownloadUrl(url);
     }
 
     public Stream DownloadUrl(string url)
