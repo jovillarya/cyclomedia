@@ -970,6 +970,11 @@ namespace IntegrationArcMap.Layers
       }
     }
 
+    public static void ResetYears()
+    {
+      YearMonth.Clear();
+    }
+
     private static IFieldsEdit CreateField(IFieldsEdit fieldsEdit, string fieldName, esriFieldType esriFieldType)
     {
       // ReSharper disable UseObjectOrCollectionInitializer

@@ -194,31 +194,38 @@ namespace IntegrationArcMap.Objects
     // =========================================================================
     private void Redraw(object eventInfo)
     {
-      IActiveView activeView = ArcUtils.ActiveView;
-
-      if (activeView != null)
+      try
       {
-        var display = activeView.ScreenDisplay;
-        IDisplayTransformation dispTrans = display.DisplayTransformation;
-        const float arrowSizeh = ((float) ArrowSize)/2;
-        double size = dispTrans.FromPoints(arrowSizeh);
-        double x = _point.X;
-        double y = _point.Y;
-        double xmin = x - size;
-        double xmax = x + size;
-        double ymin = y - size;
-        double ymax = y + size;
-        IEnvelope envelope = new EnvelopeClass {XMin = xmin, XMax = xmax, YMin = ymin, YMax = ymax};
-        display.Invalidate(envelope, true, (short) esriScreenCache.esriNoScreenCache);
+        IActiveView activeView = ArcUtils.ActiveView;
 
-        if (_toUpdateArrow)
+        if ((activeView != null) && (!_point.IsEmpty))
         {
-          StartRedraw();
+          var display = activeView.ScreenDisplay;
+          IDisplayTransformation dispTrans = display.DisplayTransformation;
+          const float arrowSizeh = ((float) ArrowSize)/2;
+          double size = dispTrans.FromPoints(arrowSizeh);
+          double x = _point.X;
+          double y = _point.Y;
+          double xmin = x - size;
+          double xmax = x + size;
+          double ymin = y - size;
+          double ymax = y + size;
+          IEnvelope envelope = new EnvelopeClass {XMin = xmin, XMax = xmax, YMin = ymin, YMax = ymax};
+          display.Invalidate(envelope, true, (short) esriScreenCache.esriNoScreenCache);
+
+          if (_toUpdateArrow)
+          {
+            StartRedraw();
+          }
+          else
+          {
+            _updateTimer = null;
+          }
         }
-        else
-        {
-          _updateTimer = null;
-        }
+      }
+      catch (Exception ex)
+      {
+        Trace.WriteLine(ex.Message, "Arrow.Redraw");
       }
     }
 
@@ -248,7 +255,7 @@ namespace IntegrationArcMap.Objects
         {
           GsExtension extension = GsExtension.GetExtension();
 
-          if (extension.InsideScale())
+          if ((extension.InsideScale()) && (!_point.IsEmpty))
           {
             // ReSharper disable UseIndexedProperty
             // ReSharper disable CSharpWarnings::CS0612

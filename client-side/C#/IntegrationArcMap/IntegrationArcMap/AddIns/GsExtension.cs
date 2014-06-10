@@ -249,6 +249,7 @@ namespace IntegrationArcMap.AddIns
     {
       try
       {
+        CycloMediaLayer.ResetYears();
         var arcEvents = ArcUtils.ActiveViewEvents;
 
         if (arcEvents != null)

@@ -156,14 +156,6 @@ namespace IntegrationArcMap.Client
       return result;
     }
 
-    public List<XElement> CheckAuthorization()
-    {
-      const string postItem = @"<Authorization />";
-      string authorizationService = string.Format(AuthorizationRequest, BaseUrl);
-      var xml = (string) PostRequest(authorizationService, GetXmlCallback, postItem, XmlConfig);
-      return ParseXml(xml, (Namespaces.GlobeSpotterNs + "Name"));
-    }
-
     public List<XElement> GetByBbox(IEnvelope envelope, string wfsRequest)
     {
       string epsgCode = ArcUtils.EpsgCode;
@@ -191,12 +183,14 @@ namespace IntegrationArcMap.Client
       string url = _config.SwfUrlDefault
         ? Urls.SpatialReferencesUrl
         : _config.SwfUrl.Replace("viewer_api.swf", "config/srs/globespotterspatialreferences.xml");
-      return DownloadUrl(url);
+      return GetRequest(url, GetStreamCallback, XmlConfig) as Stream;
     }
 
-    public Stream DownloadUrl(string url)
+    public Stream DownloadGlobeSpotterConfiguration()
     {
-      return GetRequest(url, GetStreamCallback, XmlConfig) as Stream;
+      const string postItem = @"<Authorization />";
+      string authorizationService = string.Format(AuthorizationRequest, BaseUrl);
+      return PostRequest(authorizationService, GetStreamCallback, postItem, XmlConfig) as Stream;
     }
 
     #endregion

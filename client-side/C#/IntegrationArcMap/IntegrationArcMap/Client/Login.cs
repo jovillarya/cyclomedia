@@ -137,16 +137,10 @@ namespace IntegrationArcMap.Client
 
     public bool Check()
     {
-      Credentials = false;
-
-      if ((!string.IsNullOrEmpty(Username)) && (!string.IsNullOrEmpty(Password)))
-      {
-        var web = Web.Instance;
-        var elements = web.CheckAuthorization();
-        Credentials = (elements.Count >= 1);
-      }
-
-      return Credentials;
+      return
+        (Credentials =
+          (((!string.IsNullOrEmpty(Username)) && (!string.IsNullOrEmpty(Password))) &&
+           GlobeSpotterConfiguration.CheckCredentials()));
     }
 
     #endregion

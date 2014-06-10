@@ -129,7 +129,10 @@
     <Compile Include="AddIns\GsHistoricalDataLayer.cs" />
     <Compile Include="AddIns\GsRecentDataLayer.cs" />
     <Compile Include="AddIns\GsFrmGlobespotter.cs" />
+    <Compile Include="Client\ApplicationConfiguration.cs" />
     <Compile Include="Client\Bounds.cs" />
+    <Compile Include="Client\Functionality.cs" />
+    <Compile Include="Client\GlobeSpotterConfiguration.cs" />
     <Compile Include="Client\Urls.cs" />
     <Compile Include="Forms\FrmAgreement.cs">
       <SubType>Form</SubType>

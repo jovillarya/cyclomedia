@@ -77,7 +77,6 @@ namespace IntegrationArcMap.Forms
     private bool _toInitialize;
     private Point3D _lookAtCoord;
     private SortedDictionary<int, int> _yearMonth;
-    private Permissions _permissions;
     // ReSharper restore InconsistentNaming
 
     private readonly IList<Color> _colors = new List<Color>
@@ -163,36 +162,6 @@ namespace IntegrationArcMap.Forms
       get { return _window ?? (_window = GetDocWindow()); }
     }
 
-    private bool PointMeasurementPermissions
-    {
-      get { return (_permissions != null) && _permissions.MeasurePoint; }
-    }
-
-    private bool LineMeasurementPermissions
-    {
-      get { return (_permissions != null) && _permissions.MeasureLine; }
-    }
-
-    private bool PolygonMeasurementPermissions
-    {
-      get { return (_permissions != null) && _permissions.MeasurePolygon; }
-    }
-
-    private bool WfsPermissions
-    {
-      get { return (_permissions != null) && _permissions.AddLayerWFS; }
-    }
-
-    private bool SmartClickMeasurementPermissions
-    {
-      get { return (_permissions != null) && _permissions.MeasureSmartClick; }
-    }
-
-    public static bool? SmartClickAvailable
-    {
-      get { return (Instance._permissions == null) ? null : (bool?) Instance.SmartClickMeasurementPermissions; }
-    }
-
     private bool ApiReady
     {
       get { return ((_api != null) && _api.GetAPIReadyState()); }
@@ -201,15 +170,6 @@ namespace IntegrationArcMap.Forms
     private bool Started
     {
       get { return (_api != null); }
-    }
-
-    private bool MeasurementPermissions
-    {
-      get
-      {
-        return PointMeasurementPermissions || LineMeasurementPermissions || PolygonMeasurementPermissions ||
-               SmartClickMeasurementPermissions;
-      }
     }
 
     #endregion
@@ -468,7 +428,7 @@ namespace IntegrationArcMap.Forms
     {
       if (ApiReady)
       {
-        if (SmartClickMeasurementPermissions)
+        if (GlobeSpotterConfiguration.MeasureSmartClick)
         {
           _api.SetMeasurementSmartClickModeEnabled(_config.SmartClickEnabled);
         }
@@ -481,7 +441,7 @@ namespace IntegrationArcMap.Forms
 
     private void AddWfsLay(WfsLayer layer)
     {
-      if (WfsPermissions)
+      if (GlobeSpotterConfiguration.AddLayerWfs)
       {
         uint? layerId = null;
 
@@ -581,7 +541,7 @@ namespace IntegrationArcMap.Forms
       if ((_frmGlobespotter != null) && includeGlobespotter)
       {
         _frmGlobespotter.Clear();
-        _frmGlobespotter._permissions = null;
+        GlobeSpotterConfiguration.Delete();
       }
 
       if (_frmGlobespotter != null)
@@ -727,7 +687,7 @@ namespace IntegrationArcMap.Forms
     {
       if (_api != null)
       {
-        _permissions = _api.GetPermissions();
+        GlobeSpotterConfiguration.Load();
         _api.SetMaxViewers(_config.MaxViewers);
         _api.SetCloseViewerEnabled(true);
         _api.SetViewerToolBarVisible(false);
@@ -743,13 +703,14 @@ namespace IntegrationArcMap.Forms
         _api.SetViewerDetailImagesVisible(_config.DetailImagesEnabled);
         _api.SetContextMenuEnabled(true);
         _api.SetKeyboardEnabled(true);
+        _api.SetViewerRotationEnabled(true);
 
-        if (MeasurementPermissions)
+        if (GlobeSpotterConfiguration.MeasurePermissions)
         {
           _api.SetMeasurementSeriesModeEnabled(true);
         }
 
-        if (SmartClickMeasurementPermissions)
+        if (GlobeSpotterConfiguration.MeasureSmartClick)
         {
           _api.SetMeasurementSmartClickModeEnabled(_config.SmartClickEnabled);
         }
@@ -1231,7 +1192,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnAddVectorLayer(VectorLayer vectorLayer)
     {
-      if (WfsPermissions && (vectorLayer != null) && vectorLayer.IsVisibleInGlobespotter && (_api != null))
+      if (GlobeSpotterConfiguration.AddLayerWfs && (vectorLayer != null) && vectorLayer.IsVisibleInGlobespotter && (_api != null))
       {
         OnRemoveVectorLayer(vectorLayer);
         Color color;
@@ -1242,7 +1203,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnRemoveVectorLayer(VectorLayer vectorLayer)
     {
-      if (WfsPermissions && (vectorLayer != null) && (_api != null))
+      if (GlobeSpotterConfiguration.AddLayerWfs && (vectorLayer != null) && (_api != null))
       {
         if (_vectorLayers.ContainsKey(vectorLayer))
         {
@@ -1255,7 +1216,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnRefreshVectorLayer(VectorLayer layer)
     {
-      if (WfsPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.AddLayerWfs && (_api != null))
       {
         if (layer != null)
         {
@@ -1469,7 +1430,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnStartMeasurement(IGeometry geometry)
     {
-      if (MeasurementPermissions)
+      if (GlobeSpotterConfiguration.MeasurePermissions)
       {
         Measurement measurement = Measurement.Sketch;
         StartMeasurement(geometry, measurement, true);
@@ -1478,7 +1439,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnDeleteFeature(IFeature feature)
     {
-      if (MeasurementPermissions)
+      if (GlobeSpotterConfiguration.MeasurePermissions)
       {
         IGeometry geometry = feature.Shape;
 
@@ -1496,7 +1457,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnStartEditFeature(IEnumFeature features)
     {
-      if (MeasurementPermissions && (features != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (features != null))
       {
         features.Reset();
         IFeature feature;
@@ -1528,7 +1489,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnUpdateEditFeature(IFeature feature)
     {
-      if (MeasurementPermissions && (feature != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (feature != null))
       {
         IGeometry geometry = feature.Shape;
 
@@ -1546,7 +1507,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnStopEdit()
     {
-      if (MeasurementPermissions)
+      if (GlobeSpotterConfiguration.MeasurePermissions)
       {
         _drawingSketch = false;
         Measurement.RemoveAll();
@@ -1556,7 +1517,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnCreateSketch(IEditSketch3 sketch)
     {
-      if (MeasurementPermissions && (!_sketchModified) && (!_screenPointAdded) && (_layer != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (!_sketchModified) && (!_screenPointAdded) && (_layer != null))
       {
         _sketchModified = true;
         _layer.AddZToSketch(sketch);
@@ -1566,7 +1527,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnModifiedSketch(IGeometry geometry)
     {
-      if (MeasurementPermissions)
+      if (GlobeSpotterConfiguration.MeasurePermissions)
       {
         _mapPointAdded = !_screenPointAdded;
         Measurement measurement = Measurement.Sketch;
@@ -1591,7 +1552,7 @@ namespace IntegrationArcMap.Forms
 
     private void OnSketchFinished()
     {
-      if (MeasurementPermissions)
+      if (GlobeSpotterConfiguration.MeasurePermissions)
       {
         _screenPointAdded = false;
         _mapPointAdded = false;
@@ -1606,7 +1567,7 @@ namespace IntegrationArcMap.Forms
 
     private Measurement StartMeasurement(IGeometry geometry, Measurement measurement, bool sketch)
     {
-      if (MeasurementPermissions)
+      if (GlobeSpotterConfiguration.MeasurePermissions)
       {
         bool measurementExists = false;
         const string name = "my measurement";
@@ -1652,7 +1613,7 @@ namespace IntegrationArcMap.Forms
 
     public void CloseMeasurement(int entityId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.CloseMeasurement(entityId);
       }
@@ -1660,7 +1621,7 @@ namespace IntegrationArcMap.Forms
 
     public void RemoveMeasurement(int entityId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.RemoveEntity(entityId);
       }
@@ -1668,7 +1629,7 @@ namespace IntegrationArcMap.Forms
 
     public void OpenMeasurement(int entityId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.OpenMeasurement(entityId);
         _api.SetFocusEntity(entityId);
@@ -1677,7 +1638,7 @@ namespace IntegrationArcMap.Forms
 
     public void DisableMeasurementSeries()
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.SetMeasurementSeriesModeEnabled(false);
       }
@@ -1687,7 +1648,7 @@ namespace IntegrationArcMap.Forms
     {
       bool result = false;
 
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         result = _api.GetMeasurementSeriesModeEnabled();
       }
@@ -1697,7 +1658,7 @@ namespace IntegrationArcMap.Forms
 
     public void EnableMeasurementSeries(int entityId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.NextMeasurementSeries(entityId);
         _api.SetMeasurementSeriesModeEnabled(true);
@@ -1706,7 +1667,7 @@ namespace IntegrationArcMap.Forms
 
     public void EnableMeasurementSeries()
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.SetMeasurementSeriesModeEnabled(true);
       }
@@ -1714,7 +1675,7 @@ namespace IntegrationArcMap.Forms
 
     public void RemoveMeasurementPoint(int entityId, int pointId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.RemoveMeasurementPoint(entityId, pointId);
       }
@@ -1724,7 +1685,7 @@ namespace IntegrationArcMap.Forms
     {
       int result = -1;
 
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         var point3D = new Point3D(point.X, point.Y, point.Z);
         result = _api.CreateMeasurementPoint(entityId, point3D);
@@ -1735,7 +1696,7 @@ namespace IntegrationArcMap.Forms
 
     public void OpenMeasurementPoint(int entityId, int pointId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.OpenMeasurementPoint(entityId, pointId);
         PointMeasurementData pointMeasurementData = _api.GetMeasurementPointData(entityId, pointId);
@@ -1745,7 +1706,7 @@ namespace IntegrationArcMap.Forms
 
     public void AddMeasurementPoint(int entityId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.AddMeasurementPoint(entityId);
       }
@@ -1753,7 +1714,7 @@ namespace IntegrationArcMap.Forms
 
     public void SetFocusEntity(int entityId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.SetFocusEntity(entityId);
       }
@@ -1761,7 +1722,7 @@ namespace IntegrationArcMap.Forms
 
     public void CloseMeasurementPoint(int entityId, int pointId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.CloseMeasurementPoint(entityId, pointId);
         FrmMeasurement.CloseMeasurementPoint(entityId, pointId);
@@ -1775,7 +1736,7 @@ namespace IntegrationArcMap.Forms
       switch (typeOfLayer)
       {
         case TypeOfLayer.Point:
-          if (PointMeasurementPermissions)
+          if (GlobeSpotterConfiguration.MeasurePoint)
           {
             entityId = _api.AddPointMeasurement(_measurementName);
             OpenMeasurement(entityId);
@@ -1785,7 +1746,7 @@ namespace IntegrationArcMap.Forms
 
           break;
         case TypeOfLayer.Line:
-          if (LineMeasurementPermissions)
+          if (GlobeSpotterConfiguration.MeasureLine)
           {
             entityId = _api.AddLineMeasurement(_measurementName);
             OpenMeasurement(entityId);
@@ -1794,7 +1755,7 @@ namespace IntegrationArcMap.Forms
 
           break;
         case TypeOfLayer.Polygon:
-          if (PolygonMeasurementPermissions)
+          if (GlobeSpotterConfiguration.MeasurePolygon)
           {
             entityId = _api.AddSurfaceMeasurement(_measurementName);
             _api.SetMeasurementExtrusionEnabled(entityId, false);
@@ -1810,7 +1771,7 @@ namespace IntegrationArcMap.Forms
 
     public void MeasurementPointUpdated(int entityId, int pointId)
     {
-      if (MeasurementPermissions)
+      if (GlobeSpotterConfiguration.MeasurePermissions)
       {
         _screenPointAdded = !_mapPointAdded;
 
@@ -1839,7 +1800,7 @@ namespace IntegrationArcMap.Forms
 
     public void RemoveMeasurementObservation(int entityId, int pointId, string imageId)
     {
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         _api.RemoveMeasurementPointObservation(entityId, pointId, imageId);
       }
@@ -1894,7 +1855,7 @@ namespace IntegrationArcMap.Forms
     {
       var observations = new List<MeasurementObservation>();
 
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         string[] imageIds = _api.GetMeasurementPointObservationImageIDs(entityId, pointId);
 
@@ -1915,7 +1876,7 @@ namespace IntegrationArcMap.Forms
     {
       GsMeasurementPoint measurementPoint = null;
 
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         PointMeasurementData data = _api.GetMeasurementPointData(entityId, pointId);
 
@@ -1932,7 +1893,7 @@ namespace IntegrationArcMap.Forms
     {
       int result = 0;
 
-      if (MeasurementPermissions && (_api != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         result = _api.GetMeasurementPointIndex(entityId, pointId);
       }

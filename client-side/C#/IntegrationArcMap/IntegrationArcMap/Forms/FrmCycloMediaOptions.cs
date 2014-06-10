@@ -20,7 +20,6 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
-using System.Net;
 using System.Reflection;
 using System.Windows.Forms;
 using IntegrationArcMap.AddIns;
@@ -48,7 +47,6 @@ namespace IntegrationArcMap.Forms
     // =========================================================================
     private static FrmCycloMediaOptions _frmCycloMediaOptions;
     private static Login _login;
-    private static bool? _smartMeasurementPermissions;
 
     private Config _config;
     private bool _mssgBoxShow;
@@ -119,7 +117,6 @@ namespace IntegrationArcMap.Forms
     static FrmCycloMediaOptions()
     {
       _login = Client.Login.Instance;
-      _smartMeasurementPermissions = null;
     }
 
     #endregion
@@ -171,16 +168,7 @@ namespace IntegrationArcMap.Forms
 
     public static void CheckOpenCredentials()
     {
-      bool credentials;
-
-      try
-      {
-        credentials = _login.Check();
-      }
-      catch
-      {
-        credentials = false;
-      }
+      bool credentials = _login.Check();
 
       if (!credentials)
       {
@@ -211,7 +199,6 @@ namespace IntegrationArcMap.Forms
     private void LoadData()
     {
       lblLoginStatus.Text = _login.Credentials ? LoginSuccessfully : LoginFailed;
-      _smartMeasurementPermissions = _smartMeasurementPermissions ?? FrmGlobespotter.SmartClickAvailable;
 
       bool apply = btnApply.Enabled;
       ckDefaultBaseUrl.Checked = _config.BaseUrlDefault;
@@ -229,8 +216,8 @@ namespace IntegrationArcMap.Forms
       nudDistVectLayerViewer.Value = _config.DistanceCycloramaVectorLayer;
       txtPassword.Text = _login.Password;
       txtUsername.Text = _login.Username;
-      ckEnableSmartClick.Checked = ((_smartMeasurementPermissions ?? false) && _config.SmartClickEnabled);
-      ckEnableSmartClick.Enabled = (_smartMeasurementPermissions ?? false);
+      ckEnableSmartClick.Checked = (GlobeSpotterConfiguration.MeasureSmartClick && _config.SmartClickEnabled);
+      ckEnableSmartClick.Enabled = GlobeSpotterConfiguration.MeasureSmartClick;
       ckDetailImages.Checked = _config.DetailImagesEnabled;
       cbSpatialReferences.Items.Clear();
       SpatialReferences spatialReferences = SpatialReferences.Instance;
@@ -255,23 +242,9 @@ namespace IntegrationArcMap.Forms
       }
     }
 
-    private void ExceptionOccured(Exception ex)
-    {
-      MessageBox.Show(string.Format("Exception occurred: {0}.", ex.Message));
-      _mssgBoxShow = true;
-    }
-
     private void FrmSettingsLoad()
     {
-      try
-      {
-        lblLoginStatus.Text = _login.Check() ? LoginSuccessfully : LoginFailed;
-      }
-      catch
-      {
-        lblLoginStatus.Text = LoginFailed;
-      }
-
+      lblLoginStatus.Text = _login.Check() ? LoginSuccessfully : LoginFailed;
       LoadData();
       txtUsername.Focus();
     }
@@ -289,38 +262,25 @@ namespace IntegrationArcMap.Forms
       bool result = false;
       _login.SetLoginCredentials(txtUsername.Text, txtPassword.Text);
 
-      try
+      if (_login.Check())
       {
-        if (_login.Check())
-        {
-          FrmGlobespotter.LoginSuccesfull();
-          result = true;
-        }
+        FrmGlobespotter.LoginSuccesfull();
+        result = true;
       }
-      catch (WebException ex)
+      else
       {
-        var responce = ex.Response as HttpWebResponse;
+        GlobeSpotterConfiguration conf = GlobeSpotterConfiguration.Instance;
 
-        if (responce != null)
+        if (conf.LoginFailed)
         {
-          if ((responce.StatusCode == HttpStatusCode.Unauthorized) || (responce.StatusCode == HttpStatusCode.Forbidden) ||
-              (responce.StatusCode == HttpStatusCode.NotFound))
-          {
-            txtUsername.Focus();
-          }
-          else
-          {
-            ExceptionOccured(ex);
-          }
+          txtUsername.Focus();
         }
-        else
+
+        if (conf.LoadException)
         {
-          ExceptionOccured(ex);
+          MessageBox.Show(string.Format("Exception occurred: {0}.", conf.Exception.Message));
+          _mssgBoxShow = true;
         }
-      }
-      catch (Exception ex)
-      {
-        ExceptionOccured(ex);
       }
 
       lblLoginStatus.Text = _login.Credentials ? LoginSuccessfully : LoginFailed;
@@ -331,7 +291,6 @@ namespace IntegrationArcMap.Forms
     {
       // determinate smart click permissions
       bool usernameChanged = (txtUsername.Text != _login.Username) || (txtPassword.Text != _login.Password);
-      _smartMeasurementPermissions = usernameChanged ? null : _smartMeasurementPermissions;
 
       // determinate restart
       bool baseUrlChanged = (txtBaseUrlLocation.Text != _config.BaseUrl) ||
@@ -347,7 +306,7 @@ namespace IntegrationArcMap.Forms
       // Save values
       var maxViewers = (uint) nudMaxViewers.Value;
       var distLayer = (uint) nudDistVectLayerViewer.Value;
-      bool smartClickEnabled = (_smartMeasurementPermissions ?? false)
+      bool smartClickEnabled = GlobeSpotterConfiguration.MeasureSmartClick && (!usernameChanged)
         ? ckEnableSmartClick.Checked
         : _config.SmartClickEnabled;
       _config.SpatialReference = selectedItem ?? _config.SpatialReference;
