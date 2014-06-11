@@ -216,7 +216,6 @@ namespace IntegrationArcMap.AddIns
       {
         GsShowInCyclorama.RemoveFromMenu();
         FrmCycloMediaOptions.CloseForm();
-        FrmHelp.CloseForm();
         FrmMeasurement.Close();
         FrmIdentify.Close();
         CycloMediaGroupLayer cycloLayer = CycloMediaGroupLayer;
@@ -238,7 +237,6 @@ namespace IntegrationArcMap.AddIns
       }
 
       FrmCycloMediaOptions.CloseForm();
-      FrmHelp.CloseForm();
     }
 
     #endregion

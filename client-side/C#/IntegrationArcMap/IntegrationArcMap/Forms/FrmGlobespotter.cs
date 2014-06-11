@@ -489,6 +489,37 @@ namespace IntegrationArcMap.Forms
       return _colors[index];
     }
 
+    private void MoveToLocation(uint viewerId)
+    {
+      if (_api != null)
+      {
+        RecordingLocation location = _api.GetRecordingLocation(viewerId);
+        IActiveView activeView = ArcUtils.ActiveView;
+
+        if ((location != null) && (activeView != null))
+        {
+          IPoint point = ArcUtils.GsToMapPoint(location.X, location.Y, location.Z);
+          IEnvelope envelope = activeView.Extent;
+
+          if ((point != null) && (envelope != null))
+          {
+            const double percent = 10.0;
+            double xBorder = ((envelope.XMax - envelope.XMin)*percent)/100;
+            double yBorder = ((envelope.YMax - envelope.YMin)*percent)/100;
+            bool inside = (point.X > (envelope.XMin + xBorder)) && (point.X < (envelope.XMax - xBorder)) &&
+                          (point.Y > (envelope.YMin + yBorder)) && (point.Y < (envelope.YMax - yBorder));
+
+            if (!inside)
+            {
+              envelope.CenterAt(point);
+              activeView.Extent = envelope;
+              activeView.Refresh();
+            }
+          }
+        }
+      }
+    }
+
     #endregion
 
     #region public static functions
@@ -833,6 +864,8 @@ namespace IntegrationArcMap.Forms
           _imageId = _restartImages[0];
           OpenImage(false);
         }
+
+        MoveToLocation(viewerId);
       }
     }
 
@@ -893,6 +926,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnViewerActive(uint viewerId)
     {
+      MoveToLocation(viewerId);
       Viewer viewer = Viewer.Get(viewerId);
       viewer.SetActive();
     }
@@ -1144,15 +1178,23 @@ namespace IntegrationArcMap.Forms
 
     public void OnShowLocationRequested(uint viewerId, Point3D point3D)
     {
-      IPoint point = ArcUtils.GsToMapPoint(point3D.x, point3D.y, point3D.z);
       IActiveView activeView = ArcUtils.ActiveView;
-      IEnvelope envelope = activeView.Extent;
-      envelope.CenterAt(point);
-      activeView.Extent = envelope;
-      activeView.Refresh();
 
-      Viewer viewer = Viewer.Get(viewerId);
-      viewer.SetActive();
+      if ((activeView != null) && (point3D != null))
+      {
+        IPoint point = ArcUtils.GsToMapPoint(point3D.x, point3D.y, point3D.z);
+        IEnvelope envelope = activeView.Extent;
+
+        if ((point != null) && (envelope != null))
+        {
+          envelope.CenterAt(point);
+          activeView.Extent = envelope;
+          activeView.Refresh();
+
+          Viewer viewer = Viewer.Get(viewerId);
+          viewer.SetActive();
+        }
+      }
     }
 
     public void OnDetailImagesVisibilityChanged(bool value)

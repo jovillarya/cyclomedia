@@ -104,9 +104,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\GlobeSpotterAPI.dll</HintPath>
     </Reference>
-    <Reference Include="PDFLibNet">
-      <HintPath>..\..\Libs\PDFLibNet.dll</HintPath>
-    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <Private>True</Private>
@@ -139,12 +136,6 @@
     </Compile>
     <Compile Include="Forms\FrmAgreement.Designer.cs">
       <DependentUpon>FrmAgreement.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\FrmHelp.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\FrmHelp.Designer.cs">
-      <DependentUpon>FrmHelp.cs</DependentUpon>
     </Compile>
     <Compile Include="Client\SpatialReference.cs" />
     <Compile Include="Client\SpatialReferences.cs" />
@@ -267,9 +258,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Forms\FrmAgreement.resx">
       <DependentUpon>FrmAgreement.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\FrmHelp.resx">
-      <DependentUpon>FrmHelp.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmIdentify.resx">
       <DependentUpon>FrmIdentify.cs</DependentUpon>

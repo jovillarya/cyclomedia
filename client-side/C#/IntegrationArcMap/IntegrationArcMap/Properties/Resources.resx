@@ -142,4 +142,10 @@
   <data name="GsOpenLocation_OnMouseUp_You_are_not_authorized_to_view_the_image_" xml:space="preserve">
     <value>You are not authorized to view the image.</value>
   </data>
+  <data name="GsHelp_OnClick_Adobe_reader_is_not_installed_on_your_system__please_first_install_adobe_reader" xml:space="preserve">
+    <value>Adobe reader is not installed on your system, please first install adobe reader</value>
+  </data>
+  <data name="GsHelp_OnClick_adobe_reader_is_not_installed" xml:space="preserve">
+    <value>adobe reader is not installed</value>
+  </data>
 </root>
