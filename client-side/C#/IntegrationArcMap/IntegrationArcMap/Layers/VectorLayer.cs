@@ -46,7 +46,7 @@ namespace IntegrationArcMap.Layers
   public delegate void VectorLayerChangedDelegate(VectorLayer layer);
   public delegate void VectorLayerRemoveDelegate(VectorLayer layer);
 
-  public delegate void FeatureStartEditDelegate(IEnumFeature features);
+  public delegate void FeatureStartEditDelegate(IList<IGeometry> geometries);
   public delegate void FeatureUpdateEditDelegate(IFeature feature);
   public delegate void FeatureDeleteDelegate(IFeature feature);
 
@@ -151,6 +151,73 @@ namespace IntegrationArcMap.Layers
       {
         _isVisibleInGlobespotter = value;
         OnLayerChanged(this);
+        IEditor3 editor = ArcUtils.Editor;
+
+        if (editor != null)
+        {
+          var editLayers = editor as IEditLayers;
+
+          if (editLayers != null)
+          {
+            ILayer currentLayer = editLayers.CurrentLayer;
+
+            if (currentLayer != null)
+            {
+              VectorLayer vectorLayer = GetLayer(currentLayer);
+
+              if (vectorLayer == this)
+              {
+                if (value)
+                {
+                  OnSketchModified();
+                }
+                else
+                {
+                  IEditTask task = editor.CurrentTask;
+
+                  if (task != null)
+                  {
+                    string name = task.Name;
+
+                    if ((name == "Create New Feature") || (name == "Reshape Feature"))
+                    {
+                      if (SketchFinishedEvent != null)
+                      {
+                        SketchFinishedEvent();
+                        AvContentChanged();
+                      }
+
+                      OnSelectionChanged();
+                    }
+                  }
+                }
+              }
+            }
+
+            foreach (var editFeature in EditFeatures)
+            {
+              VectorLayer vectorLayer = GetLayer(editFeature);
+
+              if (vectorLayer == this)
+              {
+                if (value)
+                {
+                  OnSelectionChanged();
+                  var sketch = editor as IEditSketch3;
+
+                  if (sketch != null)
+                  {
+                    StartMeasurementEvent(sketch.Geometry);
+                  }
+                }
+                else
+                {
+                  FeatureDeleteEvent(editFeature);
+                }
+              }
+            }
+          }
+        }
       }
     }
 
@@ -243,6 +310,23 @@ namespace IntegrationArcMap.Layers
                                                         (layerCheck._featureClass == featureClass)
                                                           ? layerCheck
                                                           : current);
+    }
+
+    public static VectorLayer GetLayer(IFeature feature)
+    {
+      VectorLayer result = null;
+
+      if (feature != null)
+      {
+        var featureClass = feature.Class as IFeatureClass;
+
+        if (featureClass != null)
+        {
+          result = GetLayer(featureClass);
+        }
+      }
+
+      return result;
     }
 
     private static IList<VectorLayer> DetectVectorLayers(bool initEvents)
@@ -552,7 +636,7 @@ namespace IntegrationArcMap.Layers
                                         {
                                           _featureClass = featureClass,
                                           _layer = featureLayer,
-                                          IsVisibleInGlobespotter = true
+                                          IsVisibleInGlobespotter = false
                                         };
 
                     _layers.Add(vectorLayer);
@@ -635,17 +719,19 @@ namespace IntegrationArcMap.Layers
     {
       try
       {
-        if (FeatureUpdateEditEvent != null)
+        var feature = obj as IFeature;
+
+        if ((FeatureUpdateEditEvent != null) && (feature != null))
         {
-          var feature = obj as IFeature;
-
-          if (feature != null)
+          if (!EditFeatures.Contains(feature))
           {
-            if (!EditFeatures.Contains(feature))
-            {
-              EditFeatures.Add(feature);
-            }
+            EditFeatures.Add(feature);
+          }
 
+          VectorLayer vectorLayer = GetLayer(feature);
+
+          if ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter))
+          {
             FeatureUpdateEditEvent(feature);
             AvContentChanged();
           }
@@ -662,20 +748,41 @@ namespace IntegrationArcMap.Layers
       try
       {
         IEditor3 editor = ArcUtils.Editor;
-        IEnumFeature editSelection = editor.EditSelection;
-        editSelection.Reset();
-        EditFeatures.Clear();
-        IFeature feature;
 
-        while ((feature = editSelection.Next()) != null)
+        if (editor != null)
         {
-          EditFeatures.Add(feature);
-        }
+          IEnumFeature editSelection = editor.EditSelection;
 
-        if (FeatureStartEditEvent != null)
-        {
-          FeatureStartEditEvent(editSelection);
-          AvContentChanged();
+          if (editSelection != null)
+          {
+            editSelection.Reset();
+            EditFeatures.Clear();
+            IFeature feature;
+
+            while ((feature = editSelection.Next()) != null)
+            {
+              EditFeatures.Add(feature);
+            }
+
+            if (FeatureStartEditEvent != null)
+            {
+              var geometries = new List<IGeometry>();
+              editSelection.Reset();
+
+              while ((feature = editSelection.Next()) != null)
+              {
+                VectorLayer vectorLayer = GetLayer(feature);
+
+                if ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter))
+                {
+                  geometries.Add(feature.Shape);
+                }
+              }
+
+              FeatureStartEditEvent(geometries);
+              AvContentChanged();
+            }
+          }
         }
       }
       catch (Exception ex)
@@ -688,17 +795,19 @@ namespace IntegrationArcMap.Layers
     {
       try
       {
-        if (FeatureDeleteEvent != null)
+        var feature = obj as IFeature;
+
+        if ((FeatureDeleteEvent != null) && (feature != null))
         {
-          var feature = obj as IFeature;
-
-          if (feature != null)
+          if (EditFeatures.Contains(feature))
           {
-            if (EditFeatures.Contains(feature))
-            {
-              EditFeatures.Remove(feature);
-            }
+            EditFeatures.Remove(feature);
+          }
 
+          VectorLayer vectorLayer = GetLayer(feature);
+
+          if ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter))
+          {
             FeatureDeleteEvent(feature);
             AvContentChanged();
           }
@@ -747,40 +856,53 @@ namespace IntegrationArcMap.Layers
         }
 
         IEditor3 editor = ArcUtils.Editor;
-        var sketch = editor as IEditSketch3;
 
-        if (sketch != null)
+        if (editor != null)
         {
-          IGeometry geometry = sketch.Geometry;
-          IPoint lastPoint = sketch.LastPoint;
-          IEditTask task = editor.CurrentTask;
-          // ReSharper disable CompareOfFloatsByEqualityOperator
+          var sketch = editor as IEditSketch3;
+          var editLayers = editor as IEditLayers;
 
-          if (task != null)
+          if ((sketch != null) && (editLayers != null))
           {
-            string name = task.Name;
+            IEditTask task = editor.CurrentTask;
+            ILayer currentLayer = editLayers.CurrentLayer;
+            VectorLayer vectorLayer = (EditFeatures.Count != 1)
+              ? ((currentLayer == null) ? null : GetLayer(currentLayer))
+              : GetLayer(EditFeatures[0]);
 
-            if ((name == "Create New Feature") || (name == "Reshape Feature"))
+            if (task != null)
             {
-              if (lastPoint != null)
+              if ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter))
               {
-                if ((lastPoint.Z == 0) && (SketchCreateEvent != null) && sketch.ZAware)
-                {
-                  SketchCreateEvent(sketch);
-                }
-              }
-              else
-              {
-                if ((editor.EditState != esriEditState.esriStateNotEditing) && (StartMeasurementEvent != null))
-                {
-                  StartMeasurementEvent(geometry);
-                }
-              }
+                string name = task.Name;
 
-              // ReSharper restore CompareOfFloatsByEqualityOperator
-              if (SketchModifiedEvent != null)
-              {
-                SketchModifiedEvent(geometry);
+                if ((name == "Create New Feature") || (name == "Reshape Feature"))
+                {
+                  IGeometry geometry = sketch.Geometry;
+                  IPoint lastPoint = sketch.LastPoint;
+                  // ReSharper disable CompareOfFloatsByEqualityOperator
+
+                  if (lastPoint != null)
+                  {
+                    if ((lastPoint.Z == 0) && (SketchCreateEvent != null) && sketch.ZAware)
+                    {
+                      SketchCreateEvent(sketch);
+                    }
+                  }
+                  else
+                  {
+                    if ((editor.EditState != esriEditState.esriStateNotEditing) && (StartMeasurementEvent != null))
+                    {
+                      StartMeasurementEvent(geometry);
+                    }
+                  }
+
+                  // ReSharper restore CompareOfFloatsByEqualityOperator
+                  if (SketchModifiedEvent != null)
+                  {
+                    SketchModifiedEvent(geometry);
+                  }
+                }
               }
             }
           }
@@ -797,21 +919,34 @@ namespace IntegrationArcMap.Layers
       try
       {
         IEditor3 editor = ArcUtils.Editor;
-        IEditTask task = editor.CurrentTask;
 
-        if (task != null)
+        if (editor != null)
         {
-          string name = task.Name;
+          var editLayers = editor as IEditLayers;
 
-          if ((name == "Create New Feature") || (name == "Reshape Feature"))
+          if (editLayers != null)
           {
-            if (SketchFinishedEvent != null)
-            {
-              SketchFinishedEvent();
-              AvContentChanged();
-            }
+            IEditTask task = editor.CurrentTask;
+            ILayer currentLayer = editLayers.CurrentLayer;
+            VectorLayer vectorLayer = (EditFeatures.Count != 1)
+              ? ((currentLayer == null) ? null : GetLayer(currentLayer))
+              : GetLayer(EditFeatures[0]);
 
-            OnSelectionChanged();
+            if ((task != null) && ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
+            {
+              string name = task.Name;
+
+              if ((name == "Create New Feature") || (name == "Reshape Feature"))
+              {
+                if (SketchFinishedEvent != null)
+                {
+                  SketchFinishedEvent();
+                  AvContentChanged();
+                }
+
+                OnSelectionChanged();
+              }
+            }
           }
         }
       }
@@ -823,93 +958,133 @@ namespace IntegrationArcMap.Layers
 
     private static void OnCurrentTaskChanged()
     {
-      IEditor3 editor = ArcUtils.Editor;
-      IEditTask task = editor.CurrentTask;
-      var sketch = editor as IEditSketch3;
-
-      if ((sketch != null) && (task != null))
+      try
       {
-        IGeometry geometry = sketch.Geometry;
-        string name = task.Name;
+        IEditor3 editor = ArcUtils.Editor;
 
-        if (name == "Modify Feature")
+        if (editor != null)
         {
-          Measurement measurement = Measurement.Get(geometry, false);
+          var sketch = editor as IEditSketch3;
+          var editLayers = editor as IEditLayers;
 
-          if (measurement != null)
+          if ((sketch != null) && (editLayers != null))
           {
-            int nrPoints;
-            var ptColl = measurement.ToPointCollection(geometry, out nrPoints);
+            IEditTask task = editor.CurrentTask;
+            ILayer currentLayer = editLayers.CurrentLayer;
+            VectorLayer vectorLayer = (EditFeatures.Count != 1)
+              ? ((currentLayer == null) ? null : GetLayer(currentLayer))
+              : GetLayer(EditFeatures[0]);
 
-            if (ptColl != null)
+            if ((task != null) && ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
             {
-              ISketchOperation2 sketchOp = new SketchOperationClass();
-              sketchOp.Start(editor);
+              IGeometry geometry = sketch.Geometry;
+              string name = task.Name;
 
-              for (int j = 0; j < nrPoints; j++)
+              if (name == "Modify Feature")
               {
-                IPoint point = ptColl.Point[j];
-                MeasurementPoint mpoint = measurement.IsPointMeasurement
-                                            ? measurement.GetPoint(point, false)
-                                            : measurement.GetPoint(point);
+                Measurement measurement = Measurement.Get(geometry, false);
 
-                double m = (mpoint == null) ? double.NaN : mpoint.M;
-                double z = (mpoint == null) ? double.NaN : mpoint.Z;
-                IPoint point2 = new PointClass {X = point.X, Y = point.Y, Z = z, M = m, ZAware = sketch.ZAware};
-                ptColl.UpdatePoint(j, point2);
-
-                if (measurement.IsPointMeasurement)
+                if (measurement != null)
                 {
-                  sketch.Geometry = point2;
+                  int nrPoints;
+                  var ptColl = measurement.ToPointCollection(geometry, out nrPoints);
+
+                  if (ptColl != null)
+                  {
+                    ISketchOperation2 sketchOp = new SketchOperationClass();
+                    sketchOp.Start(editor);
+
+                    for (int j = 0; j < nrPoints; j++)
+                    {
+                      IPoint point = ptColl.Point[j];
+                      MeasurementPoint mpoint = measurement.IsPointMeasurement
+                        ? measurement.GetPoint(point, false)
+                        : measurement.GetPoint(point);
+
+                      double m = (mpoint == null) ? double.NaN : mpoint.M;
+                      double z = (mpoint == null) ? double.NaN : mpoint.Z;
+                      IPoint point2 = new PointClass {X = point.X, Y = point.Y, Z = z, M = m, ZAware = sketch.ZAware};
+                      ptColl.UpdatePoint(j, point2);
+
+                      if (measurement.IsPointMeasurement)
+                      {
+                        sketch.Geometry = point2;
+                      }
+                    }
+
+                    if (!measurement.IsPointMeasurement)
+                    {
+                      sketch.Geometry = ptColl as IGeometry;
+                    }
+
+                    geometry = sketch.Geometry;
+
+                    if (geometry != null)
+                    {
+                      sketchOp.Finish(geometry.Envelope, esriSketchOperationType.esriSketchOperationGeneral, geometry);
+                    }
+                  }
+
+                  measurement.SetSketch();
+                  measurement.OpenMeasurement();
+                  measurement.DisableMeasurementSeries();
                 }
               }
-
-              if (!measurement.IsPointMeasurement)
+              else
               {
-                sketch.Geometry = ptColl as IGeometry;
-              }
+                Measurement measurement = Measurement.Get(geometry, false);
 
-              geometry = sketch.Geometry;
+                if (measurement != null)
+                {
+                  measurement.EnableMeasurementSeries();
+                }
 
-              if (geometry != null)
-              {
-                sketchOp.Finish(geometry.Envelope, esriSketchOperationType.esriSketchOperationGeneral, geometry);
+                OnSelectionChanged();
               }
             }
-
-            measurement.SetSketch();
-            measurement.OpenMeasurement();
-            measurement.DisableMeasurementSeries();
           }
         }
-        else
-        {
-          Measurement measurement = Measurement.Get(geometry, false);
-
-          if (measurement != null)
-          {
-            measurement.EnableMeasurementSeries();
-          }
-
-          OnSelectionChanged();
-        }
+      }
+      catch (Exception ex)
+      {
+        Trace.WriteLine(ex.Message, "VectorLayer.OnCurrentTaskChanged");
       }
     }
 
-    public static void OnVertexSelectionChanged()
+    private static void OnVertexSelectionChanged()
     {
-      IEditor3 editor = ArcUtils.Editor;
-      var sketch = editor as IEditSketch3;
-
-      if (sketch != null)
+      try
       {
-        IGeometry geometry = sketch.Geometry;
-        Measurement measurement = Measurement.Get(geometry, false);
+        IEditor3 editor = ArcUtils.Editor;
 
-        if (measurement != null)
+        if (editor != null)
         {
-          measurement.CheckSelectedVertex();
+          var sketch = editor as IEditSketch3;
+          var editLayers = editor as IEditLayers;
+
+          if ((sketch != null) && (editLayers != null))
+          {
+            ILayer currentLayer = editLayers.CurrentLayer;
+            IGeometry geometry = sketch.Geometry;
+            VectorLayer vectorLayer = (EditFeatures.Count != 1)
+              ? ((currentLayer == null) ? null : GetLayer(currentLayer))
+              : GetLayer(EditFeatures[0]);
+
+            if ((geometry != null) && ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
+            {
+              Measurement measurement = Measurement.Get(geometry, false);
+
+              if (measurement != null)
+              {
+                measurement.CheckSelectedVertex();
+              }
+            }
+          }
         }
+      }
+      catch (Exception ex)
+      {
+        Trace.WriteLine(ex.Message, "VectorLayer.OnVertexSelectionChanged");
       }
     }
 
@@ -922,45 +1097,66 @@ namespace IntegrationArcMap.Layers
     // =========================================================================
     private static void EditToolCheck(object context)
     {
-      IApplication application = ArcMap.Application;
-      ICommandItem tool = application.CurrentTool;
-
-      if ((tool != null) && (tool != _beforeTool))
+      try
       {
-        _beforeTool = tool;
-        ICommand command = tool.Command;
-        string category = tool.Category;
+        IApplication application = ArcMap.Application;
+        IEditor3 editor = ArcUtils.Editor;
 
-        if (!FrmMeasurement.IsPointOpen())
+        if ((application != null) && (editor != null))
         {
-          if (((command is IEditTool) || (category != "Editor")) && (category != "CycloMedia"))
-          {
-            OnSketchFinished();
-          }
-        }
-        else
-        {
-          if ((!(command is IEditTool)) && (category == "Editor"))
-          {
-            FrmMeasurement.DoCloseMeasurementPoint();
-          }
-        }
+          var editLayers = editor as IEditLayers;
 
-        if (category == "Editor")
-        {
-          IEditor3 editor = ArcUtils.Editor;
-          var sketch = editor as IEditSketch3;
-
-          if (sketch != null)
+          if (editLayers != null)
           {
-            IGeometry geometry = sketch.Geometry;
+            ICommandItem tool = application.CurrentTool;
+            ILayer currentLayer = editLayers.CurrentLayer;
+            VectorLayer vectorLayer = (EditFeatures.Count != 1)
+              ? ((currentLayer == null) ? null : GetLayer(currentLayer))
+              : GetLayer(EditFeatures[0]);
 
-            if ((editor.EditState != esriEditState.esriStateNotEditing) && (StartMeasurementEvent != null))
+            if (((tool != null) && (tool != _beforeTool)) &&
+                ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
             {
-              StartMeasurementEvent(geometry);
+              _beforeTool = tool;
+              ICommand command = tool.Command;
+              string category = tool.Category;
+
+              if (!FrmMeasurement.IsPointOpen())
+              {
+                if (((command is IEditTool) || (category != "Editor")) && (category != "CycloMedia"))
+                {
+                  OnSketchFinished();
+                }
+              }
+              else
+              {
+                if ((!(command is IEditTool)) && (category == "Editor"))
+                {
+                  FrmMeasurement.DoCloseMeasurementPoint();
+                }
+              }
+
+              if (category == "Editor")
+              {
+                var sketch = editor as IEditSketch3;
+
+                if (sketch != null)
+                {
+                  IGeometry geometry = sketch.Geometry;
+
+                  if ((editor.EditState != esriEditState.esriStateNotEditing) && (StartMeasurementEvent != null))
+                  {
+                    StartMeasurementEvent(geometry);
+                  }
+                }
+              }
             }
           }
         }
+      }
+      catch (Exception ex)
+      {
+        Trace.WriteLine(ex.Message, "VectorLayer.OnEditToolCheck");
       }
     }
 

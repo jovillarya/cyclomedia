@@ -1497,18 +1497,14 @@ namespace IntegrationArcMap.Forms
       }
     }
 
-    private void OnStartEditFeature(IEnumFeature features)
+    private void OnStartEditFeature(IList<IGeometry> geometries)
     {
-      if (GlobeSpotterConfiguration.MeasurePermissions && (features != null))
+      if (GlobeSpotterConfiguration.MeasurePermissions && (geometries != null))
       {
-        features.Reset();
-        IFeature feature;
         var usedMeasurements = new List<Measurement>();
 
-        while ((feature = features.Next()) != null)
+        foreach(IGeometry geometry in geometries)
         {
-          IGeometry geometry = feature.Shape;
-
           if (geometry != null)
           {
             Measurement measurement = Measurement.Get(geometry);

@@ -533,20 +533,6 @@ namespace IntegrationArcMap.Objects
               IDisplayTransformation dispTrans = display.DisplayTransformation;
               double distance = dispTrans.FromPoints(PointSize);
 
-              IColor color = Converter.ToRGBColor(Color.Black);
-              var lineSymbol = new SimpleLineSymbolClass { Color = color, Width = 1 };
-              display.SetSymbol(lineSymbol);
-
-              var polylineClass1 = new PolylineClass();
-              polylineClass1.AddPoint(new PointClass {X = _point.X - distance, Y = _point.Y});
-              polylineClass1.AddPoint(new PointClass {X = _point.X + distance, Y = _point.Y});
-              display.DrawPolyline(polylineClass1);
-
-              var polylineClass2 = new PolylineClass();
-              polylineClass2.AddPoint(new PointClass {X = _point.X, Y = _point.Y - distance});
-              polylineClass2.AddPoint(new PointClass {X = _point.X, Y = _point.Y + distance});              
-              display.DrawPolyline(polylineClass2);
-
               var fontDisp = new StdFontClass
                 {
                   Bold = false,
@@ -575,8 +561,8 @@ namespace IntegrationArcMap.Objects
                   double ydir = (_point.Y - obs[1]) / 2;
                   string imageId = observation.Key;
 
-                  color = Converter.ToRGBColor(ObsColor.ContainsKey(imageId) ? ObsColor[imageId] : Color.DarkGray);
-                  lineSymbol = new SimpleLineSymbolClass { Color = color, Width = 1.25 };
+                  IColor color = Converter.ToRGBColor(ObsColor.ContainsKey(imageId) ? ObsColor[imageId] : Color.DarkGray);
+                  ISymbol lineSymbol = new SimpleLineSymbolClass { Color = color, Width = 1.25 };
                   display.SetSymbol(lineSymbol);
 
                   var polylineClass3 = new PolylineClass();
