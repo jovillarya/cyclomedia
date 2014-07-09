@@ -48,6 +48,22 @@
       this.lblCoordinateSystemCycloramaViewer = new System.Windows.Forms.Label();
       this.cbSpatialReferences = new System.Windows.Forms.ComboBox();
       this.tbConfiguration = new System.Windows.Forms.TabPage();
+      this.grProxyServer = new System.Windows.Forms.GroupBox();
+      this.lblProxyPassword = new System.Windows.Forms.Label();
+      this.txtProxyPassword = new System.Windows.Forms.TextBox();
+      this.lblProxyUserName = new System.Windows.Forms.Label();
+      this.txtProxyUsername = new System.Windows.Forms.TextBox();
+      this.ckUseDefaultProxyCredentials = new System.Windows.Forms.CheckBox();
+      this.ckBypassProxyOnLocal = new System.Windows.Forms.CheckBox();
+      this.lblProxyPort = new System.Windows.Forms.Label();
+      this.txtProxyPort = new System.Windows.Forms.TextBox();
+      this.lblProxyAddress = new System.Windows.Forms.Label();
+      this.ckUseProxyServer = new System.Windows.Forms.CheckBox();
+      this.txtProxyAddress = new System.Windows.Forms.TextBox();
+      this.grRecordingService = new System.Windows.Forms.GroupBox();
+      this.lblLocationRecordingService = new System.Windows.Forms.Label();
+      this.ckDefaultRecordingService = new System.Windows.Forms.CheckBox();
+      this.txtRecordingServiceLocation = new System.Windows.Forms.TextBox();
       this.grBaseUrl = new System.Windows.Forms.GroupBox();
       this.lblLocationBaseUrl = new System.Windows.Forms.Label();
       this.ckDefaultBaseUrl = new System.Windows.Forms.CheckBox();
@@ -65,10 +81,10 @@
       this.btnApply = new System.Windows.Forms.Button();
       this.plSettings = new System.Windows.Forms.Panel();
       this.plButtons = new System.Windows.Forms.Panel();
-      this.grRecordingService = new System.Windows.Forms.GroupBox();
-      this.lblLocationRecordingService = new System.Windows.Forms.Label();
-      this.ckDefaultRecordingService = new System.Windows.Forms.CheckBox();
-      this.txtRecordingServiceLocation = new System.Windows.Forms.TextBox();
+      this.lblProxyDomain = new System.Windows.Forms.Label();
+      this.txtProxyDomain = new System.Windows.Forms.TextBox();
+      this.grLogin = new System.Windows.Forms.GroupBox();
+      this.grStatus = new System.Windows.Forms.GroupBox();
       this.tcSettings.SuspendLayout();
       this.tbLogin.SuspendLayout();
       this.tbSettings.SuspendLayout();
@@ -77,13 +93,16 @@
       ((System.ComponentModel.ISupportInitialize)(this.nudDistVectLayerViewer)).BeginInit();
       this.grCoordinateSystems.SuspendLayout();
       this.tbConfiguration.SuspendLayout();
+      this.grProxyServer.SuspendLayout();
+      this.grRecordingService.SuspendLayout();
       this.grBaseUrl.SuspendLayout();
       this.grSwfUrl.SuspendLayout();
       this.tbAbout.SuspendLayout();
       this.tbAgreement.SuspendLayout();
       this.plSettings.SuspendLayout();
       this.plButtons.SuspendLayout();
-      this.grRecordingService.SuspendLayout();
+      this.grLogin.SuspendLayout();
+      this.grStatus.SuspendLayout();
       this.SuspendLayout();
       // 
       // tcSettings
@@ -105,11 +124,8 @@
       // 
       // tbLogin
       // 
-      this.tbLogin.Controls.Add(this.lblLoginStatus);
-      this.tbLogin.Controls.Add(this.txtPassword);
-      this.tbLogin.Controls.Add(this.txtUsername);
-      this.tbLogin.Controls.Add(this.lblPassword);
-      this.tbLogin.Controls.Add(this.lblUsername);
+      this.tbLogin.Controls.Add(this.grStatus);
+      this.tbLogin.Controls.Add(this.grLogin);
       this.tbLogin.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.tbLogin.Location = new System.Drawing.Point(4, 23);
       this.tbLogin.Name = "tbLogin";
@@ -122,37 +138,37 @@
       // lblLoginStatus
       // 
       this.lblLoginStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblLoginStatus.Location = new System.Drawing.Point(70, 50);
+      this.lblLoginStatus.Location = new System.Drawing.Point(3, 15);
       this.lblLoginStatus.Name = "lblLoginStatus";
-      this.lblLoginStatus.Size = new System.Drawing.Size(150, 22);
+      this.lblLoginStatus.Size = new System.Drawing.Size(399, 20);
       this.lblLoginStatus.TabIndex = 7;
-      this.lblLoginStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+      this.lblLoginStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
       // txtPassword
       // 
       this.txtPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtPassword.Location = new System.Drawing.Point(70, 25);
+      this.txtPassword.Location = new System.Drawing.Point(282, 15);
       this.txtPassword.Name = "txtPassword";
       this.txtPassword.PasswordChar = '*';
-      this.txtPassword.Size = new System.Drawing.Size(150, 20);
+      this.txtPassword.Size = new System.Drawing.Size(120, 20);
       this.txtPassword.TabIndex = 2;
       this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtPassword_KeyUp);
       // 
       // txtUsername
       // 
       this.txtUsername.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtUsername.Location = new System.Drawing.Point(70, 5);
+      this.txtUsername.Location = new System.Drawing.Point(82, 15);
       this.txtUsername.Name = "txtUsername";
-      this.txtUsername.Size = new System.Drawing.Size(150, 20);
+      this.txtUsername.Size = new System.Drawing.Size(120, 20);
       this.txtUsername.TabIndex = 1;
       this.txtUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtUsername_KeyUp);
       // 
       // lblPassword
       // 
       this.lblPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblPassword.Location = new System.Drawing.Point(5, 25);
+      this.lblPassword.Location = new System.Drawing.Point(203, 15);
       this.lblPassword.Name = "lblPassword";
-      this.lblPassword.Size = new System.Drawing.Size(60, 22);
+      this.lblPassword.Size = new System.Drawing.Size(79, 20);
       this.lblPassword.TabIndex = 6;
       this.lblPassword.Text = "Password:";
       this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -160,9 +176,9 @@
       // lblUsername
       // 
       this.lblUsername.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblUsername.Location = new System.Drawing.Point(5, 5);
+      this.lblUsername.Location = new System.Drawing.Point(3, 15);
       this.lblUsername.Name = "lblUsername";
-      this.lblUsername.Size = new System.Drawing.Size(60, 22);
+      this.lblUsername.Size = new System.Drawing.Size(79, 20);
       this.lblUsername.TabIndex = 4;
       this.lblUsername.Text = "Username:";
       this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -337,6 +353,7 @@
       // 
       // tbConfiguration
       // 
+      this.tbConfiguration.Controls.Add(this.grProxyServer);
       this.tbConfiguration.Controls.Add(this.grRecordingService);
       this.tbConfiguration.Controls.Add(this.grBaseUrl);
       this.tbConfiguration.Controls.Add(this.grSwfUrl);
@@ -346,6 +363,181 @@
       this.tbConfiguration.TabIndex = 3;
       this.tbConfiguration.Text = "Configuration";
       this.tbConfiguration.UseVisualStyleBackColor = true;
+      // 
+      // grProxyServer
+      // 
+      this.grProxyServer.Controls.Add(this.lblProxyDomain);
+      this.grProxyServer.Controls.Add(this.txtProxyDomain);
+      this.grProxyServer.Controls.Add(this.lblProxyPassword);
+      this.grProxyServer.Controls.Add(this.txtProxyPassword);
+      this.grProxyServer.Controls.Add(this.lblProxyUserName);
+      this.grProxyServer.Controls.Add(this.txtProxyUsername);
+      this.grProxyServer.Controls.Add(this.ckUseDefaultProxyCredentials);
+      this.grProxyServer.Controls.Add(this.ckBypassProxyOnLocal);
+      this.grProxyServer.Controls.Add(this.lblProxyPort);
+      this.grProxyServer.Controls.Add(this.txtProxyPort);
+      this.grProxyServer.Controls.Add(this.lblProxyAddress);
+      this.grProxyServer.Controls.Add(this.ckUseProxyServer);
+      this.grProxyServer.Controls.Add(this.txtProxyAddress);
+      this.grProxyServer.Location = new System.Drawing.Point(3, 198);
+      this.grProxyServer.Name = "grProxyServer";
+      this.grProxyServer.Size = new System.Drawing.Size(406, 157);
+      this.grProxyServer.TabIndex = 25;
+      this.grProxyServer.TabStop = false;
+      this.grProxyServer.Text = "Proxy server";
+      // 
+      // lblProxyPassword
+      // 
+      this.lblProxyPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblProxyPassword.Location = new System.Drawing.Point(203, 105);
+      this.lblProxyPassword.Name = "lblProxyPassword";
+      this.lblProxyPassword.Size = new System.Drawing.Size(79, 20);
+      this.lblProxyPassword.TabIndex = 30;
+      this.lblProxyPassword.Text = "Password:";
+      this.lblProxyPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      // 
+      // txtProxyPassword
+      // 
+      this.txtProxyPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtProxyPassword.Location = new System.Drawing.Point(282, 105);
+      this.txtProxyPassword.Name = "txtProxyPassword";
+      this.txtProxyPassword.PasswordChar = '*';
+      this.txtProxyPassword.Size = new System.Drawing.Size(120, 20);
+      this.txtProxyPassword.TabIndex = 29;
+      this.txtProxyPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyPassword_KeyUp);
+      // 
+      // lblProxyUserName
+      // 
+      this.lblProxyUserName.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblProxyUserName.Location = new System.Drawing.Point(3, 105);
+      this.lblProxyUserName.Name = "lblProxyUserName";
+      this.lblProxyUserName.Size = new System.Drawing.Size(79, 20);
+      this.lblProxyUserName.TabIndex = 28;
+      this.lblProxyUserName.Text = "Username:";
+      this.lblProxyUserName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      // 
+      // txtProxyUsername
+      // 
+      this.txtProxyUsername.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtProxyUsername.Location = new System.Drawing.Point(82, 105);
+      this.txtProxyUsername.Name = "txtProxyUsername";
+      this.txtProxyUsername.Size = new System.Drawing.Size(120, 20);
+      this.txtProxyUsername.TabIndex = 27;
+      this.txtProxyUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyUsername_KeyUp);
+      // 
+      // ckUseDefaultProxyCredentials
+      // 
+      this.ckUseDefaultProxyCredentials.AutoSize = true;
+      this.ckUseDefaultProxyCredentials.Location = new System.Drawing.Point(33, 83);
+      this.ckUseDefaultProxyCredentials.Name = "ckUseDefaultProxyCredentials";
+      this.ckUseDefaultProxyCredentials.Size = new System.Drawing.Size(137, 18);
+      this.ckUseDefaultProxyCredentials.TabIndex = 26;
+      this.ckUseDefaultProxyCredentials.Text = "Use default credentials";
+      this.ckUseDefaultProxyCredentials.UseVisualStyleBackColor = true;
+      this.ckUseDefaultProxyCredentials.CheckedChanged += new System.EventHandler(this.ckUseDefaultProxyCredentials_CheckedChanged);
+      // 
+      // ckBypassProxyOnLocal
+      // 
+      this.ckBypassProxyOnLocal.AutoSize = true;
+      this.ckBypassProxyOnLocal.Location = new System.Drawing.Point(33, 61);
+      this.ckBypassProxyOnLocal.Name = "ckBypassProxyOnLocal";
+      this.ckBypassProxyOnLocal.Size = new System.Drawing.Size(226, 18);
+      this.ckBypassProxyOnLocal.TabIndex = 25;
+      this.ckBypassProxyOnLocal.Text = "Bypass proxy server for local addresses";
+      this.ckBypassProxyOnLocal.UseVisualStyleBackColor = true;
+      this.ckBypassProxyOnLocal.CheckedChanged += new System.EventHandler(this.ckBypassProxyOnLocal_CheckedChanged);
+      // 
+      // lblProxyPort
+      // 
+      this.lblProxyPort.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblProxyPort.Location = new System.Drawing.Point(203, 37);
+      this.lblProxyPort.Name = "lblProxyPort";
+      this.lblProxyPort.Size = new System.Drawing.Size(79, 20);
+      this.lblProxyPort.TabIndex = 24;
+      this.lblProxyPort.Text = "Port:";
+      this.lblProxyPort.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      // 
+      // txtProxyPort
+      // 
+      this.txtProxyPort.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtProxyPort.Location = new System.Drawing.Point(282, 37);
+      this.txtProxyPort.Name = "txtProxyPort";
+      this.txtProxyPort.Size = new System.Drawing.Size(120, 20);
+      this.txtProxyPort.TabIndex = 23;
+      this.txtProxyPort.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPort_KeyPress);
+      this.txtProxyPort.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyPort_KeyUp);
+      // 
+      // lblProxyAddress
+      // 
+      this.lblProxyAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblProxyAddress.Location = new System.Drawing.Point(3, 37);
+      this.lblProxyAddress.Name = "lblProxyAddress";
+      this.lblProxyAddress.Size = new System.Drawing.Size(79, 20);
+      this.lblProxyAddress.TabIndex = 22;
+      this.lblProxyAddress.Text = "Address:";
+      this.lblProxyAddress.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      // 
+      // ckUseProxyServer
+      // 
+      this.ckUseProxyServer.AutoSize = true;
+      this.ckUseProxyServer.Location = new System.Drawing.Point(3, 15);
+      this.ckUseProxyServer.Name = "ckUseProxyServer";
+      this.ckUseProxyServer.Size = new System.Drawing.Size(120, 18);
+      this.ckUseProxyServer.TabIndex = 20;
+      this.ckUseProxyServer.Text = "Use a proxy server";
+      this.ckUseProxyServer.UseVisualStyleBackColor = true;
+      this.ckUseProxyServer.CheckedChanged += new System.EventHandler(this.ckUseProxyServer_CheckedChanged);
+      // 
+      // txtProxyAddress
+      // 
+      this.txtProxyAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtProxyAddress.Location = new System.Drawing.Point(82, 37);
+      this.txtProxyAddress.Name = "txtProxyAddress";
+      this.txtProxyAddress.Size = new System.Drawing.Size(120, 20);
+      this.txtProxyAddress.TabIndex = 21;
+      this.txtProxyAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyAddress_KeyUp);
+      // 
+      // grRecordingService
+      // 
+      this.grRecordingService.Controls.Add(this.lblLocationRecordingService);
+      this.grRecordingService.Controls.Add(this.ckDefaultRecordingService);
+      this.grRecordingService.Controls.Add(this.txtRecordingServiceLocation);
+      this.grRecordingService.Location = new System.Drawing.Point(3, 68);
+      this.grRecordingService.Name = "grRecordingService";
+      this.grRecordingService.Size = new System.Drawing.Size(406, 65);
+      this.grRecordingService.TabIndex = 24;
+      this.grRecordingService.TabStop = false;
+      this.grRecordingService.Text = "Recording Service";
+      // 
+      // lblLocationRecordingService
+      // 
+      this.lblLocationRecordingService.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblLocationRecordingService.Location = new System.Drawing.Point(3, 37);
+      this.lblLocationRecordingService.Name = "lblLocationRecordingService";
+      this.lblLocationRecordingService.Size = new System.Drawing.Size(79, 20);
+      this.lblLocationRecordingService.TabIndex = 22;
+      this.lblLocationRecordingService.Text = "Location:";
+      this.lblLocationRecordingService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      // 
+      // ckDefaultRecordingService
+      // 
+      this.ckDefaultRecordingService.AutoSize = true;
+      this.ckDefaultRecordingService.Location = new System.Drawing.Point(3, 15);
+      this.ckDefaultRecordingService.Name = "ckDefaultRecordingService";
+      this.ckDefaultRecordingService.Size = new System.Drawing.Size(81, 18);
+      this.ckDefaultRecordingService.TabIndex = 20;
+      this.ckDefaultRecordingService.Text = "Use default";
+      this.ckDefaultRecordingService.UseVisualStyleBackColor = true;
+      this.ckDefaultRecordingService.CheckedChanged += new System.EventHandler(this.ckDefaultRecordingsService_CheckedChanged);
+      // 
+      // txtRecordingServiceLocation
+      // 
+      this.txtRecordingServiceLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtRecordingServiceLocation.Location = new System.Drawing.Point(82, 37);
+      this.txtRecordingServiceLocation.Name = "txtRecordingServiceLocation";
+      this.txtRecordingServiceLocation.Size = new System.Drawing.Size(320, 20);
+      this.txtRecordingServiceLocation.TabIndex = 21;
+      this.txtRecordingServiceLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRecordingServiceLocation_KeyUp);
       // 
       // grBaseUrl
       // 
@@ -528,47 +720,47 @@
       this.plButtons.Size = new System.Drawing.Size(420, 35);
       this.plButtons.TabIndex = 14;
       // 
-      // grRecordingService
+      // lblProxyDomain
       // 
-      this.grRecordingService.Controls.Add(this.lblLocationRecordingService);
-      this.grRecordingService.Controls.Add(this.ckDefaultRecordingService);
-      this.grRecordingService.Controls.Add(this.txtRecordingServiceLocation);
-      this.grRecordingService.Location = new System.Drawing.Point(3, 68);
-      this.grRecordingService.Name = "grRecordingService";
-      this.grRecordingService.Size = new System.Drawing.Size(406, 65);
-      this.grRecordingService.TabIndex = 24;
-      this.grRecordingService.TabStop = false;
-      this.grRecordingService.Text = "Recording Service";
+      this.lblProxyDomain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblProxyDomain.Location = new System.Drawing.Point(3, 129);
+      this.lblProxyDomain.Name = "lblProxyDomain";
+      this.lblProxyDomain.Size = new System.Drawing.Size(79, 20);
+      this.lblProxyDomain.TabIndex = 32;
+      this.lblProxyDomain.Text = "Domain:";
+      this.lblProxyDomain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       // 
-      // lblLocationRecordingService
+      // txtProxyDomain
       // 
-      this.lblLocationRecordingService.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblLocationRecordingService.Location = new System.Drawing.Point(3, 37);
-      this.lblLocationRecordingService.Name = "lblLocationRecordingService";
-      this.lblLocationRecordingService.Size = new System.Drawing.Size(79, 20);
-      this.lblLocationRecordingService.TabIndex = 22;
-      this.lblLocationRecordingService.Text = "Location:";
-      this.lblLocationRecordingService.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.txtProxyDomain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtProxyDomain.Location = new System.Drawing.Point(82, 129);
+      this.txtProxyDomain.Name = "txtProxyDomain";
+      this.txtProxyDomain.Size = new System.Drawing.Size(120, 20);
+      this.txtProxyDomain.TabIndex = 31;
+      this.txtProxyDomain.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyDomain_KeyUp);
       // 
-      // ckDefaultRecordingService
+      // grLogin
       // 
-      this.ckDefaultRecordingService.AutoSize = true;
-      this.ckDefaultRecordingService.Location = new System.Drawing.Point(3, 15);
-      this.ckDefaultRecordingService.Name = "ckDefaultRecordingService";
-      this.ckDefaultRecordingService.Size = new System.Drawing.Size(81, 18);
-      this.ckDefaultRecordingService.TabIndex = 20;
-      this.ckDefaultRecordingService.Text = "Use default";
-      this.ckDefaultRecordingService.UseVisualStyleBackColor = true;
-      this.ckDefaultRecordingService.CheckedChanged += new System.EventHandler(this.ckDefaultRecordingsService_CheckedChanged);
+      this.grLogin.Controls.Add(this.lblUsername);
+      this.grLogin.Controls.Add(this.txtUsername);
+      this.grLogin.Controls.Add(this.txtPassword);
+      this.grLogin.Controls.Add(this.lblPassword);
+      this.grLogin.Location = new System.Drawing.Point(3, 3);
+      this.grLogin.Name = "grLogin";
+      this.grLogin.Size = new System.Drawing.Size(406, 43);
+      this.grLogin.TabIndex = 24;
+      this.grLogin.TabStop = false;
+      this.grLogin.Text = "Login";
       // 
-      // txtRecordingServiceLocation
+      // grStatus
       // 
-      this.txtRecordingServiceLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtRecordingServiceLocation.Location = new System.Drawing.Point(82, 37);
-      this.txtRecordingServiceLocation.Name = "txtRecordingServiceLocation";
-      this.txtRecordingServiceLocation.Size = new System.Drawing.Size(320, 20);
-      this.txtRecordingServiceLocation.TabIndex = 21;
-      this.txtRecordingServiceLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRecordingServiceLocation_KeyUp);
+      this.grStatus.Controls.Add(this.lblLoginStatus);
+      this.grStatus.Location = new System.Drawing.Point(3, 46);
+      this.grStatus.Name = "grStatus";
+      this.grStatus.Size = new System.Drawing.Size(406, 43);
+      this.grStatus.TabIndex = 25;
+      this.grStatus.TabStop = false;
+      this.grStatus.Text = "Status";
       // 
       // FrmCycloMediaOptions
       // 
@@ -589,7 +781,6 @@
       this.Load += new System.EventHandler(this.FrmCycloMediaOptions_Load);
       this.tcSettings.ResumeLayout(false);
       this.tbLogin.ResumeLayout(false);
-      this.tbLogin.PerformLayout();
       this.tbSettings.ResumeLayout(false);
       this.grGeneral.ResumeLayout(false);
       this.grGeneral.PerformLayout();
@@ -597,6 +788,10 @@
       ((System.ComponentModel.ISupportInitialize)(this.nudDistVectLayerViewer)).EndInit();
       this.grCoordinateSystems.ResumeLayout(false);
       this.tbConfiguration.ResumeLayout(false);
+      this.grProxyServer.ResumeLayout(false);
+      this.grProxyServer.PerformLayout();
+      this.grRecordingService.ResumeLayout(false);
+      this.grRecordingService.PerformLayout();
       this.grBaseUrl.ResumeLayout(false);
       this.grBaseUrl.PerformLayout();
       this.grSwfUrl.ResumeLayout(false);
@@ -606,8 +801,9 @@
       this.tbAgreement.PerformLayout();
       this.plSettings.ResumeLayout(false);
       this.plButtons.ResumeLayout(false);
-      this.grRecordingService.ResumeLayout(false);
-      this.grRecordingService.PerformLayout();
+      this.grLogin.ResumeLayout(false);
+      this.grLogin.PerformLayout();
+      this.grStatus.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }
@@ -655,5 +851,21 @@
     private System.Windows.Forms.Label lblLocationRecordingService;
     private System.Windows.Forms.CheckBox ckDefaultRecordingService;
     private System.Windows.Forms.TextBox txtRecordingServiceLocation;
+    private System.Windows.Forms.GroupBox grProxyServer;
+    private System.Windows.Forms.Label lblProxyPort;
+    private System.Windows.Forms.TextBox txtProxyPort;
+    private System.Windows.Forms.Label lblProxyAddress;
+    private System.Windows.Forms.CheckBox ckUseProxyServer;
+    private System.Windows.Forms.TextBox txtProxyAddress;
+    private System.Windows.Forms.CheckBox ckBypassProxyOnLocal;
+    private System.Windows.Forms.CheckBox ckUseDefaultProxyCredentials;
+    private System.Windows.Forms.Label lblProxyPassword;
+    private System.Windows.Forms.TextBox txtProxyPassword;
+    private System.Windows.Forms.Label lblProxyUserName;
+    private System.Windows.Forms.TextBox txtProxyUsername;
+    private System.Windows.Forms.Label lblProxyDomain;
+    private System.Windows.Forms.TextBox txtProxyDomain;
+    private System.Windows.Forms.GroupBox grLogin;
+    private System.Windows.Forms.GroupBox grStatus;
   }
 }

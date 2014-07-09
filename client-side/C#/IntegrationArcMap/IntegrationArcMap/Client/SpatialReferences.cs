@@ -73,9 +73,16 @@ namespace IntegrationArcMap.Client
     {
       get
       {
-        if (_spatialReferences == null)
+        if ((_spatialReferences == null) || (_spatialReferences.Count == 0))
         {
-          Load();
+          try
+          {
+            Load();
+          }
+          // ReSharper disable once EmptyGeneralCatchClause
+          catch
+          {
+          }
         }
 
         return _spatialReferences ?? (_spatialReferences = Create());

@@ -41,6 +41,9 @@ namespace IntegrationArcMap.Client
     private bool? _baseUrlDefault;
     private bool? _recordingsServiceDefault;
     private bool? _swfUrlDefault;
+    private bool? _useProxyServer;
+    private bool? _bypassProxyOnLocal;
+    private bool? _proxyUseDefaultCredentials;
     private bool _agreement;
 
     #endregion
@@ -112,6 +115,58 @@ namespace IntegrationArcMap.Client
     {
       get { return (_swfUrlDefault == null) ? (string.IsNullOrEmpty(SwfUrl)) : ((bool) _swfUrlDefault); }
       set { _swfUrlDefault = value; }
+    }
+
+    /// <summary>
+    /// Proxy Address
+    /// </summary>
+    public string ProxyAddress { get; set; }
+
+    /// <summary>
+    /// ProxyPort
+    /// </summary>
+    public int ProxyPort { get; set; }
+
+    /// <summary>
+    /// ProxyDefault
+    /// </summary>
+    public bool UseProxyServer
+    {
+      get { return (_useProxyServer != null) && ((bool) _useProxyServer); }
+      set { _useProxyServer = value; }
+    }
+
+    /// <summary>
+    /// Proxy username
+    /// </summary>
+    public string ProxyUsername { get; set; }
+
+    /// <summary>
+    /// Proxy password
+    /// </summary>
+    public string ProxyPassword { get; set; }
+
+    /// <summary>
+    /// Proxy domain
+    /// </summary>
+    public string ProxyDomain { get; set; }
+
+    /// <summary>
+    /// ProxyUseDefaultCredentials
+    /// </summary>
+    public bool ProxyUseDefaultCredentials
+    {
+      get { return (_proxyUseDefaultCredentials == null) || ((bool) _proxyUseDefaultCredentials); }
+      set { _proxyUseDefaultCredentials = value; }
+    }
+
+    /// <summary>
+    /// Bypass proxy
+    /// </summary>
+    public bool BypassProxyOnLocal
+    {
+      get { return (_bypassProxyOnLocal != null) && ((bool) _bypassProxyOnLocal); }
+      set { _bypassProxyOnLocal = value; }
     }
 
     /// <summary>

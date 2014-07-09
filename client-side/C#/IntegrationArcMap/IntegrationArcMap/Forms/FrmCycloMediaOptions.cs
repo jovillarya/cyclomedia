@@ -19,6 +19,7 @@
 using System;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -83,6 +84,14 @@ namespace IntegrationArcMap.Forms
       grSwfUrl.Font = (Font) font.Clone();
       cbSpatialReferences.Font = (Font) font.Clone();
       txtAgreement.Font = (Font) font.Clone();
+      grLogin.Font = (Font) font.Clone();
+      grStatus.Font = (Font) font.Clone();
+      grProxyServer.Font = (Font) font.Clone();
+      txtProxyAddress.Font = (Font) font.Clone();
+      txtProxyPort.Font = (Font) font.Clone();
+      txtProxyUsername.Font = (Font) font.Clone();
+      txtProxyPassword.Font = (Font) font.Clone();
+      txtProxyDomain.Font = (Font) font.Clone();
 
       // Assembly info
       Type type = GetType();
@@ -204,9 +213,12 @@ namespace IntegrationArcMap.Forms
       ckDefaultBaseUrl.Checked = _config.BaseUrlDefault;
       ckDefaultRecordingService.Checked = _config.RecordingsServiceDefault;
       ckDefaultSwfUrl.Checked = _config.SwfUrlDefault;
+      ckUseProxyServer.Checked = _config.UseProxyServer;
+      ckUseDefaultProxyCredentials.Checked = (!_config.UseProxyServer) || _config.ProxyUseDefaultCredentials;
       txtBaseUrlLocation.Text = _config.BaseUrlDefault ? string.Empty : _config.BaseUrl;
       txtRecordingServiceLocation.Text = _config.RecordingsServiceDefault ? string.Empty : _config.RecordingsService;
       txtSwfUrlLocation.Text = _config.SwfUrlDefault ? string.Empty : _config.SwfUrl;
+      FillInProxyParameters();
       txtBaseUrlLocation.Enabled = !_config.BaseUrlDefault;
       txtRecordingServiceLocation.Enabled = !_config.RecordingsServiceDefault;
       txtSwfUrlLocation.Enabled = !_config.SwfUrlDefault;
@@ -240,6 +252,31 @@ namespace IntegrationArcMap.Forms
       {
         txtUsername.Select();
       }
+    }
+
+    private void FillInProxyParameters()
+    {
+      txtProxyAddress.Text = ckUseProxyServer.Checked ? _config.ProxyAddress : string.Empty;
+      txtProxyPort.Text = ckUseProxyServer.Checked ? _config.ProxyPort.ToString(CultureInfo.InvariantCulture) : string.Empty;
+      ckBypassProxyOnLocal.Checked = ckUseProxyServer.Checked && _config.BypassProxyOnLocal;
+      ckUseDefaultProxyCredentials.Checked = (!ckUseProxyServer.Checked) || ckUseDefaultProxyCredentials.Checked;
+      txtProxyUsername.Text = ((!ckUseProxyServer.Checked) || ckUseDefaultProxyCredentials.Checked)
+        ? string.Empty
+        : _config.ProxyUsername;
+      txtProxyPassword.Text = ((!ckUseProxyServer.Checked) || ckUseDefaultProxyCredentials.Checked)
+        ? string.Empty
+        : _config.ProxyPassword;
+      txtProxyDomain.Text = ((!ckUseProxyServer.Checked) || ckUseDefaultProxyCredentials.Checked)
+        ? string.Empty
+        : _config.ProxyDomain;
+
+      txtProxyAddress.Enabled = ckUseProxyServer.Checked;
+      txtProxyPort.Enabled = ckUseProxyServer.Checked;
+      ckBypassProxyOnLocal.Enabled = ckUseProxyServer.Checked;
+      ckUseDefaultProxyCredentials.Enabled = ckUseProxyServer.Checked;
+      txtProxyUsername.Enabled = ckUseProxyServer.Checked && (!ckUseDefaultProxyCredentials.Checked);
+      txtProxyPassword.Enabled = ckUseProxyServer.Checked && (!ckUseDefaultProxyCredentials.Checked);
+      txtProxyDomain.Enabled = ckUseProxyServer.Checked && (!ckUseDefaultProxyCredentials.Checked);
     }
 
     private void FrmSettingsLoad()
@@ -304,11 +341,24 @@ namespace IntegrationArcMap.Forms
       bool restart = usernameChanged || baseUrlChanged || swfChanged || spatChanged || recordingServiceChanged;
 
       // Save values
+      int proxyPort;
+      bool proxyParsed = int.TryParse(txtProxyPort.Text, out proxyPort);
+      int useProxyPort = proxyParsed ? proxyPort : 80;
       var maxViewers = (uint) nudMaxViewers.Value;
       var distLayer = (uint) nudDistVectLayerViewer.Value;
       bool smartClickEnabled = GlobeSpotterConfiguration.MeasureSmartClick && (!usernameChanged)
         ? ckEnableSmartClick.Checked
         : _config.SmartClickEnabled;
+
+      bool proxyChanged = (ckUseProxyServer.Checked != _config.UseProxyServer);
+      proxyChanged = proxyChanged || (_config.ProxyAddress != txtProxyAddress.Text);
+      proxyChanged = proxyChanged || (_config.ProxyPort != useProxyPort);
+      proxyChanged = proxyChanged || (_config.BypassProxyOnLocal != ckBypassProxyOnLocal.Checked);
+      proxyChanged = proxyChanged || (_config.ProxyUseDefaultCredentials != ckUseDefaultProxyCredentials.Checked);
+      proxyChanged = proxyChanged || (_config.ProxyUsername != txtProxyUsername.Text);
+      proxyChanged = proxyChanged || (_config.ProxyPassword != txtProxyPassword.Text);
+      proxyChanged = proxyChanged || (_config.ProxyDomain != txtProxyDomain.Text);
+
       _config.SpatialReference = selectedItem ?? _config.SpatialReference;
       _config.MaxViewers = maxViewers;
       _config.DistanceCycloramaVectorLayer = distLayer;
@@ -320,10 +370,24 @@ namespace IntegrationArcMap.Forms
       _config.SwfUrlDefault = ckDefaultSwfUrl.Checked;
       _config.SmartClickEnabled = smartClickEnabled;
       _config.DetailImagesEnabled = ckDetailImages.Checked;
+      _config.UseProxyServer = ckUseProxyServer.Checked;
+      _config.ProxyAddress = txtProxyAddress.Text;
+      _config.ProxyPort = useProxyPort;
+      _config.BypassProxyOnLocal = ckBypassProxyOnLocal.Checked;
+      _config.ProxyUseDefaultCredentials = ckUseDefaultProxyCredentials.Checked;
+      _config.ProxyUsername = txtProxyUsername.Text;
+      _config.ProxyPassword = txtProxyPassword.Text;
+      _config.ProxyDomain = txtProxyDomain.Text;
       _config.Save();
 
       // Check restart GlobeSpotter
-      bool loginSucces = (usernameChanged || baseUrlChanged) && Login();
+      bool loginSucces = (usernameChanged || baseUrlChanged || proxyChanged) && Login();
+
+      if (proxyChanged)
+      {
+        ckEnableSmartClick.Checked = (GlobeSpotterConfiguration.MeasureSmartClick && _config.SmartClickEnabled);
+        ckEnableSmartClick.Enabled = GlobeSpotterConfiguration.MeasureSmartClick;
+      }
 
       if (_login.Credentials || loginSucces)
       {
@@ -493,6 +557,48 @@ namespace IntegrationArcMap.Forms
       txtSwfUrlLocation.Enabled = !ckDefaultSwfUrl.Checked;
     }
 
+    private void ckUseProxyServer_CheckedChanged(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
+      FillInProxyParameters();
+    }
+
+    private void ckUseDefaultProxyCredentials_CheckedChanged(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
+      FillInProxyParameters();
+    }
+
+    private void txtProxyAddress_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void txtProxyPort_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void ckBypassProxyOnLocal_CheckedChanged(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void txtProxyUsername_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void txtProxyPassword_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void txtProxyDomain_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
     private void txtBaseUrlLocation_KeyUp(object sender, KeyEventArgs e)
     {
       btnApply.Enabled = true;
@@ -506,6 +612,14 @@ namespace IntegrationArcMap.Forms
     private void txtSwfUrlLocation_KeyUp(object sender, KeyEventArgs e)
     {
       btnApply.Enabled = true;
+    }
+
+    private void txtPort_KeyPress(object sender, KeyPressEventArgs e)
+    {
+      if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+      {
+        e.Handled = true;
+      }
     }
 
     #endregion

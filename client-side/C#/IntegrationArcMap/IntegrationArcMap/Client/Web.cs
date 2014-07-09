@@ -17,6 +17,7 @@
  */
 
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
@@ -348,13 +349,35 @@ namespace IntegrationArcMap.Client
 
     private WebRequest OpenWebRequest(string remoteLocation, string webRequest, int length)
     {
+      IWebProxy proxy;
+
+      if (_config.UseProxyServer)
+      {
+        var webProxy = new WebProxy(_config.ProxyAddress, _config.ProxyPort)
+        {
+          BypassProxyOnLocal = _config.BypassProxyOnLocal,
+          UseDefaultCredentials = _config.ProxyUseDefaultCredentials
+        };
+
+        if (!_config.ProxyUseDefaultCredentials)
+        {
+          webProxy.Credentials = new NetworkCredential(_config.ProxyUsername, _config.ProxyPassword, _config.ProxyDomain);
+        }
+
+        proxy = webProxy;
+      }
+      else
+      {
+        proxy = WebRequest.GetSystemWebProxy();
+      }
+
       var request = (HttpWebRequest) WebRequest.Create(remoteLocation);
       request.Credentials = new NetworkCredential(_login.Username, _login.Password);
       request.Method = webRequest;
       request.ContentLength = length;
       request.KeepAlive = true;
       request.Pipelined = true;
-      request.Proxy = WebRequest.GetSystemWebProxy();
+      request.Proxy = proxy;
       request.PreAuthenticate = true;
       request.ContentType = "text/xml";
       request.Headers.Add("ApiKey", _apiKey.Value);
