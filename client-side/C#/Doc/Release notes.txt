@@ -1,0 +1,35 @@
+Release notes:
+==============
+
+Version: 1.1.24 (07/18/2014)
+============================
+- Updated: Installation manual
+- Updated: User manual
+- Added: Release notes
+
+
+Version: 1.1.23 (07/11/2014)
+============================
+- Bug fixes
+- Added: Proxy settings in the configuration screen
+
+
+Version: 1.1.21 (06/16/2014)
+============================
+- Measurements can be visible and invisible in the cyclorama viewer at the same way as vectorlayers can be visible and invisible (with the show in 'Cyclorama' button)
+- Vector layers are not visible by default in the cyclorama
+- Bug fixes
+
+
+Version: 1.1.18 (06/11/2014)
+============================
+- The Manual will open in acrobat reader, so it is posible for enlarge and zoom the manual.
+- When moving to new location in Cyclorama Viewer the Data Frame is updated automaticly.
+
+
+Version: 1.1.16 (06/10/2014)
+============================
+- The supported spatial references are now downloaded from the server.
+- Fixed: to pan with arrow keys in Cyclorama viewer instead of using the mouse all the time.
+- Bug fixes.
+- Start writing release notes.

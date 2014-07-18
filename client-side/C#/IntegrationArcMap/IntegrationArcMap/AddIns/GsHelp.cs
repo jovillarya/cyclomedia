@@ -55,9 +55,10 @@ namespace IntegrationArcMap.AddIns
           {
             Type thisType = GetType();
             Assembly thisAssembly = Assembly.GetAssembly(thisType);
-            const string manualPath = @"IntegrationArcMap.Doc.GlobeSpotter for ArcGIS Desktop User Manual.pdf";
+            const string manualName = "GlobeSpotter for ArcGIS Desktop User Manual.pdf";
+            const string manualPath = @"IntegrationArcMap.Doc." + manualName;
             Stream manualStream = thisAssembly.GetManifestResourceStream(manualPath);
-            string fileName = Path.Combine(ArcUtils.FileDir, "Help.pdf");
+            string fileName = Path.Combine(ArcUtils.FileDir, manualName);
 
             if (File.Exists(fileName))
             {

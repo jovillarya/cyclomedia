@@ -285,8 +285,12 @@
     <AddInContent Include="Images\GsCycloMediaOptions.png" />
     <AddInContent Include="Images\GsHistoricalDataLayer.png" />
     <AddInContent Include="Images\GsRecentDataLayer.png" />
-    <EmbeddedResource Include="Doc\GlobeSpotter for ArcGIS Desktop User Manual.pdf" />
-    <None Include="GlobeSpotter for ArcGIS Desktop Installation Manual.pdf" />
+    <None Include="..\..\Doc\GlobeSpotter for ArcGIS Desktop Installation Manual.pdf">
+      <Link>GlobeSpotter for ArcGIS Desktop Installation Manual.pdf</Link>
+    </None>
+    <EmbeddedResource Include="..\..\Doc\GlobeSpotter for ArcGIS Desktop User Manual.pdf">
+      <Link>Doc\GlobeSpotter for ArcGIS Desktop User Manual.pdf</Link>
+    </EmbeddedResource>
     <None Include="Images\GsDelete.png" />
     <AddInContent Include="Images\GsRecordingHistory.png" />
     <AddInContent Include="Images\GsHelp.png" />
@@ -295,7 +299,12 @@
     <None Include="Images\LeftArrow.png" />
     <None Include="Images\RightArrow.png" />
     <EmbeddedResource Include="Doc\Agreement.txt" />
-    <Content Include="LGPL-3.0.txt" />
+    <Content Include="..\..\Doc\LGPL-3.0.txt">
+      <Link>LGPL-3.0.txt</Link>
+    </Content>
+    <Content Include="..\..\Doc\Release notes.txt">
+      <Link>Release notes.txt</Link>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RangeControl\RangeControl.csproj">
