@@ -102,6 +102,18 @@ namespace IntegrationArcMap.Client
         (null, (current, spatialReference) => (spatialReference.SRSName == srsName) ? spatialReference : current);
     }
 
+    public SpatialReference GetCompatibleSrsNameItem(string srsName)
+    {
+      return this.Aggregate<SpatialReference, SpatialReference>
+        (null, (current, spatialReference) => (spatialReference.CompatibleSRSNames == srsName) ? spatialReference : current);
+    }
+
+    public string ToKnownSrsName(string srsName)
+    {
+      SpatialReference spatRef = GetCompatibleSrsNameItem(srsName);
+      return (spatRef == null) ? srsName : spatRef.SRSName;
+    }
+
     #endregion
 
     #region functions (static)

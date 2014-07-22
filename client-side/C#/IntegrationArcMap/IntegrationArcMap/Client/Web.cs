@@ -134,6 +134,7 @@ namespace IntegrationArcMap.Client
     public List<XElement> GetByBbox(IEnvelope envelope, CycloMediaLayer cycloMediaLayer)
     {
       string epsgCode = cycloMediaLayer.EpsgCode;
+      epsgCode = SpatialReferences.Instance.ToKnownSrsName(epsgCode);
       List<XElement> result;
 
       if (cycloMediaLayer is WfsLayer)

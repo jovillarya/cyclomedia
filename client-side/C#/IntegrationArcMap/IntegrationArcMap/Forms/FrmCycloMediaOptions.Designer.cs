@@ -30,11 +30,13 @@
     {
       this.tcSettings = new System.Windows.Forms.TabControl();
       this.tbLogin = new System.Windows.Forms.TabPage();
+      this.grStatus = new System.Windows.Forms.GroupBox();
       this.lblLoginStatus = new System.Windows.Forms.Label();
-      this.txtPassword = new System.Windows.Forms.TextBox();
-      this.txtUsername = new System.Windows.Forms.TextBox();
-      this.lblPassword = new System.Windows.Forms.Label();
+      this.grLogin = new System.Windows.Forms.GroupBox();
       this.lblUsername = new System.Windows.Forms.Label();
+      this.txtUsername = new System.Windows.Forms.TextBox();
+      this.txtPassword = new System.Windows.Forms.TextBox();
+      this.lblPassword = new System.Windows.Forms.Label();
       this.tbSettings = new System.Windows.Forms.TabPage();
       this.grGeneral = new System.Windows.Forms.GroupBox();
       this.ckEnableSmartClick = new System.Windows.Forms.CheckBox();
@@ -49,6 +51,8 @@
       this.cbSpatialReferences = new System.Windows.Forms.ComboBox();
       this.tbConfiguration = new System.Windows.Forms.TabPage();
       this.grProxyServer = new System.Windows.Forms.GroupBox();
+      this.lblProxyDomain = new System.Windows.Forms.Label();
+      this.txtProxyDomain = new System.Windows.Forms.TextBox();
       this.lblProxyPassword = new System.Windows.Forms.Label();
       this.txtProxyPassword = new System.Windows.Forms.TextBox();
       this.lblProxyUserName = new System.Windows.Forms.Label();
@@ -81,12 +85,10 @@
       this.btnApply = new System.Windows.Forms.Button();
       this.plSettings = new System.Windows.Forms.Panel();
       this.plButtons = new System.Windows.Forms.Panel();
-      this.lblProxyDomain = new System.Windows.Forms.Label();
-      this.txtProxyDomain = new System.Windows.Forms.TextBox();
-      this.grLogin = new System.Windows.Forms.GroupBox();
-      this.grStatus = new System.Windows.Forms.GroupBox();
       this.tcSettings.SuspendLayout();
       this.tbLogin.SuspendLayout();
+      this.grStatus.SuspendLayout();
+      this.grLogin.SuspendLayout();
       this.tbSettings.SuspendLayout();
       this.grGeneral.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.nudMaxViewers)).BeginInit();
@@ -101,8 +103,6 @@
       this.tbAgreement.SuspendLayout();
       this.plSettings.SuspendLayout();
       this.plButtons.SuspendLayout();
-      this.grLogin.SuspendLayout();
-      this.grStatus.SuspendLayout();
       this.SuspendLayout();
       // 
       // tcSettings
@@ -118,7 +118,7 @@
       this.tcSettings.Multiline = true;
       this.tcSettings.Name = "tcSettings";
       this.tcSettings.SelectedIndex = 0;
-      this.tcSettings.Size = new System.Drawing.Size(420, 405);
+      this.tcSettings.Size = new System.Drawing.Size(470, 405);
       this.tcSettings.TabIndex = 0;
       this.tcSettings.Click += new System.EventHandler(this.tcSettings_Click);
       // 
@@ -130,48 +130,42 @@
       this.tbLogin.Location = new System.Drawing.Point(4, 23);
       this.tbLogin.Name = "tbLogin";
       this.tbLogin.Padding = new System.Windows.Forms.Padding(3);
-      this.tbLogin.Size = new System.Drawing.Size(412, 378);
+      this.tbLogin.Size = new System.Drawing.Size(462, 378);
       this.tbLogin.TabIndex = 0;
       this.tbLogin.Text = "Login";
       this.tbLogin.UseVisualStyleBackColor = true;
+      // 
+      // grStatus
+      // 
+      this.grStatus.Controls.Add(this.lblLoginStatus);
+      this.grStatus.Location = new System.Drawing.Point(3, 46);
+      this.grStatus.Name = "grStatus";
+      this.grStatus.Size = new System.Drawing.Size(456, 43);
+      this.grStatus.TabIndex = 25;
+      this.grStatus.TabStop = false;
+      this.grStatus.Text = "Status";
       // 
       // lblLoginStatus
       // 
       this.lblLoginStatus.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblLoginStatus.Location = new System.Drawing.Point(3, 15);
       this.lblLoginStatus.Name = "lblLoginStatus";
-      this.lblLoginStatus.Size = new System.Drawing.Size(399, 20);
+      this.lblLoginStatus.Size = new System.Drawing.Size(449, 20);
       this.lblLoginStatus.TabIndex = 7;
       this.lblLoginStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
       // 
-      // txtPassword
+      // grLogin
       // 
-      this.txtPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtPassword.Location = new System.Drawing.Point(282, 15);
-      this.txtPassword.Name = "txtPassword";
-      this.txtPassword.PasswordChar = '*';
-      this.txtPassword.Size = new System.Drawing.Size(120, 20);
-      this.txtPassword.TabIndex = 2;
-      this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtPassword_KeyUp);
-      // 
-      // txtUsername
-      // 
-      this.txtUsername.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtUsername.Location = new System.Drawing.Point(82, 15);
-      this.txtUsername.Name = "txtUsername";
-      this.txtUsername.Size = new System.Drawing.Size(120, 20);
-      this.txtUsername.TabIndex = 1;
-      this.txtUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtUsername_KeyUp);
-      // 
-      // lblPassword
-      // 
-      this.lblPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblPassword.Location = new System.Drawing.Point(203, 15);
-      this.lblPassword.Name = "lblPassword";
-      this.lblPassword.Size = new System.Drawing.Size(79, 20);
-      this.lblPassword.TabIndex = 6;
-      this.lblPassword.Text = "Password:";
-      this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      this.grLogin.Controls.Add(this.lblUsername);
+      this.grLogin.Controls.Add(this.txtUsername);
+      this.grLogin.Controls.Add(this.txtPassword);
+      this.grLogin.Controls.Add(this.lblPassword);
+      this.grLogin.Location = new System.Drawing.Point(3, 3);
+      this.grLogin.Name = "grLogin";
+      this.grLogin.Size = new System.Drawing.Size(456, 43);
+      this.grLogin.TabIndex = 24;
+      this.grLogin.TabStop = false;
+      this.grLogin.Text = "Login";
       // 
       // lblUsername
       // 
@@ -183,6 +177,35 @@
       this.lblUsername.Text = "Username:";
       this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
       // 
+      // txtUsername
+      // 
+      this.txtUsername.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtUsername.Location = new System.Drawing.Point(82, 15);
+      this.txtUsername.Name = "txtUsername";
+      this.txtUsername.Size = new System.Drawing.Size(145, 20);
+      this.txtUsername.TabIndex = 1;
+      this.txtUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtUsername_KeyUp);
+      // 
+      // txtPassword
+      // 
+      this.txtPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtPassword.Location = new System.Drawing.Point(307, 15);
+      this.txtPassword.Name = "txtPassword";
+      this.txtPassword.PasswordChar = '*';
+      this.txtPassword.Size = new System.Drawing.Size(145, 20);
+      this.txtPassword.TabIndex = 2;
+      this.txtPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtPassword_KeyUp);
+      // 
+      // lblPassword
+      // 
+      this.lblPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblPassword.Location = new System.Drawing.Point(228, 15);
+      this.lblPassword.Name = "lblPassword";
+      this.lblPassword.Size = new System.Drawing.Size(79, 20);
+      this.lblPassword.TabIndex = 6;
+      this.lblPassword.Text = "Password:";
+      this.lblPassword.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      // 
       // tbSettings
       // 
       this.tbSettings.Controls.Add(this.grGeneral);
@@ -191,7 +214,7 @@
       this.tbSettings.Location = new System.Drawing.Point(4, 23);
       this.tbSettings.Name = "tbSettings";
       this.tbSettings.Padding = new System.Windows.Forms.Padding(3);
-      this.tbSettings.Size = new System.Drawing.Size(412, 378);
+      this.tbSettings.Size = new System.Drawing.Size(462, 378);
       this.tbSettings.TabIndex = 1;
       this.tbSettings.Text = "Settings";
       this.tbSettings.UseVisualStyleBackColor = true;
@@ -206,7 +229,7 @@
       this.grGeneral.Controls.Add(this.nudDistVectLayerViewer);
       this.grGeneral.Location = new System.Drawing.Point(3, 73);
       this.grGeneral.Name = "grGeneral";
-      this.grGeneral.Size = new System.Drawing.Size(406, 115);
+      this.grGeneral.Size = new System.Drawing.Size(456, 115);
       this.grGeneral.TabIndex = 22;
       this.grGeneral.TabStop = false;
       this.grGeneral.Text = "General";
@@ -315,7 +338,7 @@
       this.grCoordinateSystems.Controls.Add(this.cbSpatialReferences);
       this.grCoordinateSystems.Location = new System.Drawing.Point(3, 3);
       this.grCoordinateSystems.Name = "grCoordinateSystems";
-      this.grCoordinateSystems.Size = new System.Drawing.Size(406, 70);
+      this.grCoordinateSystems.Size = new System.Drawing.Size(456, 70);
       this.grCoordinateSystems.TabIndex = 21;
       this.grCoordinateSystems.TabStop = false;
       this.grCoordinateSystems.Text = "Coordinate systems";
@@ -325,7 +348,7 @@
       this.lblMeasuringSupported.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.lblMeasuringSupported.Location = new System.Drawing.Point(160, 40);
       this.lblMeasuringSupported.Name = "lblMeasuringSupported";
-      this.lblMeasuringSupported.Size = new System.Drawing.Size(242, 22);
+      this.lblMeasuringSupported.Size = new System.Drawing.Size(292, 22);
       this.lblMeasuringSupported.TabIndex = 21;
       this.lblMeasuringSupported.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
       // 
@@ -345,7 +368,7 @@
       this.cbSpatialReferences.FormattingEnabled = true;
       this.cbSpatialReferences.Location = new System.Drawing.Point(160, 15);
       this.cbSpatialReferences.Name = "cbSpatialReferences";
-      this.cbSpatialReferences.Size = new System.Drawing.Size(242, 22);
+      this.cbSpatialReferences.Size = new System.Drawing.Size(292, 22);
       this.cbSpatialReferences.Sorted = true;
       this.cbSpatialReferences.TabIndex = 20;
       this.cbSpatialReferences.SelectedIndexChanged += new System.EventHandler(this.cbSpatialReferences_SelectedIndexChanged);
@@ -359,7 +382,7 @@
       this.tbConfiguration.Controls.Add(this.grSwfUrl);
       this.tbConfiguration.Location = new System.Drawing.Point(4, 23);
       this.tbConfiguration.Name = "tbConfiguration";
-      this.tbConfiguration.Size = new System.Drawing.Size(412, 378);
+      this.tbConfiguration.Size = new System.Drawing.Size(462, 378);
       this.tbConfiguration.TabIndex = 3;
       this.tbConfiguration.Text = "Configuration";
       this.tbConfiguration.UseVisualStyleBackColor = true;
@@ -381,15 +404,34 @@
       this.grProxyServer.Controls.Add(this.txtProxyAddress);
       this.grProxyServer.Location = new System.Drawing.Point(3, 198);
       this.grProxyServer.Name = "grProxyServer";
-      this.grProxyServer.Size = new System.Drawing.Size(406, 157);
+      this.grProxyServer.Size = new System.Drawing.Size(456, 157);
       this.grProxyServer.TabIndex = 25;
       this.grProxyServer.TabStop = false;
       this.grProxyServer.Text = "Proxy server";
       // 
+      // lblProxyDomain
+      // 
+      this.lblProxyDomain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblProxyDomain.Location = new System.Drawing.Point(3, 129);
+      this.lblProxyDomain.Name = "lblProxyDomain";
+      this.lblProxyDomain.Size = new System.Drawing.Size(79, 20);
+      this.lblProxyDomain.TabIndex = 32;
+      this.lblProxyDomain.Text = "Domain:";
+      this.lblProxyDomain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      // 
+      // txtProxyDomain
+      // 
+      this.txtProxyDomain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtProxyDomain.Location = new System.Drawing.Point(82, 129);
+      this.txtProxyDomain.Name = "txtProxyDomain";
+      this.txtProxyDomain.Size = new System.Drawing.Size(145, 20);
+      this.txtProxyDomain.TabIndex = 31;
+      this.txtProxyDomain.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyDomain_KeyUp);
+      // 
       // lblProxyPassword
       // 
       this.lblProxyPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblProxyPassword.Location = new System.Drawing.Point(203, 105);
+      this.lblProxyPassword.Location = new System.Drawing.Point(228, 105);
       this.lblProxyPassword.Name = "lblProxyPassword";
       this.lblProxyPassword.Size = new System.Drawing.Size(79, 20);
       this.lblProxyPassword.TabIndex = 30;
@@ -399,10 +441,10 @@
       // txtProxyPassword
       // 
       this.txtProxyPassword.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtProxyPassword.Location = new System.Drawing.Point(282, 105);
+      this.txtProxyPassword.Location = new System.Drawing.Point(307, 105);
       this.txtProxyPassword.Name = "txtProxyPassword";
       this.txtProxyPassword.PasswordChar = '*';
-      this.txtProxyPassword.Size = new System.Drawing.Size(120, 20);
+      this.txtProxyPassword.Size = new System.Drawing.Size(145, 20);
       this.txtProxyPassword.TabIndex = 29;
       this.txtProxyPassword.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyPassword_KeyUp);
       // 
@@ -421,7 +463,7 @@
       this.txtProxyUsername.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtProxyUsername.Location = new System.Drawing.Point(82, 105);
       this.txtProxyUsername.Name = "txtProxyUsername";
-      this.txtProxyUsername.Size = new System.Drawing.Size(120, 20);
+      this.txtProxyUsername.Size = new System.Drawing.Size(145, 20);
       this.txtProxyUsername.TabIndex = 27;
       this.txtProxyUsername.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyUsername_KeyUp);
       // 
@@ -450,7 +492,7 @@
       // lblProxyPort
       // 
       this.lblProxyPort.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblProxyPort.Location = new System.Drawing.Point(203, 37);
+      this.lblProxyPort.Location = new System.Drawing.Point(228, 37);
       this.lblProxyPort.Name = "lblProxyPort";
       this.lblProxyPort.Size = new System.Drawing.Size(79, 20);
       this.lblProxyPort.TabIndex = 24;
@@ -460,9 +502,9 @@
       // txtProxyPort
       // 
       this.txtProxyPort.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtProxyPort.Location = new System.Drawing.Point(282, 37);
+      this.txtProxyPort.Location = new System.Drawing.Point(307, 37);
       this.txtProxyPort.Name = "txtProxyPort";
-      this.txtProxyPort.Size = new System.Drawing.Size(120, 20);
+      this.txtProxyPort.Size = new System.Drawing.Size(145, 20);
       this.txtProxyPort.TabIndex = 23;
       this.txtProxyPort.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPort_KeyPress);
       this.txtProxyPort.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyPort_KeyUp);
@@ -493,7 +535,7 @@
       this.txtProxyAddress.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtProxyAddress.Location = new System.Drawing.Point(82, 37);
       this.txtProxyAddress.Name = "txtProxyAddress";
-      this.txtProxyAddress.Size = new System.Drawing.Size(120, 20);
+      this.txtProxyAddress.Size = new System.Drawing.Size(145, 20);
       this.txtProxyAddress.TabIndex = 21;
       this.txtProxyAddress.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyAddress_KeyUp);
       // 
@@ -504,7 +546,7 @@
       this.grRecordingService.Controls.Add(this.txtRecordingServiceLocation);
       this.grRecordingService.Location = new System.Drawing.Point(3, 68);
       this.grRecordingService.Name = "grRecordingService";
-      this.grRecordingService.Size = new System.Drawing.Size(406, 65);
+      this.grRecordingService.Size = new System.Drawing.Size(456, 65);
       this.grRecordingService.TabIndex = 24;
       this.grRecordingService.TabStop = false;
       this.grRecordingService.Text = "Recording Service";
@@ -535,7 +577,7 @@
       this.txtRecordingServiceLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtRecordingServiceLocation.Location = new System.Drawing.Point(82, 37);
       this.txtRecordingServiceLocation.Name = "txtRecordingServiceLocation";
-      this.txtRecordingServiceLocation.Size = new System.Drawing.Size(320, 20);
+      this.txtRecordingServiceLocation.Size = new System.Drawing.Size(370, 20);
       this.txtRecordingServiceLocation.TabIndex = 21;
       this.txtRecordingServiceLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtRecordingServiceLocation_KeyUp);
       // 
@@ -546,7 +588,7 @@
       this.grBaseUrl.Controls.Add(this.txtBaseUrlLocation);
       this.grBaseUrl.Location = new System.Drawing.Point(3, 3);
       this.grBaseUrl.Name = "grBaseUrl";
-      this.grBaseUrl.Size = new System.Drawing.Size(406, 65);
+      this.grBaseUrl.Size = new System.Drawing.Size(456, 65);
       this.grBaseUrl.TabIndex = 23;
       this.grBaseUrl.TabStop = false;
       this.grBaseUrl.Text = "Base url";
@@ -577,7 +619,7 @@
       this.txtBaseUrlLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtBaseUrlLocation.Location = new System.Drawing.Point(82, 37);
       this.txtBaseUrlLocation.Name = "txtBaseUrlLocation";
-      this.txtBaseUrlLocation.Size = new System.Drawing.Size(320, 20);
+      this.txtBaseUrlLocation.Size = new System.Drawing.Size(370, 20);
       this.txtBaseUrlLocation.TabIndex = 21;
       this.txtBaseUrlLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtBaseUrlLocation_KeyUp);
       // 
@@ -588,7 +630,7 @@
       this.grSwfUrl.Controls.Add(this.txtSwfUrlLocation);
       this.grSwfUrl.Location = new System.Drawing.Point(3, 133);
       this.grSwfUrl.Name = "grSwfUrl";
-      this.grSwfUrl.Size = new System.Drawing.Size(406, 65);
+      this.grSwfUrl.Size = new System.Drawing.Size(456, 65);
       this.grSwfUrl.TabIndex = 22;
       this.grSwfUrl.TabStop = false;
       this.grSwfUrl.Text = "swf";
@@ -619,7 +661,7 @@
       this.txtSwfUrlLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.txtSwfUrlLocation.Location = new System.Drawing.Point(82, 37);
       this.txtSwfUrlLocation.Name = "txtSwfUrlLocation";
-      this.txtSwfUrlLocation.Size = new System.Drawing.Size(320, 20);
+      this.txtSwfUrlLocation.Size = new System.Drawing.Size(370, 20);
       this.txtSwfUrlLocation.TabIndex = 21;
       this.txtSwfUrlLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSwfUrlLocation_KeyUp);
       // 
@@ -628,7 +670,7 @@
       this.tbAbout.Controls.Add(this.rtbAbout);
       this.tbAbout.Location = new System.Drawing.Point(4, 23);
       this.tbAbout.Name = "tbAbout";
-      this.tbAbout.Size = new System.Drawing.Size(412, 378);
+      this.tbAbout.Size = new System.Drawing.Size(462, 378);
       this.tbAbout.TabIndex = 4;
       this.tbAbout.Text = "About";
       this.tbAbout.UseVisualStyleBackColor = true;
@@ -640,7 +682,7 @@
       this.rtbAbout.Location = new System.Drawing.Point(5, 5);
       this.rtbAbout.Name = "rtbAbout";
       this.rtbAbout.ReadOnly = true;
-      this.rtbAbout.Size = new System.Drawing.Size(402, 68);
+      this.rtbAbout.Size = new System.Drawing.Size(452, 68);
       this.rtbAbout.TabIndex = 20;
       this.rtbAbout.Text = "";
       this.rtbAbout.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.rtbAbout_LinkClicked);
@@ -650,7 +692,7 @@
       this.tbAgreement.Controls.Add(this.txtAgreement);
       this.tbAgreement.Location = new System.Drawing.Point(4, 23);
       this.tbAgreement.Name = "tbAgreement";
-      this.tbAgreement.Size = new System.Drawing.Size(412, 378);
+      this.tbAgreement.Size = new System.Drawing.Size(462, 378);
       this.tbAgreement.TabIndex = 5;
       this.tbAgreement.Text = "Agreement";
       this.tbAgreement.UseVisualStyleBackColor = true;
@@ -664,13 +706,13 @@
       this.txtAgreement.Name = "txtAgreement";
       this.txtAgreement.ReadOnly = true;
       this.txtAgreement.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txtAgreement.Size = new System.Drawing.Size(402, 368);
+      this.txtAgreement.Size = new System.Drawing.Size(452, 368);
       this.txtAgreement.TabIndex = 0;
       // 
       // btnOk
       // 
       this.btnOk.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnOk.Location = new System.Drawing.Point(180, 5);
+      this.btnOk.Location = new System.Drawing.Point(230, 5);
       this.btnOk.Name = "btnOk";
       this.btnOk.Size = new System.Drawing.Size(75, 25);
       this.btnOk.TabIndex = 10;
@@ -681,7 +723,7 @@
       // btnCancel
       // 
       this.btnCancel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnCancel.Location = new System.Drawing.Point(260, 5);
+      this.btnCancel.Location = new System.Drawing.Point(310, 5);
       this.btnCancel.Name = "btnCancel";
       this.btnCancel.Size = new System.Drawing.Size(75, 25);
       this.btnCancel.TabIndex = 11;
@@ -692,7 +734,7 @@
       // btnApply
       // 
       this.btnApply.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnApply.Location = new System.Drawing.Point(340, 5);
+      this.btnApply.Location = new System.Drawing.Point(390, 5);
       this.btnApply.Name = "btnApply";
       this.btnApply.Size = new System.Drawing.Size(75, 25);
       this.btnApply.TabIndex = 12;
@@ -706,7 +748,7 @@
       this.plSettings.Dock = System.Windows.Forms.DockStyle.Top;
       this.plSettings.Location = new System.Drawing.Point(0, 0);
       this.plSettings.Name = "plSettings";
-      this.plSettings.Size = new System.Drawing.Size(420, 405);
+      this.plSettings.Size = new System.Drawing.Size(470, 405);
       this.plSettings.TabIndex = 13;
       // 
       // plButtons
@@ -717,56 +759,14 @@
       this.plButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
       this.plButtons.Location = new System.Drawing.Point(0, 405);
       this.plButtons.Name = "plButtons";
-      this.plButtons.Size = new System.Drawing.Size(420, 35);
+      this.plButtons.Size = new System.Drawing.Size(470, 35);
       this.plButtons.TabIndex = 14;
-      // 
-      // lblProxyDomain
-      // 
-      this.lblProxyDomain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.lblProxyDomain.Location = new System.Drawing.Point(3, 129);
-      this.lblProxyDomain.Name = "lblProxyDomain";
-      this.lblProxyDomain.Size = new System.Drawing.Size(79, 20);
-      this.lblProxyDomain.TabIndex = 32;
-      this.lblProxyDomain.Text = "Domain:";
-      this.lblProxyDomain.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-      // 
-      // txtProxyDomain
-      // 
-      this.txtProxyDomain.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.txtProxyDomain.Location = new System.Drawing.Point(82, 129);
-      this.txtProxyDomain.Name = "txtProxyDomain";
-      this.txtProxyDomain.Size = new System.Drawing.Size(120, 20);
-      this.txtProxyDomain.TabIndex = 31;
-      this.txtProxyDomain.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtProxyDomain_KeyUp);
-      // 
-      // grLogin
-      // 
-      this.grLogin.Controls.Add(this.lblUsername);
-      this.grLogin.Controls.Add(this.txtUsername);
-      this.grLogin.Controls.Add(this.txtPassword);
-      this.grLogin.Controls.Add(this.lblPassword);
-      this.grLogin.Location = new System.Drawing.Point(3, 3);
-      this.grLogin.Name = "grLogin";
-      this.grLogin.Size = new System.Drawing.Size(406, 43);
-      this.grLogin.TabIndex = 24;
-      this.grLogin.TabStop = false;
-      this.grLogin.Text = "Login";
-      // 
-      // grStatus
-      // 
-      this.grStatus.Controls.Add(this.lblLoginStatus);
-      this.grStatus.Location = new System.Drawing.Point(3, 46);
-      this.grStatus.Name = "grStatus";
-      this.grStatus.Size = new System.Drawing.Size(406, 43);
-      this.grStatus.TabIndex = 25;
-      this.grStatus.TabStop = false;
-      this.grStatus.Text = "Status";
       // 
       // FrmCycloMediaOptions
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(420, 440);
+      this.ClientSize = new System.Drawing.Size(470, 440);
       this.Controls.Add(this.plButtons);
       this.Controls.Add(this.plSettings);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -781,6 +781,9 @@
       this.Load += new System.EventHandler(this.FrmCycloMediaOptions_Load);
       this.tcSettings.ResumeLayout(false);
       this.tbLogin.ResumeLayout(false);
+      this.grStatus.ResumeLayout(false);
+      this.grLogin.ResumeLayout(false);
+      this.grLogin.PerformLayout();
       this.tbSettings.ResumeLayout(false);
       this.grGeneral.ResumeLayout(false);
       this.grGeneral.PerformLayout();
@@ -801,9 +804,6 @@
       this.tbAgreement.PerformLayout();
       this.plSettings.ResumeLayout(false);
       this.plButtons.ResumeLayout(false);
-      this.grLogin.ResumeLayout(false);
-      this.grLogin.PerformLayout();
-      this.grStatus.ResumeLayout(false);
       this.ResumeLayout(false);
 
     }

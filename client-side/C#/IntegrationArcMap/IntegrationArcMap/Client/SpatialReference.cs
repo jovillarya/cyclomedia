@@ -50,6 +50,8 @@ namespace IntegrationArcMap.Client
     public Bounds NativeBounds { get; set; }
 
     public string ESRICompatibleName { get; set; }
+
+    public string CompatibleSRSNames { get; set; }
     // ReSharper restore InconsistentNaming
 
     [XmlIgnore]
@@ -65,27 +67,68 @@ namespace IntegrationArcMap.Client
       {
         if (_spatialReference == null)
         {
-          int srs;
-          string strsrs = SRSName.Replace("EPSG:", string.Empty);
-
-          if (int.TryParse(strsrs, out srs))
+          if (string.IsNullOrEmpty(SRSName))
           {
-            ISpatialReferenceFactory3 spatialRefFactory = new SpatialReferenceEnvironmentClass();
+            _spatialReference = null;
+          }
+          else
+          {
+            int srs;
+            string strsrs = SRSName.Replace("EPSG:", string.Empty);
 
-            try
+            if (int.TryParse(strsrs, out srs))
             {
-              _spatialReference = spatialRefFactory.CreateProjectedCoordinateSystem(srs);
-            }
-            catch (ArgumentException)
-            {
+              ISpatialReferenceFactory3 spatialRefFactory = new SpatialReferenceEnvironmentClass();
+
               try
               {
-                _spatialReference = spatialRefFactory.CreateGeographicCoordinateSystem(srs);
+                _spatialReference = spatialRefFactory.CreateProjectedCoordinateSystem(srs);
               }
               catch (ArgumentException)
               {
-                _spatialReference = null;
+                try
+                {
+                  _spatialReference = spatialRefFactory.CreateGeographicCoordinateSystem(srs);
+                }
+                catch (ArgumentException)
+                {
+                  if (string.IsNullOrEmpty(CompatibleSRSNames))
+                  {
+                    _spatialReference = null;
+                  }
+                  else
+                  {
+                    strsrs = CompatibleSRSNames.Replace("EPSG:", string.Empty);
+
+                    if (int.TryParse(strsrs, out srs))
+                    {
+                      try
+                      {
+                        _spatialReference = spatialRefFactory.CreateProjectedCoordinateSystem(srs);
+                      }
+                      catch (ArgumentException)
+                      {
+                        try
+                        {
+                          _spatialReference = spatialRefFactory.CreateGeographicCoordinateSystem(srs);
+                        }
+                        catch (ArgumentException)
+                        {
+                          _spatialReference = null;
+                        }
+                      }
+                    }
+                    else
+                    {
+                      _spatialReference = null;
+                    }
+                  }
+                }
               }
+            }
+            else
+            {
+              _spatialReference = null;
             }
           }
         }
@@ -143,7 +186,7 @@ namespace IntegrationArcMap.Client
     // =========================================================================
     public override string ToString()
     {
-      return string.IsNullOrEmpty(ESRICompatibleName) ? Name : ESRICompatibleName;
+      return string.Format("{0} ({1})", (string.IsNullOrEmpty(ESRICompatibleName) ? Name : ESRICompatibleName), SRSName);
     }
 
     #endregion
