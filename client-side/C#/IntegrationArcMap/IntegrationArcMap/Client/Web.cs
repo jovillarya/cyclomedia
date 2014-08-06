@@ -17,7 +17,6 @@
  */
 
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Globalization;
@@ -56,6 +55,7 @@ namespace IntegrationArcMap.Client
     private const int XmlConfig = 0;
     private const int DownloadImageConfig = 1;
     private const int LeaseTimeOut = 5000;
+    private const int DefaultConnectionLimit = 5;
 
     #endregion
 
@@ -115,6 +115,7 @@ namespace IntegrationArcMap.Client
       _login = Login.Instance;
       _config = Config.Instance;
       _apiKey = APIKey.Instance;
+      ServicePointManager.DefaultConnectionLimit = DefaultConnectionLimit;
     }
 
     #endregion
@@ -289,9 +290,14 @@ namespace IntegrationArcMap.Client
       var bytes = (new UTF8Encoding()).GetBytes(postItem);
       WebRequest request = OpenWebRequest(remoteLocation, WebRequestMethods.Http.Post, bytes.Length);
       var state = new State {Request = request};
-      var reqstream = request.GetRequestStream();
-      reqstream.Write(bytes, 0, bytes.Length);
-      reqstream.Close();
+
+      lock (this)
+      {
+        using (Stream reqstream = request.GetRequestStream())
+        {
+          reqstream.Write(bytes, 0, bytes.Length);
+        }
+      }
 
       while ((download == false) && (retry < _retryTimeService[configId]))
       {

@@ -17,6 +17,7 @@
  */
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using ESRI.ArcGIS.Geometry;
@@ -42,6 +43,26 @@ namespace IntegrationArcMap.AddIns
     public GsRecentDataLayer()
     {
       Checked = false;
+      GsExtension extension = GsExtension.GetExtension();
+      CycloMediaGroupLayer groupLayer = extension.CycloMediaGroupLayer;
+
+      if (groupLayer != null)
+      {
+        IList<CycloMediaLayer> layers = groupLayer.Layers;
+
+        foreach (var layer in layers)
+        {
+          if (layer.IsRemoved)
+          {
+            CycloMediaLayerRemoved(layer);
+          }
+          else
+          {
+            CycloMediaLayerAdded(layer);
+          }
+        }
+      }
+
       CycloMediaLayer.LayerAddedEvent += CycloMediaLayerAdded;
       CycloMediaLayer.LayerRemoveEvent += CycloMediaLayerRemoved;
     }

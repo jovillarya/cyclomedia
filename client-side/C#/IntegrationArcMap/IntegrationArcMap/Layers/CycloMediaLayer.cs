@@ -90,6 +90,7 @@ namespace IntegrationArcMap.Layers
     public abstract string WfsRequest { get; }
 
     public bool Visible { get; set; }
+    public bool IsRemoved { get; set; }
 
     public ILayer Layer
     {
@@ -187,6 +188,7 @@ namespace IntegrationArcMap.Layers
       _isVisibleInGlobespotter = true;
       IActiveView activeView = ArcUtils.ActiveView;
       Visible = false;
+      IsRemoved = true;
 
       if (activeView != null)
       {
@@ -260,6 +262,7 @@ namespace IntegrationArcMap.Layers
         LayerAddedEvent(this);
       }
 
+      IsRemoved = false;
       var avEvents = ArcUtils.ActiveViewEvents;
 
       if (avEvents != null)
@@ -506,6 +509,7 @@ namespace IntegrationArcMap.Layers
     protected virtual void Remove()
     {
       var avEvents = ArcUtils.ActiveViewEvents;
+      IsRemoved = true;
 
       if (LayerRemoveEvent != null)
       {

@@ -1,6 +1,11 @@
 Release notes:
 ==============
 
+Version 1.1.28 (08/06/2014)
+============================
+- Bug fixes
+
+
 Version: 1.1.26 (07/22/2014)
 ============================
 - Added: EPSG Codes in the Cyclorama viewer spatial references combobox
