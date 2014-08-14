@@ -1,0 +1,20 @@
+Script: Add the recording layer:
+================================
+ 1 - Select in the GlobeSpotter toolbar: ‘Add recent cyclorama layer’
+ 2 - In the 'Table of contents – layers’ screen appears a 'CycloMedia - Recent Recordings' layer
+ 3 - Zoom in on the map and if you have reached a zoom level of 1:2000, you will see dots on the map. (With the condition that there are recordings in that area)
+ 4 - Select in the GlobeSpotter toolbar: ‘Add historical cyclorama layer’
+ 5 - In the 'Table of contents – layers’ screen appears a 'CycloMedia – Historical Recordings' layer
+ 6 - The date range of the recordings can be changed with the ‘CycloMedia Recording History’ form. Select the ‘CycloMedia Recording History’ form in the GlobeSpotter toolbar.
+ 7 - You can change the date range in this form.
+ 8 - Select the ‘Settings’ tab of the GlobeSpotter for ArcGIS Desktop form.
+ 9 - Select the coordinate system which the viewer must use.
+10 - Select the maximum cyclorama viewers which can be opened at the same time. The default value is three viewers.
+11 - Some areas are driven with additional cameras. These detailed images can be made visible with the: ‘show detail images’ checkmark.
+12 - Press <Apply> and the changes take effect.
+13 - Select the ‘Open location tool’ in the Cyclorama toolbar.
+14 - Click on a dot and the corresponding cyclorama opens.
+15 - Click on another dot and a second corresponding cyclorama opens.
+16 - Switch to the recent recording layer and the recent recording dots appear on the screen and in de cyclorama.
+17 - Right click on the Recording layer and the feature layer context menu appears.
+18 - With The 'Show in Cyclorama' button, the recording dots in the Cyclorama can be turned off or on.
