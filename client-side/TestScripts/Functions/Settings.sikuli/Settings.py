@@ -41,14 +41,45 @@ def tabSettings():
     if exists("TabSettings.png") != None:
         Utils.slowClick("TabSettings.png");
 
-def markMaximumCycloramaViewers(speed):
-    wait(speed);
-    Utils.slowHover("MaximumCycloramaViewers.png", True, speed);
+def markMaximumCycloramaViewers(speed = Utils.hoverSpeed):
+    markSettings("MaximumCycloramaViewers.png", speed);
 
-def markShowDetailImages(speed):
+def markOverlayDrawDistance(speed = Utils.hoverSpeed):
+    markSettings("OverlayDrawDistance.png", speed);
+
+def markShowDetailImages(speed = Utils.hoverSpeed):
+    markSettings("ShowDetailImages.png", speed);
+
+def markEnableSmartClickMeasurement(speed = Utils.hoverSpeed):
+    markSettings("EnableSmartClickMeasurement.png", speed);
+
+def markSettings(pattern, speed = Utils.hoverSpeed):
     wait(speed);
-    Utils.slowHover("ShowDetailImages.png", True, speed);
+    Utils.slowHover(pattern, True, speed);
 
 def selectCoordinateSystem(pattern, speed = Utils.clickSpeed):
-    Utils.slowClick("SelectCoordinateSystem.png");
+    Utils.slowClick("SelectCoordinateSystem.png", speed);
     Utils.slowClick(pattern);
+
+def toggleSmartClickMeasurement(speed = Utils.clickSpeed):
+    toggleCheckBox("EnableSmartClickMeasurement.png", speed);
+
+def toggleCheckBox(checkbox, speed = Utils.clickSpeed):
+    Utils.slowClick(checkbox, speed);
+
+def enableSmartClickMeasurement():
+    makeStatusCheckBox("EnableSmartClickMeasurement.png", "CheckedCheckbox.png");
+
+def disableSmartClickMeasurement():
+    makeStatusCheckBox("EnableSmartClickMeasurement.png", "UnCheckedCheckbox.png");
+
+def makeStatusCheckBox(checkbox, status):
+    r = find(checkbox);
+
+    if r.exists(status) == None:
+        toggleCheckBox(checkbox);
+    else:
+        markSettings(checkbox);
+
+    setThrowException(True);
+    r.find(status);

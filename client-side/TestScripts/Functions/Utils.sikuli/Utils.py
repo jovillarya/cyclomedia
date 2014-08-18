@@ -8,12 +8,15 @@ clickSpeed = 1;
 hoverSpeed = 2;
 wheelSpeed = 0.5;
 existsTime = 5;
-maxWaitExistsTime = 60;
+maxWaitExistsTime = 90;
 
 defaultDirectory = "%USERPROFILE%\\Desktop\\";
 
 def fileNameWithDefault(fileName):
     return defaultDirectory + fileName;
+
+def getgdbLocation(gdbName):
+    return "\"" + defaultDirectory + gdbName + "\"";
 
 def deleteFileFromDefault(fileName):
     filePath = fileNameWithDefault(fileName);
@@ -31,9 +34,21 @@ def copyFileToDefault(fileName):
     copyFile(fileName, defaultDirectory);
 
 def copyFile(fileName, destination):
-    App.open("cmd /k copy " + fileName + " " + destination );
+    App.open("cmd /k copy " + fileName + " " + destination);
     slowClick("CloseCommandBox.png");
-    
+
+def copyAllFiles(source, destination):
+    allFiles = source + "\\*.*";
+    copyFile(allFiles, destination);
+
+def makeDirectory(dirName):
+    App.open("cmd /k md " + dirName);
+    slowClick("CloseCommandBox.png");
+
+def copyDirectory(source, destination):
+    makeDirectory(destination);
+    copyAllFiles(source, destination);
+
 # custom interaction methods
 def slowType(text, speed = typeSpeed):
     for c in text:
@@ -83,7 +98,7 @@ def slowMouseDown(pattern, speed = clickSpeed, silent = False):
 
 def slowMouseUp(pattern, speed = clickSpeed, silent = False):
     if checkPattern(pattern, silent):
-        if( isinstance(pattern, Location)):
+        if(isinstance(pattern, Location)):
             location = pattern;
         else:
             location = find(pattern).getTarget();
@@ -117,7 +132,7 @@ def slowHover(pattern, show = False, speed = hoverSpeed, silent = False):
 
 def slowWheel(pattern, direction, lines = 1, speed = wheelSpeed, silent = False):
     if checkPattern(pattern, silent):
-        if( isinstance(pattern, Location)):
+        if(isinstance(pattern, Location)):
             location = pattern;
         else:
             location = find(pattern).getTarget();        

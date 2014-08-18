@@ -21,6 +21,10 @@
 /client-side/TestScripts/Scripts/__init__$py.class
 /client-side/TestScripts/Scripts/AddTheRecordingLayer.sikuli/AddTheRecordingLayer$py.class
 /client-side/TestScripts/Scripts/AddTheRecordingLayer.sikuli/AddTheRecordingLayer.html
+/client-side/TestScripts/Scripts/ShowOverlayData.sikuli/ShowOverlayData$py.class
+/client-side/TestScripts/Scripts/ShowOverlayData.sikuli/ShowOverlayData.html
+/client-side/TestScripts/Scripts/Measurements.sikuli/Measurements$py.class
+/client-side/TestScripts/Scripts/Measurements.sikuli/Measurements.html
 /client-side/TestScripts/Functions/__init__$py.class
 /client-side/TestScripts/Functions/ArcMap.sikuli/ArcMap$py.class
 /client-side/TestScripts/Functions/ArcMap.sikuli/ArcMap.html
@@ -42,3 +46,5 @@
 /client-side/TestScripts/Functions/Toolbar.sikuli/Toolbar.html
 /client-side/TestScripts/Functions/Utils.sikuli/Utils$py.class
 /client-side/TestScripts/Functions/Utils.sikuli/Utils.html
+/client-side/TestScripts/Functions/Measurement.sikuli/Measurement$py.class
+/client-side/TestScripts/Functions/Measurement.sikuli/Measurement.html

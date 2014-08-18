@@ -9,12 +9,14 @@ reload(Cyclorama);
 reload(Map);
 
 def markRecent(speed = Utils.hoverSpeed):
-    wait(speed);
-    Utils.slowHover("RecentRecordings.png", True, speed);
+    markLayer("RecentRecordings.png", speed);
 
 def markHistorical(speed = Utils.hoverSpeed):
+    markLayer("HistoricalRecordings.png", speed);
+
+def markLayer(pattern, speed = Utils.hoverSpeed):
     wait(speed);
-    Utils.slowHover("HistoricalRecordings.png", True, speed);
+    Utils.slowHover(pattern, True, speed);
 
 def addRecent(pattern = None):
     addLayer("RecentRecordings.png", "AddRecentRecordings.png", pattern);
@@ -67,4 +69,12 @@ def toggleShowInCycloramaHistoricalRecordings():
 def toggleShowInCyclorama(pattern, speed = Utils.clickSpeed):
     Utils.slowRightClick(pattern);
     Utils.slowClick("ShowInCyclorama.png");
+    Utils.slowClick("WhiteSpace.png");
+    wait(speed);
+
+def setLayerInEdit(pattern, speed = Utils.clickSpeed):
+    Utils.slowRightClick(pattern);
+    Utils.slowHover("EditFeatures.png");
+    Utils.slowClick("StartEditing.png");
+    Utils.slowClick("WhiteSpace.png");
     wait(speed);

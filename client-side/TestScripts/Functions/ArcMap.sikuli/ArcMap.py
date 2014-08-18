@@ -36,11 +36,15 @@ def loadMxd(mxd, waitPictureUntilFinished):
     wait(1);
     Utils.slowType(mxd);
     Utils.slowClick("Openmxd.png");
-    exists(waitPictureUntilFinished, Utils.maxWaitExistsTime);
-    find(waitPictureUntilFinished);
+    wait(1);
+
+    if waitPictureUntilFinished != None:
+        exists(waitPictureUntilFinished, Utils.maxWaitExistsTime);
+        find(waitPictureUntilFinished);
 
 def close(speed = closeSpeed):
     wait(speed);
+    Utils.slowClick("ArcMapMenuPart.png");
     Utils.slowClick("CloseArcMap.png");
 
     if exists("CloseSaveChanges.png") != None:

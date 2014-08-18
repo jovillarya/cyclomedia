@@ -18,3 +18,34 @@ Script: Add the recording layer:
 16 - Switch to the recent recording layer and the recent recording dots appear on the screen and in de cyclorama.
 17 - Right click on the Recording layer and the feature layer context menu appears.
 18 - With The 'Show in Cyclorama' button, the recording dots in the Cyclorama can be turned off or on.
+
+Script: Show overlay data:
+================================
+ 1 - Add point, line or polygon vector data to the map. Vector data can be like:
+     + Shape files
+	 + ArcSDE
+	 + Personal MDB
+	 + File GDB
+ 2 - Open a cyclorama.
+ 3 - Right click on the vector data layer and the feature layer context menu appears.
+ 4 - The vector layer in the cyclorama can be turned on and off with The 'Show in Cyclorama' button.
+ 5 - The distance around the images which the vector layer data is included in the cyclorama can be set in the ‘GlobeSpotter for ArcGIS Desktop – Settings’ menu (Overlay draw distance[m])
+	 The default distance is 30 meters.
+
+Script: Measurement:
+================================
+ 1 - Add a point vector data layer to the map where you want to save the measurement.
+ 2 - Open a image which the object is visible what you want to measure.
+ 3 - Enable smart click measurement in the ‘GlobeSpotter for ArcGIS Desktop – Settings’ menu.
+ 4 - Make the point vector data layer visible in the Cyclorama with right click on the vector data layer and select: 'Show in Cyclorama'.
+ 5 - Right click on the point vector layer and select: ‘Edit Features -> Start Editing’.
+ 6 - Select the point layer in the Create Features form to start a point measurement.
+ 7 - Select the point you want to measure in the image.
+ 8 - The selected measurement details form contains information about the measurement.
+ 9 - You can check the other images which are found by smart click by clicking on the image and click on <Show>.
+10 - It is now possible to change correspondence points found by smart click.
+11 - It is also possible for remove observation points.
+12 - If you want to add more observation points, open a new image and select in that image the point you want to measure.
+13 - If you are finished, Click the <Close> button down the ‘Selected Measurement Details’ form.
+14 - The measurement point is now added, if you want, you can now measure a second point at the same way.
+15 - If you are finished with measurement, you can save the edits to the vector layer.
