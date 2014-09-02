@@ -1,5 +1,7 @@
 from sikuli import *
 
+import os
+
 # Interaction constants
 Settings.MoveMouseDelay = 1.0;
 
@@ -11,12 +13,28 @@ existsTime = 5;
 maxWaitExistsTime = 90;
 
 defaultDirectory = "%USERPROFILE%\\Desktop\\";
+defaultGdbLocation = "C:\\";
+
+def Is64Windows():
+    return 'PROGRAMFILES(X86)' in os.environ
+
+def GetProgramFiles32():
+    if Is64Windows():
+        return os.environ['PROGRAMFILES(X86)']
+    else:
+        return os.environ['PROGRAMFILES']
+
+def GetProgramFiles64():
+    if Is64Windows():
+        return os.environ['PROGRAMW6432']
+    else:
+        return None
 
 def fileNameWithDefault(fileName):
     return defaultDirectory + fileName;
 
 def getgdbLocation(gdbName):
-    return "\"" + defaultDirectory + gdbName + "\"";
+    return "\"" + defaultGdbLocation + gdbName + "\"";
 
 def deleteFileFromDefault(fileName):
     filePath = fileNameWithDefault(fileName);
@@ -24,18 +42,21 @@ def deleteFileFromDefault(fileName):
 
 def deleteFile(fileName):
     App.open("cmd /k del " + fileName);
-    slowClick("CloseCommandBox.png");
+    wait(1);
+    slowType("exit\n");
 
 def deleteDirectory(dirName):
     App.open("cmd /k rd " + dirName + "/S /Q");
-    slowClick("CloseCommandBox.png");
+    wait(1);
+    slowType("exit\n");
 
 def copyFileToDefault(fileName):
     copyFile(fileName, defaultDirectory);
 
 def copyFile(fileName, destination):
     App.open("cmd /k copy " + fileName + " " + destination);
-    slowClick("CloseCommandBox.png");
+    wait(1);
+    slowType("exit\n");
 
 def copyAllFiles(source, destination):
     allFiles = source + "\\*.*";
@@ -43,7 +64,8 @@ def copyAllFiles(source, destination):
 
 def makeDirectory(dirName):
     App.open("cmd /k md " + dirName);
-    slowClick("CloseCommandBox.png");
+    wait(1);
+    slowType("exit\n");
 
 def copyDirectory(source, destination):
     makeDirectory(destination);
@@ -130,7 +152,7 @@ def slowHover(pattern, show = False, speed = hoverSpeed, silent = False):
         
         return location;
 
-def slowWheel(pattern, direction, lines = 1, speed = wheelSpeed, silent = False):
+def slowWheel(pattern, direction, lines = 1, speed = wheelSpeed, patternVanish = None, silent = False):
     if checkPattern(pattern, silent):
         if(isinstance(pattern, Location)):
             location = pattern;
@@ -138,6 +160,10 @@ def slowWheel(pattern, direction, lines = 1, speed = wheelSpeed, silent = False)
             location = find(pattern).getTarget();        
         for num in range(0,lines):
             wait( speed);
+
+            if (patternVanish != None):
+                waitVanish(patternVanish);
+
             wheel(location, direction, 1);
         return location;
 

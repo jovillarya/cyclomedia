@@ -4,13 +4,16 @@ import Utils
 
 reload(Utils);
 
+def getArcMapDir(desktopDirName):
+    return Utils.GetProgramFiles32().replace("/", "\\") + "\\ArcGIS\\" + desktopDirName + "\\bin\\ArcMap.exe";
+
 # Application constants
-ArcMap10_0 = "C:\Program Files (x86)\\ArcGIS\\Desktop10.0\\Bin\\ArcMap.exe";
-ArcMap10_1 = "C:\Program Files (x86)\\ArcGIS\\Desktop10.1\\Bin\\ArcMap.exe";
-ArcMap10_2 = "C:\Program Files (x86)\\ArcGIS\\Desktop10.2\\Bin\\ArcMap.exe";
+ArcMap10_0 = getArcMapDir("Desktop10.0");
+ArcMap10_1 = getArcMapDir("Desktop10.1");
+ArcMap10_2 = getArcMapDir("Desktop10.2");
 
 currentVersion = ArcMap10_0;
-closeSpeed = 5;
+closeSpeed = 11;
 
 def open(b):
     App.open(b);
@@ -45,9 +48,12 @@ def loadMxd(mxd, waitPictureUntilFinished):
 def close(speed = closeSpeed):
     wait(speed);
     Utils.slowClick("ArcMapMenuPart.png");
-    Utils.slowClick("CloseArcMap.png");
+    type(Key.F4, KEY_ALT);
 
     if exists("CloseSaveChanges.png") != None:
-        Utils.slowClick("SaveChangesNo.png");
+        if exists("SaveChangesNo.png") != None:
+            Utils.slowClick("SaveChangesNo.png");
+        if exists("SaveChangesNee.png") != None:
+            Utils.slowClick("SaveChangesNee.png");
 
     wait(speed);

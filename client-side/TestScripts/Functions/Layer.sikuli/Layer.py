@@ -16,6 +16,8 @@ def markHistorical(speed = Utils.hoverSpeed):
 
 def markLayer(pattern, speed = Utils.hoverSpeed):
     wait(speed);
+    waitVanish("EmptyMap.png");
+    wait(pattern, Utils.maxWaitExistsTime);
     Utils.slowHover(pattern, True, speed);
 
 def addRecent(pattern = None):
@@ -26,6 +28,7 @@ def addHistorical(pattern = None):
 
 def addLayer(typeLayer, typeIcon, pattern):
     setThrowException(True);
+    waitVanish("EmptyMap.png");
 
     if exists(typeLayer) == None:
         Utils.slowClick(typeIcon);
@@ -68,6 +71,7 @@ def toggleShowInCycloramaHistoricalRecordings():
 
 def toggleShowInCyclorama(pattern, speed = Utils.clickSpeed):
     Utils.slowRightClick(pattern);
+    exists("ShowInCyclorama.png", Utils.maxWaitExistsTime);
     Utils.slowClick("ShowInCyclorama.png");
     Utils.slowClick("WhiteSpace.png");
     wait(speed);
@@ -76,5 +80,6 @@ def setLayerInEdit(pattern, speed = Utils.clickSpeed):
     Utils.slowRightClick(pattern);
     Utils.slowHover("EditFeatures.png");
     Utils.slowClick("StartEditing.png");
+    Utils.slowClick("SelectFeatures.png");
     Utils.slowClick("WhiteSpace.png");
     wait(speed);

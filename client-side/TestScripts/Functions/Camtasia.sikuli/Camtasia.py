@@ -4,7 +4,7 @@ import Utils
 
 reload(Utils);
 
-Camtasia = "C:\\Program Files (x86)\\TechSmith\\Camtasia Studio 5\\CamtasiaStudio.exe";
+Camtasia = Utils.GetProgramFiles32().replace("/", "\\") + "\\TechSmith\\Camtasia Studio 5\\CamtasiaStudio.exe";
 
 VideoPath = "%USERPROFILE%\\Camtasia Studio New\\";
 VideoExtension = ".camrec";
@@ -35,7 +35,7 @@ def stopVideo(fileName):
 
     Utils.slowClick("EnterFileName.png");
     Utils.slowType(VideoPath + fileName + VideoExtension + "\n");
-    Utils.slowClick("EnterFileNameYes.png", clickSpeed, True);
+    Utils.slowClick("EnterFileNameYes.png", Utils.clickSpeed, True);
     exists("EnterFileNameOK.png", 60 );
     Utils.slowClick("EnterFileNameOK.png");
     Utils.slowClick("Next.png");
@@ -48,13 +48,14 @@ def stopVideo(fileName):
     Utils.slowClick("Next.png");
     Utils.slowClick("Next.png");
     Utils.slowType(fileName + "\n");
-    Utils.slowClick("Yes.png", clickSpeed, True);
+    Utils.slowClick("Yes.png", Utils.clickSpeed, True);
     wait(3);
     waitVanish("RenderingProject.png", FOREVER);
     wait(3);
     
     # try to close all Camtasia windows
     Utils.slowClick("Close.png");
+    wait(1);
     Utils.slowClick("CamtasiaRecorder.png");
     Utils.slowClick("Close.png");
     wait(3);

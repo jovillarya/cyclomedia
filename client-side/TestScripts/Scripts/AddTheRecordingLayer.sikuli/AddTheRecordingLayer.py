@@ -34,7 +34,7 @@ def playAddTheRecordingLayer(CountryCode = Country.currentCode):
     Layer.markRecent(3);
 
     SubTitle.printCurrentTime("03");
-    Map.zoomToRecordingLayer("ZoomToRecordingLayer_03_" + CountryCode + ".png", 3, getCenter(), 10, 2.0);
+    Map.zoomToRecordingLayer("ZoomToRecordingLayer_03_" + CountryCode + ".png", 5, getCenter(), 10, 3.0);
 
     SubTitle.printCurrentTime("04");
     Layer.addHistorical("AddHistorical_04_" + CountryCode + ".png");
@@ -83,12 +83,12 @@ def playAddTheRecordingLayer(CountryCode = Country.currentCode):
     Cyclorama.selectCycloramaTool();
 
     SubTitle.printCurrentTime("14");
-    Cyclorama.openCyclorama("OpenCyclorama_14_" + CountryCode + ".png", 6, 2);
+    Cyclorama.openCyclorama("OpenCyclorama_14_" + CountryCode + ".png", 8, 2);
     Cyclorama.rotateViewer(200, 0, 1, 1);
     Cyclorama.rotateViewer(-200, 0, 1, 1);
 
     SubTitle.printCurrentTime("15");
-    Cyclorama.openCyclorama("OpenCyclorama_15_" + CountryCode + ".png", 6, 2);
+    Cyclorama.openCyclorama("OpenCyclorama_15_" + CountryCode + ".png", 8, 2);
     Cyclorama.rotateViewer(200, 0, 2, 2);
     Cyclorama.rotateViewer(-200, 0, 2, 2);
 
@@ -116,7 +116,7 @@ def doPlayAddTheRecordingLayer(CountryCode = Country.currentCode, ArcMapVersion 
     ArcMap.loadMxdFromDefault(fullmxdName, "LoadMxd.png");
 
     if record:
-        Camtasia.startVideo(getCenter());
+        Camtasia.startVideo(Location(getCenter().getX(), 10));
 
     playAddTheRecordingLayer(CountryCode)
 

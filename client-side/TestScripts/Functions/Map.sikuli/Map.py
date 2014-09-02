@@ -5,20 +5,21 @@ import Utils
 reload(Utils);
 
 mapRegion = Region(204,100,1674,418);
+zoomInOutSpeed = 6;
 
 def getMapRegionCenter():
     return mapRegion.getCenter();
 
-def zoomIn():
+def zoomIn(speed = zoomInOutSpeed):
     zoomIn(getMapRegionCenter());
-    wait(3);
+    wait(speed);
 
-def zoomOut():
+def zoomOut(speed = zoomInOutSpeed):
     zoomOut(getMapRegionCenter());
-    wait(3);
+    wait(speed);
 
 def zoomIn(pattern = getCenter(), lines = 1, speed = Utils.wheelSpeed):
-    Utils.slowWheel(pattern, WHEEL_DOWN, lines, speed);
+    Utils.slowWheel(pattern, WHEEL_DOWN, lines, speed, "EmptyMap.png");
 
 def zoomOut(pattern = getCenter(), lines = 1, speed = Utils.wheelSpeed):
     Utils.slowWheel(pattern, WHEEL_UP, lines, speed);

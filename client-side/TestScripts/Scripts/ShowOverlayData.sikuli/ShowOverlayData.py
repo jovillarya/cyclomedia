@@ -29,6 +29,8 @@ def playAddTheRecordingLayer(CountryCode = Country.currentCode):
 
     SubTitle.printCurrentTime("01");
     Layer.markLayer("VectorData_01_" + CountryCode + ".png", 3);
+    Map.zoomIn();
+    Map.zoomOut();
 
     SubTitle.printCurrentTime("02");
     Cyclorama.selectCycloramaTool();
@@ -66,7 +68,7 @@ def doPlayShowOverlayData(CountryCode = Country.currentCode, ArcMapVersion = Arc
     ArcMap.loadMxdFromDefault(fullmxdName, "LoadMxd_" + CountryCode + ".png");
 
     if record:
-        Camtasia.startVideo(getCenter());
+        Camtasia.startVideo(Location(getCenter().getX(), 10));
 
     playAddTheRecordingLayer(CountryCode)
 

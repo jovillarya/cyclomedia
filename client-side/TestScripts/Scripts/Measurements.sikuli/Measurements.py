@@ -98,7 +98,7 @@ def doPlayMeasurements(CountryCode = Country.currentCode, ArcMapVersion = ArcMap
     ArcMap.loadMxdFromDefault(fullmxdName, CountryCode + "_LoadMxdMeasurement.png");
 
     if record:
-        Camtasia.startVideo(getCenter());
+        Camtasia.startVideo(Location(getCenter().getX(), 10));
 
     playMeasurements(CountryCode)
 
