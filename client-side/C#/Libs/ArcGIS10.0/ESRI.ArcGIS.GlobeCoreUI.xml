@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.GlobeCoreUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.GlobeCoreUI.IGxGlobeView">
+      <summary>Provides access to members that control the Globe View.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.IGxGlobeView.Get3DViewer(ESRI.ArcGIS.Analyst3D.I3DViewer@)">
+      <summary>Returns the I3DViewer interface.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.IGxGlobeView.GetGlobeViewer(ESRI.ArcGIS.GlobeCore.IGlobeViewer@)">
+      <summary>Returns the IGlobeViewer interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPage">
+      <summary>Globe Server Layer Fields Property Page</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass">
+      <summary>Globe Server Layer Fields Property Page</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GlobeCoreUI..">
+      <summary>Globe Server Layer Fields Property Page Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GlobeCoreUI.._">
+      <summary>Globe Server Layer Fields Property Page Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.#ctor">
+      <summary>Globe Server Layer Fields Property Page Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GlobeServerFieldsPropertyPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasets">
+      <summary>A filter for datasets compatible with Globe container.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass">
+      <summary>A filter for datasets compatible with Globe container.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.Scene">
+      <summary>The decision-making scene.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.IGxSceneFilter_Scene">
+      <summary>The decision-making scene.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GlobeCoreUI..">
+      <summary>A filter for datasets compatible with Globe container. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GlobeCoreUI.._">
+      <summary>A filter for datasets compatible with Globe container. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.#ctor">
+      <summary>A filter for datasets compatible with Globe container. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.IGxObjectFilter_CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.IGxObjectFilter_CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.IGxObjectFilter_CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.IGxObjectFilter_Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GlobeCoreUI.GxFilterGlobeDatasetsClass.IGxObjectFilter_Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+  </members>
+</doc>

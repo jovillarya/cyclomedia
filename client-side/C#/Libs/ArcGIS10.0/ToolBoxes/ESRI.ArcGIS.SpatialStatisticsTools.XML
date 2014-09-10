@@ -1,0 +1,1207 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.SpatialStatisticsTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering">
+            <summary>Measures the degree of clustering for either high values or low values.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.#ctor(System.Object,System.Object,System.String,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Input_Field">Input Field (in)</param>
+            <param name="Conceptualization_of_Spatial_Relationships">Conceptualization of Spatial Relationships (in)</param>
+            <param name="Distance_Method">Distance Method (in)</param>
+            <param name="Standardization">Standardization (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Input_Field">
+            <summary>Input Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Generate_Report">
+            <summary>Generate Report (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Conceptualization_of_Spatial_Relationships">
+            <summary>Conceptualization of Spatial Relationships (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Distance_Method">
+            <summary>Distance Method (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Standardization">
+            <summary>Standardization (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Distance_Band_or_Threshold_Distance">
+            <summary>Distance Band or Threshold Distance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Weights_Matrix_File">
+            <summary>Weights Matrix File (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Observed_General_G">
+            <summary>Observed General G (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.ZScore">
+            <summary>ZScore (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.PValue">
+            <summary>PValue (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.HTML_Report_File">
+            <summary>HTML Report File (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HighLowClustering.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation">
+            <summary>Measures spatial autocorrelation based on feature locations and attribute values.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.#ctor(System.Object,System.Object,System.String,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Input_Field">Input Field (in)</param>
+            <param name="Conceptualization_of_Spatial_Relationships">Conceptualization of Spatial Relationships (in)</param>
+            <param name="Distance_Method">Distance Method (in)</param>
+            <param name="Standardization">Standardization (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Input_Field">
+            <summary>Input Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Generate_Report">
+            <summary>Generate Report (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Conceptualization_of_Spatial_Relationships">
+            <summary>Conceptualization of Spatial Relationships (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Distance_Method">
+            <summary>Distance Method (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Standardization">
+            <summary>Standardization (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Distance_Band_or_Threshold_Distance">
+            <summary>Distance Band or Threshold Distance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Weights_Matrix_File">
+            <summary>Weights Matrix File (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Index">
+            <summary>Index (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.ZScore">
+            <summary>ZScore (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.PValue">
+            <summary>PValue (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.HTML_Report_File">
+            <summary>HTML Report File (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.SpatialAutocorrelation.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers">
+            <summary>Given a set of weighted data points, identifies spatial clusters of extreme values and spatial outliers.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.#ctor(System.Object,System.Object,System.Object,System.String,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Input_Field">Input Field (in)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+            <param name="Conceptualization_of_Spatial_Relationships">Conceptualization of Spatial Relationships (in)</param>
+            <param name="Distance_Method">Distance Method (in)</param>
+            <param name="Standardization">Standardization (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Input_Field">
+            <summary>Input Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Conceptualization_of_Spatial_Relationships">
+            <summary>Conceptualization of Spatial Relationships (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Distance_Method">
+            <summary>Distance Method (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Standardization">
+            <summary>Standardization (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Distance_Band_or_Threshold_Distance">
+            <summary>Distance Band or Threshold Distance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Weights_Matrix_File">
+            <summary>Weights Matrix File (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Index_Field_Name">
+            <summary>Index Field Name (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.ZScore_Field_Name">
+            <summary>ZScore Field Name (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Probability_Field">
+            <summary>Probability Field (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Cluster_Outlier_Type">
+            <summary>Cluster-Outlier Type (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliers.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots">
+            <summary>Calculates the Getis-Ord Gi* statistic to identify spatial clusters of high and low values.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.#ctor(System.Object,System.Object,System.Object,System.String,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Input_Field">Input Field (in)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+            <param name="Conceptualization_of_Spatial_Relationships">Conceptualization of Spatial Relationships (in)</param>
+            <param name="Distance_Method">Distance Method (in)</param>
+            <param name="Standardization">Standardization (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Input_Field">
+            <summary>Input Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Conceptualization_of_Spatial_Relationships">
+            <summary>Conceptualization of Spatial Relationships (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Distance_Method">
+            <summary>Distance Method (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Standardization">
+            <summary>Standardization (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Distance_Band_or_Threshold_Distance">
+            <summary>Distance Band or Threshold Distance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Self_Potential_Field">
+            <summary>Self Potential Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Weights_Matrix_File">
+            <summary>Weights Matrix File (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Results_Field">
+            <summary>Results Field (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Probability_Field">
+            <summary>Probability Field (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpots.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature">
+            <summary>Identifies the most centrally located feature in a point, line, or polygon feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+            <param name="Distance_Method">Distance Method (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.Distance_Method">
+            <summary>Distance Method (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.Weight_Field">
+            <summary>Weight Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.Self_Potential_Weight_Field">
+            <summary>Self Potential Weight Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.Case_Field">
+            <summary>Case Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CentralFeature.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean">
+            <summary>Identifies the general (mean) direction for a set of lines.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+            <param name="Orientation_Only">Orientation Only (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.Orientation_Only">
+            <summary>Orientation Only (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.Case_Field">
+            <summary>Case Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalMean.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.CalculateAreas">
+            <summary>Calculates Area values for each feature in a polygon feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.CalculateAreas.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateAreas.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateAreas.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateAreas.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateAreas.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateAreas.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateAreas.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateAreas.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv">
+            <summary>Exports feature class coordinates and attribute values to a space-, comma-, or semicolon-delimited ASCII text file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.#ctor(System.Object,System.Object,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Value_Field">Value Field (in)</param>
+            <param name="Delimiter">Delimiter (in)</param>
+            <param name="Output_Ascii_File">Output Ascii File (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.Value_Field">
+            <summary>Value Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.Delimiter">
+            <summary>Delimiter (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.Output_Ascii_File">
+            <summary>Output Ascii File (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ExportXYv.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering">
+            <summary>Determines whether a feature class is clustered at multiple different distances. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.#ctor(System.Object,System.Object,System.Int32)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Output_Table">Output Table (out)</param>
+            <param name="Number_of_Distance_Bands">Number of Distance Bands (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Output_Table">
+            <summary>Output Table (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Number_of_Distance_Bands">
+            <summary>Number of Distance Bands (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Compute_Confidence_Envelope">
+            <summary>Compute Confidence Envelope (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Display_Results_Graphically">
+            <summary>Display Results Graphically (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Weight_Field">
+            <summary>Weight Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Beginning_Distance">
+            <summary>Beginning Distance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Distance_Increment">
+            <summary>Distance Increment (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Boundary_Correction_Method">
+            <summary>Boundary Correction Method (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Study_Area_Method">
+            <summary>Study Area Method (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Study_Area_Feature_Class">
+            <summary>Study Area Feature Class (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Result_Image">
+            <summary>Result Image (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MultiDistanceSpatialClustering.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand">
+            <summary>Calculates the distance for all features in the input feature class to their nth neighbor.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.#ctor(System.Object,System.Int32,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Features">Input Features (in)</param>
+            <param name="Neighbors">Neighbors (in)</param>
+            <param name="Distance_Method">Distance Method (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.Input_Features">
+            <summary>Input Features (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.Neighbors">
+            <summary>Neighbors (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.Distance_Method">
+            <summary>Distance Method (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.Minimum_Distance">
+            <summary>Minimum Distance (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.Average_Distance">
+            <summary>Average Distance (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.Maximum_Distance">
+            <summary>Maximum Distance (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CalculateDistanceBand.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor">
+            <summary>Calculates a nearest neighbor index based on the average distance from each feature to its nearest neighboring feature.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Distance_Method">Distance Method (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.Distance_Method">
+            <summary>Distance Method (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.Generate_Report">
+            <summary>Generate Report (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.Area">
+            <summary>Area (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.NNRatio">
+            <summary>NNRatio (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.NNZScore">
+            <summary>NNZScore (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.PValue">
+            <summary>PValue (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.NNExpected">
+            <summary>NNExpected (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.NNObserved">
+            <summary>NNObserved (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.HTML_Report_File">
+            <summary>HTML Report File (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.AverageNearestNeighbor.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution">
+            <summary>Measures whether a distribution of features exhibits a directional trend.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Output_Ellipse_Feature_Class">Output Ellipse Feature Class (out)</param>
+            <param name="Ellipse_Size">Ellipse Size (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.Output_Ellipse_Feature_Class">
+            <summary>Output Ellipse Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.Ellipse_Size">
+            <summary>Ellipse Size (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.Weight_Field">
+            <summary>Weight Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.Case_Field">
+            <summary>Case Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.DirectionalDistribution.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter">
+            <summary>Identifies the geographic center (or the center of concentration) for a set of features.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.Weight_Field">
+            <summary>Weight Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.Case_Field">
+            <summary>Case Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.Dimension_Field">
+            <summary>Dimension Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MeanCenter.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance">
+            <summary>Measures the degree to which features are concentrated or dispersed around the geometric mean center.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Output_Standard_Distance_Feature_Class">Output Standard Distance Feature Class (out)</param>
+            <param name="Circle_Size">Circle Size (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.Output_Standard_Distance_Feature_Class">
+            <summary>Output Standard Distance Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.Circle_Size">
+            <summary>Circle Size (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.Weight_Field">
+            <summary>Weight Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.Case_Field">
+            <summary>Case Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.StandardDistance.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents">
+            <summary>Converts event data, such as crimes or disease incidents, to weighted point data.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Incident_Features">Input Incident Features (in)</param>
+            <param name="Output_Weighted_Point_Feature_Class">Output Weighted Point Feature Class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.Input_Incident_Features">
+            <summary>Input Incident Features (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.Output_Weighted_Point_Feature_Class">
+            <summary>Output Weighted Point Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.Results_Field">
+            <summary>Results Field (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.Z_Max_Value">
+            <summary>Z Max Value (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEvents.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression">
+            <summary>Performs Geographically Weighted Regression (GWR), a local form of linear regression used to model spatially varying relationships. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.#ctor(System.Object,System.Object,System.Object,System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The feature class containing the dependent and independent variables. (In, Required)</param>
+            <param name="dependent_field">The numeric field containing values for what you are trying to model. (In, Required)</param>
+            <param name="explanatory_field">A list of fields representing independent explanatory variables in your regression model. (In, Required)</param>
+            <param name="out_featureclass">The output feature class to receive dependent variable estimates and residuals. (Out, Required)</param>
+            <param name="kernel_type">Specifies if the kernel is constructed as a fixed distance,  or if it is allowed to vary in extent as a function of feature density. (In, Required)</param>
+            <param name="bandwidth_method">Bandwidth method (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.in_features">
+            <summary>The feature class containing the dependent and independent variables. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.dependent_field">
+            <summary>The numeric field containing values for what you are trying to model. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.explanatory_field">
+            <summary>A list of fields representing independent explanatory variables in your regression model. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.out_featureclass">
+            <summary>The output feature class to receive dependent variable estimates and residuals. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.kernel_type">
+            <summary>Specifies if the kernel is constructed as a fixed distance,  or if it is allowed to vary in extent as a function of feature density. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.bandwidth_method">
+            <summary>Bandwidth method (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.distance">
+            <summary>Distance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.number_of_neighbors">
+            <summary>An integer reflecting the exact number of neighbors to include in the local bandwidth of the Gaussian kernel whenever the kernel type is ADAPTIVE and the bandwidth method is BANDWIDTH PARAMETER. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.weight_field">
+            <summary>The numeric field containing a spatial weighting for individual features. This weight field allows some features to be more important in the model calibration process than others.  Primarily useful when the number of samples taken at different locations varies, values for the dependent and independent variables are averaged, and places with more samples are more reliable (should be weighted higher).  If you have an average of 25 different samples for one location, but an average of only 2 samples for another location, you can use the number of samples as your weight field so that locations with more samples have a larger influence on model calibration that locations with few samples. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.coefficient_raster_workspace">
+            <summary>Coefficient raster workspace (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.cell_size">
+            <summary>The cell size (a number) or reference to the cell size (a pathname to a raster dataset) to use when creating the coefficient rasters. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.in_prediction_locations">
+            <summary>A feature class containing features representing locations where estimates should be computed. Each feature in this dataset should contain values for all of the explanatory variables specified; the dependent variable for these features will be estimated using the model calibrated for the input feature class data. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.prediction_explanatory_field">
+            <summary>A list of fields representing explanatory variables in the Prediction Locations feature class. These field names should be provided in the same order (a one-to-one correspondance) as those listed for the input feature class Explanatory variables parameter. If no prediction explanatory variables are given, the output prediction feature class will only contain computed coefficient values for each prediction location. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.out_prediction_featureclass">
+            <summary>Output prediction feature class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.out_table">
+            <summary>Output table (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.out_regression_rasters">
+            <summary>Output regression rasters (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GeographicallyWeightedRegression.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares">
+            <summary>Computes a linear regression model using Ordinary Least Squares.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Unique_ID_Field">Unique ID Field (in)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+            <param name="Dependent_Variable">Dependent Variable (in)</param>
+            <param name="Explanatory_Variables">Explanatory Variables (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.Unique_ID_Field">
+            <summary>Unique ID Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.Dependent_Variable">
+            <summary>Dependent Variable (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.Explanatory_Variables">
+            <summary>Explanatory Variables (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.Coefficient_Output_Table">
+            <summary>Coefficient Output Table (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.Diagnostic_Output_Table">
+            <summary>Diagnostic Output Table (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.OrdinaryLeastSquares.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix">
+            <summary>Creates a spatial weights matrix (*.swm) file from an input feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.#ctor(System.Object,System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Unique_ID_Field">Unique ID Field (in)</param>
+            <param name="Output_Spatial_Weights_Matrix_File">Output Spatial Weights Matrix File (out)</param>
+            <param name="Conceptualization_of_Spatial_Relationships">Conceptualization of Spatial Relationships (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Unique_ID_Field">
+            <summary>Unique ID Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Output_Spatial_Weights_Matrix_File">
+            <summary>Output Spatial Weights Matrix File (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Conceptualization_of_Spatial_Relationships">
+            <summary>Conceptualization of Spatial Relationships (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Distance_Method">
+            <summary>Distance Method (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Exponent">
+            <summary>Exponent (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Threshold_Distance">
+            <summary>Threshold Distance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Number_of_Neighbors">
+            <summary>Number of Neighbors (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Row_Standardization">
+            <summary>Row Standardization (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Input_Table">
+            <summary>Input Table (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateSpatialWeightsMatrix.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.ConvertSpatialWeightsMatrixtoTable">
+            <summary>Converts a Spatial Weights Matrix (*.swm) to a database table.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.ConvertSpatialWeightsMatrixtoTable.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Spatial_Weights_Matrix_File">Input Spatial Weights Matrix File (in)</param>
+            <param name="Output_Table">Output Table (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ConvertSpatialWeightsMatrixtoTable.Input_Spatial_Weights_Matrix_File">
+            <summary>Input Spatial Weights Matrix File (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ConvertSpatialWeightsMatrixtoTable.Output_Table">
+            <summary>Output Table (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ConvertSpatialWeightsMatrixtoTable.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ConvertSpatialWeightsMatrixtoTable.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ConvertSpatialWeightsMatrixtoTable.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ConvertSpatialWeightsMatrixtoTable.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ConvertSpatialWeightsMatrixtoTable.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights">
+            <summary>Creates a spatial weights matrix file based on the locations in an input feature class in relation to a network dataset.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.#ctor(System.Object,System.Object,System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Unique_ID_Field">Unique ID Field (in)</param>
+            <param name="Output_Spatial_Weights_Matrix_File">Output Spatial Weights Matrix File (out)</param>
+            <param name="Input_Network">Input Network (in)</param>
+            <param name="Impedance_Attribute">Impedance Attribute (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Unique_ID_Field">
+            <summary>Unique ID Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Output_Spatial_Weights_Matrix_File">
+            <summary>Output Spatial Weights Matrix File (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Input_Network">
+            <summary>Input Network (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Impedance_Attribute">
+            <summary>Impedance Attribute (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Impedance_Cutoff">
+            <summary>Impedance Cutoff (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Maximum_Number_of_Neighbors">
+            <summary>Maximum Number of Neighbors (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Barriers">
+            <summary>Barriers (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.U_turn_Policy">
+            <summary>U-turn Policy (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Restrictions">
+            <summary>Restrictions (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Use_Hierarchy_in_Analysis">
+            <summary>Use Hierarchy in Analysis (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Search_Tolerance">
+            <summary>Search Tolerance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Conceptualization_of_Spatial_Relationships">
+            <summary>Conceptualization of Spatial Relationships (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Exponent">
+            <summary>Exponent (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Row_Standardization">
+            <summary>Row Standardization (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.GenerateNetworkSpatialWeights.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered">
+            <summary>Converts event data to weighted point data and applies a graduated circle rendering to the count field.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Incident_Features">Input Incident Features (in)</param>
+            <param name="Output_Layer_File">Output Layer File (out)</param>
+            <param name="Output_Weighted_Point_Feature_Class">Output Weighted Point Feature Class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered.Input_Incident_Features">
+            <summary>Input Incident Features (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered.Output_Layer_File">
+            <summary>Output Layer File (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered.Output_Weighted_Point_Feature_Class">
+            <summary>Output Weighted Point Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CollectEventsRendered.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered">
+            <summary>Identifies and renders spatial clusters of high and low values.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.#ctor(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Input_Field">Input Field (in)</param>
+            <param name="Output_Layer_File">Output Layer File (out)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.Input_Field">
+            <summary>Input Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.Output_Layer_File">
+            <summary>Output Layer File (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.Distance_Band_or_Threshold_Distance">
+            <summary>Distance Band or Threshold Distance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.HotSpotsRendered.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter">
+            <summary>Identifies the location that minimizes overall Euclidean distance to the features in a dataset.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.Weight_Field">
+            <summary>Weight Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.Case_Field">
+            <summary>Case Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.Attribute_Field">
+            <summary>Attribute Field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.MedianCenter.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer">
+            <summary>Applies graduated circle rendering to a numeric field in a feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.#ctor(System.Object,System.Object,System.Object,System.Int32,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_feature_class">The feature layer containing count data to be rendered. (In, Required)</param>
+            <param name="field_to_render">The name of the field containing count data. (In, Required)</param>
+            <param name="output_layer_file">Output Layer (out)</param>
+            <param name="number_of_classes">The number of classes into which the input feature class will be classified. (In, Required)</param>
+            <param name="symbol_color">The color of the graduated circles. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.input_feature_class">
+            <summary>The feature layer containing count data to be rendered. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.field_to_render">
+            <summary>The name of the field containing count data. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.output_layer_file">
+            <summary>Output Layer (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.number_of_classes">
+            <summary>The number of classes into which the input feature class will be classified. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.symbol_color">
+            <summary>The color of the graduated circles. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.maximum_field_value">
+            <summary>The maximum attribute value that will be rendered. Features with field values greater than this maximum value will not be drawn. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.CountRenderer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer">
+            <summary>Applies a cold (blue) to hot (red) color rendering scheme for a field of z-scores.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_feature_class">Input Feature Class (in)</param>
+            <param name="field_to_render">Field to Render (in)</param>
+            <param name="output_layer_file">Output Layer File (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer.input_feature_class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer.field_to_render">
+            <summary>Field to Render (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer.output_layer_file">
+            <summary>Output Layer File (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ZRenderer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered">
+            <summary>Identifies and renders spatial clusters of extreme values and spatial outliers.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.#ctor(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Feature_Class">Input Feature Class (in)</param>
+            <param name="Input_Field">Input Field (in)</param>
+            <param name="Output_Layer_File">Output Layer File (out)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.Input_Feature_Class">
+            <summary>Input Feature Class (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.Input_Field">
+            <summary>Input Field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.Output_Layer_File">
+            <summary>Output Layer File (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SpatialStatisticsTools.ClustersOutliersRendered.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

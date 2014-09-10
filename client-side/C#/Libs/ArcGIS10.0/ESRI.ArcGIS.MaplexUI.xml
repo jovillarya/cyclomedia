@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.MaplexUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.MaplexUI.MaplexExtension">
+      <summary>Represents the Maplex Extension.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass">
+      <summary>Represents the Maplex Extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.MaplexUI..">
+      <summary>Represents the Maplex Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.MaplexUI.._">
+      <summary>Represents the Maplex Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.#ctor">
+      <summary>Represents the Maplex Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IExtensionConfig_Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IExtensionConfig_ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IExtensionConfig_State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.MaplexUI.MaplexExtensionClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.LinearReferencingTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes">
+            <summary>Recalculates route measures using points.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_route_features">The route features to be calibrated. (In, Required)</param>
+            <param name="route_id_field">The field containing values that uniquely identify each route. This field can be numeric or character. (In, Required)</param>
+            <param name="in_point_features">The point features used to calibrate the routes. (In, Required)</param>
+            <param name="point_id_field">The field that identifies the route on which each calibration point is located. The values in this field match those in the route identifier field. This field can be numeric or character. (In, Required)</param>
+            <param name="measure_field">The field containing the measure value for each calibration point. This field must be numeric. (In, Required)</param>
+            <param name="out_feature_class">The feature class to be created. It can be a shapefile or a geodatabase feature class. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.in_route_features">
+            <summary>The route features to be calibrated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.route_id_field">
+            <summary>The field containing values that uniquely identify each route. This field can be numeric or character. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.in_point_features">
+            <summary>The point features used to calibrate the routes. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.point_id_field">
+            <summary>The field that identifies the route on which each calibration point is located. The values in this field match those in the route identifier field. This field can be numeric or character. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.measure_field">
+            <summary>The field containing the measure value for each calibration point. This field must be numeric. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.out_feature_class">
+            <summary>The feature class to be created. It can be a shapefile or a geodatabase feature class. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.calibrate_method">
+            <summary>Specifies how route measures will be recalculated. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.search_radius">
+            <summary>Limits how far a calibration point can be from a route by specifying the distance and its unit of measure. If the units of measure are Unknown, the same units as the coordinate system of the route feature class will be used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.interpolate_between">
+            <summary>Specifies whether measure values will be interpolated between the calibration points.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.extrapolate_before">
+            <summary>Specifies whether measure values will be extrapolated before the calibration points.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.extrapolate_after">
+            <summary>Specifies whether measure values will be extrapolated after the calibration points.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.ignore_gaps">
+            <summary>Specifies whether spatial gaps will be ignored when recalculating the measures on disjointed routes.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.keep_all_routes">
+            <summary>Specifies whether route features that do not have any calibration points will be excluded from the output feature class.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.build_index">
+            <summary>Specifies whether an attribute index will be created for the route identifier field that is written to the Output Route Feature Class.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CalibrateRoutes.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes">
+            <summary>Creates routes from existing lines. The input line features that share a common identifier are merged to create a single route.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.#ctor(System.Object,System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_line_features">The features from which routes will be created. (In, Required)</param>
+            <param name="route_id_field">The field containing values that uniquely identify each route. (In, Required)</param>
+            <param name="out_feature_class">The feature class to be created. It can be a shapefile or a geodatabase feature class. (Out, Required)</param>
+            <param name="measure_source">Specifies how route measures will be obtained. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.in_line_features">
+            <summary>The features from which routes will be created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.route_id_field">
+            <summary>The field containing values that uniquely identify each route. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.out_feature_class">
+            <summary>The feature class to be created. It can be a shapefile or a geodatabase feature class. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.measure_source">
+            <summary>Specifies how route measures will be obtained. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.from_measure_field">
+            <summary>A field containing measure values. This field must be numeric and is required when the measure source is ONE_FIELD or TWO_FIELDS. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.to_measure_field">
+            <summary>A field containing measure values. This field must be numeric and is required when the measure source is TWO_FIELDS. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.coordinate_priority">
+            <summary>The position from which measures will be accumulated for each output route. This parameter is ignored when the measure source is TWO_FIELDS. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.measure_factor">
+            <summary>A value multiplied by the measure length of each input line before they are merged to create route measures. The default is 1. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.measure_offset">
+            <summary>A value added to the route measures after the input lines have been merged to create a route. The default is 0. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.ignore_gaps">
+            <summary>Specifies whether spatial gaps will be ignored when calculating the measures on disjointed routes. This parameter is applicable when the measure source is LENGTH or ONE_FIELD.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.build_index">
+            <summary>Specifies whether an attribute index will be created for the route identifier field that is written to the output route feature class.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.CreateRoutes.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents">
+            <summary>Removes redundant information from event tables or separates event tables having more than one descriptive attribute into individual tables.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_events">The table whose rows will be aggregated. (In, Required)</param>
+            <param name="in_event_properties">Parameter consisting of the route location fields and the type of events in the input event table. (In, Required)</param>
+            <param name="dissolve_field">The field(s)used to aggregate rows. (In, Required)</param>
+            <param name="out_table">The table to be created. (Out, Required)</param>
+            <param name="out_event_properties">Parameter consisting of the route location fields and the type of events that will be written to the output event table. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.in_events">
+            <summary>The table whose rows will be aggregated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.in_event_properties">
+            <summary>Parameter consisting of the route location fields and the type of events in the input event table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.dissolve_field">
+            <summary>The field(s)used to aggregate rows. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.out_table">
+            <summary>The table to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.out_event_properties">
+            <summary>Parameter consisting of the route location fields and the type of events that will be written to the output event table. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.dissolve_type">
+            <summary>Specifies whether the input events will be concatenated or dissolved.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.build_index">
+            <summary>Specifies whether an attribute index will be created for the route identifier field that is written to the output event table.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.DissolveRouteEvents.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes">
+            <summary>Computes the intersection of input features (point, line, or polygon) and route features and writes the route and measure information to a new event table.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input point, line, or polygon features. (In, Required)</param>
+            <param name="in_routes">The routes with which the input features will be intersected. (In, Required)</param>
+            <param name="route_id_field">The field containing values that uniquely identify each route. This field can be numeric or character. (In, Required)</param>
+            <param name="radius_or_tolerance">If the input features are points, the search radius is a numeric value defining how far around each point a search will be done to find a target route. (In, Required)</param>
+            <param name="out_table">The table to be created. (Out, Required)</param>
+            <param name="out_event_properties">Parameter consisting of the route location fields and the type of events that will be written to the output event table. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.in_features">
+            <summary>The input point, line, or polygon features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.in_routes">
+            <summary>The routes with which the input features will be intersected. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.route_id_field">
+            <summary>The field containing values that uniquely identify each route. This field can be numeric or character. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.radius_or_tolerance">
+            <summary>If the input features are points, the search radius is a numeric value defining how far around each point a search will be done to find a target route. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.out_table">
+            <summary>The table to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.out_event_properties">
+            <summary>Parameter consisting of the route location fields and the type of events that will be written to the output event table. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.route_locations">
+            <summary>When locating points along routes, it is possible that more than one route may be within the search radius of any given point. This parameter is ignored when locating lines or polygons along routes.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.distance_field">
+            <summary>Specifies whether a field named DISTANCE will be added to the output event table. The values in this field are in the units of the specified search radius. This parameter is ignored when locating lines or polygons along routes.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.zero_length_events">
+            <summary>When locating polygons along routes, it is possible that events can be created where the from-measure is equal to the to-measure. This parameter is ignored when locating points or lines along routes.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.in_fields">
+            <summary>Specifies whether the output event table will contain route location fields plus all the attributes from the input features.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.m_direction_offsetting">
+            <summary> Specifies whether the offset distance calculated should be based on the M direction or the digitized direction. Distances are included in the output event table if the distance_field parameter value DISTANCE is specified. 
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.LocateFeaturesAlongRoutes.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer">
+            <summary>Creates a temporary feature layer using routes and route events.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_routes">The route features upon which events will be located. (In, Required)</param>
+            <param name="route_id_field">The field containing values that uniquely identify each route. (In, Required)</param>
+            <param name="in_table">The table whose rows will be located along routes. (In, Required)</param>
+            <param name="in_event_properties">Parameter consisting of the route location fields and the type of events in the input event table. (In, Required)</param>
+            <param name="out_layer">The layer to be created. This layer is stored in memory, so a path is not necessary. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.in_routes">
+            <summary>The route features upon which events will be located. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.route_id_field">
+            <summary>The field containing values that uniquely identify each route. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.in_table">
+            <summary>The table whose rows will be located along routes. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.in_event_properties">
+            <summary>Parameter consisting of the route location fields and the type of events in the input event table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.out_layer">
+            <summary>The layer to be created. This layer is stored in memory, so a path is not necessary. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.offset_field">
+            <summary>The field containing values used to offset events from their underlying route. This field must be numeric. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.add_error_field">
+            <summary>Specifies whether a field named LOC_ERROR will be added to the temporary layer that is created.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.add_angle_field">
+            <summary>Specifies whether a field named LOC_ANGLE will be added to the temporary layer that is created. This parameter is only valid when the event type is POINT.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.angle_type">
+            <summary>Specifies the type of locating angle that will be calculated. This parameter is only valid if ANGLE_FIELD has been specified. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.complement_angle">
+            <summary>Specifies whether the complement of the locating angle will be calculated. This parameter is only valid if ANGLE_FIELD has been specified.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.offset_direction">
+            <summary>Specifies the side on which the route events with a positive offset are displayed. This parameter is only valid if an offset field has been specified.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.point_event_type">
+            <summary>Specifies whether point events will be treated as point features or multipoint features.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.MakeRouteEventLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents">
+            <summary>Overlays two event tables to create an output event table that represents the union or intersection of the input.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.#ctor(System.Object,System.Object,System.Object,System.Object,System.String,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_table">The input event table. (In, Required)</param>
+            <param name="in_event_properties">Parameter consisting of the route location fields and the type of events in the input event table. (In, Required)</param>
+            <param name="overlay_table">The overlay event table. (In, Required)</param>
+            <param name="overlay_event_properties">Parameter consisting of the route location fields and the type of events in the overlay event table. (In, Required)</param>
+            <param name="overlay_type">The type of overlay to be performed. (In, Required)</param>
+            <param name="out_table">The table to be created. (Out, Required)</param>
+            <param name="out_event_properties">Parameter consisting of the route location fields and the type of events that will be written to the output event table. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.in_table">
+            <summary>The input event table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.in_event_properties">
+            <summary>Parameter consisting of the route location fields and the type of events in the input event table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.overlay_table">
+            <summary>The overlay event table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.overlay_event_properties">
+            <summary>Parameter consisting of the route location fields and the type of events in the overlay event table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.overlay_type">
+            <summary>The type of overlay to be performed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.out_table">
+            <summary>The table to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.out_event_properties">
+            <summary>Parameter consisting of the route location fields and the type of events that will be written to the output event table. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.zero_length_events">
+            <summary>Specifies whether to keep zero length line events in the output table. This parameter is only valid when the output event type is LINE.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.in_fields">
+            <summary>Specifies whether all the fields from the input and overlay event tables will be written to the output event table.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.build_index">
+            <summary>Specifies whether an attribute index will be created for the route identifier field that is written to the output event table.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.OverlayRouteEvents.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents">
+            <summary>This tool transforms the measures of events from one route reference to another and writes them to a new event table.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_table">The input event table. (In, Required)</param>
+            <param name="in_event_properties">Parameter consisting of the route location fields and the type of events in the input event table. (In, Required)</param>
+            <param name="in_routes">The input route features. (In, Required)</param>
+            <param name="route_id_field">The field containing values that uniquely identify each input route. (In, Required)</param>
+            <param name="target_routes">The route features to which the input events will be transformed. (In, Required)</param>
+            <param name="target_route_id_field">The field containing values that uniquely identify each target route. (In, Required)</param>
+            <param name="out_table">The table to be created. (Out, Required)</param>
+            <param name="out_event_properties">Parameter consisting of the route location fields and the type of events that will be written to the output event table. (Out, Required)</param>
+            <param name="cluster_tolerance">The maximum tolerated distance between the input events and the target routes. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.in_table">
+            <summary>The input event table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.in_event_properties">
+            <summary>Parameter consisting of the route location fields and the type of events in the input event table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.in_routes">
+            <summary>The input route features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.route_id_field">
+            <summary>The field containing values that uniquely identify each input route. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.target_routes">
+            <summary>The route features to which the input events will be transformed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.target_route_id_field">
+            <summary>The field containing values that uniquely identify each target route. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.out_table">
+            <summary>The table to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.out_event_properties">
+            <summary>Parameter consisting of the route location fields and the type of events that will be written to the output event table. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.cluster_tolerance">
+            <summary>The maximum tolerated distance between the input events and the target routes. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.in_fields">
+            <summary>Specifies whether the output event table will contain route location fields plus all the attributes from the input events.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.LinearReferencingTools.TransformRouteEvents.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

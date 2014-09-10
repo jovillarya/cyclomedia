@@ -1,0 +1,1565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.Cadastral</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentInfo">
+      <summary>Provides access to retrieve information about the adjustment held within a cadastral fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentInfo.CadastralFabric">
+      <summary>The Cadastral Fabric to be queried.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentInfo.Next(System.Int32@,System.Object@,ESRI.ArcGIS.Geometry.IGeometry@)">
+      <summary>Retrieve the information from the next Cadastral Adjustment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentInfo.Reset(System.Int32)">
+      <summary>Set the next Cadastral Adjustment for retrieval by the Next method to be the given adjustment level.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentLevel">
+      <summary>Provides access to retrieve and store adjustment level information.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentLevel.AddFeatureClass(System.Int32,System.Int32)">
+      <summary>Store the initial adjustment level for a given feature class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentLevel.CadastralFabric">
+      <summary>The Cadastral Fabric to be modified.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentLevel.Delete(System.Int32)">
+      <summary>Delete the entry for a feature class from the adjustment level table.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentLevel.GetAdjustedLevel(System.Int32,System.Int32@,System.Int32@)">
+      <summary>Retrieve the stored adjustment level for a given feature class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentLevel.Next(System.Int32@,System.Int32@)">
+      <summary>Retrieve the next feature-class/adjustment-level pair.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralAdjustmentLevel.Reset">
+      <summary>Reset the next feature-class/adjustment-level pair to the first pair.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter">
+      <summary>Provides access to cadastral fabric Cogo feature class data importer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.AccuracyCategory">
+      <summary>Accuracy category set on lines and parcels. Default 3.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.AngleUnit">
+      <summary>Angle unit in input COGO feature class. Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.CogoFieldName(ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField)">
+      <summary>COGO field name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.CogoFieldType(ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField)">
+      <summary>COGO required field type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.ControlPointTolerance">
+      <summary>Control Point Snapping tolerance. Default 0.1 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.DirectionType">
+      <summary>Direction type in input COGO feature class. Default: esriQuadBearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.DirectionUnits">
+      <summary>Units for direction fields (other than angle). Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.InversedAccuracyCategory">
+      <summary>Accuracy category set on lines and parcels when a line is calculated from stored geometry (inversed). Default 6.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.PlanName">
+      <summary>BSTR value that the parcel's plan name is set to. Default: Import Source name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.RadialPointTolerance">
+      <summary>Radial Point Snapping tolerance. Default 0.5 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter.SkipParcel">
+      <summary>COGO Parcel that gets skipped (ie, for road parcels). Default = 0.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter2">
+      <summary>Provides access to cadastral fabric Cogo feature class data importer.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter2.GetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Get max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralCogoImporter2.SetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,System.Double)">
+      <summary>Set max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralCogoImporterArea">
+      <summary>Provides access to cadastral fabric Cogo feature class data importer for area computation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporterArea.AreaType">
+      <summary>Area unit used to store computed area from the input COGO feature class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralCogoImporterArea.ComputeMissingArea">
+      <summary>Indicates if the area field should be computed from the source data, when not specified.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralCogoImporterArea.SetAreaTypeFromSource(ESRI.ArcGIS.Geodatabase.IFeatureClass)">
+      <summary>Initialize Area unit from source feature class (will set to either esriCAUImperial or esriCAUMetric).</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralControlImporter">
+      <summary>Provides access to cadastral fabric Control feature class data importer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporter.ControlFieldName(ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField)">
+      <summary>Control field name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporter.ControlFieldType(ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField)">
+      <summary>Control field type [required].</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporter.ControlPointTolerance">
+      <summary>Control Point to fabric point snapping tolerance. Default 0.1 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporter.UseShapeField">
+      <summary>Indicates whether to use shape field for coordinates. Default false, unless there are no XYZ fields.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralControlImporterMerging">
+      <summary>Provides access to cadastral fabric Control merging.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporterMerging.CloseControlTolerance">
+      <summary>Close Control Merging tolerance. Default 1.0 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporterMerging.MergeAttributesOption">
+      <summary>Merge control attribute options. Default: esriCFControlMergingKeepAttributes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporterMerging.MergeCloseControl">
+      <summary>Indicates whether to merge close control. Default: False.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporterMerging.MergeControlNameCaseSensitive">
+      <summary>Indicates whether to perform a case sensitive match when checking control names. Default: True.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporterMerging.MergeControlSameName">
+      <summary>Indicates whether to merge control with same name only. Default: False.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporterMerging.MergeCoordinateOption">
+      <summary>Merge control coordinate options. Default: esriCFControlMergingUpdateXY.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlImporterMerging.MergeNameOption">
+      <summary>Merge control name options. Default: esriCFControlMergingKeepExistingNames.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralControlPointError">
+      <summary>Access information about errors associated with a particular control point.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlPointError.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralControlPointError.PointError">
+      <summary>Point associated with this control point with errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralFeatureError">
+      <summary>Access information about errors associated with a particular feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralFeatureError.ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralFeatureError.ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralImporter">
+      <summary>Provides access to cadastral fabric feature class data importer.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralImporter.Import(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImporter.OutputLogfile">
+      <summary>Output log file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImporter.RowWriteCallback">
+      <summary>Row buffer before row is written to cadastral fabric.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralImporter2">
+      <summary>Provides access to cadastral fabric feature class data importer.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralImporter2.Import2(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.Geodatabase.IQueryFilter,ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.Geodatabase.IQueryFilter,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.Geodatabase.IGPMessages)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralImporter2.Import(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImporter2.OutputLogfile">
+      <summary>Output log file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImporter2.RowWriteCallback">
+      <summary>Row buffer before row is written to cadastral fabric.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralImportParameters">
+      <summary>Provides access to parcel fabric data importer parameters.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.AccuracyCategory">
+      <summary>Accuracy category set on lines and parcels. Default 3.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.AngleUnit">
+      <summary>Angle unit in input COGO feature class. Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.AreaType">
+      <summary>Area unit used to store computed area from the input COGO feature class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.ComputeMissingArea">
+      <summary>Indicates if the area field should be computed from the source data, when not specified.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.ControlPointTolerance">
+      <summary>Control Point Snapping tolerance. Default 0.1 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.DirectionType">
+      <summary>Direction type in input COGO feature class. Default: esriQuadBearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.DirectionUnits">
+      <summary>Units for direction fields (other than angle). Default: DMS.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.GetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Get max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.ImportAsUnjoinedParcels">
+      <summary>Import parcels as unjoined.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.InversedAccuracyCategory">
+      <summary>Accuracy category set on lines and parcels when a line is calculated from stored geometry (inversed). Default 6.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.MinimumSegmentCountForLineString">
+      <summary>Number of segments in a line before it is imported as a linestring.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.RadialPointTolerance">
+      <summary>Radial Point Snapping tolerance. Default 0.5 in units of source data's projection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.SetAreaTypeFromSource(ESRI.ArcGIS.Geodatabase.IFeatureClass)">
+      <summary>Initialize Area unit from source feature class (will set to either esriCAUImperial or esriCAUMetric).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralImportParameters.SetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,System.Double)">
+      <summary>Set max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralLineError">
+      <summary>Access information about errors associated with a particular line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralLineError.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralLineError.PointErrors">
+      <summary>Enumeration of points associated with this line with errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralLinePointError">
+      <summary>Access information about errors associated with a particular line point.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralLinePointError.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralLinePointError.PointErrors">
+      <summary>Enumeration of points associated with this line point with errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralParcelError">
+      <summary>Access information about errors associated with a particular parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralParcelError.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralParcelError.LineErrors">
+      <summary>Enumeration of lines associated with this parcel with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralParcelError.LinePointErrors">
+      <summary>Enumeration of linepoints associated with this parcel with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralParcelError.PointErrors">
+      <summary>Enumeration of points associated with this parcel with errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralPointError">
+      <summary>Access information about errors associated with a particular point.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralPointError.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralRowWriteCallback">
+      <summary>Provides access to the row buffer of data that can be changed before write. Call-back.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralRowWriteCallback.AfterRowWrite(System.Object)">
+      <summary>OID of the row written.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralRowWriteCallback.BeforeRowWrite(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralFabricTable,ESRI.ArcGIS.Geodatabase.IRow,ESRI.ArcGIS.Geodatabase.IRowBuffer)">
+      <summary>Row buffer before row is written. Plans, radial lines and center points will have null source rows.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralTransformation">
+      <summary>Provides access to Cadastral Transformation interface, used to coordinate the feature adjustment process.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralTransformation.CadastralFabric">
+      <summary>The Cadastral Fabric containing the adjustment vectors etc.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralTransformation.CadastralTransformationData">
+      <summary>The transformation data for adjusting feature classes associated with the cadastral fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralTransformation.Transform(ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Main Adjustment process.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralUnitConversion">
+      <summary>Provides access to methods that allow a distance to be converted from one unit to another.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralUnitConversion.ConvertDouble(System.Double,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Convert units of a double value.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralUnitConversion.ConvertString(System.String,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Convert units of string value to double. Example: '55 ft'. If the unit suffix string is missing, the default unit is used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralUnitConversion.DistanceUnitType(ESRI.ArcGIS.Geometry.ILinearUnit)">
+      <summary>Cadastral Distance Units for a particular linear unit.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralUnitTools">
+      <summary>Provides access to methods that format data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralUnitTools.AreaUnit(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits,System.Boolean)">
+      <summary>Area type enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralUnitTools.ConvertArea(System.Double,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits)">
+      <summary>Converts a metric area value into a given area unit.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralUnitTools.DirectionType(ESRI.ArcGIS.esriSystem.esriDirectionType)">
+      <summary>Direction type enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralUnitTools.DirectionUnit(ESRI.ArcGIS.esriSystem.esriDirectionUnits)">
+      <summary>Direction units enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralUnitTools.DistanceUnit(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,System.Boolean)">
+      <summary>Distance units enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.ICadastralUnitTools.FormattedArea(System.Double,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits,System.Boolean,System.Int32)">
+      <summary>Converts a metric area value into a formated area string. isUSFoot applies to imperial output. If decimalPlaces = -1, the decimal places is automatically calculated from areaSQMeters.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.ICadastralValidation">
+      <summary>Provides access to methods used to validate the fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralValidation.CheckFabric(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureError@)">
+      <summary>Check the network integrity of an entire fabric</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.ICadastralValidation.CheckFabricParcelSubset(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric,ESRI.ArcGIS.Geodatabase.IFIDSet,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureError@)">
+      <summary>Check the network integrity of a subset of parcels</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.IEnumCadastralFabricJob">
+      <summary>Provides access to Enum of cadastral fabrics and jobs.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.IEnumCadastralFabricJob.Next(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric@,System.String@,System.Int32@)">
+      <summary>Next CadastralFabric and job pair.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.IEnumCadastralFabricJob.Reset">
+      <summary>Reset Enum.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.IEnumCadastralFabricJobImpl">
+      <summary>Provides access to Enum of cadastral fabrics and jobs. A public interface to setup an enum.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.IEnumCadastralFabricJobImpl.Add(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric,System.String,System.Int32)">
+      <summary>Add CadastralFabric and job pair.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.IEnumCadastralFabricJobImpl.Count">
+      <summary>Number of items in the enum.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureError">
+      <summary>Container for Cadastral error objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureError.Next(ESRI.ArcGIS.Cadastral.ICadastralFeatureError@,System.Int32@)">
+      <summary>Retrieve the next Cadastral error object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureError.Reset">
+      <summary>Reset the enumeration to the first Cadastral error object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureErrorImpl">
+      <summary>Provides access to Enum of cadastral feature errors. A public interface to setup an enum.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureErrorImpl.Add(ESRI.ArcGIS.Cadastral.ICadastralFeatureError)">
+      <summary>Add Cadastral Feature error. It must already have a valid object ID</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureErrorImpl.Count">
+      <summary>Number of items in the enum.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralAdjustmentInfo">
+      <summary>CadastralAdjustmentInfo CoClass used to read information regarding the cadastral adjustments.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralAdjustmentInfoClass">
+      <summary>CadastralAdjustmentInfo CoClass used to read information regarding the cadastral adjustments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralAdjustmentInfoClass.CadastralFabric">
+      <summary>The Cadastral Fabric to be queried.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralAdjustmentInfoClass.ICadastralAdjustmentInfo_CadastralFabric">
+      <summary>The Cadastral Fabric to be queried.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>CadastralAdjustmentInfo CoClass used to read information regarding the cadastral adjustments. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>CadastralAdjustmentInfo CoClass used to read information regarding the cadastral adjustments. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentInfoClass.#ctor">
+      <summary>CadastralAdjustmentInfo CoClass used to read information regarding the cadastral adjustments. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentInfoClass.Next(System.Int32@,System.Object@,ESRI.ArcGIS.Geometry.IGeometry@)">
+      <summary>Retrieve the information from the next Cadastral Adjustment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentInfoClass.ICadastralAdjustmentInfo_Next(System.Int32@,System.Object@,ESRI.ArcGIS.Geometry.IGeometry@)">
+      <summary>Retrieve the information from the next Cadastral Adjustment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentInfoClass.Reset(System.Int32)">
+      <summary>Set the next Cadastral Adjustment for retrieval by the Next method to be the given adjustment level.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentInfoClass.ICadastralAdjustmentInfo_Reset(System.Int32)">
+      <summary>Set the next Cadastral Adjustment for retrieval by the Next method to be the given adjustment level.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevel">
+      <summary>CadastralAdjustmentLevel CoClass used to read information regarding the cadastral adjustment levels.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass">
+      <summary>CadastralAdjustmentLevel CoClass used to read information regarding the cadastral adjustment levels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.AddFeatureClass(System.Int32,System.Int32)">
+      <summary>Store the initial adjustment level for a given feature class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.ICadastralAdjustmentLevel_AddFeatureClass(System.Int32,System.Int32)">
+      <summary>Store the initial adjustment level for a given feature class.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>CadastralAdjustmentLevel CoClass used to read information regarding the cadastral adjustment levels. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>CadastralAdjustmentLevel CoClass used to read information regarding the cadastral adjustment levels. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.#ctor">
+      <summary>CadastralAdjustmentLevel CoClass used to read information regarding the cadastral adjustment levels. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.CadastralFabric">
+      <summary>The Cadastral Fabric to be modified.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.ICadastralAdjustmentLevel_CadastralFabric">
+      <summary>The Cadastral Fabric to be modified.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.Delete(System.Int32)">
+      <summary>Delete the entry for a feature class from the adjustment level table.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.ICadastralAdjustmentLevel_Delete(System.Int32)">
+      <summary>Delete the entry for a feature class from the adjustment level table.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.GetAdjustedLevel(System.Int32,System.Int32@,System.Int32@)">
+      <summary>Retrieve the stored adjustment level for a given feature class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.ICadastralAdjustmentLevel_GetAdjustedLevel(System.Int32,System.Int32@,System.Int32@)">
+      <summary>Retrieve the stored adjustment level for a given feature class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.Next(System.Int32@,System.Int32@)">
+      <summary>Retrieve the next feature-class/adjustment-level pair.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.ICadastralAdjustmentLevel_Next(System.Int32@,System.Int32@)">
+      <summary>Retrieve the next feature-class/adjustment-level pair.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.Reset">
+      <summary>Reset the next feature-class/adjustment-level pair to the first pair.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralAdjustmentLevelClass.ICadastralAdjustmentLevel_Reset">
+      <summary>Reset the next feature-class/adjustment-level pair to the first pair.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralCogoImporter">
+      <summary>Cadastral Fabric Cogo Data Importer object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass">
+      <summary>Cadastral Fabric Cogo Data Importer object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.AccuracyCategory">
+      <summary>Accuracy category set on lines and parcels. Default 3.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_AccuracyCategory">
+      <summary>Accuracy category set on lines and parcels. Default 3.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Cadastral Fabric Cogo Data Importer object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Cadastral Fabric Cogo Data Importer object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.#ctor">
+      <summary>Cadastral Fabric Cogo Data Importer object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.AngleUnit">
+      <summary>Angle unit in input COGO feature class. Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_AngleUnit">
+      <summary>Angle unit in input COGO feature class. Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.CogoFieldName(ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField)">
+      <summary>COGO field name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_CogoFieldName(ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField)">
+      <summary>COGO field name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.CogoFieldType(ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField)">
+      <summary>COGO required field type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_CogoFieldType(ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField)">
+      <summary>COGO required field type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ControlPointTolerance">
+      <summary>Control Point Snapping tolerance. Default 0.1 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_ControlPointTolerance">
+      <summary>Control Point Snapping tolerance. Default 0.1 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.DirectionType">
+      <summary>Direction type in input COGO feature class. Default: esriQuadBearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_DirectionType">
+      <summary>Direction type in input COGO feature class. Default: esriQuadBearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.DirectionUnits">
+      <summary>Units for direction fields (other than angle). Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_DirectionUnits">
+      <summary>Units for direction fields (other than angle). Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.InversedAccuracyCategory">
+      <summary>Accuracy category set on lines and parcels when a line is calculated from stored geometry (inversed). Default 6.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_InversedAccuracyCategory">
+      <summary>Accuracy category set on lines and parcels when a line is calculated from stored geometry (inversed). Default 6.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.PlanName">
+      <summary>BSTR value that the parcel's plan name is set to. Default: Import Source name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_PlanName">
+      <summary>BSTR value that the parcel's plan name is set to. Default: Import Source name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.RadialPointTolerance">
+      <summary>Radial Point Snapping tolerance. Default 0.5 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_RadialPointTolerance">
+      <summary>Radial Point Snapping tolerance. Default 0.5 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.SkipParcel">
+      <summary>COGO Parcel that gets skipped (ie, for road parcels). Default = 0.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter_SkipParcel">
+      <summary>COGO Parcel that gets skipped (ie, for road parcels). Default = 0.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.GetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Get max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter2_GetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Get max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.SetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,System.Double)">
+      <summary>Set max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporter2_SetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,System.Double)">
+      <summary>Set max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.AreaType">
+      <summary>Area unit used to store computed area from the input COGO feature class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporterArea_AreaType">
+      <summary>Area unit used to store computed area from the input COGO feature class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ComputeMissingArea">
+      <summary>Indicates if the area field should be computed from the source data, when not specified.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporterArea_ComputeMissingArea">
+      <summary>Indicates if the area field should be computed from the source data, when not specified.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.SetAreaTypeFromSource(ESRI.ArcGIS.Geodatabase.IFeatureClass)">
+      <summary>Initialize Area unit from source feature class (will set to either esriCAUImperial or esriCAUMetric).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralCogoImporterArea_SetAreaTypeFromSource(ESRI.ArcGIS.Geodatabase.IFeatureClass)">
+      <summary>Initialize Area unit from source feature class (will set to either esriCAUImperial or esriCAUMetric).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.Import(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralImporter_Import(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.OutputLogfile">
+      <summary>Output log file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralImporter_OutputLogfile">
+      <summary>Output log file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.RowWriteCallback">
+      <summary>Row buffer before row is written to cadastral fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralCogoImporterClass.ICadastralImporter_RowWriteCallback">
+      <summary>Row buffer before row is written to cadastral fabric.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralControlImporter">
+      <summary>Cadastral Fabric control point Importer object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass">
+      <summary>Cadastral Fabric control point Importer object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ControlFieldName(ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField)">
+      <summary>Control field name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporter_ControlFieldName(ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField)">
+      <summary>Control field name.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Cadastral Fabric control point Importer object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Cadastral Fabric control point Importer object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.#ctor">
+      <summary>Cadastral Fabric control point Importer object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ControlFieldType(ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField)">
+      <summary>Control field type [required].</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporter_ControlFieldType(ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField)">
+      <summary>Control field type [required].</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ControlPointTolerance">
+      <summary>Control Point to fabric point snapping tolerance. Default 0.1 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporter_ControlPointTolerance">
+      <summary>Control Point to fabric point snapping tolerance. Default 0.1 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.UseShapeField">
+      <summary>Indicates whether to use shape field for coordinates. Default false, unless there are no XYZ fields.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporter_UseShapeField">
+      <summary>Indicates whether to use shape field for coordinates. Default false, unless there are no XYZ fields.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.CloseControlTolerance">
+      <summary>Close Control Merging tolerance. Default 1.0 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporterMerging_CloseControlTolerance">
+      <summary>Close Control Merging tolerance. Default 1.0 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.MergeAttributesOption">
+      <summary>Merge control attribute options. Default: esriCFControlMergingKeepAttributes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporterMerging_MergeAttributesOption">
+      <summary>Merge control attribute options. Default: esriCFControlMergingKeepAttributes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.MergeCloseControl">
+      <summary>Indicates whether to merge close control. Default: False.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporterMerging_MergeCloseControl">
+      <summary>Indicates whether to merge close control. Default: False.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.MergeControlNameCaseSensitive">
+      <summary>Indicates whether to perform a case sensitive match when checking control names. Default: True.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporterMerging_MergeControlNameCaseSensitive">
+      <summary>Indicates whether to perform a case sensitive match when checking control names. Default: True.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.MergeControlSameName">
+      <summary>Indicates whether to merge control with same name only. Default: False.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporterMerging_MergeControlSameName">
+      <summary>Indicates whether to merge control with same name only. Default: False.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.MergeCoordinateOption">
+      <summary>Merge control coordinate options. Default: esriCFControlMergingUpdateXY.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporterMerging_MergeCoordinateOption">
+      <summary>Merge control coordinate options. Default: esriCFControlMergingUpdateXY.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.MergeNameOption">
+      <summary>Merge control name options. Default: esriCFControlMergingKeepExistingNames.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralControlImporterMerging_MergeNameOption">
+      <summary>Merge control name options. Default: esriCFControlMergingKeepExistingNames.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.Import(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralImporter_Import(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.OutputLogfile">
+      <summary>Output log file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralImporter_OutputLogfile">
+      <summary>Output log file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.RowWriteCallback">
+      <summary>Row buffer before row is written to cadastral fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlImporterClass.ICadastralImporter_RowWriteCallback">
+      <summary>Row buffer before row is written to cadastral fabric.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralControlPointError">
+      <summary>Reports details of control point errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass">
+      <summary>Reports details of control point errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass.ICadastralControlPointError_ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Reports details of control point errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Reports details of control point errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass.#ctor">
+      <summary>Reports details of control point errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass.PointError">
+      <summary>Point associated with this control point with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass.ICadastralControlPointError_PointError">
+      <summary>Point associated with this control point with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass.ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass.ICadastralFeatureError_ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass.ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralControlPointErrorClass.ICadastralFeatureError_ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralDataTools">
+      <summary>Tools that assist in unit translation and storage.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass">
+      <summary>Tools that assist in unit translation and storage.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.AreaUnit(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits,System.Boolean)">
+      <summary>Area type enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.ICadastralUnitTools_AreaUnit(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits,System.Boolean)">
+      <summary>Area type enum value as a string.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Tools that assist in unit translation and storage. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Tools that assist in unit translation and storage. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.#ctor">
+      <summary>Tools that assist in unit translation and storage. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.ConvertArea(System.Double,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits)">
+      <summary>Converts a metric area value into a given area unit.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.ICadastralUnitTools_ConvertArea(System.Double,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits)">
+      <summary>Converts a metric area value into a given area unit.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.DirectionType(ESRI.ArcGIS.esriSystem.esriDirectionType)">
+      <summary>Direction type enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.ICadastralUnitTools_DirectionType(ESRI.ArcGIS.esriSystem.esriDirectionType)">
+      <summary>Direction type enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.DirectionUnit(ESRI.ArcGIS.esriSystem.esriDirectionUnits)">
+      <summary>Direction units enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.ICadastralUnitTools_DirectionUnit(ESRI.ArcGIS.esriSystem.esriDirectionUnits)">
+      <summary>Direction units enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.DistanceUnit(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,System.Boolean)">
+      <summary>Distance units enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.ICadastralUnitTools_DistanceUnit(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,System.Boolean)">
+      <summary>Distance units enum value as a string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.FormattedArea(System.Double,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits,System.Boolean,System.Int32)">
+      <summary>Converts a metric area value into a formated area string. isUSFoot applies to imperial output. If decimalPlaces = -1, the decimal places is automatically calculated from areaSQMeters.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralDataToolsClass.ICadastralUnitTools_FormattedArea(System.Double,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits,System.Boolean,System.Int32)">
+      <summary>Converts a metric area value into a formated area string. isUSFoot applies to imperial output. If decimalPlaces = -1, the decimal places is automatically calculated from areaSQMeters.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralLineError">
+      <summary>Reports details of line errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass">
+      <summary>Reports details of line errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass.ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass.ICadastralFeatureError_ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Reports details of line errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Reports details of line errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass.#ctor">
+      <summary>Reports details of line errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass.ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass.ICadastralFeatureError_ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass.ICadastralLineError_ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass.PointErrors">
+      <summary>Enumeration of points associated with this line with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLineErrorClass.ICadastralLineError_PointErrors">
+      <summary>Enumeration of points associated with this line with errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralLinePointError">
+      <summary>Reports details of line point errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass">
+      <summary>Reports details of line point errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass.ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass.ICadastralFeatureError_ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Reports details of line point errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Reports details of line point errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass.#ctor">
+      <summary>Reports details of line point errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass.ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass.ICadastralFeatureError_ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass.ICadastralLinePointError_ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass.PointErrors">
+      <summary>Enumeration of points associated with this line point with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralLinePointErrorClass.ICadastralLinePointError_PointErrors">
+      <summary>Enumeration of points associated with this line point with errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralParcelError">
+      <summary>Reports details of parcel errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass">
+      <summary>Reports details of parcel errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.ICadastralFeatureError_ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Reports details of parcel errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Reports details of parcel errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.#ctor">
+      <summary>Reports details of parcel errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.ICadastralFeatureError_ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.ICadastralParcelError_ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.LineErrors">
+      <summary>Enumeration of lines associated with this parcel with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.ICadastralParcelError_LineErrors">
+      <summary>Enumeration of lines associated with this parcel with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.LinePointErrors">
+      <summary>Enumeration of linepoints associated with this parcel with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.ICadastralParcelError_LinePointErrors">
+      <summary>Enumeration of linepoints associated with this parcel with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.PointErrors">
+      <summary>Enumeration of points associated with this parcel with errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralParcelErrorClass.ICadastralParcelError_PointErrors">
+      <summary>Enumeration of points associated with this parcel with errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralPointError">
+      <summary>Reports details of point errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralPointErrorClass">
+      <summary>Reports details of point errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralPointErrorClass.ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralPointErrorClass.ICadastralFeatureError_ErrorBitmask">
+      <summary>Bitmask describing feature errors.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Reports details of point errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Reports details of point errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralPointErrorClass.#ctor">
+      <summary>Reports details of point errors. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralPointErrorClass.ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralPointErrorClass.ICadastralFeatureError_ObjectID">
+      <summary>The object ID of the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralPointErrorClass.ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralPointErrorClass.ICadastralPointError_ErrorString">
+      <summary>String containing all errors associated with the feature.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralTopologyImporter">
+      <summary>Cadastral Fabric Topology Data Importer object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass">
+      <summary>Cadastral Fabric Topology Data Importer object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.Import(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImporter_Import(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Cadastral Fabric Topology Data Importer object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Cadastral Fabric Topology Data Importer object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.#ctor">
+      <summary>Cadastral Fabric Topology Data Importer object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.OutputLogfile">
+      <summary>Output log file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImporter_OutputLogfile">
+      <summary>Output log file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.RowWriteCallback">
+      <summary>Row buffer before row is written to cadastral fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImporter_RowWriteCallback">
+      <summary>Row buffer before row is written to cadastral fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.Import2(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.Geodatabase.IQueryFilter,ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.Geodatabase.IQueryFilter,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.Geodatabase.IGPMessages)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImporter2_Import2(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.Geodatabase.IQueryFilter,ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.Geodatabase.IQueryFilter,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.Geodatabase.IGPMessages)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImporter2_Import(ESRI.ArcGIS.esriSystem.IName,ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabricName,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Import Feature Class into Cadastral Fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImporter2_OutputLogfile">
+      <summary>Output log file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImporter2_RowWriteCallback">
+      <summary>Row buffer before row is written to cadastral fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.AccuracyCategory">
+      <summary>Accuracy category set on lines and parcels. Default 3.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_AccuracyCategory">
+      <summary>Accuracy category set on lines and parcels. Default 3.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.AngleUnit">
+      <summary>Angle unit in input COGO feature class. Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_AngleUnit">
+      <summary>Angle unit in input COGO feature class. Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.AreaType">
+      <summary>Area unit used to store computed area from the input COGO feature class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_AreaType">
+      <summary>Area unit used to store computed area from the input COGO feature class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ComputeMissingArea">
+      <summary>Indicates if the area field should be computed from the source data, when not specified.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_ComputeMissingArea">
+      <summary>Indicates if the area field should be computed from the source data, when not specified.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ControlPointTolerance">
+      <summary>Control Point Snapping tolerance. Default 0.1 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_ControlPointTolerance">
+      <summary>Control Point Snapping tolerance. Default 0.1 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.DirectionType">
+      <summary>Direction type in input COGO feature class. Default: esriQuadBearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_DirectionType">
+      <summary>Direction type in input COGO feature class. Default: esriQuadBearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.DirectionUnits">
+      <summary>Units for direction fields (other than angle). Default: DMS.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_DirectionUnits">
+      <summary>Units for direction fields (other than angle). Default: DMS.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.GetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Get max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_GetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Get max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ImportAsUnjoinedParcels">
+      <summary>Import parcels as unjoined.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_ImportAsUnjoinedParcels">
+      <summary>Import parcels as unjoined.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.InversedAccuracyCategory">
+      <summary>Accuracy category set on lines and parcels when a line is calculated from stored geometry (inversed). Default 6.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_InversedAccuracyCategory">
+      <summary>Accuracy category set on lines and parcels when a line is calculated from stored geometry (inversed). Default 6.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.MinimumSegmentCountForLineString">
+      <summary>Number of segments in a line before it is imported as a linestring.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_MinimumSegmentCountForLineString">
+      <summary>Number of segments in a line before it is imported as a linestring.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.RadialPointTolerance">
+      <summary>Radial Point Snapping tolerance. Default 0.5 in units of source data's projection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_RadialPointTolerance">
+      <summary>Radial Point Snapping tolerance. Default 0.5 in units of source data's projection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.SetAreaTypeFromSource(ESRI.ArcGIS.Geodatabase.IFeatureClass)">
+      <summary>Initialize Area unit from source feature class (will set to either esriCAUImperial or esriCAUMetric).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_SetAreaTypeFromSource(ESRI.ArcGIS.Geodatabase.IFeatureClass)">
+      <summary>Initialize Area unit from source feature class (will set to either esriCAUImperial or esriCAUMetric).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.SetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,System.Double)">
+      <summary>Set max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTopologyImporterClass.ICadastralImportParameters_SetMaxRadialTolerance(ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,System.Double)">
+      <summary>Set max radial line tolerance. Radial line distances greater get their accuracy set to 7.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralTransformation">
+      <summary>CadastralTransformation CoClass used to apply cadastral transformations to feature geometries.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralTransformationClass">
+      <summary>CadastralTransformation CoClass used to apply cadastral transformations to feature geometries.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTransformationClass.CadastralFabric">
+      <summary>The Cadastral Fabric containing the adjustment vectors etc.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTransformationClass.ICadastralTransformation_CadastralFabric">
+      <summary>The Cadastral Fabric containing the adjustment vectors etc.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>CadastralTransformation CoClass used to apply cadastral transformations to feature geometries. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>CadastralTransformation CoClass used to apply cadastral transformations to feature geometries. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTransformationClass.#ctor">
+      <summary>CadastralTransformation CoClass used to apply cadastral transformations to feature geometries. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTransformationClass.CadastralTransformationData">
+      <summary>The transformation data for adjusting feature classes associated with the cadastral fabric.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralTransformationClass.ICadastralTransformation_CadastralTransformationData">
+      <summary>The transformation data for adjusting feature classes associated with the cadastral fabric.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTransformationClass.Transform(ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Main Adjustment process.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralTransformationClass.ICadastralTransformation_Transform(ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Main Adjustment process.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralUnitConversion">
+      <summary>Converts distance values from one unit to another.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralUnitConversionClass">
+      <summary>Converts distance values from one unit to another.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralUnitConversionClass.ConvertDouble(System.Double,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Convert units of a double value.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralUnitConversionClass.ICadastralUnitConversion_ConvertDouble(System.Double,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Convert units of a double value.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Converts distance values from one unit to another. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Converts distance values from one unit to another. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralUnitConversionClass.#ctor">
+      <summary>Converts distance values from one unit to another. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralUnitConversionClass.ConvertString(System.String,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Convert units of string value to double. Example: '55 ft'. If the unit suffix string is missing, the default unit is used.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralUnitConversionClass.ICadastralUnitConversion_ConvertString(System.String,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits)">
+      <summary>Convert units of string value to double. Example: '55 ft'. If the unit suffix string is missing, the default unit is used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralUnitConversionClass.DistanceUnitType(ESRI.ArcGIS.Geometry.ILinearUnit)">
+      <summary>Cadastral Distance Units for a particular linear unit.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.CadastralUnitConversionClass.ICadastralUnitConversion_DistanceUnitType(ESRI.ArcGIS.Geometry.ILinearUnit)">
+      <summary>Cadastral Distance Units for a particular linear unit.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralValidationTools">
+      <summary>CadastralValidationTools coclass used for validating Cadastral Fabrics.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.CadastralValidationToolsClass">
+      <summary>CadastralValidationTools coclass used for validating Cadastral Fabrics.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralValidationToolsClass.CheckFabric(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureError@)">
+      <summary>Check the network integrity of an entire fabric</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralValidationToolsClass.ICadastralValidation_CheckFabric(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureError@)">
+      <summary>Check the network integrity of an entire fabric</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>CadastralValidationTools coclass used for validating Cadastral Fabrics. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>CadastralValidationTools coclass used for validating Cadastral Fabrics. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralValidationToolsClass.#ctor">
+      <summary>CadastralValidationTools coclass used for validating Cadastral Fabrics. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralValidationToolsClass.CheckFabricParcelSubset(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric,ESRI.ArcGIS.Geodatabase.IFIDSet,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureError@)">
+      <summary>Check the network integrity of a subset of parcels</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.CadastralValidationToolsClass.ICadastralValidation_CheckFabricParcelSubset(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric,ESRI.ArcGIS.Geodatabase.IFIDSet,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.Cadastral.IEnumCadastralFeatureError@)">
+      <summary>Check the network integrity of a subset of parcels</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJob">
+      <summary>Enumeration of Cadastral Fabric jobs.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass">
+      <summary>Enumeration of Cadastral Fabric jobs.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass.Next(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric@,System.String@,System.Int32@)">
+      <summary>Next CadastralFabric and job pair.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass.IEnumCadastralFabricJob_Next(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric@,System.String@,System.Int32@)">
+      <summary>Next CadastralFabric and job pair.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Enumeration of Cadastral Fabric jobs. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Enumeration of Cadastral Fabric jobs. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass.#ctor">
+      <summary>Enumeration of Cadastral Fabric jobs. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass.Reset">
+      <summary>Reset Enum.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass.IEnumCadastralFabricJob_Reset">
+      <summary>Reset Enum.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass.Add(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric,System.String,System.Int32)">
+      <summary>Add CadastralFabric and job pair.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass.IEnumCadastralFabricJobImpl_Add(ESRI.ArcGIS.GeoDatabaseExtensions.ICadastralFabric,System.String,System.Int32)">
+      <summary>Add CadastralFabric and job pair.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass.Count">
+      <summary>Number of items in the enum.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.EnumCadastralFabricJobClass.IEnumCadastralFabricJobImpl_Count">
+      <summary>Number of items in the enum.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureError">
+      <summary>Enumeration of Cadastral error objects.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass">
+      <summary>Enumeration of Cadastral error objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass.Next(ESRI.ArcGIS.Cadastral.ICadastralFeatureError@,System.Int32@)">
+      <summary>Retrieve the next Cadastral error object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass.IEnumCadastralFeatureError_Next(ESRI.ArcGIS.Cadastral.ICadastralFeatureError@,System.Int32@)">
+      <summary>Retrieve the next Cadastral error object.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral..">
+      <summary>Enumeration of Cadastral error objects. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Cadastral.._">
+      <summary>Enumeration of Cadastral error objects. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass.#ctor">
+      <summary>Enumeration of Cadastral error objects. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass.Reset">
+      <summary>Reset the enumeration to the first Cadastral error object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass.IEnumCadastralFeatureError_Reset">
+      <summary>Reset the enumeration to the first Cadastral error object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass.Add(ESRI.ArcGIS.Cadastral.ICadastralFeatureError)">
+      <summary>Add Cadastral Feature error. It must already have a valid object ID</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass.IEnumCadastralFeatureErrorImpl_Add(ESRI.ArcGIS.Cadastral.ICadastralFeatureError)">
+      <summary>Add Cadastral Feature error. It must already have a valid object ID</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass.Count">
+      <summary>Number of items in the enum.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Cadastral.EnumCadastralFeatureErrorClass.IEnumCadastralFeatureErrorImpl_Count">
+      <summary>Number of items in the enum.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.cadastralError">
+      <summary>Cadastral Transaction Error Codes.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_OPERATION_FAILED">
+      <summary>Transaction failed.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_JOB_ALREADY_EXISTS">
+      <summary>Cadastral job name already exists.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_JOB_LOCK_ALREADY_EXISTS">
+      <summary>Lock already exists for parcel.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_JOB_ALREADY_COMMITTED">
+      <summary>Job has already been committed.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_JOB_RENAME_FAILED">
+      <summary>Job could not be renamed.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_NOT_PLANAR">
+      <summary>Lines to create polygons are not planar (planarize lines first).</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_DANGLELINE">
+      <summary>A dangle line was found when constructing parcels.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_DISJOINTPARCELS">
+      <summary>Disjoint parcels have been found while merging parcels.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_NOPARCELINES">
+      <summary>No parcel lines were found.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_NOPARCELS">
+      <summary>No parcels were found.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_ACQUIREDLOCKS">
+      <summary>Could not acquire locks for all parcels.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_IMPORTFIELD_MISSING">
+      <summary>A field required for the import is missing.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_IMPORTSRC_NOT_PCS">
+      <summary>A field that is required to be on the Import Source is missing.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_NO_LICENSE">
+      <summary>No license available.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.cadastralError.CADASTRAL_E_CONTAINS_COMPRESSEDDATA">
+      <summary>No license available.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCadastralControlPointErrors">
+      <summary>Bitmask values for the control point errors.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralControlPointErrors.esriCadastralControlPointInvalidPoint">
+      <summary>This control point does not reference a valid point ID.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralControlPointErrors.esriCadastralControlBackReference">
+      <summary>There is not a valid back reference on the point referenced by this line point.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors">
+      <summary>Bitmask values for the line errors.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorLineID">
+      <summary>The line has an invalid object ID.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorSequence">
+      <summary>The line has an invalid sequence.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorCategory">
+      <summary>The line has an invalid category.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorFromPoint">
+      <summary>There is an error with the line's from point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorToPoint">
+      <summary>There is an error with the line's to point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorCenterPoint">
+      <summary>There is an error with the line's center point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorRadius">
+      <summary>There is an error with the line's radius attribute.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorShape">
+      <summary>There is an error with the line's shape.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorFromToSame">
+      <summary>The from and to point IDs are the same.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLineErrors.esriCadastralLineErrorMissingRadial">
+      <summary>This is a curved line with at least one missing radial line.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCadastralLinePointErrors">
+      <summary>Bitmask values for the line point errors.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLinePointErrors.esriCadastralLinePointInvalidPoint">
+      <summary>This line point does not reference a valid point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLinePointErrors.esriCadastralLinePointInvalidFromPt">
+      <summary>This line point does not reference a valid from point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLinePointErrors.esriCadastralLinePointInvalidToPt">
+      <summary>This line point does not reference a valid to point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLinePointErrors.esriCadastralLinePointInvalidLine">
+      <summary>This line point does not reference a valid line.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLinePointErrors.esriCadastralLinePointPointError">
+      <summary>There is an error with the point reference by this line point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLinePointErrors.esriCadastralLinePointFromPointError">
+      <summary>There is an error with the from point referenced by this line point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralLinePointErrors.esriCadastralLinePointToPointError">
+      <summary>There is an error with the to point referenced by this line point.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCadastralParcelErrors">
+      <summary>Bitmask values for the parcel errors.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralParcelErrors.esriCadastralParcelLineSequence">
+      <summary>The parcel contains lines out of sequence.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralParcelErrors.esriCadastralParcelLineStartNumber">
+      <summary>The sequence IDs of the lines within this parcels do not start at 1.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralParcelErrors.esriCadastralParcelDanglingBoundary">
+      <summary>The parcel contains boundary lines which are not part of the perimeter.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralParcelErrors.esriCadastralParcelDisconnectedLinks">
+      <summary>The parcel contains lines which cannot be connected to the parcel boundary.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralParcelErrors.esriCadastralParcelPointsMissing">
+      <summary>This parcel has one or more missing points.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralParcelErrors.esriCadastralParcelLineError">
+      <summary>The parcel contains one or more lines with errors.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralParcelErrors.esriCadastralParcelLinePointError">
+      <summary>The parcel contains one or more line points with errors.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralParcelErrors.esriCadastralParcelPointError">
+      <summary>The parcel contains one or more points with errors.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCadastralPointErrors">
+      <summary>Bitmask values for the point errors.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralPointErrors.esriCadastralPointInvalidCoordinate">
+      <summary>This point has invalid coordinates</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralPointErrors.esriCadastralPointCenterAttribute">
+      <summary>The center attribute is incorrectly set on this point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralPointErrors.esriCadastralPointMissing">
+      <summary>This point is missing.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCadastralPointErrors.esriCadastralPointErrorShape">
+      <summary>The geometry of this point is invalid.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField">
+      <summary>Cadastral Cogo Table Attribute Import Fields.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoNodeHASH">
+      <summary>Cogo node # field. If not set, the input feature class name is used with # appended.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoNodeLINEPNTPARCEL">
+      <summary>Line point parcel id. Null or -1 means the point isn't a line point, otherwise it's the parent parcel id [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoNodeCATEGORY">
+      <summary>Cogo node Category field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcFNODE">
+      <summary>Cogo line From-Node field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcTNODE">
+      <summary>Cogo line To-Node field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcLPOLY">
+      <summary>Cogo line Left-Polygon field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcRPOLY">
+      <summary>Cogo line Right-Polygon field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcANGLE">
+      <summary>Cogo line Direction or Bearing field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcDISTANCE">
+      <summary>Cogo line Distance field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcRADIUS">
+      <summary>Cogo line Radius field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcDELTA">
+      <summary>Cogo line Delta field. Central Angle of the circular curve.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcARCLENGTH">
+      <summary>Cogo line ArcLength field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcSIDE">
+      <summary>Cogo line Side field. Curve towards the left (L) or right (R). Counter-clockwise, or clockwise respectively.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcCATEGORY">
+      <summary>Cogo line Category field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcACCURACYCAT">
+      <summary>Cogo line Accuracy Category field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcCALCULATED">
+      <summary>Cogo line Calculated field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoArcTYPE">
+      <summary>Cogo line Type field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoPolygonHASH">
+      <summary>Cogo node # field. If not set, the input feature class name is used with # appended.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoPolygonAREA">
+      <summary>Cogo polygon Area field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoPolygonPIN">
+      <summary>Cogo polygon Pin field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoPolygonPLAN">
+      <summary>Cogo polygon Plan field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoPolygonACCURACYCAT">
+      <summary>Cogo polygon Accurancy Category field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoPolygonTYPE">
+      <summary>Cogo polygon Type field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoPolygonHISTORIC">
+      <summary>Cogo polygon Historic field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoPolygonLEGALSTARTDATE">
+      <summary>Cogo polygon Legal Start Date field [optional].</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFCogoAttributeField.esriCFCogoPolygonLEGALENDDATE">
+      <summary>Cogo polygon Legal End Date field [optional].</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField">
+      <summary>Cadastral control import Attribute Fields.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCFControlImpFieldX">
+      <summary>Control point X field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCFControlImpFieldY">
+      <summary>Control point Y field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCFControlImpFieldZ">
+      <summary>Control point Z field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCFControlImpFieldName">
+      <summary>Control point name field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCTControlImpFieldPointID">
+      <summary>Control point PointID field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCFControlImpFieldAccuracyXY">
+      <summary>Control point AccuracyXY field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCFControlImpFieldAccuracyZ">
+      <summary>Control point AccuracyZ field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCFControlImpFieldSurveyDate">
+      <summary>Control point SurveyDate field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCFControlImpFieldActive">
+      <summary>Control point Active field.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlImpAttributeField.esriCFControlImpFieldType">
+      <summary>Control point Type field.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCFControlMergingAttributes">
+      <summary>Control import merging attributes options.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlMergingAttributes.esriCFControlMergingKeepAttributes">
+      <summary>Keep existing attributes when merging control.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlMergingAttributes.esriCFControlMergingUpdateAttributes">
+      <summary>Update existing attributes when merging control.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCFControlMergingCoordinate">
+      <summary>Control import merging coordinate options.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlMergingCoordinate.esriCFControlMergingKeepExistingCoordinates">
+      <summary>Keep existing coordinates when merging control.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlMergingCoordinate.esriCFControlMergingUpdateXYZ">
+      <summary>Update existing XYZ coordinates when merging control.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlMergingCoordinate.esriCFControlMergingUpdateXY">
+      <summary>Update existing XY coordinates when merging control.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlMergingCoordinate.esriCFControlMergingUpdateZ">
+      <summary>Update existing Z coordinates when merging control.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCFControlMergingName">
+      <summary>Control import merging name options.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlMergingName.esriCFControlMergingKeepExistingNames">
+      <summary>Keep existing names when merging control.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCFControlMergingName.esriCFControlMergingUpdateExistingNames">
+      <summary>Update existing names when merging control.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCurveDirection">
+      <summary>Circular Curve Direction.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCurveDirection.esriCDChord">
+      <summary>Chord.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCurveDirection.esriCDTangent">
+      <summary>Tangent.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCurveDirection.esriCDRadial">
+      <summary>Radial.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCurveDirection.esriCDCount">
+      <summary>Enum count.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Cadastral.esriCurveParameters">
+      <summary>Circular Curve Parameters.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCurveParameters.esriCPRadiusArcLength">
+      <summary>Radius and Arc Length.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCurveParameters.esriCPRadiusChordLength">
+      <summary>Radius and Chord Length.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCurveParameters.esriCPRadiusCentralAngle">
+      <summary>Radius and Central Angle.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Cadastral.esriCurveParameters.esriCPCount">
+      <summary>Enum count.</summary>
+    </member>
+  </members>
+</doc>

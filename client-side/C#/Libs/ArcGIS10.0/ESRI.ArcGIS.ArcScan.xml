@@ -1,0 +1,2363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.ArcScan</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.ArcScan.IConnectedCells">
+      <summary>Provides access to members that locate connected cells.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IConnectedCells.IsForeground(ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Indicates if the position is foreground or background.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IConnectedCells.Locate(ESRI.ArcGIS.Geometry.IGeometry,System.Boolean,System.Int32,ESRI.ArcGIS.ArcScan.INotifySelectionBlock,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Generates the envelopes that represent all connected cells that are at the search shape (see esriSpatialRelEnum for spatialRelMethod.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IConnectedCells.LocateByArea(System.Int32,System.Boolean,System.Boolean,System.Boolean,ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.ArcScan.INotifySelectionBlock,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Generates the envelopes that represent all connected cells that meet the area criteria.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IConnectedCells.LocateByDiagonalOfEnvelope(System.Double,System.Boolean,System.Boolean,System.Boolean,ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.ArcScan.INotifySelectionBlock,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Generates the rectangles that represent all connected cells that meet the diagonal of envelope criteria.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IConnectedCells.QueryArea(ESRI.ArcGIS.Geometry.IPoint,System.Boolean@,System.Int32@)">
+      <summary>Generates the area of the connected cells at the given point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IConnectedCells.QueryDiagonalOfEnvelope(ESRI.ArcGIS.Geometry.IPoint,System.Boolean@,System.Double@)">
+      <summary>Generates the value of the diagonal of the envelope of the connected cells at the given point.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IMorphologicalOperations">
+      <summary>Provides access to members that perform morphological operations.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IMorphologicalOperations.Do(ESRI.ArcGIS.ArcScan.esriVectoizationMorphologicalType,System.Double,ESRI.ArcGIS.Carto.IRasterLayer,System.Int32,ESRI.ArcGIS.DataSourcesRaster.IRasterTransaction,System.Int32,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Do morphological operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.INotifyGeometryFound">
+      <summary>Provides access to callbacks for when a shape is found during vectorization.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.INotifyGeometryFound.AddGeometry(ESRI.ArcGIS.Geometry.IGeometry,System.Double)">
+      <summary>Called when a shape is found in the method IVectorization::Vectorize.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.INotifySelectionBlock">
+      <summary>Provides access to callbacks for when a block is found in selection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.INotifySelectionBlock.SelectionBlock(ESRI.ArcGIS.esriSystem.tagRECT@,System.Object,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Called when a block is found during selection.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IRasterCleanup">
+      <summary>Provides access to members that control raster cleanup.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterCleanup.BrushSize">
+      <summary>The brush size.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterCleanup.EditState">
+      <summary>The raster editor's current edit state (see esriEditState).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterCleanup.EraseSize">
+      <summary>The erase size.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterCleanup.ForegroundColorActive">
+      <summary>Indicates whether the foreground color should be used for the active drawing color.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IRasterCleanup.HasRasterEdits">
+      <summary>Indicates if edits have been made.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterCleanup.LineWidth">
+      <summary>The drawing line width.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterCleanup.Raster">
+      <summary>The raster currently being edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IRasterCleanup.RasterChanged(ESRI.ArcGIS.Geometry.IEnvelope)">
+      <summary>Called by operations when they've modified a portion of the edited raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IRasterCleanup.Save">
+      <summary>Saves the edits.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IRasterCleanup.StartRasterCleanup">
+      <summary>The raster cleanup started.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IRasterCleanup.StopRasterCleanup(System.Boolean)">
+      <summary>The raster cleanup stopped.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterCleanup.Transaction">
+      <summary>The current Raster editing transaction.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents">
+      <summary>Provides access to raster cleanup events.  Implement it to listen for specific events that occur during a raster cleanup session.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_Event">
+      <summary>Provides access to raster cleanup events.  Implement it to listen for specific events that occur during a raster cleanup session.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents.OnRasterChanged(ESRI.ArcGIS.Geometry.IEnvelope)">
+      <summary>Called when a portion of the raster has changed due to an cleanup operation.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_Event.OnRasterChanged">
+      <summary>Called when a portion of the raster has changed due to an cleanup operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents.OnStartRasterCleanup">
+      <summary>Called when the raster cleanup starts.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_Event.OnStartRasterCleanup">
+      <summary>Called when the raster cleanup starts.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents.OnStopRasterCleanup(System.Boolean)">
+      <summary>Called when the raster cleanup stops.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_Event.OnStopRasterCleanup">
+      <summary>Called when the raster cleanup stops.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IRasterCleanupOperation">
+      <summary>Provides access to members that control the raster cleanup operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IRasterCleanupOperation.Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IRasterSnappingProperties">
+      <summary>Provides access to members that control the behavior of the raster snapping environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterSnappingProperties.Centerline">
+      <summary>Indicates whether to snap to centerlines.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterSnappingProperties.Corner">
+      <summary>Indicates whether to snap to corners.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterSnappingProperties.Ends">
+      <summary>Indicates whether to snap to ends.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterSnappingProperties.Intersections">
+      <summary>Indicates whether to snap to intersections.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterSnappingProperties.MaxSolidWidth">
+      <summary>Maximum length of solids, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterSnappingProperties.MinSolidWidth">
+      <summary>Minimum length of solids, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IRasterSnappingProperties.Solid">
+      <summary>Indicates whether to snap to solid.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorization">
+      <summary>Provides access to members that control the behavior of the vectorization tools.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization.QueryLineWidth(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Generates the line width at the given point in raster pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization.QuerySolidDiameter(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,System.Double@)">
+      <summary>Generates the solid diameter at the given point in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorization.SettingsDialog">
+      <summary>The settings dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorization.ShowPreview">
+      <summary>Indicates whether to display a preview of the vectorization on the map.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization.Snap(ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Snaps the input point to the target raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization.Trace(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Generates a geometry from the given fromPt to the next intersection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization.Vectorize(System.Boolean,ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.ArcScan.INotifyGeometryFound,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Find the geometries in the target raster.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorization2">
+      <summary>Provides access to members that control the behavior of the vectorization tools.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization2.ComputeDistance(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Compute distance from fromPt to toPt.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorization2.SettingsDialog2">
+      <summary>The settings dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization2.ShapeRecognition(ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Generates a geometry for the given fromPt.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization2.Trace2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Generates a geometry from the given fromPt to the next intersection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization2.TraceBetweenPoints(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Generates a geometry from the given fromPt to the given toPt.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization2.QueryLineWidth(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Generates the line width at the given point in raster pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization2.QuerySolidDiameter(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,System.Double@)">
+      <summary>Generates the solid diameter at the given point in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorization2.SettingsDialog">
+      <summary>The settings dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorization2.ShowPreview">
+      <summary>Indicates whether to display a preview of the vectorization on the map.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization2.Snap(ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Snaps the input point to the target raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization2.Trace(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Generates a geometry from the given fromPt to the next intersection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorization2.Vectorize(System.Boolean,ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.ArcScan.INotifyGeometryFound,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Find the geometries in the target raster.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties">
+      <summary>Provides access to members that control the behavior of the batch vectorization environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.Compression">
+      <summary>Indicates how much compression to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.GapClosure">
+      <summary>Controls the gap closure tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.GapFanAngle">
+      <summary>Controls the gap closure fan angle.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.IntersectionSolution">
+      <summary>The type of intersection solution to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.MaxHoleLength">
+      <summary>Length of holes to ignore, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.MaxLineWidth">
+      <summary>Indicates the maximum width of a line to be considered for vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.PolygonPointLimit">
+      <summary>Indicates how many points will be allowed for polygons before converting to a polyline.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.Smoothing">
+      <summary>Indicates how much smoothing to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.Type">
+      <summary>The type of vectorization to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.UseCompression">
+      <summary>Indicates if vectorization will use compression.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.UseGapClosure">
+      <summary>Indicates if vectorization will use gap closure.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.UsePolygonPointLimit">
+      <summary>Indicates if vectorization will use polygon point limit.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties.UseSmoothing">
+      <summary>Indicates if vectorization will use smoothing.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2">
+      <summary>Provides access to members that control the behavior of the batch vectorization environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.CornerNoiseLevel">
+      <summary>Corner Noise level.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.FindCorners">
+      <summary>Indicates if lines should be split at corners.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.GeometricLineRecognitionGeometrization">
+      <summary>Geometrization level for geometric line recognition.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.GeometricLineRecognitionNoiseLevel">
+      <summary>Noise level for geometric line recognition.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.GeometricLineRecognitionRoundness">
+      <summary>Roundness level for geometric line recognition.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.IgnoreHoles">
+      <summary>Indicates the type of holes to be ignored.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.MaxCornerAngle">
+      <summary>Maximum corner angle.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.MaxFindConnectedCellsArea">
+      <summary>Maximum area for the 'find connected cells' tool.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.MaxFindConnectedCellsDiagonal">
+      <summary>Maximum diagonal for the 'find connected cells' tool.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.MaxHoleArea">
+      <summary>Maximum area of holes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.Measuring">
+      <summary>Measuring units.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.Resolution">
+      <summary>Resolution of raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.ShapeRecognitionMaxDimension">
+      <summary>Maximum object dimension for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.ShapeRecognitionMaxOblateness">
+      <summary>Maximum oblateness for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.ShapeRecognitionMinDimension">
+      <summary>Minimum object dimension for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.ShapeRecognitionMinOblateness">
+      <summary>Minimum oblateness for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.ShapeRecognitionMinSideDimension">
+      <summary>Minimum length of side for orthogonal shapes primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.ShapeRecognitionNoiseLevel">
+      <summary>Noise level for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.ShapeRecognitionSearchFlags">
+      <summary>Indicates which types of geometric primitives should be searched.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.ShortClosureDashLength">
+      <summary>Length of short closure dash.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.UseGeometricLineRecognition">
+      <summary>Indicates if geometric line recognition should be applied.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.VectorizationNoiseLevel">
+      <summary>Vectorization noise level.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.Compression">
+      <summary>Indicates how much compression to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.GapClosure">
+      <summary>Controls the gap closure tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.GapFanAngle">
+      <summary>Controls the gap closure fan angle.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.IntersectionSolution">
+      <summary>The type of intersection solution to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.MaxHoleLength">
+      <summary>Length of holes to ignore, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.MaxLineWidth">
+      <summary>Indicates the maximum width of a line to be considered for vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.PolygonPointLimit">
+      <summary>Indicates how many points will be allowed for polygons before converting to a polyline.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.Smoothing">
+      <summary>Indicates how much smoothing to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.Type">
+      <summary>The type of vectorization to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.UseCompression">
+      <summary>Indicates if vectorization will use compression.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.UseGapClosure">
+      <summary>Indicates if vectorization will use gap closure.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.UsePolygonPointLimit">
+      <summary>Indicates if vectorization will use polygon point limit.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationBatchProperties2.UseSmoothing">
+      <summary>Indicates if vectorization will use smoothing.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationEvents">
+      <summary>Provides access to vectorization events.  Implement it to listen for specific events that occur during a vectorization session.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event">
+      <summary>Provides access to vectorization events.  Implement it to listen for specific events that occur during a vectorization session.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorizationEvents.OnBackgroundValueChanged">
+      <summary>Called when the background value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnBackgroundValueChanged">
+      <summary>Called when the background value changed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorizationEvents.OnForegroundClassIndexChanged">
+      <summary>Called when the foreground color changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnForegroundClassIndexChanged">
+      <summary>Called when the foreground color changed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorizationEvents.OnForegroundValueChanged">
+      <summary>Called when the foreground value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnForegroundValueChanged">
+      <summary>Called when the foreground value changed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorizationEvents.OnRasterTargetChanged">
+      <summary>Called when the target layer changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnRasterTargetChanged">
+      <summary>Called when the target layer changed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorizationEvents.OnVectorizationBatchPropertiesChanged">
+      <summary>Called when the Vectorization Batch Properties change.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnVectorizationBatchPropertiesChanged">
+      <summary>Called when the Vectorization Batch Properties change.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationLayers">
+      <summary>Provides access to members that control information about layers to be vectorized.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationLayers.CurrentLayer">
+      <summary>The vectorization target layer.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationProperties">
+      <summary>Provides access to members that control the behavior of the vectorization tools.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationProperties.BackgroundValue">
+      <summary>Value used to represent background pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationProperties.ForegroundClassIndex">
+      <summary>Raster renderer class index used to draw the foreground pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationProperties.ForegroundValue">
+      <summary>Value used to represent foreground pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationProperties.PreviewFillSymbol">
+      <summary>Symbol used to draw the preview of the vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationProperties.PreviewLineSymbol">
+      <summary>Symbol used to draw the preview of the vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationProperties.SelectForeground">
+      <summary>Indicates whether to select foreground or background connected cells.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationSettingsDialog">
+      <summary>Provides access to members that control the modeless settings dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorizationSettingsDialog.IsVisible(System.Boolean@)">
+      <summary>Indicates whether the vectorization settings dialog is visible..</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorizationSettingsDialog.OnCreate(System.Object)">
+      <summary>Called to initialize the dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IVectorizationSettingsDialog.Show(System.Boolean)">
+      <summary>Show or hide the vectorization settings dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationStyle">
+      <summary>Provides access to members that control the preview symbol and properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationStyle.Preview">
+      <summary>The picture marker symbol used to draw the preview.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IVectorizationStyle.Properties">
+      <summary>The properties that specify how to vectorize a raster.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.CenterlinesSnap">
+      <summary>Snap agent that snaps to the centerlines of a raster.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass">
+      <summary>Snap agent that snaps to the centerlines of a raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.ILicensedComponent_ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Snap agent that snaps to the centerlines of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Snap agent that snaps to the centerlines of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.#ctor">
+      <summary>Snap agent that snaps to the centerlines of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.ISnapAgent_Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.ISnapAgent_Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.ISnapAgentCategory_Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.ISnapAgentFeedback_SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IPersist_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CenterlinesSnapClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.CornerSnap">
+      <summary>Snap agent that snaps to the corners of a raster.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.CornerSnapClass">
+      <summary>Snap agent that snaps to the corners of a raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CornerSnapClass.ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CornerSnapClass.ILicensedComponent_ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Snap agent that snaps to the corners of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Snap agent that snaps to the corners of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.#ctor">
+      <summary>Snap agent that snaps to the corners of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CornerSnapClass.Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CornerSnapClass.ISnapAgent_Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.ISnapAgent_Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CornerSnapClass.Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CornerSnapClass.ISnapAgentCategory_Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CornerSnapClass.SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CornerSnapClass.ISnapAgentFeedback_SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.CornerSnapClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.IPersist_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.CornerSnapClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.DrawLineOperation">
+      <summary>Raster Draw Line Operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.DrawLineOperationClass">
+      <summary>Raster Draw Line Operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.IRasterCleanupOperation_Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Raster Draw Line Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Raster Draw Line Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.#ctor">
+      <summary>Raster Draw Line Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.IOperation_CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.IOperation_CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.IOperation_Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.IOperation_MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.IOperation_Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawLineOperationClass.IOperation_Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.DrawPolygonOperation">
+      <summary>Raster Draw Polygon Operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass">
+      <summary>Raster Draw Polygon Operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.IRasterCleanupOperation_Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Raster Draw Polygon Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Raster Draw Polygon Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.#ctor">
+      <summary>Raster Draw Polygon Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.IOperation_CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.IOperation_CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.IOperation_Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.IOperation_MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.IOperation_Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawPolygonOperationClass.IOperation_Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.DrawRasterOperation">
+      <summary>Free hand draw raster operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass">
+      <summary>Free hand draw raster operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.IRasterCleanupOperation_Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Free hand draw raster operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Free hand draw raster operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.#ctor">
+      <summary>Free hand draw raster operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.IOperation_CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.IOperation_CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.IOperation_Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.IOperation_MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.IOperation_Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRasterOperationClass.IOperation_Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.DrawRectangleOperation">
+      <summary>Raster Draw Rectangle Operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass">
+      <summary>Raster Draw Rectangle Operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.IRasterCleanupOperation_Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Raster Draw Rectangle Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Raster Draw Rectangle Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.#ctor">
+      <summary>Raster Draw Rectangle Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.IOperation_CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.IOperation_CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.IOperation_Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.IOperation_MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.IOperation_Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.DrawRectangleOperationClass.IOperation_Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.EndsSnap">
+      <summary>Snap agent that snaps to the ends of a raster.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.EndsSnapClass">
+      <summary>Snap agent that snaps to the ends of a raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EndsSnapClass.ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EndsSnapClass.ILicensedComponent_ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Snap agent that snaps to the ends of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Snap agent that snaps to the ends of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.#ctor">
+      <summary>Snap agent that snaps to the ends of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EndsSnapClass.Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EndsSnapClass.ISnapAgent_Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.ISnapAgent_Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EndsSnapClass.Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EndsSnapClass.ISnapAgentCategory_Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EndsSnapClass.SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EndsSnapClass.ISnapAgentFeedback_SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EndsSnapClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.IPersist_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EndsSnapClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.EraseRasterOperation">
+      <summary>Raster Erase Raster Operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass">
+      <summary>Raster Erase Raster Operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.IRasterCleanupOperation_Initialize(ESRI.ArcGIS.Geometry.IGeometry,System.Object)">
+      <summary>Called to initialize the operation.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Raster Erase Raster Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Raster Erase Raster Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.#ctor">
+      <summary>Raster Erase Raster Operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.IOperation_CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.IOperation_CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.IOperation_Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.IOperation_MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.IOperation_Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.EraseRasterOperationClass.IOperation_Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IntersectionSnap">
+      <summary>Snap agent that snaps to the intersections of a raster.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IntersectionSnapClass">
+      <summary>Snap agent that snaps to the intersections of a raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.ILicensedComponent_ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Snap agent that snaps to the intersections of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Snap agent that snaps to the intersections of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.#ctor">
+      <summary>Snap agent that snaps to the intersections of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.ISnapAgent_Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.ISnapAgent_Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.ISnapAgentCategory_Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.ISnapAgentFeedback_SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IPersist_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.IntersectionSnapClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.MorphologicalOperations">
+      <summary>Class supporting morphological operations.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.MorphologicalOperationsClass">
+      <summary>Class supporting morphological operations.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.MorphologicalOperationsClass.Do(ESRI.ArcGIS.ArcScan.esriVectoizationMorphologicalType,System.Double,ESRI.ArcGIS.Carto.IRasterLayer,System.Int32,ESRI.ArcGIS.DataSourcesRaster.IRasterTransaction,System.Int32,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Do morphological operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.MorphologicalOperationsClass.IMorphologicalOperations_Do(ESRI.ArcGIS.ArcScan.esriVectoizationMorphologicalType,System.Double,ESRI.ArcGIS.Carto.IRasterLayer,System.Int32,ESRI.ArcGIS.DataSourcesRaster.IRasterTransaction,System.Int32,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Do morphological operation.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Class supporting morphological operations. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Class supporting morphological operations. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.MorphologicalOperationsClass.#ctor">
+      <summary>Class supporting morphological operations. Constructor has no input arguments.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.RasterCleanup">
+      <summary>The Raster Cleanup Extension.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.RasterCleanupClass">
+      <summary>The Raster Cleanup Extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.BrushSize">
+      <summary>The brush size.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_BrushSize">
+      <summary>The brush size.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>The Raster Cleanup Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>The Raster Cleanup Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.#ctor">
+      <summary>The Raster Cleanup Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.EditState">
+      <summary>The raster editor's current edit state (see esriEditState).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_EditState">
+      <summary>The raster editor's current edit state (see esriEditState).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.EraseSize">
+      <summary>The erase size.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_EraseSize">
+      <summary>The erase size.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.ForegroundColorActive">
+      <summary>Indicates whether the foreground color should be used for the active drawing color.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_ForegroundColorActive">
+      <summary>Indicates whether the foreground color should be used for the active drawing color.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.HasRasterEdits">
+      <summary>Indicates if edits have been made.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_HasRasterEdits">
+      <summary>Indicates if edits have been made.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.LineWidth">
+      <summary>The drawing line width.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_LineWidth">
+      <summary>The drawing line width.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.Raster">
+      <summary>The raster currently being edited.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_Raster">
+      <summary>The raster currently being edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.RasterChanged(ESRI.ArcGIS.Geometry.IEnvelope)">
+      <summary>Called by operations when they've modified a portion of the edited raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_RasterChanged(ESRI.ArcGIS.Geometry.IEnvelope)">
+      <summary>Called by operations when they've modified a portion of the edited raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.Save">
+      <summary>Saves the edits.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_Save">
+      <summary>Saves the edits.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.StartRasterCleanup">
+      <summary>The raster cleanup started.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_StartRasterCleanup">
+      <summary>The raster cleanup started.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.StopRasterCleanup(System.Boolean)">
+      <summary>The raster cleanup stopped.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_StopRasterCleanup(System.Boolean)">
+      <summary>The raster cleanup stopped.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.Transaction">
+      <summary>The current Raster editing transaction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanup_Transaction">
+      <summary>The current Raster editing transaction.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.OnRasterChanged">
+      <summary>Called when a portion of the raster has changed due to an cleanup operation.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanupEvents_OnRasterChanged">
+      <summary>Called when a portion of the raster has changed due to an cleanup operation.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanupEvents_Event_OnRasterChanged">
+      <summary>Called when a portion of the raster has changed due to an cleanup operation.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanupEvents_Event.OnRasterChanged">
+      <summary>Called when a portion of the raster has changed due to an cleanup operation.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_Event.OnRasterChanged">
+      <summary>Called when a portion of the raster has changed due to an cleanup operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_OnRasterChangedEventHandler">
+      <summary>Handles the IRasterCleanupEvents_Event.OnRasterChanged Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_Event">
+      <summary>Provides access to raster cleanup events.  Implement it to listen for specific events that occur during a raster cleanup session.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.OnStartRasterCleanup">
+      <summary>Called when the raster cleanup starts.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanupEvents_OnStartRasterCleanup">
+      <summary>Called when the raster cleanup starts.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanupEvents_Event_OnStartRasterCleanup">
+      <summary>Called when the raster cleanup starts.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanupEvents_Event.OnStartRasterCleanup">
+      <summary>Called when the raster cleanup starts.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_Event.OnStartRasterCleanup">
+      <summary>Called when the raster cleanup starts.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_OnStartRasterCleanupEventHandler">
+      <summary>Handles the IRasterCleanupEvents_Event.OnStartRasterCleanup Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.OnStopRasterCleanup">
+      <summary>Called when the raster cleanup stops.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanupEvents_OnStopRasterCleanup">
+      <summary>Called when the raster cleanup stops.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanupEvents_Event_OnStopRasterCleanup">
+      <summary>Called when the raster cleanup stops.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IRasterCleanupEvents_Event.OnStopRasterCleanup">
+      <summary>Called when the raster cleanup stops.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_Event.OnStopRasterCleanup">
+      <summary>Called when the raster cleanup stops.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IRasterCleanupEvents_OnStopRasterCleanupEventHandler">
+      <summary>Handles the IRasterCleanupEvents_Event.OnStopRasterCleanup Event</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.RasterCleanupClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.SolidSnap">
+      <summary>Snap agent that snaps to the solids of a raster.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.SolidSnapClass">
+      <summary>Snap agent that snaps to the solids of a raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.SolidSnapClass.ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.SolidSnapClass.ILicensedComponent_ValidLicense(System.Object@)">
+      <summary>Indicates whether the the component is valid.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Snap agent that snaps to the solids of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Snap agent that snaps to the solids of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.#ctor">
+      <summary>Snap agent that snaps to the solids of a raster. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.SolidSnapClass.Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.SolidSnapClass.ISnapAgent_Name">
+      <summary>The name of the snap agent shown in the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.ISnapAgent_Snap(ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Called by the editor to perform the actual snapping logic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.SolidSnapClass.Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.SolidSnapClass.ISnapAgentCategory_Category">
+      <summary>The Snap Agent category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.SolidSnapClass.SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.SolidSnapClass.ISnapAgentFeedback_SnapText">
+      <summary>Snap Agent Feedback string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.SolidSnapClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.IPersist_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.SolidSnapClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.Vectorization">
+      <summary>The Vectorization ArcMap Extension.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.VectorizationClass">
+      <summary>The Vectorization ArcMap Extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IsForeground(ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Indicates if the position is foreground or background.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IConnectedCells_IsForeground(ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Indicates if the position is foreground or background.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>The Vectorization ArcMap Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>The Vectorization ArcMap Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.#ctor">
+      <summary>The Vectorization ArcMap Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.Locate(ESRI.ArcGIS.Geometry.IGeometry,System.Boolean,System.Int32,ESRI.ArcGIS.ArcScan.INotifySelectionBlock,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Generates the envelopes that represent all connected cells that are at the search shape (see esriSpatialRelEnum for spatialRelMethod.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IConnectedCells_Locate(ESRI.ArcGIS.Geometry.IGeometry,System.Boolean,System.Int32,ESRI.ArcGIS.ArcScan.INotifySelectionBlock,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Generates the envelopes that represent all connected cells that are at the search shape (see esriSpatialRelEnum for spatialRelMethod.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.LocateByArea(System.Int32,System.Boolean,System.Boolean,System.Boolean,ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.ArcScan.INotifySelectionBlock,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Generates the envelopes that represent all connected cells that meet the area criteria.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IConnectedCells_LocateByArea(System.Int32,System.Boolean,System.Boolean,System.Boolean,ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.ArcScan.INotifySelectionBlock,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Generates the envelopes that represent all connected cells that meet the area criteria.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.LocateByDiagonalOfEnvelope(System.Double,System.Boolean,System.Boolean,System.Boolean,ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.ArcScan.INotifySelectionBlock,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Generates the rectangles that represent all connected cells that meet the diagonal of envelope criteria.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IConnectedCells_LocateByDiagonalOfEnvelope(System.Double,System.Boolean,System.Boolean,System.Boolean,ESRI.ArcGIS.Geometry.IGeometry,ESRI.ArcGIS.ArcScan.INotifySelectionBlock,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Generates the rectangles that represent all connected cells that meet the diagonal of envelope criteria.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.QueryArea(ESRI.ArcGIS.Geometry.IPoint,System.Boolean@,System.Int32@)">
+      <summary>Generates the area of the connected cells at the given point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IConnectedCells_QueryArea(ESRI.ArcGIS.Geometry.IPoint,System.Boolean@,System.Int32@)">
+      <summary>Generates the area of the connected cells at the given point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.QueryDiagonalOfEnvelope(ESRI.ArcGIS.Geometry.IPoint,System.Boolean@,System.Double@)">
+      <summary>Generates the value of the diagonal of the envelope of the connected cells at the given point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IConnectedCells_QueryDiagonalOfEnvelope(ESRI.ArcGIS.Geometry.IPoint,System.Boolean@,System.Double@)">
+      <summary>Generates the value of the diagonal of the envelope of the connected cells at the given point.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Centerline">
+      <summary>Indicates whether to snap to centerlines.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IRasterSnappingProperties_Centerline">
+      <summary>Indicates whether to snap to centerlines.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Corner">
+      <summary>Indicates whether to snap to corners.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IRasterSnappingProperties_Corner">
+      <summary>Indicates whether to snap to corners.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Ends">
+      <summary>Indicates whether to snap to ends.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IRasterSnappingProperties_Ends">
+      <summary>Indicates whether to snap to ends.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Intersections">
+      <summary>Indicates whether to snap to intersections.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IRasterSnappingProperties_Intersections">
+      <summary>Indicates whether to snap to intersections.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.MaxSolidWidth">
+      <summary>Maximum length of solids, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IRasterSnappingProperties_MaxSolidWidth">
+      <summary>Maximum length of solids, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.MinSolidWidth">
+      <summary>Minimum length of solids, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IRasterSnappingProperties_MinSolidWidth">
+      <summary>Minimum length of solids, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Solid">
+      <summary>Indicates whether to snap to solid.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IRasterSnappingProperties_Solid">
+      <summary>Indicates whether to snap to solid.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.QueryLineWidth(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Generates the line width at the given point in raster pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization_QueryLineWidth(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Generates the line width at the given point in raster pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.QuerySolidDiameter(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,System.Double@)">
+      <summary>Generates the solid diameter at the given point in raster pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization_QuerySolidDiameter(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,System.Double@)">
+      <summary>Generates the solid diameter at the given point in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.SettingsDialog">
+      <summary>The settings dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization_SettingsDialog">
+      <summary>The settings dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ShowPreview">
+      <summary>Indicates whether to display a preview of the vectorization on the map.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization_ShowPreview">
+      <summary>Indicates whether to display a preview of the vectorization on the map.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.Snap(ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Snaps the input point to the target raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization_Snap(ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Snaps the input point to the target raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.Trace(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Generates a geometry from the given fromPt to the next intersection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization_Trace(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Generates a geometry from the given fromPt to the next intersection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.Vectorize(System.Boolean,ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.ArcScan.INotifyGeometryFound,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Find the geometries in the target raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization_Vectorize(System.Boolean,ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.ArcScan.INotifyGeometryFound,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Find the geometries in the target raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.ComputeDistance(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Compute distance from fromPt to toPt.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_ComputeDistance(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Compute distance from fromPt to toPt.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.SettingsDialog2">
+      <summary>The settings dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_SettingsDialog2">
+      <summary>The settings dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.ShapeRecognition(ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Generates a geometry for the given fromPt.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_ShapeRecognition(ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Generates a geometry for the given fromPt.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.Trace2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Generates a geometry from the given fromPt to the next intersection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_Trace2(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Generates a geometry from the given fromPt to the next intersection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.TraceBetweenPoints(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Generates a geometry from the given fromPt to the given toPt.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_TraceBetweenPoints(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double,ESRI.ArcGIS.esriSystem.ITrackCancel)">
+      <summary>Generates a geometry from the given fromPt to the given toPt.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_QueryLineWidth(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint)">
+      <summary>Generates the line width at the given point in raster pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_QuerySolidDiameter(ESRI.ArcGIS.Geometry.IPoint,System.Double,System.Double@,ESRI.ArcGIS.Geometry.IPoint,System.Double@)">
+      <summary>Generates the solid diameter at the given point in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_SettingsDialog">
+      <summary>The settings dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_ShowPreview">
+      <summary>Indicates whether to display a preview of the vectorization on the map.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_Snap(ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Snaps the input point to the target raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_Trace(ESRI.ArcGIS.Geometry.IPoint,ESRI.ArcGIS.Geometry.IPoint,System.Double)">
+      <summary>Generates a geometry from the given fromPt to the next intersection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorization2_Vectorize(System.Boolean,ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.ArcScan.INotifyGeometryFound,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStepProgressor)">
+      <summary>Find the geometries in the target raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Compression">
+      <summary>Indicates how much compression to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_Compression">
+      <summary>Indicates how much compression to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.GapClosure">
+      <summary>Controls the gap closure tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_GapClosure">
+      <summary>Controls the gap closure tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.GapFanAngle">
+      <summary>Controls the gap closure fan angle.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_GapFanAngle">
+      <summary>Controls the gap closure fan angle.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IntersectionSolution">
+      <summary>The type of intersection solution to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_IntersectionSolution">
+      <summary>The type of intersection solution to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.MaxHoleLength">
+      <summary>Length of holes to ignore, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_MaxHoleLength">
+      <summary>Length of holes to ignore, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.MaxLineWidth">
+      <summary>Indicates the maximum width of a line to be considered for vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_MaxLineWidth">
+      <summary>Indicates the maximum width of a line to be considered for vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.PolygonPointLimit">
+      <summary>Indicates how many points will be allowed for polygons before converting to a polyline.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_PolygonPointLimit">
+      <summary>Indicates how many points will be allowed for polygons before converting to a polyline.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Smoothing">
+      <summary>Indicates how much smoothing to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_Smoothing">
+      <summary>Indicates how much smoothing to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Type">
+      <summary>The type of vectorization to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_Type">
+      <summary>The type of vectorization to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.UseCompression">
+      <summary>Indicates if vectorization will use compression.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_UseCompression">
+      <summary>Indicates if vectorization will use compression.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.UseGapClosure">
+      <summary>Indicates if vectorization will use gap closure.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_UseGapClosure">
+      <summary>Indicates if vectorization will use gap closure.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.UsePolygonPointLimit">
+      <summary>Indicates if vectorization will use polygon point limit.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_UsePolygonPointLimit">
+      <summary>Indicates if vectorization will use polygon point limit.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.UseSmoothing">
+      <summary>Indicates if vectorization will use smoothing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties_UseSmoothing">
+      <summary>Indicates if vectorization will use smoothing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.CornerNoiseLevel">
+      <summary>Corner Noise level.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_CornerNoiseLevel">
+      <summary>Corner Noise level.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.FindCorners">
+      <summary>Indicates if lines should be split at corners.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_FindCorners">
+      <summary>Indicates if lines should be split at corners.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.GeometricLineRecognitionGeometrization">
+      <summary>Geometrization level for geometric line recognition.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_GeometricLineRecognitionGeometrization">
+      <summary>Geometrization level for geometric line recognition.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.GeometricLineRecognitionNoiseLevel">
+      <summary>Noise level for geometric line recognition.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_GeometricLineRecognitionNoiseLevel">
+      <summary>Noise level for geometric line recognition.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.GeometricLineRecognitionRoundness">
+      <summary>Roundness level for geometric line recognition.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_GeometricLineRecognitionRoundness">
+      <summary>Roundness level for geometric line recognition.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IgnoreHoles">
+      <summary>Indicates the type of holes to be ignored.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_IgnoreHoles">
+      <summary>Indicates the type of holes to be ignored.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.MaxCornerAngle">
+      <summary>Maximum corner angle.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_MaxCornerAngle">
+      <summary>Maximum corner angle.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.MaxFindConnectedCellsArea">
+      <summary>Maximum area for the 'find connected cells' tool.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_MaxFindConnectedCellsArea">
+      <summary>Maximum area for the 'find connected cells' tool.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.MaxFindConnectedCellsDiagonal">
+      <summary>Maximum diagonal for the 'find connected cells' tool.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_MaxFindConnectedCellsDiagonal">
+      <summary>Maximum diagonal for the 'find connected cells' tool.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.MaxHoleArea">
+      <summary>Maximum area of holes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_MaxHoleArea">
+      <summary>Maximum area of holes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Measuring">
+      <summary>Measuring units.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_Measuring">
+      <summary>Measuring units.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Resolution">
+      <summary>Resolution of raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_Resolution">
+      <summary>Resolution of raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ShapeRecognitionMaxDimension">
+      <summary>Maximum object dimension for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_ShapeRecognitionMaxDimension">
+      <summary>Maximum object dimension for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ShapeRecognitionMaxOblateness">
+      <summary>Maximum oblateness for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_ShapeRecognitionMaxOblateness">
+      <summary>Maximum oblateness for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ShapeRecognitionMinDimension">
+      <summary>Minimum object dimension for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_ShapeRecognitionMinDimension">
+      <summary>Minimum object dimension for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ShapeRecognitionMinOblateness">
+      <summary>Minimum oblateness for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_ShapeRecognitionMinOblateness">
+      <summary>Minimum oblateness for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ShapeRecognitionMinSideDimension">
+      <summary>Minimum length of side for orthogonal shapes primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_ShapeRecognitionMinSideDimension">
+      <summary>Minimum length of side for orthogonal shapes primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ShapeRecognitionNoiseLevel">
+      <summary>Noise level for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_ShapeRecognitionNoiseLevel">
+      <summary>Noise level for the recognition of geometric primitives.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ShapeRecognitionSearchFlags">
+      <summary>Indicates which types of geometric primitives should be searched.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_ShapeRecognitionSearchFlags">
+      <summary>Indicates which types of geometric primitives should be searched.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ShortClosureDashLength">
+      <summary>Length of short closure dash.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_ShortClosureDashLength">
+      <summary>Length of short closure dash.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.UseGeometricLineRecognition">
+      <summary>Indicates if geometric line recognition should be applied.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_UseGeometricLineRecognition">
+      <summary>Indicates if geometric line recognition should be applied.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.VectorizationNoiseLevel">
+      <summary>Vectorization noise level.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_VectorizationNoiseLevel">
+      <summary>Vectorization noise level.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_Compression">
+      <summary>Indicates how much compression to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_GapClosure">
+      <summary>Controls the gap closure tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_GapFanAngle">
+      <summary>Controls the gap closure fan angle.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_IntersectionSolution">
+      <summary>The type of intersection solution to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_MaxHoleLength">
+      <summary>Length of holes to ignore, measured in raster pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_MaxLineWidth">
+      <summary>Indicates the maximum width of a line to be considered for vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_PolygonPointLimit">
+      <summary>Indicates how many points will be allowed for polygons before converting to a polyline.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_Smoothing">
+      <summary>Indicates how much smoothing to apply to vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_Type">
+      <summary>The type of vectorization to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_UseCompression">
+      <summary>Indicates if vectorization will use compression.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_UseGapClosure">
+      <summary>Indicates if vectorization will use gap closure.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_UsePolygonPointLimit">
+      <summary>Indicates if vectorization will use polygon point limit.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationBatchProperties2_UseSmoothing">
+      <summary>Indicates if vectorization will use smoothing.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.OnBackgroundValueChanged">
+      <summary>Called when the background value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_OnBackgroundValueChanged">
+      <summary>Called when the background value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event_OnBackgroundValueChanged">
+      <summary>Called when the background value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event.OnBackgroundValueChanged">
+      <summary>Called when the background value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnBackgroundValueChanged">
+      <summary>Called when the background value changed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationEvents_OnBackgroundValueChangedEventHandler">
+      <summary>Handles the IVectorizationEvents_Event.OnBackgroundValueChanged Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event">
+      <summary>Provides access to vectorization events.  Implement it to listen for specific events that occur during a vectorization session.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.OnForegroundClassIndexChanged">
+      <summary>Called when the foreground color changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_OnForegroundClassIndexChanged">
+      <summary>Called when the foreground color changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event_OnForegroundClassIndexChanged">
+      <summary>Called when the foreground color changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event.OnForegroundClassIndexChanged">
+      <summary>Called when the foreground color changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnForegroundClassIndexChanged">
+      <summary>Called when the foreground color changed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationEvents_OnForegroundClassIndexChangedEventHandler">
+      <summary>Handles the IVectorizationEvents_Event.OnForegroundClassIndexChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.OnForegroundValueChanged">
+      <summary>Called when the foreground value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_OnForegroundValueChanged">
+      <summary>Called when the foreground value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event_OnForegroundValueChanged">
+      <summary>Called when the foreground value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event.OnForegroundValueChanged">
+      <summary>Called when the foreground value changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnForegroundValueChanged">
+      <summary>Called when the foreground value changed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationEvents_OnForegroundValueChangedEventHandler">
+      <summary>Handles the IVectorizationEvents_Event.OnForegroundValueChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.OnRasterTargetChanged">
+      <summary>Called when the target layer changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_OnRasterTargetChanged">
+      <summary>Called when the target layer changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event_OnRasterTargetChanged">
+      <summary>Called when the target layer changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event.OnRasterTargetChanged">
+      <summary>Called when the target layer changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnRasterTargetChanged">
+      <summary>Called when the target layer changed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationEvents_OnRasterTargetChangedEventHandler">
+      <summary>Handles the IVectorizationEvents_Event.OnRasterTargetChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.OnVectorizationBatchPropertiesChanged">
+      <summary>Called when the Vectorization Batch Properties change.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_OnVectorizationBatchPropertiesChanged">
+      <summary>Called when the Vectorization Batch Properties change.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event_OnVectorizationBatchPropertiesChanged">
+      <summary>Called when the Vectorization Batch Properties change.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationEvents_Event.OnVectorizationBatchPropertiesChanged">
+      <summary>Called when the Vectorization Batch Properties change.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IVectorizationEvents_Event.OnVectorizationBatchPropertiesChanged">
+      <summary>Called when the Vectorization Batch Properties change.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IVectorizationEvents_OnVectorizationBatchPropertiesChangedEventHandler">
+      <summary>Handles the IVectorizationEvents_Event.OnVectorizationBatchPropertiesChanged Event</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.CurrentLayer">
+      <summary>The vectorization target layer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationLayers_CurrentLayer">
+      <summary>The vectorization target layer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.BackgroundValue">
+      <summary>Value used to represent background pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationProperties_BackgroundValue">
+      <summary>Value used to represent background pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ForegroundClassIndex">
+      <summary>Raster renderer class index used to draw the foreground pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationProperties_ForegroundClassIndex">
+      <summary>Raster renderer class index used to draw the foreground pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.ForegroundValue">
+      <summary>Value used to represent foreground pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationProperties_ForegroundValue">
+      <summary>Value used to represent foreground pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.PreviewFillSymbol">
+      <summary>Symbol used to draw the preview of the vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationProperties_PreviewFillSymbol">
+      <summary>Symbol used to draw the preview of the vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.PreviewLineSymbol">
+      <summary>Symbol used to draw the preview of the vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationProperties_PreviewLineSymbol">
+      <summary>Symbol used to draw the preview of the vectorization.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.SelectForeground">
+      <summary>Indicates whether to select foreground or background connected cells.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IVectorizationProperties_SelectForeground">
+      <summary>Indicates whether to select foreground or background connected cells.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IPersist_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.VectorizationSettingsDialog">
+      <summary>The vectorization settings dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.VectorizationSettingsDialogClass">
+      <summary>The vectorization settings dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationSettingsDialogClass.IsVisible(System.Boolean@)">
+      <summary>Indicates whether the vectorization settings dialog is visible..</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationSettingsDialogClass.IVectorizationSettingsDialog_IsVisible(System.Boolean@)">
+      <summary>Indicates whether the vectorization settings dialog is visible..</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>The vectorization settings dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>The vectorization settings dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationSettingsDialogClass.#ctor">
+      <summary>The vectorization settings dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationSettingsDialogClass.OnCreate(System.Object)">
+      <summary>Called to initialize the dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationSettingsDialogClass.IVectorizationSettingsDialog_OnCreate(System.Object)">
+      <summary>Called to initialize the dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationSettingsDialogClass.Show(System.Boolean)">
+      <summary>Show or hide the vectorization settings dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationSettingsDialogClass.IVectorizationSettingsDialog_Show(System.Boolean)">
+      <summary>Show or hide the vectorization settings dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.VectorizationStyle">
+      <summary>An object that controls vectorization preview and properties.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.VectorizationStyleClass">
+      <summary>An object that controls vectorization preview and properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.Preview">
+      <summary>The picture marker symbol used to draw the preview.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IVectorizationStyle_Preview">
+      <summary>The picture marker symbol used to draw the preview.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>An object that controls vectorization preview and properties. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>An object that controls vectorization preview and properties. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.#ctor">
+      <summary>An object that controls vectorization preview and properties. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.Properties">
+      <summary>The properties that specify how to vectorize a raster.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IVectorizationStyle_Properties">
+      <summary>The properties that specify how to vectorize a raster.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.Assign(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Assigns the properties of src to the receiver.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IClone_Assign(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Assigns the properties of src to the receiver.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.Clone">
+      <summary>Clones the receiver and assigns the result to *clone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IClone_Clone">
+      <summary>Clones the receiver and assigns the result to *clone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IsEqual(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Returns TRUE when the receiver and other have the same properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IClone_IsEqual(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Returns TRUE when the receiver and other have the same properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IsIdentical(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Returns TRUE when the receiver and other are the same object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IClone_IsIdentical(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Returns TRUE when the receiver and other are the same object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IPersist_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClass">
+      <summary>Use to create new vectorization items.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass">
+      <summary>Use to create new vectorization items.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.Description">
+      <summary>Description for the Style Gallery Class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass_Description">
+      <summary>Description for the Style Gallery Class.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Use to create new vectorization items. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Use to create new vectorization items. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.#ctor">
+      <summary>Use to create new vectorization items. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.EditProperties(System.Object@,ESRI.ArcGIS.SystemUI.IComPropertySheetEvents,System.Int32,System.Boolean@)">
+      <summary>Edits the properties of a Style Gallery Item of the supported class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass_EditProperties(System.Object@,ESRI.ArcGIS.SystemUI.IComPropertySheetEvents,System.Int32,System.Boolean@)">
+      <summary>Edits the properties of a Style Gallery Item of the supported class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.ItemClass">
+      <summary>Interface ID for the items in the class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass_ItemClass">
+      <summary>Interface ID for the items in the class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.Name">
+      <summary>Name of the Style Gallery Class(as in the stle file).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass_Name">
+      <summary>Name of the Style Gallery Class(as in the stle file).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.NewObject(System.String)">
+      <summary>Creates a new object of the specified type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass_NewObject(System.String)">
+      <summary>Creates a new object of the specified type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.NewObjectTypes">
+      <summary>The available types of new items in this class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass_NewObjectTypes">
+      <summary>The available types of new items in this class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.Preview(System.Object,System.Int32,ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>Draws a preview of a Style Gallery Item of the supported class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass_Preview(System.Object,System.Int32,ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>Draws a preview of a Style Gallery Item of the supported class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.PreviewRatio">
+      <summary>The width ratio to 1 height.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass_PreviewRatio">
+      <summary>The width ratio to 1 height.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass2_Description">
+      <summary>Description for the Style Gallery Class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.DisplayName">
+      <summary>Display name of the Style Gallery Class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass2_DisplayName">
+      <summary>Display name of the Style Gallery Class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass2_EditProperties(System.Object@,ESRI.ArcGIS.SystemUI.IComPropertySheetEvents,System.Int32,System.Boolean@)">
+      <summary>Edits the properties of a Style Gallery Item of the supported class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass2_ItemClass">
+      <summary>Interface ID for the items in the class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass2_Name">
+      <summary>Name of the Style Gallery Class (as in the stle file).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass2_NewObject(System.String)">
+      <summary>Creates a new object of the specified type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass2_NewObjectTypes">
+      <summary>The available types of new items in this class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass2_Preview(System.Object,System.Int32,ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>Draws a preview of a Style Gallery Item of the supported class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScan.VectorizationStyleGalleryClassClass.IStyleGalleryClass2_PreviewRatio">
+      <summary>The width ratio to 1 height.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.VectorizationStyleSelector">
+      <summary>Style selector for vectorization.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass">
+      <summary>Style selector for vectorization.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.AddStyle(System.Object)">
+      <summary>Specifies the original style. May specify more than one.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.IStyleSelector_AddStyle(System.Object)">
+      <summary>Specifies the original style. May specify more than one.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan..">
+      <summary>Style selector for vectorization. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScan.._">
+      <summary>Style selector for vectorization. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.#ctor">
+      <summary>Style selector for vectorization. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.DoModal(System.Int32)">
+      <summary>Shows the style selector dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.IStyleSelector_DoModal(System.Int32)">
+      <summary>Shows the style selector dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.GetStyle(System.Int32)">
+      <summary>Returns the updated style. Index is required when more than one style was originally added.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.IStyleSelector_GetStyle(System.Int32)">
+      <summary>Returns the updated style. Index is required when more than one style was originally added.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.IComPropertySheetEvents_OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.IComPropertySheetEvents_Event_OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.VectorizationStyleSelectorClass.IComPropertySheetEvents_Event.OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScan.IComPropertySheetEvents_Event.OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IComPropertySheetEvents_OnApplyEventHandler">
+      <summary>Handles the IComPropertySheetEvents_Event.OnApply Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.IComPropertySheetEvents_Event">
+      <summary>Provides access to events that occur on a COM property sheet.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.esriIgnoreHoles">
+      <summary>The type of holes to be ignored.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriIgnoreHoles.esriIgnoreHolesNone">
+      <summary>Indicates if holes are not ignored.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriIgnoreHoles.esriIgnoreHolesDiagonal">
+      <summary>Indicates if the hole's diagonal should be used.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriIgnoreHoles.esriIgnoreHolesArea">
+      <summary>Indicates if the hole's area should be used.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.esriIntersectionSolutionType">
+      <summary>The type of intersection solution.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriIntersectionSolutionType.esriNoIntersectionSolution">
+      <summary>A geometrical intersection type.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriIntersectionSolutionType.esriGeometricalIntersectionSolution">
+      <summary>A geometrical intersection type.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriIntersectionSolutionType.esriMedianIntersectionSolution">
+      <summary>A Median intersection type.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.esriMeasuringUnits">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriMeasuringUnits.esriMeasuringUnitsPixel">
+      <summary>A measuring units is Pixel.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriMeasuringUnits.esriMeasuringUnitsPoints">
+      <summary>A measuring units is Points.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriMeasuringUnits.esriMeasuringUnitsMillimeter">
+      <summary>A measuring units is Millimeter.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriMeasuringUnits.esriMeasuringUnitsCentiMeter">
+      <summary>A measuring units is CentiMeter.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriMeasuringUnits.esriMeasuringUnitsInch">
+      <summary>A measuring units is Inch.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.esriRasterSnappedType">
+      <summary>The type of raster snapping.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriRasterSnappedType.esriRasterSnappedNone">
+      <summary>No snapping happened.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriRasterSnappedType.esriRasterSnappedCenterline">
+      <summary>Snaped to the centerlines.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriRasterSnappedType.esriRasterSnappedCorner">
+      <summary>Snaped to the corners.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriRasterSnappedType.esriRasterSnappedIntersection">
+      <summary>Snaped to the intersections.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriRasterSnappedType.esriRasterSnappedSolid">
+      <summary>Snaped to the solid.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriRasterSnappedType.esriRasterSnappedEnds">
+      <summary>Snaped to the ends.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.esriShapeRecognition">
+      <summary>The type of raster snapping.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriShapeRecognition.esriShapeRecognitionRectangle">
+      <summary>Rectangle.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriShapeRecognition.esriShapeRecognitionSquare">
+      <summary>Square.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriShapeRecognition.esriShapeRecognitionEllipse">
+      <summary>Ellipse.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriShapeRecognition.esriShapeRecognitionCircle">
+      <summary>Circle.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriShapeRecognition.esriShapeRecognitionOrthogonalShape">
+      <summary>Orthogonal Shape.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriShapeRecognition.esriShapeRecognitionAllShapes">
+      <summary>All Shapes.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.esriVectoizationMorphologicalType">
+      <summary>The type of morphological operation.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriVectoizationMorphologicalType.esriMorphologicalOperationErosion">
+      <summary>Erosion.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriVectoizationMorphologicalType.esriMorphologicalOperationDilation">
+      <summary>Dilation.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriVectoizationMorphologicalType.esriMorphologicalOperationOpening">
+      <summary>Opening.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriVectoizationMorphologicalType.esriMorphologicalOperationClosing">
+      <summary>Closing.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScan.esriVectoizationType">
+      <summary>The type of vectorization.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriVectoizationType.esriCenterlineVectorization">
+      <summary>Vectorize the centerlines.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScan.esriVectoizationType.esriOutlineVectorization">
+      <summary>Vectorize the outlines.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,1088 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.NetworkAnalystTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer">
+            <summary>Makes a route network analysis layer and sets its analysis properties. A route analysis layer is useful for determining the best route between a set of network locations based on a specified network cost.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.#ctor(System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset">The network dataset on which the route analysis will be performed. (In, Required)</param>
+            <param name="out_network_analysis_layer">Name of the route network analysis layer to create. (In, Required)</param>
+            <param name="impedance_attribute">The cost attribute to be used as impedance in the analysis. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.in_network_dataset">
+            <summary>The network dataset on which the route analysis will be performed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.out_network_analysis_layer">
+            <summary>Name of the route network analysis layer to create. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.impedance_attribute">
+            <summary>The cost attribute to be used as impedance in the analysis. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.find_best_order">
+            <summary>Reorder stops to find optimal route (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.ordering_type">
+            <summary>Specifies the ordering of stops when FIND_BEST_ORDER is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.time_windows">
+            <summary>Specifies if time windows will be used at the stops.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.accumulate_attribute_name">
+            <summary>List of cost attributes to be accumulated during analysis. These accumulation attributes are purely for reference; the solver only uses the cost attribute specified by the Impedance attribute parameter  to calculate the route. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.UTurn_policy">
+            <summary>Restrict or permit U-turns at junctions that could occur during network traversal between stops. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.restriction_attribute_name">
+            <summary>List of restriction attributes to apply during the analysis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.hierarchy">
+            <summary>The parameter is not used if a hierarchy attribute is not defined on the network dataset used to perform the analysis. In such cases, use "#" as the parameter value.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.hierarchy_settings">
+            <summary><para>Prior to version 10, this parameter allowed you to change the hierarchy ranges for your analysis from the default hierarchy ranges established in the network dataset. At version 10, this parameter is no longer supported and should be specified as an empty string. If you wish to change the hierarchy ranges for your analysis, update the default hierarchy ranges in the network dataset.</para> (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.output_path_shape">
+            <summary>Specifies the shape type for the route features that are output by the analysis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.start_date_time">
+            <summary>Specifies a start date and time for the route. Route start time is mostly used to find routes based on the impedance attribute that varies with the time of the day. For example, a start time of 9 AM could be used to find a route that considers the rush hour traffic. The default value for this parameter is 8:00 AM. A date and time can be specified as 10/21/05 10:30 AM. If the route spans multiple days, and only the start time is specified, then the current date is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeRouteLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.AddLocations">
+            <summary>Adds network analysis objects to a network analysis layer. The objects are added to specific sublayers such as Stops and Barriers. Objects are input as features or records.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.#ctor(System.Object,System.String,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_analysis_layer">Network analysis layer to which the network analysis objects will be added. (In, Required)</param>
+            <param name="sub_layer">The sublayer of the network analysis layer to which the network analysis objects will be added. (In, Required)</param>
+            <param name="in_table">The feature class or the table that is the source for the new network analysis objects. (In, Required)</param>
+            <param name="field_mappings">Sets the values for the properties of the network analysis objects. Properties can be set to a constant or mapped to a field from the input feature class or table. (In, Required)</param>
+            <param name="search_tolerance">The search tolerance for locating the input features on the network. Features that are outside the search tolerance are left unlocated. The parameter includes a value and units for the tolerance. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.in_network_analysis_layer">
+            <summary>Network analysis layer to which the network analysis objects will be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.sub_layer">
+            <summary>The sublayer of the network analysis layer to which the network analysis objects will be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.in_table">
+            <summary>The feature class or the table that is the source for the new network analysis objects. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.field_mappings">
+            <summary>Sets the values for the properties of the network analysis objects. Properties can be set to a constant or mapped to a field from the input feature class or table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.search_tolerance">
+            <summary>The search tolerance for locating the input features on the network. Features that are outside the search tolerance are left unlocated. The parameter includes a value and units for the tolerance. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.sort_field">
+            <summary>A field on which the network analysis objects are sorted as they are added to the network analysis layer. The default is the ObjectID field on the input feature class or the table. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.search_criteria">
+            <summary>Specifies which sources in the network dataset will be searched when finding locations and what portions of geometry (also known as snap types) will be used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.match_type">
+            <summary>The parameter is not used when adding locations to the Line Barriers or Polygon Barriers sublayers. In such cases, use "#" as the parameter value.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.append">
+            <summary>Specifies whether or not to append new network analysis objects to existing objects.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.snap_to_position_along_network">
+            <summary> Specifies that you want to snap the network locations along the network dataset or at some specified offset from the network dataset.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.snap_offset">
+            <summary>When snapping a point to the network, you can apply an offset distance. An offset distance of zero means the point will be coincident with the network feature (typically a line). To offset the point from the network feature, enter an offset distance. The offset is in relation to the original point location. That is, if the original point was on the left side, its new location will be offset to the left. If it was originally on the right side, its new location will be offset to the right. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.exclude_restricted_elements">
+            <summary>Exclude restricted portions of the network (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.search_query">
+             <summary>
+            Specifies a query to restrict the search to a subset of the features within a source feature class. This is useful if you don't want to find features that may be unsuited for a network location. For example, if you are loading centroids of polygons and don't want to locate on local roads, you can define a query that searches for major roads only.
+             (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddLocations.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.Directions">
+            <summary>Generates direction information from a network analysis layer with routes. The direction information is written to a file in either XML or text format.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.Directions.#ctor(System.Object,System.String,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_analysis_layer">Network analysis layer from which directions will be generated. Directions can be generated only for the Route, Closest Facility, and Vehicle Routing Problem network analysis layers. (In, Required)</param>
+            <param name="file_type">The format of the output directions file. (In, Required)</param>
+            <param name="out_directions_file">The full pathname to the directions file that will be written. (Out, Required)</param>
+            <param name="report_units">Specifies the linear units in which the length information will be reported in the directions file. For example, even though your impedance was in meters, you can show directions in miles.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.in_network_analysis_layer">
+            <summary>Network analysis layer from which directions will be generated. Directions can be generated only for the Route, Closest Facility, and Vehicle Routing Problem network analysis layers. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.file_type">
+            <summary>The format of the output directions file. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.out_directions_file">
+            <summary>The full pathname to the directions file that will be written. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.report_units">
+            <summary>Specifies the linear units in which the length information will be reported in the directions file. For example, even though your impedance was in meters, you can show directions in miles.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.report_time">
+            <summary>Report travel time (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.time_attribute">
+            <summary>The time-based cost attribute providing the travel times in the directions. The cost attribute must exist on the network dataset used by the input network analysis layer. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Directions.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer">
+            <summary>Makes a closest facility network analysis layer and sets its analysis properties. A closest facility analysis layer is useful in determining the closest facility or facilities to an incident based on a specified network cost.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.#ctor(System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset">The network dataset on which the closest facility analysis will be performed. (In, Required)</param>
+            <param name="out_network_analysis_layer">Name of the closest facility network analysis layer to create. (In, Required)</param>
+            <param name="impedance_attribute">The cost attribute to be used as impedance in the analysis. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.in_network_dataset">
+            <summary>The network dataset on which the closest facility analysis will be performed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.out_network_analysis_layer">
+            <summary>Name of the closest facility network analysis layer to create. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.impedance_attribute">
+            <summary>The cost attribute to be used as impedance in the analysis. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.travel_from_to">
+            <summary>Specifies the direction of travel between facilities and incidents. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.default_cutoff">
+            <summary>Default impedance value at which to stop searching for facilities for a given incident. The default can be overridden by specifying the cutoff value on incidents when TRAVEL_TO option is used or by specifying the cutoff value on facilities when TRAVEL_FROM option is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.default_number_facilities_to_find">
+            <summary>Default number of closest facilities to find per incident. The default can be overridden by specifying a value for the TargetFacilityCount property on the incidents. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.accumulate_attribute_name">
+            <summary>List of cost attributes to be accumulated during analysis. These accumulation attributes are purely for reference; the solver only uses the cost attribute specified by the Impedance attribute parameter  to calculate the route. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.UTurn_policy">
+            <summary>Restrict or permit U-turns at junctions that could occur during network traversal between stops. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.restriction_attribute_name">
+            <summary>List of restriction attributes to apply during the analysis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.hierarchy">
+            <summary>The parameter is not used if a hierarchy attribute is not defined on the network dataset used to perform the analysis. In such cases, use "#" as the parameter value.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.hierarchy_settings">
+            <summary><para>Prior to version 10, this parameter allowed you to change the hierarchy ranges for your analysis from the default hierarchy ranges established in the network dataset. At version 10, this parameter is no longer supported and should be specified as an empty string. If you wish to change the hierarchy ranges for your analysis, update the default hierarchy ranges in the network dataset.</para> (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.output_path_shape">
+            <summary>Specifies the shape type for the route features that are output by the analysis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeClosestFacilityLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer">
+            <summary>Makes a service area network analysis layer and sets its analysis properties. A service area analysis layer is useful in determining the area of accessibility within a given cutoff cost from a facility location. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.#ctor(System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset">The network dataset on which the service area analysis will be performed. (In, Required)</param>
+            <param name="out_network_analysis_layer">Name of the service area network analysis layer to create. (In, Required)</param>
+            <param name="impedance_attribute">The cost attribute to be used as impedance in the analysis. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.in_network_dataset">
+            <summary>The network dataset on which the service area analysis will be performed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.out_network_analysis_layer">
+            <summary>Name of the service area network analysis layer to create. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.impedance_attribute">
+            <summary>The cost attribute to be used as impedance in the analysis. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.travel_from_to">
+            <summary>Specifies the direction of travel to or from the facilities. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.default_break_values">
+            <summary>Default impedance values indicating the extent of the service area to be calculated. The default can be overridden by specifying the breaks value on the facilities. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.polygon_type">
+            <summary>Specifies the type of polygons to be generated. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.merge">
+            <summary>Specifies the options to merge polygons that share similar break values. This option is applicable only when generating polygons for multiple facilities. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.nesting_type">
+            <summary>Specifies the option to create concentric service area polygons as disks or rings. This option is applicable only when multiple break values are specified for the facilities.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.line_type">
+            <summary>Specifies the type of lines to be generated based on the service area analysis. Selecting the TRUE_LINES or TRUE_LINES_WITH_MEASURES option for large service areas will increase the amount of memory consumed by the analysis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.overlap">
+            <summary>Determines if overlapping lines are generated when the service area lines are computed.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.split">
+            <summary>Split lines when they cross a service area break (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.excluded_source_name">
+            <summary>Specifies the list of network sources to be excluded when generating the polygons. The geometry of traversed elements from the excluded sources will be omitted from all polygons. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.accumulate_attribute_name">
+            <summary>List of cost attributes to be accumulated during analysis. These accumulation attributes are purely for reference; the solver only uses the cost attribute specified by the Impedance attribute parameter  to calculate the route. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.UTurn_policy">
+            <summary>Restrict or permit U-turns at junctions that could occur during network traversal between stops. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.restriction_attribute_name">
+            <summary>List of restriction attributes to apply during the analysis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.polygon_trim">
+            <summary>Trim Polygons (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.poly_trim_value">
+            <summary>Specifies the distance within which the service area polygons are trimmed. The parameter includes a value and units for the distance. The default value is 100 meters.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.lines_source_fields">
+            <summary>Include network source fields in lines (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeServiceAreaLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer">
+            <summary>Makes an origin–destination (OD) cost matrix network analysis layer and sets its analysis properties. An OD cost matrix analysis layer is useful for representing a matrix of costs going from a set of origin locations to a set of destination locations.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.#ctor(System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset">The network dataset on which the OD cost matrix analysis will be performed. (In, Required)</param>
+            <param name="out_network_analysis_layer">Name of the OD cost matrix network analysis layer to create. (In, Required)</param>
+            <param name="impedance_attribute">The cost attribute to be used as impedance in the analysis. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.in_network_dataset">
+            <summary>The network dataset on which the OD cost matrix analysis will be performed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.out_network_analysis_layer">
+            <summary>Name of the OD cost matrix network analysis layer to create. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.impedance_attribute">
+            <summary>The cost attribute to be used as impedance in the analysis. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.default_cutoff">
+            <summary>Default impedance value at which to cut off searching for destinations for a given origin. If the accumulated impedance becomes higher than the cutoff value, the traversal stops. The default can be overridden by specifying the cutoff value on the origins. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.default_number_destinations_to_find">
+            <summary>Default number of destinations to find for each origin. The default can be overridden by specifying a value for the TargetDestinationCount property on the origins. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.accumulate_attribute_name">
+            <summary>List of cost attributes to be accumulated during analysis. These accumulation attributes are purely for reference; the solver only uses the cost attribute specified by the Impedance attribute parameter  to calculate the route. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.UTurn_policy">
+            <summary>Restrict or permit U-turns at junctions that could occur during network traversal between stops. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.restriction_attribute_name">
+            <summary>List of restriction attributes to apply during the analysis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.hierarchy">
+            <summary>The parameter is not used if a hierarchy attribute is not defined on the network dataset used to perform the analysis. In such cases, use "#" as the parameter value.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.hierarchy_settings">
+            <summary><para>Prior to version 10, this parameter allowed you to change the hierarchy ranges for your analysis from the default hierarchy ranges established in the network dataset. At version 10, this parameter is no longer supported and should be specified as an empty string. If you wish to change the hierarchy ranges for your analysis, update the default hierarchy ranges in the network dataset.</para> (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.output_path_shape">
+            <summary>No matter which output shape type is chosen, the best route is always determined by the network impedance, never Euclidean distance. This means only the route shapes are different, not the underlying traversal of the network. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeODCostMatrixLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations">
+            <summary>Adds fields to the input features that contain the network location of the features. The tool is used to store the network location information as feature attributes to quickly load the features as inputs for a network analysis layer.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.#ctor(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_point_features">The input features for which the network locations will be calculated.  (In, Required)</param>
+            <param name="in_network_dataset">The network dataset used to calculate the locations. (In, Required)</param>
+            <param name="search_tolerance">The search tolerance for locating the input features on the network. Features that are outside the search tolerance are left unlocated. The parameter includes a value and units for the tolerance. (In, Required)</param>
+            <param name="search_criteria">Specifies which sources in the network dataset will be searched when finding locations and what portions of geometry (also known as snap types) will be used. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.in_point_features">
+            <summary>The input features for which the network locations will be calculated.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.in_network_dataset">
+            <summary>The network dataset used to calculate the locations. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.search_tolerance">
+            <summary>The search tolerance for locating the input features on the network. Features that are outside the search tolerance are left unlocated. The parameter includes a value and units for the tolerance. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.search_criteria">
+            <summary>Specifies which sources in the network dataset will be searched when finding locations and what portions of geometry (also known as snap types) will be used. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.match_type">
+            <summary>The parameter is not used when calculating locations for line or polygon features. In such cases, use "#" as the parameter value. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.source_ID_field">
+            <summary>Name of the field to be created or updated with the source ID of the computed network location. A field called "SourceID" is created or updated by default. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.source_OID_field">
+            <summary>Name of the field to be created or updated with the source OID of the computed network location. A field called "SourceOID" is created or updated by default.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.position_field">
+            <summary>Name of the field to be created or updated with the percent along of the computed network location. A field called "PosAlong" is created or updated by default. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.side_field">
+            <summary>Name of the field to be created or updated with the side of edge on which the point feature is located on the computed network location. A field called "SideOfEdge" is created or updated by default. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.snap_X_field">
+            <summary>Located X-coordinate field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.snap_Y_field">
+            <summary>Located Y-coordinate field (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.distance_field">
+            <summary>Name of the field to be created or updated with the distance of the point feature from the computed network location. A field called "Distance" is created or updated by default. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.snap_Z_field">
+            <summary> Name of the field to be created or updated with the z-coordinate of the computed network location. A field called "SnapZ" is created or updated by default.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.location_field">
+            <summary> Name of the field to be created or updated with the location ranges of the computed network locations for the line or polygon features. A field called "Locations" is created or updated by default.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.exclude_restricted_elements">
+            <summary>This parameter is applicable only when the input features are from the sub layer of a network analysis layer and are not barrier objects. In all other cases, use "#" as the parameter value.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.search_query">
+             <summary>
+            Specifies a query to restrict the search to a subset of the features within a source feature class. This is useful if you don't want to find features that may be unsuited for a network location. For example, if you are loading centroids of polygons and don't want to locate on local roads, you can define a query that searches for major roads only.
+             (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.out_point_feature_class">
+            <summary>Output derived feature class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CalculateLocations.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer">
+            <summary>Adds a field to a sublayer of a network analysis layer.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.#ctor(System.Object,System.String,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_analysis_layer">Network analysis layer to which the new field will be added. (In, Required)</param>
+            <param name="sub_layer">The sublayer of the network analysis layer to which the new field will be added. (In, Required)</param>
+            <param name="field_name">The name of the field that will be added to the specified sublayer of the network analysis layer. (In, Required)</param>
+            <param name="field_type">The field type used in the creation of the new field. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.in_network_analysis_layer">
+            <summary>Network analysis layer to which the new field will be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.sub_layer">
+            <summary>The sublayer of the network analysis layer to which the new field will be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.field_name">
+            <summary>The name of the field that will be added to the specified sublayer of the network analysis layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.field_type">
+            <summary>The field type used in the creation of the new field. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.field_precision">
+            <summary>Describes the number of digits that can be stored in the field. All digits are counted no matter what side of the decimal they are on. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.field_scale">
+            <summary>Sets the number of decimal places stored in a field. This parameter is only used in Float and Double data field types. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.field_length">
+            <summary>The length of the field being added. This sets the maximum number of allowable characters for each record of the field. This option is only applicable on fields of type text or blob. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.field_alias">
+            <summary>The alternate name given to the field name. This name is used to give more descriptive names to cryptic field names. The field alias parameter only applies to geodatabases and coverages. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.field_is_nullable">
+            <summary>A geographic feature where there is no associated attribute information. These are different from zero or empty fields and are only supported for fields in a geodatabase.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.AddFieldToAnalysisLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges">
+            <summary>Increases the maximum number of edges per turn in a turn feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges.#ctor(System.Object,System.Int32)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_turn_features">The turn feature class that is having its maximum number of edges raised. (In, Required)</param>
+            <param name="maximum_edges">The new maximum number of edges in the input turn feature class. The value must be at least one higher than the existing maximum number of edges and cannot be greater than 20. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges.in_turn_features">
+            <summary>The turn feature class that is having its maximum number of edges raised. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges.maximum_edges">
+            <summary>The new maximum number of edges in the input turn feature class. The value must be at least one higher than the existing maximum number of edges and cannot be greater than 20. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges.out_turn_features">
+            <summary>Output Turn Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.IncreaseMaximumEdges.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass">
+            <summary>Creates a new turn feature class to store turn features that model turning movements in a network dataset.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="out_location">The ArcSDE, file, or personal geodatabase, or the folder in which the output turn feature class will be created. This workspace must already exist. (In, Required)</param>
+            <param name="out_feature_class_name">The name of the turn feature class to be created. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.out_location">
+            <summary>The ArcSDE, file, or personal geodatabase, or the folder in which the output turn feature class will be created. This workspace must already exist. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.out_feature_class_name">
+            <summary>The name of the turn feature class to be created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.maximum_edges">
+            <summary>The maximum number of edges that turns in the new turn feature class can model. The default value is 5. The maximum value is 20. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.in_network_dataset">
+            <summary>The network dataset in which the turn feature class will participate. The resulting turn feature class will be added as a turn source to the network dataset. If no network dataset is specified, the turn feature class will be created as not participating in a network dataset. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.in_template_feature_class">
+            <summary>The feature class used as a template to define the attribute schema of the new turn feature class.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.spatial_reference">
+            <summary>The spatial reference to be applied to the output turn feature class. This parameter is ignored if the output location is a geodatabase feature dataset as the output turn  feature class will inherit the spatial reference of the feature dataset. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.config_keyword">
+            <summary>Specifies the configuration keyword that determines the storage parameters of the new turn feature class. This parameter is used only if the output location is an ArcSDE geodatabase (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.spatial_grid_1">
+            <summary>The Spatial Grid 1, 2, and 3 parameters are used to compute a spatial index and only apply to   file geodatabases and  certain ArcSDE geodatabase feature classes. If you are unfamiliar with setting grid sizes, leave these options as 0,0,0 and ArcGIS will compute optimal sizes for you.  Since no features are written by this tool, the spatial index will be in an unbuilt state.  The index will be built when features are written to the feature class such as by the  Append tool or editing operations.  For more information about this parameter, refer to the Add Spatial Index tool documentation. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.spatial_grid_2">
+             <summary>
+            Cell size of the second spatial grid.  Leave the size at 0 if you only want one grid.  Otherwise, set the size to at least three times larger than Spatial Grid 1.
+             (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.spatial_grid_3">
+             <summary>
+            Cell size of the third spatial grid.  Leave the size at 0 if you only want two grids.  Otherwise, set the size to at least three times larger than Spatial Grid 2.
+            
+             (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.has_z">
+            <summary>Has Z (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.out_turn_features">
+            <summary>Output Turn Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.CreateTurnFeatureClass.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields">
+            <summary>Creates and populates additional fields on the turn feature classes that reference the edges by alternate IDs. The alternate IDs allow for another set of IDs that can help maintain the integrity of the turn features in case the source edges are being edited.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset">The network dataset whose turn feature classes are to receive alternate ID fields. The fields will be created on all of the turn feature classes added as a turn source to the network dataset. (In, Required)</param>
+            <param name="alternate_ID_field_name">The name of the alternate ID field on the edge feature sources of the network dataset. All edge feature sources referenced by turns must have the same name for the alternate ID field. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields.in_network_dataset">
+            <summary>The network dataset whose turn feature classes are to receive alternate ID fields. The fields will be created on all of the turn feature classes added as a turn source to the network dataset. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields.alternate_ID_field_name">
+            <summary>The name of the alternate ID field on the edge feature sources of the network dataset. All edge feature sources referenced by turns must have the same name for the alternate ID field. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields.out_network_dataset">
+            <summary>Output Network Dataset (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.PopulateAlternateIDFields.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass">
+            <summary>Converts an ArcView turn table or ArcInfo Workstation coverage turn table to an ArcGIS turn feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_turn_table">The .dbf or INFO turn table from which the new turn feature class is being created. (In, Required)</param>
+            <param name="reference_line_features">The line feature class to which the input turn table refers. The feature class must be a source in a network dataset. (In, Required)</param>
+            <param name="out_feature_class_name">The name of the new turn feature class to create. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.in_turn_table">
+            <summary>The .dbf or INFO turn table from which the new turn feature class is being created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.reference_line_features">
+            <summary>The line feature class to which the input turn table refers. The feature class must be a source in a network dataset. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.out_feature_class_name">
+            <summary>The name of the new turn feature class to create. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.reference_nodes_table">
+            <summary>The nodes.dbf table in the .nws folder containing the original ArcView GIS network in which the input turn table participated. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.maximum_edges">
+            <summary>The maximum number of edges per turn in the new turn feature class. The default value is 5. The maximum value is 20. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.config_keyword">
+            <summary>Specifies the configuration keyword that determines the storage parameters of the output turn feature class. This parameter is used only if the output turn feature class is created in an ArcSDE geodatabase. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.spatial_grid_1">
+            <summary>The Spatial Grid 1, 2, and 3 parameters apply only to  file geodatabases and  certain ArcSDE geodatabase feature classes. If you are unfamiliar with setting grid sizes, leave these options as 0,0,0 and ArcGIS will compute optimal sizes for you.  For more information about this parameter, refer to the Add Spatial Index tool documentation. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.spatial_grid_2">
+             <summary>
+            Cell size of the second spatial grid.  Leave the size at 0 if you only want one grid.  Otherwise, set the size to at least three times larger than Spatial Grid 1.
+             (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.spatial_grid_3">
+             <summary>
+            Cell size of the third spatial grid.  Leave the size at 0 if you only want two grids.  Otherwise, set the size to at least three times larger than Spatial Grid 2.
+            
+             (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.out_turn_features">
+            <summary>Output Turn Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.TurnTableToTurnFeatureClass.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields">
+            <summary> Updates all the edge references in turn feature classes using an alternate ID field. This tool should be used after making edits to the input line features that are referenced by the turn features to synchronize the turn features based on the alternate ID fields. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset">The network dataset whose turn feature classes are being updated by their alternate ID fields. (In, Required)</param>
+            <param name="alternate_ID_field_name">The name of the alternate ID field on the edge feature sources of the network dataset. All edge feature sources referenced by turns must have the same name for the alternate ID field. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields.in_network_dataset">
+            <summary>The network dataset whose turn feature classes are being updated by their alternate ID fields. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields.alternate_ID_field_name">
+            <summary>The name of the alternate ID field on the edge feature sources of the network dataset. All edge feature sources referenced by turns must have the same name for the alternate ID field. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields.out_network_dataset">
+            <summary>Output Network Dataset (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByAlternateIDFields.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.UpdateByGeometry">
+            <summary>Updates all the edge references in the turn feature class using the geometry of the turn features. This tool is useful when the IDs listed for the turn can no longer find the edges participating in the turn due to edits to the underlying edges.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.UpdateByGeometry.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_turn_features">The turn feature class to be updated. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByGeometry.in_turn_features">
+            <summary>The turn feature class to be updated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByGeometry.out_turn_features">
+            <summary>Output Turn Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByGeometry.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByGeometry.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByGeometry.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByGeometry.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateByGeometry.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.BuildNetwork">
+            <summary>Reconstructs the network connectivity and attribute information of a network dataset. The network dataset needs to be rebuilt after making edits to the attributes or the features of a participating source feature class. After the source features are edited, the tool establishes the network connectivity only in the areas that have been edited to speed up the build process; however, when the network attributes are edited, the entire extent of the network dataset is rebuilt. This may be a slow operation on a large network dataset. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.BuildNetwork.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset">The network dataset to be built. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.BuildNetwork.in_network_dataset">
+            <summary>The network dataset to be built. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.BuildNetwork.out_network_dataset">
+            <summary>Output Network Dataset (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.BuildNetwork.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.BuildNetwork.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.BuildNetwork.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.BuildNetwork.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.BuildNetwork.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter">
+            <summary> Updates the network attribute parameter value for a network analysis layer. The tool should be used to update the value of an attribute parameter for a network analysis layer prior to solving with the Solve tool.  This ensures that the  solve operation uses the specified value of the attribute parameter to produce appropriate results. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.#ctor(System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_analysis_layer">Network analysis layer for which the attribute parameter value will be updated. (In, Required)</param>
+            <param name="parameterized_attribute">The network attribute whose attribute parameter will be updated. (In, Required)</param>
+            <param name="attribute_parameter_name">The parameter of the network attribute that will be updated. The parameters of type Object cannot be updated using the tool. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.in_network_analysis_layer">
+            <summary>Network analysis layer for which the attribute parameter value will be updated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.parameterized_attribute">
+            <summary>The network attribute whose attribute parameter will be updated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.attribute_parameter_name">
+            <summary>The parameter of the network attribute that will be updated. The parameters of type Object cannot be updated using the tool. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.attribute_parameter_value">
+            <summary>The value that will be set for the attribute parameter. It can be a string, number, date, or Boolean (True, False).  If the value is not specified, then the attribute parameter value is set to Null. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpdateAnalysisLayerAttributeParameter.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer">
+            <summary>Makes a vehicle routing problem (VRP) network analysis layer and sets its analysis properties. A vehicle routing problem analysis layer is useful for optimizing a set of routes using a fleet of vehicles.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.#ctor(System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset">The network dataset on which the vehicle routing problem analysis will be performed. The network dataset must have a time based cost attribute since the VRP solver minimizes time. (In, Required)</param>
+            <param name="out_network_analysis_layer">Name of the vehicle routing problem network analysis layer to create. (In, Required)</param>
+            <param name="time_impedance"> The time cost attribute used to define the traversal time along the elements of the network. The time cost attribute is required, since the vehicle routing problem solver minimizes time. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.in_network_dataset">
+            <summary>The network dataset on which the vehicle routing problem analysis will be performed. The network dataset must have a time based cost attribute since the VRP solver minimizes time. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.out_network_analysis_layer">
+            <summary>Name of the vehicle routing problem network analysis layer to create. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.time_impedance">
+            <summary> The time cost attribute used to define the traversal time along the elements of the network. The time cost attribute is required, since the vehicle routing problem solver minimizes time. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.distance_impedance">
+            <summary> The distance cost attribute used to define the length along the elements of the network. The distance cost attribute is optional. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.time_units">
+            <summary>The time units used by the temporal fields of the analysis layer's sublayers and tables (network analysis classes). This does not have to be the same as the units of the time cost attribute. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.distance_units">
+            <summary> The distance units used by distance fields of the analysis layer's sublayers and tables (network analysis classes). This does not have to be the same as the units of the optional distance cost attribute. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.default_date">
+            <summary>The implied date for time field values that don't have a date specified with the time. If a time field for an order object, such as TimeWindowStart1, has a time-only value, the date is assumed to be the Default Date. For example, if an order has a TimeWindowStart1 value of 9:00 AM and the Default Date is March 6, 2011, then the entire time value for the field is 9:00 A.M., March 6, 2011. The default date has no effect on time field values that already have a date. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.capacity_count">
+            <summary>The number of capacity constraint dimensions required to describe the relevant limits of the vehicles. In an order delivery case, each vehicle may have a limited amount of weight and volume it can carry at one time based on physical and legal limitations. In this case, if you track the weight and volume on the orders, you can use these two capacities to prevent the vehicles from getting overloaded. The capacity count for this scenario is two (weight and volume). Depending on the problem, you may need to track different types or amounts of capacities. The capacities entered into the capacity fields (DeliveryQuantities and PickupQuantities for the Orders class and Capacities for the Routes class) are space-delimited strings of numbers, which can hold up to the number of values specified in Capacity Count. Each capacity dimension should appear in the same positional order for all capacity field values in the same VRP analysis layer. The capacities themselves are unnamed, so to avoid accidentally transposing capacity dimensions, ensure that the space-delimited capacity lists are always entered in the same order for all capacity field values. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.time_window_factor">
+            <summary>This parameter allows you to rate the importance of honoring time windows without causing violations. A time window violation occurs when a route arrives at an order, depot, or break after a time window has closed. The violation is the interval between the end of the time window and the arrival time of a route. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.excess_transit_factor">
+            <summary>This parameter allows you to rate the importance of reducing excess transit time. Excess transit time is the amount of time exceeding the time required to travel directly between the paired orders. The excess time results from breaks or travel to other orders or depots between visits to the paired orders. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.UTurn_policy">
+            <summary>Restrict or permit U-turns at junctions that could occur during network traversal between stops. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.restriction_attribute_name">
+            <summary>List of restriction attributes to apply during the analysis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.hierarchy">
+            <summary>The parameter is not used if a hierarchy attribute is not defined on the network dataset used to perform the analysis. In such cases, use "#" as the parameter value.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.hierarchy_settings">
+            <summary><para>Prior to version 10, this parameter allowed you to change the hierarchy ranges for your analysis from the default hierarchy ranges established in the network dataset. At version 10, this parameter is no longer supported and should be specified as an empty string. If you wish to change the hierarchy ranges for your analysis, update the default hierarchy ranges in the network dataset.</para> (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.output_path_shape">
+            <summary>Output path shape (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeVehicleRoutingProblemLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.Solve">
+            <summary>Solves the network analysis layer problem based on its network locations and properties. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.Solve.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_analysis_layer">The network analysis layer on which the analysis will be computed. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.in_network_analysis_layer">
+            <summary>The network analysis layer on which the analysis will be computed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.ignore_invalids">
+            <summary>For vehicle routing problem network analysis layer, use HALT as the parameter value since the vehicle routing problem solver requires all the network locations to be valid. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.terminate_on_solve_error">
+            <summary>Terminate on solve error (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.solve_succeeded">
+            <summary>Solve succeeded (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.Solve.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer">
+            <summary>Makes a location-allocation network analysis layer and sets its analysis properties. A location-allocation analysis layer is useful for choosing a given number of facilities from a set of potential locations such that a demand will be allocated to facilities in an optimal and efficient manner.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.#ctor(System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset">The network dataset on which the location-allocation analysis will be performed. (In, Required)</param>
+            <param name="out_network_analysis_layer">Name of the location-allocation network analysis layer to create. (In, Required)</param>
+            <param name="impedance_attribute">The cost attribute to be used as impedance in the analysis. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.in_network_dataset">
+            <summary>The network dataset on which the location-allocation analysis will be performed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.out_network_analysis_layer">
+            <summary>Name of the location-allocation network analysis layer to create. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.impedance_attribute">
+            <summary>The cost attribute to be used as impedance in the analysis. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.loc_alloc_from_to">
+            <summary>Specifies the direction of travel between facilities and demand points when calculating the network costs. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.loc_alloc_problem_type">
+            <summary>The problem type that will be solved. The choice of the problem type depends on the kind of facility being located. Different kinds of facilities have different priorities and constraints. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.number_facilities_to_find">
+            <summary>Specifies the number of facilities that the solver should locate.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.impedance_cutoff">
+            <summary>Impedance Cutoff specifies the maximum impedance at which a demand point can be allocated to a facility. The maximum impedance is measured by the least-cost path along the network. If a demand point is outside the cutoff, it is left unallocated. This property might be used to model the maximum distance that people are willing to travel to visit your stores or the maximum time that is permitted for a fire department to reach anyone in the community. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.impedance_transformation">
+            <summary> This sets the equation for transforming the network cost between facilities and demand points. This property, coupled with the Impedance Parameter, specifies how severely the network impedance between facilities and demand points influences the solver's choice of facilities. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.impedance_parameter">
+            <summary>Provides a parameter value to the equations specified in the Impedance transformation parameter. The parameter value is ignored when the impedance transformation is of type linear. For power and exponential impedance transformations, the value should be non-zero. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.target_market_share">
+            <summary> Specifies the target market share in percentage to solve for when the Location-allocation problem type parameter is set to TARGET_MARKET_SHARE. It is the percentage of the total demand weight that you want your solution facilities to capture. The solver chooses the minimum number of facilities required to capture the target market share specified by this numeric value. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.accumulate_attribute_name">
+            <summary>List of cost attributes to be accumulated during analysis. These accumulation attributes are purely for reference; the solver only uses the cost attribute specified by the Impedance attribute parameter  to calculate the route. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.UTurn_policy">
+            <summary>Restrict or permit U-turns at junctions that could occur during network traversal between stops. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.restriction_attribute_name">
+            <summary>List of restriction attributes to apply during the analysis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.hierarchy">
+            <summary>The parameter is not used if a hierarchy attribute is not defined on the network dataset used to perform the analysis. In such cases, use "#" as the parameter value.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.output_path_shape">
+            <summary>Output path shape (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.output_layer">
+            <summary>Network Analyst Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.MakeLocationAllocationLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork">
+            <summary> Creates a network dataset that minimizes the number of line features required to correctly model the input network dataset. The more efficient output network dataset reduces the time required to solve analyses, draw results, and generate driving directions. This tool outputs a new network dataset and source feature classes; the input network dataset and its source features remain unchanged. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset"> The network dataset to be dissolved.  (In, Required)</param>
+            <param name="out_workspace_location"> The geodatabase workspace in which to create the dissolved network dataset. The workspace must be an ArcGIS 10 geodatabase or later.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork.in_network_dataset">
+            <summary> The network dataset to be dissolved.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork.out_workspace_location">
+            <summary> The geodatabase workspace in which to create the dissolved network dataset. The workspace must be an ArcGIS 10 geodatabase or later.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork.out_network_dataset">
+            <summary>Output Network Dataset (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.DissolveNetwork.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.NetworkAnalystTools.UpgradeNetwork">
+            <summary>Upgrades the schema of the network dataset. Upgrading the network dataset allows the network dataset to make use of the new functionality available in the current software release. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.NetworkAnalystTools.UpgradeNetwork.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_network_dataset"> The network dataset to be upgraded. The network dataset must be a geodatabase-based network dataset. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpgradeNetwork.in_network_dataset">
+            <summary> The network dataset to be upgraded. The network dataset must be a geodatabase-based network dataset. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpgradeNetwork.out_network_dataset">
+            <summary>Output Network Dataset (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpgradeNetwork.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpgradeNetwork.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpgradeNetwork.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpgradeNetwork.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.NetworkAnalystTools.UpgradeNetwork.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

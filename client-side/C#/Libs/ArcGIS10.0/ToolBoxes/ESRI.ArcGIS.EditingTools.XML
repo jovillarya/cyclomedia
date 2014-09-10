@@ -1,0 +1,244 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.EditingTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.EditingTools.Densify">
+            <summary>Inserts vertices along line or polygon features. Also replaces curve segments (bezier, circular arcs, elliptical arcs) with densified line segments.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.EditingTools.Densify.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The polygon or line feature class to be densified. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.in_features">
+            <summary>The polygon or line feature class to be densified. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.densification_method">
+            <summary>Densification Method (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.distance">
+            <summary> The maximum linear distance between vertices. This distance will always be applied to line segments and to simplify curves.  The default value is a function of the tolerance.   (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.max_deviation">
+            <summary>The maximum distance the output geometry can be from the input geometry. This parameter deals specifically with the simplification of curves. The default value is the value used to convert Feature Classes to Shapefiles.   (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.max_angle">
+            <summary>The maximum angle that the output geometry can be from the input geometry. This parameter specifically deals with the simplification of curves.  The input angle can be between 0 and 90 degrees. The default value is the value used to convert Feature Classes to Shapefiles.   (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.out_feature_class">
+            <summary>Output Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Densify.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.EditingTools.ErasePoint">
+            <summary>Deletes points from the input that are either inside or outside the Remove Features, depending on the Operation Type.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.EditingTools.ErasePoint.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input point features. (In, Required)</param>
+            <param name="remove_features">Input features inside or outside the Remove Features will be deleted, depending on the Operation Type parameter. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ErasePoint.in_features">
+            <summary>The input point features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ErasePoint.remove_features">
+            <summary>Input features inside or outside the Remove Features will be deleted, depending on the Operation Type parameter. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ErasePoint.operation_type">
+            <summary>Determines if points INSIDE or OUTSIDE the Remove Features will be deleted. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ErasePoint.out_feature_class">
+            <summary>Output Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ErasePoint.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ErasePoint.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ErasePoint.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ErasePoint.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ErasePoint.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.EditingTools.ExtendLine">
+            <summary>This tool extends line segments to the first intersecting feature within a specified distance. If no intersecting feature is within the specified distance, the line segment will not be extended. Tool use is intended for quality control tasks such as cleaning up topology errors in features that were digitized without having set proper snapping environments.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.EditingTools.ExtendLine.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The line input features to be extended. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ExtendLine.in_features">
+            <summary>The line input features to be extended. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ExtendLine.length">
+            <summary>The maximum distance a line segment can be extended to an intersecting feature. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ExtendLine.extend_to">
+            <summary>Controls whether line segments can be extended to other extended line segments within the specified extend length.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ExtendLine.out_feature_class">
+            <summary>Output Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ExtendLine.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ExtendLine.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ExtendLine.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ExtendLine.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.ExtendLine.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.EditingTools.FlipLine">
+            <summary>Reverses the from-to direction of line features.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.EditingTools.FlipLine.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input feature class or layer. This must be Polyline. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.FlipLine.in_features">
+            <summary>The input feature class or layer. This must be Polyline. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.FlipLine.out_feature_class">
+            <summary>Output Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.FlipLine.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.FlipLine.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.FlipLine.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.FlipLine.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.FlipLine.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.EditingTools.Snap">
+            <summary>Moves points or vertices to coincide exactly with the vertices, edges, or end points of other features. Snapping rules can be specified to control whether the input vertices are snapped to the nearest vertex, edge, or endpoint within a specified distance.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.EditingTools.Snap.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input features whose vertices will be snapped to the vertices, edges, or end points of other features. The input features can be points, multipoints, lines, or polygons. (In, Required)</param>
+            <param name="snap_environment">Snapping Environment Components: (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Snap.in_features">
+            <summary>The input features whose vertices will be snapped to the vertices, edges, or end points of other features. The input features can be points, multipoints, lines, or polygons. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Snap.snap_environment">
+            <summary>Snapping Environment Components: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Snap.out_feature_class">
+            <summary>Output Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Snap.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Snap.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Snap.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Snap.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Snap.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.EditingTools.TrimLine">
+            <summary> Removes portions of a line that extend a specified distance past a line intersection (dangles). Any line that does not touch another line at both endpoints can be trimmed, but only the portion of the line that extends past the intersection by the specified distance will be removed.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.EditingTools.TrimLine.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The line input features to be trimmed. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.TrimLine.in_features">
+            <summary>The line input features to be trimmed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.TrimLine.dangle_length">
+            <summary>Line segments that are shorter than the specified Dangle Length and do not touch another line at both endpoints (dangles) will be trimmed. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.TrimLine.delete_shorts">
+            <summary>Controls whether line segments which are less than the dangle length and are free-standing will be deleted.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.TrimLine.out_feature_class">
+            <summary>Output Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.TrimLine.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.TrimLine.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.TrimLine.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.TrimLine.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.TrimLine.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.EditingTools.Generalize">
+            <summary>Simplifies the input features using the Douglas-Peucker simplification algorithm with a specified maximum offset tolerance. The output features will contain a subset of the original input vertices. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.EditingTools.Generalize.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The polygon or line features to be generalized. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Generalize.in_features">
+            <summary>The polygon or line features to be generalized. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Generalize.tolerance">
+            <summary>The tolerance sets the maximum allowable offset, which will determine the degree of simplification. This value limits the distance the output geometry can differ from the input geometry. You can specify a preferred unit of measurement. The default is the feature unit. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Generalize.out_feature_class">
+            <summary>Output Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Generalize.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Generalize.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Generalize.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Generalize.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.EditingTools.Generalize.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,1796 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.AnimationUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationControlsDialog">
+      <summary>Provides access to members of the animation controls dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationControlsDialog.Hook(ESRI.ArcGIS.Framework.IApplication)">
+      <summary>Connect the dialog with the current app.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationControlsDialog.Refresh">
+      <summary>Refresh the dialog settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationControlsDialog.Show(System.Boolean)">
+      <summary>Show or hide the dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationCreateKeyframeDialog">
+      <summary>Provides access to members of the 'create keyframe' dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationCreateKeyframeDialog.SetUpDialog(ESRI.ArcGIS.Animation.IAGAnimationTracks,ESRI.ArcGIS.Animation.IAGAnimationEnvironment)">
+      <summary>Sets up the dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationCreateKeyframeDialog.ShowDialog">
+      <summary>Show the dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationFromPathDialog">
+      <summary>Provides access to members of the 'import animation from path' dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationFromPathDialog.RunDialog(ESRI.ArcGIS.Animation.IAGImportPathOptions)">
+      <summary>Runs the dialog to create an animation from a path.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationLayerGroupDialog">
+      <summary>Provides access to members of the 'create group animation' dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationLayerGroupDialog.RunDialog(ESRI.ArcGIS.Animation.IAGGroupAnimationOptions)">
+      <summary>Runs the dialog to create a layer group animation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationManagerDialog">
+      <summary>Provides access to members of the animation manager dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationManagerDialog.Hook(ESRI.ArcGIS.Framework.IApplication)">
+      <summary>Connect the dialog with the current app.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationManagerDialog.Refresh">
+      <summary>Refresh the dialog settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationManagerDialog.Show(System.Boolean)">
+      <summary>Show or hide the dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationManagerPropertyPage">
+      <summary>Provides access to members that control Animation Manager Property Pages.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.IAnimationManagerPropertyPage.AllowsRefresh">
+      <summary>Indicates if the property page accepts automatic refresh.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationManagerPropertyPage.DestroyWindow">
+      <summary>Indicates that the COM PropertyPage should destroy the MFC propertypage.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IAnimationManagerPropertyPage.Resize(System.Int32,System.Int32)">
+      <summary>Resize the property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IExportVideoDialog">
+      <summary>Provides access to members that control export of an animation to video at the user interface level.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.IExportVideoDialog.DocumentName">
+      <summary>The name of the active document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.IExportVideoDialog.DoModal">
+      <summary>Displays the video export dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.IExportVideoDialog.VideoExporter">
+      <summary>The exporter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPage">
+      <summary>The animation tracks property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass">
+      <summary>The animation tracks property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.#ctor">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationActivePropertiesPropPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationControlsDialog">
+      <summary>The animation controls dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass">
+      <summary>The animation controls dialog.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.AnimationChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationContentEvents_AnimationChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationContentEvents_Event_AnimationChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationContentEvents_Event.AnimationChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.IAnimationContentEvents_Event.AnimationChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationContentEvents_AnimationChangedEventHandler">
+      <summary>Handles the IAnimationContentEvents_Event.AnimationChanged Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationContentEvents_Event">
+      <summary>Provides access to events that occur when animation contents change.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.#ctor">
+      <summary>The animation controls dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_Event_AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_Event.AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event.AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_AfterFrameEventHandler">
+      <summary>Handles the IAnimationEvents_Event.AfterFrame Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event">
+      <summary>Provides access to events that occur when animation plays or records.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_Event_BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_Event.BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event.BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_BeforeFrameEventHandler">
+      <summary>Handles the IAnimationEvents_Event.BeforeFrame Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_Event_BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_Event.BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event.BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_BeforeRecordEventHandler">
+      <summary>Handles the IAnimationEvents_Event.BeforeRecord Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_Event_StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationEvents_Event.StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event.StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_StateChangedEventHandler">
+      <summary>Handles the IAnimationEvents_Event.StateChanged Event</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.Hook(ESRI.ArcGIS.Framework.IApplication)">
+      <summary>Connect the dialog with the current app.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationControlsDialog_Hook(ESRI.ArcGIS.Framework.IApplication)">
+      <summary>Connect the dialog with the current app.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.Refresh">
+      <summary>Refresh the dialog settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationControlsDialog_Refresh">
+      <summary>Refresh the dialog settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.Show(System.Boolean)">
+      <summary>Show or hide the dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationControlsDialogClass.IAnimationControlsDialog_Show(System.Boolean)">
+      <summary>Show or hide the dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationCreateKeyframeDialog">
+      <summary>The dialog to create an animation keyframe.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationCreateKeyframeDialogClass">
+      <summary>The dialog to create an animation keyframe.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateKeyframeDialogClass.SetUpDialog(ESRI.ArcGIS.Animation.IAGAnimationTracks,ESRI.ArcGIS.Animation.IAGAnimationEnvironment)">
+      <summary>Sets up the dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateKeyframeDialogClass.IAnimationCreateKeyframeDialog_SetUpDialog(ESRI.ArcGIS.Animation.IAGAnimationTracks,ESRI.ArcGIS.Animation.IAGAnimationEnvironment)">
+      <summary>Sets up the dialog.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The dialog to create an animation keyframe. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The dialog to create an animation keyframe. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateKeyframeDialogClass.#ctor">
+      <summary>The dialog to create an animation keyframe. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateKeyframeDialogClass.ShowDialog">
+      <summary>Show the dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateKeyframeDialogClass.IAnimationCreateKeyframeDialog_ShowDialog">
+      <summary>Show the dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommand">
+      <summary>Command to create a new time layer track.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass">
+      <summary>Command to create a new time layer track.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.Bitmap">
+      <summary>The bitmap that is used as the icon on this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_Bitmap">
+      <summary>The bitmap that is used as the icon on this command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>Command to create a new time layer track. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>Command to create a new time layer track. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.#ctor">
+      <summary>Command to create a new time layer track. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.Caption">
+      <summary>The caption of this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_Caption">
+      <summary>The caption of this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.Category">
+      <summary>The name of the category with which this command is associated.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_Category">
+      <summary>The name of the category with which this command is associated.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.Checked">
+      <summary>Indicates if this command is checked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_Checked">
+      <summary>Indicates if this command is checked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.Enabled">
+      <summary>Indicates if this command is enabled.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_Enabled">
+      <summary>Indicates if this command is enabled.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.HelpContextID">
+      <summary>The help context ID associated with this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_HelpContextID">
+      <summary>The help context ID associated with this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.HelpFile">
+      <summary>The name of the help file associated with this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_HelpFile">
+      <summary>The name of the help file associated with this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.Message">
+      <summary>The statusbar message for this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_Message">
+      <summary>The statusbar message for this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.Name">
+      <summary>The name of this commmand.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_Name">
+      <summary>The name of this commmand.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.OnClick">
+      <summary>Occurs when this command is clicked.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_OnClick">
+      <summary>Occurs when this command is clicked.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.OnCreate(System.Object)">
+      <summary>Occurs when this command is created.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_OnCreate(System.Object)">
+      <summary>Occurs when this command is created.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.Tooltip">
+      <summary>The tooltip for this command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationCreateTimeTrackCommandClass.ICommand_Tooltip">
+      <summary>The tooltip for this command.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationFromPathDialog">
+      <summary>The dialog to import an animation from a path.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationFromPathDialogClass">
+      <summary>The dialog to import an animation from a path.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationFromPathDialogClass.RunDialog(ESRI.ArcGIS.Animation.IAGImportPathOptions)">
+      <summary>Runs the dialog to create an animation from a path.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationFromPathDialogClass.IAnimationFromPathDialog_RunDialog(ESRI.ArcGIS.Animation.IAGImportPathOptions)">
+      <summary>Runs the dialog to create an animation from a path.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The dialog to import an animation from a path. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The dialog to import an animation from a path. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationFromPathDialogClass.#ctor">
+      <summary>The dialog to import an animation from a path. Constructor has no input arguments.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPage">
+      <summary>The animation tracks property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass">
+      <summary>The animation tracks property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.#ctor">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationGeneralPropPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPage">
+      <summary>The animation keyframes property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass">
+      <summary>The animation keyframes property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The animation keyframes property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The animation keyframes property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.#ctor">
+      <summary>The animation keyframes property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationKeyframesPropPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationLayerGroupDialog">
+      <summary>The dialog to create a layer group animation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationLayerGroupDialogClass">
+      <summary>The dialog to create a layer group animation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationLayerGroupDialogClass.RunDialog(ESRI.ArcGIS.Animation.IAGGroupAnimationOptions)">
+      <summary>Runs the dialog to create a layer group animation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationLayerGroupDialogClass.IAnimationLayerGroupDialog_RunDialog(ESRI.ArcGIS.Animation.IAGGroupAnimationOptions)">
+      <summary>Runs the dialog to create a layer group animation.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The dialog to create a layer group animation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The dialog to create a layer group animation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationLayerGroupDialogClass.#ctor">
+      <summary>The dialog to create a layer group animation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationManagerDialog">
+      <summary>The animation manager dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass">
+      <summary>The animation manager dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.Hook(ESRI.ArcGIS.Framework.IApplication)">
+      <summary>Connect the dialog with the current app.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.IAnimationManagerDialog_Hook(ESRI.ArcGIS.Framework.IApplication)">
+      <summary>Connect the dialog with the current app.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The animation manager dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The animation manager dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.#ctor">
+      <summary>The animation manager dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.Refresh">
+      <summary>Refresh the dialog settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.IAnimationManagerDialog_Refresh">
+      <summary>Refresh the dialog settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.Show(System.Boolean)">
+      <summary>Show or hide the dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.IAnimationManagerDialog_Show(System.Boolean)">
+      <summary>Show or hide the dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.GetLocaleID(System.UInt32@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.IPropertyPageSite_GetLocaleID(System.UInt32@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.GetPageContainer(System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.IPropertyPageSite_GetPageContainer(System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.OnStatusChange(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.IPropertyPageSite_OnStatusChange(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationManagerDialogClass.IPropertyPageSite_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationTimePropPage">
+      <summary>The animation time property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass">
+      <summary>The animation time property page.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_Event_AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_Event.AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event.AfterFrame">
+      <summary>Occurs after animation plays a new frame.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_AfterFrameEventHandler">
+      <summary>Handles the IAnimationEvents_Event.AfterFrame Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event">
+      <summary>Provides access to events that occur when animation plays or records.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.#ctor">
+      <summary>The animation time property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_Event_BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_Event.BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event.BeforeFrame">
+      <summary>Occurs before animation plays a new frame.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_BeforeFrameEventHandler">
+      <summary>Handles the IAnimationEvents_Event.BeforeFrame Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_Event_BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_Event.BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event.BeforeRecord">
+      <summary>Occurs before animation attempts to record a new view keyframe.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_BeforeRecordEventHandler">
+      <summary>Handles the IAnimationEvents_Event.BeforeRecord Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_Event_StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationEvents_Event.StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.AnimationUI.IAnimationEvents_Event.StateChanged">
+      <summary>Occurs when animation state changes.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.IAnimationEvents_StateChangedEventHandler">
+      <summary>Handles the IAnimationEvents_Event.StateChanged Event</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.AllowsRefresh">
+      <summary>Indicates if the property page accepts automatic refresh.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationManagerPropertyPage_AllowsRefresh">
+      <summary>Indicates if the property page accepts automatic refresh.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.DestroyWindow">
+      <summary>Indicates that the COM PropertyPage should destroy the MFC propertypage.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationManagerPropertyPage_DestroyWindow">
+      <summary>Indicates that the COM PropertyPage should destroy the MFC propertypage.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Resize(System.Int32,System.Int32)">
+      <summary>Resize the property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IAnimationManagerPropertyPage_Resize(System.Int32,System.Int32)">
+      <summary>Resize the property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTimePropPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPage">
+      <summary>The animation tracks property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass">
+      <summary>The animation tracks property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.#ctor">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.AnimationTracksPropPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.ExportVideoDialog">
+      <summary>The video export dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.ExportVideoDialogClass">
+      <summary>The video export dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.ExportVideoDialogClass.DocumentName">
+      <summary>The name of the active document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.ExportVideoDialogClass.IExportVideoDialog_DocumentName">
+      <summary>The name of the active document.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The video export dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The video export dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ExportVideoDialogClass.#ctor">
+      <summary>The video export dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ExportVideoDialogClass.DoModal">
+      <summary>Displays the video export dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ExportVideoDialogClass.IExportVideoDialog_DoModal">
+      <summary>Displays the video export dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.ExportVideoDialogClass.VideoExporter">
+      <summary>The exporter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.ExportVideoDialogClass.IExportVideoDialog_VideoExporter">
+      <summary>The exporter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPage">
+      <summary>The sequential image settings property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass">
+      <summary>The sequential image settings property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The sequential image settings property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The sequential image settings property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.#ctor">
+      <summary>The sequential image settings property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.ImageSettingsPropertyPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.MapAnimationContainer">
+      <summary>The map animation container.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass">
+      <summary>The map animation container.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.AllViews">
+      <summary>All the viewers.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_AllViews">
+      <summary>All the viewers.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The map animation container. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The map animation container. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.#ctor">
+      <summary>The map animation container. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.AnimationFileExtension">
+      <summary>The extension for the animation files.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_AnimationFileExtension">
+      <summary>The extension for the animation files.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.AnimationFileFilter(System.Boolean)">
+      <summary>The filter for browing animation files.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_AnimationFileFilter(System.Boolean)">
+      <summary>The filter for browing animation files.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.AnimationTime">
+      <summary>Provides access to the animation time string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_AnimationTime">
+      <summary>Provides access to the animation time string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.AnimationTypes">
+      <summary>The registered types of animation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_AnimationTypes">
+      <summary>The registered types of animation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.CurrentView">
+      <summary>The current active viewer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_CurrentView">
+      <summary>The current active viewer.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.DrawGraphsToDC(System.Int32)">
+      <summary>Draw datagraphs to specified device context.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_DrawGraphsToDC(System.Int32)">
+      <summary>Draw datagraphs to specified device context.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.DrawPageLayoutToDC(System.Int32)">
+      <summary>Draw the page layout to specified device context.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_DrawPageLayoutToDC(System.Int32)">
+      <summary>Draw the page layout to specified device context.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IsGestureEnabled">
+      <summary>Indicates if interactive gestures are enabled.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_IsGestureEnabled">
+      <summary>Indicates if interactive gestures are enabled.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.PutIsAnimating(System.Boolean,System.Boolean)">
+      <summary>Indicates if the animation is active, and if full quality rendering is used (for video).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_PutIsAnimating(System.Boolean,System.Boolean)">
+      <summary>Indicates if the animation is active, and if full quality rendering is used (for video).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.RefreshObject(System.Object)">
+      <summary>Container-specific actions to refresh object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_RefreshObject(System.Object)">
+      <summary>Container-specific actions to refresh object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.RefreshViews(System.Boolean)">
+      <summary>Refresh the active viewer or all viewers.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_RefreshViews(System.Boolean)">
+      <summary>Refresh the active viewer or all viewers.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.RemoveAllAnimationTimeStrings(ESRI.ArcGIS.Animation.IAGAnimationTracks)">
+      <summary>Remove all animation time string from the display.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_RemoveAllAnimationTimeStrings(ESRI.ArcGIS.Animation.IAGAnimationTracks)">
+      <summary>Remove all animation time string from the display.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.RemoveTrackTimeDisplay(ESRI.ArcGIS.Animation.IAGAnimationTrack)">
+      <summary>Remove a single animation track time string from the display.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_RemoveTrackTimeDisplay(ESRI.ArcGIS.Animation.IAGAnimationTrack)">
+      <summary>Remove a single animation track time string from the display.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.RestoreViewerStates(System.Boolean)">
+      <summary>Restore the current state of the viewers.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_RestoreViewerStates(System.Boolean)">
+      <summary>Restore the current state of the viewers.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.SaveViewerStates">
+      <summary>Save the current state of the viewers.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_SaveViewerStates">
+      <summary>Save the current state of the viewers.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.SpatialBookmarks">
+      <summary>The spatial bookmarks that can be used to define animations.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_SpatialBookmarks">
+      <summary>The spatial bookmarks that can be used to define animations.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.ViewController(System.Object)">
+      <summary>The controller object (Camera) of a viewer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_ViewController(System.Object)">
+      <summary>The controller object (Camera) of a viewer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.WindowHandle(System.Object)">
+      <summary>The window handle associated with the given view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.MapAnimationContainerClass.IAGAnimationContainer_WindowHandle(System.Object)">
+      <summary>The window handle associated with the given view.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPage">
+      <summary>The animation tracks property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass">
+      <summary>The animation tracks property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.#ctor">
+      <summary>The animation tracks property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IComPropertyPage2_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.TimeTrackPropertyPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPage">
+      <summary>The video exporter property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass">
+      <summary>The video exporter property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI..">
+      <summary>The video exporter property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.AnimationUI.._">
+      <summary>The video exporter property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.#ctor">
+      <summary>The video exporter property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.AnimationUI.VideoExporterPropertyPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+  </members>
+</doc>

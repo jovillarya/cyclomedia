@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.Publisher</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.Publisher.IPMFPackage">
+      <summary>Provides access to members used to programatically package PMF files.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPackage.GetDefaultPackagerSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPackage.Package(ESRI.ArcGIS.esriSystem.IPropertySet,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStringArray)">
+      <summary>Create the data package using the current files.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPackage.ValidatePMFForPackage(ESRI.ArcGIS.esriSystem.IPropertySet,System.String,System.String,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.String@,System.Boolean@,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.IPMFPublish">
+      <summary>Provides access to members used to programatically create PMF files.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish.GetDefaultPublisherSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish.Publish(ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish.ValidateObject(ESRI.ArcGIS.esriSystem.IPropertySet,System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.IPMFPublish2">
+      <summary>Provides access to members used to programatically create PMF files.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish2.PublishGlobe(ESRI.ArcGIS.GlobeCore.IGlobe,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish2.GetDefaultPublisherSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish2.Publish(ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish2.ValidateObject(ESRI.ArcGIS.esriSystem.IPropertySet,System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.IPMFPublish3">
+      <summary>Provides access to members used to programatically create PMF files.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish3.PublishWithOrder(ESRI.ArcGIS.esriSystem.IArray,ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings and the map order specified in the IArray parameter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish3.PublishGlobe(ESRI.ArcGIS.GlobeCore.IGlobe,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish3.GetDefaultPublisherSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish3.Publish(ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.IPMFPublish3.ValidateObject(ESRI.ArcGIS.esriSystem.IPropertySet,System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.PackagerEngine">
+      <summary>Packager Engine coclass, used to package PMFs into a data package.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.PackagerEngineClass">
+      <summary>Packager Engine coclass, used to package PMFs into a data package.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PackagerEngineClass.GetDefaultPackagerSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PackagerEngineClass.IPMFPackage_GetDefaultPackagerSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Publisher..">
+      <summary>Packager Engine coclass, used to package PMFs into a data package. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Publisher.._">
+      <summary>Packager Engine coclass, used to package PMFs into a data package. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PackagerEngineClass.#ctor">
+      <summary>Packager Engine coclass, used to package PMFs into a data package. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PackagerEngineClass.Package(ESRI.ArcGIS.esriSystem.IPropertySet,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStringArray)">
+      <summary>Create the data package using the current files.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PackagerEngineClass.IPMFPackage_Package(ESRI.ArcGIS.esriSystem.IPropertySet,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.esriSystem.IStringArray)">
+      <summary>Create the data package using the current files.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PackagerEngineClass.ValidatePMFForPackage(ESRI.ArcGIS.esriSystem.IPropertySet,System.String,System.String,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.String@,System.Boolean@,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PackagerEngineClass.IPMFPackage_ValidatePMFForPackage(ESRI.ArcGIS.esriSystem.IPropertySet,System.String,System.String,System.Boolean@,System.Boolean@,System.Boolean@,System.Boolean@,System.String@,System.Boolean@,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.PublisherEngine">
+      <summary>Publisher Engine coclass, used to create Published Map Files.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.PublisherEngineClass">
+      <summary>Publisher Engine coclass, used to create Published Map Files.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.GetDefaultPublisherSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish_GetDefaultPublisherSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Publisher..">
+      <summary>Publisher Engine coclass, used to create Published Map Files. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Publisher.._">
+      <summary>Publisher Engine coclass, used to create Published Map Files. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.#ctor">
+      <summary>Publisher Engine coclass, used to create Published Map Files. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.Publish(ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish_Publish(ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.ValidateObject(ESRI.ArcGIS.esriSystem.IPropertySet,System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish_ValidateObject(ESRI.ArcGIS.esriSystem.IPropertySet,System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.PublishGlobe(ESRI.ArcGIS.GlobeCore.IGlobe,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish2_PublishGlobe(ESRI.ArcGIS.GlobeCore.IGlobe,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish2_GetDefaultPublisherSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish2_Publish(ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish2_ValidateObject(ESRI.ArcGIS.esriSystem.IPropertySet,System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.PublishWithOrder(ESRI.ArcGIS.esriSystem.IArray,ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings and the map order specified in the IArray parameter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish3_PublishWithOrder(ESRI.ArcGIS.esriSystem.IArray,ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings and the map order specified in the IArray parameter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish3_PublishGlobe(ESRI.ArcGIS.GlobeCore.IGlobe,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish3_GetDefaultPublisherSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish3_Publish(ESRI.ArcGIS.Carto.IPageLayout,ESRI.ArcGIS.Carto.IActiveView,ESRI.ArcGIS.esriSystem.IPropertySet,System.Boolean,System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Publisher.PublisherEngineClass.IPMFPublish3_ValidateObject(ESRI.ArcGIS.esriSystem.IPropertySet,System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.esriAPEDateType">
+      <summary>What date is stored in the PMF properties as the published date.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEDateType.esriAPEDateTypeCurrent">
+      <summary>The current date when the PMF is published.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEDateType.esriAPEDateTypeSpecified">
+      <summary>A user specified date.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.esriAPELayerControlType">
+      <summary>What layers are included within the published map file.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPELayerControlType.esriAPELayerControlTypeAllLayers">
+      <summary>All layers included in PMF.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPELayerControlType.esriAPELayerControlTypeActiveLayers">
+      <summary>Only visible layers included in PMF.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.esriAPERasterClipType">
+      <summary>The raster format used to package data.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPERasterClipType.esriAPERasterClipTypeClipRaster">
+      <summary>Clip raster to data frame extents.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPERasterClipType.esriAPERasterClipTypeExtractAllRaster">
+      <summary>Export all raster data to chosen format.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPERasterClipType.esriAPERasterClipTypeCopyRaster">
+      <summary>Copy raster datasets keeping format.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.esriAPERasterType">
+      <summary>The raster format used to package data.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPERasterType.esriAPERasterTypeImagine">
+      <summary>ERDAS Imagine raster file.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPERasterType.esriAPERasterTypepGDB">
+      <summary>Personal GeoDatabase raster (ERDAS Imagine) format.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPERasterType.esriAPERasterTypeFileGDBCompressed">
+      <summary>Compressed File GeoDatabase raster format.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPERasterType.esriAPERasterTypeFileGDBCompressedLocked">
+      <summary>Compressed and locked File GeoDatabase raster format.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.esriAPETimeoutDateType">
+      <summary>What time out date is stored in the PMF properties.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPETimeoutDateType.esriAPETimeoutDateTypeNone">
+      <summary>No document time out date.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPETimeoutDateType.esriAPETimeoutDateTypeWarning">
+      <summary>Present a warning to the map user when the time out date is reached.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPETimeoutDateType.esriAPETimeoutDateTypeAbsolute">
+      <summary>Stop the map being viewed when the time out date is reached.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.esriAPEVectorClipType">
+      <summary>The vector clipping to use when creating the data package.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorClipType.esriAPEVectorClipTypeIncludeFeatures">
+      <summary>Include the entire feature if it intersects with the data frame.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorClipType.esriAPEVectorClipTypeClipFeatures">
+      <summary>Clip features to data frame extents.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorClipType.esriAPEVectorClipTypeExtractAllFeatures">
+      <summary>Export all features in a dataset.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorClipType.esriAPEVectorClipTypeCopyDataset">
+      <summary>Copy dataset keeping orignial format.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.esriAPEVectorType">
+      <summary>The vector format used to package data.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorType.esriAPEVectorTypeShapefile">
+      <summary>Shapefile vector dataset format.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorType.esriAPEVectorTypepGDB">
+      <summary>Personal GeoDatabase dataset format.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorType.esriAPEVectorTypeCompressedLocked">
+      <summary>Compressed and locked dataset format.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorType.esriAPEVectorTypeCompressed">
+      <summary>Compressed ArcGIS dataset format.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorType.esriAPEVectorTypeFileGDB">
+      <summary>File GeoDatabase dataset format.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorType.esriAPEVectorTypeFileGDBCompressed">
+      <summary>Compressed File GeoDatabase dataset format.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEVectorType.esriAPEVectorTypeFileGDBCompressedLocked">
+      <summary>Compressed and locked File GeoDatabase dataset format.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.esriAPEViewType">
+      <summary>Publish View Type controls what views sare available when the PMF is loaded into its host application.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEViewType.esriAPEViewTypeAll">
+      <summary>Data and Layout view.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEViewType.esriAPEViewTypeDataOnly">
+      <summary>Data view (map) only.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEViewType.esriAPEViewTypeLayoutOnly">
+      <summary>Layout view (page layout) only.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriAPEViewType.esriAPEViewTypeNamedMap">
+      <summary>Data view (map) fixed to specific data frame.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Publisher.esriPackagingError">
+      <summary>Describes the packaging error codes.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.Publisher.esriPackagingError.E_PACKAGE_DATA_NOT_SUPPORTED_FOR_PACKAGING">
+      <summary>This layer is not supported for packaging.</summary>
+    </member>
+  </members>
+</doc>

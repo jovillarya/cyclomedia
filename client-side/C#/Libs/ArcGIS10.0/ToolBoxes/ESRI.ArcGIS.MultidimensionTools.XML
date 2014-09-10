@@ -1,0 +1,309 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.MultidimensionTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer">
+            <summary>Makes a raster layer from a netCDF file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.#ctor(System.Object,System.String,System.String,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_netCDF_file">Input netCDF File (in)</param>
+            <param name="variable">The variable of the netCDF file used to assign cell values to the output raster. This is the variable that will be displayed, such as temperature or rainfall. (In, Required)</param>
+            <param name="x_dimension">A netCDF dimension used to define the x, or longitude coordinates of the output layer. (In, Required)</param>
+            <param name="y_dimension">A netCDF dimension used to define the y, or latitude coordinates of the output layer. (In, Required)</param>
+            <param name="out_raster_layer">The name of the output raster layer. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.in_netCDF_file">
+            <summary>Input netCDF File (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.variable">
+            <summary>The variable of the netCDF file used to assign cell values to the output raster. This is the variable that will be displayed, such as temperature or rainfall. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.x_dimension">
+            <summary>A netCDF dimension used to define the x, or longitude coordinates of the output layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.y_dimension">
+            <summary>A netCDF dimension used to define the y, or latitude coordinates of the output layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.out_raster_layer">
+            <summary>The name of the output raster layer. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.band_dimension">
+            <summary>A netCDF dimension used to create bands in the output raster. Set this dimension if a multiband raster layer is required. For instance, altitude might be set as the band dimension to create a multiband raster where each band represents temperature at that altitude. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.dimension_values">
+            <summary>The value (such as 01/30/05) of the dimension (such as Time) or dimensions to use when displaying the variable in the output layer. By default, the first value of the dimension or dimensions will be used. This default value can also be altered on the netCDF tab of the Layer Properties dialog box. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.value_selection_method">
+            <summary>Specifies the dimension value selection method. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFRasterLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.MultidimensionTools.SelectByDimension">
+            <summary>Updates the netCDF layer display or netCDF table view based on the dimension value.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_layer_or_table">The input netCDF raster layer, netCDF feature layer, or netCDF table view. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.in_layer_or_table">
+            <summary>The input netCDF raster layer, netCDF feature layer, or netCDF table view. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.dimension_values">
+            <summary>A set of dimension–value pairs used to specify a slice of a multidimensional variable. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.value_selection_method">
+            <summary>Specifies the dimension value selection method. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.output_layer_or_table">
+            <summary>Output Layer or Table (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.SelectByDimension.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF">
+            <summary>Converts a raster dataset to a netCDF file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_raster">The input raster dataset or raster catalog. (In, Required)</param>
+            <param name="out_netCDF_file">The output netCDF file. The filename must have a .nc extension. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.in_raster">
+            <summary>The input raster dataset or raster catalog. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.out_netCDF_file">
+            <summary>The output netCDF file. The filename must have a .nc extension. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.variable">
+            <summary>The netCDF variable name that will be used in the output netCDF file. This variable will contain the values of cells in the input raster. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.variable_units">
+            <summary>The units of the data contained within the variable. The variable name is specified in the Variable parameter. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.x_dimension">
+            <summary>The netCDF dimension name used to specify x, or longitude coordinates. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.y_dimension">
+            <summary>The netCDF dimension name used to specify y, or latitude coordinates. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.band_dimension">
+            <summary>The netCDF dimension name used to specify bands. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.fields_to_dimensions">
+            <summary>The field or fields used to create dimensions in the netCDF file. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.RasterToNetCDF.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView">
+            <summary>Makes a table view from a netCDF file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_netCDF_file">Input netCDF File (in)</param>
+            <param name="variable">The netCDF variable, or variables, used to create fields in the table view. (In, Required)</param>
+            <param name="out_table_view">The name of the output table view. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.in_netCDF_file">
+            <summary>Input netCDF File (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.variable">
+            <summary>The netCDF variable, or variables, used to create fields in the table view. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.out_table_view">
+            <summary>The name of the output table view. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.row_dimension">
+            <summary>The netCDF dimension, or dimensions, used to create fields populated with unique values in the table view. The dimension, or dimensions, set here determine the number of rows in the table view and the fields that will be present. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.dimension_values">
+            <summary>A set of dimension-value pairs used to specify a slice of a multidimensional variable. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.value_selection_method">
+            <summary>Specifies the dimension value selection method. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFTableView.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF">
+            <summary>Converts a table to a netCDF file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_table">The input table. (In, Required)</param>
+            <param name="fields_to_variables">The field or fields used to create variables in the netCDF file. (In, Required)</param>
+            <param name="out_netCDF_file">The output netCDF file. The filename must have a .nc extension. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.in_table">
+            <summary>The input table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.fields_to_variables">
+            <summary>The field or fields used to create variables in the netCDF file. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.out_netCDF_file">
+            <summary>The output netCDF file. The filename must have a .nc extension. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.fields_to_dimensions">
+            <summary>The field or fields used to create dimensions in the netCDF file. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.TableToNetCDF.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer">
+            <summary>Makes a feature layer from a netCDF file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.#ctor(System.Object,System.Object,System.String,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_netCDF_file">Input netCDF File (in)</param>
+            <param name="variable">The netCDF variable, or variables, that will be added as fields in the feature attribute table. (In, Required)</param>
+            <param name="x_variable">A netCDF coordinate variable used to define the x, or longitude coordinates of the output layer. (In, Required)</param>
+            <param name="y_variable">A netCDF coordinate variable used to define the y, or latitude coordinates of the output layer. (In, Required)</param>
+            <param name="out_feature_layer">The name of the output feature layer. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.in_netCDF_file">
+            <summary>Input netCDF File (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.variable">
+            <summary>The netCDF variable, or variables, that will be added as fields in the feature attribute table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.x_variable">
+            <summary>A netCDF coordinate variable used to define the x, or longitude coordinates of the output layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.y_variable">
+            <summary>A netCDF coordinate variable used to define the y, or latitude coordinates of the output layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.out_feature_layer">
+            <summary>The name of the output feature layer. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.row_dimension">
+            <summary>The netCDF dimension, or dimensions, used to create features with unique values in the feature layer. The dimension or dimensions set here determine the number of features in the feature layer and the fields that will be presented in the feature layer's attribute table. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.z_variable">
+            <summary>A netCDF variable used to specify elevation values (z-values) for features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.m_variable">
+            <summary>A netCDF variable used to specify linear measurement values (m-values) for features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.dimension_values">
+            <summary>The value (such as 01/30/05) of the dimension (such as Time) or dimensions to use when displaying the variable in the output layer. By default, the first value of the dimension or dimensions will be used. This default value can also be altered on the netCDF tab of the Layer Properties dialog box. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.value_selection_method">
+            <summary>Specifies the dimension value selection method. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.MakeNetCDFFeatureLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF">
+            <summary>Converts a point feature class to a netCDF file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input feature class. (In, Required)</param>
+            <param name="fields_to_variables">The field or fields used to create variables in the netCDF file. Four special fields—Shape.X, Shape.Y, Shape.Z, and Shape.M—can be used for exporting x-coordinates or longitude, y-coordinates or latitude, Z values, and M values of input features, respectively.<bulletList><bullet_item>field—A field in the input feature attribute table.</bullet_item><bullet_item>{variable}—The netCDF variable name.</bullet_item><bullet_item>{units}—The units of the data represented by the field.</bullet_item></bulletList> (In, Required)</param>
+            <param name="out_netCDF_file">The output netCDF file. The filename must have a .nc extension. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.in_features">
+            <summary>The input feature class. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.fields_to_variables">
+            <summary>The field or fields used to create variables in the netCDF file. Four special fields—Shape.X, Shape.Y, Shape.Z, and Shape.M—can be used for exporting x-coordinates or longitude, y-coordinates or latitude, Z values, and M values of input features, respectively.<bulletList><bullet_item>field—A field in the input feature attribute table.</bullet_item><bullet_item>{variable}—The netCDF variable name.</bullet_item><bullet_item>{units}—The units of the data represented by the field.</bullet_item></bulletList> (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.out_netCDF_file">
+            <summary>The output netCDF file. The filename must have a .nc extension. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.fields_to_dimensions">
+            <summary>The field or fields used to create dimensions in the netCDF file. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.MultidimensionTools.FeatureToNetCDF.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

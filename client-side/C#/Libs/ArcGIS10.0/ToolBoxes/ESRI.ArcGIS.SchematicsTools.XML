@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.SchematicsTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.SchematicsTools.CreateDiagram">
+            <summary>This tool creates a schematic diagram. Depending on the schematic builder, diagram creation can be based on feature layers, feature classes, object tables, a network analysis layer, or XML data.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SchematicsTools.CreateDiagram.#ctor(System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="out_location"><summary>Schematic dataset or schematic folder in which the diagram will be created.
+            							<para> This container must already exist.</para> (In, Required)</summary></param>
+            <param name="out_name">Name of the schematic diagram to be created. (In, Required)</param>
+            <param name="diagram_type">Schematic diagram template of the schematic diagram to be created. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.out_location">
+            <summary>Schematic dataset or schematic folder in which the diagram will be created.
+            							<para> This container must already exist.</para> (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.out_name">
+            <summary>Name of the schematic diagram to be created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.diagram_type">
+            <summary>Schematic diagram template of the schematic diagram to be created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.in_data">
+            <summary>The input data required to generate the diagram. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.builder_options">
+            <summary>The schematic builder creation parameters. These are optional; they are only used for diagrams based on the Network Dataset builder to specify whether nodes will be merged. No option is required for the other schematic builders. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.out_diagram">
+            <summary>Output Schematic Diagram (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateDiagram.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SchematicsTools.UpdateDiagram">
+            <summary>Updates a schematic diagram. Depending on the schematic builder, the diagram update can be based on feature layers, feature classes, object tables, a solved network analysis, or an XML file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_diagram"> The schematic diagram to be updated.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.in_diagram">
+            <summary> The schematic diagram to be updated.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.in_data">
+            <summary> The input data on which the diagram update will be based.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.builder_options">
+            <summary> The schematic builder update options. Update options are optional. They depend on the builder related to the diagram template that implements the specified schematic diagram. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.out_diagram">
+            <summary>Output Schematic Diagram (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagram.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams">
+            <summary>Updates schematic diagrams stored in a schematic dataset or schematic folder. All diagrams or a subset of diagrams (for example, diagrams related to a specific diagram template or diagrams that have not been updated for a particular number of days) can be updated. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_container">The schematic dataset or schematic folder in which the diagrams are stored. This container must already exist. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.in_container">
+            <summary>The schematic dataset or schematic folder in which the diagrams are stored. This container must already exist. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.builder_options">
+            <summary>The schematic builder update options. They are optional. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.recursive">
+            <summary>Recursive Search (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.diagram_type">
+            <summary>The diagram template of the schematic diagram to update. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.last_update_criteria">
+            <summary>The number of days between diagram updates. The default is zero (0), meaning all diagrams will be updated daily. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.out_container">
+            <summary>Output Schematic Container (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.UpdateDiagrams.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder">
+            <summary>Creates a schematic folder in a schematic dataset or schematic folder.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="out_location">The schematic dataset or schematic folder in which the folder will be created. This container must already exist. (In, Required)</param>
+            <param name="out_name">Name of the output schematic folder. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder.out_location">
+            <summary>The schematic dataset or schematic folder in which the folder will be created. This container must already exist. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder.out_name">
+            <summary>Name of the output schematic folder. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder.out_schematic_folder">
+            <summary>Schematic Folder (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.CreateSchematicFolder.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SchematicsTools.ConvertDiagram">
+            <summary>This tool converts a schematic diagram to feature classes or shapefiles.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_diagram">The schematic diagram to be converted. (In, Required)</param>
+            <param name="out_location">Workspace, feature dataset, or folder in which the schematic diagram will be converted. This container must already exist. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.in_diagram">
+            <summary>The schematic diagram to be converted. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.out_location">
+            <summary>Workspace, feature dataset, or folder in which the schematic diagram will be converted. This container must already exist. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.reuse_fc">
+            <summary>Indicates whether the input schematic diagram will be exported in the same feature classes/shapefiles as the other diagrams based on the same diagram template.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.export_related_attributes">
+            <summary>Indicates whether all the attributes stored in the feature classes/object tables associated with the schematic feature classes contained in the export diagram will be also exported.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.container_geometry">
+            <summary>Indicates the geometry type of the features that will be created for the exported schematic containers contained in the input diagram. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.config_keyword">
+            <summary>The configuration keyword that determines the storage parameters of the table in a relational database management system (RDBMS)This is for ArcSDE only. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.out_dataset">
+            <summary>Input Schematic Diagram (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SchematicsTools.ConvertDiagram.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

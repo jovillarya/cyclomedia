@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.OutputExtensions</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.OutputExtensions.IArcPressPrinter">
+      <summary>Indicator interface that identifies the ArcPress Printer Driver.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.IArcPressPrinter.AutoSelectDriverByName(System.String)">
+      <summary>This will try to autoselect best possible driver using given printer's driver name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.IArcPressPrinter.GetColorAdjustment(System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+      <summary>Sets Color Adjustment parameters.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.IArcPressPrinter.HalftoneTuningIndex">
+      <summary>Halftone Tuning Index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.IArcPressPrinter.LocalRasterization">
+      <summary>Indicates if Local Rasterization is used.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.IArcPressPrinter.PrintColorTuningData">
+      <summary>Print color tuning data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.IArcPressPrinter.SavePaper">
+      <summary>Indicates if the Save Paper option is used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.IArcPressPrinter.SelectedDriverId">
+      <summary>Selected driver id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.IArcPressPrinter.SetColorAdjustment(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Sets Color Adjustment parameters.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensions.IArcPressPrinterEx">
+      <summary>Provides additional access to ArcPress Printer Driver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.IArcPressPrinterEx.SelectedDriverRef">
+      <summary>Driver reference.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensions.ArcPressExtension">
+      <summary>Class that controls the ArcPress Extension.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass">
+      <summary>Class that controls the ArcPress Extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensions..">
+      <summary>Class that controls the ArcPress Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensions.._">
+      <summary>Class that controls the ArcPress Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.#ctor">
+      <summary>Class that controls the ArcPress Extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.IExtensionConfig_Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.IExtensionConfig_ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.IExtensionConfig_State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressExtensionClass.ISupportErrorInfo_InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensions.ArcPressPrinter">
+      <summary>Class used to print maps with the ArcPress Printer Driver.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass">
+      <summary>Class used to print maps with the ArcPress Printer Driver.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Cleanup">
+      <summary>Cleanup should clean all temporary files, free used memory, etc...</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IOutputCleanup_Cleanup">
+      <summary>Cleanup should clean all temporary files, free used memory, etc...</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensions..">
+      <summary>Class used to print maps with the ArcPress Printer Driver. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensions.._">
+      <summary>Class used to print maps with the ArcPress Printer Driver. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.#ctor">
+      <summary>Class used to print maps with the ArcPress Printer Driver. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.DoesDriverSupportPrinter(System.String)">
+      <summary>Indicates if the Printer Name passed into function is supported by the IPrinter Driver.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_DoesDriverSupportPrinter(System.String)">
+      <summary>Indicates if the Printer Name passed into function is supported by the IPrinter Driver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.DriverName">
+      <summary>The name of Windows Printer Driver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_DriverName">
+      <summary>The name of Windows Printer Driver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.FileExtension">
+      <summary>File Extension associated with the Printer Driver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_FileExtension">
+      <summary>File Extension associated with the Printer Driver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Filter">
+      <summary>Filter used in CFileDialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_Filter">
+      <summary>Filter used in CFileDialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.FinishPrinting">
+      <summary>Finish up Printing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_FinishPrinting">
+      <summary>Finish up Printing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Name">
+      <summary>Name of the IPrinter Driver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_Name">
+      <summary>Name of the IPrinter Driver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Paper">
+      <summary>The IPaper interface.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_Paper">
+      <summary>The IPaper interface.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.PrintableBounds">
+      <summary>The area of the printer page that can be printed on.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_PrintableBounds">
+      <summary>The area of the printer page that can be printed on.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.PrintToFile">
+      <summary>The name of file if saving to Disk.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_PrintToFile">
+      <summary>The name of file if saving to Disk.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.QueryPaperSize(System.Double@,System.Double@)">
+      <summary>Returns Page Size for Printer.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_QueryPaperSize(System.Double@,System.Double@)">
+      <summary>Returns Page Size for Printer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Resolution">
+      <summary>The Printer Driver Resolution.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_Resolution">
+      <summary>The Printer Driver Resolution.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.SpoolFileName">
+      <summary>The Spool File Name which shows up in the Print Manager.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_SpoolFileName">
+      <summary>The Spool File Name which shows up in the Print Manager.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.StartPrinting(ESRI.ArcGIS.Geometry.IEnvelope,System.Int32)">
+      <summary>Initialize Printing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_StartPrinting(ESRI.ArcGIS.Geometry.IEnvelope,System.Int32)">
+      <summary>Initialize Printing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.StepProgressor">
+      <summary>Updates a Progress Bar is set.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_StepProgressor">
+      <summary>Updates a Progress Bar is set.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Units">
+      <summary>The units for PaperSize and PrintableBounds.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_Units">
+      <summary>The units for PaperSize and PrintableBounds.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.VerifyDriverSettings">
+      <summary>Indicates if the Printer Driver should validate Printer Driver's local settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinter_VerifyDriverSettings">
+      <summary>Indicates if the Printer Driver should validate Printer Driver's local settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.EndMapDocument">
+      <summary>End map document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinterMPage_EndMapDocument">
+      <summary>End map document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.EndPage">
+      <summary>End Page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinterMPage_EndPage">
+      <summary>End Page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.StartMapDocument">
+      <summary>Begin map document. Document consists of one or more pages.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinterMPage_StartMapDocument">
+      <summary>Begin map document. Document consists of one or more pages.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.StartPage(ESRI.ArcGIS.Geometry.IEnvelope,System.Int32)">
+      <summary>Start Page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPrinterMPage_StartPage(ESRI.ArcGIS.Geometry.IEnvelope,System.Int32)">
+      <summary>Start Page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.TrackCancel">
+      <summary>Reacts to a Cancel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.ITrackCancelSetup_TrackCancel">
+      <summary>Reacts to a Cancel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.AutoSelectDriverByName(System.String)">
+      <summary>This will try to autoselect best possible driver using given printer's driver name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IArcPressPrinter_AutoSelectDriverByName(System.String)">
+      <summary>This will try to autoselect best possible driver using given printer's driver name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.GetColorAdjustment(System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+      <summary>Sets Color Adjustment parameters.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IArcPressPrinter_GetColorAdjustment(System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+      <summary>Sets Color Adjustment parameters.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.HalftoneTuningIndex">
+      <summary>Halftone Tuning Index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IArcPressPrinter_HalftoneTuningIndex">
+      <summary>Halftone Tuning Index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.LocalRasterization">
+      <summary>Indicates if Local Rasterization is used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IArcPressPrinter_LocalRasterization">
+      <summary>Indicates if Local Rasterization is used.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.PrintColorTuningData">
+      <summary>Print color tuning data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IArcPressPrinter_PrintColorTuningData">
+      <summary>Print color tuning data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.SavePaper">
+      <summary>Indicates if the Save Paper option is used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IArcPressPrinter_SavePaper">
+      <summary>Indicates if the Save Paper option is used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.SelectedDriverId">
+      <summary>Selected driver id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IArcPressPrinter_SelectedDriverId">
+      <summary>Selected driver id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.SetColorAdjustment(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Sets Color Adjustment parameters.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IArcPressPrinter_SetColorAdjustment(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Sets Color Adjustment parameters.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.SelectedDriverRef">
+      <summary>Driver reference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IArcPressPrinterEx_SelectedDriverRef">
+      <summary>Driver reference.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Assign(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Assigns the properties of src to the receiver.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IClone_Assign(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Assigns the properties of src to the receiver.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Clone">
+      <summary>Clones the receiver and assigns the result to *clone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IClone_Clone">
+      <summary>Clones the receiver and assigns the result to *clone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IsEqual(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Returns TRUE when the receiver and other have the same properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IClone_IsEqual(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Returns TRUE when the receiver and other have the same properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IsIdentical(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Returns TRUE when the receiver and other are the same object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IClone_IsIdentical(ESRI.ArcGIS.esriSystem.IClone)">
+      <summary>Returns TRUE when the receiver and other are the same object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensions.ArcPressPrinterClass.ISupportErrorInfo_InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+  </members>
+</doc>

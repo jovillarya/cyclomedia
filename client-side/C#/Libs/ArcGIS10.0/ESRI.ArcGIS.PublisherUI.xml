@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.PublisherUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IPMF">
+      <summary>Provides access to the IPMF Interface which used to programatically create PMF files.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.IPMF.PMFPublish(System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.IPMF.PMFSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.IPMF.PMFValidateObject(System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IPublisher">
+      <summary>Provides access to the IPublisher notification Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.Publisher">
+      <summary>The Publisher Extension coclass.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.PublisherClass">
+      <summary>The Publisher Extension coclass.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IGMxDocumentEvents_BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.PublisherUI..">
+      <summary>The Publisher Extension coclass. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.PublisherUI.._">
+      <summary>The Publisher Extension coclass. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.#ctor">
+      <summary>The Publisher Extension coclass. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IGMxDocumentEvents_CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IGMxDocumentEvents_NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.OnContextMenu(System.Int32,System.Int32,System.Boolean@)">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IGMxDocumentEvents_OnContextMenu(System.Int32,System.Int32,System.Boolean@)">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IGMxDocumentEvents_OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.ActiveViewChanged">
+      <summary>Fired when the active view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_ActiveViewChanged">
+      <summary>Fired when the active view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event_ActiveViewChanged">
+      <summary>Fired when the active view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event.ActiveViewChanged">
+      <summary>Fired when the active view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.IDocumentEvents_Event.ActiveViewChanged">
+      <summary>Fired when the active view changes.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IDocumentEvents_ActiveViewChangedEventHandler">
+      <summary>Handles the IDocumentEvents_Event.ActiveViewChanged Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IDocumentEvents_Event">
+      <summary>Provides access to events that occur in ArcMap.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event_BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.IDocumentEvents_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IDocumentEvents_BeforeCloseDocumentEventHandler">
+      <summary>Handles the IDocumentEvents_Event.BeforeCloseDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event_CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.IDocumentEvents_Event.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IDocumentEvents_CloseDocumentEventHandler">
+      <summary>Handles the IDocumentEvents_Event.CloseDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.MapsChanged">
+      <summary>Fired when a change is made to the map collection.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_MapsChanged">
+      <summary>Fired when a change is made to the map collection.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event_MapsChanged">
+      <summary>Fired when a change is made to the map collection.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event.MapsChanged">
+      <summary>Fired when a change is made to the map collection.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.IDocumentEvents_Event.MapsChanged">
+      <summary>Fired when a change is made to the map collection.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IDocumentEvents_MapsChangedEventHandler">
+      <summary>Handles the IDocumentEvents_Event.MapsChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event_NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.IDocumentEvents_Event.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IDocumentEvents_NewDocumentEventHandler">
+      <summary>Handles the IDocumentEvents_Event.NewDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.OnContextMenu">
+      <summary>Indicates if a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_OnContextMenu">
+      <summary>Indicates if a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event_OnContextMenu">
+      <summary>Indicates if a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event.OnContextMenu">
+      <summary>Indicates if a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.IDocumentEvents_Event.OnContextMenu">
+      <summary>Indicates if a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IDocumentEvents_OnContextMenuEventHandler">
+      <summary>Handles the IDocumentEvents_Event.OnContextMenu Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event_OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.PublisherClass.IDocumentEvents_Event.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.PublisherUI.IDocumentEvents_Event.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.PublisherUI.IDocumentEvents_OpenDocumentEventHandler">
+      <summary>Handles the IDocumentEvents_Event.OpenDocument Event</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.PMFPublish(System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IPMF_PMFPublish(System.String)">
+      <summary>Create the PMF file using the current settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.PMFSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.IPMF_PMFSettings">
+      <summary>Settings used when creating the PMF file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.PMFValidateObject(System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IPMF_PMFValidateObject(System.Object,System.String,System.String@)">
+      <summary>Perform validation on the view.   The results of the validation are returned in the BSTR results parameter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.CreateAccelerators">
+      <summary>Called to create the keyboard accelerators for this extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IExtensionAccelerators_CreateAccelerators">
+      <summary>Called to create the keyboard accelerators for this extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.IExtensionConfig_Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.IExtensionConfig_ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.PublisherUI.PublisherClass.IExtensionConfig_State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.PublisherUI.PublisherClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,2167 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.CoverageTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Clip">
+            <summary>Uses the outside polygon boundary of the clip coverage to cookie-cut features and attributes from the input coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Clip.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing features to be clipped. (In, Required)</param>
+            <param name="clip_cover">The coverage whose outer polygon defines the clipping region. (In, Required)</param>
+            <param name="out_cover">The coverage to be created. The output coverage cannot already exist. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.in_cover">
+            <summary>The coverage containing features to be clipped. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.clip_cover">
+            <summary>The coverage whose outer polygon defines the clipping region. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.out_cover">
+            <summary>The coverage to be created. The output coverage cannot already exist. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.feature_type">
+            <summary>The feature class to be clipped: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.fuzzy_tolerance">
+            <summary>The minimum distance between coordinates in the output coverage. By default, the minimum fuzzy tolerance value from the input coverage and erase coverage is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clip.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Erase">
+            <summary>Creates a new output coverage by overlaying the polygons of the erase coverage with the features of the input coverage. Only those portions of the input coverage features falling outside the erase polygon outside boundaries are copied to the output coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Erase.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing features to be erased. (In, Required)</param>
+            <param name="erase_cover">The coverage whose outer polygon defines the erasing region. (In, Required)</param>
+            <param name="out_cover">The coverage to be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.in_cover">
+            <summary>The coverage containing features to be erased. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.erase_cover">
+            <summary>The coverage whose outer polygon defines the erasing region. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.out_cover">
+            <summary>The coverage to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.feature_type">
+            <summary>The set of features to be erased: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.fuzzy_tolerance">
+            <summary>The minimum distance between coordinates in the output coverage. By default, the minimum fuzzy tolerance value from the input coverage and erase coverage is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Erase.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Identity">
+            <summary>Computes the geometric intersection of two coverages. All features of the input coverage, as well as those features of the identity coverage that overlap the input coverage, are preserved in the output coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Identity.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage that will be overlaid with the identity coverage. (In, Required)</param>
+            <param name="identity_cover">The coverage that will be identitied with the input coverage. Must have polygon features. (In, Required)</param>
+            <param name="out_cover">The coverage to be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.in_cover">
+            <summary>The coverage that will be overlaid with the identity coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.identity_cover">
+            <summary>The coverage that will be identitied with the input coverage. Must have polygon features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.out_cover">
+            <summary>The coverage to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.feature_type">
+            <summary>The feature class from the input coverage that will be used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.fuzzy_tolerance">
+            <summary>The minimum distance between coordinates in the output coverage. By default, the minimum fuzzy tolerance value from the input and erase coverages is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.join_attributes">
+            <summary>Specifies whether all items in both the input coverage feature attribute and identity coverage will be joined to the output coverage feature attribute table.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Identity.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Intersect">
+            <summary>Computes the geometric intersection of two coverages. Only those features in the area common to both coverages will be preserved in the output coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Intersect.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage whose polygon, line, or point features will be intersected with the intersect coverage. (In, Required)</param>
+            <param name="intersect_cover">The intersect coverage. This coverage must contain polygon features. (In, Required)</param>
+            <param name="out_cover">The coverage that will be created to contain the results. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.in_cover">
+            <summary>The coverage whose polygon, line, or point features will be intersected with the intersect coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.intersect_cover">
+            <summary>The intersect coverage. This coverage must contain polygon features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.out_cover">
+            <summary>The coverage that will be created to contain the results. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.feature_type">
+            <summary>The input coverage feature class to be overlaid and preserved in the output coverage. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.fuzzy_tolerance">
+            <summary>The minimum distance between coordinates in the output coverage. By default, the minimum fuzzy tolerance value from the input and erase coverages is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.join_attributes">
+            <summary>Specifies whether all items in both the input coverage feature attribute and identity coverage will be joined to the output coverage feature attribute table.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Intersect.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Union">
+            <summary>Computes the geometric intersection of two polygon coverages. All polygons from both coverages will be split at their intersections and preserved in the output coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Union.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage whose polygons will be combined with the union coverage. (In, Required)</param>
+            <param name="union_cover">The union coverage whose polygons will be combined with the input coverage. (In, Required)</param>
+            <param name="out_cover">The output coverage that will be created containing the results of the operation. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.in_cover">
+            <summary>The coverage whose polygons will be combined with the union coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.union_cover">
+            <summary>The union coverage whose polygons will be combined with the input coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.out_cover">
+            <summary>The output coverage that will be created containing the results of the operation. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.fuzzy_tolerance">
+            <summary>The minimum distance between coordinates in the output coverage. By default, the minimum fuzzy tolerance value from the input and union coverages is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.join_attributes">
+            <summary>Specifies whether all items in both the input and the union coverage will be joined to the output coverage feature attribute table.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Union.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Update">
+            <summary>Replaces the input coverage areas with the update coverage polygons using a cut and paste operation.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Update.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing polygons to be updated. (In, Required)</param>
+            <param name="update_cover">The coverage whose polygons will replace input coverage areas. (In, Required)</param>
+            <param name="out_cover">The coverage to be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.in_cover">
+            <summary>The coverage containing polygons to be updated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.update_cover">
+            <summary>The coverage whose polygons will replace input coverage areas. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.out_cover">
+            <summary>The coverage to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.feature_type">
+            <summary>The set of feature classes to be updated. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.fuzzy_tolerance">
+            <summary>The minimum distance between coordinates in the output coverage. By default, the minimum fuzzy tolerance value from the input and erase coverages is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.keep_border">
+            <summary>Specifies whether the outside border of the update coverage will be kept after it is inserted into the input coverage.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Update.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Thiessen">
+            <summary>Converts input coverage points to an output coverage of Thiessen proximal polygons.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Thiessen.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage that must have a point feature attribute table created by BUILD with the POINT option. (In, Required)</param>
+            <param name="out_cover">The polygon coverage in which the Thiessen proximal polygons will be produced. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Thiessen.in_cover">
+            <summary>The coverage that must have a point feature attribute table created by BUILD with the POINT option. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Thiessen.out_cover">
+            <summary>The polygon coverage in which the Thiessen proximal polygons will be produced. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Thiessen.proximal_tolerance">
+            <summary>Tolerance used to eliminate Input Coverage points that fall within the specified distance of other Input Coverage points. The default Proximal Tolerance is the machine precision of the computer. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Thiessen.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Thiessen.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Thiessen.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Thiessen.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Thiessen.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Near">
+            <summary>Computes the distance from each point in a coverage to the nearest arc, point, or node in another coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Near.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing points from which distances are calculated to each closest arc, point, or node in the &lt;near_cover:&gt;. (In, Required)</param>
+            <param name="near_cover">The line or point coverage whose features are used to calculate distances from each input cover point. This must be different from the input cover. (In, Required)</param>
+            <param name="out_cover">The coverage to be created. The &lt;input_cover&gt; is copied to the &lt;output_cover:&gt;, then NEAR is performed on the &lt;output_cover:&gt;. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.in_cover">
+            <summary>The coverage containing points from which distances are calculated to each closest arc, point, or node in the &lt;near_cover:&gt;. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.near_cover">
+            <summary>The line or point coverage whose features are used to calculate distances from each input cover point. This must be different from the input cover. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.out_cover">
+            <summary>The coverage to be created. The &lt;input_cover&gt; is copied to the &lt;output_cover:&gt;, then NEAR is performed on the &lt;output_cover:&gt;. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.feature_type">
+            <summary>The type of feature that will be searched from points to find the nearest feature and calculate the distance between them. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.search_radius">
+            <summary>The maximum distance in coverage units between input cover features and near cover features for which distance and near cover internal number will be determined. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.location">
+            <summary>Determines whether the x,y coordinates of the "nearest point" of the closest arc, point, or node are to be saved as well as the cover# and distance. The new items are X-COORD and Y-COORD.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Near.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.PointDistance">
+            <summary>Computes the point-to-point distance between each point in a coverage to all points in the same or another coverage within a specified search radius.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.PointDistance.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="from_cover">The point coverage for which distances to another coverage's points are to be computed. (In, Required)</param>
+            <param name="to_cover">The point coverage from which point distances are to be measured. Distances between all points in the same coverage can be calculated by specifying the same coverage name for both &lt;from_cover&gt; and &lt;to_cover&gt; arguments. (In, Required)</param>
+            <param name="out_info_table">The INFO data table created by Point Distance, which holds the distance measurements. The number of records created in &lt;output Info table:&gt; depends on the search radius used, but it can be as large as the number of points in the &lt;from cover&gt; times the number of points in the &lt;to cover:&gt;. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointDistance.from_cover">
+            <summary>The point coverage for which distances to another coverage's points are to be computed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointDistance.to_cover">
+            <summary>The point coverage from which point distances are to be measured. Distances between all points in the same coverage can be calculated by specifying the same coverage name for both &lt;from_cover&gt; and &lt;to_cover&gt; arguments. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointDistance.out_info_table">
+            <summary>The INFO data table created by Point Distance, which holds the distance measurements. The number of records created in &lt;output Info table:&gt; depends on the search radius used, but it can be as large as the number of points in the &lt;from cover&gt; times the number of points in the &lt;to cover:&gt;. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointDistance.search_radius">
+            <summary>The maximum distance in coverage units a feature can be from the current point for consideration as the closest feature. The default value is the diagonal width of the from coverage’s BND. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointDistance.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointDistance.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointDistance.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointDistance.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointDistance.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Build">
+            <summary>Creates or updates feature attribute tables and polygon topology. Build is also used to synchronize polygon User-IDs with label point User-IDs.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Build.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage to be built. (In, Required)</param>
+            <param name="feature_type">The feature class to be built. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Build.in_cover">
+            <summary>The coverage to be built. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Build.feature_type">
+            <summary>The feature class to be built. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Build.anno_subclass">
+            <summary>The name of the Annotation Subclass to be built. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Build.out_cover">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Build.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Build.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Build.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Build.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Build.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Clean">
+            <summary>Generates a coverage with correct polygon or arc–node topology. To do this, Clean edits and corrects geometric coordinate errors, assembles arcs into polygons, and creates feature attribute information for each polygon or arc (that is, creates a PAT or AAT).</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Clean.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage to be cleaned. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.in_cover">
+            <summary>The coverage to be cleaned. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.out_cover">
+            <summary>The coverage created by Clean. If the Input Coverage and the Output Coverage have the same name, the Input Coverage will be replaced. By default, the Input Coverage is replaced. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.dangle_length">
+            <summary>The minimum length allowed for dangling arcs in the Output Coverage. A dangling arc is an arc that has the same polygon internal number on its left and right sides and ends at a dangling node. Dangling arcs are removed for both the POLY and LINE options. If the Dangle Length is not provided, the dangle length is read from the coverage TOL file if the TOL file exists;otherwise, dangle length is set to zero (the default). (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.fuzzy_tolerance">
+            <summary>The minimum distance between coordinates in each out_cover. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.feature_type">
+            <summary>Specifies whether to create polygon topology and a PAT or arc–node topology and an AAT. POLY is the default option. If POLY is used on a coverage that has an existing AAT, Clean will also automatically rebuild the AAT. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Clean.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.CreateLabels">
+            <summary>Creates label points for polygons that have no labels and assigns each a User-ID.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.CreateLabels.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage to which label points are to be added. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CreateLabels.in_cover">
+            <summary>The coverage to which label points are to be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CreateLabels.id_base">
+            <summary>The minimum User-ID value to be assigned to new label points. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CreateLabels.out_cover">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CreateLabels.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CreateLabels.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CreateLabels.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CreateLabels.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CreateLabels.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.IDEdit">
+            <summary>Updates User-IDs in a coverage after they have been modified in a feature attribute table. The feature attribute table is used to determine the correct User-ID for each feature in the coverage. This value is recorded in all places where the feature User-ID is stored.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.IDEdit.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage for which User-IDs have been modified. (In, Required)</param>
+            <param name="feature_type">Specifies the class of features for which User-IDs are to be updated. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IDEdit.in_cover">
+            <summary>The coverage for which User-IDs have been modified. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IDEdit.feature_type">
+            <summary>Specifies the class of features for which User-IDs are to be updated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IDEdit.out_cover">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IDEdit.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IDEdit.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IDEdit.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IDEdit.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IDEdit.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.AddXY">
+            <summary>Adds the items X-COORD and Y-COORD for labels or points to the input coverage PAT, or for nodes to the input coverage NAT, and calculates their values.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.AddXY.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing points or polygon labels whose x,y coordinates will become attributes in the PAT, or in the coverage containing nodes, to the NAT. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddXY.in_cover">
+            <summary>The coverage containing points or polygon labels whose x,y coordinates will become attributes in the PAT, or in the coverage containing nodes, to the NAT. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddXY.feature_type">
+            <summary>Type of coverage feature whose x,y coordinates will become feature attributes. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddXY.out_cover">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddXY.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddXY.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddXY.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddXY.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddXY.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Renode">
+            <summary>Updates arc–node topology by renumbering nodes for the input coverage arcs and identifies arcs that share the same node locations.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Renode.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage whose nodes will be renumbered. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Renode.in_cover">
+            <summary>The coverage whose nodes will be renumbered. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Renode.from_item">
+            <summary>The item signifying the elevation of the from_node of each arc. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Renode.to_item">
+            <summary>The item signifying the elevation of the to_node of each arc. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Renode.out_cover">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Renode.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Renode.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Renode.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Renode.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Renode.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.PointNode">
+            <summary>Performs a spatial JOINITEM on the point coverage and the node coverage. It transfers the attributes from a point feature class to a node feature class. Each point feature in the point coverage is matched to the corresponding node feature in the node coverage. If any point is within the search radius of a node, the attributes are copied.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.PointNode.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="point_cover">The coverage containing point features to be transferred. (In, Required)</param>
+            <param name="node_cover">An existing cover whose node attribute values will be updated or created if the NAT does not exist. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointNode.point_cover">
+            <summary>The coverage containing point features to be transferred. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointNode.node_cover">
+            <summary>An existing cover whose node attribute values will be updated or created if the NAT does not exist. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointNode.search_radius">
+            <summary>The maximum distance apart that points and nodes can be for the attributes of the point class to be transferred and recorded to the node coverage as a node class. The radius is given in coverage units. The default search radius is the width or height of the node coverage's BND divided by 100, whichever is larger. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointNode.out_cover">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointNode.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointNode.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointNode.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointNode.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PointNode.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.DefineProjection">
+            <summary>Records the coordinate system information of the Input Coverage including any associated projection parameters, such as datum and spheroid.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.DefineProjection.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage for which the projection information is being defined. (In, Required)</param>
+            <param name="projection_file">The name of a text file defining the input projection parameters. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DefineProjection.in_cover">
+            <summary>The coverage for which the projection information is being defined. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DefineProjection.projection_file">
+            <summary>The name of a text file defining the input projection parameters. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DefineProjection.out_cover">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DefineProjection.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DefineProjection.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DefineProjection.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DefineProjection.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DefineProjection.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.JoinItem">
+            <summary>Joins the item definitions and values of two tables based on a shared item. Joining involves appending items (fields) of one table to those of another through an attribute or item common to both tables. A join is usually used to attach more attributes to the attribute table of a geographic layer. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.JoinItem.#ctor(System.Object,System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_info_table">The INFO data file to which items and their values are to be added. (In, Required)</param>
+            <param name="join_info_table">The INFO data file that contains the items and values to be added. (In, Required)</param>
+            <param name="out_info_table">The INFO data file produced by Join Info Tables. If Output Info Table already exists, it will be replaced. (Out, Required)</param>
+            <param name="relate_item">An item contained in the Input Info Table that is used as an index to records in the Join Info Table. This can be a redefined item. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.in_info_table">
+            <summary>The INFO data file to which items and their values are to be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.join_info_table">
+            <summary>The INFO data file that contains the items and values to be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.out_info_table">
+            <summary>The INFO data file produced by Join Info Tables. If Output Info Table already exists, it will be replaced. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.relate_item">
+            <summary>An item contained in the Input Info Table that is used as an index to records in the Join Info Table. This can be a redefined item. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.start_item">
+            <summary>The item in the Input Info Table list after which the Join Info Table items will be inserted. The default Start Item is the last item in the Input Info Table. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.relate_type">
+            <summary>How Join Info Table records are matched to Input Info Table records. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.JoinItem.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Split">
+            <summary>Clips portions of the input coverage into multiple coverages.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Split.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage to be split. (In, Required)</param>
+            <param name="split_cover">The coverage used to split the input coverage. (In, Required)</param>
+            <param name="split_item">The item in the split coverage that will be used to split the input coverage. The unique values in the Split Item are used to name the output coverages. The number of output coverages is determined by the number of unique values in the Split Item. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.in_cover">
+            <summary>The coverage to be split. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.split_cover">
+            <summary>The coverage used to split the input coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.split_item">
+            <summary>The item in the split coverage that will be used to split the input coverage. The unique values in the Split Item are used to name the output coverages. The number of output coverages is determined by the number of unique values in the Split Item. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.path">
+            <summary>The workspace in which the output coverage will be maintained. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.feature_type">
+            <summary>The feature classes to be split: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.fuzzy_tolerance">
+            <summary>The minimum distance between coordinates in each output coverage. By default, the minimum fuzzy tolerance value from the input coverage and split coverage is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Split.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Buffer">
+            <summary>Creates buffer polygons around specified input coverage features.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Buffer.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing features to be buffered. (In, Required)</param>
+            <param name="out_cover">The polygon buffer coverage to be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.in_cover">
+            <summary>The coverage containing features to be buffered. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.out_cover">
+            <summary>The polygon buffer coverage to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.feature_type">
+            <summary>The feature class to be buffered: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.buffer_item">
+            <summary>An item in the feature attribute table of input coverage whose value is used as the feature's buffer distance. If a buffer table is used, the buffer item functions as a lookup item in the buffer table. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.buffer_table">
+            <summary>An INFO lookup table that lists a buffer distance for each buffer item. A buffer table can be specified only if the buffer item is specified. The buffer table contains at least two items: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.buffer_distance">
+            <summary>The distance used to create buffer zones around input coverage features when buffer item and buffer table are not specified. The default buffer distance is 0.125 coverage units. This default buffer distance will be applied whenever a value for this parameter is not specified.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.fuzzy_tolerance">
+            <summary>The minimum distance between coordinates in the out_cover. By default, the minimum fuzzy tolerance value from the in_cover is used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.buffer_shape">
+            <summary>For lines, the shape of the buffer at the line endpoints. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.buffer_side">
+            <summary>For lines, the topological side on which the buffer may be generated. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Buffer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.PolyRegion">
+            <summary>Converts polygons to regions in a one-to-one mapping in a region subclass.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.PolyRegion.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The polygon coverage to be converted to a region subclass. Each polygon of the &lt;in_cover&gt; is made into a region. (In, Required)</param>
+            <param name="out_cover">The coverage that will contain the new subclass. (Out, Required)</param>
+            <param name="out_subclass">The name of the region subclass that will be created. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PolyRegion.in_cover">
+            <summary>The polygon coverage to be converted to a region subclass. Each polygon of the &lt;in_cover&gt; is made into a region. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PolyRegion.out_cover">
+            <summary>The coverage that will contain the new subclass. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PolyRegion.out_subclass">
+            <summary>The name of the region subclass that will be created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PolyRegion.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PolyRegion.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PolyRegion.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PolyRegion.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.PolyRegion.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.RegionPoly">
+            <summary>Converts a region subclass to a polygon coverage and creates an INFO table containing overlapping region information.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.RegionPoly.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing the region subclass to convert to polygons. (In, Required)</param>
+            <param name="out_cover">The polygon coverage to be created from the Input Subclass. The coverage may not already exist. (Out, Required)</param>
+            <param name="in_subclass">The region subclass of the Input Coverage that will be converted to a polygon coverage. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionPoly.in_cover">
+            <summary>The coverage containing the region subclass to convert to polygons. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionPoly.out_cover">
+            <summary>The polygon coverage to be created from the Input Subclass. The coverage may not already exist. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionPoly.in_subclass">
+            <summary>The region subclass of the Input Coverage that will be converted to a polygon coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionPoly.out_table">
+            <summary>The output INFO table that will contain information for regions associated with each polygon. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionPoly.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionPoly.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionPoly.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionPoly.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionPoly.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.ArcDLG">
+            <summary>Creates a Digital Line Graph from a coverage. The DLG is output in DLG-3 Optional (as opposed to Standard) format.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.ArcDLG.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage to be converted to DLG format. It may contain polygon, line, and node features. (In, Required)</param>
+            <param name="out_dlg_file">The output DLG-3 Optional format file to be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.in_cover">
+            <summary>The coverage to be converted to DLG format. It may contain polygon, line, and node features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.out_dlg_file">
+            <summary>The output DLG-3 Optional format file to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.in_point_cover">
+            <summary>A coverage containing point features to be written as zero length, degenerate Line (L) records in the output DLG. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.in_projection_file">
+            <summary>A text file containing input projection parameters to be saved in the DLG header. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.x_shift">
+            <summary>A constant value to be added to all coverage x-coordinates during the conversion to DLG. X Shift overrides any x-shift parameters found in either projection file or input cover projection definition file. If a value for X Shift is not specified, the default is zero. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.y_shift">
+            <summary>A constant value to be added to all y-coordinates during conversion to DLG. Y Shift overrides any y-shift parameters found in either the projection file or input cover projection definition file. If a value for Y Shift is not specified, the default is zero. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.in_header_file">
+            <summary>The file containing information to be written into the header of the DLG file. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.transform">
+            <summary>This operation controls whether a coordinate transformation is performed. Usually, coordinates are transformed to preserve accuracy when written to the DLG.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcDLG.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.ArcRoute">
+            <summary>Creates a route system by creating whole arc sections for each arc in the input coverage and can also be used to append arcs to an existing route system.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.ArcRoute.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage from which the routes are to be created. (In, Required)</param>
+            <param name="out_route_system">The name of the route system to be created or appended. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.in_cover">
+            <summary>The coverage from which the routes are to be created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.out_route_system">
+            <summary>The name of the route system to be created or appended. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.in_route_item">
+            <summary>The name of an item in the arc attribute table used to group arcs into separate routes. A new route is created in the route attribute table for each unique value in this item. The default is to create a route for each topologically connected set of arcs. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.out_route_item">
+            <summary>The name of the new item in the route attribute table that will contain the unique values in the input route item. When appending routes to an existing route system, it is an existing item in the route attribute table used to append routes. The default item is Input Route Item. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.measure_item">
+            <summary>An item in the arc attribute table of Input Coverage whose value is accumulated to produce the measure values. The default item is LENGTH. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.coordinate_priority">
+            <summary>Determines coordinate priority when choosing a start node for the route. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.use_blanks">
+            <summary>Specifies whether arcs having a null or 0 value for the input route item will be used to create a route.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.out_cover">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcRoute.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.DLGArc">
+            <summary>Converts a Standard or Optional formatted Digital Line Graph (DLG) file to a coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.DLGArc.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_dlg_file">The DLG file to be converted to a coverage. (In, Required)</param>
+            <param name="out_cover">The name of the coverage to be created from the DLG data. If the input DLG file contains data produced by the United States Geological Survey (USGS), the output coverage will usually contain line, polygon, and node features created from nondegenerate line (L) records, area (A) records, and node (N) records. An Output Coverage.NAT for node features will be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.in_dlg_file">
+            <summary>The DLG file to be converted to a coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.out_cover">
+            <summary>The name of the coverage to be created from the DLG data. If the input DLG file contains data produced by the United States Geological Survey (USGS), the output coverage will usually contain line, polygon, and node features created from nondegenerate line (L) records, area (A) records, and node (N) records. An Output Coverage.NAT for node features will be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.out_point_cover">
+            <summary>The name of an Optional point coverage to be created from degenerate line (L) records in the DLG. In a DLG, points are stored as zero-length arcs (that is, degenerate lines). (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.area_calculation">
+            <summary>Determines how the area (A) records are written to the output coverage. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.x_shift">
+            <summary>A constant value to be added to all x coordinates during DLG conversion. The default X Shift value is zero. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.y_shift">
+            <summary>A constant value to be added to all y coordinates during DLG conversion. The default Y Shift value is zero. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.category">
+            <summary>The optional name of a specific DLG category to be converted from the DLG file. Only the specified category will be converted if one is given. Otherwise, only the first category in the DLG will be written to the output coverages: output coverage, point coverage. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.out_workspace">
+            <summary>Output Workspace (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DLGArc.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Ungenerate">
+            <summary>Creates a text file of x,y coordinates from the input coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Ungenerate.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage from which feature coordinates will be written. (In, Required)</param>
+            <param name="out_generate_file">The text file to which the x,y coordinates will be written. (Out, Required)</param>
+            <param name="feature_type">The type of features that will be used in the generation of the output file. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.in_cover">
+            <summary>The coverage from which feature coordinates will be written. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.out_generate_file">
+            <summary>The text file to which the x,y coordinates will be written. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.feature_type">
+            <summary>The type of features that will be used in the generation of the output file. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.duplicate_nodes">
+            <summary>Determines whether duplicate node coordinates will be retained or dropped in the Output Generate File. This applies only to the POLY option.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.format">
+            <summary>Selects either exponential or fixed representation of floating point numbers in the Output Generate File. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Ungenerate.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.RegionClass">
+            <summary>Converts arcs to preliminary regions in a new or existing coverage or appends preliminary regions to an existing region subclass.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.RegionClass.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing the arcs from which the preliminary regions are created. (In, Required)</param>
+            <param name="out_subclass">The name of the region subclass to be created or appended. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.in_cover">
+            <summary>The coverage containing the arcs from which the preliminary regions are created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.out_cover">
+            <summary>The coverage that will contain the preliminary regions. If the output coverage is not specified, the preliminary regions are created in the input coverage. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.out_subclass">
+            <summary>The name of the region subclass to be created or appended. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.in_region_item">
+            <summary>Item in the AAT of the input coverage whose values are used to group arcs into preliminary regions. The item is appended to the region PATsubclass. If not specified, each group of arcs becomes a preliminary region. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.out_region_item">
+            <summary>Output name for the input region Item to be used in the region PATsubclass instead of the Input Region Item name. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.selection_file">
+            <summary>The name of a selection file that can be used to specify a subset of the arcs to be grouped into preliminary regions. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.method">
+            <summary>Determines whether regions will be created from multiple rings of arcs or single rings of arcs. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.RegionClass.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.AddItem">
+            <summary>Adds a new blank or zero item to a new or existing INFO table.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.AddItem.#ctor(System.Object,System.Object,System.String,System.Int32,System.Int32,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_info_table">The INFO table to which the item is to be added. (In, Required)</param>
+            <param name="out_info_table">The INFO table to be created. (Out, Required)</param>
+            <param name="item_name">The new item to be added to the INFO table. (In, Required)</param>
+            <param name="item_width">The INFO width of the added item. Supported widths: (In, Required)</param>
+            <param name="output_width">The output width of the added item. This is the number of characters used to display an item value. (In, Required)</param>
+            <param name="item_type">The INFO item type of the added item. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.in_info_table">
+            <summary>The INFO table to which the item is to be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.out_info_table">
+            <summary>The INFO table to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.item_name">
+            <summary>The new item to be added to the INFO table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.item_width">
+            <summary>The INFO width of the added item. Supported widths: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.output_width">
+            <summary>The output width of the added item. This is the number of characters used to display an item value. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.item_type">
+            <summary>The INFO item type of the added item. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.decimal_places">
+            <summary>The number of decimal places for the added item. This needs to be specified for INFO item types NUMERIC and FLOATING. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.start_item">
+            <summary>The item in the in_info_table after which the new item is to be added. The default start_item is the last item in the in_info_table. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AddItem.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.IndexItem">
+            <summary>Creates an attribute index to increase access speed to the specified item during query operations.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.IndexItem.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_info_table">The name of the INFO table containing the item to be indexed (In, Required)</param>
+            <param name="index_item">The name of the item to be indexed (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IndexItem.in_info_table">
+            <summary>The name of the INFO table containing the item to be indexed (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IndexItem.index_item">
+            <summary>The name of the item to be indexed (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IndexItem.out_info_table">
+            <summary>Output Info Table (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IndexItem.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IndexItem.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IndexItem.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IndexItem.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.IndexItem.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.DropIndex">
+            <summary>Drops an attribute index from the specified item and INFO table.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.DropIndex.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_info_table">The name of the INFO table containing the item whose index is to be deleted. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropIndex.in_info_table">
+            <summary>The name of the INFO table containing the item whose index is to be deleted. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropIndex.index_item">
+            <summary>Selects the item indexes from the input INFO table to be removed. If no Index Item is given, all item indexes for the file will be dropped. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropIndex.out_info_table">
+            <summary>Output Info Table (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropIndex.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropIndex.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropIndex.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropIndex.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropIndex.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.DropItem">
+            <summary>Deletes one or more items from an INFO table.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.DropItem.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_info_table">The INFO table containing the items to be dropped. (In, Required)</param>
+            <param name="out_info_table">The INFO table to be created. (Out, Required)</param>
+            <param name="drop_item">The item or items to be dropped from the input table. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropItem.in_info_table">
+            <summary>The INFO table containing the items to be dropped. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropItem.out_info_table">
+            <summary>The INFO table to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropItem.drop_item">
+            <summary>The item or items to be dropped from the input table. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropItem.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropItem.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropItem.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropItem.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.DropItem.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Tolerance">
+            <summary>Sets a coverage's tolerances.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Tolerance.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage for which tolerances will be set. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Tolerance.in_cover">
+            <summary>The coverage for which tolerances will be set. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Tolerance.tolerance_type">
+            <summary>The type of tolerance to be set. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Tolerance.tolerance_value">
+            <summary>The value to be set for the selected option's tolerance. A Tolerance Value of zero will not be accepted for the following options: FUZZY, EDIT, NODESNAP, WEED, GRAIN, and SNAP. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Tolerance.out_cover">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Tolerance.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Tolerance.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Tolerance.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Tolerance.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Tolerance.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Create">
+            <summary>Creates a new coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Create.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="out_cover">The name of the coverage that will be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Create.out_cover">
+            <summary>The name of the coverage that will be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Create.template_cover">
+            <summary>An existing coverage or grid whose TIC file, boundary information (BND file), and projection information (PRJ file) will be copied to the Output Coverage. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Create.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Create.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Create.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Create.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Create.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Transform">
+            <summary>Moves all features in a coverage based on a set of from and to control points.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Transform.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage whose coordinates are to be transformed. (In, Required)</param>
+            <param name="out_cover">The name of an existing coverage containing destination tics. The features from the input coverage will be transformed into this coverage. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Transform.in_cover">
+            <summary>The coverage whose coordinates are to be transformed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Transform.out_cover">
+            <summary>The name of an existing coverage containing destination tics. The features from the input coverage will be transformed into this coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Transform.transform_type">
+            <summary>The type of coordinate transformation to be performed: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Transform.out_coverage">
+            <summary>Output Coverage (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Transform.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Transform.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Transform.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Transform.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Transform.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Generate">
+            <summary>Generates a coverage from coordinates stored in a file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Generate.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_file">The file containing feature coordinates that will be used to generate a coverage. (In, Required)</param>
+            <param name="out_cover">The coverage to be generated. (Out, Required)</param>
+            <param name="feature_type">The type of features to create: (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Generate.in_file">
+            <summary>The file containing feature coordinates that will be used to generate a coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Generate.out_cover">
+            <summary>The coverage to be generated. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Generate.feature_type">
+            <summary>The type of features to create: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Generate.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Generate.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Generate.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Generate.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Generate.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Import">
+            <summary>Converts an ARC/INFO export interchange file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Import.#ctor(System.String,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="feature_type">The type of file to be imported. Auto is the default option. (In, Required)</param>
+            <param name="interchange_file">The prefix name of the ARC/INFO interchange file to be converted. A volume ID of .e00, .e01, and so on, will always be appended to the given interchange_file to specify the file or files to be imported. (In, Required)</param>
+            <param name="out_dataset">The name of the output dataset. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Import.feature_type">
+            <summary>The type of file to be imported. Auto is the default option. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Import.interchange_file">
+            <summary>The prefix name of the ARC/INFO interchange file to be converted. A volume ID of .e00, .e01, and so on, will always be appended to the given interchange_file to specify the file or files to be imported. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Import.out_dataset">
+            <summary>The name of the output dataset. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Import.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Import.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Import.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Import.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Import.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Export">
+            <summary>Converts a coverage to an interchange file for transfer to another platform.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Export.#ctor(System.String,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="feature_type">The data type to be exported. (In, Required)</param>
+            <param name="in_dataset">The input dataset. (In, Required)</param>
+            <param name="interchange_file">The prefix name of the ArcInfo interchange file or files to be created by Export. A volume ID of E00 will be appended to the file name of the first interchange file, E01 to the second file, and so on. Each subsequent file is created when the {max_lines} for each file is reached. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.feature_type">
+            <summary>The data type to be exported. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.in_dataset">
+            <summary>The input dataset. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.interchange_file">
+            <summary>The prefix name of the ArcInfo interchange file or files to be created by Export. A volume ID of E00 will be appended to the file name of the first interchange file, E01 to the second file, and so on. Each subsequent file is created when the {max_lines} for each file is reached. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.compression_type">
+            <summary>Specifies how numbers and blanks will be compressed in the export file. There are three options: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.max_lines">
+            <summary>Maximum number of lines for each volume (for example, disk file) of an Export To Interchange File file. A volume has the extension .E00 through .E99. Only one export file is created if this is not specified. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Export.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.S57Arc">
+            <summary>Converts data from S-57 format to Arc/Iinfo coverages.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.S57Arc.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_s57_file">The data catalog filename or base cell filename in the S-57 exchange set. If a catalog filename is specified, all base cell files listed in the catalog file will be converted. If a base cell filename is specified, only that base cell file will be converted. (In, Required)</param>
+            <param name="out_workspace">The workspace where all output coverages will be written. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.S57Arc.in_s57_file">
+            <summary>The data catalog filename or base cell filename in the S-57 exchange set. If a catalog filename is specified, all base cell files listed in the catalog file will be converted. If a base cell filename is specified, only that base cell file will be converted. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.S57Arc.out_workspace">
+            <summary>The workspace where all output coverages will be written. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.S57Arc.clean">
+            <summary>Specifies whether to run the Clean command.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.S57Arc.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.S57Arc.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.S57Arc.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.S57Arc.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.S57Arc.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.ArcS57">
+            <summary>Converts ArcC/Info coverages to S-57 object files.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.ArcS57.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_workspace">The workspace containing the coverage to be converted (exported). (In, Required)</param>
+            <param name="log_file">Contains the report of the export process. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcS57.in_workspace">
+            <summary>The workspace containing the coverage to be converted (exported). (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcS57.log_file">
+            <summary>Contains the report of the export process. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcS57.out_workspace">
+            <summary>The folder that will contain the S-57 object files. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcS57.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcS57.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcS57.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcS57.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.ArcS57.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.VPFImport">
+            <summary>Converts a VPF table to an INFO table, or converts either an untiled VPF coverage or VPF tile to an ARC/INFO coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.VPFImport.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_vpf">The name of the VPF table, untiled coverage, or tile to be converted. The full pathname must be specified. (In, Required)</param>
+            <param name="output">The output table or coverage to be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.input_vpf">
+            <summary>The name of the VPF table, untiled coverage, or tile to be converted. The full pathname must be specified. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.output">
+            <summary>The output table or coverage to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.tile_name">
+            <summary>The input VPF tile, if one exists. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.control_file">
+            <summary>A file that can be used to ignore specific VPF feature classes or three-dimensional coordinates during translation. The name of this file is defined by the user. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.standard_vpf">
+            <summary>Specifies whether nonstandard VPF tables will be converted.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFImport.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.VPFExport">
+            <summary>Converts a coverage into either a Vector Product Format (VPF) Coverage or VPF Tile.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.VPFExport.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The input coverage that will be converted to VPF format. (In, Required)</param>
+            <param name="out_file">The name of the VPF coverage or table to be created. The full pathname must be specified. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.in_cover">
+            <summary>The input coverage that will be converted to VPF format. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.out_file">
+            <summary>The name of the VPF coverage or table to be created. The full pathname must be specified. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.tile_name">
+            <summary>The name of the VPF tile to be created. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.control_file">
+            <summary>A file that can be used to drop, add, change, or ignore items and other information during translation. The name of this file is defined by the user. Polycov.ccf, poly_cov_con, and conversionfile are all acceptable names. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.standard_table">
+            <summary>Specifies whether nonstandard ARC/INFO tables will be converted.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.index_table">
+            <summary>Specifies whether to create a feature index table (FIT).
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFExport.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.VPFTile">
+            <summary>Creates cross-tile topology for all tiled coverages in a Vector Product Format (VPF) database library, or topology for an individual tile in a VPF library.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.VPFTile.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="VPF_library">Location of the VPF database library for which cross-tile topology is to be created. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.VPF_library">
+            <summary>Location of the VPF database library for which cross-tile topology is to be created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.sig_digits">
+            <summary>The number of digits the software will use when trying to match node coordinates at tile boundaries. The larger the number, the smaller the search tolerance. The default value is 4. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.VPF_standard">
+            <summary>The VPF Standard to be used. The VPF Standard has two ways of defining cross-tile topology. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.spec_cover">
+            <summary>Specifies whether to process all the coverages in the VPF library or only the specified coverage. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.Out_VPF_library">
+            <summary>VPF Library (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.VPFTile.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.SDTSExport">
+            <summary>Creates a Spatial Data Transfer Standard (SDTS). Topological Vector Profile (TVP). or Point Profile Transfer from an ArcGIS coverage or grid.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.SDTSExport.#ctor(System.String,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="SDTS_type">The type of SDTS profile that will be created: (In, Required)</param>
+            <param name="in_dataset">The input coverage or grid. (In, Required)</param>
+            <param name="out_transfer_prefix">A four-character prefix used to name each file in the transfer. The prefix may include a pathname to a directory. By default, the files in the transfer will be written to the current workspace. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.SDTS_type">
+            <summary>The type of SDTS profile that will be created: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.in_dataset">
+            <summary>The input coverage or grid. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.out_transfer_prefix">
+            <summary>A four-character prefix used to name each file in the transfer. The prefix may include a pathname to a directory. By default, the files in the transfer will be written to the current workspace. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.in_point_cover">
+            <summary>The name of the Point Coverage to be converted when the transfer type is TVP. This option will be ignored if the transfer type is set to POINT. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.out_DD_transfer">
+            <summary>A four-character prefix for the Master Data Dictionary. A directory named MASTERDD will be created at the same directory level as the Out Transfer directory. This option is used for creating a single master data dictionary for coverages or grids that share a common data dictionary. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.Conv_Ctrl_File">
+            <summary>A file that can be used to add information during translation. The name of this file is defined by the user. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSExport.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.SDTSImport">
+            <summary>Creates ArcGIS coverages or grids from a Spatial Data Transfer Standard (SDTS) Topological Vector Profile (TVP) or Point Profile Transfer.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.SDTSImport.#ctor(System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_transfer_prefix">A four-character prefix common to all files in the SDTS transfer. The prefix may include a pathname to a directory. If no directory pathname is given, the files in the transfer will be read from the current workspace. (In, Required)</param>
+            <param name="output">The coverage or grid to be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.in_transfer_prefix">
+            <summary>A four-character prefix common to all files in the SDTS transfer. The prefix may include a pathname to a directory. If no directory pathname is given, the files in the transfer will be read from the current workspace. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.output">
+            <summary>The coverage or grid to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.out_point_cover">
+            <summary>The name of an optional point coverage to be created when the Topological Vector Profile is converted. This option is ignored if the SDTS dataset is not the Point Profile Transfer. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.layer_name">
+            <summary>The name of an aggregated spatial object that represents a single data layer in a transfer. There can be multiple layers in a single transfer. By default, the first layer encountered is the only one that will be converted. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.data_dictionary">
+            <summary>Option to retain or drop the data dictionary.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.convert_void">
+            <summary>Used to convert or preserve void and fill values in the raster transfer. In the raster profile, NULL values are defined in two general categories: (Undefined, not relevant) or (Relevant but unknown or missing).
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.out_workspace">
+            <summary>Output Workspace (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SDTSImport.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.TigerArc">
+            <summary>Converts a set of U.S. Bureau of Census TIGER/Line files into one or more ArcInfo coverages.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.TigerArc.#ctor(System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_tiger_file_prefix">The filename prefix, common to all files in the set of TIGER/Line files being converted. The prefix may include a directory path. (In, Required)</param>
+            <param name="out_cover">The name of the output coverage to be created containing the basic line features and attribute data from the set of TIGER/Line files. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.in_tiger_file_prefix">
+            <summary>The filename prefix, common to all files in the set of TIGER/Line files being converted. The prefix may include a directory path. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.out_cover">
+            <summary>The name of the output coverage to be created containing the basic line features and attribute data from the set of TIGER/Line files. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.out_point_cover">
+            <summary>The name of the output coverage that contains point features that represent polygon label points for polygons in out_cover. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.out_landmark_cover">
+            <summary>The name of the output point coverage containing landmark features. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.tiger_version">
+            <summary>The input TIGER/Line files version. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.out_workspace">
+            <summary>Output Workspace (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerArc.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Project">
+            <summary>Changes the coordinate system of your coverage including its datum or spheroid.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Project.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage whose coordinates are to be converted. (In, Required)</param>
+            <param name="out_cover">The output coverage whose coordinates have been converted to the new coordinate system. The output coverage may exist, but must be empty. (Out, Required)</param>
+            <param name="projection_file">The name of a text file defining the input and output projection parameters. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Project.in_cover">
+            <summary>The coverage whose coordinates are to be converted. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Project.out_cover">
+            <summary>The output coverage whose coordinates have been converted to the new coordinate system. The output coverage may exist, but must be empty. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Project.projection_file">
+            <summary>The name of a text file defining the input and output projection parameters. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Project.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Project.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Project.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Project.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Project.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Append">
+            <summary>Combines an unlimited number of coverages into a single coverage.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Append.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_covers">The input coverages to be appended. There is no limit to the number of coverages that can be entered. (In, Required)</param>
+            <param name="out_cover">The output coverage to be created. The output coverage cannot already exist. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.in_covers">
+            <summary>The input coverages to be appended. There is no limit to the number of coverages that can be entered. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.out_cover">
+            <summary>The output coverage to be created. The output coverage cannot already exist. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.append_method">
+            <summary>Determines whether only coordinates will be appended (FEATURES_ONLY) or if features will also be appended. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.feature_classes">
+            <summary>The feature class of the input coverage or coverages. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.number_method">
+            <summary>Specifies how tics and coverage features will be numbered in the Output Coverage. IDs can be offset to ensure unique ID values for Output Coverage features. The ID offset is equal to 1 plus the highest ID value in the previously appended coverages. Offsets can be calculated for the following types of IDs: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Append.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.TigerTool">
+            <summary>Converts a set of U.S. Census Bureau TIGER/Line files to a set of ArcInfo coverages.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.TigerTool.#ctor(System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_tiger_file_prefix">The filename prefix, common to all files in the set of TIGER/Line files being converted. The prefix may include a directory pathname. (In, Required)</param>
+            <param name="out_cover_prefix">The prefix of the output coverages to be created from the TIGER/Line files. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.in_tiger_file_prefix">
+            <summary>The filename prefix, common to all files in the set of TIGER/Line files being converted. The prefix may include a directory pathname. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.out_cover_prefix">
+            <summary>The prefix of the output coverages to be created from the TIGER/Line files. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.join_attributes">
+            <summary>Determines if the basic line, area, and landmark point features will be joined to their feature attribute tables.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.projection">
+            <summary>The spatial reference of the output coverages. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.zone_number">
+            <summary>The zone number of the specified coordinate system. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.tiger_version">
+            <summary>The input TIGER/Line files version. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.restart">
+            <summary>Determines whether processing will continue if the TIGER data contains intersection errors.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.out_workspace">
+            <summary>Output Workspace (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.TigerTool.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Reselect">
+            <summary>Extracts selected features from an input coverage and stores them in the output coverage. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Reselect.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The input coverage containing the features that will be selected. (In, Required)</param>
+            <param name="out_cover">The output coverage containing the selected features. (Out, Required)</param>
+            <param name="info_express">Write a query  that contains one or more logical expressions to select features from the input coverage. Each expression takes one of the following forms: (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.in_cover">
+            <summary>The input coverage containing the features that will be selected. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.out_cover">
+            <summary>The output coverage containing the selected features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.info_express">
+            <summary>Write a query  that contains one or more logical expressions to select features from the input coverage. Each expression takes one of the following forms: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.in_feature_type">
+            <summary>The feature class to select: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.selection_file">
+            <summary>A preexisting file that identifies the features to select. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.out_feature_type">
+            <summary>The feature class in the output coverage. This must be the same as that of the input feature class, with this exception: When the input feature class is an Anno, Route, Section, or Region subclass and the output coverage is the same as the Input coverage, the output feature class must have a different subclass name. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Reselect.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.AggregatePolygons">
+            <summary>Combines disjoint and adjacent polygons into new area features based on a distance.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.AggregatePolygons.#ctor(System.Object,System.Object,System.Double,System.Double)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing polygons to be aggregated. (In, Required)</param>
+            <param name="out_cover">The output coverage containing aggregated features as preliminary regions with a subclass AREAAGG. The output coverage name must be different from the input coverage name. (Out, Required)</param>
+            <param name="cell_size">Sets cell size in coverage units for grid conversion. Cell size must be greater than 0. (In, Required)</param>
+            <param name="distance">Sets the aggregation distance in coverage units. A distance must be equal to or greater than the cell size. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.in_cover">
+            <summary>The coverage containing polygons to be aggregated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.out_cover">
+            <summary>The output coverage containing aggregated features as preliminary regions with a subclass AREAAGG. The output coverage name must be different from the input coverage name. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.cell_size">
+            <summary>Sets cell size in coverage units for grid conversion. Cell size must be greater than 0. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.distance">
+            <summary>Sets the aggregation distance in coverage units. A distance must be equal to or greater than the cell size. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.orthogonal_option">
+            <summary>Specifies the characteristic of the input features that will be preserved when constructing the aggregated boundaries.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.out_info_table">
+            <summary>Output Info Table (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.AggregatePolygons.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline">
+            <summary>Derives centerlines (single lines) from dual-line features, such as road casings, based on specified width tolerances.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.#ctor(System.Object,System.Object,System.Double)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing near parallel dual lines, such as road casings, from which centerlines are derived. (In, Required)</param>
+            <param name="out_cover">The output coverage containing the derived centerlines. The output coverage name must be different from the input coverage name. (Out, Required)</param>
+            <param name="maximum_width">Sets the maximum width in coverage units. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.in_cover">
+            <summary>The coverage containing near parallel dual lines, such as road casings, from which centerlines are derived. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.out_cover">
+            <summary>The output coverage containing the derived centerlines. The output coverage name must be different from the input coverage name. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.maximum_width">
+            <summary>Sets the maximum width in coverage units. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.minimum_width">
+            <summary>Sets the minimum width in coverage units. The default is zero. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.CollapseDualLinesToCenterline.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Dissolve">
+            <summary>Creates a new coverage by merging adjacent polygons, lines, or regions that have the same value for a specified item.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Dissolve.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing features to be dissolved. (In, Required)</param>
+            <param name="out_cover">The coverage to be created. The output coverage cannot already exist. (Out, Required)</param>
+            <param name="dissolve_item">The item in the in_cover feature attribute table that is used to dissolve features. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Dissolve.in_cover">
+            <summary>The coverage containing features to be dissolved. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Dissolve.out_cover">
+            <summary>The coverage to be created. The output coverage cannot already exist. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Dissolve.dissolve_item">
+            <summary>The item in the in_cover feature attribute table that is used to dissolve features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Dissolve.feature_type">
+            <summary>The feature classes to be preserved in the output coverage: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Dissolve.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Dissolve.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Dissolve.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Dissolve.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Dissolve.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.Eliminate">
+            <summary>Merges the selected polygons with neighboring polygons if they have the largest shared border or the largest area.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.Eliminate.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage whose selected polygons or arcs will be merged into neighboring features. (In, Required)</param>
+            <param name="out_cover">The new coverage with all the selected sliver polygons merged into larger features. There should be a smaller number of polygons than the Input Coverage contains. (Out, Required)</param>
+            <param name="info_express">An INFO query containing one or more logical expressions to select features from the input coverage. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.in_cover">
+            <summary>The coverage whose selected polygons or arcs will be merged into neighboring features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.out_cover">
+            <summary>The new coverage with all the selected sliver polygons merged into larger features. There should be a smaller number of polygons than the Input Coverage contains. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.info_express">
+            <summary>An INFO query containing one or more logical expressions to select features from the input coverage. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.polygon_boundary">
+            <summary>Ensures that polygons along the coverage boundary are not altered.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.feature_type">
+            <summary>The feature class(es) to be eliminated in the Output Coverage. This parameter is only used for polygon coverages. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.selection_file">
+            <summary>A Selection File is a preexisting file that identifies which features will be used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.polygon_option">
+            <summary>Specifies which method will be used for eliminating polygons. This parameter is only used for polygon coverages.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.Eliminate.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.FindConflicts">
+            <summary>Finds where simplified buildings overlap or are too close to each other, based on a specified distance.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.FindConflicts.#ctor(System.Object,System.Object,System.Double)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The input coverage containing buildings as regions, with the subclass BLDGSIM and the item BDS-GROUP, obtained by the Simplify Building tool followed by the Clean tool with the POLY option. (In, Required)</param>
+            <param name="out_cover">The output coverage containing overlapping region buffers, with a subclass BUF, that show spatial conflicts among buildings. This coverage will only be created when conflicts are found. The &lt;out_cover&gt; name must be different from the &lt;in_cover&gt; name. (Out, Required)</param>
+            <param name="conflict_distance">Sets the conflict distance in coverage units. Buildings within this distance are considered in spatial conflict. The distance must be greater than 0. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.FindConflicts.in_cover">
+            <summary>The input coverage containing buildings as regions, with the subclass BLDGSIM and the item BDS-GROUP, obtained by the Simplify Building tool followed by the Clean tool with the POLY option. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.FindConflicts.out_cover">
+            <summary>The output coverage containing overlapping region buffers, with a subclass BUF, that show spatial conflicts among buildings. This coverage will only be created when conflicts are found. The &lt;out_cover&gt; name must be different from the &lt;in_cover&gt; name. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.FindConflicts.conflict_distance">
+            <summary>Sets the conflict distance in coverage units. Buildings within this distance are considered in spatial conflict. The distance must be greater than 0. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.FindConflicts.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.FindConflicts.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.FindConflicts.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.FindConflicts.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.FindConflicts.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.SimplifyBuilding">
+            <summary>Simplifies the boundary or footprint of building polygons while maintaining their essential shape and size.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.#ctor(System.Object,System.Object,System.Double)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The input coverage containing building polygons. (In, Required)</param>
+            <param name="out_cover">The output coverage containing simplified buildings as preliminary regions with a subclass BLDGSIM. The output coverage name must be different from the input coverage name. (Out, Required)</param>
+            <param name="simplification_tolerance">Sets the simplification tolerance in coverage units. A tolerance must be specified and must be greater than zero. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.in_cover">
+            <summary>The input coverage containing building polygons. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.out_cover">
+            <summary>The output coverage containing simplified buildings as preliminary regions with a subclass BLDGSIM. The output coverage name must be different from the input coverage name. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.simplification_tolerance">
+            <summary>Sets the simplification tolerance in coverage units. A tolerance must be specified and must be greater than zero. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.minimum_area">
+            <summary>Sets the minimum area to be retained in coverage units. The default is the square of the simplification tolerance. Enter 0 to include all buildings. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.selection_file">
+            <summary>A special file created using the ArcPlot command WRITESELECT (see ArcInfo Workstation Help for command reference). It identifies coverage features selected in ArcPlot. This option allows you to simplify selected buildings in the input coverage. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.CheckConflict">
+            <summary>Specifies whether or not to check for potential conflicts, that is, overlapping or touching, among buildings.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyBuilding.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon">
+            <summary>Simplifies a line or a polygon boundary by removing small fluctuations or extraneous bends from it while preserving its essential shape.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.#ctor(System.Object,System.Object,System.Double)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_cover">The coverage containing arcs or polygons to be simplified. (In, Required)</param>
+            <param name="out_cover">The coverage to be created. The output coverage name must be different from the input coverage name. (Out, Required)</param>
+            <param name="simplification_tolerance">Sets the tolerance in coverage units. A tolerance must be specified and must be greater than zero. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.in_cover">
+            <summary>The coverage containing arcs or polygons to be simplified. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.out_cover">
+            <summary>The coverage to be created. The output coverage name must be different from the input coverage name. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.simplification_tolerance">
+            <summary>Sets the tolerance in coverage units. A tolerance must be specified and must be greater than zero. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.simplification_operator">
+            <summary>Specifies the simplification operator. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.ErrorCheck">
+            <summary>Specifies whether to check for topological errors, including line-crossing, line-overlapping, zero-length lines, collapsed polygons, and holes falling outside of polygons.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CoverageTools.SimplifyLineOrPolygon.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

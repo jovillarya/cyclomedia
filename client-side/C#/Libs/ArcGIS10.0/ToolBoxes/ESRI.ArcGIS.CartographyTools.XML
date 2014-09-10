@@ -1,0 +1,1886 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.CartographyTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CulDeSacMasks">
+            <summary>Creates a feature class of polygon masks from a symbolized input line layer. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.#ctor(System.Object,System.Object,System.Double,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_layer">Input line layer from which to create masks. (In, Required)</param>
+            <param name="output_fc">The feature class that will contain the mask features. (Out, Required)</param>
+            <param name="reference_scale">The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map. (In, Required)</param>
+            <param name="spatial_reference">The spatial reference for which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used since the position of symbology may change when features are projected. (In, Required)</param>
+            <param name="margin">The space in page units surrounding the symbolized input features used to create the mask polygon. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time you will want to specify your margin distance value in page units. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.input_layer">
+            <summary>Input line layer from which to create masks. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.output_fc">
+            <summary>The feature class that will contain the mask features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.reference_scale">
+            <summary>The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.spatial_reference">
+            <summary>The spatial reference for which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used since the position of symbology may change when features are projected. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.margin">
+            <summary>The space in page units surrounding the symbolized input features used to create the mask polygon. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time you will want to specify your margin distance value in page units. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.attributes">
+            <summary>Determines which attributes will be transferred from the input features to the output features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CulDeSacMasks.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks">
+            <summary>Creates mask polygons at a specified distance and shape around the symbolized features in the input layer. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.#ctor(System.Object,System.Object,System.Double,System.Object,System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_layer">The symbolized input layer from which the masks will be created. (In, Required)</param>
+            <param name="output_fc">The feature class that will contain the mask features. (Out, Required)</param>
+            <param name="reference_scale">The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map. (In, Required)</param>
+            <param name="spatial_reference">The spatial reference for which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used since the position of symbology may change when features are projected. (In, Required)</param>
+            <param name="margin">The space in page units surrounding the symbolized input features used to create the mask polygon. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time you will want to specify your margin distance value in page units. (In, Required)</param>
+            <param name="method">The type of masking geometry created. There are four types: (In, Required)</param>
+            <param name="mask_for_non_placed_anno">Specifies whether to create masks for unplaced annotation. This option is only used when masking geodatabase annotation layers. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.input_layer">
+            <summary>The symbolized input layer from which the masks will be created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.output_fc">
+            <summary>The feature class that will contain the mask features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.reference_scale">
+            <summary>The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.spatial_reference">
+            <summary>The spatial reference for which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used since the position of symbology may change when features are projected. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.margin">
+            <summary>The space in page units surrounding the symbolized input features used to create the mask polygon. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time you will want to specify your margin distance value in page units. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.method">
+            <summary>The type of masking geometry created. There are four types: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.mask_for_non_placed_anno">
+            <summary>Specifies whether to create masks for unplaced annotation. This option is only used when masking geodatabase annotation layers. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.attributes">
+            <summary>Determines which attributes will be transferred from the input features to the output features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.FeatureOutlineMasks.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks">
+            <summary>Creates masking polygons at a specified shape and size at the intersections of symbolized input layers. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.#ctor(System.Object,System.Object,System.Object,System.Double,System.Object,System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="masking_layer">The symbolized input layer, which will be intersected with the masked layer to create masking polygons. This is the layer that will be more prominently displayed when masking is applied to the masked layer. (In, Required)</param>
+            <param name="masked_layer">The symbolized input layer to be masked. This is the layer that will be obscured by the masking polygons. (In, Required)</param>
+            <param name="output_fc">The feature class that will contain the mask features. (Out, Required)</param>
+            <param name="reference_scale">The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map. (In, Required)</param>
+            <param name="spatial_reference">The spatial reference for which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used since the position of symbology may change when features are projected. (In, Required)</param>
+            <param name="margin">The space in page units surrounding the symbolized input features used to create the mask polygon. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time you will want to specify your margin distance value in page units. (In, Required)</param>
+            <param name="method">The type of masking geometry created. There are four types: (In, Required)</param>
+            <param name="mask_for_non_placed_anno">Specifies whether to create masks for unplaced annotation. This option is only used when masking geodatabase annotation layers. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.masking_layer">
+            <summary>The symbolized input layer, which will be intersected with the masked layer to create masking polygons. This is the layer that will be more prominently displayed when masking is applied to the masked layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.masked_layer">
+            <summary>The symbolized input layer to be masked. This is the layer that will be obscured by the masking polygons. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.output_fc">
+            <summary>The feature class that will contain the mask features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.reference_scale">
+            <summary>The reference scale used for calculating the masking geometry when masks are specified in page units. This is typically the reference scale of the map. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.spatial_reference">
+            <summary>The spatial reference for which the masking polygons will be created. This is not the spatial reference that will be assigned to the output feature class. It is the spatial reference of the map in which the masking polygons will be used since the position of symbology may change when features are projected. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.margin">
+            <summary>The space in page units surrounding the symbolized input features used to create the mask polygon. Typically, masking polygons are created with a small margin around the symbol to improve visual appearance. Margin values are specified in either page units or map units. Most of the time you will want to specify your margin distance value in page units. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.method">
+            <summary>The type of masking geometry created. There are four types: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.mask_for_non_placed_anno">
+            <summary>Specifies whether to create masks for unplaced annotation. This option is only used when masking geodatabase annotation layers. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.attributes">
+            <summary>Determines which attributes will be transferred from the input features to the output features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.IntersectingLayersMasks.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle">
+            <summary>Places a representation control point at vertices along a line or polygon boundary where the inner angle is less than or equal to a specified maximum angle.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle.#ctor(System.Object,System.Double)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input feature layer containing line or polygon representations. (In, Required)</param>
+            <param name="maximum_angle">The angle used to determine whether or not a vertex along a line or polygon boundary will be set as a representation control point. The angle value must be greater than zero and less than 180 decimal degrees. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle.in_features">
+            <summary>The input feature layer containing line or polygon representations. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle.maximum_angle">
+            <summary>The angle used to determine whether or not a vertex along a line or polygon boundary will be set as a representation control point. The angle value must be greater than zero and less than 180 decimal degrees. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle.out_representations">
+            <summary>Output Representations (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointByAngle.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CreateOverpass">
+            <summary>Allows intersecting lines to be displayed as overpassing one another by creating bridge parapets and masks to cover the underlying road segment. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CreateOverpass.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_above_features">The input line feature layer containing stroke representations that intersect—and will be symbolized as passing above—stroke representations in the Input Below Features. (In, Required)</param>
+            <param name="in_below_features">The input line feature layer containing stroke representations that intersect—and will be symbolized as passing below—stroke representations in the Input Above Features. These features will be masked by the polygons created in the Output Overpass feature class. (In, Required)</param>
+            <param name="margin_along">Sets the length of the mask polygons along the Input Above Features by specifying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features. The Margin Along must be specified, and it must be greater than or equal to zero. Choose a page unit (points, millimeters, and so on) for the margin; the default is points. (In, Required)</param>
+            <param name="margin_across">Sets the width of the mask polygons across the Input Above Features by specifying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features. The Margin Across must be specified, and it must be greater than or equal to zero. Choose a page unit (points, millimeters, and so on) for the margin; the default is points. (In, Required)</param>
+            <param name="out_overpass_feature_class">The output feature class that will be created to store polygons to mask the Input Below features. (Out, Required)</param>
+            <param name="out_mask_relationship_class">The output relationship class that will be created to store links between Overpass mask polygons and the stroke representations of the Input Below Features. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.in_above_features">
+            <summary>The input line feature layer containing stroke representations that intersect—and will be symbolized as passing above—stroke representations in the Input Below Features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.in_below_features">
+            <summary>The input line feature layer containing stroke representations that intersect—and will be symbolized as passing below—stroke representations in the Input Above Features. These features will be masked by the polygons created in the Output Overpass feature class. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.margin_along">
+            <summary>Sets the length of the mask polygons along the Input Above Features by specifying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features. The Margin Along must be specified, and it must be greater than or equal to zero. Choose a page unit (points, millimeters, and so on) for the margin; the default is points. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.margin_across">
+            <summary>Sets the width of the mask polygons across the Input Above Features by specifying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features. The Margin Across must be specified, and it must be greater than or equal to zero. Choose a page unit (points, millimeters, and so on) for the margin; the default is points. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.out_overpass_feature_class">
+            <summary>The output feature class that will be created to store polygons to mask the Input Below features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.out_mask_relationship_class">
+            <summary>The output relationship class that will be created to store links between Overpass mask polygons and the stroke representations of the Input Below Features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.where_clause">
+             <summary>A SQL expression used to select a subset of features in the Input
+            Above Features with Representations parameter.
+             (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.out_decoration_feature_class">
+            <summary>The output line feature class that will be created to store parapet features. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.wing_type">
+            <summary>Specifies the wing style of the parapet features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.wing_tick_length">
+            <summary>Sets the length of the parapet wings in page units. The length must be greater than or equal to zero; the default length is 1. Choose a page unit (Points, Millimeters, and so on) for the length; the default is Points. This parameter does not apply to the Wing Type - NONE. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateOverpass.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CreateUnderpass">
+            <summary>Allows intersecting lines to be displayed as under passing one another by creating bridge parapets and masks to cover the underlying road segment. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CreateUnderpass.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_above_features">The input line feature layer containing stroke representations that intersect—and will be symbolized as passing above—stroke representations in the Input Below Features. (In, Required)</param>
+            <param name="in_below_features">The input line feature layer containing stroke representations that intersect—and will be symbolized as passing below—stroke representations in the Input Above Features. These features will be masked by the polygons created in the Output Overpass feature class. (In, Required)</param>
+            <param name="margin_along">Sets the length of the mask polygons along the Input Above Features by specifiying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below features. The Margin Along must be specified, and it must be greater than or equal to zero. Choose a page unit for the margin; the default is points. (In, Required)</param>
+            <param name="margin_across">Sets the width of the mask polygons across the Input Above Features by specifiying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features. The Margin Across must be specified, and it must be greater than or equal to zero. Choose a page unit for the margin; the default is points. (In, Required)</param>
+            <param name="out_underpass_feature_class">The output feature class that will be created to store polygons to mask the Input Below Features. (Out, Required)</param>
+            <param name="out_mask_relationship_class">The output relationship class that will be created to store links between Underpass mask polygons and the stroke representations of the Input Below Features. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.in_above_features">
+            <summary>The input line feature layer containing stroke representations that intersect—and will be symbolized as passing above—stroke representations in the Input Below Features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.in_below_features">
+            <summary>The input line feature layer containing stroke representations that intersect—and will be symbolized as passing below—stroke representations in the Input Above Features. These features will be masked by the polygons created in the Output Overpass feature class. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.margin_along">
+            <summary>Sets the length of the mask polygons along the Input Above Features by specifiying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below features. The Margin Along must be specified, and it must be greater than or equal to zero. Choose a page unit for the margin; the default is points. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.margin_across">
+            <summary>Sets the width of the mask polygons across the Input Above Features by specifiying the distance in page units that the mask should extend beyond the width of the stroke symbol of the Input Below Features. The Margin Across must be specified, and it must be greater than or equal to zero. Choose a page unit for the margin; the default is points. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.out_underpass_feature_class">
+            <summary>The output feature class that will be created to store polygons to mask the Input Below Features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.out_mask_relationship_class">
+            <summary>The output relationship class that will be created to store links between Underpass mask polygons and the stroke representations of the Input Below Features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.where_clause">
+             <summary>A SQL expression used to select a subset of features in the Input
+            Below  Features with Representations parameter.
+             (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.out_decoration_feature_class">
+            <summary>The output line feature class that will be created to store parapet features. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.wing_type">
+            <summary>Specifies the wing style of the parapet features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.wing_tick_length">
+            <summary>Sets the length of the parapet wings in page units. The length must be greater than or equal to zero; the default length is 1. Choose a page unit (points, millimeters, and so on) for the length; the default is points. This parameter does not apply to the Wing Type - NONE. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CreateUnderpass.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill">
+            <summary>Align the representation marker symbols of a point feature class to the nearest stroke or fill representation symbols in a line or polygon feature class within a specified search distance.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_point_features">The input point feature layer containing marker representations. (In, Required)</param>
+            <param name="in_line_or_polygon_features">The input line or polygon feature layer containing stroke or fill representations. (In, Required)</param>
+            <param name="search_distance">The search distance from graphical marker edge to graphical stroke edge. A distance greater than or equal to zero must be specified. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.in_point_features">
+            <summary>The input point feature layer containing marker representations. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.in_line_or_polygon_features">
+            <summary>The input line or polygon feature layer containing stroke or fill representations. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.search_distance">
+            <summary>The search distance from graphical marker edge to graphical stroke edge. A distance greater than or equal to zero must be specified. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.marker_orientation">
+            <summary>Specifies the representation marker orientation relative to the stroke or fill edge. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.out_representations">
+            <summary>Output Representations (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AlignMarkerToStrokeOrFill.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.DisperseMarkers">
+            <summary>Finds representation markers that are overlapping or too close to one another and spreads them apart based on a minimum spacing and dispersal pattern.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.DisperseMarkers.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_point_features">The input point feature layer containing marker representations. (In, Required)</param>
+            <param name="minimum_spacing">The minimum separation distance between individual markers, in page units. A distance must be specified and must be greater than or equal to zero. When a positive value is specified, markers will be separated by that value; when a value of zero is specified, markers will be touching. The default page unit is Points. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DisperseMarkers.in_point_features">
+            <summary>The input point feature layer containing marker representations. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DisperseMarkers.minimum_spacing">
+            <summary>The minimum separation distance between individual markers, in page units. A distance must be specified and must be greater than or equal to zero. When a positive value is specified, markers will be separated by that value; when a value of zero is specified, markers will be touching. The default page unit is Points. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DisperseMarkers.dispersal_pattern">
+            <summary>Specifies the pattern in which the dispersed representation markers are placed. A group of markers will have a center of mass derived from the locations of each marker in the group. The center of mass is then used as the anchor point around which the dispersal pattern operates. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DisperseMarkers.out_representations">
+            <summary>Output Representations (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DisperseMarkers.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DisperseMarkers.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DisperseMarkers.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DisperseMarkers.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DisperseMarkers.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect">
+            <summary>This tool is commonly used to synchronize boundary symbology on adjacent polygons. It creates a representation control point at vertices that are shared by one or more line or polygon features. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_line_or_polygon_features">The input line or polygon feature layer symbolized with a feature class representation. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect.in_line_or_polygon_features">
+            <summary>The input line or polygon feature layer symbolized with a feature class representation. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect.in_features">
+            <summary>The feature layer with coincident features. These features can be from a geodatabase, shapefile, or coverage. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect.out_representations">
+            <summary>Output Representations (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetRepresentationControlPointAtIntersect.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict">
+            <summary>Creates polygons where two or more symbolized features graphically conflict.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input feature layer containing symbolized features. (In, Required)</param>
+            <param name="conflict_features">The feature layer containing symbolized features potentially in conflict with symbolized features  in the input layer. (In, Required)</param>
+            <param name="out_feature_class">The output feature class to be created to store conflict polygons. It cannot be one of the feature classes associated with the input layers. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.in_features">
+            <summary>The input feature layer containing symbolized features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.conflict_features">
+            <summary>The feature layer containing symbolized features potentially in conflict with symbolized features  in the input layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.out_feature_class">
+            <summary>The output feature class to be created to store conflict polygons. It cannot be one of the feature classes associated with the input layers. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.conflict_distance">
+             <summary>Sets the conflict distance. Temporary buffers one-half the size of the conflict distance value
+            are created around symbols in both the
+            input and conflict layers. Conflict polygons will be generated
+            where these buffers overlap. Conflict distance is measured in page units (Points, Inches, Millimeters,  Centimeters). If you enter a conflict distance in map units, it will be converted to page units using the reference scale. The default conflict distance is 0, where no buffers are created and only symbols that physically overlap one another are detected as conflicts.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.line_connection_allowance">
+            <summary>The radius of a circle, centered where lines join, within which graphic overlaps won't be detected. This parameter is only considered when the input layer and the conflict layer are identical. Zero allowance will detect a conflict at each line join (if end caps are overlapping). Line connection allowance is calculated in page units (Points, Inches, Millimeters, Centimeters). If you enter a conflict distance in map units, it will be converted to page units using the reference scale. The value cannot be negative; the default value is 1 Point. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DetectGraphicConflict.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.AddRepresentation">
+            <summary>Adds a feature class representation to a geodatabase feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.AddRepresentation.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input geodatabase feature class to which a new feature class representation will be added. (In, Required)</param>
+            <param name="representation_name">The name of the feature class representation to be added. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.in_features">
+            <summary>The input geodatabase feature class to which a new feature class representation will be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.representation_name">
+            <summary>The name of the feature class representation to be added. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.rule_id_field_name">
+            <summary>The name of the RuleID field, which will hold a reference to the representation rule for each feature. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.override_field_name">
+            <summary>The name of the Override field, which will hold overrides to representation rules for each feature. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.geometry_editing_option">
+            <summary>Specifies what will happen to the supporting feature class geometry when features are modified with the representation editing tools. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.import_rule_layer">
+            <summary>A feature layer that symbolizes features with a feature class representation, from which the representation rules are imported. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.assign_rule_id_option">
+            <summary>Specifies whether or not to assign representation rules to features to match the RuleID assignments of the import rule layer. This option applies only when Import Rule Layer is specified. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AddRepresentation.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule">
+            <summary>Applies existing representation rules to features in a feature class representation by calculating the RuleID field.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.#ctor(System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The feature class that contains the features for which representation rules will be calculated. (In, Required)</param>
+            <param name="representation">The feature class representation that contains the representation rules that will be applied to features. This feature class representation must belong to the input feature class. (In, Required)</param>
+            <param name="representation_rule">The representation rule to be applied to the input features by calculating the RuleID field. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.in_features">
+            <summary>The feature class that contains the features for which representation rules will be calculated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.representation">
+            <summary>The feature class representation that contains the representation rules that will be applied to features. This feature class representation must belong to the input feature class. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.representation_rule">
+            <summary>The representation rule to be applied to the input features by calculating the RuleID field. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateRepresentationRule.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.DropRepresentation">
+            <summary>Deletes a feature class representation from a geodatabase feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.DropRepresentation.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input feature layer containing representation(s). (In, Required)</param>
+            <param name="representation">The feature class representation to be deleted. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DropRepresentation.in_features">
+            <summary>The input feature layer containing representation(s). (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DropRepresentation.representation">
+            <summary>The feature class representation to be deleted. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DropRepresentation.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DropRepresentation.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DropRepresentation.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DropRepresentation.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DropRepresentation.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DropRepresentation.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.RemoveOverride">
+            <summary>Removes geometry and/or property representation overrides from features participating in a feature class representation.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.RemoveOverride.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input feature layer containing at least one representation. (In, Required)</param>
+            <param name="representation">The representation from which representation overrides will be removed. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.RemoveOverride.in_features">
+            <summary>The input feature layer containing at least one representation. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.RemoveOverride.representation">
+            <summary>The representation from which representation overrides will be removed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.RemoveOverride.remove_option">
+            <summary>Specifies which types of overrides will be removed. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.RemoveOverride.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.RemoveOverride.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.RemoveOverride.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.RemoveOverride.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.RemoveOverride.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.RemoveOverride.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride">
+            <summary>Selects features that have representation geometry and/or property overrides.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input feature layer containing representations. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride.in_features">
+            <summary>The input feature layer containing representations. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride.select_option">
+            <summary>Specifies the type of representation override to use as a selection criterion. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SelectFeatureByOverride.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation">
+            <summary>Sets a representation for a feature layer. The layer is temporary and stored in memory during the ArcGIS session, available for use in models and scripts.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_layer">The input feature layer containing at least one representation. (In, Required)</param>
+            <param name="representation">The representation to be set for the input feature layer. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation.in_layer">
+            <summary>The input feature layer containing at least one representation. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation.representation">
+            <summary>The representation to be set for the input feature layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation.out_layer">
+            <summary>Output Layer (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SetLayerRepresentation.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.UpdateOverride">
+            <summary>Transfers feature representation overrides from the default override field to explicit fields as defined by the representation rules in the representation.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.UpdateOverride.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input feature layer containing at least one representation. (In, Required)</param>
+            <param name="representation">The representation containing overrides to be transferred to explicit fields. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.UpdateOverride.in_features">
+            <summary>The input feature layer containing at least one representation. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.UpdateOverride.representation">
+            <summary>The representation containing overrides to be transferred to explicit fields. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.UpdateOverride.update_option">
+            <summary>Specifies the type of representation override to be transferred to explicit fields. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.UpdateOverride.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.UpdateOverride.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.UpdateOverride.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.UpdateOverride.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.UpdateOverride.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.UpdateOverride.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CalculateLineCaps">
+            <summary>Modifies the cap type (ending style) for representation stroke symbols and stores it as an override. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input feature layer containing line representations. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.in_features">
+            <summary>The input feature layer containing line representations. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.cap_type">
+            <summary>Defines how the ends of representation stroke symbols are drawn. The default cap type of representation strokes is round, where the symbol is terminated with a semicircle of radius equal to stroke width is centered at the line endpoint. This tool changes cap type to BUTT or SQUARE.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.dangle_option">
+            <summary>The Dangle parameter controls how line caps are calculated for adjoining line features that share an endpoint but are drawn with different representation symbology.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.out_representations">
+            <summary>Output Representations (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateLineCaps.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle">
+            <summary>Calculates the dominant angles of  input polygon features and assigns the values to a specified field in the feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input polygon features. (In, Required)</param>
+            <param name="angle_field">The field that will be updated with the polygon main angle values. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle.in_features">
+            <summary>The input polygon features. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle.angle_field">
+            <summary>The field that will be updated with the polygon main angle values. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculatePolygonMainAngle.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels">
+            <summary> Calculates the central meridian and optional standard parallels based on the center point of a feature's extent; stores this coordinate system as a spatial reference string in a specified text field and repeats this for a set, or subset, of features. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features"> Input feature layer. (In, Required)</param>
+            <param name="in_field">Text field to store the coordinate system string. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.in_features">
+            <summary> Input feature layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.in_field">
+            <summary>Text field to store the coordinate system string. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.standard_offset">
+            <summary> Percentage of the height of the input feature used to offset the standard parallels from the center latitude of the input feature. The default is 25% or 0.25. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateCentralMeridianAndParallels.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CalculateUTMZone">
+            <summary> Calculates a UTM zone of each feature based on the center point and stores this spatial reference string in a specified field. This field can be used in conjunction with Data Driven Pages to update the spatial reference to the correct UTM zone for each map.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CalculateUTMZone.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">Input feature layer. (In, Required)</param>
+            <param name="in_field"> String field that stores the spatial reference string for the coordinate system. Field should have sufficient length (more than 600 characters) to hold the spatial reference string. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateUTMZone.in_features">
+            <summary>Input feature layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateUTMZone.in_field">
+            <summary> String field that stores the spatial reference string for the coordinate system. Field should have sufficient length (more than 600 characters) to hold the spatial reference string. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateUTMZone.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateUTMZone.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateUTMZone.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateUTMZone.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateUTMZone.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateUTMZone.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields">
+            <summary> The most common use case for using this tool is to populate fields that can be used to label the adjacent pages in a map book. This tool appends eight new fields (each field representing one of the eight points of the compass: North, Northeast, East, Southeast, South, Southwest, West and Northwest) to the input feature class and calculates values that identify the adjacent (neighboring) polygons, in each cardinal direction, for each feature in the input feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features"> Polygon grid index features to be appended with adjacent field data.  (In, Required)</param>
+            <param name="in_field"> Field whose values will be used to populate adjacent field data. Use actual field names. Do not use field aliases. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields.in_features">
+            <summary> Polygon grid index features to be appended with adjacent field data.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields.in_field">
+            <summary> Field whose values will be used to populate adjacent field data. Use actual field names. Do not use field aliases. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateAdjacentFields.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle">
+            <summary>Calculates the rotation angle for true north based on the center point of each feature in a feature class and populates this value in a specified field. This field can be used in conjunction with Data Driven Pages to rotate each map to true north.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features"> Input feature class (points, multipoints, lines, and polygons). (In, Required)</param>
+            <param name="angle_field"> Existing field that will be populated with the true north calculation value in decimal degrees. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.in_features">
+            <summary> Input feature class (points, multipoints, lines, and polygons). (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.angle_field">
+            <summary> Existing field that will be populated with the true north calculation value in decimal degrees. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.rotation_method">
+            <summary> Method in which the rotation value is calculated. Geographic is the default value. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.coordinate_sys_field">
+            <summary> Field containing a projection engine string for a projected coordinate system to be used for angle calculation. The angle calculation for each feature will be based on the projected coordinate system projection engine string for the specific feature. In cases where there is an invalid value the tool will use the Cartographic Coordinate System specified in the Cartography environment settings. The default is none, or no field specified. When no field is specified the projected coordinate system used for calculation will be taken from the Cartography environment settings. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CalculateGridConvergenceAngle.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork">
+            <summary> Generates a simplified road network that retains connectivity and general character to display at a smaller scale.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.#ctor(System.Object,System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features"> The input linear roads that should be thinned to create a simplified collection for display at smaller scales.  (In, Required)</param>
+            <param name="minimum_length"> An indication of the shortest road segment that is sensible to display at the output scale. This controls the resolution, or density, of the resulting road collection.  If the units are in point, mm, cm, or inches the value is considered in page units and the reference scale is taken into account.  (In, Required)</param>
+            <param name="invisibility_field"> The field that stores the results of the tool. Features that participate in the resulting simplified road collection have a  value of 0 (zero). Those that are extraneous have a value of 1. A layer definition query can be used to display the resulting road collection. This field must be present and named the same for each input feature class.  (In, Required)</param>
+            <param name="hierarchy_field"> The field that contains hierarchical ranking of feature importance, where 1 is very important and larger integers reflect decreasing importance. A value of 0 forces the feature to remain visible in the output collection. This field must be present and named the same for each input feature class.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.in_features">
+            <summary> The input linear roads that should be thinned to create a simplified collection for display at smaller scales.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.minimum_length">
+            <summary> An indication of the shortest road segment that is sensible to display at the output scale. This controls the resolution, or density, of the resulting road collection.  If the units are in point, mm, cm, or inches the value is considered in page units and the reference scale is taken into account.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.invisibility_field">
+            <summary> The field that stores the results of the tool. Features that participate in the resulting simplified road collection have a  value of 0 (zero). Those that are extraneous have a value of 1. A layer definition query can be used to display the resulting road collection. This field must be present and named the same for each input feature class.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.hierarchy_field">
+            <summary> The field that contains hierarchical ranking of feature importance, where 1 is very important and larger integers reflect decreasing importance. A value of 0 forces the feature to remain visible in the output collection. This field must be present and named the same for each input feature class.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ThinRoadNetwork.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.PropagateDisplacement">
+            <summary>Propagates the displacement resulting from road adjustment in the Resolve Road Conflicts  and Merge Divided Roads tools to adjacent features. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features"> The input feature layer containing features that may be in conflict. May be point, line, or polygon.  (In, Required)</param>
+            <param name="displacement_features"> The displacement polygon features created by the Resolve Road Conflicts or the Merge Divided Roads tools which contain the degree and direction of displacement that took place to resolve conflicts. These polygons dictate the amount of displacement that will be propagated to the Input Features.  (In, Required)</param>
+            <param name="adjustment_style">Defines the type of adjustment that will be used when displacing input features.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.in_features">
+            <summary> The input feature layer containing features that may be in conflict. May be point, line, or polygon.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.displacement_features">
+            <summary> The displacement polygon features created by the Resolve Road Conflicts or the Merge Divided Roads tools which contain the degree and direction of displacement that took place to resolve conflicts. These polygons dictate the amount of displacement that will be propagated to the Input Features.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.adjustment_style">
+            <summary>Defines the type of adjustment that will be used when displacing input features.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.out_features">
+            <summary>Output Features (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.PropagateDisplacement.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts">
+            <summary> Resolves symbol conflicts among buildings and with respect to linear barrier features by moving or hiding buildings. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.#ctor(System.Object,System.String,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_buildings"> The input layers containing building features that may be in conflict, or smaller than allowable size. Buildings can be either points or polygons. Buildings will be modified to resolve conflicts with other buildings and with barrier features.  (In, Required)</param>
+            <param name="invisibility_field"> The field that stores the invisibility values that can be used to remove some buildings from display in order to resolve symbol conflicts. Buildings with a value of 1 should be removed from display; those with a value of zero should remain. Use a definition query on the layer to display visible buildings only. No features are deleted.  (In, Required)</param>
+            <param name="in_barriers"> The layers containing the linear or polygon features that are conflict barriers for input building features. Buildings will be modified to resolve conflicts between buildings and barriers. Orient value is Boolean, specifying whether buildings should be oriented to the barrier layer.  (In, Required)</param>
+            <param name="building_gap"> The minimum allowable distance between symbolized buildings at scale. Buildings that are closer together will be displaced or hidden to enforce this distance. The minimum allowable distance is set relative to the reference scale (i.e. 15 meters at 1:50,000 scale). The value is 0 if reference scale is not set. (In, Required)</param>
+            <param name="minimum_size"> The minimum allowable size of the shortest side of a rotated best-fit bounding box around the symbolized building feature drawn at the reference scale. Buildings with a bounding box side smaller than this value will be enlarged to meet it. Resizing may happen nonproportionally resulting in a change to building morphology.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.in_buildings">
+            <summary> The input layers containing building features that may be in conflict, or smaller than allowable size. Buildings can be either points or polygons. Buildings will be modified to resolve conflicts with other buildings and with barrier features.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.invisibility_field">
+            <summary> The field that stores the invisibility values that can be used to remove some buildings from display in order to resolve symbol conflicts. Buildings with a value of 1 should be removed from display; those with a value of zero should remain. Use a definition query on the layer to display visible buildings only. No features are deleted.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.in_barriers">
+            <summary> The layers containing the linear or polygon features that are conflict barriers for input building features. Buildings will be modified to resolve conflicts between buildings and barriers. Orient value is Boolean, specifying whether buildings should be oriented to the barrier layer.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.building_gap">
+            <summary> The minimum allowable distance between symbolized buildings at scale. Buildings that are closer together will be displaced or hidden to enforce this distance. The minimum allowable distance is set relative to the reference scale (i.e. 15 meters at 1:50,000 scale). The value is 0 if reference scale is not set. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.minimum_size">
+            <summary> The minimum allowable size of the shortest side of a rotated best-fit bounding box around the symbolized building feature drawn at the reference scale. Buildings with a bounding box side smaller than this value will be enlarged to meet it. Resizing may happen nonproportionally resulting in a change to building morphology.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.hierarchy_field">
+            <summary> The field that contains hierarchical ranking of feature importance, where 1 is very important and larger integers reflect decreasing importance. A value of 0 (zero) forced the building to  retain visibility, although it may be moved somewhat to resolve conflicts. If this parameter is not used, feature importance will be assessed by the tool based on perimeter length and proximity to barrier features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.out_layers">
+            <summary>Output Layers (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveBuildingConflicts.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts">
+            <summary> Resolves graphic conflicts among symbolized road features by adjusting portions of line segments. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_layers"> The input feature layers containing symbolized road features that may be in conflict.  (In, Required)</param>
+            <param name="hierarchy_field"> The field that contains hierarchical ranking of feature importance, where 1 is very important and larger integers reflect decreasing importance. A value of 0 (zero) locks the feature to ensure that it is not moved. The hierarchy field must be present and named the same for all input feature classes. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.in_layers">
+            <summary> The input feature layers containing symbolized road features that may be in conflict.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.hierarchy_field">
+            <summary> The field that contains hierarchical ranking of feature importance, where 1 is very important and larger integers reflect decreasing importance. A value of 0 (zero) locks the feature to ensure that it is not moved. The hierarchy field must be present and named the same for all input feature classes. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.out_displacement_features">
+            <summary> The output polygon features containing the degree and direction of road displacement, to be used by the Propagate Displacement tool to preserve spatial relationships.  (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.out_layers">
+            <summary>Output Layers (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ResolveRoadConflicts.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.AggregatePolygons">
+            <summary>Combines polygons within a specified distance to each other into new polygons.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.AggregatePolygons.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The polygon features to be aggregated. (In, Required)</param>
+            <param name="out_feature_class">The output feature class to be created. (Out, Required)</param>
+            <param name="aggregation_distance">The distance to be satisfied between polygon boundaries for aggregation to happen. A distance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.in_features">
+            <summary>The polygon features to be aggregated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.out_feature_class">
+            <summary>The output feature class to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.aggregation_distance">
+            <summary>The distance to be satisfied between polygon boundaries for aggregation to happen. A distance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.minimum_area">
+            <summary>The minimum area for an aggregated polygon to be retained. The default value is zero, that is, to keep all polygons. You can specify a preferred unit; the default is the feature unit. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.minimum_hole_size">
+            <summary>The minimum size of a polygon hole to be retained. The default value is zero, that is, to keep all polygon holes. You can specify a preferred unit; the default is the feature unit. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.orthogonality_option">
+            <summary>Specifies the characteristic of the input features that will be preserved when constructing the aggregated boundaries.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.out_table">
+            <summary>Output Table (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePolygons.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline">
+            <summary>Derives centerlines from dual-line (or double-line) features, such as road casings, based on specified width tolerances.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input dual-line features, such as road casings, from which centerlines are derived. (In, Required)</param>
+            <param name="out_feature_class">The output feature class to be created. (Out, Required)</param>
+            <param name="maximum_width">Sets the maximum width of the dual-line features to derive centerline. A value must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.in_features">
+            <summary>The input dual-line features, such as road casings, from which centerlines are derived. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.out_feature_class">
+            <summary>The output feature class to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.maximum_width">
+            <summary>Sets the maximum width of the dual-line features to derive centerline. A value must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.minimum_width">
+            <summary>Sets the minimum width of the dual-line features to derive centerline. The minimum width must be greater than or equal to zero, and it must be less than the maximum width. The default value is zero. You can specify a preferred unit; the default is the feature unit. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.CollapseDualLinesToCenterline.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.SimplifyBuilding">
+            <summary>Simplifies the boundary or footprint of building polygons while maintaining their essential shape and size.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The building polygons to be simplified. (In, Required)</param>
+            <param name="out_feature_class">The output feature class to be created. (Out, Required)</param>
+            <param name="simplification_tolerance">Sets the tolerance for building simplification. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.in_features">
+            <summary>The building polygons to be simplified. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.out_feature_class">
+            <summary>The output feature class to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.simplification_tolerance">
+            <summary>Sets the tolerance for building simplification. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.minimum_area">
+            <summary>Sets the minimum area for a simplified building to be retained in feature units. The default value is zero, that is, to keep all buildings. You can specify a preferred unit; the default is the feature unit. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.conflict_option">
+            <summary>Specifies whether or not to check for potential conflicts, that is, overlapping or touching, among buildings.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyBuilding.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.SimplifyLine">
+            <summary>Simplifies lines by removing extraneous bends while preserving essential shape.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.SimplifyLine.#ctor(System.Object,System.Object,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The line features to be simplified. (In, Required)</param>
+            <param name="out_feature_class">The output line feature class to be created. (Out, Required)</param>
+            <param name="algorithm">Specifies the line simplification algorithm. (In, Required)</param>
+            <param name="tolerance">The tolerance that determines the degree of simplification. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.in_features">
+            <summary>The line features to be simplified. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.out_feature_class">
+            <summary>The output line feature class to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.algorithm">
+            <summary>Specifies the line simplification algorithm. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.tolerance">
+            <summary>The tolerance that determines the degree of simplification. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.error_resolving_option">
+            <summary>Specifies how the topological errors (possibly introduced in the process, including line crossing, line overlapping, and collapsed zero-length lines) will be handled. This parameter will be in effect when the error_checking_option is CHECK (the default).
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.collapsed_point_option">
+            <summary>Specifies whether to keep collapsed zero-length lines as points if any are found in the process. This option applies only when NO_CHECK is specified or when both FLAG_ERRORS and CHECK options are specified.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.error_checking_option">
+            <summary>Specifies how the topological errors (possibly introduced in the process, including line crossing, line overlapping, and collapsed zero-length lines) will be handled.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.out_point_feature_class">
+            <summary>Output Point Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyLine.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.SmoothLine">
+            <summary>Smooths sharp angles in lines to improve aesthetic or cartographic quality.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.SmoothLine.#ctor(System.Object,System.Object,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The line features to be smoothed. (In, Required)</param>
+            <param name="out_feature_class">The output feature class to be created. (Out, Required)</param>
+            <param name="algorithm">Specifies the smoothing algorithm. (In, Required)</param>
+            <param name="tolerance">Sets a tolerance used by the PAEK algorithm. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. You must enter a 0 as a placeholder when using the BEZIER_INTERPOLATION smoothing algorithm. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.in_features">
+            <summary>The line features to be smoothed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.out_feature_class">
+            <summary>The output feature class to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.algorithm">
+            <summary>Specifies the smoothing algorithm. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.tolerance">
+            <summary>Sets a tolerance used by the PAEK algorithm. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. You must enter a 0 as a placeholder when using the BEZIER_INTERPOLATION smoothing algorithm. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.endpoint_option">
+            <summary>Specifies whether to preserve the endpoints for closed lines. This option works with the PAEK algorithm only.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.error_option">
+            <summary>Specifies how the topological errors (possibly introduced in the process, such as line crossing) will be handled. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothLine.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.MergeDividedRoads">
+            <summary> Generates single line road features in place of matched pairs of  divided road lanes. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.#ctor(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features"> The input linear road features that contain matched pairs of divided road lanes which should be merged together to a single output line feature.  (In, Required)</param>
+            <param name="merge_field"> The field that contains road classification information. Only parallel, proximate roads of equal classification will be merged. A value of 0 (zero) locks a feature to prevent it from participating in merging.  (In, Required)</param>
+            <param name="merge_distance"> The minimum distance apart, in the specified units, for equal-class, relatively parallel road features to be merged. This distance must be greater than zero. If the units are in  pt, mm, cm, or in,  the value is considered as page units and takes into account the reference scale.  (In, Required)</param>
+            <param name="out_features"> The output feature class containing single line merged road features and all unmerged road features. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.in_features">
+            <summary> The input linear road features that contain matched pairs of divided road lanes which should be merged together to a single output line feature.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.merge_field">
+            <summary> The field that contains road classification information. Only parallel, proximate roads of equal classification will be merged. A value of 0 (zero) locks a feature to prevent it from participating in merging.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.merge_distance">
+            <summary> The minimum distance apart, in the specified units, for equal-class, relatively parallel road features to be merged. This distance must be greater than zero. If the units are in  pt, mm, cm, or in,  the value is considered as page units and takes into account the reference scale.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.out_features">
+            <summary> The output feature class containing single line merged road features and all unmerged road features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.out_displacement_features">
+            <summary> The output polygon features containing the degree and direction of road displacement, to be used by the Propagate Displacement tool to preserve spatial relationships.  (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MergeDividedRoads.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules">
+            <summary> Deletes all the features associated with one or more selected grid and graticule layers from a feature dataset.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_grid_dataset"> The feature dataset location where the grid and graticule layers that can be deleted are stored. (In, Required)</param>
+            <param name="grid_name"> Lists the grid and graticule layers in the feature dataset that can be deleted.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules.in_grid_dataset">
+            <summary> The feature dataset location where the grid and graticule layers that can be deleted are stored. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules.grid_name">
+            <summary> Lists the grid and graticule layers in the feature dataset that can be deleted.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules.out_grid_dataset">
+            <summary>Output Grid Dataset (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.DeleteGridsAndGraticules.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.GridIndexFeatures">
+            <summary>Creates a grid of rectangular of polygon features that can be used as an index to specify pages for a map book using Data Driven Pages. A grid can be created that only includes polygon features that intersect another feature layer.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="out_feature_class"> Resulting feature class of polygon index features. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.out_feature_class">
+            <summary> Resulting feature class of polygon index features. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.in_features">
+            <summary> Input features can be used to define the extent of the polygon grid that is created. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.intersect_feature">
+            <summary>Limits the output grid feature class to only areas that intersect input feature layers or datasets. When input features are specified, the default value is INTERSECTFEATURE. The intersection of input features will be used to create index features.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.use_page_unit">
+            <summary>Indicates whether index polygon size input is in page units. The default is NO_USEPAGEUNIT. The tool uses map units by default.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.scale">
+            <summary> Scale must be specified if the index polygon height and width are to be calculated in page units.. If the tool is being used outside of an active ArcMap session the default scale value is 1. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.polygon_width">
+            <summary> Width of the index polygon specifed in either map or page units. If page units are being used the default value is 1 inch. If map units are being used the default is 1 degree. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.polygon_height">
+            <summary> Height of the index polygon specifed in either map or page units. If page units are being used the default value is 1 inch. If map units are being used the default is 1 degree. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.origin_coord">
+            <summary> Coordinate for the lower left origin of the output grid feature class. If input features are specified the default value is determined by the extent of the union of extents for these features. If there are no input features specified, the default coordinates are 0 and 0. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.number_rows">
+            <summary> Number of rows to create in the y direction from the point of origin. The default is 10. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.number_columns">
+            <summary> Number of columns to create in the x direction from the point of origin. The default is 10. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.starting_page_number">
+            <summary>Each grid index feature is assigned a sequential page number starting with a specified starting page number. The default is 1. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.label_from_origin">
+            <summary>Page numbers (labels) starting with the specified starting page number (default is 1) begins with the cell in the lower left corner of the output grid. The default is NO_LABELFROMORIGIN.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.GridIndexFeatures.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures">
+            <summary> Creates a series of rectangular polygons, or index features, that follow a single linear feature or a group of linear features. These index features can be used with Data Driven Pages to define pages within a strip map, or set of maps that follow a linear feature. The resulting index features contain attributes that can be used to rotate and orient the map on the page and determine which index features, or pages, are next to the current page (to the left and right or to the top and bottom).</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features"> Input polyline or polylines defining the path of the strip map index features.  (In, Required)</param>
+            <param name="out_feature_class"> Resulting feature class of polygon index features.  (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.in_features">
+            <summary> Input polyline or polylines defining the path of the strip map index features.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.out_feature_class">
+            <summary> Resulting feature class of polygon index features.  (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.use_page_unit">
+            <summary>Indicates whether index feature size input is in page space. The default value is NO_USEPAGEUNIT.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.scale">
+            <summary> Map scale must be specified if index feature lengths (along the line and perpendicular to the line) are to be calculated in page space. If ArcMap is open the default value will be the scale of the active data frame. If ArcMap is not open the default will be 1. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.length_along_line">
+            <summary> Length of the polygon index feature along the input line feature specifed in either map or page units. The default value is determined by the spatial reference of the input line feature or features. This value will be 1/100 of the input feature class extent along the X axis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.length_perpendicular_to_line">
+            <summary> Length of the polygon index feature perpendicular to the input line feature specifed in either map or page units. The default value is determined by the spatial reference of the input line feature or features. This value will be 1/2 the number used for the length along the line. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.page_orientation">
+            <summary> Used to determine the orientation of the input line features on the layout page. The default is HORIZONTAL. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.overlap_percentage">
+            <summary> The approximate percentage of geographic overlap between an individual map page and its adjoining pages in the series. The default is 10. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.starting_page_number">
+            <summary>Each grid index feature is assigned a sequential page number starting with a specified starting page number. The default value is 1. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.direction_type">
+            <summary> Index features are created in a sequential order and require a starting point. Setting the direction type for the strip map provides a starting point. The default is WE_NS. This means that the starting point for the strip map is either at the western end of the line feature if the line feature's directional trend is West to East/East to West or, if the directional trend is North to South/South to North, the starting point would be the northern most point of the line feature. The direction type is also applied to secondary line features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.StripMapIndexFeatures.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer">
+            <summary> Creates a grouped layer of feature classes depicting grid, graticule, and border features using predefined cartographic specifications. Grid layers are ideal for advanced grid definitions which are scale and extent specific.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.#ctor(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_template"> The XML grid definition template stores the specification's graphic properties for each grid layer. In addition to the graphic properties, which cannot be altered before execution, the definition has specific default values, exposed as parameters, that can be modified before execution. (In, Required)</param>
+            <param name="in_aoi">The feature layer or x,y extent used to determine the extent of the grid layer created. (In, Required)</param>
+            <param name="input_feature_dataset"> The feature dataset that will store the features. Grid-specific feature classes will be created if they do not already exist. If they already exist, and a grid with the same name and type as the one being created also exists, it will be overwritten. (In, Required)</param>
+            <param name="output_layer">The grouped layer of feature classes depicting grid, graticule, and border features. Each grid layer can be composed of a mask polygon, a clip polygon, segments(line), gridlines(line), ticks(line), endpoints(point), points(point), and annotation feature classes. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.in_template">
+            <summary> The XML grid definition template stores the specification's graphic properties for each grid layer. In addition to the graphic properties, which cannot be altered before execution, the definition has specific default values, exposed as parameters, that can be modified before execution. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.in_aoi">
+            <summary>The feature layer or x,y extent used to determine the extent of the grid layer created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.input_feature_dataset">
+            <summary> The feature dataset that will store the features. Grid-specific feature classes will be created if they do not already exist. If they already exist, and a grid with the same name and type as the one being created also exists, it will be overwritten. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.output_layer">
+            <summary>The grouped layer of feature classes depicting grid, graticule, and border features. Each grid layer can be composed of a mask polygon, a clip polygon, segments(line), gridlines(line), ticks(line), endpoints(point), points(point), and annotation feature classes. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.name">
+            <summary> The name for the cartographic grid created that allows for distinction between grids that are stored in the same feature dataset and set of feature classes, expressed in one of the following formats: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.refscale">
+            <summary>The scale at which the grid is created and should be viewed. When the reference scale from the XML grid definition file is defined as "Use Environment", the reference scale is derived in the following order: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.rotation">
+            <summary>The rotation angle for the grid components. Rotation is used to provide annotation that is level with the page. Unless otherwise specified, rotation is calculated using the area of interest feature. When the rotation type from the XML grid definition file is defined as "Use Environment", the rotation is derived in the following order: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.mask_size">
+            <summary> The mask is a polygon feature that forms an outer ring around the extent of the neatline and is used to mask data that falls in the area reserved for coordinate labels. Mask size defines the width of the polygon mask feature in map or page units. The data frame may have to be resized to fit around the edge of the mask while including the coordinate labels. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.xy_tolerance">
+            <summary>The minimum tolerated distance between geodatabase features, expressed in linear units. This value is defaulted from the value set in the XML. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.primary_coordinate_system">
+            <summary>The grid template XML file creates grid components depicting coordinates or locations for  a primary coordinates system and up to four ancillary coordinate systems. The number of  ancillary grids is specified by the file. You cannot add or delete ancillary coordinate systems. All coordinate systems specified must share a common geographic coordinate system. If you want to change the primary coordinate system to one that uses a different datum than the default, say for example you change the coordinate system from one that uses WGS 1984 to one that uses NAD 1983, you must change each default ancillary coordinate systems to NAD 1983 as well. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.configure_layout">
+            <summary>Adjusts the data frame settings to ensure they match the grid layer. The data frame's coordinate system, scale, rotation, size, extent, and clipping may be altered to enforce consistency. This setting is only available when the tool is executed from ArcMap's layout view and is not being run in the background. The default is to have this check box unchecked.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.ancillary_coordinate_system_1">
+            <summary>The grid template XML file creates grid components depicting coordinates or locations for  a primary coordinate system and up to four ancillary coordinate systems. The number of  ancillary grids is specified by the file. You cannot add or delete ancillary coordinate systems. All coordinate systems specified must share a common geographic coordinate system. If you want to change the primary coordinate system to one that uses a different datum than the default, say for example you change the coordinate system from one that uses WGS 1984 to one that uses NAD 1983, you must change each default ancillary coordinate systems to NAD 1983 as well. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.ancillary_coordinate_system_2">
+            <summary>The grid template XML file creates grid components depicting coordinates or locations for  a primary coordinates system and up to four ancillary coordinate systems. The number of  ancillary grids is specified by the file. You cannot add or delete ancillary coordinate systems. All coordinate systems specified must share a common geographic coordinate system. If you want to change the primary coordinate system to one that uses a different datum than the default, say for example you change the coordinate system from one that uses WGS 1984 to one that uses NAD 1983, you must change each default ancillary coordinate systems to NAD 1983 as well. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.ancillary_coordinate_system_3">
+            <summary>The grid template XML file creates grid components depicting coordinates or locations for  a primary coordinates system and up to four ancillary coordinate systems. The number of  ancillary grids is specified by the file. You cannot add or delete ancillary coordinate systems. All coordinate systems specified must share a common geographic coordinate system. If you want to change the primary coordinate system to one that uses a different datum than the default, say for example you change the coordinate system from one that uses WGS 1984 to one that uses NAD 1983, you must change each default ancillary coordinate systems to NAD 1983 as well. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.ancillary_coordinate_system_4">
+            <summary>The grid template XML file creates grid components depicting coordinates or locations for  a primary coordinates system and up to four ancillary coordinate systems. The number of  ancillary grids is specified by the file. You cannot add or delete ancillary coordinate systems. All coordinate systems specified must share a common geographic coordinate system. If you want to change the primary coordinate system to one that uses a different datum than the default, say for example you change the coordinate system from one that uses WGS 1984 to one that uses NAD 1983, you must change each default ancillary coordinate systems to NAD 1983 as well. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MakeGridsAndGraticulesLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.SimplifyPolygon">
+            <summary>Simplifies polygons by removing extraneous bends while preserving essential shape.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.#ctor(System.Object,System.Object,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The polygon features to be simplified. (In, Required)</param>
+            <param name="out_feature_class">The output polygon feature class to be created. (Out, Required)</param>
+            <param name="algorithm">Specifies the polygon simplification algorithm. (In, Required)</param>
+            <param name="tolerance">The tolerance that determines the degree of simplification. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.in_features">
+            <summary>The polygon features to be simplified. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.out_feature_class">
+            <summary>The output polygon feature class to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.algorithm">
+            <summary>Specifies the polygon simplification algorithm. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.tolerance">
+            <summary>The tolerance that determines the degree of simplification. A tolerance must be specified, and it must be greater than zero. You can choose a preferred unit; the default is the feature unit. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.minimum_area">
+            <summary>Sets the minimum area for a simplified polygon to be retained. The default value is zero, that is, to keep all polygons. You can choose a preferred unit for the specified value; the default is the feature unit. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.error_option">
+            <summary>Specifies how the topological errors (possibly introduced in the process, including line crossing, line overlapping, and collapsed zero-length lines) will be handled. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.collapsed_point_option">
+            <summary>Specifies whether to keep collapsed zero-area polygons as points if any are found in the process. This option applies only when NO_CHECK or FLAG_ERRORS is specified.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.out_point_feature_class">
+            <summary>Output Point Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SimplifyPolygon.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.SmoothPolygon">
+            <summary>Smooths sharp angles in polygon outlines to improve aesthetic or cartographic quality.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.SmoothPolygon.#ctor(System.Object,System.Object,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The polygon features to be smoothed. (In, Required)</param>
+            <param name="out_feature_class">The output polygon feature class to be created. (Out, Required)</param>
+            <param name="algorithm">Specifies the smoothing algorithm. (In, Required)</param>
+            <param name="tolerance">Sets a tolerance used by the PAEK algorithm. A tolerance must be specified, and it must be greater than zero. You can specify a preferred unit; the default is the feature unit. You must enter a 0 as a placeholder when using the BEZIER_INTERPOLATION smoothing algorithm. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.in_features">
+            <summary>The polygon features to be smoothed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.out_feature_class">
+            <summary>The output polygon feature class to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.algorithm">
+            <summary>Specifies the smoothing algorithm. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.tolerance">
+            <summary>Sets a tolerance used by the PAEK algorithm. A tolerance must be specified, and it must be greater than zero. You can specify a preferred unit; the default is the feature unit. You must enter a 0 as a placeholder when using the BEZIER_INTERPOLATION smoothing algorithm. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.endpoint_option">
+            <summary>Specifies whether or not to preserve the endpoints for isolated polygon rings. This option works with the PAEK algorithm only.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.error_option">
+            <summary>Specifies how the topological errors (possibly introduced in the process, such as line crossing or overlapping) will be handled. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.SmoothPolygon.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.AggregatePoints">
+            <summary> Creates polygon features around clusters of proximate point features. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.AggregatePoints.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features"> The input point features that will be assessed for proximity and clustering.  (In, Required)</param>
+            <param name="out_feature_class"> The feature class created to hold the polygons that represent the point clusters.  (Out, Required)</param>
+            <param name="aggregation_distance"> The distance between points that will be clustered.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePoints.in_features">
+            <summary> The input point features that will be assessed for proximity and clustering.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePoints.out_feature_class">
+            <summary> The feature class created to hold the polygons that represent the point clusters.  (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePoints.aggregation_distance">
+            <summary> The distance between points that will be clustered.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePoints.out_table">
+            <summary>Output Table (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePoints.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePoints.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePoints.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePoints.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.AggregatePoints.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.ContourAnnotation">
+             <summary>
+            Creates annotation for contour features.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.ContourAnnotation.#ctor(System.Object,System.Object,System.Object,System.Double,System.Object,System.String)">
+             <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+             <param name="in_features"><summary>
+            The contour line  feature class for which the annotation will be created.
+             (In, Required)</summary></param>
+             <param name="out_geodatabase"><summary>
+            The workspace where the output feature classes will be saved. The workspace can be an existing geodatabase or an existing feature dataset. 
+             (In, Required)</summary></param>
+             <param name="contour_label_field"><summary>
+            The field in the input layer attribute table upon which the annotation text will be based. (In, Required)</summary></param>
+             <param name="reference_scale_value"><summary>
+            Enter the scale to use as a reference for the annotation. This sets the scale to which all symbol and text sizes in the annotation will be based.
+             (In, Required)</summary></param>
+             <param name="out_layer"><summary>
+            The group layer that will contain the contour layer, the annotation, and the mask layer. When working in ArcCatalog, you can use the Save To Layer File tool to write the output group layer to a layer file. When using ArcMap, the tool adds the group layer to the display if this option is checked in the geoprocessing options. The group layer that is created is temporary and will not persist after the session ends unless the document is saved.
+             (Out, Required)</summary></param>
+             <param name="contour_color"><summary>
+            The color of the output contour layer and annotation features.
+             (In, Required)</summary></param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.in_features">
+             <summary>
+            The contour line  feature class for which the annotation will be created.
+             (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.out_geodatabase">
+             <summary>
+            The workspace where the output feature classes will be saved. The workspace can be an existing geodatabase or an existing feature dataset. 
+             (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.contour_label_field">
+             <summary>
+            The field in the input layer attribute table upon which the annotation text will be based. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.reference_scale_value">
+             <summary>
+            Enter the scale to use as a reference for the annotation. This sets the scale to which all symbol and text sizes in the annotation will be based.
+             (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.out_layer">
+             <summary>
+            The group layer that will contain the contour layer, the annotation, and the mask layer. When working in ArcCatalog, you can use the Save To Layer File tool to write the output group layer to a layer file. When using ArcMap, the tool adds the group layer to the display if this option is checked in the geoprocessing options. The group layer that is created is temporary and will not persist after the session ends unless the document is saved.
+             (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.contour_color">
+             <summary>
+            The color of the output contour layer and annotation features.
+             (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.contour_type_field">
+             <summary>
+            The field in the input layer attribute table containing a value for the type of contour feature.  An annotation class will be created for each type value. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.contour_alignment">
+            <summary>This parameter is only available with the Maplex extension. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.enable_laddering">
+            <summary>This parameter is only available with the Maplex extension.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.out_geodatabase2">
+            <summary>Output Workspace (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.ContourAnnotation.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons">
+            <summary> Creates a new polygon feature class from an existing tiling scheme. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.#ctor(System.Object,System.String,System.Object,System.Object,System.String,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="map_document"> The source map document.  (In, Required)</param>
+            <param name="data_frame"> The data frame from the source map document.  (In, Required)</param>
+            <param name="tiling_scheme"> Path to a predefined tiling scheme .xml file.  (In, Required)</param>
+            <param name="output_feature_class"> The output polygon feature class.  (Out, Required)</param>
+            <param name="use_map_extent"><summary> Choose whether to  produce tiles for the entire extent of the tiling scheme or only tiles that intersect the full extent of the data frame.  
+            (In, Required)</summary></param>
+            <param name="clip_to_horizon"><summary>Choose whether to constrain the polygons to the valid area of use for the geographic or projected coordinate system of the data frame. 
+            (In, Required)</summary></param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.map_document">
+            <summary> The source map document.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.data_frame">
+            <summary> The data frame from the source map document.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.tiling_scheme">
+            <summary> Path to a predefined tiling scheme .xml file.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.output_feature_class">
+            <summary> The output polygon feature class.  (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.use_map_extent">
+            <summary> Choose whether to  produce tiles for the entire extent of the tiling scheme or only tiles that intersect the full extent of the data frame.  
+            (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.clip_to_horizon">
+            <summary>Choose whether to constrain the polygons to the valid area of use for the geographic or projected coordinate system of the data frame. 
+            (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.antialiasing">
+             <summary>Choose whether to generate polygons that match map service caches with anti-aliasing enabled.
+            A map service cache supertile is 2048 x 2048 pixels with antialiasing or 4096 x 4096
+            pixels without.
+            To see if antialiasing was used in an existing cache, open the
+            tiling scheme file, conf.xml, and check to see if the
+            &lt;Antialiasing&gt; tag is set to true.   
+             (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.levels">
+            <summary>The scale levels at which you will create polygons.  To create polygons for all scale levels included in a tiling scheme, leave this parameter blank. You may choose to create polygons for all or only some of the scale levels that are included in your tiling scheme.  To add additional scale levels, however, you will need to modify your tiling scheme file or create a new one. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.MapServerCacheTilingSchemeToPolygons.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation">
+            <summary>Converts labels to annotation for layers in a map document based on a polygon index layer. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.#ctor(System.Object,System.String,System.Object,System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="map_document"> The source map document that contains the labels to convert to annotation.  (In, Required)</param>
+            <param name="data_frame"> The data frame from the map document that contains the labels to convert to annotation. (In, Required)</param>
+            <param name="polygon_index_layer"> The polygon layer that contains tile features.  (In, Required)</param>
+            <param name="out_geodatabase"> The workspace where the output feature classes will be saved. The workspace can be an existing geodatabase or an existing feature dataset.  (In, Required)</param>
+            <param name="out_layer"> The group layer that will contain the generated annotation. When working in ArcCatalog, you can use the Save To Layer File tool to write the output group layer to a layer file. When using ArcMap, the tool adds the group layer to the display if this option is checked in the geoprocessing options. The group layer that is created is temporary and will not persist after the session ends unless the document is saved.  (Out, Required)</param>
+            <param name="anno_suffix"> The suffix that will be added to each new annotation feature class. This suffix will be appended to the name of the source feature class for each new annotation feature class. The reference scale for the annotation will follow this suffix.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.map_document">
+            <summary> The source map document that contains the labels to convert to annotation.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.data_frame">
+            <summary> The data frame from the map document that contains the labels to convert to annotation. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.polygon_index_layer">
+            <summary> The polygon layer that contains tile features.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.out_geodatabase">
+            <summary> The workspace where the output feature classes will be saved. The workspace can be an existing geodatabase or an existing feature dataset.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.out_layer">
+            <summary> The group layer that will contain the generated annotation. When working in ArcCatalog, you can use the Save To Layer File tool to write the output group layer to a layer file. When using ArcMap, the tool adds the group layer to the display if this option is checked in the geoprocessing options. The group layer that is created is temporary and will not persist after the session ends unless the document is saved.  (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.anno_suffix">
+            <summary> The suffix that will be added to each new annotation feature class. This suffix will be appended to the name of the source feature class for each new annotation feature class. The reference scale for the annotation will follow this suffix.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.reference_scale_value">
+            <summary> Enter the scale to use as a reference for the annotation. This sets the scale to which all symbol and text sizes in the annotation will be based.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.reference_scale_field">
+            <summary> The field in the polygon index layer that will determine the reference scale of the annotation. This sets the scale to which all symbol and text sizes in the annotation will be based.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.tile_id_field">
+            <summary> A field in the polygon index layer that uniquely identifies the tiled area. These values will populate the TileID field in the annotation feature class attribute table.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.coordinate_sys_field">
+            <summary> A field in the polygon index layer that contains the coordinate system information for each tile. Due to the length required for a field to store coordinate system information, a polygon index layer that contains a coordinate system field must be a geodatabase feature class.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.map_rotation_field">
+            <summary> A field in the polygon index layer that contains an angle by which the data frame is to be rotated.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.feature_linked">
+            <summary>This parameter is only available with ArcEditor and ArcInfo licenses.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.generate_unplaced_annotation">
+            <summary>Choose whether to create unplaced annotation from unplaced labels.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.out_workspace">
+            <summary>Output Geodatabase (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.CartographyTools.TiledLabelsToAnnotation.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

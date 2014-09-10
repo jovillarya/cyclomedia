@@ -1,0 +1,272 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.GeocodingTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator">
+            <summary>Creates a composite address locator. A composite address locator consists of two or more individual address locators that allow addresses to be matched against the multiple address locators. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_address_locators">The order of the participating address locators determines how candidates are searched and an address is matched. When you geocode a single address, the address will be matched against all participating address locators unless the locator is  specified with a selection criterion. All the found candidates will be displayed based on the order of the listed participating address locators. If you geocode a table of  addresses, addresses are matched automatically to the first best candidate found from the first participating address locators. If the address fails to match, it will fall back to the subsequent locator in the list. (In, Required)</param>
+            <param name="in_field_map">The mapping of input fields used by each participating address locator to the input fields of the composite address locator.  (In, Required)</param>
+            <param name="out_composite_address_locator">The composite address locator to create. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.in_address_locators">
+            <summary>The order of the participating address locators determines how candidates are searched and an address is matched. When you geocode a single address, the address will be matched against all participating address locators unless the locator is  specified with a selection criterion. All the found candidates will be displayed based on the order of the listed participating address locators. If you geocode a table of  addresses, addresses are matched automatically to the first best candidate found from the first participating address locators. If the address fails to match, it will fall back to the subsequent locator in the list. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.in_field_map">
+            <summary>The mapping of input fields used by each participating address locator to the input fields of the composite address locator.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.in_selection_criteria">
+            <summary>Selection criteria for each participating address locator. Only one selection criterion is supported for each participating address locator.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.out_composite_address_locator">
+            <summary>The composite address locator to create. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateCompositeAddressLocator.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator">
+            <summary>Creates an address locator. The address locator can be used to find a location of an address, geocode a table of addresses, or  get the address of a point location. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.#ctor(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_address_locator_style">The address locator style on which to base the new address locator. (In, Required)</param>
+            <param name="in_reference_data">The reference data feature classes and tables to be used by the address locator, along with their roles. (In, Required)</param>
+            <param name="in_field_map">The mapping of reference data fields used by the address locator style to fields in the reference datasets. Each field mapping in this parameter is in the format: (In, Required)</param>
+            <param name="out_address_locator">The address locator to create. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.in_address_locator_style">
+            <summary>The address locator style on which to base the new address locator. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.in_reference_data">
+            <summary>The reference data feature classes and tables to be used by the address locator, along with their roles. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.in_field_map">
+            <summary>The mapping of reference data fields used by the address locator style to fields in the reference datasets. Each field mapping in this parameter is in the format: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.out_address_locator">
+            <summary>The address locator to create. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.config_keyword">
+            <summary>The configuration keyword that determines the storage parameters of the table in a Relational Database Management System (RDBMS)â€”ArcSDE and file geodatabases only. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.CreateAddressLocator.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses">
+            <summary>Geocodes a table of addresses.  This process requires a table that stores the addresses you want to geocode and an address locator or a composite address locator. This  tool matches the addresses against the address locator and saves the result for each input record  in a new point feature class.  </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.#ctor(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_table">The table of addresses to geocode. (In, Required)</param>
+            <param name="address_locator">The address locator to use to geocode the table of addresses. (In, Required)</param>
+            <param name="in_address_fields">The mapping of address fields used by the address locator to fields in the input table of addresses.  (In, Required)</param>
+            <param name="out_feature_class">The output geocoded feature class or shapefile. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.in_table">
+            <summary>The table of addresses to geocode. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.address_locator">
+            <summary>The address locator to use to geocode the table of addresses. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.in_address_fields">
+            <summary>The mapping of address fields used by the address locator to fields in the input table of addresses.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.out_feature_class">
+            <summary>The output geocoded feature class or shapefile. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.out_relationship_type">
+            <summary>Indicates whether to create a static copy of the address table inside the geocoded feature class or to create a dynamically updated geocoded feature class.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.GeocodeAddresses.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeocodingTools.RebuildAddressLocator">
+             <summary>Rebuilds an address locator to update the locator with the current reference data. Since an address locator contains a snapshot of the reference data when it was created, it will not geocode addresses against the updated data  when the geometry and attributes of the reference data are changed.  To geocode addresses against the current version of the
+            reference data, the address locator must be rebuilt if you want to
+            update the changes in the locator.
+            </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeocodingTools.RebuildAddressLocator.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_address_locator">The address locator to rebuild. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RebuildAddressLocator.in_address_locator">
+            <summary>The address locator to rebuild. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RebuildAddressLocator.out_address_locator">
+            <summary>Output Address Locator (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RebuildAddressLocator.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RebuildAddressLocator.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RebuildAddressLocator.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RebuildAddressLocator.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RebuildAddressLocator.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeocodingTools.RematchAddresses">
+            <summary>Rematches addresses in a geocoded feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeocodingTools.RematchAddresses.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_geocoded_feature_class">The geocoded feature class you want to rematch. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RematchAddresses.in_geocoded_feature_class">
+            <summary>The geocoded feature class you want to rematch. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RematchAddresses.in_where_clause">
+            <summary>An SQL expression used to select a subset of features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RematchAddresses.out_geocoded_feature_class">
+            <summary>Output Feature Class (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RematchAddresses.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RematchAddresses.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RematchAddresses.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RematchAddresses.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.RematchAddresses.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses">
+            <summary>Standardizes the address information in a table or feature class.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_address_data">The table or feature class containing address information that you want to standardize. (In, Required)</param>
+            <param name="in_input_address_fields">The set of fields in the input table or feature class that, when concatenated, forms the address to be standardized. (In, Required)</param>
+            <param name="in_address_locator_style">The address locator style to use to standardize the address information in the input table or feature class. (In, Required)</param>
+            <param name="in_output_address_fields">The set of standardized address fields to include in the output table or feature class. (In, Required)</param>
+            <param name="out_address_data">The output table or feature class to create containing the standardized address fields. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.in_address_data">
+            <summary>The table or feature class containing address information that you want to standardize. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.in_input_address_fields">
+            <summary>The set of fields in the input table or feature class that, when concatenated, forms the address to be standardized. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.in_address_locator_style">
+            <summary>The address locator style to use to standardize the address information in the input table or feature class. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.in_output_address_fields">
+            <summary>The set of standardized address fields to include in the output table or feature class. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.out_address_data">
+            <summary>The output table or feature class to create containing the standardized address fields. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.in_relationship_type">
+            <summary>Indicates whether to create a static or dynamic output dataset.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.StandardizeAddresses.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeocodingTools.ReverseGeocode">
+            <summary> Creates addresses from point locations in a feature class. The reverse geocoding process searches for the nearest address or intersection for the point location based on the specified search distance.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.#ctor(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">A point feature class or layer from which addresses are returned based on the features' point location. (In, Required)</param>
+            <param name="in_address_locator"> The address locator to use to reverse geocode the input feature class.  (In, Required)</param>
+            <param name="out_feature_class"> The output feature class.  (Out, Required)</param>
+            <param name="search_distance"> The distance used to search for the nearest address or intersection for the point location.  (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.in_features">
+            <summary>A point feature class or layer from which addresses are returned based on the features' point location. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.in_address_locator">
+            <summary> The address locator to use to reverse geocode the input feature class.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.out_feature_class">
+            <summary> The output feature class.  (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.address_type">
+            <summary> Indicates whether to return addresses for the points as street addresses or intersection addresses if the address locator supports intersection matching.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.search_distance">
+            <summary> The distance used to search for the nearest address or intersection for the point location.  (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeocodingTools.ReverseGeocode.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

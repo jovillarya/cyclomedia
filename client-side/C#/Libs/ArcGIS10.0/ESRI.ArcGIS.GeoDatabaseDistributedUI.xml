@@ -1,0 +1,3098 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.GeoDatabaseDistributedUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIProperties">
+      <summary>Provides access to members that return the check-in wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIProperties.CICheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIProperties.CIChildDeltaFile">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIProperties.CIChildSourceType">
+      <summary>The source of the data to check in from.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIProperties.CIChildWorkspaceName">
+      <summary>The WorkspaceName of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIProperties.CIParentWorkspaceName">
+      <summary>The WorkspaceName of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIProperties.CIPostCheckInOption">
+      <summary>The post check-in option.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit">
+      <summary>Provides access to members that set the check-in wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CICheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIChildDeltaFile">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIChildSourceType">
+      <summary>The source of the data to check in from.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIChildWorkspaceName">
+      <summary>The WorkspaceName of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIParentWorkspaceName">
+      <summary>The WorkspaceName of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIPostCheckInOption">
+      <summary>The post check-in option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CICheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIChildDeltaFile">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIChildSourceType">
+      <summary>The source of the data to check in from.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIChildWorkspaceName">
+      <summary>The WorkspaceName of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIParentWorkspaceName">
+      <summary>The WorkspaceName of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckInUIPropertiesEdit.CIPostCheckInOption">
+      <summary>The post check-in option.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUI">
+      <summary>Provides access to members that reset the check-out wizard properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUI.ResetProperties">
+      <summary>Resets the properties of the check out wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUI2">
+      <summary>Provides access to members that reset the check-out wizard properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUI2.RefreshReplicaDescription">
+      <summary>Refresh the replica description.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUI2.ResetProperties">
+      <summary>Resets the properties of the check out wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties">
+      <summary>Provides access to members that return the check-out wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COCurrentExtent">
+      <summary>The current view extent of the ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.CODescription">
+      <summary>The data and filters that define a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COName">
+      <summary>The name of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COPostCheckOutOption">
+      <summary>The post check-out options for a ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COQueryGeometry">
+      <summary>The spatial extent of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.CORelatedObjects">
+      <summary>Indicates if a check out will include related data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COReuseSchema">
+      <summary>Indicates if the schema in a check-out geodatabase is to be re-used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COSchemaOnly">
+      <summary>Indicates if a check-out will be schema-only.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COSourceData">
+      <summary>The datasetnames in the master geodatabase to check out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COSourceWorkspace">
+      <summary>The Workspace of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COSpatialConstraint">
+      <summary>The type of spatial constraint for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COSpatialRelation">
+      <summary>The spatial filter for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties.COWorkspaceName">
+      <summary>The WorkspaceName of a check-out geodatabase.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit">
+      <summary>Provides access to members that set the check-out wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COCurrentExtent">
+      <summary>The current view extent of the ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.CODescription">
+      <summary>The data and filters that define a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COName">
+      <summary>The name of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COPostCheckOutOption">
+      <summary>The post check-out options for a ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COQueryGeometry">
+      <summary>The spatial extent of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.CORelatedObjects">
+      <summary>Indicates if a check-out will include related data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COReuseSchema">
+      <summary>Indicates if the schema in a check-out geodatabase is to be re-used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSchemaOnly">
+      <summary>Indicates if a check-out will be schema-only.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSourceData">
+      <summary>The datasetnames in the master geodatabase to check out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSourceWorkspace">
+      <summary>The Workspace of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSpatialConstraint">
+      <summary>The type of spatial constraint for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSpatialRelation">
+      <summary>The spatial filter for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COWorkspaceName">
+      <summary>The WorkspaceName of a check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COCurrentExtent">
+      <summary>The current view extent of the ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.CODescription">
+      <summary>The data and filters that define a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COName">
+      <summary>The name of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COPostCheckOutOption">
+      <summary>The post check-out options for a ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COQueryGeometry">
+      <summary>The spatial extent of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.CORelatedObjects">
+      <summary>Indicates if a check out will include related data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COReuseSchema">
+      <summary>Indicates if the schema in a check-out geodatabase is to be re-used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSchemaOnly">
+      <summary>Indicates if a check-out will be schema-only.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSourceData">
+      <summary>The datasetnames in the master geodatabase to check out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSourceWorkspace">
+      <summary>The Workspace of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSpatialConstraint">
+      <summary>The type of spatial constraint for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COSpatialRelation">
+      <summary>The spatial filter for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit.COWorkspaceName">
+      <summary>The WorkspaceName of a check-out geodatabase.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2">
+      <summary>Provides access to members that return the check-out wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COServerName">
+      <summary>The destination server name object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSourceServer">
+      <summary>The server of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COXmlFile">
+      <summary>The output xml file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COCurrentExtent">
+      <summary>The current view extent of the ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.CODescription">
+      <summary>The data and filters that define a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COName">
+      <summary>The name of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COPostCheckOutOption">
+      <summary>The post check-out options for a ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COQueryGeometry">
+      <summary>The spatial extent of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.CORelatedObjects">
+      <summary>Indicates if a check-out will include related data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COReuseSchema">
+      <summary>Indicates if the schema in a check-out geodatabase is to be re-used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSchemaOnly">
+      <summary>Indicates if a check-out will be schema-only.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSourceData">
+      <summary>The datasetnames in the master geodatabase to check out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSourceWorkspace">
+      <summary>The Workspace of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSpatialConstraint">
+      <summary>The type of spatial constraint for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSpatialRelation">
+      <summary>The spatial filter for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COWorkspaceName">
+      <summary>The WorkspaceName of a check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COCurrentExtent">
+      <summary>The current view extent of the ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.CODescription">
+      <summary>The data and filters that define a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COName">
+      <summary>The name of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COPostCheckOutOption">
+      <summary>The post check-out options for a ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COQueryGeometry">
+      <summary>The spatial extent of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.CORelatedObjects">
+      <summary>Indicates if a check out will include related data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COReuseSchema">
+      <summary>Indicates if the schema in a check-out geodatabase is to be re-used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSchemaOnly">
+      <summary>Indicates if a check-out will be schema-only.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSourceData">
+      <summary>The datasetnames in the master geodatabase to check out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSourceWorkspace">
+      <summary>The Workspace of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSpatialConstraint">
+      <summary>The type of spatial constraint for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COSpatialRelation">
+      <summary>The spatial filter for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIPropertiesEdit2.COWorkspaceName">
+      <summary>The WorkspaceName of a check-out geodatabase.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICommonWizardUI">
+      <summary>Provides access to members that control the display of wizard UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICommonWizardUI.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICommonWizardUI.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICustomCheckOutUI">
+      <summary>Provides access to members for extending the check-out UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ICustomCheckOutUI.OnCreate(ESRI.ArcGIS.GeoDatabaseDistributedUI.ICheckOutUIProperties)">
+      <summary>Initializes the custom check-out UI with default or custom check-out properties.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI">
+      <summary>Provides access to members that return the data changes wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI.DCCheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI.DCCheckOutWorkspaceName">
+      <summary>The WorkspaceName object of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI.DCDeltaFileName">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI.DCExportOption">
+      <summary>The type of data changes export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI.DCOverwriteIfExists">
+      <summary>Indicates whether to over-write an existing output delta file or not.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI2">
+      <summary>Provides access to members that return the data changes wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI2.ExportGenerationsOption">
+      <summary>The export generation option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI2.ReplicaGeodatabase">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI2.SwitchToDataReceiver">
+      <summary>Switch to being a data receiver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI2.DCCheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI2.DCCheckOutWorkspaceName">
+      <summary>The WorkspaceName object of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI2.DCDeltaFileName">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI2.DCExportOption">
+      <summary>The type of data changes export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataChangesUI2.DCOverwriteIfExists">
+      <summary>Indicates whether to over-write an existing output delta file or not.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI">
+      <summary>Provides access to members that return the data extraction wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXCurrentExtent">
+      <summary>The current view extent of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXDescription">
+      <summary>The data and filters that define the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXOutputSpatialReference">
+      <summary>The output spatial reference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXPostExtractOption">
+      <summary>The post data extraction option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXQueryGeometry">
+      <summary>The spatial extent of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXRelatedObjects">
+      <summary>Indicates if related objects are include in the extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXReuseSchema">
+      <summary>Indicates if an existing schema will be reused for the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXSchemaOnly">
+      <summary>Indicates if a schema-only extraction is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXSourceData">
+      <summary>The datasetnames in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXSourceWorkspace">
+      <summary>The Workspace of a source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXSpatialConstraint">
+      <summary>The type of spatial constraint used for a data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXSpatialRelation">
+      <summary>The spatial filter of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUI.EXWorkspaceName">
+      <summary>The WorkspaceName of the destination workspace.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit">
+      <summary>Provides access to members that set the data extraction wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXCurrentExtent">
+      <summary>The current view extent of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXDescription">
+      <summary>The data and filters that define the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXOutputSpatialReference">
+      <summary>The output spatial reference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXPostExtractOption">
+      <summary>The post data extraction option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXQueryGeometry">
+      <summary>The spatial extent of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXRelatedObjects">
+      <summary>Indicates if related objects are include in the extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXReuseSchema">
+      <summary>Indicates if an existing schema will be reused for the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSchemaOnly">
+      <summary>Indicates if a schema-only extraction is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSourceData">
+      <summary>The datasetnames in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSourceWorkspace">
+      <summary>The Workspace of a source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSpatialConstraint">
+      <summary>The type of spatial constraint used for a data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSpatialRelation">
+      <summary>The spatial filter of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXWorkspaceName">
+      <summary>The WorkspaceName of the destination workspace.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.ResetProperties">
+      <summary>Resets the data extraction wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXCurrentExtent">
+      <summary>The current view extent of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXDescription">
+      <summary>The data and filters that define the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXOutputSpatialReference">
+      <summary>The output spatial reference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXPostExtractOption">
+      <summary>The post data extraction option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXQueryGeometry">
+      <summary>The spatial extent of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXRelatedObjects">
+      <summary>Indicates if related objects are include in the extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXReuseSchema">
+      <summary>Indicates if an existing schema will be reused for the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSchemaOnly">
+      <summary>Indicates if a schema-only extraction is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSourceData">
+      <summary>The datasetnames in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSourceWorkspace">
+      <summary>The Workspace of a source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSpatialConstraint">
+      <summary>The type of spatial constraint used for a data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXSpatialRelation">
+      <summary>The spatial filter of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDataExtractionUIEdit.EXWorkspaceName">
+      <summary>The WorkspaceName of the destination workspace.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDisconnectedEditingUI">
+      <summary>Provides access to members that control the display of the check-out and data extraction wizards.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDisconnectedEditingUI.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IDisconnectedEditingUI.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IEnumReplicaServer">
+      <summary>Provides access to the list of the GeoDataServer in the map.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IEnumReplicaServer.Next">
+      <summary>The next replicated server in the map.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IEnumReplicaServer.Reset">
+      <summary>Resets iterator to first GeoDataServer in the set.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IEnumReplicaWorkspace">
+      <summary>Provides access to the list of the workspaces in the map.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IEnumReplicaWorkspace.Next">
+      <summary>The next replicated workspace in the map.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IEnumReplicaWorkspace.Reset">
+      <summary>Resets iterator to first workspace in the set.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IEnumStandaloneTable">
+      <summary>Provides access to the StandaloneTables of the replication extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IEnumStandaloneTable.Next">
+      <summary>The next StandaloneTable.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IEnumStandaloneTable.Reset">
+      <summary>Resets iterator to first standalone table in the set.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IExportAcknowledgmentUI">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IExportAcknowledgmentUI.AcknowledgmentFileName">
+      <summary>The name of the output acknowlegment file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IExportAcknowledgmentUI.OverwriteIfExists">
+      <summary>Indicates whether to over-write an existing acknowledgment file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IExportAcknowledgmentUI.ReplicaGeodatabase">
+      <summary>The Name object (workspace name or AGSServerObjectName) of the replica geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IExportAcknowledgmentUI.ReplicaName">
+      <summary>The name of the replica.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IImportDataChangesUI">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IImportDataChangesUI.DeltaFileName">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IImportDataChangesUI.ImportOption">
+      <summary>The type of data changes to import.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IImportDataChangesUI.ReconcileWithParent">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IImportDataChangesUI.ReplicaGeodatabase">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IProtectNameGeoDatabaseDistributedUI">
+      <summary>Provides access to dummy methods protecting name correctness.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IProtectNameGeoDatabaseDistributedUI.ProtectOLE_COLOR(System.Int32)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IProtectNameGeoDatabaseDistributedUI.ProtectOLE_HANDLE(System.Int32)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReExportDataChangesUI">
+      <summary>Provides access to members that re-export the data changes wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReExportDataChangesUI.ReExportGenerationsOption">
+      <summary>Re-Export generation option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReExportDataChangesUI.ReplicaGeodatabase">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReExportDataChangesUI.DCCheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReExportDataChangesUI.DCCheckOutWorkspaceName">
+      <summary>The WorkspaceName object of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReExportDataChangesUI.DCDeltaFileName">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReExportDataChangesUI.DCExportOption">
+      <summary>The type of data changes export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReExportDataChangesUI.DCOverwriteIfExists">
+      <summary>Indicates whether to over-write an existing output delta file or not.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaManager">
+      <summary>Provides access to members that control the replica management dialog for master geodatabase.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaManager.DoModal(ESRI.ArcGIS.Geodatabase.IWorkspaceReplicasAdmin,System.Int32,System.Int32)">
+      <summary>Displays the dialog used to manage checkouts for a checkouts parent geodatabase.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaExportUI">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaExportUI.ExportSchemaType">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaExportUI.OutputFileName">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaExportUI.OverwriteFileIfExists">
+      <summary>Indicates whether to over-write an existing output xml file or not.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaExportUI.ReplicaName">
+      <summary>The name of the replica.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaExportUI.SchemaDestinationName">
+      <summary>The Name object of the replica geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaExportUI.SchemaSourceFileName">
+      <summary>The path of the replica xml schema file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaExportUI.SchemaSourceName">
+      <summary>The Name object of the replica geodatabase.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaImportUI">
+      <summary>Provides access to members that return the import schema changes wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaImportUI.DestinationName">
+      <summary>The destination object that will receive the schema changes.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaImportUI.InitFromXmlFile(System.String)">
+      <summary>The name of the xml file that contains the schema changes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaSchemaImportUI.SchemaChanges">
+      <summary>The list of the schema changes.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLExportUI">
+      <summary>Provides access to members that control the display of XML export UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLExportUI.Description">
+      <summary>The data and filters that define the export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLExportUI.ExportBinary">
+      <summary>Indicates whether binary export is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLExportUI.ExportMetadata">
+      <summary>Indicates whether Meta data export is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLExportUI.OutputXMLFile">
+      <summary>The output XML file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLExportUI.SchemaOnly">
+      <summary>Indicates whether schema-only is required from source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLExportUI.SourceData">
+      <summary>The dataset names in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLExportUI.XMLExportType">
+      <summary>The XML export file type.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLImportUI">
+      <summary>Provides access to members that control the display of XML import UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLImportUI.EnumNameMapping">
+      <summary>Provides access to members that control name mapping.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLImportUI.SchemaOnly">
+      <summary>Indicates whether schema-only is required from XML source.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLImportUI.SourceXMLFile">
+      <summary>The name of the source XML file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLImportUI.TargetWorkspace">
+      <summary>The dataset names in the source geodatabase.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLRecordsetLoaderUI">
+      <summary>Provides access to members that control the display of XML recordsetloader UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLRecordsetLoaderUI.InputFields">
+      <summary>Provides access to members that control the InputFields in IFields.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLRecordsetLoaderUI.OutputFields">
+      <summary>Provides access to member that control the OutputFields in IFields.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLRecordsetLoaderUI.SourceXMLFile">
+      <summary>The name of the source XML file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.IXMLRecordsetLoaderUI.TargetTable">
+      <summary>Provides access to members that control the TargetTable in ITableName.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUI">
+      <summary>The check in wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass">
+      <summary>The check in wizard.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.CICheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIProperties_CICheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The check in wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The check in wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.#ctor">
+      <summary>The check in wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.CIChildDeltaFile">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIProperties_CIChildDeltaFile">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.CIChildSourceType">
+      <summary>The source of the data to check in from.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIProperties_CIChildSourceType">
+      <summary>The source of the data to check in from.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.CIChildWorkspaceName">
+      <summary>The WorkspaceName of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIProperties_CIChildWorkspaceName">
+      <summary>The WorkspaceName of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.CIParentWorkspaceName">
+      <summary>The WorkspaceName of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIProperties_CIParentWorkspaceName">
+      <summary>The WorkspaceName of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.CIPostCheckInOption">
+      <summary>The post check-in option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIProperties_CIPostCheckInOption">
+      <summary>The post check-in option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIPropertiesEdit_CICheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIPropertiesEdit_CIChildDeltaFile">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIPropertiesEdit_CIChildSourceType">
+      <summary>The source of the data to check in from.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIPropertiesEdit_CIChildWorkspaceName">
+      <summary>The WorkspaceName of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIPropertiesEdit_CIParentWorkspaceName">
+      <summary>The WorkspaceName of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.ICheckInUIPropertiesEdit_CIPostCheckInOption">
+      <summary>The post check-in option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckInUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUI">
+      <summary>The check out wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass">
+      <summary>The check out wizard.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ResetProperties">
+      <summary>Resets the properties of the check out wizard.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUI_ResetProperties">
+      <summary>Resets the properties of the check out wizard.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The check out wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The check out wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.#ctor">
+      <summary>The check out wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.RefreshReplicaDescription">
+      <summary>Refresh the replica description.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUI2_RefreshReplicaDescription">
+      <summary>Refresh the replica description.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUI2_ResetProperties">
+      <summary>Resets the properties of the check out wizard.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COCurrentExtent">
+      <summary>The current view extent of the ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COCurrentExtent">
+      <summary>The current view extent of the ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.CODescription">
+      <summary>The data and filters that define a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_CODescription">
+      <summary>The data and filters that define a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COName">
+      <summary>The name of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COName">
+      <summary>The name of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COPostCheckOutOption">
+      <summary>The post check-out options for a ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COPostCheckOutOption">
+      <summary>The post check-out options for a ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COQueryGeometry">
+      <summary>The spatial extent of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COQueryGeometry">
+      <summary>The spatial extent of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.CORelatedObjects">
+      <summary>Indicates if a check out will include related data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_CORelatedObjects">
+      <summary>Indicates if a check out will include related data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COReuseSchema">
+      <summary>Indicates if the schema in a check-out geodatabase is to be re-used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COReuseSchema">
+      <summary>Indicates if the schema in a check-out geodatabase is to be re-used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COSchemaOnly">
+      <summary>Indicates if a check-out will be schema-only.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COSchemaOnly">
+      <summary>Indicates if a check-out will be schema-only.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COSourceData">
+      <summary>The datasetnames in the master geodatabase to check out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COSourceData">
+      <summary>The datasetnames in the master geodatabase to check out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COSourceWorkspace">
+      <summary>The Workspace of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COSourceWorkspace">
+      <summary>The Workspace of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COSpatialConstraint">
+      <summary>The type of spatial constraint for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COSpatialConstraint">
+      <summary>The type of spatial constraint for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COSpatialRelation">
+      <summary>The spatial filter for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COSpatialRelation">
+      <summary>The spatial filter for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COWorkspaceName">
+      <summary>The WorkspaceName of a check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIProperties_COWorkspaceName">
+      <summary>The WorkspaceName of a check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COCurrentExtent">
+      <summary>The current view extent of the ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_CODescription">
+      <summary>The data and filters that define a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COName">
+      <summary>The name of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COPostCheckOutOption">
+      <summary>The post check-out options for a ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COQueryGeometry">
+      <summary>The spatial extent of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_CORelatedObjects">
+      <summary>Indicates if a check-out will include related data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COReuseSchema">
+      <summary>Indicates if the schema in a check-out geodatabase is to be re-used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COSchemaOnly">
+      <summary>Indicates if a check-out will be schema-only.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COSourceData">
+      <summary>The datasetnames in the master geodatabase to check out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COSourceWorkspace">
+      <summary>The Workspace of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COSpatialConstraint">
+      <summary>The type of spatial constraint for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COSpatialRelation">
+      <summary>The spatial filter for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit_COWorkspaceName">
+      <summary>The WorkspaceName of a check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COServerName">
+      <summary>The destination server name object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COServerName">
+      <summary>The destination server name object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COSourceServer">
+      <summary>The server of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COSourceServer">
+      <summary>The server of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.COXmlFile">
+      <summary>The output xml file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COXmlFile">
+      <summary>The output xml file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COCurrentExtent">
+      <summary>The current view extent of the ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_CODescription">
+      <summary>The data and filters that define a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COName">
+      <summary>The name of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COPostCheckOutOption">
+      <summary>The post check-out options for a ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COQueryGeometry">
+      <summary>The spatial extent of a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_CORelatedObjects">
+      <summary>Indicates if a check-out will include related data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COReuseSchema">
+      <summary>Indicates if the schema in a check-out geodatabase is to be re-used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COSchemaOnly">
+      <summary>Indicates if a check-out will be schema-only.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COSourceData">
+      <summary>The datasetnames in the master geodatabase to check out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COSourceWorkspace">
+      <summary>The Workspace of the master geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COSpatialConstraint">
+      <summary>The type of spatial constraint for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COSpatialRelation">
+      <summary>The spatial filter for a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.ICheckOutUIPropertiesEdit2_COWorkspaceName">
+      <summary>The WorkspaceName of a check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CheckOutUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.CreateReplicaUI">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.CreateReplicaUIClass">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CreateReplicaUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.CreateReplicaUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CreateReplicaUIClass.#ctor">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CreateReplicaUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.CreateReplicaUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUI">
+      <summary>The export data changes wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass">
+      <summary>The export data changes wizard.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.DCCheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI_DCCheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The export data changes wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The export data changes wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.#ctor">
+      <summary>The export data changes wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.DCCheckOutWorkspaceName">
+      <summary>The WorkspaceName object of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI_DCCheckOutWorkspaceName">
+      <summary>The WorkspaceName object of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.DCDeltaFileName">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI_DCDeltaFileName">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.DCExportOption">
+      <summary>The type of data changes export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI_DCExportOption">
+      <summary>The type of data changes export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.DCOverwriteIfExists">
+      <summary>Indicates whether to over-write an existing output delta file or not.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI_DCOverwriteIfExists">
+      <summary>Indicates whether to over-write an existing output delta file or not.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.ExportGenerationsOption">
+      <summary>The export generation option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI2_ExportGenerationsOption">
+      <summary>The export generation option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.ReplicaGeodatabase">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI2_ReplicaGeodatabase">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.SwitchToDataReceiver">
+      <summary>Switch to being a data receiver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI2_SwitchToDataReceiver">
+      <summary>Switch to being a data receiver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI2_DCCheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI2_DCCheckOutWorkspaceName">
+      <summary>The WorkspaceName object of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI2_DCDeltaFileName">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI2_DCExportOption">
+      <summary>The type of data changes export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDataChangesUI2_DCOverwriteIfExists">
+      <summary>Indicates whether to over-write an existing output delta file or not.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataChangesUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUI">
+      <summary>The data extraction wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass">
+      <summary>The data extraction wizard.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXCurrentExtent">
+      <summary>The current view extent of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXCurrentExtent">
+      <summary>The current view extent of an ArcMap document.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The data extraction wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The data extraction wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.#ctor">
+      <summary>The data extraction wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXDescription">
+      <summary>The data and filters that define the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXDescription">
+      <summary>The data and filters that define the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXOutputSpatialReference">
+      <summary>The output spatial reference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXOutputSpatialReference">
+      <summary>The output spatial reference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXPostExtractOption">
+      <summary>The post data extraction option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXPostExtractOption">
+      <summary>The post data extraction option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXQueryGeometry">
+      <summary>The spatial extent of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXQueryGeometry">
+      <summary>The spatial extent of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXRelatedObjects">
+      <summary>Indicates if related objects are include in the extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXRelatedObjects">
+      <summary>Indicates if related objects are include in the extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXReuseSchema">
+      <summary>Indicates if an existing schema will be reused for the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXReuseSchema">
+      <summary>Indicates if an existing schema will be reused for the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXSchemaOnly">
+      <summary>Indicates if a schema-only extraction is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXSchemaOnly">
+      <summary>Indicates if a schema-only extraction is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXSourceData">
+      <summary>The datasetnames in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXSourceData">
+      <summary>The datasetnames in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXSourceWorkspace">
+      <summary>The Workspace of a source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXSourceWorkspace">
+      <summary>The Workspace of a source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXSpatialConstraint">
+      <summary>The type of spatial constraint used for a data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXSpatialConstraint">
+      <summary>The type of spatial constraint used for a data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXSpatialRelation">
+      <summary>The spatial filter of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXSpatialRelation">
+      <summary>The spatial filter of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.EXWorkspaceName">
+      <summary>The WorkspaceName of the destination workspace.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUI_EXWorkspaceName">
+      <summary>The WorkspaceName of the destination workspace.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXCurrentExtent">
+      <summary>The current view extent of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXDescription">
+      <summary>The data and filters that define the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXMXDocumentLocation">
+      <summary>The path to and name of an ArcMap document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXOutputSpatialReference">
+      <summary>The output spatial reference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXPostExtractOption">
+      <summary>The post data extraction option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXQueryGeometry">
+      <summary>The spatial extent of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXRelatedObjects">
+      <summary>Indicates if related objects are include in the extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXReuseSchema">
+      <summary>Indicates if an existing schema will be reused for the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXSchemaOnly">
+      <summary>Indicates if a schema-only extraction is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXSelectedGraphic">
+      <summary>The currently selected graphic.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXSourceData">
+      <summary>The datasetnames in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXSourceWorkspace">
+      <summary>The Workspace of a source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXSpatialConstraint">
+      <summary>The type of spatial constraint used for a data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXSpatialRelation">
+      <summary>The spatial filter of the data extraction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_EXWorkspaceName">
+      <summary>The WorkspaceName of the destination workspace.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.ResetProperties">
+      <summary>Resets the data extraction wizard properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDataExtractionUIEdit_ResetProperties">
+      <summary>Resets the data extraction wizard properties.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.DataExtractionUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressor">
+      <summary>Progressor that implements disconnected editing event interfaces.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass">
+      <summary>Progressor that implements disconnected editing event interfaces.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.FeatureClassName">
+      <summary>Input feature class name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IFeatureProgress_FeatureClassName">
+      <summary>Input feature class name.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>Progressor that implements disconnected editing event interfaces. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>Progressor that implements disconnected editing event interfaces. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.#ctor">
+      <summary>Progressor that implements disconnected editing event interfaces. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IsCancelled">
+      <summary>Indicates whether the cancel button is pressed.  The data conversion will be cancelled if the user press the cancel button.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IFeatureProgress_IsCancelled">
+      <summary>Indicates whether the cancel button is pressed.  The data conversion will be cancelled if the user press the cancel button.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.MaxFeatures">
+      <summary>Maximum number of features/rows in the input object class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IFeatureProgress_MaxFeatures">
+      <summary>Maximum number of features/rows in the input object class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.MinFeatures">
+      <summary>Minimum number of features/rows in the input objectclass.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IFeatureProgress_MinFeatures">
+      <summary>Minimum number of features/rows in the input objectclass.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.Position">
+      <summary>Current feature/row that currently converted by the converter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IFeatureProgress_Position">
+      <summary>Current feature/row that currently converted by the converter.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.Step">
+      <summary>Step the progressor interval.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IFeatureProgress_Step">
+      <summary>Step the progressor interval.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IFeatureProgress_Event_Step">
+      <summary>Step the progressor interval.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IFeatureProgress_Event.Step">
+      <summary>Step the progressor interval.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.IFeatureProgress_Event.Step">
+      <summary>Step the progressor interval.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IFeatureProgress_StepEventHandler">
+      <summary>Handles the IFeatureProgress_Event.Step Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IFeatureProgress_Event">
+      <summary>Provides access to members used to handle events from converting featureclass/table.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.StepValue">
+      <summary>Current position of conversion.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IFeatureProgress_StepValue">
+      <summary>Current position of conversion.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.CurrentOperation">
+      <summary>The current operation process.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IOperationProgress_CurrentOperation">
+      <summary>The current operation process.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.ObjectCount">
+      <summary>The number of objects in an operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IOperationProgress_ObjectCount">
+      <summary>The number of objects in an operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.Operations">
+      <summary>The number of operations to perform.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IOperationProgress_Operations">
+      <summary>The number of operations to perform.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.Startup">
+      <summary>Initiate the operation progress utility.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IOperationProgress_Startup">
+      <summary>Initiate the operation progress utility.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IOperationProgress_Event_Startup">
+      <summary>Initiate the operation progress utility.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IOperationProgress_Event.Startup">
+      <summary>Initiate the operation progress utility.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.IOperationProgress_Event.Startup">
+      <summary>Initiate the operation progress utility.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IOperationProgress_StartupEventHandler">
+      <summary>Handles the IOperationProgress_Event.Startup Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IOperationProgress_Event">
+      <summary>Provides access to members that monitor the progress of an operation such as exporting geodatabase to XML.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.CurrentReplicaOperation">
+      <summary>The current operation in a check-out process.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IReplicaProgress_CurrentReplicaOperation">
+      <summary>The current operation in a check-out process.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.ReplicaObjectCount">
+      <summary>The number of objects to check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IReplicaProgress_ReplicaObjectCount">
+      <summary>The number of objects to check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.ReplicaOperations">
+      <summary>The number of operations to perform in a check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IReplicaProgress_ReplicaOperations">
+      <summary>The number of operations to perform in a check-out.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IReplicaProgress_Startup">
+      <summary>Initiate the check-out progress utility.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IReplicaProgress_Event_Startup">
+      <summary>Initiate the check-out progress utility.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.DEProgressorClass.IReplicaProgress_Event.Startup">
+      <summary>Initiate the check-out progress utility.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaProgress_Event.Startup">
+      <summary>Initiate the check-out progress utility.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaProgress_StartupEventHandler">
+      <summary>Handles the IReplicaProgress_Event.Startup Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.IReplicaProgress_Event">
+      <summary>Provides access to members that monitor the progress of a check-out.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUI">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.#ctor">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.AcknowledgmentFileName">
+      <summary>The name of the output acknowlegment file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.IExportAcknowledgmentUI_AcknowledgmentFileName">
+      <summary>The name of the output acknowlegment file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.OverwriteIfExists">
+      <summary>Indicates whether to over-write an existing acknowledgment file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.IExportAcknowledgmentUI_OverwriteIfExists">
+      <summary>Indicates whether to over-write an existing acknowledgment file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.ReplicaGeodatabase">
+      <summary>The Name object (workspace name or AGSServerObjectName) of the replica geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.IExportAcknowledgmentUI_ReplicaGeodatabase">
+      <summary>The Name object (workspace name or AGSServerObjectName) of the replica geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.ReplicaName">
+      <summary>The name of the replica.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ExportAcknowledgmentUIClass.IExportAcknowledgmentUI_ReplicaName">
+      <summary>The name of the replica.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPage">
+      <summary>A dialog for setting the properties of a check-out.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass">
+      <summary>A dialog for setting the properties of a check-out.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>A dialog for setting the properties of a check-out. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>A dialog for setting the properties of a check-out. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.#ctor">
+      <summary>A dialog for setting the properties of a check-out. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IComPropertyPage2_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralCOPropertyPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPage">
+      <summary>The general geodatabase property page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass">
+      <summary>The general geodatabase property page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The general geodatabase property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The general geodatabase property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.#ctor">
+      <summary>The general geodatabase property page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IComPropertyPage2_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.GeneralGDBPropertyPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUI">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.#ctor">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.DeltaFileName">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.IImportDataChangesUI_DeltaFileName">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.ImportOption">
+      <summary>The type of data changes to import.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.IImportDataChangesUI_ImportOption">
+      <summary>The type of data changes to import.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.ReconcileWithParent">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.IImportDataChangesUI_ReconcileWithParent">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.ReplicaGeodatabase">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ImportDataChangesUIClass.IImportDataChangesUI_ReplicaGeodatabase">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUI">
+      <summary>The re-export data changes wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass">
+      <summary>The re-export data changes wizard.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.DCCheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IDataChangesUI_DCCheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The re-export data changes wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The re-export data changes wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.#ctor">
+      <summary>The re-export data changes wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.DCCheckOutWorkspaceName">
+      <summary>The WorkspaceName object of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IDataChangesUI_DCCheckOutWorkspaceName">
+      <summary>The WorkspaceName object of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.DCDeltaFileName">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IDataChangesUI_DCDeltaFileName">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.DCExportOption">
+      <summary>The type of data changes export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IDataChangesUI_DCExportOption">
+      <summary>The type of data changes export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.DCOverwriteIfExists">
+      <summary>Indicates whether to over-write an existing output delta file or not.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IDataChangesUI_DCOverwriteIfExists">
+      <summary>Indicates whether to over-write an existing output delta file or not.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.ReExportGenerationsOption">
+      <summary>Re-Export generation option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IReExportDataChangesUI_ReExportGenerationsOption">
+      <summary>Re-Export generation option.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.ReplicaGeodatabase">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IReExportDataChangesUI_ReplicaGeodatabase">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IReExportDataChangesUI_DCCheckOutName">
+      <summary>The name of the check-out.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IReExportDataChangesUI_DCCheckOutWorkspaceName">
+      <summary>The WorkspaceName object of the check-out geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IReExportDataChangesUI_DCDeltaFileName">
+      <summary>The name of the delta database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IReExportDataChangesUI_DCExportOption">
+      <summary>The type of data changes export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReExportDataChangesUIClass.IReExportDataChangesUI_DCOverwriteIfExists">
+      <summary>Indicates whether to over-write an existing output delta file or not.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPage">
+      <summary>A dialog for viewing the properties of a replica.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass">
+      <summary>A dialog for viewing the properties of a replica.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>A dialog for viewing the properties of a replica. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>A dialog for viewing the properties of a replica. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.#ctor">
+      <summary>A dialog for viewing the properties of a replica. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IComPropertyPage2_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaDescriptionPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaManager">
+      <summary>The master geodatabase check-out manager.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaManagerClass">
+      <summary>The master geodatabase check-out manager.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaManagerClass.DoModal(ESRI.ArcGIS.Geodatabase.IWorkspaceReplicasAdmin,System.Int32,System.Int32)">
+      <summary>Displays the dialog used to manage checkouts for a checkouts parent geodatabase.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaManagerClass.IReplicaManager_DoModal(ESRI.ArcGIS.Geodatabase.IWorkspaceReplicasAdmin,System.Int32,System.Int32)">
+      <summary>Displays the dialog used to manage checkouts for a checkouts parent geodatabase.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The master geodatabase check-out manager. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The master geodatabase check-out manager. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaManagerClass.#ctor">
+      <summary>The master geodatabase check-out manager. Constructor has no input arguments.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUI">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.#ctor">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.ExportSchemaType">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.IReplicaSchemaExportUI_ExportSchemaType">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.OutputFileName">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.IReplicaSchemaExportUI_OutputFileName">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.OverwriteFileIfExists">
+      <summary>Indicates whether to over-write an existing output xml file or not.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.IReplicaSchemaExportUI_OverwriteFileIfExists">
+      <summary>Indicates whether to over-write an existing output xml file or not.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.ReplicaName">
+      <summary>The name of the replica.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.IReplicaSchemaExportUI_ReplicaName">
+      <summary>The name of the replica.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.SchemaDestinationName">
+      <summary>The Name object of the replica geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.IReplicaSchemaExportUI_SchemaDestinationName">
+      <summary>The Name object of the replica geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.SchemaSourceFileName">
+      <summary>The path of the replica xml schema file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.IReplicaSchemaExportUI_SchemaSourceFileName">
+      <summary>The path of the replica xml schema file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.SchemaSourceName">
+      <summary>The Name object of the replica geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaExportUIClass.IReplicaSchemaExportUI_SchemaSourceName">
+      <summary>The Name object of the replica geodatabase.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUI">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.#ctor">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.DestinationName">
+      <summary>The destination object that will receive the schema changes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.IReplicaSchemaImportUI_DestinationName">
+      <summary>The destination object that will receive the schema changes.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.InitFromXmlFile(System.String)">
+      <summary>The name of the xml file that contains the schema changes.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.IReplicaSchemaImportUI_InitFromXmlFile(System.String)">
+      <summary>The name of the xml file that contains the schema changes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.SchemaChanges">
+      <summary>The list of the schema changes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.ReplicaSchemaImportUIClass.IReplicaSchemaImportUI_SchemaChanges">
+      <summary>The list of the schema changes.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePage">
+      <summary>A dialog for setting the properties of replica synchronization.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass">
+      <summary>A dialog for setting the properties of replica synchronization.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>A dialog for setting the properties of replica synchronization. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>A dialog for setting the properties of replica synchronization. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.#ctor">
+      <summary>A dialog for setting the properties of replica synchronization. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IComPropertyPage2_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizePageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizeReplicaUI">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizeReplicaUIClass">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizeReplicaUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizeReplicaUIClass.IDisconnectedEditingUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizeReplicaUIClass.#ctor">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizeReplicaUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.SynchronizeReplicaUIClass.IDisconnectedEditingUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUI">
+      <summary>The XML export wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass">
+      <summary>The XML export wizard.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.ICommonWizardUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The XML export wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The XML export wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.#ctor">
+      <summary>The XML export wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.ICommonWizardUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.Description">
+      <summary>The data and filters that define the export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.IXMLExportUI_Description">
+      <summary>The data and filters that define the export.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.ExportBinary">
+      <summary>Indicates whether binary export is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.IXMLExportUI_ExportBinary">
+      <summary>Indicates whether binary export is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.ExportMetadata">
+      <summary>Indicates whether Meta data export is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.IXMLExportUI_ExportMetadata">
+      <summary>Indicates whether Meta data export is required.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.OutputXMLFile">
+      <summary>The output XML file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.IXMLExportUI_OutputXMLFile">
+      <summary>The output XML file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.SchemaOnly">
+      <summary>Indicates whether schema-only is required from source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.IXMLExportUI_SchemaOnly">
+      <summary>Indicates whether schema-only is required from source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.SourceData">
+      <summary>The dataset names in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.IXMLExportUI_SourceData">
+      <summary>The dataset names in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.XMLExportType">
+      <summary>The XML export file type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLExportUIClass.IXMLExportUI_XMLExportType">
+      <summary>The XML export file type.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUI">
+      <summary>The XML import wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass">
+      <summary>The XML import wizard.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.ICommonWizardUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The XML import wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The XML import wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.#ctor">
+      <summary>The XML import wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.ICommonWizardUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.EnumNameMapping">
+      <summary>Provides access to members that control name mapping.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.IXMLImportUI_EnumNameMapping">
+      <summary>Provides access to members that control name mapping.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.SchemaOnly">
+      <summary>Indicates whether schema-only is required from XML source.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.IXMLImportUI_SchemaOnly">
+      <summary>Indicates whether schema-only is required from XML source.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.SourceXMLFile">
+      <summary>The name of the source XML file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.IXMLImportUI_SourceXMLFile">
+      <summary>The name of the source XML file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.TargetWorkspace">
+      <summary>The dataset names in the source geodatabase.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLImportUIClass.IXMLImportUI_TargetWorkspace">
+      <summary>The dataset names in the source geodatabase.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUI">
+      <summary>The XML recordsetloader wizard.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass">
+      <summary>The XML recordsetloader wizard.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.ICommonWizardUI_Application">
+      <summary>Application of the checkout command.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI..">
+      <summary>The XML recordsetloader wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoDatabaseDistributedUI.._">
+      <summary>The XML recordsetloader wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.#ctor">
+      <summary>The XML recordsetloader wizard. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.ICommonWizardUI_Show(System.Boolean,System.Int32)">
+      <summary>Show or hide the UI.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.InputFields">
+      <summary>Provides access to members that control the InputFields in IFields.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.IXMLRecordsetLoaderUI_InputFields">
+      <summary>Provides access to members that control the InputFields in IFields.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.OutputFields">
+      <summary>Provides access to member that control the OutputFields in IFields.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.IXMLRecordsetLoaderUI_OutputFields">
+      <summary>Provides access to member that control the OutputFields in IFields.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.SourceXMLFile">
+      <summary>The name of the source XML file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.IXMLRecordsetLoaderUI_SourceXMLFile">
+      <summary>The name of the source XML file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.TargetTable">
+      <summary>Provides access to members that control the TargetTable in ITableName.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoDatabaseDistributedUI.XMLRecordsetLoaderUIClass.IXMLRecordsetLoaderUI_TargetTable">
+      <summary>Provides access to members that control the TargetTable in ITableName.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriCOSpatialConstraint">
+      <summary>Spatial constraints options for extracting data.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriCOSpatialConstraint.esriSCDisplayExtent">
+      <summary>Check out by current display extent.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriCOSpatialConstraint.esriSCSelectedGraphic">
+      <summary>Check out by selected graphic extent.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriCOSpatialConstraint.esriSCDefinedExtent">
+      <summary>Check out by defined extent.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriCOSpatialConstraint.esriSCNotDefined">
+      <summary>No spatial constraint defined.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriExportSchemaType">
+      <summary>Export schema type.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriExportSchemaType.esriExportReplicaSchema">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriExportSchemaType.esriExportReplicaSchemaChanges">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriPostCheckInOption">
+      <summary>Post check in options.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriPostCheckInOption.esriPostCISwitchToCOVersion">
+      <summary>Switch to check out version.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriPostCheckInOption.esriPostCIReconcileWithParent">
+      <summary>Reconcile with parent version.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriPostCheckInOption.esriPostCIOptionNone">
+      <summary>No action.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriPostCheckOutOption">
+      <summary>Post check out options.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriPostCheckOutOption.esriMXDocumentChange">
+      <summary>Change existing document.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriPostCheckOutOption.esriMXDocumentCopy">
+      <summary>Create new check out document.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriPostCheckOutOption.esriMXDocumentNoChange">
+      <summary>No change.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriXMLExportType">
+      <summary>The XML export type.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriXMLExportType.esriXMLExportTypeRecordSet">
+      <summary>The XML export recordset type.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoDatabaseDistributedUI.esriXMLExportType.esriXMLExportTypeWorkspace">
+      <summary>The XML export workspace type.</summary>
+    </member>
+  </members>
+</doc>

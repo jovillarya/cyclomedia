@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.DataSourcesRasterUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection">
+      <summary>Provides access to members that control the RasterSDE connection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.Database">
+      <summary>The database name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.InputBitMaskName">
+      <summary>The input 1-bit raster dataset name to be used as mask.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.InputRasterName">
+      <summary>The input raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.Instance">
+      <summary>The server instance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.Password">
+      <summary>The password.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.SdeConnection">
+      <summary>The SDE Connection, set through GxDatabase object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.SdeRasterName">
+      <summary>The output raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.SdeWorkspaceName">
+      <summary>The SDE Connection, set through WorkspaceName object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.ServerName">
+      <summary>The server name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection.UserName">
+      <summary>The username.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2">
+      <summary>Provides access to members that control the RasterSDE connection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.Database">
+      <summary>The database name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.InputBitMaskName">
+      <summary>The input 1-bit raster dataset name to be used as mask.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.InputRasterName">
+      <summary>The input raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.Instance">
+      <summary>The server instance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.MaskRaster">
+      <summary>The input raster mask to be loaded to SDE.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.Password">
+      <summary>The password.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.Raster">
+      <summary>The input raster to be loaded to SDE.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.SdeConnection">
+      <summary>The SDE Connection, set through GxDatabase object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.SdeRasterName">
+      <summary>The output raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.SdeWorkspaceName">
+      <summary>The SDE Connection, set through WorkspaceName object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.ServerName">
+      <summary>The server name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.IRasterSdeConnection2.UserName">
+      <summary>The username.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlg">
+      <summary>A coclass to show a dialog that gets user inputs for raster dataset creation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass">
+      <summary>A coclass to show a dialog that gets user inputs for raster dataset creation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.Bands">
+      <summary>Number of bands of the raster dataset.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.ICreateRasterDatasetDlg_Bands">
+      <summary>Number of bands of the raster dataset.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.DataSourcesRasterUI..">
+      <summary>A coclass to show a dialog that gets user inputs for raster dataset creation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.DataSourcesRasterUI.._">
+      <summary>A coclass to show a dialog that gets user inputs for raster dataset creation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.#ctor">
+      <summary>A coclass to show a dialog that gets user inputs for raster dataset creation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.DoModal(System.Int32)">
+      <summary>Shows the raster dataset creation dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.ICreateRasterDatasetDlg_DoModal(System.Int32)">
+      <summary>Shows the raster dataset creation dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.Name">
+      <summary>The name of the raster dataset.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.ICreateRasterDatasetDlg_Name">
+      <summary>The name of the raster dataset.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.PixelType">
+      <summary>The pixel type of the raster dataset.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.ICreateRasterDatasetDlg_PixelType">
+      <summary>The pixel type of the raster dataset.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.RasterDef">
+      <summary>The definition of the raster dataset.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.ICreateRasterDatasetDlg_RasterDef">
+      <summary>The definition of the raster dataset.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.RasterStorageDef">
+      <summary>The definition of the raster dataset storage.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.ICreateRasterDatasetDlg_RasterStorageDef">
+      <summary>The definition of the raster dataset storage.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.SupportEnterprise">
+      <summary>Indicates whether the enterprise Geodatabase is supported.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.CreateRasterDatasetDlgClass.ICreateRasterDatasetDlg_SupportEnterprise">
+      <summary>Indicates whether the enterprise Geodatabase is supported.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoader">
+      <summary>A mechanism to control creation of SDE Raster datasets and load raster data.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass">
+      <summary>A mechanism to control creation of SDE Raster datasets and load raster data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Database">
+      <summary>The database name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_Database">
+      <summary>The database name.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.DataSourcesRasterUI..">
+      <summary>A mechanism to control creation of SDE Raster datasets and load raster data. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.DataSourcesRasterUI.._">
+      <summary>A mechanism to control creation of SDE Raster datasets and load raster data. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.#ctor">
+      <summary>A mechanism to control creation of SDE Raster datasets and load raster data. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.InputBitMaskName">
+      <summary>The input 1-bit raster dataset name to be used as mask.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_InputBitMaskName">
+      <summary>The input 1-bit raster dataset name to be used as mask.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.InputRasterName">
+      <summary>The input raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_InputRasterName">
+      <summary>The input raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Instance">
+      <summary>The server instance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_Instance">
+      <summary>The server instance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.MaskRaster">
+      <summary>The input raster mask to be loaded to SDE.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_MaskRaster">
+      <summary>The input raster mask to be loaded to SDE.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Password">
+      <summary>The password.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_Password">
+      <summary>The password.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Raster">
+      <summary>The input raster to be loaded to SDE.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_Raster">
+      <summary>The input raster to be loaded to SDE.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.SdeRasterName">
+      <summary>The output raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_SdeRasterName">
+      <summary>The output raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.SdeWorkspaceName">
+      <summary>The SDE Connection, set through WorkspaceName object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_SdeWorkspaceName">
+      <summary>The SDE Connection, set through WorkspaceName object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.ServerName">
+      <summary>The server name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_ServerName">
+      <summary>The server name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.UserName">
+      <summary>The username.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IBasicRasterSdeConnection_UserName">
+      <summary>The username.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.CatalogName">
+      <summary>The ArcSDE raster catalog name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeCatalog_CatalogName">
+      <summary>The ArcSDE raster catalog name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.RasterName">
+      <summary>The ArcSDE raster name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeCatalog_RasterName">
+      <summary>The ArcSDE raster name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.BuildPyramids">
+      <summary>Instructs Raster SDE Server to build pyramid layers based on the defined storage properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation_BuildPyramids">
+      <summary>Instructs Raster SDE Server to build pyramid layers based on the defined storage properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.ComputeStatistics">
+      <summary>Computes statistics on a raster SDE.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation_ComputeStatistics">
+      <summary>Computes statistics on a raster SDE.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Create">
+      <summary>Creates a raster dataset on an SDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation_Create">
+      <summary>Creates a raster dataset on an SDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Delete">
+      <summary>Deletes raster dataset from SDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation_Delete">
+      <summary>Deletes raster dataset from SDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Mosaic">
+      <summary>Instructs Raster SDE Server to mosaic data based on the defined storage properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation_Mosaic">
+      <summary>Instructs Raster SDE Server to mosaic data based on the defined storage properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Update">
+      <summary>Updates properties of raster dataset on SDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation_Update">
+      <summary>Updates properties of raster dataset on SDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation2_BuildPyramids">
+      <summary>Instructs Raster SDE Server to build pyramid layers based on the defined storage properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation2_ComputeStatistics">
+      <summary>Computes statistics on a raster SDE.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation2_Create">
+      <summary>Creates a raster dataset on an SDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation2_Delete">
+      <summary>Deletes raster dataset from SDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Insert">
+      <summary>Insert a raster into a raster catalog on an ArcSDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation2_Insert">
+      <summary>Insert a raster into a raster catalog on an ArcSDE server.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation2_Mosaic">
+      <summary>Instructs Raster SDE Server to mosaic data based on the defined storage properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeServerOperation2_Update">
+      <summary>Updates properties of raster dataset on SDE server.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.CompressionType">
+      <summary>The compression type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage_CompressionType">
+      <summary>The compression type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.Keyword">
+      <summary>The keyword.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage_Keyword">
+      <summary>The keyword.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.MosaicingTolerance">
+      <summary>The mosaicing tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage_MosaicingTolerance">
+      <summary>The mosaicing tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.PyramidOption">
+      <summary>The option for building pyramids.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage_PyramidOption">
+      <summary>The option for building pyramids.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.PyramidResampleType">
+      <summary>The resampling method.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage_PyramidResampleType">
+      <summary>The resampling method.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.SpatialReference">
+      <summary>The SpatialReference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage_SpatialReference">
+      <summary>The SpatialReference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.TileHeight">
+      <summary>The tile height.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage_TileHeight">
+      <summary>The tile height.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.TileWidth">
+      <summary>The tile width.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage_TileWidth">
+      <summary>The tile width.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.CompressionQuality">
+      <summary>The compression quality.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage2_CompressionQuality">
+      <summary>The compression quality.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage2_CompressionType">
+      <summary>The compression type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage2_Keyword">
+      <summary>The keyword.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage2_MosaicingTolerance">
+      <summary>The mosaicing tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage2_PyramidOption">
+      <summary>The option for building pyramids.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage2_PyramidResampleType">
+      <summary>The resampling method.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage2_SpatialReference">
+      <summary>The SpatialReference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage2_TileHeight">
+      <summary>The tile height.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeStorage2_TileWidth">
+      <summary>The tile width.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_Database">
+      <summary>The database name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_InputBitMaskName">
+      <summary>The input 1-bit raster dataset name to be used as mask.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_InputRasterName">
+      <summary>The input raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_Instance">
+      <summary>The server instance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_Password">
+      <summary>The password.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.SdeConnection">
+      <summary>The SDE Connection, set through GxDatabase object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_SdeConnection">
+      <summary>The SDE Connection, set through GxDatabase object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_SdeRasterName">
+      <summary>The output raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_SdeWorkspaceName">
+      <summary>The SDE Connection, set through WorkspaceName object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_ServerName">
+      <summary>The server name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection_UserName">
+      <summary>The username.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_Database">
+      <summary>The database name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_InputBitMaskName">
+      <summary>The input 1-bit raster dataset name to be used as mask.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_InputRasterName">
+      <summary>The input raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_Instance">
+      <summary>The server instance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_MaskRaster">
+      <summary>The input raster mask to be loaded to SDE.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_Password">
+      <summary>The password.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_Raster">
+      <summary>The input raster to be loaded to SDE.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_SdeConnection">
+      <summary>The SDE Connection, set through GxDatabase object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_SdeRasterName">
+      <summary>The output raster dataset name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_SdeWorkspaceName">
+      <summary>The SDE Connection, set through WorkspaceName object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_ServerName">
+      <summary>The server name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.IRasterSdeConnection2_UserName">
+      <summary>The username.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.DataSourcesRasterUI.RasterSdeLoaderClass.ISupportErrorInfo_InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+  </members>
+</doc>

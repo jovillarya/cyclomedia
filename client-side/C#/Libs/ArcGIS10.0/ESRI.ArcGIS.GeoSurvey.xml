@@ -1,0 +1,3026 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.GeoSurvey</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralAccuracies">
+      <summary>Provides access to accuracies</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAccuracies.Categories">
+      <summary>Retrieve Accuracy Category IDs.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralAccuracies.GetAccuracy(System.Int32)">
+      <summary>Get Accuracy by Category.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment">
+      <summary>ICadastralAdjustment Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.AcceptAdjustment">
+      <summary>Accept and apply results of adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.BearingTolerance">
+      <summary>Packet bearing tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ClosePointsTolerance">
+      <summary>Packet close points tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.DistanceTolerance">
+      <summary>Packet distance tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ForceLinePoints">
+      <summary>Indicates whether to force line points onto the lines during the adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ForceLinePointsTolerance">
+      <summary>Indicates the Force Line Points tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ForceStraights">
+      <summary>Indicates whether to Force straights.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ForceStraightsAngleTolerance">
+      <summary>Force straights Angle tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ForceStraightsTolerance">
+      <summary>Indicates the Force straights tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.IncludeEasements">
+      <summary>Indicates whether to include Esaements in the Adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.LinePointsTolerance">
+      <summary>Packet line points tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ListingCompanyName">
+      <summary>Changes the company name used for the adjustment listing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ListingDetailLevel">
+      <summary>The level of detail in the adjustment listing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ListingLinesPerPage">
+      <summary>The number of lines on each page in the adjustment listing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.ListingParcelId(System.Int32)">
+      <summary>Find parcel id associated with this listing line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.PerformAdjustment(System.Boolean,System.String,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,ESRI.ArcGIS.esriSystem.esriDirectionType,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits)">
+      <summary>Adjust packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment.RejectAdjustment">
+      <summary>Reject results of adjustment.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment2">
+      <summary>ICadastralAdjustment2 Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment2.ListingDatabaseIds">
+      <summary>Display the database Ids in the adjustment listing instead of point numbers.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment2.ListingPointId(System.Int32)">
+      <summary>Find point number associated with this listing line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralAdjustment2.MaxShiftData(System.Int32@,System.Double@,System.Double@)">
+      <summary>The point and amount of max shift in the adjustment.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralControlPoints">
+      <summary>ICadastralControlPoints Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralControlPoints.AddControlPoint(ESRI.ArcGIS.GeoSurvey.IGSControlPoint)">
+      <summary>Add a new control point to the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralControlPoints.CheckFit">
+      <summary>Check fit of control points to parcel network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralControlPoints.DeleteControlPoint(System.Int32)">
+      <summary>Packet distance tolerance.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralControlPoints.DeleteControlPointByName(System.String)">
+      <summary>Delete control point specified by name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralControlPoints.GetControlPointByName(System.String)">
+      <summary>Get Control Point by name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralControlPoints.GetControlPointByNetworkPointID(System.Int32)">
+      <summary>Get Control Point by point number.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralControlPoints.GetControlPoints(ESRI.ArcGIS.Geometry.IGeometry)">
+      <summary>Start a sequential fetch of control points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralControlPoints.LoadControlFile(System.String,System.Int32)">
+      <summary>Packet distance tolerance.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralExtension">
+      <summary>ICadastralExtension Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralExtension.BearingDisplayMode">
+      <summary>Bearing Display mode.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralExtension.CreatePacket">
+      <summary>Create Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralExtension.GetEditPacket">
+      <summary>Edit packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralExtension.GetJobPacket">
+      <summary>Job packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralExtension.GetRevision(System.Double@,System.String@)">
+      <summary>Extension Revision number and Name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralExtension.ReadXMLPacket(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>Read XML Packet.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralJoin">
+      <summary>ICadastralJoin Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.AutoJoin">
+      <summary>Automatically create Join Links.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.ComputeJoinResiduals(System.Double,System.Double@,System.Double@)">
+      <summary>Compute the transform of the Join Parcel to the network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.CreateJoinLink(System.Int32,System.Int32)">
+      <summary>Create a new Join Link from the parcel to the network. Returns the positional index of the record</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.CreateLinePointJoinLink(System.Boolean,System.Int32,System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@)">
+      <summary>Create a new Join Link from a point to a line point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.DeleteJoinLink(System.Int32)">
+      <summary>Delete a Join Link.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.FindJoinParcelLine(System.Double,System.Double,System.Double)">
+      <summary>Find a line on the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.FindJoinParcelPoint(System.Double,System.Double,System.Double)">
+      <summary>Find a node on the Join Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.FindNetworkJoinPoint(System.Double,System.Double,System.Double)">
+      <summary>Find a node on the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.FindNetworkLine(System.Double,System.Double,System.Double)">
+      <summary>Find a line on the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.GetJoinParcelCentroid(System.Double@,System.Double@)">
+      <summary>Get the join parcel centroid.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.GetJoinParcelPoint(System.Int32,System.Double@,System.Double@)">
+      <summary>Get a join parcel point co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.Join">
+      <summary>Join the parcel into the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.JoinLinkCount(System.Int32@,System.Int32@)">
+      <summary>Get number of join links.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.JoinLinkInfo(System.Int32,System.Int32@,System.Int32@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Get Info about a Join Link. The join link index specified is ordinal</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.MoveJoinParcel(System.Double,System.Double)">
+      <summary>Move the Join Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.NearJoinPoint(System.Double,System.Double,System.Double,System.Int32@,System.Int32@)">
+      <summary>Find a node on the Join Parcel or the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.RemoveJoinLink(System.Boolean,System.Int32)">
+      <summary>Remove a the Join Link from the parcel point to the network point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.StartJoining(System.Int32,System.Double,System.Double)">
+      <summary>Setup parcel for joining.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin.StopJoining">
+      <summary>Stop joining process.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralJoin2">
+      <summary>ICadastralJoin2 Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin2.JoinLinkInfoEx(System.Int32,ESRI.ArcGIS.GeoSurvey.enumGSJoinLinkIndexType,System.Int32@,System.Int32@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Get Info about a Join Link.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralJoin2.JoinRecordsCount">
+      <summary>Get the number of join records.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralJoin3">
+      <summary>ICadastralJoin3 Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin3.AutoJoin(System.Boolean)">
+      <summary>Join a parcel with joining parcel points fixed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin3.Join(System.Boolean)">
+      <summary>Join a parcel with joining parcel points fixed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralJoin3.LinePointTolerance">
+      <summary>Distance tolerance used when forming line points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin3.PutJoinParcelPoint(System.Int32,System.Double,System.Double)">
+      <summary>Put a join parcel point co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralJoin3.ResetJoin(System.Int32)">
+      <summary>Reset the join process.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralLinePoints">
+      <summary>Provides access to parcel line points</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralLinePoints.AddLinePoint(System.Int32,System.Int32,System.Int32)">
+      <summary>Add a line point to a packet parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralLinePoints.DeleteLinePoint(System.Int32)">
+      <summary>Delete unjoined parcels from the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralLinePoints.FindLinePoint(System.Int32,System.Int32@,System.Int32@)">
+      <summary>Find a line point line in the packet and return the line end points.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralLines">
+      <summary>ICadastralLines Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralLines.GetLines(ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.GeoSurvey.enumGSParcelType,System.Boolean)">
+      <summary>Get a Set of Parcels in packet.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralLines2">
+      <summary>ICadastralLines2 Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralLines2.ComputeCurveLinePoints">
+      <summary>Calculate Line Points on curved line segments for the packet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralLines2.CurveLinePoint(System.Int32,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+      <summary>Get a Curved line point by sequence number.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralPacket">
+      <summary>ICadastralPacket Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.AppendFile(System.String,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>Append XML File to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.Close">
+      <summary>Close the packet and discard all packet data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.CreateJoinSession(System.Int32)">
+      <summary>Create a Join Session.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.GeoSurveyFunctions">
+      <summary>Packet Functions Interface.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.OpenFile(System.String)">
+      <summary>Read XML File into Packet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.PacketChanged">
+      <summary>Indicates if the Packet data has changed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.ReadStream(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>Read XML Stream into Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.SaveFile(System.String)">
+      <summary>Save the packet to a file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.SaveStream(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>Save the packet to a stream.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacket.SpatialReference">
+      <summary>Packet Spatial Reference.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit">
+      <summary>ICadastralPacketEdit Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.CalcAllParcelCoords">
+      <summary>Compute the co-ordinates of all points in the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.CalcChordFromArcLength(System.String,ESRI.ArcGIS.GeoSurvey.IGSLine,ESRI.ArcGIS.GeoSurvey.IGSLine)">
+      <summary>Calculate chord from surounding lines.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.ConvertBearingToString(System.Double,System.Int32)">
+      <summary>Convert a bearing from radians to character string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.ConvertFeetInchesToDouble(System.String)">
+      <summary>Convert a feet and inches character string to a double precision value.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.ConvertStringToBearing(System.String)">
+      <summary>Convert a character string to a value in radians.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.DeleteUnusedPoints">
+      <summary>Delete any unused points in the job.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.RetrievePreviousLineInfo(System.Int32,System.Int32,System.Double@,System.Double@)">
+      <summary>Retrieve bearing and distance from a similar line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.SaveToMasterParcel">
+      <summary>Save Edit parcel to the job.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.SetupAppendParcelToEdit(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Append a new parcel to the group.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.SetupNewParcelToEdit(ESRI.ArcGIS.GeoSurvey.IGSPlan)">
+      <summary>Setup a new parcel for editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.SetupParcelToEdit(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Setup a parcel for editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.StartParcelEditing">
+      <summary>Start parcel editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit.StopParcelEditing">
+      <summary>Stop parcel editing.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit2">
+      <summary>ICadastralPacketEdit2 Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPacketEdit2.CalcAllParcelCoordsEx(System.Double,System.Double,System.Boolean)">
+      <summary>Compute the co-ordinates of all points in the packet, starting at initX, initY.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics">
+      <summary>ICadastralPacketStatistics Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics.LongestLineLength">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics.NumberCenterPoints">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics.NumberConnections">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics.NumberJoinedParcels">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics.NumberLinePoints">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics.NumberLines">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics.NumberParcels">
+      <summary>Display Historical parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics.NumberPoints">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.ICadastralPacketStatistics.ShortestLinelength">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralParcel">
+      <summary>ICadastralParcel Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralParcel.AddParcel(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Add a Parcel to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralParcel.DeleteParcel(System.Int32)">
+      <summary>Delete Parcel in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralParcel.DuplicateParcel(ESRI.ArcGIS.GeoSurvey.IGSParcel,System.String,System.String)">
+      <summary>Duplicate the Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralParcel.FindParcel(System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@)">
+      <summary>Find Parcel by ground co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralParcel.FindParcelLine(System.Double,System.Double,System.Double,System.Int32@,System.Int32@)">
+      <summary>Find Parcel Line by ground co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralParcel.GetParcel(System.Int32)">
+      <summary>Get Parcel data by Id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralParcel.GetParcels(ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.GeoSurvey.enumGSParcelType,System.Boolean)">
+      <summary>Get a Set of Parcels in packet.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralPlan">
+      <summary>ICadastralPlan Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPlan.AddPlan(ESRI.ArcGIS.GeoSurvey.IGSPlan)">
+      <summary>Add a Plan to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPlan.DeletePlan(System.Int32)">
+      <summary>Delete a Plan from the Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPlan.GetPlan(System.String)">
+      <summary>Search for a plan in the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPlan.GetPlans(ESRI.ArcGIS.GeoSurvey.enumGSPlansType)">
+      <summary>Fetch plans from the collection.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.ICadastralPoints">
+      <summary>ICadastralPoints Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPoints.AddPoint(ESRI.ArcGIS.GeoSurvey.IGSPoint)">
+      <summary>Add a Point to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPoints.DeletePoint(System.Int32)">
+      <summary>Delete Point in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPoints.FindPoint(System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@)">
+      <summary>Find Point by ground co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPoints.GetNextUnusedPointId(System.Int32,System.Int32@)">
+      <summary>Find the next unused point Id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPoints.GetPoint(System.Int32)">
+      <summary>Get Point by id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.ICadastralPoints.GetPoints(ESRI.ArcGIS.Geometry.IEnvelope,System.Boolean,ESRI.ArcGIS.GeoSurvey.IEnumGSPoints@)">
+      <summary>Get a Set of Points in packet.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IEnumGSControlPoints">
+      <summary>IEnumGSControlPoints Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSControlPoints.Next">
+      <summary>Get next point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSControlPoints.Reset">
+      <summary>Reset collection.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IEnumGSLinePoint">
+      <summary>IEnumGSLinePoint Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSLinePoint.Next">
+      <summary>Get next line on the parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSLinePoint.Reset">
+      <summary>Reset to first line on the parcel.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IEnumGSLines">
+      <summary>IEnumGSLines Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSLines.Next(ESRI.ArcGIS.GeoSurvey.IGSParcel@,ESRI.ArcGIS.GeoSurvey.IGSLine@)">
+      <summary>Get next line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSLines.Reset">
+      <summary>Reset collection.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IEnumGSParcels">
+      <summary>IEnumGSParcels Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSParcels.Next">
+      <summary>Get next parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSParcels.Reset">
+      <summary>Reset collection.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IEnumGSPlans">
+      <summary>IEnumGSPlans Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSPlans.Next">
+      <summary>Get next plan.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSPlans.Reset">
+      <summary>Reset collection.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IEnumGSPoints">
+      <summary>IEnumGSPoints Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSPoints.Next">
+      <summary>Get next point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IEnumGSPoints.Reset">
+      <summary>Reset collection.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions">
+      <summary>IGeoSurveyFunctions Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.DeleteDuplicateUnjoinedParcels">
+      <summary>Delete duplicate unjoined parcels from the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.DeleteUnjoinedParcels">
+      <summary>Delete unjoined parcels from the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.FormConnections(System.Int32,System.Int32)">
+      <summary>Add across road connections to parcels using these points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.GroundToSeaLevelFactor(System.Double@,System.Double,System.Double@)">
+      <summary>Find scale factor to Sea Level.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.MeanPoints(ESRI.ArcGIS.Geometry.IEnvelope,System.Double)">
+      <summary>Mean Points within the envelope.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.MeanTwoPoints(System.Int32,System.Int32)">
+      <summary>Compute the mean of the co-ordinates of the two named points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.PointBearingDistance(System.Int32,System.Int32,System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Find a line point line in the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.PointSquareOffset(System.Int32,System.Int32,System.Int32,System.Double@,System.Double@,System.Double@)">
+      <summary>Find a line point line in the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.ReadFeetInches(System.String,System.Double@)">
+      <summary>Convert Feet and Inches text string to a value in decimal feet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions.ResolveCurveCenters(ESRI.ArcGIS.Geometry.IEnvelope)">
+      <summary>Fix curve details for those with common centre points.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions2">
+      <summary>IGeoSurveyFunctions2 Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions2.FormConnectionsBearingDistance(System.Int32,System.Int32,System.Double,System.Double)">
+      <summary>Add across road connections to parcels using these points, specified Bearing and Distance.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions3">
+      <summary>IGeoSurveyFunctions3 Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGeoSurveyFunctions3.FormConnectionsBearingDistance(System.Int32,System.Int32,System.Double,System.Double,System.Object,System.Boolean)">
+      <summary>Add across road connections to parcels using these points, specified Bearing and Distance. Developer can specify whether the line created should be scaled and rotated.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGSAccuracy">
+      <summary>IGSAccuracy Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSAccuracy.BrgSD">
+      <summary>Bearing Standard Deviation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSAccuracy.Category">
+      <summary>Accuracy Category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSAccuracy.Default">
+      <summary>Indicates if the default Accuracy Category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSAccuracy.Description">
+      <summary>Description of Accuracy Category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSAccuracy.DistSD">
+      <summary>Distance Standard Deviation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSAccuracy.PPM">
+      <summary>PPM value for Distance.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGSAttributes">
+      <summary>IGSAttributes Interface</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSAttributes.AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSAttributes.AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSAttributes.GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSAttributes.SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGSControlPoint">
+      <summary>IGSControlPoint Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.AccuracyXY">
+      <summary>XY Accuracy indicator.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.AccuracyZ">
+      <summary>Z Accuracy indicator.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.Active">
+      <summary>Indicates if the Control Point is Active.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.DatabaseId">
+      <summary>Control Point Database id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.FitStatus">
+      <summary>How the Control Point fits with other active control points.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.Id">
+      <summary>Point ID.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.Local">
+      <summary>Indicates if the Control Point is associated with an Unjoined parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.LockedStatus">
+      <summary>Indicates if the Control Point can be changed as it is locked in the database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.Name">
+      <summary>Point Name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.ParcelId">
+      <summary>Parcel ID of the associated unjoined parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.ResidualX">
+      <summary>Point X residual.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.ResidualY">
+      <summary>Point Y residual.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.Status">
+      <summary>Point Status.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.SurveyDate">
+      <summary>Date of field Survey.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.Type">
+      <summary>Point Type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.X">
+      <summary>Point X coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.Y">
+      <summary>Point Y coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSControlPoint.Z">
+      <summary>Point Z coord.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGSLine">
+      <summary>IGSLine Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.Accuracy">
+      <summary>The user defined accuracy class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.ArcLength">
+      <summary>The arc length for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.Bearing">
+      <summary>Line Bearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.Category">
+      <summary>The line category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.CenterPoint">
+      <summary>Center Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.CenterPointCoords(System.Double@,System.Double@)">
+      <summary>Center Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.ComputedMinusObserved">
+      <summary>The the Computed minus the Observed length of the line (C-O).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.DatabaseId">
+      <summary>The database object ID is the unique ID allocated when a line is inserted into the Survey database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.Delta">
+      <summary>The arc angle for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.Distance">
+      <summary>Line distance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.FromPoint">
+      <summary>Starting Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.FromPointCoords(System.Double@,System.Double@)">
+      <summary>Start Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.InternalAngle">
+      <summary>The internal angle at start of the line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.LineParameter">
+      <summary>The line parameters for curved lines.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.LineType">
+      <summary>Line type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.RadialBearing">
+      <summary>The bearing of the radius to the start point for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.Radius">
+      <summary>Line radius.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.ReferenceObject">
+      <summary>The reference point for the line in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.Show">
+      <summary>Indicates if the line will be shown.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.TangentBearing">
+      <summary>The tangent bearing at the start point for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.ToPoint">
+      <summary>Ending Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine.ToPointCoords(System.Double@,System.Double@)">
+      <summary>End Point for line.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGSLine2">
+      <summary>IGSLine2 Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine2.DatabaseId">
+      <summary>Line database Id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine2.HideOnPublish">
+      <summary>Hide the line from publication.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLine2.LineStringGroup">
+      <summary>Indicates if the line is part of a line string. Zero is a normal line, otherwise value is the group number the for line string set.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGSLinePoint">
+      <summary>IGSLinePoint Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLinePoint.DatabaseId">
+      <summary>LinePoint database Id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLinePoint.FromPoint">
+      <summary>Starting Point number for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLinePoint.LinePoint">
+      <summary>Line point number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLinePoint.LinePointCoords(System.Double@,System.Double@)">
+      <summary>Line Point x,y co-ordinates.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSLinePoint.ToPoint">
+      <summary>Ending Point number for line.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGSParcel">
+      <summary>IGSParcel Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Accuracy">
+      <summary>Parcel Accuracy class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.AddRadialLines">
+      <summary>Add radial lines to center points of arcs.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.AngularMisclose">
+      <summary>Compute the parcel angle misclose for the first loop if in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Area">
+      <summary>Parcel Area.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.BacksightBearing">
+      <summary>Parcel backsight bearing for first line in angles mode.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.CalcAcrossRoadConnection(System.Int32,System.Double,System.Double,System.Double,System.Double)">
+      <summary>Calculate the across road connection at this point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.CalcEasementLines(System.Double,System.Double,System.Double,System.Int32)">
+      <summary>Calculate parallel offset lines on both sides of the easement centerline.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.CalcLoopMisclose(System.Int32,System.Double@,System.Double@,System.Double@,System.Double@,System.Int32@)">
+      <summary>Scale the distance units for a parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.CalcParcelLines">
+      <summary>Calculate parallel offset lines on both sides of the easement centerline.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.CalcRoadLines(System.Double,System.Double,System.Double)">
+      <summary>Calculate the across road connection at this point.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.CentroidX">
+      <summary>Parcel centroid X value.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.CentroidY">
+      <summary>Parcel centroid Y value.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.ChangedStatus">
+      <summary>Indicates if the Parcel has changed status.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.CheckParcelStructure(System.Int32@,System.Int32@)">
+      <summary>Checks the parcel for a range of structural errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Compiled">
+      <summary>Indicates if the parcel is compiled rather than measured.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Construction">
+      <summary>Indicates if the Parcel is under construction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.DatabaseId">
+      <summary>The database object ID is the unique ID allocated when a parcel is inserted into the Survey database.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.DeleteAllLines">
+      <summary>Delete all Parcel lines.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.DeleteLine(System.Int32)">
+      <summary>Delete nth Parcel line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.GetExtent(System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Get Parcel extents.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.GetLine(System.Int32)">
+      <summary>Get nth Parcel line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.GetLinePoints(ESRI.ArcGIS.Geometry.IEnvelope,System.Boolean)">
+      <summary>Get a Set of Line Points in parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.GetParcelLines(ESRI.ArcGIS.Geometry.IEnvelope,System.Boolean)">
+      <summary>Get a Set of Lines in parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Group">
+      <summary>Parcel group number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Historical">
+      <summary>Indicates if the Parcel is Historical rather than Current.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Id">
+      <summary>Each parcel has a unique parcel id in the packet which can be used to search for a parcticular parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.InsertLine(System.Int32,ESRI.ArcGIS.GeoSurvey.IGSLine)">
+      <summary>Get nth Parcel line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Joined">
+      <summary>Indicates if the Parcel is joined.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Joining">
+      <summary>Indicates if the Parcel is being joined.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.LegalEndDate">
+      <summary>Date parcel ceased to be the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.LegalStartDate">
+      <summary>Date of parcel became the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.LockedStatus">
+      <summary>Indicates if the Parcel is Locked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Lot">
+      <summary>Each parcel on a plan(plat) is usually allocated a unique lot number, often 1-N.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.MergeMasterParcel(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Merge a master parcel into this edit parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.MiscloseAngle">
+      <summary>Anglular Misclose when in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.MiscloseBearing">
+      <summary>Misclose bearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.MiscloseDistance">
+      <summary>Misclose distance error.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.MiscloseRatio">
+      <summary>Ratio of misclose distance error to total parcel perimeter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.Modified">
+      <summary>Set Parcel modfied status.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Plan">
+      <summary>Retrieves the Plan for this parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Rotation">
+      <summary>Parcel Rotation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Scale">
+      <summary>Parcel Scale.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.ScaleUnits(System.String)">
+      <summary>Scale the distance units for a parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.SelectForEditing">
+      <summary>Select the parcel for editing in EDIT_JOB.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.ShapeStandardError(System.Double@,System.Double@)">
+      <summary>Parcel shape standard error.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Show">
+      <summary>Indicates if the Parcel is to be displayed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Type">
+      <summary>Parcel Type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSParcel.Unclosed">
+      <summary>Indicates if the Parcel is not closed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.IGSParcel.UnjoinParcel">
+      <summary>Unjoin a Parcel.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGSPlan">
+      <summary>IGSPlan Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.Accuracy">
+      <summary>Accuracy Class for this plan.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.AngleUnits">
+      <summary>Plan units for angles.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.AreaUnits">
+      <summary>Display Units for Areas.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.CombinedGridFactor">
+      <summary>Scale for Plan Distances on this plan.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.Company">
+      <summary>Name of Survey Firm.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.DatabaseId">
+      <summary>Plan database Id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.Description">
+      <summary>Plan description.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.DirectionFormat">
+      <summary>Format for display of bearings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.DistanceAtGround">
+      <summary>Indicates if the Plan Distances are ground Distances.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.DistanceUnits">
+      <summary>Display Units for Distances.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.Id">
+      <summary>Plan id number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.InternalAngles">
+      <summary>Indicates if the Plan uses angles instead of bearings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.LegalDate">
+      <summary>Date of Lodgement of Survey.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.LineParameters">
+      <summary>Curved line type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.Locked">
+      <summary>Indicates if the Plan is locked in database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.Name">
+      <summary>Plan name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.SurveyDate">
+      <summary>Date of field Survey.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.Surveyor">
+      <summary>Name of the Surveyor.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPlan.TrueMid">
+      <summary>Indicates if the plan bearings are True Mid Bearings.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.IGSPoint">
+      <summary>IGSPoint Interface</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.Category">
+      <summary>Cadastral Point Category Domain value.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.Convergence">
+      <summary>Point Convergence.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.DatabaseId">
+      <summary>Point Database id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.Historical">
+      <summary>Indicates if the point is an Historical Point and not used in the Current layer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.Id">
+      <summary>Point ID.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.IsCenterPoint">
+      <summary>Indicates if the Point is a center point.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.LegalEndDate">
+      <summary>Date point ceased to be the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.LegalStartDate">
+      <summary>Date point became the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.LockedStatus">
+      <summary>Indicates if the Point is Locked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.Name">
+      <summary>Point Name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.Scale">
+      <summary>Point Scale.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.Type">
+      <summary>Point Type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.X">
+      <summary>Point X coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.Y">
+      <summary>Point Y coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.IGSPoint.Z">
+      <summary>Point Z coord.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.CadastralExtension">
+      <summary>CadastralExtension Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass">
+      <summary>CadastralExtension Class</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.BearingDisplayMode">
+      <summary>Bearing Display mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.ICadastralExtension_BearingDisplayMode">
+      <summary>Bearing Display mode.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>CadastralExtension Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>CadastralExtension Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.#ctor">
+      <summary>CadastralExtension Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.CreatePacket">
+      <summary>Create Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.ICadastralExtension_CreatePacket">
+      <summary>Create Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.GetEditPacket">
+      <summary>Edit packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.ICadastralExtension_GetEditPacket">
+      <summary>Edit packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.GetJobPacket">
+      <summary>Job packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.ICadastralExtension_GetJobPacket">
+      <summary>Job packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.GetRevision(System.Double@,System.String@)">
+      <summary>Extension Revision number and Name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.ICadastralExtension_GetRevision(System.Double@,System.String@)">
+      <summary>Extension Revision number and Name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.ReadXMLPacket(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>Read XML Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralExtensionClass.ICadastralExtension_ReadXMLPacket(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>Read XML Packet.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.CadastralPacket">
+      <summary>CadastralPacket Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass">
+      <summary>CadastralPacket Class</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.Categories">
+      <summary>Retrieve Accuracy Category IDs.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAccuracies_Categories">
+      <summary>Retrieve Accuracy Category IDs.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>CadastralPacket Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>CadastralPacket Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.#ctor">
+      <summary>CadastralPacket Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetAccuracy(System.Int32)">
+      <summary>Get Accuracy by Category.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAccuracies_GetAccuracy(System.Int32)">
+      <summary>Get Accuracy by Category.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.AcceptAdjustment">
+      <summary>Accept and apply results of adjustment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_AcceptAdjustment">
+      <summary>Accept and apply results of adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.BearingTolerance">
+      <summary>Packet bearing tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_BearingTolerance">
+      <summary>Packet bearing tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ClosePointsTolerance">
+      <summary>Packet close points tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ClosePointsTolerance">
+      <summary>Packet close points tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DistanceTolerance">
+      <summary>Packet distance tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_DistanceTolerance">
+      <summary>Packet distance tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ForceLinePoints">
+      <summary>Indicates whether to force line points onto the lines during the adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ForceLinePoints">
+      <summary>Indicates whether to force line points onto the lines during the adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ForceLinePointsTolerance">
+      <summary>Indicates the Force Line Points tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ForceLinePointsTolerance">
+      <summary>Indicates the Force Line Points tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ForceStraights">
+      <summary>Indicates whether to Force straights.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ForceStraights">
+      <summary>Indicates whether to Force straights.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ForceStraightsAngleTolerance">
+      <summary>Force straights Angle tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ForceStraightsAngleTolerance">
+      <summary>Force straights Angle tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ForceStraightsTolerance">
+      <summary>Indicates the Force straights tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ForceStraightsTolerance">
+      <summary>Indicates the Force straights tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.IncludeEasements">
+      <summary>Indicates whether to include Esaements in the Adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_IncludeEasements">
+      <summary>Indicates whether to include Esaements in the Adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.LinePointsTolerance">
+      <summary>Packet line points tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_LinePointsTolerance">
+      <summary>Packet line points tolerance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ListingCompanyName">
+      <summary>Changes the company name used for the adjustment listing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ListingCompanyName">
+      <summary>Changes the company name used for the adjustment listing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ListingDetailLevel">
+      <summary>The level of detail in the adjustment listing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ListingDetailLevel">
+      <summary>The level of detail in the adjustment listing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ListingLinesPerPage">
+      <summary>The number of lines on each page in the adjustment listing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ListingLinesPerPage">
+      <summary>The number of lines on each page in the adjustment listing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ListingParcelId(System.Int32)">
+      <summary>Find parcel id associated with this listing line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_ListingParcelId(System.Int32)">
+      <summary>Find parcel id associated with this listing line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.PerformAdjustment(System.Boolean,System.String,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,ESRI.ArcGIS.esriSystem.esriDirectionType,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits)">
+      <summary>Adjust packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_PerformAdjustment(System.Boolean,System.String,ESRI.ArcGIS.esriSystem.ITrackCancel,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralDistanceUnits,ESRI.ArcGIS.esriSystem.esriDirectionType,ESRI.ArcGIS.GeoDatabaseExtensions.esriCadastralAreaUnits)">
+      <summary>Adjust packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.RejectAdjustment">
+      <summary>Reject results of adjustment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment_RejectAdjustment">
+      <summary>Reject results of adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ListingDatabaseIds">
+      <summary>Display the database Ids in the adjustment listing instead of point numbers.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment2_ListingDatabaseIds">
+      <summary>Display the database Ids in the adjustment listing instead of point numbers.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ListingPointId(System.Int32)">
+      <summary>Find point number associated with this listing line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment2_ListingPointId(System.Int32)">
+      <summary>Find point number associated with this listing line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.MaxShiftData(System.Int32@,System.Double@,System.Double@)">
+      <summary>The point and amount of max shift in the adjustment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralAdjustment2_MaxShiftData(System.Int32@,System.Double@,System.Double@)">
+      <summary>The point and amount of max shift in the adjustment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.AddControlPoint(ESRI.ArcGIS.GeoSurvey.IGSControlPoint)">
+      <summary>Add a new control point to the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralControlPoints_AddControlPoint(ESRI.ArcGIS.GeoSurvey.IGSControlPoint)">
+      <summary>Add a new control point to the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.CheckFit">
+      <summary>Check fit of control points to parcel network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralControlPoints_CheckFit">
+      <summary>Check fit of control points to parcel network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DeleteControlPoint(System.Int32)">
+      <summary>Packet distance tolerance.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralControlPoints_DeleteControlPoint(System.Int32)">
+      <summary>Packet distance tolerance.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DeleteControlPointByName(System.String)">
+      <summary>Delete control point specified by name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralControlPoints_DeleteControlPointByName(System.String)">
+      <summary>Delete control point specified by name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetControlPointByName(System.String)">
+      <summary>Get Control Point by name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralControlPoints_GetControlPointByName(System.String)">
+      <summary>Get Control Point by name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetControlPointByNetworkPointID(System.Int32)">
+      <summary>Get Control Point by point number.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralControlPoints_GetControlPointByNetworkPointID(System.Int32)">
+      <summary>Get Control Point by point number.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetControlPoints(ESRI.ArcGIS.Geometry.IGeometry)">
+      <summary>Start a sequential fetch of control points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralControlPoints_GetControlPoints(ESRI.ArcGIS.Geometry.IGeometry)">
+      <summary>Start a sequential fetch of control points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.LoadControlFile(System.String,System.Int32)">
+      <summary>Packet distance tolerance.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralControlPoints_LoadControlFile(System.String,System.Int32)">
+      <summary>Packet distance tolerance.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.AutoJoin">
+      <summary>Automatically create Join Links.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_AutoJoin">
+      <summary>Automatically create Join Links.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ComputeJoinResiduals(System.Double,System.Double@,System.Double@)">
+      <summary>Compute the transform of the Join Parcel to the network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_ComputeJoinResiduals(System.Double,System.Double@,System.Double@)">
+      <summary>Compute the transform of the Join Parcel to the network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.CreateJoinLink(System.Int32,System.Int32)">
+      <summary>Create a new Join Link from the parcel to the network. Returns the positional index of the record</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_CreateJoinLink(System.Int32,System.Int32)">
+      <summary>Create a new Join Link from the parcel to the network. Returns the positional index of the record</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.CreateLinePointJoinLink(System.Boolean,System.Int32,System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@)">
+      <summary>Create a new Join Link from a point to a line point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_CreateLinePointJoinLink(System.Boolean,System.Int32,System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@)">
+      <summary>Create a new Join Link from a point to a line point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DeleteJoinLink(System.Int32)">
+      <summary>Delete a Join Link.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_DeleteJoinLink(System.Int32)">
+      <summary>Delete a Join Link.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.FindJoinParcelLine(System.Double,System.Double,System.Double)">
+      <summary>Find a line on the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_FindJoinParcelLine(System.Double,System.Double,System.Double)">
+      <summary>Find a line on the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.FindJoinParcelPoint(System.Double,System.Double,System.Double)">
+      <summary>Find a node on the Join Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_FindJoinParcelPoint(System.Double,System.Double,System.Double)">
+      <summary>Find a node on the Join Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.FindNetworkJoinPoint(System.Double,System.Double,System.Double)">
+      <summary>Find a node on the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_FindNetworkJoinPoint(System.Double,System.Double,System.Double)">
+      <summary>Find a node on the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.FindNetworkLine(System.Double,System.Double,System.Double)">
+      <summary>Find a line on the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_FindNetworkLine(System.Double,System.Double,System.Double)">
+      <summary>Find a line on the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetJoinParcelCentroid(System.Double@,System.Double@)">
+      <summary>Get the join parcel centroid.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_GetJoinParcelCentroid(System.Double@,System.Double@)">
+      <summary>Get the join parcel centroid.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetJoinParcelPoint(System.Int32,System.Double@,System.Double@)">
+      <summary>Get a join parcel point co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_GetJoinParcelPoint(System.Int32,System.Double@,System.Double@)">
+      <summary>Get a join parcel point co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.Join">
+      <summary>Join the parcel into the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_Join">
+      <summary>Join the parcel into the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.JoinLinkCount(System.Int32@,System.Int32@)">
+      <summary>Get number of join links.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_JoinLinkCount(System.Int32@,System.Int32@)">
+      <summary>Get number of join links.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.JoinLinkInfo(System.Int32,System.Int32@,System.Int32@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Get Info about a Join Link. The join link index specified is ordinal</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_JoinLinkInfo(System.Int32,System.Int32@,System.Int32@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Get Info about a Join Link. The join link index specified is ordinal</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.MoveJoinParcel(System.Double,System.Double)">
+      <summary>Move the Join Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_MoveJoinParcel(System.Double,System.Double)">
+      <summary>Move the Join Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.NearJoinPoint(System.Double,System.Double,System.Double,System.Int32@,System.Int32@)">
+      <summary>Find a node on the Join Parcel or the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_NearJoinPoint(System.Double,System.Double,System.Double,System.Int32@,System.Int32@)">
+      <summary>Find a node on the Join Parcel or the Network.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.RemoveJoinLink(System.Boolean,System.Int32)">
+      <summary>Remove a the Join Link from the parcel point to the network point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_RemoveJoinLink(System.Boolean,System.Int32)">
+      <summary>Remove a the Join Link from the parcel point to the network point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.StartJoining(System.Int32,System.Double,System.Double)">
+      <summary>Setup parcel for joining.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_StartJoining(System.Int32,System.Double,System.Double)">
+      <summary>Setup parcel for joining.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.StopJoining">
+      <summary>Stop joining process.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin_StopJoining">
+      <summary>Stop joining process.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.JoinLinkInfoEx(System.Int32,ESRI.ArcGIS.GeoSurvey.enumGSJoinLinkIndexType,System.Int32@,System.Int32@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Get Info about a Join Link.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin2_JoinLinkInfoEx(System.Int32,ESRI.ArcGIS.GeoSurvey.enumGSJoinLinkIndexType,System.Int32@,System.Int32@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Get Info about a Join Link.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.JoinRecordsCount">
+      <summary>Get the number of join records.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin2_JoinRecordsCount">
+      <summary>Get the number of join records.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.AutoJoin(System.Boolean)">
+      <summary>Join a parcel with joining parcel points fixed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin3_AutoJoin(System.Boolean)">
+      <summary>Join a parcel with joining parcel points fixed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.Join(System.Boolean)">
+      <summary>Join a parcel with joining parcel points fixed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin3_Join(System.Boolean)">
+      <summary>Join a parcel with joining parcel points fixed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.LinePointTolerance">
+      <summary>Distance tolerance used when forming line points.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin3_LinePointTolerance">
+      <summary>Distance tolerance used when forming line points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.PutJoinParcelPoint(System.Int32,System.Double,System.Double)">
+      <summary>Put a join parcel point co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin3_PutJoinParcelPoint(System.Int32,System.Double,System.Double)">
+      <summary>Put a join parcel point co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ResetJoin(System.Int32)">
+      <summary>Reset the join process.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralJoin3_ResetJoin(System.Int32)">
+      <summary>Reset the join process.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.AddLinePoint(System.Int32,System.Int32,System.Int32)">
+      <summary>Add a line point to a packet parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralLinePoints_AddLinePoint(System.Int32,System.Int32,System.Int32)">
+      <summary>Add a line point to a packet parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DeleteLinePoint(System.Int32)">
+      <summary>Delete unjoined parcels from the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralLinePoints_DeleteLinePoint(System.Int32)">
+      <summary>Delete unjoined parcels from the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.FindLinePoint(System.Int32,System.Int32@,System.Int32@)">
+      <summary>Find a line point line in the packet and return the line end points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralLinePoints_FindLinePoint(System.Int32,System.Int32@,System.Int32@)">
+      <summary>Find a line point line in the packet and return the line end points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetLines(ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.GeoSurvey.enumGSParcelType,System.Boolean)">
+      <summary>Get a Set of Parcels in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralLines_GetLines(ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.GeoSurvey.enumGSParcelType,System.Boolean)">
+      <summary>Get a Set of Parcels in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ComputeCurveLinePoints">
+      <summary>Calculate Line Points on curved line segments for the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralLines2_ComputeCurveLinePoints">
+      <summary>Calculate Line Points on curved line segments for the packet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.CurveLinePoint(System.Int32,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+      <summary>Get a Curved line point by sequence number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralLines2_CurveLinePoint(System.Int32,System.Int32@,System.Int32@,System.Int32@,System.Int32@)">
+      <summary>Get a Curved line point by sequence number.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.AppendFile(System.String,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>Append XML File to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_AppendFile(System.String,System.Boolean,System.Boolean,System.Boolean)">
+      <summary>Append XML File to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.Close">
+      <summary>Close the packet and discard all packet data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_Close">
+      <summary>Close the packet and discard all packet data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.CreateJoinSession(System.Int32)">
+      <summary>Create a Join Session.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_CreateJoinSession(System.Int32)">
+      <summary>Create a Join Session.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GeoSurveyFunctions">
+      <summary>Packet Functions Interface.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_GeoSurveyFunctions">
+      <summary>Packet Functions Interface.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.OpenFile(System.String)">
+      <summary>Read XML File into Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_OpenFile(System.String)">
+      <summary>Read XML File into Packet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.PacketChanged">
+      <summary>Indicates if the Packet data has changed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_PacketChanged">
+      <summary>Indicates if the Packet data has changed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ReadStream(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>Read XML Stream into Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_ReadStream(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>Read XML Stream into Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.SaveFile(System.String)">
+      <summary>Save the packet to a file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_SaveFile(System.String)">
+      <summary>Save the packet to a file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.SaveStream(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>Save the packet to a stream.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_SaveStream(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>Save the packet to a stream.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.SpatialReference">
+      <summary>Packet Spatial Reference.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacket_SpatialReference">
+      <summary>Packet Spatial Reference.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.CalcAllParcelCoords">
+      <summary>Compute the co-ordinates of all points in the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_CalcAllParcelCoords">
+      <summary>Compute the co-ordinates of all points in the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.CalcChordFromArcLength(System.String,ESRI.ArcGIS.GeoSurvey.IGSLine,ESRI.ArcGIS.GeoSurvey.IGSLine)">
+      <summary>Calculate chord from surounding lines.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_CalcChordFromArcLength(System.String,ESRI.ArcGIS.GeoSurvey.IGSLine,ESRI.ArcGIS.GeoSurvey.IGSLine)">
+      <summary>Calculate chord from surounding lines.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ConvertBearingToString(System.Double,System.Int32)">
+      <summary>Convert a bearing from radians to character string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_ConvertBearingToString(System.Double,System.Int32)">
+      <summary>Convert a bearing from radians to character string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ConvertFeetInchesToDouble(System.String)">
+      <summary>Convert a feet and inches character string to a double precision value.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_ConvertFeetInchesToDouble(System.String)">
+      <summary>Convert a feet and inches character string to a double precision value.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ConvertStringToBearing(System.String)">
+      <summary>Convert a character string to a value in radians.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_ConvertStringToBearing(System.String)">
+      <summary>Convert a character string to a value in radians.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DeleteUnusedPoints">
+      <summary>Delete any unused points in the job.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_DeleteUnusedPoints">
+      <summary>Delete any unused points in the job.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.RetrievePreviousLineInfo(System.Int32,System.Int32,System.Double@,System.Double@)">
+      <summary>Retrieve bearing and distance from a similar line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_RetrievePreviousLineInfo(System.Int32,System.Int32,System.Double@,System.Double@)">
+      <summary>Retrieve bearing and distance from a similar line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.SaveToMasterParcel">
+      <summary>Save Edit parcel to the job.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_SaveToMasterParcel">
+      <summary>Save Edit parcel to the job.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.SetupAppendParcelToEdit(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Append a new parcel to the group.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_SetupAppendParcelToEdit(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Append a new parcel to the group.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.SetupNewParcelToEdit(ESRI.ArcGIS.GeoSurvey.IGSPlan)">
+      <summary>Setup a new parcel for editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_SetupNewParcelToEdit(ESRI.ArcGIS.GeoSurvey.IGSPlan)">
+      <summary>Setup a new parcel for editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.SetupParcelToEdit(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Setup a parcel for editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_SetupParcelToEdit(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Setup a parcel for editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.StartParcelEditing">
+      <summary>Start parcel editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_StartParcelEditing">
+      <summary>Start parcel editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.StopParcelEditing">
+      <summary>Stop parcel editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit_StopParcelEditing">
+      <summary>Stop parcel editing.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.CalcAllParcelCoordsEx(System.Double,System.Double,System.Boolean)">
+      <summary>Compute the co-ordinates of all points in the packet, starting at initX, initY.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketEdit2_CalcAllParcelCoordsEx(System.Double,System.Double,System.Boolean)">
+      <summary>Compute the co-ordinates of all points in the packet, starting at initX, initY.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.LongestLineLength">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketStatistics_LongestLineLength">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.NumberCenterPoints">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketStatistics_NumberCenterPoints">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.NumberConnections">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketStatistics_NumberConnections">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.NumberJoinedParcels">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketStatistics_NumberJoinedParcels">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.NumberLinePoints">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketStatistics_NumberLinePoints">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.NumberLines">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketStatistics_NumberLines">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.NumberParcels">
+      <summary>Display Historical parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketStatistics_NumberParcels">
+      <summary>Display Historical parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.NumberPoints">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketStatistics_NumberPoints">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ShortestLinelength">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPacketStatistics_ShortestLinelength">
+      <summary>Display Compiled parcels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.AddParcel(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Add a Parcel to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralParcel_AddParcel(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Add a Parcel to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DeleteParcel(System.Int32)">
+      <summary>Delete Parcel in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralParcel_DeleteParcel(System.Int32)">
+      <summary>Delete Parcel in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DuplicateParcel(ESRI.ArcGIS.GeoSurvey.IGSParcel,System.String,System.String)">
+      <summary>Duplicate the Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralParcel_DuplicateParcel(ESRI.ArcGIS.GeoSurvey.IGSParcel,System.String,System.String)">
+      <summary>Duplicate the Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.FindParcel(System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@)">
+      <summary>Find Parcel by ground co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralParcel_FindParcel(System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@)">
+      <summary>Find Parcel by ground co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.FindParcelLine(System.Double,System.Double,System.Double,System.Int32@,System.Int32@)">
+      <summary>Find Parcel Line by ground co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralParcel_FindParcelLine(System.Double,System.Double,System.Double,System.Int32@,System.Int32@)">
+      <summary>Find Parcel Line by ground co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetParcel(System.Int32)">
+      <summary>Get Parcel data by Id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralParcel_GetParcel(System.Int32)">
+      <summary>Get Parcel data by Id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetParcels(ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.GeoSurvey.enumGSParcelType,System.Boolean)">
+      <summary>Get a Set of Parcels in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralParcel_GetParcels(ESRI.ArcGIS.Geometry.IEnvelope,ESRI.ArcGIS.GeoSurvey.enumGSParcelType,System.Boolean)">
+      <summary>Get a Set of Parcels in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.AddPlan(ESRI.ArcGIS.GeoSurvey.IGSPlan)">
+      <summary>Add a Plan to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPlan_AddPlan(ESRI.ArcGIS.GeoSurvey.IGSPlan)">
+      <summary>Add a Plan to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DeletePlan(System.Int32)">
+      <summary>Delete a Plan from the Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPlan_DeletePlan(System.Int32)">
+      <summary>Delete a Plan from the Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetPlan(System.String)">
+      <summary>Search for a plan in the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPlan_GetPlan(System.String)">
+      <summary>Search for a plan in the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetPlans(ESRI.ArcGIS.GeoSurvey.enumGSPlansType)">
+      <summary>Fetch plans from the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPlan_GetPlans(ESRI.ArcGIS.GeoSurvey.enumGSPlansType)">
+      <summary>Fetch plans from the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.AddPoint(ESRI.ArcGIS.GeoSurvey.IGSPoint)">
+      <summary>Add a Point to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPoints_AddPoint(ESRI.ArcGIS.GeoSurvey.IGSPoint)">
+      <summary>Add a Point to Packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.DeletePoint(System.Int32)">
+      <summary>Delete Point in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPoints_DeletePoint(System.Int32)">
+      <summary>Delete Point in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.FindPoint(System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@)">
+      <summary>Find Point by ground co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPoints_FindPoint(System.Double,System.Double,System.Double,System.Int32@,System.Double@,System.Double@)">
+      <summary>Find Point by ground co-ords.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetNextUnusedPointId(System.Int32,System.Int32@)">
+      <summary>Find the next unused point Id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPoints_GetNextUnusedPointId(System.Int32,System.Int32@)">
+      <summary>Find the next unused point Id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetPoint(System.Int32)">
+      <summary>Get Point by id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPoints_GetPoint(System.Int32)">
+      <summary>Get Point by id.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.GetPoints(ESRI.ArcGIS.Geometry.IEnvelope,System.Boolean,ESRI.ArcGIS.GeoSurvey.IEnumGSPoints@)">
+      <summary>Get a Set of Points in packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.CadastralPacketClass.ICadastralPoints_GetPoints(ESRI.ArcGIS.Geometry.IEnvelope,System.Boolean,ESRI.ArcGIS.GeoSurvey.IEnumGSPoints@)">
+      <summary>Get a Set of Points in packet.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctions">
+      <summary>GeoSurveyFunctions Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass">
+      <summary>GeoSurveyFunctions Class</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.DeleteDuplicateUnjoinedParcels">
+      <summary>Delete duplicate unjoined parcels from the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_DeleteDuplicateUnjoinedParcels">
+      <summary>Delete duplicate unjoined parcels from the packet.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>GeoSurveyFunctions Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>GeoSurveyFunctions Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.#ctor">
+      <summary>GeoSurveyFunctions Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.DeleteUnjoinedParcels">
+      <summary>Delete unjoined parcels from the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_DeleteUnjoinedParcels">
+      <summary>Delete unjoined parcels from the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.FormConnections(System.Int32,System.Int32)">
+      <summary>Add across road connections to parcels using these points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_FormConnections(System.Int32,System.Int32)">
+      <summary>Add across road connections to parcels using these points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.GroundToSeaLevelFactor(System.Double@,System.Double,System.Double@)">
+      <summary>Find scale factor to Sea Level.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_GroundToSeaLevelFactor(System.Double@,System.Double,System.Double@)">
+      <summary>Find scale factor to Sea Level.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.MeanPoints(ESRI.ArcGIS.Geometry.IEnvelope,System.Double)">
+      <summary>Mean Points within the envelope.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_MeanPoints(ESRI.ArcGIS.Geometry.IEnvelope,System.Double)">
+      <summary>Mean Points within the envelope.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.MeanTwoPoints(System.Int32,System.Int32)">
+      <summary>Compute the mean of the co-ordinates of the two named points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_MeanTwoPoints(System.Int32,System.Int32)">
+      <summary>Compute the mean of the co-ordinates of the two named points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.PointBearingDistance(System.Int32,System.Int32,System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Find a line point line in the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_PointBearingDistance(System.Int32,System.Int32,System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Find a line point line in the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.PointSquareOffset(System.Int32,System.Int32,System.Int32,System.Double@,System.Double@,System.Double@)">
+      <summary>Find a line point line in the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_PointSquareOffset(System.Int32,System.Int32,System.Int32,System.Double@,System.Double@,System.Double@)">
+      <summary>Find a line point line in the packet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.ReadFeetInches(System.String,System.Double@)">
+      <summary>Convert Feet and Inches text string to a value in decimal feet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_ReadFeetInches(System.String,System.Double@)">
+      <summary>Convert Feet and Inches text string to a value in decimal feet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.ResolveCurveCenters(ESRI.ArcGIS.Geometry.IEnvelope)">
+      <summary>Fix curve details for those with common centre points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions_ResolveCurveCenters(ESRI.ArcGIS.Geometry.IEnvelope)">
+      <summary>Fix curve details for those with common centre points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.FormConnectionsBearingDistance(System.Int32,System.Int32,System.Double,System.Double)">
+      <summary>Add across road connections to parcels using these points, specified Bearing and Distance.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions2_FormConnectionsBearingDistance(System.Int32,System.Int32,System.Double,System.Double)">
+      <summary>Add across road connections to parcels using these points, specified Bearing and Distance.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.FormConnectionsBearingDistance(System.Int32,System.Int32,System.Double,System.Double,System.Object,System.Boolean)">
+      <summary>Add across road connections to parcels using these points, specified Bearing and Distance. Developer can specify whether the line created should be scaled and rotated.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GeoSurveyFunctionsClass.IGeoSurveyFunctions3_FormConnectionsBearingDistance(System.Int32,System.Int32,System.Double,System.Double,System.Object,System.Boolean)">
+      <summary>Add across road connections to parcels using these points, specified Bearing and Distance. Developer can specify whether the line created should be scaled and rotated.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSAccuracy">
+      <summary>GSAccuracy Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass">
+      <summary>GSAccuracy Class</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.BrgSD">
+      <summary>Bearing Standard Deviation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.IGSAccuracy_BrgSD">
+      <summary>Bearing Standard Deviation.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>GSAccuracy Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>GSAccuracy Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.#ctor">
+      <summary>GSAccuracy Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.Category">
+      <summary>Accuracy Category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.IGSAccuracy_Category">
+      <summary>Accuracy Category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.Default">
+      <summary>Indicates if the default Accuracy Category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.IGSAccuracy_Default">
+      <summary>Indicates if the default Accuracy Category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.Description">
+      <summary>Description of Accuracy Category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.IGSAccuracy_Description">
+      <summary>Description of Accuracy Category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.DistSD">
+      <summary>Distance Standard Deviation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.IGSAccuracy_DistSD">
+      <summary>Distance Standard Deviation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.PPM">
+      <summary>PPM value for Distance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSAccuracyClass.IGSAccuracy_PPM">
+      <summary>PPM value for Distance.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSControlPoint">
+      <summary>GSControlPoint Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSControlPointClass">
+      <summary>GSControlPoint Class</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSAttributes_AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>GSControlPoint Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>GSControlPoint Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.#ctor">
+      <summary>GSControlPoint Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSAttributes_AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSAttributes_GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSAttributes_SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.AccuracyXY">
+      <summary>XY Accuracy indicator.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_AccuracyXY">
+      <summary>XY Accuracy indicator.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.AccuracyZ">
+      <summary>Z Accuracy indicator.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_AccuracyZ">
+      <summary>Z Accuracy indicator.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.Active">
+      <summary>Indicates if the Control Point is Active.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_Active">
+      <summary>Indicates if the Control Point is Active.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.DatabaseId">
+      <summary>Control Point Database id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_DatabaseId">
+      <summary>Control Point Database id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.FitStatus">
+      <summary>How the Control Point fits with other active control points.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_FitStatus">
+      <summary>How the Control Point fits with other active control points.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.Id">
+      <summary>Point ID.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_Id">
+      <summary>Point ID.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.Local">
+      <summary>Indicates if the Control Point is associated with an Unjoined parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_Local">
+      <summary>Indicates if the Control Point is associated with an Unjoined parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.LockedStatus">
+      <summary>Indicates if the Control Point can be changed as it is locked in the database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_LockedStatus">
+      <summary>Indicates if the Control Point can be changed as it is locked in the database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.Name">
+      <summary>Point Name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_Name">
+      <summary>Point Name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.ParcelId">
+      <summary>Parcel ID of the associated unjoined parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_ParcelId">
+      <summary>Parcel ID of the associated unjoined parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.ResidualX">
+      <summary>Point X residual.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_ResidualX">
+      <summary>Point X residual.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.ResidualY">
+      <summary>Point Y residual.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_ResidualY">
+      <summary>Point Y residual.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.Status">
+      <summary>Point Status.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_Status">
+      <summary>Point Status.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.SurveyDate">
+      <summary>Date of field Survey.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_SurveyDate">
+      <summary>Date of field Survey.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.Type">
+      <summary>Point Type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_Type">
+      <summary>Point Type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.X">
+      <summary>Point X coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_X">
+      <summary>Point X coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.Y">
+      <summary>Point Y coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_Y">
+      <summary>Point Y coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.Z">
+      <summary>Point Z coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSControlPointClass.IGSControlPoint_Z">
+      <summary>Point Z coord.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSLine">
+      <summary>GSLine Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSLineClass">
+      <summary>GSLine Class</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSLineClass.AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSAttributes_AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>GSLine Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>GSLine Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSLineClass.#ctor">
+      <summary>GSLine Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSAttributes_AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSLineClass.GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSAttributes_GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSLineClass.SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSAttributes_SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.Accuracy">
+      <summary>The user defined accuracy class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_Accuracy">
+      <summary>The user defined accuracy class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.ArcLength">
+      <summary>The arc length for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_ArcLength">
+      <summary>The arc length for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.Bearing">
+      <summary>Line Bearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_Bearing">
+      <summary>Line Bearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.Category">
+      <summary>The line category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_Category">
+      <summary>The line category.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.CenterPoint">
+      <summary>Center Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_CenterPoint">
+      <summary>Center Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.CenterPointCoords(System.Double@,System.Double@)">
+      <summary>Center Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_CenterPointCoords(System.Double@,System.Double@)">
+      <summary>Center Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.ComputedMinusObserved">
+      <summary>The the Computed minus the Observed length of the line (C-O).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_ComputedMinusObserved">
+      <summary>The the Computed minus the Observed length of the line (C-O).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.DatabaseId">
+      <summary>The database object ID is the unique ID allocated when a line is inserted into the Survey database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_DatabaseId">
+      <summary>The database object ID is the unique ID allocated when a line is inserted into the Survey database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.Delta">
+      <summary>The arc angle for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_Delta">
+      <summary>The arc angle for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.Distance">
+      <summary>Line distance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_Distance">
+      <summary>Line distance.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.FromPoint">
+      <summary>Starting Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_FromPoint">
+      <summary>Starting Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.FromPointCoords(System.Double@,System.Double@)">
+      <summary>Start Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_FromPointCoords(System.Double@,System.Double@)">
+      <summary>Start Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.InternalAngle">
+      <summary>The internal angle at start of the line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_InternalAngle">
+      <summary>The internal angle at start of the line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.LineParameter">
+      <summary>The line parameters for curved lines.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_LineParameter">
+      <summary>The line parameters for curved lines.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.LineType">
+      <summary>Line type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_LineType">
+      <summary>Line type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.RadialBearing">
+      <summary>The bearing of the radius to the start point for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_RadialBearing">
+      <summary>The bearing of the radius to the start point for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.Radius">
+      <summary>Line radius.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_Radius">
+      <summary>Line radius.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.ReferenceObject">
+      <summary>The reference point for the line in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_ReferenceObject">
+      <summary>The reference point for the line in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.Show">
+      <summary>Indicates if the line will be shown.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_Show">
+      <summary>Indicates if the line will be shown.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.TangentBearing">
+      <summary>The tangent bearing at the start point for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_TangentBearing">
+      <summary>The tangent bearing at the start point for a curved line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.ToPoint">
+      <summary>Ending Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_ToPoint">
+      <summary>Ending Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.ToPointCoords(System.Double@,System.Double@)">
+      <summary>End Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine_ToPointCoords(System.Double@,System.Double@)">
+      <summary>End Point for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine2_DatabaseId">
+      <summary>Line database Id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.HideOnPublish">
+      <summary>Hide the line from publication.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine2_HideOnPublish">
+      <summary>Hide the line from publication.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.LineStringGroup">
+      <summary>Indicates if the line is part of a line string. Zero is a normal line, otherwise value is the group number the for line string set.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLineClass.IGSLine2_LineStringGroup">
+      <summary>Indicates if the line is part of a line string. Zero is a normal line, otherwise value is the group number the for line string set.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSLinePoint">
+      <summary>GSLinePoint Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSLinePointClass">
+      <summary>GSLinePoint Class</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.DatabaseId">
+      <summary>LinePoint database Id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.IGSLinePoint_DatabaseId">
+      <summary>LinePoint database Id.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>GSLinePoint Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>GSLinePoint Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.#ctor">
+      <summary>GSLinePoint Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.FromPoint">
+      <summary>Starting Point number for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.IGSLinePoint_FromPoint">
+      <summary>Starting Point number for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.LinePoint">
+      <summary>Line point number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.IGSLinePoint_LinePoint">
+      <summary>Line point number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.LinePointCoords(System.Double@,System.Double@)">
+      <summary>Line Point x,y co-ordinates.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.IGSLinePoint_LinePointCoords(System.Double@,System.Double@)">
+      <summary>Line Point x,y co-ordinates.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.ToPoint">
+      <summary>Ending Point number for line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSLinePointClass.IGSLinePoint_ToPoint">
+      <summary>Ending Point number for line.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSParcel">
+      <summary>GSParcel Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSParcelClass">
+      <summary>GSParcel Class</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSAttributes_AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>GSParcel Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>GSParcel Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.#ctor">
+      <summary>GSParcel Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSAttributes_AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSAttributes_GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSAttributes_SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Accuracy">
+      <summary>Parcel Accuracy class.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Accuracy">
+      <summary>Parcel Accuracy class.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.AddRadialLines">
+      <summary>Add radial lines to center points of arcs.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_AddRadialLines">
+      <summary>Add radial lines to center points of arcs.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.AngularMisclose">
+      <summary>Compute the parcel angle misclose for the first loop if in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_AngularMisclose">
+      <summary>Compute the parcel angle misclose for the first loop if in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Area">
+      <summary>Parcel Area.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Area">
+      <summary>Parcel Area.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.BacksightBearing">
+      <summary>Parcel backsight bearing for first line in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_BacksightBearing">
+      <summary>Parcel backsight bearing for first line in angles mode.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.CalcAcrossRoadConnection(System.Int32,System.Double,System.Double,System.Double,System.Double)">
+      <summary>Calculate the across road connection at this point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_CalcAcrossRoadConnection(System.Int32,System.Double,System.Double,System.Double,System.Double)">
+      <summary>Calculate the across road connection at this point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.CalcEasementLines(System.Double,System.Double,System.Double,System.Int32)">
+      <summary>Calculate parallel offset lines on both sides of the easement centerline.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_CalcEasementLines(System.Double,System.Double,System.Double,System.Int32)">
+      <summary>Calculate parallel offset lines on both sides of the easement centerline.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.CalcLoopMisclose(System.Int32,System.Double@,System.Double@,System.Double@,System.Double@,System.Int32@)">
+      <summary>Scale the distance units for a parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_CalcLoopMisclose(System.Int32,System.Double@,System.Double@,System.Double@,System.Double@,System.Int32@)">
+      <summary>Scale the distance units for a parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.CalcParcelLines">
+      <summary>Calculate parallel offset lines on both sides of the easement centerline.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_CalcParcelLines">
+      <summary>Calculate parallel offset lines on both sides of the easement centerline.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.CalcRoadLines(System.Double,System.Double,System.Double)">
+      <summary>Calculate the across road connection at this point.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_CalcRoadLines(System.Double,System.Double,System.Double)">
+      <summary>Calculate the across road connection at this point.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.CentroidX">
+      <summary>Parcel centroid X value.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_CentroidX">
+      <summary>Parcel centroid X value.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.CentroidY">
+      <summary>Parcel centroid Y value.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_CentroidY">
+      <summary>Parcel centroid Y value.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.ChangedStatus">
+      <summary>Indicates if the Parcel has changed status.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_ChangedStatus">
+      <summary>Indicates if the Parcel has changed status.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.CheckParcelStructure(System.Int32@,System.Int32@)">
+      <summary>Checks the parcel for a range of structural errors.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_CheckParcelStructure(System.Int32@,System.Int32@)">
+      <summary>Checks the parcel for a range of structural errors.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Compiled">
+      <summary>Indicates if the parcel is compiled rather than measured.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Compiled">
+      <summary>Indicates if the parcel is compiled rather than measured.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Construction">
+      <summary>Indicates if the Parcel is under construction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Construction">
+      <summary>Indicates if the Parcel is under construction.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.DatabaseId">
+      <summary>The database object ID is the unique ID allocated when a parcel is inserted into the Survey database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_DatabaseId">
+      <summary>The database object ID is the unique ID allocated when a parcel is inserted into the Survey database.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.DeleteAllLines">
+      <summary>Delete all Parcel lines.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_DeleteAllLines">
+      <summary>Delete all Parcel lines.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.DeleteLine(System.Int32)">
+      <summary>Delete nth Parcel line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_DeleteLine(System.Int32)">
+      <summary>Delete nth Parcel line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.GetExtent(System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Get Parcel extents.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_GetExtent(System.Double@,System.Double@,System.Double@,System.Double@)">
+      <summary>Get Parcel extents.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.GetLine(System.Int32)">
+      <summary>Get nth Parcel line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_GetLine(System.Int32)">
+      <summary>Get nth Parcel line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.GetLinePoints(ESRI.ArcGIS.Geometry.IEnvelope,System.Boolean)">
+      <summary>Get a Set of Line Points in parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_GetLinePoints(ESRI.ArcGIS.Geometry.IEnvelope,System.Boolean)">
+      <summary>Get a Set of Line Points in parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.GetParcelLines(ESRI.ArcGIS.Geometry.IEnvelope,System.Boolean)">
+      <summary>Get a Set of Lines in parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_GetParcelLines(ESRI.ArcGIS.Geometry.IEnvelope,System.Boolean)">
+      <summary>Get a Set of Lines in parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Group">
+      <summary>Parcel group number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Group">
+      <summary>Parcel group number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Historical">
+      <summary>Indicates if the Parcel is Historical rather than Current.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Historical">
+      <summary>Indicates if the Parcel is Historical rather than Current.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Id">
+      <summary>Each parcel has a unique parcel id in the packet which can be used to search for a parcticular parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Id">
+      <summary>Each parcel has a unique parcel id in the packet which can be used to search for a parcticular parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.InsertLine(System.Int32,ESRI.ArcGIS.GeoSurvey.IGSLine)">
+      <summary>Get nth Parcel line.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_InsertLine(System.Int32,ESRI.ArcGIS.GeoSurvey.IGSLine)">
+      <summary>Get nth Parcel line.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Joined">
+      <summary>Indicates if the Parcel is joined.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Joined">
+      <summary>Indicates if the Parcel is joined.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Joining">
+      <summary>Indicates if the Parcel is being joined.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Joining">
+      <summary>Indicates if the Parcel is being joined.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.LegalEndDate">
+      <summary>Date parcel ceased to be the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_LegalEndDate">
+      <summary>Date parcel ceased to be the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.LegalStartDate">
+      <summary>Date of parcel became the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_LegalStartDate">
+      <summary>Date of parcel became the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.LockedStatus">
+      <summary>Indicates if the Parcel is Locked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_LockedStatus">
+      <summary>Indicates if the Parcel is Locked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Lot">
+      <summary>Each parcel on a plan(plat) is usually allocated a unique lot number, often 1-N.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Lot">
+      <summary>Each parcel on a plan(plat) is usually allocated a unique lot number, often 1-N.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.MergeMasterParcel(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Merge a master parcel into this edit parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_MergeMasterParcel(ESRI.ArcGIS.GeoSurvey.IGSParcel)">
+      <summary>Merge a master parcel into this edit parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.MiscloseAngle">
+      <summary>Anglular Misclose when in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_MiscloseAngle">
+      <summary>Anglular Misclose when in angles mode.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.MiscloseBearing">
+      <summary>Misclose bearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_MiscloseBearing">
+      <summary>Misclose bearing.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.MiscloseDistance">
+      <summary>Misclose distance error.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_MiscloseDistance">
+      <summary>Misclose distance error.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.MiscloseRatio">
+      <summary>Ratio of misclose distance error to total parcel perimeter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_MiscloseRatio">
+      <summary>Ratio of misclose distance error to total parcel perimeter.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Modified">
+      <summary>Set Parcel modfied status.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Modified">
+      <summary>Set Parcel modfied status.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Plan">
+      <summary>Retrieves the Plan for this parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Plan">
+      <summary>Retrieves the Plan for this parcel.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Rotation">
+      <summary>Parcel Rotation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Rotation">
+      <summary>Parcel Rotation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Scale">
+      <summary>Parcel Scale.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Scale">
+      <summary>Parcel Scale.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.ScaleUnits(System.String)">
+      <summary>Scale the distance units for a parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_ScaleUnits(System.String)">
+      <summary>Scale the distance units for a parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.SelectForEditing">
+      <summary>Select the parcel for editing in EDIT_JOB.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_SelectForEditing">
+      <summary>Select the parcel for editing in EDIT_JOB.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.ShapeStandardError(System.Double@,System.Double@)">
+      <summary>Parcel shape standard error.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_ShapeStandardError(System.Double@,System.Double@)">
+      <summary>Parcel shape standard error.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Show">
+      <summary>Indicates if the Parcel is to be displayed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Show">
+      <summary>Indicates if the Parcel is to be displayed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Type">
+      <summary>Parcel Type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Type">
+      <summary>Parcel Type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.Unclosed">
+      <summary>Indicates if the Parcel is not closed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_Unclosed">
+      <summary>Indicates if the Parcel is not closed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.UnjoinParcel">
+      <summary>Unjoin a Parcel.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSParcelClass.IGSParcel_UnjoinParcel">
+      <summary>Unjoin a Parcel.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSPlan">
+      <summary>GSPlan Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSPlanClass">
+      <summary>GSPlan Class</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPlanClass.AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSAttributes_AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>GSPlan Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>GSPlan Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPlanClass.#ctor">
+      <summary>GSPlan Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSAttributes_AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPlanClass.GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSAttributes_GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPlanClass.SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSAttributes_SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.Accuracy">
+      <summary>Accuracy Class for this plan.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_Accuracy">
+      <summary>Accuracy Class for this plan.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.AngleUnits">
+      <summary>Plan units for angles.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_AngleUnits">
+      <summary>Plan units for angles.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.AreaUnits">
+      <summary>Display Units for Areas.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_AreaUnits">
+      <summary>Display Units for Areas.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.CombinedGridFactor">
+      <summary>Scale for Plan Distances on this plan.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_CombinedGridFactor">
+      <summary>Scale for Plan Distances on this plan.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.Company">
+      <summary>Name of Survey Firm.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_Company">
+      <summary>Name of Survey Firm.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.DatabaseId">
+      <summary>Plan database Id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_DatabaseId">
+      <summary>Plan database Id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.Description">
+      <summary>Plan description.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_Description">
+      <summary>Plan description.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.DirectionFormat">
+      <summary>Format for display of bearings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_DirectionFormat">
+      <summary>Format for display of bearings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.DistanceAtGround">
+      <summary>Indicates if the Plan Distances are ground Distances.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_DistanceAtGround">
+      <summary>Indicates if the Plan Distances are ground Distances.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.DistanceUnits">
+      <summary>Display Units for Distances.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_DistanceUnits">
+      <summary>Display Units for Distances.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.Id">
+      <summary>Plan id number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_Id">
+      <summary>Plan id number.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.InternalAngles">
+      <summary>Indicates if the Plan uses angles instead of bearings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_InternalAngles">
+      <summary>Indicates if the Plan uses angles instead of bearings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.LegalDate">
+      <summary>Date of Lodgement of Survey.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_LegalDate">
+      <summary>Date of Lodgement of Survey.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.LineParameters">
+      <summary>Curved line type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_LineParameters">
+      <summary>Curved line type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.Locked">
+      <summary>Indicates if the Plan is locked in database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_Locked">
+      <summary>Indicates if the Plan is locked in database.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.Name">
+      <summary>Plan name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_Name">
+      <summary>Plan name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.SurveyDate">
+      <summary>Date of field Survey.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_SurveyDate">
+      <summary>Date of field Survey.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.Surveyor">
+      <summary>Name of the Surveyor.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_Surveyor">
+      <summary>Name of the Surveyor.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.TrueMid">
+      <summary>Indicates if the plan bearings are True Mid Bearings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPlanClass.IGSPlan_TrueMid">
+      <summary>Indicates if the plan bearings are True Mid Bearings.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSPoint">
+      <summary>GSPoint Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSPointClass">
+      <summary>GSPoint Class</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPointClass.AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSAttributes_AddProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey..">
+      <summary>GSPoint Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.GeoSurvey.._">
+      <summary>GSPoint Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPointClass.#ctor">
+      <summary>GSPoint Class Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSAttributes_AttributeNames">
+      <summary>Retrieves the list of available attribute names.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPointClass.GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSAttributes_GetProperty(System.String)">
+      <summary>Get extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPointClass.SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSAttributes_SetProperty(System.String,System.Object)">
+      <summary>Set extended property.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.Category">
+      <summary>Cadastral Point Category Domain value.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_Category">
+      <summary>Cadastral Point Category Domain value.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.Convergence">
+      <summary>Point Convergence.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_Convergence">
+      <summary>Point Convergence.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.DatabaseId">
+      <summary>Point Database id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_DatabaseId">
+      <summary>Point Database id.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.Historical">
+      <summary>Indicates if the point is an Historical Point and not used in the Current layer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_Historical">
+      <summary>Indicates if the point is an Historical Point and not used in the Current layer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.Id">
+      <summary>Point ID.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_Id">
+      <summary>Point ID.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IsCenterPoint">
+      <summary>Indicates if the Point is a center point.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_IsCenterPoint">
+      <summary>Indicates if the Point is a center point.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.LegalEndDate">
+      <summary>Date point ceased to be the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_LegalEndDate">
+      <summary>Date point ceased to be the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.LegalStartDate">
+      <summary>Date point became the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_LegalStartDate">
+      <summary>Date point became the legal definition of the land.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.LockedStatus">
+      <summary>Indicates if the Point is Locked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_LockedStatus">
+      <summary>Indicates if the Point is Locked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.Name">
+      <summary>Point Name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_Name">
+      <summary>Point Name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.Scale">
+      <summary>Point Scale.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_Scale">
+      <summary>Point Scale.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.Type">
+      <summary>Point Type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_Type">
+      <summary>Point Type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.X">
+      <summary>Point X coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_X">
+      <summary>Point X coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.Y">
+      <summary>Point Y coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_Y">
+      <summary>Point Y coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.Z">
+      <summary>Point Z coord.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.GeoSurvey.GSPointClass.IGSPoint_Z">
+      <summary>Point Z coord.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.enumCEBearingsDisplayType">
+      <summary>Describes the bearing display settings.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumCEBearingsDisplayType.enumCEBearingsDisplayTypeWholeCircle">
+      <summary>Not used.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumCEBearingsDisplayType.enumCEBearingsDisplayTypeQuadrant">
+      <summary>Joined parcels.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.enumGSControlStatus">
+      <summary>Describes the types of parcels.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSControlStatus.enumGSControlStatusValid">
+      <summary>The control Point Fit Status is Valid.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSControlStatus.enumGSControlStatusNotComputed">
+      <summary>The control Point Fit Status has not been Computed.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSControlStatus.enumGSControlStatusInvalid">
+      <summary>The control Point Fit Status is Not Valid.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.enumGSJoinLinkIndexType">
+      <summary>Describes the types join link index type.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSJoinLinkIndexType.enumGSJoinLinkIndexTypePositional">
+      <summary>The join link index is Positional.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSJoinLinkIndexType.enumGSJoinLinkIndexTypeOrdinal">
+      <summary>The join link index is Ordinal.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.enumGSLSAListingDetailLevel">
+      <summary>Least Squares Adjustment Listing Detail Level.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSLSAListingDetailLevel.enumGSAdjustmentSimple">
+      <summary>Minimal LSA Listing Information</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSLSAListingDetailLevel.enumGSAdjustmentStandard">
+      <summary>Standard LSA Listing Information</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSLSAListingDetailLevel.enumGSAdjustmentExtended">
+      <summary>Detailed LSA Listing Information</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSLSAListingDetailLevel.enumGSAdjustmentAdvanced">
+      <summary>Extensive LSA Listing Information</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.enumGSParcelType">
+      <summary>Describes the types of parcels.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSParcelType.enumGSParcelTypeAll">
+      <summary>Not used.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSParcelType.enumGSParcelTypeJoined">
+      <summary>Joined parcels.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSParcelType.enumGSParcelTypeUnjoined">
+      <summary>Unjoined parcels.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.enumGSPlansType">
+      <summary>Describes the plans to be fetched.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSPlansType.enumGSPlansAll">
+      <summary>All plans</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSPlansType.enumGSPlansWithParcels">
+      <summary>Plans with attached parcels.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSPlansType.enumGSPlansWithNoParcels">
+      <summary>Plans with not attached parcels.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.enumGSPointType">
+      <summary>Describes the types of points.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSPointType.enumGSPointTypeNormal">
+      <summary>Normal.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSPointType.enumGSPointTypeStation">
+      <summary>Station in field survey.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSPointType.enumGSPointTypeControl">
+      <summary>Control Point (Geodetic).</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSPointType.enumGSPointTypeInterpolated">
+      <summary>Interpolated Point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSPointType.enumGSPointTypeRefMark">
+      <summary>Reference Mark Point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.enumGSPointType.enumGSPointTypeBenchmark">
+      <summary>Benchmark Point.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.GeoSurvey.GSError">
+      <summary>GS General Error Codes.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.S_GSE_SUCCESS">
+      <summary>Success.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_PROJECTION_READ_ERROR">
+      <summary>Error Reading Job Projection.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_ILLEGAL_JOB_DATUM">
+      <summary>Illegal Job Datum.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_ERROR_READING_JOB">
+      <summary>Error Reading Job.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_ERROR_WRITING_JOB">
+      <summary>Error Writing Job.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_JOIN_POINT_ERROR">
+      <summary>Join Point Error.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_JOIN_LINE_ERROR">
+      <summary>Join Point Error.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_JOIN_LINE_NO_POINT_ERROR">
+      <summary>No Point for Line Point Join.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_SEL_JOIN_POINT">
+      <summary>Seleted a Join Point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_SEL_JOIN_LINE">
+      <summary>Seleted a Join Point.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_JOIN_CREATED">
+      <summary>Join Record Created.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_JOIN_DELETED">
+      <summary>Join Record Deleted.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_NO_LINES_IN_PARCEL">
+      <summary>No Lines in parcel.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_TOO_MANY_POINTS">
+      <summary>Too many points in parcel.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_BREAK_IN_PARCEL_CONTINUITY">
+      <summary>Break in parcel continuity.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_ERROR_IN_RADIUS">
+      <summary>Error in radius in parcel.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_BAD_BEARING_VALUE">
+      <summary>Bad bearing value in parcel.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_BAD_DISTANCE_VALUE">
+      <summary>Bad distance value in parcel.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_BAD_LINE_TYPE">
+      <summary>Bad line type value in parcel.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_PARCEL_NOT_CLOSED">
+      <summary>Parcel is not closed.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_NO_PARCEL">
+      <summary>No parcel is available for the operation.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_NO_PACKET">
+      <summary>No valid packet is available for the operation.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_OBJECTNOTATTCHED">
+      <summary>Cannot proceed as no object is attached .</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_NETWORK_POINT_IN_JOIN">
+      <summary>Network Point is already in a join link.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_PARCEL_POINT_IN_JOIN">
+      <summary>Parcel Point is already in a join link.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_PARCEL_POINT_NOT_FOUND">
+      <summary>Parcel Point not found in join list.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_NO_LINE_FOUND">
+      <summary>Parcel Line not found in join list.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_NO_SURVEY_LICENSE">
+      <summary>There is no Survey Analyst license currently available.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_PARCEL_IS_JOINED">
+      <summary>The parcel is joined, cannot join a joined parcel.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_UNCONNECTED_CENTER_POINT">
+      <summary>A Line center point is undefined, it has no Connection line.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_FAILED_COORDS_CALC">
+      <summary>Failed to compute co-ords for all parcels - too few connections.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_JOIN_FATAL_ERROR">
+      <summary>Fatal Internal error on computing parcel co-ords.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.GeoSurvey.GSError.E_GSE_JOIN_SPATIALEXTENT_ERROR">
+      <summary>Joining parcel(s) are not within spatial extent.</summary>
+    </member>
+  </members>
+</doc>

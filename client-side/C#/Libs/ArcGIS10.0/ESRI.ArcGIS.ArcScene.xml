@@ -1,0 +1,2312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.ArcScene</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.ArcScene.IDocument3DDefaultSymbols">
+      <summary>Provides access to members that control Default 3d symbols for the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.IDocument3DDefaultSymbols.Text3DElement">
+      <summary>Default 3D Text Element.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IProtectNameArcScene">
+      <summary>Provides access to dummy methods protecting name correctness.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.IProtectNameArcScene.ProtectOLE_COLOR(System.Int32)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.IProtectNameArcScene.ProtectOLE_HANDLE(System.Int32)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxApplication">
+      <summary>Provides access to members that control the ArcScene Application object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplication.ClearGesture">
+      <summary>Clears gesture.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplication.CopyToClipboard">
+      <summary>Copies the current scene to the Clipboard.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplication.CreateSubView">
+      <summary>Makes a new viewer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxApplication.DefaultBackgroundColor">
+      <summary>The Default Background Color for New Documents.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplication.Export2d">
+      <summary>Exports the Current Document to a 2d file format.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplication.Export3d">
+      <summary>Exports the Current Document to a 3d file format.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxApplication.Page">
+      <summary>The current page settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxApplication.Paper">
+      <summary>The current paper settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxApplication.Printer">
+      <summary>The current printer settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplication.RestoreGesture">
+      <summary>Restores gesture.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxApplication.SelectionEnvironment">
+      <summary>The selection environment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplication.ShowContextMenu(System.Int32,System.Int32)">
+      <summary>Displays a context menu for the current selection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplication.ShowTOC(System.Boolean)">
+      <summary>Displays the table content.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplication.SuspendGesture">
+      <summary>Suspends gesture.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxApplication.TOCVisible">
+      <summary>Indicates if the TOC is visible.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxApplicationEvents">
+      <summary>Provides access to events that the ArcScene application can fire.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxApplicationEvents.OnClipboardChanged">
+      <summary>Called when the clipboard contents have changed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxContentsView">
+      <summary>Provides access to members that control the table of contents views of Sx.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView.Activate(System.Int32,ESRI.ArcGIS.ArcScene.ISxDocument)">
+      <summary>Activates the contents view.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView.AddToSelectedItems(System.Object)">
+      <summary>Adds to the selected items.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView.ContextItem">
+      <summary>The context item (could be an enumerator).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView.Deactivate">
+      <summary>Deactivates the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView.hWnd">
+      <summary>The HWND of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView.Name">
+      <summary>The name of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView.ProcessEvents">
+      <summary>Indicates whether the view is currently responding to events.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView.Refresh(System.Object)">
+      <summary>Refreshes the contents view.  If a non-null item is specified, it refreshes only that item and its children.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView.RemoveFromSelectedItems(System.Object)">
+      <summary>Removes an item from the selected items.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView.SelectedItem">
+      <summary>The selected item (could be an enumerator).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView.ShowLines">
+      <summary>Indicates whether to show lines in the TOC tree.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView.Visible">
+      <summary>Indicates if the view is visible.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxContentsView2">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView2.Bitmap">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView2.Tooltip">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView2.Activate(System.Int32,ESRI.ArcGIS.ArcScene.ISxDocument)">
+      <summary>Activates the contents view.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView2.AddToSelectedItems(System.Object)">
+      <summary>Adds to the selected items.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView2.ContextItem">
+      <summary>The context item (could be an enumerator).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView2.Deactivate">
+      <summary>Deactivates the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView2.hWnd">
+      <summary>The HWND of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView2.Name">
+      <summary>The name of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView2.ProcessEvents">
+      <summary>Indicates whether the view is currently responding to events.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView2.Refresh(System.Object)">
+      <summary>Refreshes the contents view.  If a non-null item is specified, it refreshes only that item and its children.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxContentsView2.RemoveFromSelectedItems(System.Object)">
+      <summary>Removes an item from the selected items.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView2.SelectedItem">
+      <summary>The selected item (could be an enumerator).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView2.ShowLines">
+      <summary>Indicates whether to show lines in the TOC tree.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxContentsView2.Visible">
+      <summary>Indicates if the view is visible.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocument">
+      <summary>Provides access to members that control the ArcScene Document object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocument.AddLayer(ESRI.ArcGIS.Carto.ILayer)">
+      <summary>Adds a layer to the current focus map.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.ContentsView(System.Int32)">
+      <summary>The contents view at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.ContentsViewCount">
+      <summary>The number of contents views in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.ContextItem">
+      <summary>The item that is selected or was last right-clicked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.CurrentContentsView">
+      <summary>The current contents view of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.DefaultColor(ESRI.ArcGIS.ArcMapUI.esriMxDefaultColorTypes)">
+      <summary>The default color for the given type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.DelayUpdateContents">
+      <summary>Indicates whether to ignore document update notifications.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.RelativePaths">
+      <summary>Indicates if path names are stored relative to the document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocument.RemoveAllLayers">
+      <summary>Removes all layers.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.SavePreview">
+      <summary>Indicates if a preview image is saved in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.Scene">
+      <summary>The scene.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.SearchTolerancePixels">
+      <summary>The global search tolerance in pixels for selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.SelectedItem">
+      <summary>The selected item in the layer control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocument.SelectedLayer">
+      <summary>The selected layer in the layer control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocument.UpdateContents">
+      <summary>Notifies the document that the contents have been updated.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents">
+      <summary>Provides access to the events fired by ArcScene.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event">
+      <summary>Provides access to the events fired by ArcScene.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEvents.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEvents.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEvents.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEvents.OnContextMenu(System.Int32,System.Int32,System.Boolean@)">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEvents.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp">
+      <summary>Provides access to events fired by ArcScene.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event">
+      <summary>Provides access to events fired by ArcScene.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp.CloseDocument">
+      <summary>Fired when a document is closed. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.CloseDocument">
+      <summary>Fired when a document is closed. Return true if handled.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp.NewDocument">
+      <summary>Fired when a new document is created. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.NewDocument">
+      <summary>Fired when a new document is created. Return true if handled.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp.OnContextMenu(System.Int32,System.Int32)">
+      <summary>Fired when a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp.OpenDocument">
+      <summary>Fired when a document is opened. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.OpenDocument">
+      <summary>Fired when a document is opened. Return true if handled.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp.VBAReset">
+      <summary>Fired when VBA is reset. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.VBAReset">
+      <summary>Fired when VBA is reset. Return true if handled.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentInfo">
+      <summary>Provides access to members that control the ArcScene document information.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocumentInfo.Author">
+      <summary>The author of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocumentInfo.Category">
+      <summary>The category of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocumentInfo.Comments">
+      <summary>The comments for the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocumentInfo.DocumentTitle">
+      <summary>The title of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocumentInfo.HyperlinkBase">
+      <summary>The hyperlink base of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocumentInfo.Keywords">
+      <summary>The keywords for the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ISxDocumentInfo.Subject">
+      <summary>The subject of the document.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.Application">
+      <summary>The 3D Modeling Application.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ApplicationClass">
+      <summary>The 3D Modeling Application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.CopyToClipboard">
+      <summary>Copies the current view to the clipboard.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IMxApplication2_CopyToClipboard">
+      <summary>Copies the current view to the clipboard.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene..">
+      <summary>The 3D Modeling Application. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene.._">
+      <summary>The 3D Modeling Application. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.#ctor">
+      <summary>The 3D Modeling Application. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Display">
+      <summary>The application display.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IMxApplication2_Display">
+      <summary>The application display.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.Export">
+      <summary>Exports the current document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IMxApplication2_Export">
+      <summary>Exports the current document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Paper">
+      <summary>The current paper settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IMxApplication2_Paper">
+      <summary>The current paper settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.PauseDrawing">
+      <summary>Pause display updates.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IMxApplication2_PauseDrawing">
+      <summary>Pause display updates.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Printer">
+      <summary>The current printer settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IMxApplication2_Printer">
+      <summary>The current printer settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.SelectionEnvironment">
+      <summary>The selection environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IMxApplication2_SelectionEnvironment">
+      <summary>The selection environment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ClearGesture">
+      <summary>Clears gesture.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_ClearGesture">
+      <summary>Clears gesture.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_CopyToClipboard">
+      <summary>Copies the current scene to the Clipboard.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.CreateSubView">
+      <summary>Makes a new viewer.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_CreateSubView">
+      <summary>Makes a new viewer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.DefaultBackgroundColor">
+      <summary>The Default Background Color for New Documents.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_DefaultBackgroundColor">
+      <summary>The Default Background Color for New Documents.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.Export2d">
+      <summary>Exports the Current Document to a 2d file format.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_Export2d">
+      <summary>Exports the Current Document to a 2d file format.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.Export3d">
+      <summary>Exports the Current Document to a 3d file format.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_Export3d">
+      <summary>Exports the Current Document to a 3d file format.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Page">
+      <summary>The current page settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_Page">
+      <summary>The current page settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_Paper">
+      <summary>The current paper settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_Printer">
+      <summary>The current printer settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.RestoreGesture">
+      <summary>Restores gesture.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_RestoreGesture">
+      <summary>Restores gesture.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_SelectionEnvironment">
+      <summary>The selection environment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ShowContextMenu(System.Int32,System.Int32)">
+      <summary>Displays a context menu for the current selection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_ShowContextMenu(System.Int32,System.Int32)">
+      <summary>Displays a context menu for the current selection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ShowTOC(System.Boolean)">
+      <summary>Displays the table content.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_ShowTOC(System.Boolean)">
+      <summary>Displays the table content.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.SuspendGesture">
+      <summary>Suspends gesture.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_SuspendGesture">
+      <summary>Suspends gesture.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.TOCVisible">
+      <summary>Indicates if the TOC is visible.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.ISxApplication_TOCVisible">
+      <summary>Indicates if the TOC is visible.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.AreaOfInterest">
+      <summary>The default area of interest for the application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_AreaOfInterest">
+      <summary>The default area of interest for the application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.CanDeleteSelection">
+      <summary>Indicates if the current selection can be deleted.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_CanDeleteSelection">
+      <summary>Indicates if the current selection can be deleted.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.CanRenameSelection">
+      <summary>Indicates if the current selection can be renamed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_CanRenameSelection">
+      <summary>Indicates if the current selection can be renamed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Catalog">
+      <summary>The current catalog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_Catalog">
+      <summary>The current catalog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.DeleteSelection">
+      <summary>Deletes the current selection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_DeleteSelection">
+      <summary>Deletes the current selection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ExpandSelection">
+      <summary>Expands the current selection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_ExpandSelection">
+      <summary>Expands the current selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Location">
+      <summary>The location to the specified path.  If the path isn't yet part of the catalog, it is added as a folder connection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_Location">
+      <summary>The location to the specified path.  If the path isn't yet part of the catalog, it is added as a folder connection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.Refresh(System.String)">
+      <summary>Refreshes the catalog tree starting at the specified path.  If startingPath is 0 or the empty string, the entire catalog is refreshed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_Refresh(System.String)">
+      <summary>Refreshes the catalog tree starting at the specified path.  If startingPath is 0 or the empty string, the entire catalog is refreshed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.RenameSelection">
+      <summary>Renames the current selection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_RenameSelection">
+      <summary>Renames the current selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.SelectedObject">
+      <summary>The first selected object, or the location if no objects are selected.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_SelectedObject">
+      <summary>The first selected object, or the location if no objects are selected.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Selection">
+      <summary>The selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_Selection">
+      <summary>The selection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_ShowContextMenu(System.Int32,System.Int32)">
+      <summary>Displays a context menu for the current selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.TreeView">
+      <summary>The tree view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_TreeView">
+      <summary>The tree view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.View">
+      <summary>The current view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_View">
+      <summary>The current view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.ViewClassID">
+      <summary>The current view's class ID.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IGxApplication_ViewClassID">
+      <summary>The current view's class ID.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Caption">
+      <summary>The caption of this application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_Caption">
+      <summary>The caption of this application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.CurrentTool">
+      <summary>The currently selected tool.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_CurrentTool">
+      <summary>The currently selected tool.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Document">
+      <summary>The document that is currently loaded in the application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_Document">
+      <summary>The document that is currently loaded in the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.FindExtensionByCLSID(ESRI.ArcGIS.esriSystem.IUID)">
+      <summary>Finds an extension by its CLSID.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_FindExtensionByCLSID(ESRI.ArcGIS.esriSystem.IUID)">
+      <summary>Finds an extension by its CLSID.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.FindExtensionByName(System.String)">
+      <summary>Finds an extension by its name.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_FindExtensionByName(System.String)">
+      <summary>Finds an extension by its name.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.hWnd">
+      <summary>The handle of the application's window.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_hWnd">
+      <summary>The handle of the application's window.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IsDialogVisible(System.Int32)">
+      <summary>Indicates if the specified dialog is visible in the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_IsDialogVisible(System.Int32)">
+      <summary>Indicates if the specified dialog is visible in the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.LockCustomization(System.String,ESRI.ArcGIS.Framework.ICustomizationFilter)">
+      <summary>Locks the application's user interface against any customizations.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_LockCustomization(System.String,ESRI.ArcGIS.Framework.ICustomizationFilter)">
+      <summary>Locks the application's user interface against any customizations.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Name">
+      <summary>The name of this application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_Name">
+      <summary>The name of this application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.NewDocument(System.Boolean,System.String)">
+      <summary>Creates a new document in this application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_NewDocument(System.Boolean,System.String)">
+      <summary>Creates a new document in this application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.OpenDocument(System.String)">
+      <summary>Opens a document in this application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_OpenDocument(System.String)">
+      <summary>Opens a document in this application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.PrintDocument">
+      <summary>Displays the Print dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_PrintDocument">
+      <summary>Displays the Print dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.PrintPreview">
+      <summary>Displays how the document will look like when it is printed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_PrintPreview">
+      <summary>Displays how the document will look like when it is printed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.RefreshWindow">
+      <summary>Redraws the application window.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_RefreshWindow">
+      <summary>Redraws the application window.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.SaveAsDocument(System.String,System.Boolean)">
+      <summary>Saves the document that is currently open in this application to a different file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_SaveAsDocument(System.String,System.Boolean)">
+      <summary>Saves the document that is currently open in this application to a different file.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.SaveDocument(System.String)">
+      <summary>Saves the document that is currently open in this application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_SaveDocument(System.String)">
+      <summary>Saves the document that is currently open in this application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.ShowDialog(System.Int32,System.Object@)">
+      <summary>Displays the specified dialog in the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_ShowDialog(System.Int32,System.Object@)">
+      <summary>Displays the specified dialog in the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.Shutdown">
+      <summary>Terminates the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_Shutdown">
+      <summary>Terminates the application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.StatusBar">
+      <summary>The statusbar of this application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_StatusBar">
+      <summary>The statusbar of this application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Templates">
+      <summary>The templates collection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_Templates">
+      <summary>The templates collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.UnlockCustomization(System.String)">
+      <summary>Unlocks previous user interface customization lock.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_UnlockCustomization(System.String)">
+      <summary>Unlocks previous user interface customization lock.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.VBE">
+      <summary>The Visual Basic Environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_VBE">
+      <summary>The Visual Basic Environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Visible">
+      <summary>Indicates if the application window is visible.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplication_Visible">
+      <summary>Indicates if the application window is visible.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Initialized">
+      <summary>Is the application initialized.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplicationStatus_Initialized">
+      <summary>Is the application initialized.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ApplicationClass.Initialized">
+      <summary>Fired when the application UI is initialized.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplicationStatusEvents_Initialized">
+      <summary>Fired when the application UI is initialized.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplicationStatusEvents_Event_Initialized">
+      <summary>Fired when the application UI is initialized.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ApplicationClass.IApplicationStatusEvents_Event.Initialized">
+      <summary>Fired when the application UI is initialized.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IApplicationStatusEvents_Event.Initialized">
+      <summary>Fired when the application UI is initialized.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IApplicationStatusEvents_InitializedEventHandler">
+      <summary>Handles the IApplicationStatusEvents_Event.Initialized Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IApplicationStatusEvents_Event">
+      <summary>Provides access to events fired by application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.GetDockableWindow(ESRI.ArcGIS.esriSystem.IUID)">
+      <summary>Finds a dockable window looking first in the collection and then in the category.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IDockableWindowManager_GetDockableWindow(ESRI.ArcGIS.esriSystem.IUID)">
+      <summary>Finds a dockable window looking first in the collection and then in the category.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.GetProcessID">
+      <summary>The process ID for the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IMultiThreadedApplication_GetProcessID">
+      <summary>The process ID for the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.RegisterThreadManager(ESRI.ArcGIS.Framework.IDllThreadManager)">
+      <summary>Registers a DLL thread manager with the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IMultiThreadedApplication_RegisterThreadManager(ESRI.ArcGIS.Framework.IDllThreadManager)">
+      <summary>Registers a DLL thread manager with the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.UnregisterThreadManager(System.Int32)">
+      <summary>Unregisters a DLL thread manager with the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IMultiThreadedApplication_UnregisterThreadManager(System.Int32)">
+      <summary>Unregisters a DLL thread manager with the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.Create(System.Object)">
+      <summary>Creates an instance of an object identified by objectID.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IObjectFactory_Create(System.Object)">
+      <summary>Creates an instance of an object identified by objectID.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.CreateCodeModule(System.String,System.String)">
+      <summary>Creates a code module in the specified VBA project.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IVbaApplication_CreateCodeModule(System.String,System.String)">
+      <summary>Creates a code module in the specified VBA project.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.InsertCode(System.String,System.String,System.String)">
+      <summary>Inserts code into the specified module.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IVbaApplication_InsertCode(System.String,System.String,System.String)">
+      <summary>Inserts code into the specified module.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.RemoveCodeModule(System.String,System.String)">
+      <summary>Removes a code module from the specified VBA project.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IVbaApplication_RemoveCodeModule(System.String,System.String)">
+      <summary>Removes a code module from the specified VBA project.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.RunVBAMacro(System.String,System.String,System.String,System.Object@)">
+      <summary>Runs the specified VBA macro.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IVbaApplication_RunVBAMacro(System.String,System.String,System.String,System.Object@)">
+      <summary>Runs the specified VBA macro.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Height">
+      <summary>The height of the window.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IWindowPosition_Height">
+      <summary>The height of the window.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Left">
+      <summary>The distance between the internal left edge of the window and screen.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IWindowPosition_Left">
+      <summary>The distance between the internal left edge of the window and screen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.Move(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Moves and optionally resizes the windows in a single function.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IWindowPosition_Move(System.Int32,System.Int32,System.Int32,System.Int32)">
+      <summary>Moves and optionally resizes the windows in a single function.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.State">
+      <summary>The state of the window.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IWindowPosition_State">
+      <summary>The state of the window.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Top">
+      <summary>The distance between the internal top edge of the window and screen.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IWindowPosition_Top">
+      <summary>The distance between the internal top edge of the window and screen.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Width">
+      <summary>The width of the window.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IWindowPosition_Width">
+      <summary>The width of the window.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.Extension(System.Int32)">
+      <summary>The extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IExtensionManager_Extension(System.Int32)">
+      <summary>The extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.ExtensionCLSID(System.Int32)">
+      <summary>The CLSID of the extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IExtensionManager_ExtensionCLSID(System.Int32)">
+      <summary>The CLSID of the extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.ExtensionCount">
+      <summary>The number of extensions loaded in the application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.ApplicationClass.IExtensionManager_ExtensionCount">
+      <summary>The number of extensions loaded in the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.FindExtension(System.Object)">
+      <summary>Finds the extension by CLSID (IUID) or name (String).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.ApplicationClass.IExtensionManager_FindExtension(System.Object)">
+      <summary>Finds the extension by CLSID (IUID) or name (String).</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.GxFilterScenes">
+      <summary>A filter for displaying/choosing ArcScene documents.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.GxFilterScenesClass">
+      <summary>A filter for displaying/choosing ArcScene documents.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.IGxObjectFilter_CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene..">
+      <summary>A filter for displaying/choosing ArcScene documents. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene.._">
+      <summary>A filter for displaying/choosing ArcScene documents. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.#ctor">
+      <summary>A filter for displaying/choosing ArcScene documents. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.IGxObjectFilter_CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.IGxObjectFilter_CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.IGxObjectFilter_Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.GxFilterScenesClass.IGxObjectFilter_Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.SxDocument">
+      <summary>Provides access to members that control the ArcScene document.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.SxDocumentClass">
+      <summary>Provides access to members that control the ArcScene document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ActivatedView">
+      <summary>The activated view.  This is the same as the active view unless a data frame is activated within a layout.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_ActivatedView">
+      <summary>The activated view.  This is the same as the active view unless a data frame is activated within a layout.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene..">
+      <summary>Provides access to members that control the ArcScene document. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene.._">
+      <summary>Provides access to members that control the ArcScene document. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.#ctor">
+      <summary>Provides access to members that control the ArcScene document. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.AddLayer(ESRI.ArcGIS.Carto.ILayer)">
+      <summary>Adds a layer to the current focus map or scene.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_AddLayer(ESRI.ArcGIS.Carto.ILayer)">
+      <summary>Adds a layer to the current focus map or scene.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ContextItem">
+      <summary>The last item that was right-clicked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_ContextItem">
+      <summary>The last item that was right-clicked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.CurrentLocation">
+      <summary>The current mouse location in map units.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_CurrentLocation">
+      <summary>The current mouse location in map units.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.FocusMap">
+      <summary>The current focus map.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_FocusMap">
+      <summary>The current focus map.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Maps">
+      <summary>The collection of maps in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_Maps">
+      <summary>The collection of maps in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.OperationStack">
+      <summary>The operation stack.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_OperationStack">
+      <summary>The operation stack.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.PageLayout">
+      <summary>The page layout.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_PageLayout">
+      <summary>The page layout.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.SearchTolerance">
+      <summary>The global search tolerance in geographic units for selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_SearchTolerance">
+      <summary>The global search tolerance in geographic units for selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.SearchTolerancePixels">
+      <summary>The global search tolerance in pixels for selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_SearchTolerancePixels">
+      <summary>The global search tolerance in pixels for selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.SelectedItem">
+      <summary>The selected item in the layer control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_SelectedItem">
+      <summary>The selected item in the layer control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.SelectedLayer">
+      <summary>The selected layer in the layer control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_SelectedLayer">
+      <summary>The selected layer in the layer control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.StyleGallery">
+      <summary>Reference to the document's Style Gallery.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_StyleGallery">
+      <summary>Reference to the document's Style Gallery.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.TableProperties">
+      <summary>Table properties, for Layers and Tables.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_TableProperties">
+      <summary>Table properties, for Layers and Tables.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.UpdateContents">
+      <summary>Notifies the document that the contents have been updated.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IBasicDocument2_UpdateContents">
+      <summary>Notifies the document that the contents have been updated.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Text3DElement">
+      <summary>Default 3D Text Element.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_Text3DElement">
+      <summary>Default 3D Text Element.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.AreaPatch">
+      <summary>Default Area Patch.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_AreaPatch">
+      <summary>Default Area Patch.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.CustomTOCFont">
+      <summary>Custom TOC Font.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_CustomTOCFont">
+      <summary>Custom TOC Font.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.CustomTOCFontSize">
+      <summary>Custom TOC Font Size in Points.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_CustomTOCFontSize">
+      <summary>Custom TOC Font Size in Points.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.FillSymbol">
+      <summary>Default Fill Symbol.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_FillSymbol">
+      <summary>Default Fill Symbol.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.LinePatch">
+      <summary>Default Line Patch.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_LinePatch">
+      <summary>Default Line Patch.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.LineSymbol">
+      <summary>Default Line Symbol.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_LineSymbol">
+      <summary>Default Line Symbol.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.MarkerSymbol">
+      <summary>Default Marker Symbol.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_MarkerSymbol">
+      <summary>Default Marker Symbol.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.PatchHeight">
+      <summary>Default Patch Height in Points.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_PatchHeight">
+      <summary>Default Patch Height in Points.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.PatchWidth">
+      <summary>Default Patch Width in Points.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument3DDefaultSymbols_PatchWidth">
+      <summary>Default Patch Width in Points.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_AddLayer(ESRI.ArcGIS.Carto.ILayer)">
+      <summary>Adds a layer to the current focus map.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ContentsView(System.Int32)">
+      <summary>The contents view at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_ContentsView(System.Int32)">
+      <summary>The contents view at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ContentsViewCount">
+      <summary>The number of contents views in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_ContentsViewCount">
+      <summary>The number of contents views in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_ContextItem">
+      <summary>The item that is selected or was last right-clicked.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.CurrentContentsView">
+      <summary>The current contents view of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_CurrentContentsView">
+      <summary>The current contents view of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.DefaultColor(ESRI.ArcGIS.ArcMapUI.esriMxDefaultColorTypes)">
+      <summary>The default color for the given type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_DefaultColor(ESRI.ArcGIS.ArcMapUI.esriMxDefaultColorTypes)">
+      <summary>The default color for the given type.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.DelayUpdateContents">
+      <summary>Indicates whether to ignore document update notifications.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_DelayUpdateContents">
+      <summary>Indicates whether to ignore document update notifications.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.RelativePaths">
+      <summary>Indicates if path names are stored relative to the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_RelativePaths">
+      <summary>Indicates if path names are stored relative to the document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.RemoveAllLayers">
+      <summary>Removes all layers.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_RemoveAllLayers">
+      <summary>Removes all layers.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.SavePreview">
+      <summary>Indicates if a preview image is saved in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_SavePreview">
+      <summary>Indicates if a preview image is saved in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Scene">
+      <summary>The scene.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_Scene">
+      <summary>The scene.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_SearchTolerancePixels">
+      <summary>The global search tolerance in pixels for selection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_SelectedItem">
+      <summary>The selected item in the layer control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_SelectedLayer">
+      <summary>The selected layer in the layer control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocument_UpdateContents">
+      <summary>Notifies the document that the contents have been updated.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event_BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_BeforeCloseDocumentEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.BeforeCloseDocument Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event">
+      <summary>Provides access to the events fired by ArcScene.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event_CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_CloseDocumentEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.CloseDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event_NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_NewDocumentEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.NewDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event_OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_OnContextMenuEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.OnContextMenu Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event_OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEvents_Event.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_OpenDocumentEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.OpenDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event_BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_BeforeCloseDocumentEventHandler">
+      <summary>Handles the ISxDocumentEventsDisp_Event.BeforeCloseDocument Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event">
+      <summary>Provides access to events fired by ArcScene.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_CloseDocument">
+      <summary>Fired when a document is closed. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event_CloseDocument">
+      <summary>Fired when a document is closed. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event.CloseDocument">
+      <summary>Fired when a document is closed. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.CloseDocument">
+      <summary>Fired when a document is closed. Return true if handled.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_CloseDocumentEventHandler">
+      <summary>Handles the ISxDocumentEventsDisp_Event.CloseDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_NewDocument">
+      <summary>Fired when a new document is created. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event_NewDocument">
+      <summary>Fired when a new document is created. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event.NewDocument">
+      <summary>Fired when a new document is created. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.NewDocument">
+      <summary>Fired when a new document is created. Return true if handled.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_NewDocumentEventHandler">
+      <summary>Handles the ISxDocumentEventsDisp_Event.NewDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event_OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Return true if handled.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_OnContextMenuEventHandler">
+      <summary>Handles the ISxDocumentEventsDisp_Event.OnContextMenu Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_OpenDocument">
+      <summary>Fired when a document is opened. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event_OpenDocument">
+      <summary>Fired when a document is opened. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event.OpenDocument">
+      <summary>Fired when a document is opened. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.OpenDocument">
+      <summary>Fired when a document is opened. Return true if handled.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_OpenDocumentEventHandler">
+      <summary>Handles the ISxDocumentEventsDisp_Event.OpenDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.VBAReset">
+      <summary>Fired when VBA is reset. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_VBAReset">
+      <summary>Fired when VBA is reset. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event_VBAReset">
+      <summary>Fired when VBA is reset. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentEventsDisp_Event.VBAReset">
+      <summary>Fired when VBA is reset. Return true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_Event.VBAReset">
+      <summary>Fired when VBA is reset. Return true if handled.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEventsDisp_VBAResetEventHandler">
+      <summary>Handles the ISxDocumentEventsDisp_Event.VBAReset Event</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Author">
+      <summary>The author of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentInfo_Author">
+      <summary>The author of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Category">
+      <summary>The category of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentInfo_Category">
+      <summary>The category of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Comments">
+      <summary>The comments for the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentInfo_Comments">
+      <summary>The comments for the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.DocumentTitle">
+      <summary>The title of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentInfo_DocumentTitle">
+      <summary>The title of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.HyperlinkBase">
+      <summary>The hyperlink base of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentInfo_HyperlinkBase">
+      <summary>The hyperlink base of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Keywords">
+      <summary>The keywords for the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentInfo_Keywords">
+      <summary>The keywords for the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Subject">
+      <summary>The subject of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ISxDocumentInfo_Subject">
+      <summary>The subject of the document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.AddDataGraph(ESRI.ArcGIS.Carto.IDataGraphBase)">
+      <summary>Adds the graph to the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDataGraphCollection_AddDataGraph(ESRI.ArcGIS.Carto.IDataGraphBase)">
+      <summary>Adds the graph to the collection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.DataGraph(System.Int32)">
+      <summary>Graph at the given index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDataGraphCollection_DataGraph(System.Int32)">
+      <summary>Graph at the given index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.DataGraphCount">
+      <summary>Number of graphs in the collection.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDataGraphCollection_DataGraphCount">
+      <summary>Number of graphs in the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.RemoveAllDataGraphs">
+      <summary>Removes all graphs from the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDataGraphCollection_RemoveAllDataGraphs">
+      <summary>Removes all graphs from the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.RemoveDataGraph(ESRI.ArcGIS.Carto.IDataGraphBase)">
+      <summary>Removes the graph from the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDataGraphCollection_RemoveDataGraph(ESRI.ArcGIS.Carto.IDataGraphBase)">
+      <summary>Removes the graph from the collection.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.DataGraphAdded(ESRI.ArcGIS.Carto.IDataGraphBase)">
+      <summary>Fired when the graph is added to document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDataGraphCollectionEvents_DataGraphAdded(ESRI.ArcGIS.Carto.IDataGraphBase)">
+      <summary>Fired when the graph is added to document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.DataGraphRemoved(ESRI.ArcGIS.Carto.IDataGraphBase)">
+      <summary>Fired when the graph is removed from document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDataGraphCollectionEvents_DataGraphRemoved(ESRI.ArcGIS.Carto.IDataGraphBase)">
+      <summary>Fired when the graph is removed from document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.DataGraphReset">
+      <summary>Fired when document removes all graphs.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDataGraphCollectionEvents_DataGraphReset">
+      <summary>Fired when document removes all graphs.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_Author">
+      <summary>The author of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_Category">
+      <summary>The category of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_Comments">
+      <summary>Comments for the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Credits">
+      <summary>The credits of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_Credits">
+      <summary>The credits of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.DateExported">
+      <summary>Date the document was last exported.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_DateExported">
+      <summary>Date the document was last exported.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.DatePrinted">
+      <summary>Date the document was last printed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_DatePrinted">
+      <summary>Date the document was last printed.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.DateSaved">
+      <summary>Date the document was last saved.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_DateSaved">
+      <summary>Date the document was last saved.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_DocumentTitle">
+      <summary>The title of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Folder">
+      <summary>The folder of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_Folder">
+      <summary>The folder of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_HyperlinkBase">
+      <summary>The hyperlink base of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_Keywords">
+      <summary>The keywords for the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Name">
+      <summary>The name of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_Name">
+      <summary>The name of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Path">
+      <summary>The path of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_Path">
+      <summary>The path of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_RelativePaths">
+      <summary>Indicates if relative path is used when the document is saved.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_SavePreview">
+      <summary>Indicates if a preview of the document is saved when the document is saved.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentInfo2_Subject">
+      <summary>The subject of the document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.CreatePreview">
+      <summary>Creates a thumbnail preview of the document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentPreview_CreatePreview">
+      <summary>Creates a thumbnail preview of the document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.DeletePreview">
+      <summary>Deletes the thumbnail preview of the document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentPreview_DeletePreview">
+      <summary>Deletes the thumbnail preview of the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.HasPreviewSaved">
+      <summary>Indicates the presence of a thumbnail preview in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentPreview_HasPreviewSaved">
+      <summary>Indicates the presence of a thumbnail preview in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.HasPreviewToSave">
+      <summary>Indicates the presence of a thumbnail preview to be saved with the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentPreview_HasPreviewToSave">
+      <summary>Indicates the presence of a thumbnail preview to be saved with the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Datasets">
+      <summary>The datasets in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentDatasets_Datasets">
+      <summary>The datasets in the document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Accelerators">
+      <summary>The accelerator table for this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument_Accelerators">
+      <summary>The accelerator table for this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.CommandBars">
+      <summary>The commandbars collection in this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument_CommandBars">
+      <summary>The commandbars collection in this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.ID">
+      <summary>The unique id for this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument_ID">
+      <summary>The unique id for this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Parent">
+      <summary>The application in which this document is open.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument_Parent">
+      <summary>The application in which this document is open.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Title">
+      <summary>The title of this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument_Title">
+      <summary>The title of this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.Type">
+      <summary>The type of this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument_Type">
+      <summary>The type of this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.VBProject">
+      <summary>The VBProject for this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocument_VBProject">
+      <summary>The VBProject for this document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.DocumentVersion">
+      <summary>The version of the document to save.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxDocumentClass.IDocumentVersion_DocumentVersion">
+      <summary>The version of the document to save.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelper">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event_BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene..">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene.._">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.BeforeCloseDocument">
+      <summary>Fired before a document is closed. Return True to abort the close process.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_BeforeCloseDocumentEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.BeforeCloseDocument Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event">
+      <summary>Provides access to the events fired by ArcScene.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.#ctor">
+      <summary> Constructor has no input arguments.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event_CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.CloseDocument">
+      <summary>Fired when a document is closed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_CloseDocumentEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.CloseDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event_NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.NewDocument">
+      <summary>Fired when a new document is created.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_NewDocumentEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.NewDocument Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event_OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.OnContextMenu">
+      <summary>Fired when a context menu should be displayed at the given xy location. Returns true if handled.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_OnContextMenuEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.OnContextMenu Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event_OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.SxDocumentEventsHelperClass.ISxDocumentEvents_Event.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_Event.OpenDocument">
+      <summary>Fired when a document is opened.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.ISxDocumentEvents_OpenDocumentEventHandler">
+      <summary>Handles the ISxDocumentEvents_Event.OpenDocument Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.SxEffectsToolbarEnvironment">
+      <summary>3D Effects Toolbar Enviroment.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.SxEffectsToolbarEnvironmentClass">
+      <summary>3D Effects Toolbar Enviroment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxEffectsToolbarEnvironmentClass.CurrentSelectedLayer">
+      <summary>The ILayer interface of the current selected layer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.SxEffectsToolbarEnvironmentClass.IDDDToolbarEnvironment_CurrentSelectedLayer">
+      <summary>The ILayer interface of the current selected layer.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene..">
+      <summary>3D Effects Toolbar Enviroment. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene.._">
+      <summary>3D Effects Toolbar Enviroment. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.SxEffectsToolbarEnvironmentClass.#ctor">
+      <summary>3D Effects Toolbar Enviroment. Constructor has no input arguments.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.TOCSxCatalogView">
+      <summary>ESRI TOC Sx Catalog View.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass">
+      <summary>ESRI TOC Sx Catalog View.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.Activate(System.Int32,ESRI.ArcGIS.ArcScene.ISxDocument)">
+      <summary>Activates the contents view.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_Activate(System.Int32,ESRI.ArcGIS.ArcScene.ISxDocument)">
+      <summary>Activates the contents view.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene..">
+      <summary>ESRI TOC Sx Catalog View. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene.._">
+      <summary>ESRI TOC Sx Catalog View. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.#ctor">
+      <summary>ESRI TOC Sx Catalog View. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.AddToSelectedItems(System.Object)">
+      <summary>Adds to the selected items.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_AddToSelectedItems(System.Object)">
+      <summary>Adds to the selected items.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ContextItem">
+      <summary>The context item (could be an enumerator).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_ContextItem">
+      <summary>The context item (could be an enumerator).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.Deactivate">
+      <summary>Deactivates the contents view.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_Deactivate">
+      <summary>Deactivates the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.hWnd">
+      <summary>The HWND of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_hWnd">
+      <summary>The HWND of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.Name">
+      <summary>The name of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_Name">
+      <summary>The name of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ProcessEvents">
+      <summary>Indicates whether the view is currently responding to events.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_ProcessEvents">
+      <summary>Indicates whether the view is currently responding to events.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.Refresh(System.Object)">
+      <summary>Refreshes the contents view.  If a non-null item is specified, it refreshes only that item and its children.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_Refresh(System.Object)">
+      <summary>Refreshes the contents view.  If a non-null item is specified, it refreshes only that item and its children.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.RemoveFromSelectedItems(System.Object)">
+      <summary>Removes an item from the selected items.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_RemoveFromSelectedItems(System.Object)">
+      <summary>Removes an item from the selected items.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.SelectedItem">
+      <summary>The selected item (could be an enumerator).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_SelectedItem">
+      <summary>The selected item (could be an enumerator).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ShowLines">
+      <summary>Indicates whether to show lines in the TOC tree.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_ShowLines">
+      <summary>Indicates whether to show lines in the TOC tree.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.Visible">
+      <summary>Indicates if the view is visible.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ISxContentsView_Visible">
+      <summary>Indicates if the view is visible.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_AfterDrawEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.AfterDraw Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event">
+      <summary>Provides access to events that occur when the state of the active view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_AfterItemDrawEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.AfterItemDraw Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ContentsChangedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ContentsChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ContentsClearedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ContentsCleared Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_FocusMapChangedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.FocusMapChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ItemAddedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ItemAdded Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ItemDeletedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ItemDeleted Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ItemReorderedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ItemReordered Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_SelectionChangedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.SelectionChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_SpatialReferenceChangedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.SpatialReferenceChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event_ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IActiveViewEvents_Event.ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ViewRefreshedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ViewRefreshed Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IComPropertySheetEvents_OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IComPropertySheetEvents_Event_OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxCatalogViewClass.IComPropertySheetEvents_Event.OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IComPropertySheetEvents_Event.OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IComPropertySheetEvents_OnApplyEventHandler">
+      <summary>Handles the IComPropertySheetEvents_Event.OnApply Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IComPropertySheetEvents_Event">
+      <summary>Provides access to events that occur on a COM property sheet.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.TOCSxDisplayView">
+      <summary>ESRI TOC Sx Display View.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass">
+      <summary>ESRI TOC Sx Display View.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.Activate(System.Int32,ESRI.ArcGIS.ArcScene.ISxDocument)">
+      <summary>Activates the contents view.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_Activate(System.Int32,ESRI.ArcGIS.ArcScene.ISxDocument)">
+      <summary>Activates the contents view.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene..">
+      <summary>ESRI TOC Sx Display View. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.ArcScene.._">
+      <summary>ESRI TOC Sx Display View. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.#ctor">
+      <summary>ESRI TOC Sx Display View. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.AddToSelectedItems(System.Object)">
+      <summary>Adds to the selected items.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_AddToSelectedItems(System.Object)">
+      <summary>Adds to the selected items.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ContextItem">
+      <summary>The context item (could be an enumerator).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_ContextItem">
+      <summary>The context item (could be an enumerator).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.Deactivate">
+      <summary>Deactivates the contents view.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_Deactivate">
+      <summary>Deactivates the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.hWnd">
+      <summary>The HWND of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_hWnd">
+      <summary>The HWND of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.Name">
+      <summary>The name of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_Name">
+      <summary>The name of the contents view.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ProcessEvents">
+      <summary>Indicates whether the view is currently responding to events.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_ProcessEvents">
+      <summary>Indicates whether the view is currently responding to events.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.Refresh(System.Object)">
+      <summary>Refreshes the contents view.  If a non-null item is specified, it refreshes only that item and its children.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_Refresh(System.Object)">
+      <summary>Refreshes the contents view.  If a non-null item is specified, it refreshes only that item and its children.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.RemoveFromSelectedItems(System.Object)">
+      <summary>Removes an item from the selected items.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_RemoveFromSelectedItems(System.Object)">
+      <summary>Removes an item from the selected items.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.SelectedItem">
+      <summary>The selected item (could be an enumerator).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_SelectedItem">
+      <summary>The selected item (could be an enumerator).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ShowLines">
+      <summary>Indicates whether to show lines in the TOC tree.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_ShowLines">
+      <summary>Indicates whether to show lines in the TOC tree.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.Visible">
+      <summary>Indicates if the view is visible.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ISxContentsView_Visible">
+      <summary>Indicates if the view is visible.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.AfterDraw">
+      <summary>Fired after the specified phase is drawn.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_AfterDrawEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.AfterDraw Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event">
+      <summary>Provides access to events that occur when the state of the active view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.AfterItemDraw">
+      <summary>Fired after an individual view item is drawn.  Example: view items include layers in a map or elements in a page layout.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_AfterItemDrawEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.AfterItemDraw Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ContentsChanged">
+      <summary>Fired when the contents of the view changes.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ContentsChangedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ContentsChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ContentsCleared">
+      <summary>Fired when the contents of the view is cleared.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ContentsClearedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ContentsCleared Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.FocusMapChanged">
+      <summary>Fired when a new map is made active.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_FocusMapChangedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.FocusMapChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ItemAdded">
+      <summary>Fired when an item is added to the view.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ItemAddedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ItemAdded Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ItemDeleted">
+      <summary>Fired when an item is deleted from the view.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ItemDeletedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ItemDeleted Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ItemReordered">
+      <summary>Fired when a view item is reordered.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ItemReorderedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ItemReordered Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.SelectionChanged">
+      <summary>Call this function to fire the selection changed event.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_SelectionChangedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.SelectionChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.SpatialReferenceChanged">
+      <summary>Fired when the spatial reference is changed.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_SpatialReferenceChangedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.SpatialReferenceChanged Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event_ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IActiveViewEvents_Event.ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IActiveViewEvents_Event.ViewRefreshed">
+      <summary>Fired when view is refreshed before draw happens.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IActiveViewEvents_ViewRefreshedEventHandler">
+      <summary>Handles the IActiveViewEvents_Event.ViewRefreshed Event</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IComPropertySheetEvents_OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IComPropertySheetEvents_Event_OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.TOCSxDisplayViewClass.IComPropertySheetEvents_Event.OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="E:ESRI.ArcGIS.ArcScene.IComPropertySheetEvents_Event.OnApply">
+      <summary>Occurs when changes are applied.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IComPropertySheetEvents_OnApplyEventHandler">
+      <summary>Handles the IComPropertySheetEvents_Event.OnApply Event</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.IComPropertySheetEvents_Event">
+      <summary>Provides access to events that occur on a COM property sheet.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.esriSxCustomizationEvent">
+      <summary>Sx customization event types.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxCustomizationEvent.esriCEShowSceneProperties">
+      <summary>Show Scene Properties.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxCustomizationEvent.esriCEShowSxAddDataDialog">
+      <summary>Show Add Data Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxCustomizationEvent.esriCEShowSxLayersProperties">
+      <summary>Show Layer Properties.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.ArcScene.esriSxDlgIDs">
+      <summary>The ESRI ArcScene dialog identifiers.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgCustomize">
+      <summary>Customize Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgOptions">
+      <summary>Options Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgMacros">
+      <summary>Macros Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgVBA">
+      <summary>VBA Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgPageSetup">
+      <summary>Page Setup Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgPrintSetup">
+      <summary>Print Setup Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgProperties">
+      <summary>Properties Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgUnlockCustomization">
+      <summary>Unlock Customization Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgLockCustomization">
+      <summary>Lock Customization Dialog.</summary>
+    </member>
+    <member name="F:ESRI.ArcGIS.ArcScene.esriSxDlgIDs.esriSxDlgContents">
+      <summary>Contents Dialog.</summary>
+    </member>
+  </members>
+</doc>

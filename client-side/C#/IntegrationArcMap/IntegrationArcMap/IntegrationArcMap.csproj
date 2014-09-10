@@ -57,52 +57,77 @@
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ESRI.ArcGIS.ADF, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86" />
-    <Reference Include="ESRI.ArcGIS.ADF.Connection.Local, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86" />
-    <Reference Include="ESRI.ArcGIS.Carto, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+    <Reference Include="ESRI.ArcGIS.ADF, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.ADF.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF.Connection.Local, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.ADF.Connection.Local.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ArcMapUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>True</Private>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.ArcMapUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Carto.dll</HintPath>
     </Reference>
     <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>True</Private>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.DataSourcesGDB.dll</HintPath>
     </Reference>
-    <Reference Include="ESRI.ArcGIS.Desktop.AddIns, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86" />
+    <Reference Include="ESRI.ArcGIS.Desktop.AddIns, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Desktop.AddIns.dll</HintPath>
+    </Reference>
     <Reference Include="ESRI.ArcGIS.Display, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>True</Private>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Display.dll</HintPath>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Editor, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="ESRI.ArcGIS.Framework">
-      <Private>False</Private>
+    <Reference Include="ESRI.ArcGIS.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Framework.dll</HintPath>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>True</Private>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Geodatabase.dll</HintPath>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Geometry, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="ESRI.ArcGIS.System">
-      <Private>False</Private>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Geometry.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+    <Reference Include="ESRI.ArcGIS.System, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.System.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.SystemUI.dll</HintPath>
     </Reference>
     <Reference Include="ESRI.ArcGIS.TrackingAnalyst, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="GlobeSpotterAPI, Version=2.8.0.0, Culture=neutral, PublicKeyToken=40e543d64118bdd4, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\GlobeSpotterAPI.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.TrackingAnalyst.dll</HintPath>
+    </Reference>
+    <Reference Include="GlobeSpotterAPI">
+      <HintPath>..\..\Libs\GlobeSpotterAPI2.85\GlobeSpotterAPI.dll</HintPath>
     </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -230,12 +255,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddIns\GsExtension.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="ESRI.ArcGIS.ArcMapUI">
-      <Private>False</Private>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

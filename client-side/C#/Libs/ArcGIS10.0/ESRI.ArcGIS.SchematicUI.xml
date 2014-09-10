@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.SchematicUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.SchematicUI.IGxFilterOnSchematicDataset">
+      <summary>Provides access to members that control the Gx object filter allowing to filter out the schematic dataset.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.IGxFilterOnSchematicDataset.SchematicDatasetFilter">
+      <summary>Schematic dataset associated to the Gx filter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolder">
+      <summary>Gx object filter allowing to filter out the schematic datasets or the schematic folders.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass">
+      <summary>Gx object filter allowing to filter out the schematic datasets or the schematic folders.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.IGxObjectFilter_CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI..">
+      <summary>Gx object filter allowing to filter out the schematic datasets or the schematic folders. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI.._">
+      <summary>Gx object filter allowing to filter out the schematic datasets or the schematic folders. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.#ctor">
+      <summary>Gx object filter allowing to filter out the schematic datasets or the schematic folders. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.IGxObjectFilter_CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.IGxObjectFilter_CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.IGxObjectFilter_Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.IGxObjectFilter_Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.SchematicDatasetFilter">
+      <summary>Schematic dataset associated to the Gx filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetOrFolderClass.IGxFilterOnSchematicDataset_SchematicDatasetFilter">
+      <summary>Schematic dataset associated to the Gx filter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasets">
+      <summary>Gx object filter allowing to filter out the schematic datasets.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass">
+      <summary>Gx object filter allowing to filter out the schematic datasets.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.IGxObjectFilter_CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI..">
+      <summary>Gx object filter allowing to filter out the schematic datasets. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI.._">
+      <summary>Gx object filter allowing to filter out the schematic datasets. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.#ctor">
+      <summary>Gx object filter allowing to filter out the schematic datasets. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.IGxObjectFilter_CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.IGxObjectFilter_CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.IGxObjectFilter_Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDatasetsClass.IGxObjectFilter_Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagrams">
+      <summary>Gx object filter allowing to filter out the schematic diagrams.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass">
+      <summary>Gx object filter allowing to filter out the schematic diagrams.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.IGxObjectFilter_CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI..">
+      <summary>Gx object filter allowing to filter out the schematic diagrams. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI.._">
+      <summary>Gx object filter allowing to filter out the schematic diagrams. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.#ctor">
+      <summary>Gx object filter allowing to filter out the schematic diagrams. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.IGxObjectFilter_CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.IGxObjectFilter_CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.IGxObjectFilter_Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.IGxObjectFilter_Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.SchematicDatasetFilter">
+      <summary>Schematic dataset associated to the Gx filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.GxFilterSchematicDiagramsClass.IGxFilterOnSchematicDataset_SchematicDatasetFilter">
+      <summary>Schematic dataset associated to the Gx filter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.SchematicExtension">
+      <summary>Provides access to the schematic extension.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass">
+      <summary>Provides access to the schematic extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.DisplayDiagram(ESRI.ArcGIS.Schematic.ISchematicDiagram,ESRI.ArcGIS.Carto.IMap@)">
+      <summary>Helper to display a diagram. If the map is not given as input, a new map is created and is returned as output.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.ISchematicDisplayDiagramHelper_DisplayDiagram(ESRI.ArcGIS.Schematic.ISchematicDiagram,ESRI.ArcGIS.Carto.IMap@)">
+      <summary>Helper to display a diagram. If the map is not given as input, a new map is created and is returned as output.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI..">
+      <summary>Provides access to the schematic extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI.._">
+      <summary>Provides access to the schematic extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.#ctor">
+      <summary>Provides access to the schematic extension. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.MultiViews">
+      <summary>Indicates if we want to display the diagrams in new windows.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.ISchematicDisplayDiagramHelper_MultiViews">
+      <summary>Indicates if we want to display the diagrams in new windows.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.CurrentLayout">
+      <summary>Active schematic layout in the Layout Task dropdown list.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.ISchematicLayoutMgr_CurrentLayout">
+      <summary>Active schematic layout in the Layout Task dropdown list.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.CurrentTrace">
+      <summary>Active schematic trace task in the Trace Task dropdown list.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.ISchematicNetworkAnalystMgr_CurrentTrace">
+      <summary>Active schematic trace task in the Trace Task dropdown list.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.ChangeTargetWithFocusMap">
+      <summary>Indicates if the schematic layer target changes when the focus map changes; that is, when the active data frame changes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.ISchematicTarget_ChangeTargetWithFocusMap">
+      <summary>Indicates if the schematic layer target changes when the focus map changes; that is, when the active data frame changes.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.SchematicTarget">
+      <summary>Current schematic layer target; that is, schematic layer related to the current active schematic diagram.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.ISchematicTarget_SchematicTarget">
+      <summary>Current schematic layer target; that is, schematic layer related to the current active schematic diagram.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.IExtensionConfig_Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.IExtensionConfig_ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicExtensionClass.IExtensionConfig_State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.SchematicOperation">
+      <summary>Provides access to the schematic operation.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SchematicUI.SchematicOperationClass">
+      <summary>Provides access to the schematic operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.AbortOperation">
+      <summary>Abort a schematic operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_AbortOperation">
+      <summary>Abort a schematic operation.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI..">
+      <summary>Provides access to the schematic operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SchematicUI.._">
+      <summary>Provides access to the schematic operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.#ctor">
+      <summary>Provides access to the schematic operation. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.OnAddOperation">
+      <summary>Executed when the operation is added in the stack.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_OnAddOperation">
+      <summary>Executed when the operation is added in the stack.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.StartOperation(System.String,System.Object,ESRI.ArcGIS.Schematic.ISchematicLayer,System.Boolean)">
+      <summary>Start a new schematic operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_StartOperation(System.String,System.Object,ESRI.ArcGIS.Schematic.ISchematicLayer,System.Boolean)">
+      <summary>Start a new schematic operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.StopOperation">
+      <summary>Stop a schematic operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_StopOperation">
+      <summary>Stop a schematic operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.ISchematicOperation_Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.IOperation_CanRedo">
+      <summary>Indicates if the operation can be redone.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.IOperation_CanUndo">
+      <summary>Indicates if the operation can be undone.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.IOperation_Do">
+      <summary>Performs the operation.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.IOperation_MenuString">
+      <summary>The menu string.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.IOperation_Redo">
+      <summary>Redoes the operation.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SchematicUI.SchematicOperationClass.IOperation_Undo">
+      <summary>Undoes the operation.</summary>
+    </member>
+  </members>
+</doc>

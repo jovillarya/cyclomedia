@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.DataInteroperabilityTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.DataInteroperabilityTools.QuickExport">
+            <summary>Converts one or more input feature classes or feature layers into any format supported by the ArcGIS Data Interoperability extension.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.DataInteroperabilityTools.QuickExport.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input">The layers that will be exported from ArcGIS. (In, Required)</param>
+            <param name="Output">The format and dataset that the data will be exported to. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickExport.Input">
+            <summary>The layers that will be exported from ArcGIS. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickExport.Output">
+            <summary>The format and dataset that the data will be exported to. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickExport.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickExport.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickExport.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickExport.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickExport.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.DataInteroperabilityTools.QuickImport">
+            <summary>Converts data in any format supported by the ArcGIS Data Interoperability extension into feature classes.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.DataInteroperabilityTools.QuickImport.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input">The data to be imported. The command syntax can take multiple forms: (In, Required)</param>
+            <param name="Output">The output staging personal geodatabase. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickImport.Input">
+            <summary>The data to be imported. The command syntax can take multiple forms: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickImport.Output">
+            <summary>The output staging personal geodatabase. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickImport.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickImport.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickImport.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickImport.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.DataInteroperabilityTools.QuickImport.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

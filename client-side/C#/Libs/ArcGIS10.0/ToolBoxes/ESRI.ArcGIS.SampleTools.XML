@@ -1,0 +1,532 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.SampleTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile">
+            <summary>Writes the coordinates of a Feature Class' geometry to a Text File</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Features">Input Features (in)</param>
+            <param name="Output_Text_File">Output Text File (out)</param>
+            <param name="Decimal_Separator_Character">Decimal Separator Character (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile.Input_Features">
+            <summary>Input Features (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile.Output_Text_File">
+            <summary>Output Text File (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile.Decimal_Separator_Character">
+            <summary>Decimal Separator Character (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WriteFeaturesToTextFile.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile">
+            <summary>Creates a Feature Class based on coordinates in a text file.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.#ctor(System.Object,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Text_File">Input Text File (in)</param>
+            <param name="Input_Decimal_Separator">Input Decimal Separator (in)</param>
+            <param name="Output_Feature_Class">Output Feature Class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.Input_Text_File">
+            <summary>Input Text File (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.Input_Decimal_Separator">
+            <summary>Input Decimal Separator (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.Output_Feature_Class">
+            <summary>Output Feature Class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.Output_Feature_Class_Spatial_Reference">
+            <summary>Output Feature Class Spatial Reference (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeaturesFromTextFile.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.BatchDefine">
+            <summary>Batch define spatial reference for a list of datasets, featureclass or raster</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.BatchDefine.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Datasets">Input Datasets (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.Input_Datasets">
+            <summary>Input Datasets (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.Coordinate_System">
+            <summary>Coordinate System (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.Template_Dataset">
+            <summary>Template Dataset (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.Completed">
+            <summary>Completed (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.Error">
+            <summary>Error (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.BatchDefine.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures">
+            <summary>Creates Polygons from any point and line feature classes.  Used customized for CAD by including CAD File filters and the introduction of the Repair Geometries and Integrate tools to ensure good polygon geometry creation for CAD data.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_boundary_lines">input boundary lines (in)</param>
+            <param name="input_label_points">input label points (in)</param>
+            <param name="output_polygon_feature_class">output polygon feature class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.input_boundary_lines">
+            <summary>input boundary lines (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.input_label_points">
+            <summary>input label points (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.output_polygon_feature_class">
+            <summary>output polygon feature class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.boundary_line_filter_expression">
+            <summary>boundary line filter expression (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.point_filter_expression">
+            <summary>point filter expression (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADLinestoPolygonFeatures.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.CADtoFeatureClass">
+            <summary></summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_CAD_file">input CAD file (in)</param>
+            <param name="output_feature_class">output feature class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.input_CAD_file">
+            <summary>input CAD file (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.output_feature_class">
+            <summary>output feature class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.select_feature_class_type">
+            <summary>select feature class type (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.filter_expression">
+            <summary>filter expression (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.modify_output_fields">
+            <summary>modify output fields (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClass.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint">
+            <summary>Adds the attributes of CAD Points or Annoataion to Selected CAD Lines, or CAD Points</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_CAD_file">input CAD file (in)</param>
+            <param name="output_feature_class">output feature class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.input_CAD_file">
+            <summary>input CAD file (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.output_feature_class">
+            <summary>output feature class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.main_features_filter_expression">
+            <summary>main features filter expression (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.select_near_points_or_annotation">
+            <summary>select near points or annotation (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.near_point_filter_expression">
+            <summary>near point filter expression (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.search_radius">
+            <summary>search radius (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.select_output_feature_type">
+            <summary>select output feature type (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CADtoFeatureClasswithAttributeofNearestPoint.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase">
+            <summary>Creates feature classes from a CAD Staging Geodatabase with all of the appropriate table joins</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.#ctor(System.Object,System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_CAD_staging_geodatabase">input CAD staging geodatabase (in)</param>
+            <param name="output_CAD_text_point_feature_class">output CAD text point feature class (out)</param>
+            <param name="output_CAD_point_feature_class">output CAD point feature class (out)</param>
+            <param name="output_CAD_line_feature_class">output CAD line feature class (out)</param>
+            <param name="output_CAD_area_feature_class">output CAD area feature class (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.input_CAD_staging_geodatabase">
+            <summary>input CAD staging geodatabase (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.output_CAD_text_point_feature_class">
+            <summary>output CAD text point feature class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.output_CAD_point_feature_class">
+            <summary>output CAD point feature class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.output_CAD_line_feature_class">
+            <summary>output CAD line feature class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.output_CAD_area_feature_class">
+            <summary>output CAD area feature class (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.CreateFeatureClasswithAllJoinsfromStagingGeodatabase.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines">
+            <summary>This model converts Polygon feature class to a CAD file with lines.  This will remove any duplicate lines that occur on polygons side by side.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.#ctor(System.Object,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_features">input features (in)</param>
+            <param name="Output_Type">Output Type (in)</param>
+            <param name="Output_File">Output File (out)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.input_features">
+            <summary>input features (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.Output_Type">
+            <summary>Output Type (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.Seed_File">
+            <summary>Seed File (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.Output_File">
+            <summary>Output File (out)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.PolygonFeatureClasstoCADLines.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins">
+            <summary></summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="input_CAD_staging_geodatabase">input CAD staging geodatabase (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins.input_CAD_staging_geodatabase">
+            <summary>input CAD staging geodatabase (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins.select_geometry_type">
+            <summary>select geometry type (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins.memory_layer_with_joins">
+            <summary>memory layer with joins (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.SubModelMemoryLayerWithAllJoins.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog">
+            <summary>This tool creates a new raster catalog and loads all the rasters in the input workspace to the raster catalog, the spatial reference of both raster column and geometry column are taken from the first dataset in the input workspace.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Workspace">Input Workspace (in)</param>
+            <param name="Output_Location">Output Location (in)</param>
+            <param name="Raster_Catalog_Name">Raster Catalog Name (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.Input_Workspace">
+            <summary>Input Workspace (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.Output_Location">
+            <summary>Output Location (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.Raster_Catalog_Name">
+            <summary>Raster Catalog Name (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.Configuration_Keyword">
+            <summary>Configuration Keyword (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.Management_Type">
+            <summary>Management Type (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.Derived_Raster_Catalog">
+            <summary>Derived Raster Catalog (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewRasterCatalog.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic">
+            <summary>Mosaics rasters in the given directory to an existing raster dataset</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Workspace">Input Workspace (in)</param>
+            <param name="Output_Raster">Output Raster (in)</param>
+            <param name="Mosaic_Colormap_Mode">Mosaic Colormap Mode (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Input_Workspace">
+            <summary>Input Workspace (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Output_Raster">
+            <summary>Output Raster (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Mosaic_Method">
+            <summary>Mosaic Method (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Mosaic_Colormap_Mode">
+            <summary>Mosaic Colormap Mode (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Ignore_Background_Value">
+            <summary>Ignore Background Value (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Nodata_Value">
+            <summary>Nodata Value (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Convert_1_bit_data_to_8_bit">
+            <summary>Convert 1 bit data to 8 bit (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Mosaic_Tolerance">
+            <summary>Mosaic Tolerance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Derived_Output_Raster">
+            <summary>Derived Output Raster (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToMosaic.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic">
+             <summary>Mosaic all rasters in the input workspace to a new mosaic raster dataset, the spatial reference of the output raster dataset is the same as the first raster in the input workspace. 
+            The pixel type and number of band properties are also taken from the first raster in the input workspace</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.#ctor(System.Object,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Workspace">Input Workspace (in)</param>
+            <param name="Output_Location">Output Location (in)</param>
+            <param name="Ouput_Raster_Name">Ouput Raster Name (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Input_Workspace">
+            <summary>Input Workspace (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Output_Location">
+            <summary>Output Location (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Ouput_Raster_Name">
+            <summary>Ouput Raster Name (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Config_Keyword">
+            <summary>Config Keyword (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Mosaic_Mode">
+            <summary>Mosaic Mode (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Colormap_Mode">
+            <summary>Colormap Mode (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Pyramid_Origin">
+            <summary>Pyramid Origin (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Ignore_Background_Value">
+            <summary>Ignore Background Value (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Nodata_Value">
+            <summary>Nodata Value (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Convert_1_bit_data_to_8_bit">
+            <summary>Convert 1 bit data to 8 bit (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Mosaic_Tolerance">
+            <summary>Mosaic Tolerance (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Derived_Raster">
+            <summary>Derived Raster (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToNewMosaic.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase">
+            <summary>Loads all the rasters in the input workspace to the output workspace</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="Input_Workspace">Input Workspace (in)</param>
+            <param name="Output_Geodatabase">Output Geodatabase (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.Input_Workspace">
+            <summary>Input Workspace (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.Output_Geodatabase">
+            <summary>Output Geodatabase (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.Config_Keyword">
+            <summary>Config Keyword (in, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.Derived_Output_Geodatabase">
+            <summary>Derived Output Geodatabase (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.SampleTools.WorkspaceToGeodatabase.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

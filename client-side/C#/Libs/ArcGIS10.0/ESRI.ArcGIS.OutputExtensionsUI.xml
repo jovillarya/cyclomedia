@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.OutputExtensionsUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.IArcPressDriverPropertiesPageDialog">
+      <summary>Provides access to members that provides property page for ArcPress print driver.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.IArcPressDriverPropertiesPageDialog.hWnd">
+      <summary>The ArcPress driver properties window handle to be used.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.IArcPressDriverPropertiesPageDialog.IsValidObject(System.Object)">
+      <summary>Called by properties manager to detect valid properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.IArcPressDriverPropertiesPageDialog.SetObject(System.Object)">
+      <summary>Called by properties manager to setup the object for properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.IArcPressDriverPropertiesPageDialog.UpdateObject(System.Object)">
+      <summary>Called by properties manager to update the object data.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPage">
+      <summary>Advanced ArcPress Printer Driver Property Page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass">
+      <summary>Advanced ArcPress Printer Driver Property Page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI..">
+      <summary>Advanced ArcPress Printer Driver Property Page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI.._">
+      <summary>Advanced ArcPress Printer Driver Property Page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.#ctor">
+      <summary>Advanced ArcPress Printer Driver Property Page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IComPropertyPage2_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.AAPDriverPrinterPropertyPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialog">
+      <summary>ArcPress Engine Property Dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass">
+      <summary>ArcPress Engine Property Dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass.DisableCancelButton">
+      <summary>Enables or Disables Cancel button.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass.IPrintEnginePropertiesDialog_DisableCancelButton">
+      <summary>Enables or Disables Cancel button.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI..">
+      <summary>ArcPress Engine Property Dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI.._">
+      <summary>ArcPress Engine Property Dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass.#ctor">
+      <summary>ArcPress Engine Property Dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass.DoModal(System.Int32)">
+      <summary>Runs modal print engine's properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass.IPrintEnginePropertiesDialog_DoModal(System.Int32)">
+      <summary>Runs modal print engine's properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass.IsValidObject(ESRI.ArcGIS.Output.IPrinter)">
+      <summary>Called by properties manager to detect valid properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass.IPrintEnginePropertiesDialog_IsValidObject(ESRI.ArcGIS.Output.IPrinter)">
+      <summary>Called by properties manager to detect valid properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass.SetObject(ESRI.ArcGIS.Output.IPrinter)">
+      <summary>Called by properties manager to setup the object for properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEnginePropertiesDialogClass.IPrintEnginePropertiesDialog_SetObject(ESRI.ArcGIS.Output.IPrinter)">
+      <summary>Called by properties manager to setup the object for properties.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialog">
+      <summary>ArcPress EPSON print driver property dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass">
+      <summary>ArcPress EPSON print driver property dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass.hWnd">
+      <summary>The ArcPress driver properties window handle to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_hWnd">
+      <summary>The ArcPress driver properties window handle to be used.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI..">
+      <summary>ArcPress EPSON print driver property dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI.._">
+      <summary>ArcPress EPSON print driver property dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass.#ctor">
+      <summary>ArcPress EPSON print driver property dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass.IsValidObject(System.Object)">
+      <summary>Called by properties manager to detect valid properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_IsValidObject(System.Object)">
+      <summary>Called by properties manager to detect valid properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass.SetObject(System.Object)">
+      <summary>Called by properties manager to setup the object for properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_SetObject(System.Object)">
+      <summary>Called by properties manager to setup the object for properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass.UpdateObject(System.Object)">
+      <summary>Called by properties manager to update the object data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressEPSONPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_UpdateObject(System.Object)">
+      <summary>Called by properties manager to update the object data.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialog">
+      <summary>ArcPress Generic print driver property dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass">
+      <summary>ArcPress Generic print driver property dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass.hWnd">
+      <summary>The ArcPress driver properties window handle to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_hWnd">
+      <summary>The ArcPress driver properties window handle to be used.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI..">
+      <summary>ArcPress Generic print driver property dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI.._">
+      <summary>ArcPress Generic print driver property dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass.#ctor">
+      <summary>ArcPress Generic print driver property dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass.IsValidObject(System.Object)">
+      <summary>Called by properties manager to detect valid properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_IsValidObject(System.Object)">
+      <summary>Called by properties manager to detect valid properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass.SetObject(System.Object)">
+      <summary>Called by properties manager to setup the object for properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_SetObject(System.Object)">
+      <summary>Called by properties manager to setup the object for properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass.UpdateObject(System.Object)">
+      <summary>Called by properties manager to update the object data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressGenericPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_UpdateObject(System.Object)">
+      <summary>Called by properties manager to update the object data.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialog">
+      <summary>ArcPress Hewlet-Packard print driver property dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass">
+      <summary>ArcPress Hewlet-Packard print driver property dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass.hWnd">
+      <summary>The ArcPress driver properties window handle to be used.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_hWnd">
+      <summary>The ArcPress driver properties window handle to be used.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI..">
+      <summary>ArcPress Hewlet-Packard print driver property dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI.._">
+      <summary>ArcPress Hewlet-Packard print driver property dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass.#ctor">
+      <summary>ArcPress Hewlet-Packard print driver property dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass.IsValidObject(System.Object)">
+      <summary>Called by properties manager to detect valid properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_IsValidObject(System.Object)">
+      <summary>Called by properties manager to detect valid properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass.SetObject(System.Object)">
+      <summary>Called by properties manager to setup the object for properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_SetObject(System.Object)">
+      <summary>Called by properties manager to setup the object for properties.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass.UpdateObject(System.Object)">
+      <summary>Called by properties manager to update the object data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ArcPressHPPrintDriverPropertiesPageDialogClass.IArcPressDriverPropertiesPageDialog_UpdateObject(System.Object)">
+      <summary>Called by properties manager to update the object data.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPage">
+      <summary>AdvancedArcPress Color Adjuster Property Page.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass">
+      <summary>AdvancedArcPress Color Adjuster Property Page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI..">
+      <summary>AdvancedArcPress Color Adjuster Property Page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.OutputExtensionsUI.._">
+      <summary>AdvancedArcPress Color Adjuster Property Page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.#ctor">
+      <summary>AdvancedArcPress Color Adjuster Property Page. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Activate">
+      <summary>Occurs on page creation. Return the hWnd of the page here.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Applies(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Indicates if the page applies to the specified objects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Apply">
+      <summary>Applies any changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Cancel">
+      <summary>Cancels the changes to the object(s).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Deactivate">
+      <summary>Destroys the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Height">
+      <summary>The height of the page in pixels.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_HelpContextID(System.Int32)">
+      <summary>The help context ID for the specified control on the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_HelpFile">
+      <summary>The help file name for the page.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Hide">
+      <summary>Hides the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_IsPageDirty">
+      <summary>Indicates if the page made any changes to the object(s).</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_PageSite">
+      <summary>The sheet that contains the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Priority">
+      <summary>The page priority. The higher the priority, the sooner the page appears in the containing property sheet.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_QueryCancel">
+      <summary>Returns VARIANT_FALSE to prevent the cancel operation or VARIANT_TRUE to allow it.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_SetObjects(ESRI.ArcGIS.esriSystem.ISet)">
+      <summary>Supplies the page with the object(s) to be edited.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Show">
+      <summary>Shows the page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Title">
+      <summary>The title of the property page.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IComPropertyPage2_Width">
+      <summary>The width of the page in pixels.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_Activate(ESRI.ArcGIS.Framework._RemotableHandle@,ESRI.ArcGIS.esriSystem.tagRECT@,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_Apply">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_Deactivate">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_GetPageInfo(ESRI.ArcGIS.Framework.tagPROPPAGEINFO@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_Help(System.String)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_IsPageDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_Move(ESRI.ArcGIS.esriSystem.tagRECT@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_SetObjects(System.UInt32,System.Object@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_SetPageSite(ESRI.ArcGIS.Framework.IPropertyPageSite)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_Show(System.UInt32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPage_TranslateAccelerator(ESRI.ArcGIS.Framework.tagMSG@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPageContext_Applies(System.Object)">
+      <summary>Check if property page applies to the specified set of objects.  Signature corresponds to IPropertyPage::SetObjects.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPageContext_Cancel">
+      <summary>Property sheet calls this when cancel button is pressed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPageContext_CreateCompatibleObject(System.Object)">
+      <summary>Create a new object using the specified object as a template.  The kind argument may be NULL if the page interacts with only a single object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPageContext_GetHelpFile(System.Int32)">
+      <summary>Returns the help file name for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPageContext_GetHelpId(System.Int32)">
+      <summary>Returns the help ID for the specified control.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPageContext_Priority">
+      <summary>The page's priority relative to other pages that interact with the same object.  The higher the value, the higher the priority.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.OutputExtensionsUI.ColorTuningPropertyPageClass.IPropertyPageContext_QueryObject(System.Object)">
+      <summary>Apply the property page settings to the specified object.</summary>
+    </member>
+  </members>
+</doc>

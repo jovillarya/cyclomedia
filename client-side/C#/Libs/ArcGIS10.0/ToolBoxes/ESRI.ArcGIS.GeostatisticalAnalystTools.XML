@@ -1,0 +1,1018 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ESRI.ArcGIS.GeostatisticalAnalystTools</name>
+    </assembly>
+    <members>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid">
+            <summary>Exports a Geostatistical layer to a raster.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_geostat_layer">The geostatistical layer to be analyzed. (In, Required)</param>
+            <param name="out_surface_grid">The raster to be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.in_geostat_layer">
+            <summary>The geostatistical layer to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.out_surface_grid">
+            <summary>The raster to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.cell_size">
+            <summary>The cell size at which the output raster will be created.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.points_per_block_horz">
+            <summary>The number of predictions for each cell in the horizontal direction for block interpolation. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.points_per_block_vert">
+            <summary>The number of predictions for each cell in the vertical direction for block interpolation. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToGrid.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue">
+            <summary>Uses the interpolation model in a geostatistical layer to predict a value at a single location.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_geostat_layer">The geostatistical layer to be analyzed. (In, Required)</param>
+            <param name="point_coord">The x,y coordinate of the point where the Z value is required. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue.in_geostat_layer">
+            <summary>The geostatistical layer to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue.point_coord">
+            <summary>The x,y coordinate of the point where the Z value is required. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue.out_z_value">
+            <summary>Result (z-value) (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACalculateZValue.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter">
+            <summary>Gets model parameter value from an existing geostatistical model source.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter.#ctor(System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_ga_model_source">The geostatistical model source to be analyzed. (In, Required)</param>
+            <param name="model_param_xpath">XML path to the required model parameter. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter.in_ga_model_source">
+            <summary>The geostatistical model source to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter.model_param_xpath">
+            <summary>XML path to the required model parameter. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter.out_param_value">
+            <summary>Parameter value (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAGetModelParameter.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter">
+            <summary>Sets parameter value(s) in an existing geostatistical model source.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.#ctor(System.Object,System.String,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_ga_model_source">The geostatistical model source to be analyzed. (In, Required)</param>
+            <param name="model_param_xpath">XML path to the required model parameter. (In, Required)</param>
+            <param name="in_param_value">Value for the parameter defined by the XML path. (In, Required)</param>
+            <param name="out_ga_model">Geostatistical model created with the parameter value defined in the XML path. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.in_ga_model_source">
+            <summary>The geostatistical model source to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.model_param_xpath">
+            <summary>XML path to the required model parameter. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.in_param_value">
+            <summary>Value for the parameter defined by the XML path. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.out_ga_model">
+            <summary>Geostatistical model created with the parameter value defined in the XML path. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASetModelParameter.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection">
+            <summary>Creates a layer of points based on a user-defined neighborhood.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.#ctor(System.Object,System.Object,System.Object,System.Int32,System.Int32,System.Double,System.Double,System.Double)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_dataset">Points used to create a neighborhood selection. (In, Required)</param>
+            <param name="out_layer">Layer to store the neighborhood selection. (Out, Required)</param>
+            <param name="point_coord">The neighborhood center's x,y coordinate. (In, Required)</param>
+            <param name="neighbors_max">The number of points to use in each sector. If a sector has the required number of points, all points in that sector are used. (In, Required)</param>
+            <param name="neighbors_min">The minimum number of points to use in each sector. If the minimum number of required points are not available in any given sector, the nearest available point(s) outside the sector will be selected. (In, Required)</param>
+            <param name="minor_semiaxis">Size of the minor semiaxis of the search neighborhood. (In, Required)</param>
+            <param name="major_semiaxis">Size of the major semiaxis of the search neighborhood. (In, Required)</param>
+            <param name="angle">The angle of rotation of the neighborhood axis. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.in_dataset">
+            <summary>Points used to create a neighborhood selection. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.out_layer">
+            <summary>Layer to store the neighborhood selection. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.point_coord">
+            <summary>The neighborhood center's x,y coordinate. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.neighbors_max">
+            <summary>The number of points to use in each sector. If a sector has the required number of points, all points in that sector are used. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.neighbors_min">
+            <summary>The minimum number of points to use in each sector. If the minimum number of required points are not available in any given sector, the nearest available point(s) outside the sector will be selected. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.minor_semiaxis">
+            <summary>Size of the minor semiaxis of the search neighborhood. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.major_semiaxis">
+            <summary>Size of the major semiaxis of the search neighborhood. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.angle">
+            <summary>The angle of rotation of the neighborhood axis. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.shape_type">
+            <summary>The geometry of the neighborhood. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GANeighborhoodSelection.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging">
+            <summary>Recalculates the Range, Nugget, and Partial Sill semivariogram parameters based on a smaller neighborhood, moving through all location points.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.#ctor(System.Object,System.Object,System.Object,System.Int32,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_ga_model_source">The geostatistical model source to be analyzed. (In, Required)</param>
+            <param name="in_datasets">Input dataset(s) displays two pieces: (In, Required)</param>
+            <param name="in_locations">Point  locations where predictions or validations will be performed. (In, Required)</param>
+            <param name="neighbors_max">Number of neighbors to use in the moving window. (In, Required)</param>
+            <param name="out_featureclass">Feature class storing the results. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.in_ga_model_source">
+            <summary>The geostatistical model source to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.in_datasets">
+            <summary>Input dataset(s) displays two pieces: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.in_locations">
+            <summary>Point  locations where predictions or validations will be performed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.neighbors_max">
+            <summary>Number of neighbors to use in the moving window. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.out_featureclass">
+            <summary>Feature class storing the results. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.cell_size">
+            <summary>The cell size at which the output raster will be created.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.out_surface_grid">
+            <summary>The Prediction values in the output feature class are interpolated onto a raster using the Local Polynomial Interpolation method. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GAMovingWindowKriging.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity">
+            <summary>Performs a sensitivity analysis with varying Nugget, Partial Sill, and Range values.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.#ctor(System.Object,System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_ga_model_source">The geostatistical model source to be analyzed. (In, Required)</param>
+            <param name="in_datasets">Input dataset(s) displays two pieces: (In, Required)</param>
+            <param name="in_locations">Points locations where the sensitivity analysis is performed. (In, Required)</param>
+            <param name="out_table">Table storing the  sensitivity results. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.in_ga_model_source">
+            <summary>The geostatistical model source to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.in_datasets">
+            <summary>Input dataset(s) displays two pieces: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.in_locations">
+            <summary>Points locations where the sensitivity analysis is performed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.nugget_span_percents">
+            <summary>The percentage subtracted and added to the Nugget parameter to create a range for subsequent random Nugget parameter selection. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.nugget_calc_times">
+            <summary>Number of random Nugget values drawn from the Nugget span. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.partialsill_span_percents">
+            <summary>Percentage subtracted from and added to the Partial Sill parameter to create a range for random Partial Sill selection. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.partialsill_calc_times">
+            <summary>Number of random Partial Sill values drawn from the Partial Sill span. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.range_span_percents">
+            <summary>Percentage subtracted and added to the Major Range parameter to create a range for a random Major Range selection. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.range_calc_times">
+            <summary>Number of random Major Range values drawn from the Major Range span. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.minrange_span_percents">
+            <summary>Percentage subtracted and added to the Minor Range parameter to create a range for random Minor Range selection. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.minrange_calc_times">
+            <summary>Number of random Minor Range values drawn from the Minor Range span. If Anisotropy has been set in &lt;in_geostat_layer&gt;, a value is required. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.out_table">
+            <summary>Table storing the  sensitivity results. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GASemivariogramSensitivity.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer">
+            <summary>Creates a new geostatistical layer. An  existing geostatistical layer or geostatistical model is required to populate the initial values for the new layer. The input to this tool can be created using the Geostatistical Wizard.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_ga_model_source">The geostatistical model source to be analyzed. (In, Required)</param>
+            <param name="in_datasets">Input dataset(s) displays two pieces: (In, Required)</param>
+            <param name="out_layer">The geostatistical layer produced by the tool.  (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer.in_ga_model_source">
+            <summary>The geostatistical model source to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer.in_datasets">
+            <summary>Input dataset(s) displays two pieces: (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer.out_layer">
+            <summary>The geostatistical layer produced by the tool.  (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GACreateGeostatisticalLayer.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour">
+            <summary>Creates a feature class of coutours from a geostatiscal analysis layer.  The output feature class can be either a line feature class of contour lines or a polygon feature class of filled contours.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.#ctor(System.Object,System.String,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_geostat_layer">The geostatistical layer to be analyzed. (In, Required)</param>
+            <param name="contour_type">Type of contour to represent the geostatistical layer. (In, Required)</param>
+            <param name="out_feature_class">The output feature class will either be a polyline or a polygon, depending on the selected Contour type. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.in_geostat_layer">
+            <summary>The geostatistical layer to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.contour_type">
+            <summary>Type of contour to represent the geostatistical layer. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.out_feature_class">
+            <summary>The output feature class will either be a polyline or a polygon, depending on the selected Contour type. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.contour_quality">
+            <summary>Determines the smoothness of contour line representation.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToContour.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints">
+            <summary>Exports a geostatistical layer to points. The tool can also be used to predict values at unmeasured locations or to validate predictions made at measured locations.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_geostat_layer">The geostatistical layer to be analyzed. (In, Required)</param>
+            <param name="in_locations">Point  locations where predictions or validations will be performed. (In, Required)</param>
+            <param name="out_feature_class">The output feature class containing either the predictions or the predictions and the validation results. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.in_geostat_layer">
+            <summary>The geostatistical layer to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.in_locations">
+            <summary>Point  locations where predictions or validations will be performed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.z_field">
+            <summary>If this field is left blank, predictions are made at the location points. If a field is selected, predictions are made at the location points and compared to their Z_value_field values, then a validation analysis is performed. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.out_feature_class">
+            <summary>The output feature class containing either the predictions or the predictions and the validation results. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GALayerToPoints.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations">
+            <summary>Performs a conditional or unconditional geostatistical simulation based on a Simple Kriging model.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.#ctor(System.Object,System.Int32,System.Object,System.String)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_geostat_layer">Input a geostatistical layer resulting from a Simple Kriging model. (In, Required)</param>
+            <param name="number_of_realizations">The number of simulations to perform. (In, Required)</param>
+            <param name="output_workspace">Stores all the simulation results. (In, Required)</param>
+            <param name="output_simulation_prefix">A 1- to 3-character alphanumeric prefix that is automatically added to the output dataset names. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.in_geostat_layer">
+            <summary>Input a geostatistical layer resulting from a Simple Kriging model. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.number_of_realizations">
+            <summary>The number of simulations to perform. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.output_workspace">
+            <summary>Stores all the simulation results. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.output_simulation_prefix">
+            <summary>A 1- to 3-character alphanumeric prefix that is automatically added to the output dataset names. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.in_conditioning_features">
+            <summary>The features used to condition the realizations. If left blank, unconditional realizations are produced. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.conditioning_field">
+            <summary>The field used to condition the realizations. If left blank, unconditional realizations are produced. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.cell_size">
+            <summary>The cell size at which the output raster will be created.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.in_bounding_dataset">
+            <summary>Limits the analysis to these features' bounding polygon. If point features are entered, then a convex hull polygon is  automatically created. Realizations are then performed within that polygon. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.save_simulated_rasters">
+            <summary>Determines whether the simulated rasters are saved to disk or not. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.quantile">
+            <summary>The quantile value for which the output raster will be generated. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.threshold">
+            <summary>The threshold value for which the output raster will be generated, as the percentage of the number of times the set threshold was exceeded, on a cell by cell basis. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.in_stats_polygons">
+            <summary>These polygons represent areas of interest for which summary statistics are calculated. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.raster_stat_type">
+            <summary>The simulated rasters are post-processed on a cell by cell basis and each selected statistics type is calculated and reported in an output raster. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.conditioning_measurement_error_field">
+            <summary>Specifies a constant measurement error for all input data in the input semivariogram model. Use this field if the measurement error values are not the same at each sampling location. The input's unit of measurement is applied. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.out_workspace">
+            <summary>Output workspace (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.out_polygon_stat">
+            <summary>Output statistical polygons (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.out_raster_simulation">
+            <summary>Output simulation rasters (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.out_raster_stat">
+            <summary>Output statistical rasters (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.out_convergence_value">
+            <summary>Convergence (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GaussianGeostatisticalSimulations.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures">
+            <summary>Divides the original dataset into two parts: one part to be used to model the spatial structure and produce a surface, the other to be used to compare and validate the output surface.   </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">Points, lines, or polygon features to create a subset from. (In, Required)</param>
+            <param name="out_training_feature_class">The subset of training features to be created. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.in_features">
+            <summary>Points, lines, or polygon features to create a subset from. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.out_training_feature_class">
+            <summary>The subset of training features to be created. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.out_test_feature_class">
+            <summary>The subset of test features to be created. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.size_of_training_dataset">
+            <summary>The size of the output training feature class entered either as a percentage of the input features or as an absolute number of features. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.subset_size_units">
+            <summary>Type of subset size.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.SubsetFeatures.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW">
+            <summary> Uses the measured values surrounding the prediction location  to predict a value for any unsampled location, based on the assumption that things that are close to one another are more alike than those that are farther apart.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input point features containing the z-values to be interpolated. (In, Required)</param>
+            <param name="z_field">Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.in_features">
+            <summary>The input point features containing the z-values to be interpolated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.z_field">
+            <summary>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.out_ga_layer">
+            <summary>The geostatistical layer produced. This layer is required output only if no output raster is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.out_raster">
+            <summary>The output raster. This raster is required output only if no output geostatistical layer is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.cell_size">
+            <summary>The cell size at which the output raster will be created.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.power">
+            <summary>The exponent of distance that controls the significance of surrounding points on the interpolated value. A higher power results in less influence from distant points. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.search_neighborhood">
+            <summary>Defines which surrounding points will be used to control the output. There are two options: STANDARD and SMOOTH. Standard is the default. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.weight_field">
+            <summary>Used to emphasize an observation. The larger the weight, the more impact it has on the prediction. For coincident observations, assign the largest weight to the most reliable measurement. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.IDW.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation">
+            <summary>Fits the specified order (zero, first, second, third, and so on) polynomial, each within specified overlapping neighborhoods, to produce an output surface.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input point features containing the z-values to be interpolated. (In, Required)</param>
+            <param name="z_field">Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.in_features">
+            <summary>The input point features containing the z-values to be interpolated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.z_field">
+            <summary>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.out_ga_layer">
+            <summary>The geostatistical layer produced. This layer is required output only if no output raster is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.out_raster">
+            <summary>The output raster. This raster is required output only if no output geostatistical layer is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.cell_size">
+            <summary>The cell size at which the output raster will be created.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.power">
+            <summary> The order of the polynomial.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.search_neighborhood">
+            <summary>Defines which surrounding points will be used to control the output. There are two options: STANDARD and SMOOTH. Standard is the default. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.kernel_function">
+            <summary> The kernel function used in the simulation. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.bandwidth">
+            <summary> Used to specify the maximum distance at which data points are used for prediction. With increasing bandwidth, prediction bias increases and prediction variance decreases. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.use_condition_number">
+            <summary>Option to control the creation of prediction and prediction standard errors where the predictions are unstable. This option is only available for polynomials of order 1, 2 and 3.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.condition_number">
+            <summary> Every invertible square matrix has a condition number that indicates how inaccurate the solution to the linear equations can be with a small change in the matrix coefficients (it can be due to imprecise data) . If the condition number is large, a small change in the matrix coefficients results in a large change in the solution vector.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.weight_field">
+            <summary>Used to emphasize an observation. The larger the weight, the more impact it has on the prediction. For coincident observations, assign the largest weight to the most reliable measurement. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.output_type">
+            <summary> Surface type to store the interpolation results. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.LocalPolynomialInterpolation.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation">
+            <summary>Fits a smooth surface that is defined by a mathematical function (a polynomial) to the input sample points.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input features containing the z-values to be interpolated. (In, Required)</param>
+            <param name="z_field">Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.in_features">
+            <summary>The input features containing the z-values to be interpolated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.z_field">
+            <summary>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.out_ga_layer">
+            <summary>The geostatistical layer produced. This layer is required output only if no output raster is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.out_raster">
+            <summary>The output raster. This raster is required output only if no output geostatistical layer is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.cell_size">
+            <summary>The cell size at which the output raster will be created.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.power">
+            <summary> The order of the polynomial.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.weight_field">
+            <summary>Used to emphasize an observation. The larger the weight, the more impact it has on the prediction. For coincident observations, assign the largest weight to the most reliable measurement. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.GlobalPolynomialInterpolation.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation">
+            <summary>Removes one data location and then predicts the associated data using the data at the rest of the locations.   The primary use for this tool is to compare the predicted value to the observed value in order to obtain useful information about some of your model parameters.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.#ctor(System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_geostat_layer">The geostatistical layer to be analyzed. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.in_geostat_layer">
+            <summary>The geostatistical layer to be analyzed. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.out_point_feature_class">
+            <summary>Stores the cross validation statistics at each location in the geostatistical layer. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.count">
+            <summary>Count (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.mean_error">
+            <summary>Mean Error (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.root_mean_square">
+            <summary>Root Mean Square (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.average_standard">
+            <summary>Average Standard (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.mean_standardized">
+            <summary>Mean Standardized (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.root_mean_square_standardized">
+            <summary>Root Mean Square Standardized (out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CrossValidation.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers">
+            <summary>A moving window predictor that uses the shortest distance between points so that points on either side of the line barriers are connected.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input point features containing the z-values to be interpolated. (In, Required)</param>
+            <param name="z_field">Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.in_features">
+            <summary>The input point features containing the z-values to be interpolated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.z_field">
+            <summary>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.out_ga_layer">
+            <summary>The geostatistical layer produced. This layer is required output only if no output raster is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.out_raster">
+            <summary>The output raster. This raster is required output only if no output geostatistical layer is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.cell_size">
+            <summary>The cell size at which the output raster will be created.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.in_barrier_features">
+            <summary>Absolute barrier features using non Euclidean distances rather than "line of sight" distances. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.kernel_function">
+            <summary> The kernel function used in the simulation. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.bandwidth">
+            <summary> Used to specify the maximum distance at which data points are used for prediction. With increasing bandwidth, prediction bias increases and prediction variance decreases. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.power">
+            <summary> Sets the order of the polynomial (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.ridge">
+            <summary> Used for the numerical stabilization of the solution of the system of linear equations. It does not influence predictions in the case of regularly distributed data without barriers. Predictions for areas in which the data are located near the feature barrier or isolated by the barriers can be unstable and tend to require relatively large ridge parameter values. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.KernelInterpolationWithBarriers.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers">
+            <summary>Uses a kernel that is based upon the heat equation and allows one to use a combination of raster and feature datasets to act as a barrier.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input point features containing the z-values to be interpolated. (In, Required)</param>
+            <param name="z_field">Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.in_features">
+            <summary>The input point features containing the z-values to be interpolated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.z_field">
+            <summary>Field that holds a height or magnitude value for each point. This can be a numeric field or the Shape field if the input features contains z-values or m-values. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.out_ga_layer">
+            <summary>The geostatistical layer produced. This layer is required output only if no output raster is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.out_raster">
+            <summary>The output raster. This raster is required output only if no output geostatistical layer is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.cell_size">
+            <summary>The cell size at which the output raster will be created.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.in_barrier_features">
+            <summary>Absolute barrier features using non Euclidean distances rather than "line of sight" distances. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.bandwidth">
+            <summary> Used to specify the maximum distance at which data points are used for prediction. With increasing bandwidth, prediction bias increases and prediction variance decreases. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.number_iterations">
+            <summary> The iteration count controls the accuracy of the numerical solution because the model solves the diffusion equation numerically. The larger this number, the more accurate the predictions, yet the longer the processing time. And, the more complex the barrier's geometry and the larger the bandwidth, the more iterations are required for an accurate predictions. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.weight_field">
+            <summary>Used to emphasize an observation. The larger the weight, the more impact it has on the prediction. For coincident observations, assign the largest weight to the most reliable measurement. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.in_additive_barrier_raster">
+            <summary>The travel distance from one raster cell to the next based on this formula: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.in_cumulative_barrier_raster">
+            <summary>The travel distance from one raster cell to the next based on this formula:  (difference between cost values in the neighboring cells) + (distance between cell centers) (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.in_flow_barrier_raster">
+            <summary>A flow barrier is used when interpolating data with preferential direction of data variation, based on this formula: (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DiffusionInterpolationWithBarriers.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions">
+            <summary>Uses one of five basis functions to process each measured sample value, thus creating an exact interpolation surface.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.#ctor(System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The input features containing the z-values to be interpolated. (In, Required)</param>
+            <param name="z_field">Z value field (in)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.in_features">
+            <summary>The input features containing the z-values to be interpolated. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.z_field">
+            <summary>Z value field (in)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.out_ga_layer">
+            <summary>The geostatistical layer produced. This layer is required output only if no output raster is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.out_raster">
+            <summary>The output raster. This raster is required output only if no output geostatistical layer is requested. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.cell_size">
+            <summary>The cell size at which the output raster will be created.  (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.search_neighborhood">
+            <summary>Defines which surrounding points will be used to control the output. There are two options: STANDARD and SMOOTH. Standard is the default. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.radial_basis_functions">
+            <summary>Available Radial basis functions. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.small_scale_parameter">
+            <summary>Used to calculate the weights assigned to the points located in the moving window. Each of the radial basis functions has a parameter that controls the degree of small-scale variation of the surface. The (â€œoptimalâ€?) parameter is determined by finding the value that minimizes the root mean square prediction error (RMSPE). (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.RadialBasisFunctions.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints">
+            <summary>
+            			Generates a set of sample points based on inclusion probabilities resulting in a spatially balanced, i.e. maximized, and thus more efficient sample design.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints.#ctor(System.Object,System.Int32,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_probability_raster">This raster defines the inclusion probabilities for each location in the area of interest. The location values range from 0 (low inclusion probability) to 1 (high inclusion probability). (In, Required)</param>
+            <param name="number_output_points">Specify how many sample locations to generate. (In, Required)</param>
+            <param name="out_feature_class">The output feature class contains the selected sample locations and their inclusion probabilities. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints.in_probability_raster">
+            <summary>This raster defines the inclusion probabilities for each location in the area of interest. The location values range from 0 (low inclusion probability) to 1 (high inclusion probability). (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints.number_output_points">
+            <summary>Specify how many sample locations to generate. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints.out_feature_class">
+            <summary>The output feature class contains the selected sample locations and their inclusion probabilities. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.CreateSpatiallyBalancedPoints.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork">
+            <summary>Uses inter alia, the Standard Error of Prediction surface on a predefined geostatistical kriging layer to determine where new locations are required or which can be removed.</summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.#ctor(System.Object,System.Int32,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_geostat_layer">Input a geostatistical layer resulting from a Kriging model. (In, Required)</param>
+            <param name="number_output_points">Specify how many sample locations to generate. (In, Required)</param>
+            <param name="out_feature_class">The name of the output feature class. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.in_geostat_layer">
+            <summary>Input a geostatistical layer resulting from a Kriging model. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.number_output_points">
+            <summary>Specify how many sample locations to generate. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.out_feature_class">
+            <summary>The name of the output feature class. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.selection_criteria">
+            <summary>Methods to densify a sampling network. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.threshold">
+            <summary>The threshold value used to densify the sampling network, applicable only when STDERR_THRESHOLD or QUARTILE_THRESHOLD selection criteria are used. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.in_weight_raster">
+            <summary>A raster used to determine which locations to weight for  preference. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.in_candidate_point_features">
+            <summary>Sample locations to pick from. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.inhibition_distance">
+            <summary>Used to prevent any samples being placed within this distance from each other. (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.DensifySamplingNetwork.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+        <member name="T:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable">
+            <summary>Extracts cell values from a set of rasters to a table, based on a point or polygon feature class. </summary>
+        </member>
+        <member name="M:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.#ctor(System.Object,System.Object,System.Object)">
+            <summary>Constructor that takes all required parameters for geoprocessor execution.</summary>
+            <param name="in_features">The points or polygon features to be created. (In, Required)</param>
+            <param name="in_rasters">The  rasters must all have the same extent, coordinate system, and cell size. (In, Required)</param>
+            <param name="out_table">The output table contains a record for each point and each raster that has data. If polygon features are input, they are converted to points which coincide with the raster cell centers. (Out, Required)</param>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.in_features">
+            <summary>The points or polygon features to be created. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.in_rasters">
+            <summary>The  rasters must all have the same extent, coordinate system, and cell size. (In, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.out_table">
+            <summary>The output table contains a record for each point and each raster that has data. If polygon features are input, they are converted to points which coincide with the raster cell centers. (Out, Required)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.out_raster_names_table">
+            <summary>Saves the names of the Input rasters to disc. (Out, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.add_warning_field">
+            <summary>Records if input features are partially or completely covered by the Input rasters.
+            (In, Optional)</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.ToolboxDirectory">
+            <summary>The directory of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.ToolboxName">
+            <summary>The name of this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.ToolName">
+            <summary>The name of this tool.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.Alias">
+            <summary>The alias for this tool's toolbox.</summary>
+        </member>
+        <member name="P:ESRI.ArcGIS.GeostatisticalAnalystTools.ExtractValuesToTable.ParameterInfo">
+            <summary>The parameters used by this tool. For internal use only.</summary>
+        </member>
+    </members>
+</doc>

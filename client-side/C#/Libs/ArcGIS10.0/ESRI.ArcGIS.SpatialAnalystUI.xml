@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.SpatialAnalystUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaCellSizeCtrl">
+      <summary>Provides access to IMdSaCellSizeCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaFuzzyFunctionCtrl">
+      <summary>Provides access to IMdSaFuzzyFunctionCtrl Interface</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaGridUsageCtrl">
+      <summary>Provides access to IMdSaGridUsageCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaHFactorCtrl">
+      <summary>Provides access to IMdSaHFactorCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaMapAlgebraCtrl">
+      <summary>Provides access to IMdSaMapAlgebraCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaNeighborhoodCtrl">
+      <summary>Provides access to IMdSaNeighborhoodCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaRadiusCtrl">
+      <summary>Provides access to IMdSaRadiusCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaReclassCtrl">
+      <summary>Provides access to IMdSaReclassCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaSemiVariogramCtrl">
+      <summary>Provides access to IMdSaSemiVariogramCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaTimeConfigCtrl">
+      <summary>Provides access to IMdSaTimeConfigCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaVFactorCtrl">
+      <summary>Provides access to IMdSaVFactorCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IMdSaWeightedOverlayCtrl">
+      <summary>Provides access to IMdSaWeightedOverlayCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IRasterAnalysisToolbarEnvironment">
+      <summary>Provides access to the members that control the Raster AnalysisToolbar Environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.IRasterAnalysisToolbarEnvironment.CurSelLayer">
+      <summary>The ILayer interface of the current selected layer.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.IRasterSettingsItem">
+      <summary>Provides access to RasterSettings Dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.IRasterSettingsItem.DoModal(System.Int32)">
+      <summary>Do Model.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaCellSizeCtrl">
+      <summary>GeoProcessor Spatial Analyst MdSaCellSizeCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaCellSizeCtrlClass">
+      <summary>GeoProcessor Spatial Analyst MdSaCellSizeCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaFuzzyFunctionCtrl">
+      <summary>Geoprocessing Spatial Analyst MdSaFuzzyFunctionCtrl Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaFuzzyFunctionCtrlClass">
+      <summary>Geoprocessing Spatial Analyst MdSaFuzzyFunctionCtrl Class</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaGridUsageCtrl">
+      <summary>GeoProcessor Spatial Analyst MdSaGridUsageCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaGridUsageCtrlClass">
+      <summary>GeoProcessor Spatial Analyst MdSaGridUsageCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaHFactorCtrl">
+      <summary>Geoprocessing Spatial Analyst MdSaHFactorCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaHFactorCtrlClass">
+      <summary>Geoprocessing Spatial Analyst MdSaHFactorCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaMapAlgebraCtrl">
+      <summary>GeoProcessor Spatial Analyst MdSaMapAlgebraCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaMapAlgebraCtrlClass">
+      <summary>GeoProcessor Spatial Analyst MdSaMapAlgebraCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaNeighborhoodCtrl">
+      <summary>GeoProcessor Spatial Analyst MdSaNeighborhoodCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaNeighborhoodCtrlClass">
+      <summary>GeoProcessor Spatial Analyst MdSaNeighborhoodCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaRadiusCtrl">
+      <summary>GeoProcessor Spatial Analyst MdSaRadiusCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaRadiusCtrlClass">
+      <summary>GeoProcessor Spatial Analyst MdSaRadiusCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaReclassCtrl">
+      <summary>GeoProcessor Spatial Analyst MdSaReclassCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaReclassCtrlClass">
+      <summary>GeoProcessor Spatial Analyst MdSaReclassCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaSemiVariogramCtrl">
+      <summary>GeoProcessor Spatial Analyst MdSaSemiVariogramCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaSemiVariogramCtrlClass">
+      <summary>GeoProcessor Spatial Analyst MdSaSemiVariogramCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaTimeConfigCtrl">
+      <summary>Geoprocessing Spatial Analyst MdSaTimeConfigCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaTimeConfigCtrlClass">
+      <summary>Geoprocessing Spatial Analyst MdSaTimeConfigCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaVFactorCtrl">
+      <summary>GeoProcessor Spatial Analyst MdSaVFactorCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaVFactorCtrlClass">
+      <summary>GeoProcessor Spatial Analyst MdSaVFactorCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaWeightedOverlayCtrl">
+      <summary>GeoProcessor Spatial Analyst MdSaWeightedOverlayCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.MdSaWeightedOverlayCtrlClass">
+      <summary>GeoProcessor Spatial Analyst MdSaWeightedOverlayCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.RasterAnalysisToolbarEnvironment">
+      <summary>A mechanism to get the layer currently selected in the toolbar.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.RasterAnalysisToolbarEnvironmentClass">
+      <summary>A mechanism to get the layer currently selected in the toolbar.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterAnalysisToolbarEnvironmentClass.CurSelLayer">
+      <summary>The ILayer interface of the current selected layer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterAnalysisToolbarEnvironmentClass.IRasterAnalysisToolbarEnvironment_CurSelLayer">
+      <summary>The ILayer interface of the current selected layer.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SpatialAnalystUI..">
+      <summary>A mechanism to get the layer currently selected in the toolbar. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SpatialAnalystUI.._">
+      <summary>A mechanism to get the layer currently selected in the toolbar. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterAnalysisToolbarEnvironmentClass.#ctor">
+      <summary>A mechanism to get the layer currently selected in the toolbar. Constructor has no input arguments.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.RasterSettings">
+      <summary>Raster Settings object to hold seetings in an application.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass">
+      <summary>Raster Settings object to hold seetings in an application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.DefaultOutputRasterPrefix">
+      <summary>The default output raster prefix.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_DefaultOutputRasterPrefix">
+      <summary>The default output raster prefix.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SpatialAnalystUI..">
+      <summary>Raster Settings object to hold seetings in an application. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SpatialAnalystUI.._">
+      <summary>Raster Settings object to hold seetings in an application. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.#ctor">
+      <summary>Raster Settings object to hold seetings in an application. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.DefaultOutputVectorPrefix">
+      <summary>The default output vector prefix.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_DefaultOutputVectorPrefix">
+      <summary>The default output vector prefix.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.GetCellSize(ESRI.ArcGIS.GeoAnalyst.esriRasterEnvSettingEnum@,System.Double@)">
+      <summary>Gets the type and value of cell size in the RasterAnalysis.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_GetCellSize(ESRI.ArcGIS.GeoAnalyst.esriRasterEnvSettingEnum@,System.Double@)">
+      <summary>Gets the type and value of cell size in the RasterAnalysis.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.GetExtent(ESRI.ArcGIS.GeoAnalyst.esriRasterEnvSettingEnum@,ESRI.ArcGIS.Geometry.IEnvelope@)">
+      <summary>Gets the type and values of extent in the RasterAnalysis.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_GetExtent(ESRI.ArcGIS.GeoAnalyst.esriRasterEnvSettingEnum@,ESRI.ArcGIS.Geometry.IEnvelope@)">
+      <summary>Gets the type and values of extent in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.Mask">
+      <summary>Mask allows processing to occur only for a selected set of cells.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_Mask">
+      <summary>Mask allows processing to occur only for a selected set of cells.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.Reset">
+      <summary>Remove all previously stored default rasteranalysis environments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_Reset">
+      <summary>Remove all previously stored default rasteranalysis environments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.RestoreToPreviousDefaultEnvironment">
+      <summary>Restores to the previous default raster analysis environment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_RestoreToPreviousDefaultEnvironment">
+      <summary>Restores to the previous default raster analysis environment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.SetAsNewDefaultEnvironment">
+      <summary>Sets the raster analysis environment of the object as new default environment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_SetAsNewDefaultEnvironment">
+      <summary>Sets the raster analysis environment of the object as new default environment.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.SetCellSize(ESRI.ArcGIS.GeoAnalyst.esriRasterEnvSettingEnum,System.Object@)">
+      <summary>Sets the type and value of cell size in the RasterAnalysis.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_SetCellSize(ESRI.ArcGIS.GeoAnalyst.esriRasterEnvSettingEnum,System.Object@)">
+      <summary>Sets the type and value of cell size in the RasterAnalysis.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.SetExtent(ESRI.ArcGIS.GeoAnalyst.esriRasterEnvSettingEnum,System.Object@,System.Object@)">
+      <summary>Sets the type and values of extent in the RasterAnalysis.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_SetExtent(ESRI.ArcGIS.GeoAnalyst.esriRasterEnvSettingEnum,System.Object@,System.Object@)">
+      <summary>Sets the type and values of extent in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.VerifyType">
+      <summary>The verify type of the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_VerifyType">
+      <summary>The verify type of the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.OutSpatialReference">
+      <summary>The output spatial reference of GeoAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_OutSpatialReference">
+      <summary>The output spatial reference of GeoAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.OutWorkspace">
+      <summary>The output workspace of GeoAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisEnvironment_OutWorkspace">
+      <summary>The output workspace of GeoAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.BuildPyramid">
+      <summary>Indicates if the pyramid building in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_BuildPyramid">
+      <summary>Indicates if the pyramid building in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.CalculateStatistics">
+      <summary>Indicates if the statistics calculation in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_CalculateStatistics">
+      <summary>Indicates if the statistics calculation in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.CompressionType">
+      <summary>The type and value of compression in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_CompressionType">
+      <summary>The type and value of compression in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.ConfigurationKeyword">
+      <summary>The configuration keyword in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_ConfigurationKeyword">
+      <summary>The configuration keyword in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.GDBDomains">
+      <summary>The XY, Z and M domains in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_GDBDomains">
+      <summary>The XY, Z and M domains in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.GlobeOptimized">
+      <summary>Indicates if the globe optimized type in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_GlobeOptimized">
+      <summary>Indicates if the globe optimized type in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IgnoredValue">
+      <summary>The ignored value in statistics calculation in RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_IgnoredValue">
+      <summary>The ignored value in statistics calculation in RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.JpegQuality">
+      <summary>Jpeg compression quality in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_JpegQuality">
+      <summary>Jpeg compression quality in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.MosaicType">
+      <summary>The mosaic type in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_MosaicType">
+      <summary>The mosaic type in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.PyramidLevel">
+      <summary>The level in pyramid building in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_PyramidLevel">
+      <summary>The level in pyramid building in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.PyramidResampleType">
+      <summary>The resample type in pyramid building in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_PyramidResampleType">
+      <summary>The resample type in pyramid building in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.TileHeight">
+      <summary>The GeoDatabase tile height in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_TileHeight">
+      <summary>The GeoDatabase tile height in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.TileWidth">
+      <summary>The GeoDatabase tile width in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_TileWidth">
+      <summary>The GeoDatabase tile width in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.XSkipFactor">
+      <summary>The skip factor in X direction in statistics calculation in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_XSkipFactor">
+      <summary>The skip factor in X direction in statistics calculation in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.YSkipFactor">
+      <summary>The skip factor in Y direction in statistics calculation in the RasterAnalysis.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.RasterSettingsClass.IRasterAnalysisGDBEnvironment_YSkipFactor">
+      <summary>The skip factor in Y direction in statistics calculation in the RasterAnalysis.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.SAExtension">
+      <summary>Spatial Analyst Extension Object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass">
+      <summary>Spatial Analyst Extension Object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SpatialAnalystUI..">
+      <summary>Spatial Analyst Extension Object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.SpatialAnalystUI.._">
+      <summary>Spatial Analyst Extension Object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.#ctor">
+      <summary>Spatial Analyst Extension Object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtensionConfig_Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtensionConfig_ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtensionConfig_State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.Extension(System.Int32)">
+      <summary>The extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtensionManager_Extension(System.Int32)">
+      <summary>The extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.ExtensionCLSID(System.Int32)">
+      <summary>The CLSID of the extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtensionManager_ExtensionCLSID(System.Int32)">
+      <summary>The CLSID of the extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.ExtensionCount">
+      <summary>The number of extensions loaded in the application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtensionManager_ExtensionCount">
+      <summary>The number of extensions loaded in the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.FindExtension(System.Object)">
+      <summary>Finds the extension by CLSID (IUID) or name (String).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IExtensionManager_FindExtension(System.Object)">
+      <summary>Finds the extension by CLSID (IUID) or name (String).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.SpatialAnalystUI.SAExtensionClass.ISupportErrorInfo_InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+  </members>
+</doc>

@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+  <assembly>
+    <name>ESRI.ArcGIS.Analyst3DUI</name>
+  </assembly>
+  <members>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.IDddEnvironment">
+      <summary>Provides access to the 3D Analyst license.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.IDddEnvironment.Display3D">
+      <summary>Reference to the 3D display, if available.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.IDddEnvironment.GetRasterSettings">
+      <summary>Returns global raster settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.IDddEnvironment.Parent">
+      <summary>Reference to the parent application.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.IDDDToolbarEnvironment">
+      <summary>Provides access to members that control the 3D Analyst Toolbar Environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.IDDDToolbarEnvironment.CurrentSelectedLayer">
+      <summary>The ILayer interface of the current selected layer.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.IDDDToolbarEnvironment2">
+      <summary>Provides access to members that control the 3D Analyst Toolbar Environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.IDDDToolbarEnvironment2.CurrentSelectedLayer">
+      <summary>The ILayer interface of the current selected layer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.IDDDToolbarEnvironment2.GraphDataSaveLocation">
+      <summary>The location to save graph data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.IDDDToolbarEnvironment2.InterpolateMethod">
+      <summary>The interpolation method for interactive tools.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.IDDDToolbarEnvironment2.InterpolateVerticesOnly">
+      <summary>Interpolate only vertices for interactive tools.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.IGxSceneFilter">
+      <summary>Provides access to members that filter data for the scene.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.IGxSceneFilter.Scene">
+      <summary>The decision-making scene.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.IGxWorldView">
+      <summary>Provides access to members that control the World View.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.IGxWorldView.GetSceneViewer(ESRI.ArcGIS.Analyst3D.ISceneViewer@)">
+      <summary>Returns the ISceneViewer interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.IMd3DaDecimateCtrl">
+      <summary>Provides access to IMd3DaDecimateCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.IMd3DaFolderFileCtrl">
+      <summary>Provides access to IMd3DaFolderFileCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.IMd3DaMultiFFCtrl">
+      <summary>Provides access to IMd3DaMultiFFCtrl Interface.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.ISceneExport2dDialog">
+      <summary>Provides access to members that control the exporting of a scene to a 2d graphics file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExport2dDialog.DocumentName">
+      <summary>Name of the Active Document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.ISceneExport2dDialog.DoModal(ESRI.ArcGIS.Geometry.IEnvelope,System.Int16)">
+      <summary>Displays Scene Export Dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExport2dDialog.Exporter">
+      <summary>The Scene exporter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExport2dDialog.MapExtent">
+      <summary>The Map Extent which gets passed to IWorldFileSettings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExport2dDialog.SceneSize">
+      <summary>The Scene size.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.ISceneExport3dDialog">
+      <summary>Provides access to members that control export of a 3D scene at the user interface level.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExport3dDialog.DocumentName">
+      <summary>The name of the active document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.ISceneExport3dDialog.DoModal">
+      <summary>Displays the 3D-export dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExport3dDialog.SceneExporter3d">
+      <summary>The exporter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.ISceneExportFile2dDialog">
+      <summary>Provides access to members that control the new exporting of a scene to a 2d graphics file.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExportFile2dDialog.DocumentName">
+      <summary>Name of the Active Document.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.ISceneExportFile2dDialog.DoModal(ESRI.ArcGIS.Geometry.IEnvelope,System.Double)">
+      <summary>Displays Scene Export File Dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExportFile2dDialog.Export">
+      <summary>The Scene exporter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExportFile2dDialog.MapExtent">
+      <summary>The Map Extent which gets passed to IWorldFileSettings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.ISceneExportFile2dDialog.SceneSize">
+      <summary>The Scene size.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.DddEnvironment">
+      <summary>3D Environment singleton object.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass">
+      <summary>3D Environment singleton object.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.Display3D">
+      <summary>Reference to the 3D display, if available.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IDddEnvironment_Display3D">
+      <summary>Reference to the 3D display, if available.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI..">
+      <summary>3D Environment singleton object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI.._">
+      <summary>3D Environment singleton object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.#ctor">
+      <summary>3D Environment singleton object. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.GetRasterSettings">
+      <summary>Returns global raster settings.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IDddEnvironment_GetRasterSettings">
+      <summary>Returns global raster settings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.Parent">
+      <summary>Reference to the parent application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IDddEnvironment_Parent">
+      <summary>Reference to the parent application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtension_Name">
+      <summary>The name of the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtension_Shutdown">
+      <summary>Shuts down the extension.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtension_Startup(System.Object@)">
+      <summary>Starts up the extension with the given initialization data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtensionConfig_Description">
+      <summary>Detailed description of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtensionConfig_ProductName">
+      <summary>Name of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtensionConfig_State">
+      <summary>The state of the extension.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.Extension(System.Int32)">
+      <summary>The extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtensionManager_Extension(System.Int32)">
+      <summary>The extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.ExtensionCLSID(System.Int32)">
+      <summary>The CLSID of the extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtensionManager_ExtensionCLSID(System.Int32)">
+      <summary>The CLSID of the extension at the specified index.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.ExtensionCount">
+      <summary>The number of extensions loaded in the application.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtensionManager_ExtensionCount">
+      <summary>The number of extensions loaded in the application.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.FindExtension(System.Object)">
+      <summary>Finds the extension by CLSID (IUID) or name (String).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IExtensionManager_FindExtension(System.Object)">
+      <summary>Finds the extension by CLSID (IUID) or name (String).</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IPersistStream_GetSizeMax(ESRI.ArcGIS.esriSystem._ULARGE_INTEGER@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IPersistStream_IsDirty">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IPersistStream_Load(ESRI.ArcGIS.esriSystem.IStream)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IPersistStream_Save(ESRI.ArcGIS.esriSystem.IStream,System.Int32)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.IPersistStream_GetClassID(System.Guid@)">
+      <summary>This is a Microsoft Type, see the MSDN help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DddEnvironmentClass.ISupportErrorInfo_InterfaceSupportsErrorInfo(System.Guid@)">
+      <summary>See the ESRI SDK Help.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironment">
+      <summary>3D Analyst Toolbar Environment.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass">
+      <summary>3D Analyst Toolbar Environment.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass.CurrentSelectedLayer">
+      <summary>The ILayer interface of the current selected layer.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass.IDDDToolbarEnvironment2_CurrentSelectedLayer">
+      <summary>The ILayer interface of the current selected layer.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI..">
+      <summary>3D Analyst Toolbar Environment. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI.._">
+      <summary>3D Analyst Toolbar Environment. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass.#ctor">
+      <summary>3D Analyst Toolbar Environment. Constructor has no input arguments.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass.GraphDataSaveLocation">
+      <summary>The location to save graph data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass.IDDDToolbarEnvironment2_GraphDataSaveLocation">
+      <summary>The location to save graph data.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass.InterpolateMethod">
+      <summary>The interpolation method for interactive tools.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass.IDDDToolbarEnvironment2_InterpolateMethod">
+      <summary>The interpolation method for interactive tools.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass.InterpolateVerticesOnly">
+      <summary>Interpolate only vertices for interactive tools.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.DDDToolbarEnvironmentClass.IDDDToolbarEnvironment2_InterpolateVerticesOnly">
+      <summary>Interpolate only vertices for interactive tools.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasets">
+      <summary>A filter for displaying/choosing scene datasets.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass">
+      <summary>A filter for displaying/choosing scene datasets.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.Scene">
+      <summary>The decision-making scene.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.IGxSceneFilter_Scene">
+      <summary>The decision-making scene.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI..">
+      <summary>A filter for displaying/choosing scene datasets. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI.._">
+      <summary>A filter for displaying/choosing scene datasets. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.#ctor">
+      <summary>A filter for displaying/choosing scene datasets. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.IGxObjectFilter_CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.IGxObjectFilter_CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.IGxObjectFilter_CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.IGxObjectFilter_Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSceneDatasetsClass.IGxObjectFilter_Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasets">
+      <summary>A filter for displaying/choosing surface datasets.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass">
+      <summary>A filter for displaying/choosing surface datasets.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.IGxObjectFilter_CanChooseObject(ESRI.ArcGIS.Catalog.IGxObject,ESRI.ArcGIS.Catalog.esriDoubleClickResult@)">
+      <summary>Indicates if the given object can be chosen.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI..">
+      <summary>A filter for displaying/choosing surface datasets. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI.._">
+      <summary>A filter for displaying/choosing surface datasets. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.#ctor">
+      <summary>A filter for displaying/choosing surface datasets. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.IGxObjectFilter_CanDisplayObject(ESRI.ArcGIS.Catalog.IGxObject)">
+      <summary>Indicates if the given object can be displayed.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.IGxObjectFilter_CanSaveObject(ESRI.ArcGIS.Catalog.IGxObject,System.String,System.Boolean@)">
+      <summary>Indicates if a new object named newObjectName could be saved in the specified location.  If objectAlreadyExists is set to True, a confirmation dialog will appear asking if the existing object should be replaced.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.IGxObjectFilter_Description">
+      <summary>A string that describes what this filter does.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.GxFilterSurfaceDatasetsClass.IGxObjectFilter_Name">
+      <summary>A user-friendly name identifying this filter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.Md3DaDecimateCtrl">
+      <summary>GeoProcessor 3D Analyst Md3DaDecimateCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.Md3DaDecimateCtrlClass">
+      <summary>GeoProcessor 3D Analyst Md3DaDecimateCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.Md3DaFolderFileCtrl">
+      <summary>GeoProcessor 3D Analyst Md3DaFolderFileCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.Md3DaFolderFileCtrlClass">
+      <summary>GeoProcessor 3D Analyst Md3DaFolderFileCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.Md3DaMultiFFCtrl">
+      <summary>GeoProcessor 3D Analyst Md3DaMultiFFCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.Md3DaMultiFFCtrlClass">
+      <summary>GeoProcessor 3D Analyst Md3DaMultiFFCtrl Class.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialog">
+      <summary>The ESRI Scene Export2d Dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass">
+      <summary>The ESRI Scene Export2d Dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.DocumentName">
+      <summary>Name of the Active Document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.ISceneExport2dDialog_DocumentName">
+      <summary>Name of the Active Document.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI..">
+      <summary>The ESRI Scene Export2d Dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI.._">
+      <summary>The ESRI Scene Export2d Dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.#ctor">
+      <summary>The ESRI Scene Export2d Dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.DoModal(ESRI.ArcGIS.Geometry.IEnvelope,System.Int16)">
+      <summary>Displays Scene Export Dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.ISceneExport2dDialog_DoModal(ESRI.ArcGIS.Geometry.IEnvelope,System.Int16)">
+      <summary>Displays Scene Export Dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.Exporter">
+      <summary>The Scene exporter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.ISceneExport2dDialog_Exporter">
+      <summary>The Scene exporter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.MapExtent">
+      <summary>The Map Extent which gets passed to IWorldFileSettings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.ISceneExport2dDialog_MapExtent">
+      <summary>The Map Extent which gets passed to IWorldFileSettings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.SceneSize">
+      <summary>The Scene size.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport2dDialogClass.ISceneExport2dDialog_SceneSize">
+      <summary>The Scene size.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.SceneExport3dDialog">
+      <summary>The ESRI 3D-export dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.SceneExport3dDialogClass">
+      <summary>The ESRI 3D-export dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport3dDialogClass.DocumentName">
+      <summary>The name of the active document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport3dDialogClass.ISceneExport3dDialog_DocumentName">
+      <summary>The name of the active document.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI..">
+      <summary>The ESRI 3D-export dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI.._">
+      <summary>The ESRI 3D-export dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.SceneExport3dDialogClass.#ctor">
+      <summary>The ESRI 3D-export dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.SceneExport3dDialogClass.DoModal">
+      <summary>Displays the 3D-export dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.SceneExport3dDialogClass.ISceneExport3dDialog_DoModal">
+      <summary>Displays the 3D-export dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport3dDialogClass.SceneExporter3d">
+      <summary>The exporter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExport3dDialogClass.ISceneExport3dDialog_SceneExporter3d">
+      <summary>The exporter.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialog">
+      <summary>The ESRI Scene Export File 2d Dialog.</summary>
+    </member>
+    <member name="T:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass">
+      <summary>The ESRI Scene Export File 2d Dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.DocumentName">
+      <summary>Name of the Active Document.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.ISceneExportFile2dDialog_DocumentName">
+      <summary>Name of the Active Document.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI..">
+      <summary>The ESRI Scene Export File 2d Dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="ESRI.ArcGIS.Analyst3DUI.._">
+      <summary>The ESRI Scene Export File 2d Dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.#ctor">
+      <summary>The ESRI Scene Export File 2d Dialog. Constructor has no input arguments.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.DoModal(ESRI.ArcGIS.Geometry.IEnvelope,System.Double)">
+      <summary>Displays Scene Export File Dialog.</summary>
+    </member>
+    <member name="M:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.ISceneExportFile2dDialog_DoModal(ESRI.ArcGIS.Geometry.IEnvelope,System.Double)">
+      <summary>Displays Scene Export File Dialog.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.Export">
+      <summary>The Scene exporter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.ISceneExportFile2dDialog_Export">
+      <summary>The Scene exporter.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.MapExtent">
+      <summary>The Map Extent which gets passed to IWorldFileSettings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.ISceneExportFile2dDialog_MapExtent">
+      <summary>The Map Extent which gets passed to IWorldFileSettings.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.SceneSize">
+      <summary>The Scene size.</summary>
+    </member>
+    <member name="P:ESRI.ArcGIS.Analyst3DUI.SceneExportFile2dDialogClass.ISceneExportFile2dDialog_SceneSize">
+      <summary>The Scene size.</summary>
+    </member>
+  </members>
+</doc>
