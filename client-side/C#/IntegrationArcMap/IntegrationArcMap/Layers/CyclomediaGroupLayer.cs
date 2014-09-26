@@ -298,7 +298,7 @@ namespace IntegrationArcMap.Layers
         int factoryCode = spatialReference.FactoryCode;
 
         IWorkspaceFactory workspaceFactory = new FileGDBWorkspaceFactoryClass();
-        string name = Path.Combine(ArcUtils.FileDir, string.Concat(Name, factoryCode));
+        string name = Path.Combine(Client.Config.Instance.CycloramaVectorLayerLocation, string.Concat(Name, factoryCode));
         string workSpaceFileName = string.Format("{0}.gdb", name);
 
         if (workspaceFactory.IsWorkspace(workSpaceFileName))

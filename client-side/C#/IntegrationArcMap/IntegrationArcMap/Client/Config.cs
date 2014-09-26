@@ -17,8 +17,10 @@
  */
 
 using System;
+using System.Configuration;
 using System.IO;
 using System.Xml.Serialization;
+using IntegrationArcMap.Properties;
 using IntegrationArcMap.Utilities;
 
 namespace IntegrationArcMap.Client
@@ -45,6 +47,7 @@ namespace IntegrationArcMap.Client
     private bool? _bypassProxyOnLocal;
     private bool? _proxyUseDefaultCredentials;
     private bool _agreement;
+    private string _cycloramaVectorLayerLocation;
 
     #endregion
 
@@ -191,6 +194,32 @@ namespace IntegrationArcMap.Client
     public uint DistanceCycloramaVectorLayer { get; set; }
 
     /// <summary>
+    /// Location to store the CycloramaVectorLayer FGDB
+    /// </summary>
+    public string CycloramaVectorLayerLocation
+    {
+        get { return _cycloramaVectorLayerLocation; }
+        set
+        {
+          if (value != string.Empty)
+          {
+              DirectoryInfo directoryInfo = new DirectoryInfo(value);
+              
+              if (!directoryInfo.Exists)
+              {
+                  Directory.CreateDirectory(value);
+              }
+
+              _cycloramaVectorLayerLocation = value;
+          }
+          else
+          {
+              _cycloramaVectorLayerLocation = ArcUtils.FileDir;
+          }
+        }
+    }
+
+    /// <summary>
     /// Detail images
     /// </summary>
     public bool DetailImagesEnabled { get; set; }
@@ -275,6 +304,12 @@ namespace IntegrationArcMap.Client
     {
       DateTime dateTime = DateTime.Now;
       int year = dateTime.Year;
+      string cycloramaVectorLayerLocation = Settings.Default.CycloramaVectorLayerLocation;
+      
+      if (string.IsNullOrEmpty(cycloramaVectorLayerLocation))
+      {
+         cycloramaVectorLayerLocation = ArcUtils.FileDir;
+      }
 
       var result = new Config
       {
@@ -289,6 +324,7 @@ namespace IntegrationArcMap.Client
         YearFrom = year - 3,
         YearTo = year - 1,
         DistanceCycloramaVectorLayer = 30,
+        CycloramaVectorLayerLocation = cycloramaVectorLayerLocation,
         DetailImagesEnabled = false,
         SpatialReference = null,
         _agreement = false
