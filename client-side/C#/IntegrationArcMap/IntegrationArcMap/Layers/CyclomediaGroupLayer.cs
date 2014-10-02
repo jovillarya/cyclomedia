@@ -18,8 +18,10 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using ESRI.ArcGIS.ArcMapUI;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Model;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.Carto;
@@ -294,11 +296,18 @@ namespace IntegrationArcMap.Layers
     {
       if (FeatureWorkspace == null)
       {
+        Config config = Config.Instance;
+        string location = config.CycloramaVectorLayerLocationDefault ? ArcUtils.FileDir : config.CycloramaVectorLayerLocation;
+
+        if (!Directory.Exists(location))
+        {
+          Directory.CreateDirectory(location);
+        }
+
         ISpatialReference spatialReference = ArcUtils.SpatialReference;
         int factoryCode = spatialReference.FactoryCode;
-
         IWorkspaceFactory workspaceFactory = new FileGDBWorkspaceFactoryClass();
-        string name = Path.Combine(Client.Config.Instance.CycloramaVectorLayerLocation, string.Concat(Name, factoryCode));
+        string name = Path.Combine(location, string.Concat(Name, factoryCode));
         string workSpaceFileName = string.Format("{0}.gdb", name);
 
         if (workspaceFactory.IsWorkspace(workSpaceFileName))

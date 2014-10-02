@@ -77,6 +77,7 @@ namespace IntegrationArcMap.Forms
       txtBaseUrlLocation.Font = (Font) font.Clone();
       txtRecordingServiceLocation.Font = (Font) font.Clone();
       txtSwfUrlLocation.Font = (Font) font.Clone();
+      txtCycloramaVectorLayerLocation.Font = (Font) font.Clone();
       grCoordinateSystems.Font = (Font) font.Clone();
       grGeneral.Font = (Font) font.Clone();
       grBaseUrl.Font = (Font) font.Clone();
@@ -213,15 +214,18 @@ namespace IntegrationArcMap.Forms
       ckDefaultBaseUrl.Checked = _config.BaseUrlDefault;
       ckDefaultRecordingService.Checked = _config.RecordingsServiceDefault;
       ckDefaultSwfUrl.Checked = _config.SwfUrlDefault;
+      ckDefaultCycloramaVectorLayerLocation.Checked = _config.CycloramaVectorLayerLocationDefault;
       ckUseProxyServer.Checked = _config.UseProxyServer;
       ckUseDefaultProxyCredentials.Checked = (!_config.UseProxyServer) || _config.ProxyUseDefaultCredentials;
       txtBaseUrlLocation.Text = _config.BaseUrlDefault ? string.Empty : _config.BaseUrl;
       txtRecordingServiceLocation.Text = _config.RecordingsServiceDefault ? string.Empty : _config.RecordingsService;
       txtSwfUrlLocation.Text = _config.SwfUrlDefault ? string.Empty : _config.SwfUrl;
+      txtCycloramaVectorLayerLocation.Text = _config.CycloramaVectorLayerLocationDefault ? string.Empty : _config.CycloramaVectorLayerLocation;
       FillInProxyParameters();
       txtBaseUrlLocation.Enabled = !_config.BaseUrlDefault;
       txtRecordingServiceLocation.Enabled = !_config.RecordingsServiceDefault;
       txtSwfUrlLocation.Enabled = !_config.SwfUrlDefault;
+      txtCycloramaVectorLayerLocation.Enabled = !_config.CycloramaVectorLayerLocationDefault;
       btnApply.Enabled = apply;
 
       nudMaxViewers.Value = _config.MaxViewers;
@@ -335,6 +339,10 @@ namespace IntegrationArcMap.Forms
       bool recordingServiceChanged = (txtRecordingServiceLocation.Text != _config.RecordingsService) ||
                                      (ckDefaultRecordingService.Checked != _config.RecordingsServiceDefault);
       bool swfChanged = (_config.SwfUrlDefault != ckDefaultSwfUrl.Checked) || (_config.SwfUrl != txtSwfUrlLocation.Text);
+      bool cycloramaVectorLayerLocationChanged = (_config.CycloramaVectorLayerLocationDefault !=
+                                                  ckDefaultCycloramaVectorLayerLocation.Checked) ||
+                                                 (_config.CycloramaVectorLayerLocation !=
+                                                  txtCycloramaVectorLayerLocation.Text);
       SpatialReference spat = _config.SpatialReference;
       var selectedItem = (SpatialReference) cbSpatialReferences.SelectedItem;
       bool spatChanged = (spat == null) || ((selectedItem != null) && (spat.ToString() != selectedItem.ToString()));
@@ -365,9 +373,11 @@ namespace IntegrationArcMap.Forms
       _config.BaseUrl = txtBaseUrlLocation.Text;
       _config.RecordingsService = txtRecordingServiceLocation.Text;
       _config.SwfUrl = txtSwfUrlLocation.Text;
+      _config.CycloramaVectorLayerLocation = txtCycloramaVectorLayerLocation.Text;
       _config.BaseUrlDefault = ckDefaultBaseUrl.Checked;
       _config.RecordingsServiceDefault = ckDefaultRecordingService.Checked;
       _config.SwfUrlDefault = ckDefaultSwfUrl.Checked;
+      _config.CycloramaVectorLayerLocationDefault = ckDefaultCycloramaVectorLayerLocation.Checked;
       _config.SmartClickEnabled = smartClickEnabled;
       _config.DetailImagesEnabled = ckDetailImages.Checked;
       _config.UseProxyServer = ckUseProxyServer.Checked;
@@ -408,14 +418,28 @@ namespace IntegrationArcMap.Forms
       }
 
       // Check if the layer has to make empty
-      if (usernameChanged)
+      if (usernameChanged || cycloramaVectorLayerLocationChanged)
       {
         GsExtension extension = GsExtension.GetExtension();
         CycloMediaGroupLayer groupLayer = extension.CycloMediaGroupLayer;
 
         if (groupLayer != null)
         {
-          groupLayer.MakeEmpty();
+          if (usernameChanged)
+          {
+            groupLayer.MakeEmpty();
+          }
+
+          if (cycloramaVectorLayerLocationChanged)
+          {
+            var layers = groupLayer.Layers;
+            groupLayer.Dispose();
+
+            foreach (var layer in layers)
+            {
+              extension.AddLayers(layer.Name);
+            }
+          }
         }
       }
 
@@ -557,6 +581,15 @@ namespace IntegrationArcMap.Forms
       txtSwfUrlLocation.Enabled = !ckDefaultSwfUrl.Checked;
     }
 
+    private void ckDefaultCycloramaVectorLayerLocation_CheckedChanged(object sender, EventArgs e)
+    {
+      btnApply.Enabled = true;
+      txtCycloramaVectorLayerLocation.Text = ckDefaultCycloramaVectorLayerLocation.Checked
+        ? string.Empty
+        : _config.CycloramaVectorLayerLocation;
+      txtCycloramaVectorLayerLocation.Enabled = !ckDefaultCycloramaVectorLayerLocation.Checked;
+    }
+
     private void ckUseProxyServer_CheckedChanged(object sender, EventArgs e)
     {
       btnApply.Enabled = true;
@@ -610,6 +643,11 @@ namespace IntegrationArcMap.Forms
     }
 
     private void txtSwfUrlLocation_KeyUp(object sender, KeyEventArgs e)
+    {
+      btnApply.Enabled = true;
+    }
+
+    private void txtCycloramaVectorLayerLocation_KeyUp(object sender, KeyEventArgs e)
     {
       btnApply.Enabled = true;
     }

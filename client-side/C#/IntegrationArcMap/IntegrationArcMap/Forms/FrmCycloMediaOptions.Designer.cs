@@ -50,6 +50,10 @@
       this.lblCoordinateSystemCycloramaViewer = new System.Windows.Forms.Label();
       this.cbSpatialReferences = new System.Windows.Forms.ComboBox();
       this.tbConfiguration = new System.Windows.Forms.TabPage();
+      this.grCycloramaVectorLayerLocation = new System.Windows.Forms.GroupBox();
+      this.lblLocationCycloramaVectorLayerLocation = new System.Windows.Forms.Label();
+      this.ckDefaultCycloramaVectorLayerLocation = new System.Windows.Forms.CheckBox();
+      this.txtCycloramaVectorLayerLocation = new System.Windows.Forms.TextBox();
       this.grProxyServer = new System.Windows.Forms.GroupBox();
       this.lblProxyDomain = new System.Windows.Forms.Label();
       this.txtProxyDomain = new System.Windows.Forms.TextBox();
@@ -95,6 +99,7 @@
       ((System.ComponentModel.ISupportInitialize)(this.nudDistVectLayerViewer)).BeginInit();
       this.grCoordinateSystems.SuspendLayout();
       this.tbConfiguration.SuspendLayout();
+      this.grCycloramaVectorLayerLocation.SuspendLayout();
       this.grProxyServer.SuspendLayout();
       this.grRecordingService.SuspendLayout();
       this.grBaseUrl.SuspendLayout();
@@ -118,7 +123,7 @@
       this.tcSettings.Multiline = true;
       this.tcSettings.Name = "tcSettings";
       this.tcSettings.SelectedIndex = 0;
-      this.tcSettings.Size = new System.Drawing.Size(470, 405);
+      this.tcSettings.Size = new System.Drawing.Size(470, 447);
       this.tcSettings.TabIndex = 0;
       this.tcSettings.Click += new System.EventHandler(this.tcSettings_Click);
       // 
@@ -130,7 +135,7 @@
       this.tbLogin.Location = new System.Drawing.Point(4, 23);
       this.tbLogin.Name = "tbLogin";
       this.tbLogin.Padding = new System.Windows.Forms.Padding(3);
-      this.tbLogin.Size = new System.Drawing.Size(462, 378);
+      this.tbLogin.Size = new System.Drawing.Size(462, 420);
       this.tbLogin.TabIndex = 0;
       this.tbLogin.Text = "Login";
       this.tbLogin.UseVisualStyleBackColor = true;
@@ -214,7 +219,7 @@
       this.tbSettings.Location = new System.Drawing.Point(4, 23);
       this.tbSettings.Name = "tbSettings";
       this.tbSettings.Padding = new System.Windows.Forms.Padding(3);
-      this.tbSettings.Size = new System.Drawing.Size(462, 378);
+      this.tbSettings.Size = new System.Drawing.Size(462, 420);
       this.tbSettings.TabIndex = 1;
       this.tbSettings.Text = "Settings";
       this.tbSettings.UseVisualStyleBackColor = true;
@@ -376,16 +381,59 @@
       // 
       // tbConfiguration
       // 
+      this.tbConfiguration.Controls.Add(this.grCycloramaVectorLayerLocation);
       this.tbConfiguration.Controls.Add(this.grProxyServer);
       this.tbConfiguration.Controls.Add(this.grRecordingService);
       this.tbConfiguration.Controls.Add(this.grBaseUrl);
       this.tbConfiguration.Controls.Add(this.grSwfUrl);
       this.tbConfiguration.Location = new System.Drawing.Point(4, 23);
       this.tbConfiguration.Name = "tbConfiguration";
-      this.tbConfiguration.Size = new System.Drawing.Size(462, 378);
+      this.tbConfiguration.Size = new System.Drawing.Size(462, 420);
       this.tbConfiguration.TabIndex = 3;
       this.tbConfiguration.Text = "Configuration";
       this.tbConfiguration.UseVisualStyleBackColor = true;
+      // 
+      // grCycloramaVectorLayerLocation
+      // 
+      this.grCycloramaVectorLayerLocation.Controls.Add(this.lblLocationCycloramaVectorLayerLocation);
+      this.grCycloramaVectorLayerLocation.Controls.Add(this.ckDefaultCycloramaVectorLayerLocation);
+      this.grCycloramaVectorLayerLocation.Controls.Add(this.txtCycloramaVectorLayerLocation);
+      this.grCycloramaVectorLayerLocation.Location = new System.Drawing.Point(3, 198);
+      this.grCycloramaVectorLayerLocation.Name = "grCycloramaVectorLayerLocation";
+      this.grCycloramaVectorLayerLocation.Size = new System.Drawing.Size(456, 65);
+      this.grCycloramaVectorLayerLocation.TabIndex = 26;
+      this.grCycloramaVectorLayerLocation.TabStop = false;
+      this.grCycloramaVectorLayerLocation.Text = "Cyclorama vector layer location";
+      // 
+      // lblLocationCycloramaVectorLayerLocation
+      // 
+      this.lblLocationCycloramaVectorLayerLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.lblLocationCycloramaVectorLayerLocation.Location = new System.Drawing.Point(3, 37);
+      this.lblLocationCycloramaVectorLayerLocation.Name = "lblLocationCycloramaVectorLayerLocation";
+      this.lblLocationCycloramaVectorLayerLocation.Size = new System.Drawing.Size(79, 20);
+      this.lblLocationCycloramaVectorLayerLocation.TabIndex = 22;
+      this.lblLocationCycloramaVectorLayerLocation.Text = "Location:";
+      this.lblLocationCycloramaVectorLayerLocation.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+      // 
+      // ckDefaultCycloramaVectorLayerLocation
+      // 
+      this.ckDefaultCycloramaVectorLayerLocation.AutoSize = true;
+      this.ckDefaultCycloramaVectorLayerLocation.Location = new System.Drawing.Point(3, 15);
+      this.ckDefaultCycloramaVectorLayerLocation.Name = "ckDefaultCycloramaVectorLayerLocation";
+      this.ckDefaultCycloramaVectorLayerLocation.Size = new System.Drawing.Size(81, 18);
+      this.ckDefaultCycloramaVectorLayerLocation.TabIndex = 20;
+      this.ckDefaultCycloramaVectorLayerLocation.Text = "Use default";
+      this.ckDefaultCycloramaVectorLayerLocation.UseVisualStyleBackColor = true;
+      this.ckDefaultCycloramaVectorLayerLocation.CheckedChanged += new System.EventHandler(this.ckDefaultCycloramaVectorLayerLocation_CheckedChanged);
+      // 
+      // txtCycloramaVectorLayerLocation
+      // 
+      this.txtCycloramaVectorLayerLocation.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.txtCycloramaVectorLayerLocation.Location = new System.Drawing.Point(82, 37);
+      this.txtCycloramaVectorLayerLocation.Name = "txtCycloramaVectorLayerLocation";
+      this.txtCycloramaVectorLayerLocation.Size = new System.Drawing.Size(370, 20);
+      this.txtCycloramaVectorLayerLocation.TabIndex = 21;
+      this.txtCycloramaVectorLayerLocation.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtCycloramaVectorLayerLocation_KeyUp);
       // 
       // grProxyServer
       // 
@@ -402,7 +450,7 @@
       this.grProxyServer.Controls.Add(this.lblProxyAddress);
       this.grProxyServer.Controls.Add(this.ckUseProxyServer);
       this.grProxyServer.Controls.Add(this.txtProxyAddress);
-      this.grProxyServer.Location = new System.Drawing.Point(3, 198);
+      this.grProxyServer.Location = new System.Drawing.Point(3, 263);
       this.grProxyServer.Name = "grProxyServer";
       this.grProxyServer.Size = new System.Drawing.Size(456, 157);
       this.grProxyServer.TabIndex = 25;
@@ -670,7 +718,7 @@
       this.tbAbout.Controls.Add(this.rtbAbout);
       this.tbAbout.Location = new System.Drawing.Point(4, 23);
       this.tbAbout.Name = "tbAbout";
-      this.tbAbout.Size = new System.Drawing.Size(462, 378);
+      this.tbAbout.Size = new System.Drawing.Size(462, 420);
       this.tbAbout.TabIndex = 4;
       this.tbAbout.Text = "About";
       this.tbAbout.UseVisualStyleBackColor = true;
@@ -692,7 +740,7 @@
       this.tbAgreement.Controls.Add(this.txtAgreement);
       this.tbAgreement.Location = new System.Drawing.Point(4, 23);
       this.tbAgreement.Name = "tbAgreement";
-      this.tbAgreement.Size = new System.Drawing.Size(462, 378);
+      this.tbAgreement.Size = new System.Drawing.Size(462, 420);
       this.tbAgreement.TabIndex = 5;
       this.tbAgreement.Text = "Agreement";
       this.tbAgreement.UseVisualStyleBackColor = true;
@@ -706,7 +754,7 @@
       this.txtAgreement.Name = "txtAgreement";
       this.txtAgreement.ReadOnly = true;
       this.txtAgreement.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-      this.txtAgreement.Size = new System.Drawing.Size(452, 368);
+      this.txtAgreement.Size = new System.Drawing.Size(452, 410);
       this.txtAgreement.TabIndex = 0;
       // 
       // btnOk
@@ -748,7 +796,7 @@
       this.plSettings.Dock = System.Windows.Forms.DockStyle.Top;
       this.plSettings.Location = new System.Drawing.Point(0, 0);
       this.plSettings.Name = "plSettings";
-      this.plSettings.Size = new System.Drawing.Size(470, 405);
+      this.plSettings.Size = new System.Drawing.Size(470, 447);
       this.plSettings.TabIndex = 13;
       // 
       // plButtons
@@ -757,7 +805,7 @@
       this.plButtons.Controls.Add(this.btnCancel);
       this.plButtons.Controls.Add(this.btnApply);
       this.plButtons.Dock = System.Windows.Forms.DockStyle.Bottom;
-      this.plButtons.Location = new System.Drawing.Point(0, 405);
+      this.plButtons.Location = new System.Drawing.Point(0, 447);
       this.plButtons.Name = "plButtons";
       this.plButtons.Size = new System.Drawing.Size(470, 35);
       this.plButtons.TabIndex = 14;
@@ -766,7 +814,7 @@
       // 
       this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-      this.ClientSize = new System.Drawing.Size(470, 440);
+      this.ClientSize = new System.Drawing.Size(470, 482);
       this.Controls.Add(this.plButtons);
       this.Controls.Add(this.plSettings);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
@@ -791,6 +839,8 @@
       ((System.ComponentModel.ISupportInitialize)(this.nudDistVectLayerViewer)).EndInit();
       this.grCoordinateSystems.ResumeLayout(false);
       this.tbConfiguration.ResumeLayout(false);
+      this.grCycloramaVectorLayerLocation.ResumeLayout(false);
+      this.grCycloramaVectorLayerLocation.PerformLayout();
       this.grProxyServer.ResumeLayout(false);
       this.grProxyServer.PerformLayout();
       this.grRecordingService.ResumeLayout(false);
@@ -867,5 +917,9 @@
     private System.Windows.Forms.TextBox txtProxyDomain;
     private System.Windows.Forms.GroupBox grLogin;
     private System.Windows.Forms.GroupBox grStatus;
+    private System.Windows.Forms.GroupBox grCycloramaVectorLayerLocation;
+    private System.Windows.Forms.Label lblLocationCycloramaVectorLayerLocation;
+    private System.Windows.Forms.CheckBox ckDefaultCycloramaVectorLayerLocation;
+    private System.Windows.Forms.TextBox txtCycloramaVectorLayerLocation;
   }
 }
