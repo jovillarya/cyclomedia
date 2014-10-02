@@ -1,6 +1,11 @@
 Release notes:
 ==============
 
+Version 1.1.29 (10/02/2014)
+============================
+- Changed: it is now possible for change the location where the cyclorama vector layer is stored
+
+
 Version 1.1.28 (08/06/2014)
 ============================
 - Bug fixes
