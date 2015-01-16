@@ -153,6 +153,11 @@ namespace IntegrationArcMap.Client
     public string ProxyDomain { get; set; }
 
     /// <summary>
+    /// Default recording srs system
+    /// </summary>
+    public string DefaultRecordingSrs { get; set; }
+
+    /// <summary>
     /// ProxyUseDefaultCredentials
     /// </summary>
     public bool ProxyUseDefaultCredentials

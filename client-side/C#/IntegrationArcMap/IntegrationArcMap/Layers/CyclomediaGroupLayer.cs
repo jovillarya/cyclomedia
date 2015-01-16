@@ -298,14 +298,20 @@ namespace IntegrationArcMap.Layers
       {
         Config config = Config.Instance;
         string location = config.CycloramaVectorLayerLocationDefault ? ArcUtils.FileDir : config.CycloramaVectorLayerLocation;
+        string defaultRecordingSrs = config.DefaultRecordingSrs;
+        int factoryCode;
 
         if (!Directory.Exists(location))
         {
           Directory.CreateDirectory(location);
         }
 
-        ISpatialReference spatialReference = ArcUtils.SpatialReference;
-        int factoryCode = spatialReference.FactoryCode;
+        if ((string.IsNullOrEmpty(defaultRecordingSrs)) || (!int.TryParse(defaultRecordingSrs, out factoryCode)))
+        {
+          ISpatialReference spatialReference = ArcUtils.SpatialReference;
+          factoryCode = spatialReference.FactoryCode;
+        }
+
         IWorkspaceFactory workspaceFactory = new FileGDBWorkspaceFactoryClass();
         string name = Path.Combine(location, string.Concat(Name, factoryCode));
         string workSpaceFileName = string.Format("{0}.gdb", name);

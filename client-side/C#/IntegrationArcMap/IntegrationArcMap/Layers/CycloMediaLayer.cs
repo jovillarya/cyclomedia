@@ -124,7 +124,19 @@ namespace IntegrationArcMap.Layers
 
     public string EpsgCode
     {
-      get { return string.Format("EPSG:{0}", (SpatialReference == null) ? 0 : SpatialReference.FactoryCode); }
+      get
+      {
+        Config config = Config.Instance;
+        string defaultRecordingSrs = config.DefaultRecordingSrs;
+        int factoryCode;
+
+        if ((string.IsNullOrEmpty(defaultRecordingSrs)) || (!int.TryParse(defaultRecordingSrs, out factoryCode)))
+        {
+          factoryCode = (SpatialReference == null) ? 0 : SpatialReference.FactoryCode;
+        }
+
+        return string.Format("EPSG:{0}", factoryCode);
+      }
     }
 
     public bool IsVisible
