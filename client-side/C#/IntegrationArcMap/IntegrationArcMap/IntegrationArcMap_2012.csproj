@@ -1,0 +1,358 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A76A4B7D-B4B0-470E-9773-16105D5E3A51}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IntegrationArcMap</RootNamespace>
+    <AssemblyName>GlobeSpotterForArcGISDesktop</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>true</RegisterForComInterop>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.ADF.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF.Connection.Local, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.ADF.Connection.Local.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ArcMapUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.ArcMapUI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Carto.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.DataSourcesGDB.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Desktop.AddIns, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Desktop.AddIns.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Display.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Editor, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Framework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Geodatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Geometry.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.System.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.SystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.TrackingAnalyst, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.TrackingAnalyst.dll</HintPath>
+    </Reference>
+    <Reference Include="GlobeSpotterAPI">
+      <HintPath>..\..\Libs\GlobeSpotterAPI2.85\GlobeSpotterAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddIns\GsFrmIdentify.cs" />
+    <Compile Include="AddIns\GsHelp.cs" />
+    <Compile Include="AddIns\GsMeasurementDetail.cs" />
+    <Compile Include="AddIns\GsFrmMeasurement.cs" />
+    <Compile Include="AddIns\GsRecordingHistory.cs" />
+    <Compile Include="AddIns\GsShowInCyclorama.cs" />
+    <Compile Include="AddIns\GsHistoricalDataLayer.cs" />
+    <Compile Include="AddIns\GsRecentDataLayer.cs" />
+    <Compile Include="AddIns\GsFrmGlobespotter.cs" />
+    <Compile Include="Client\ApplicationConfiguration.cs" />
+    <Compile Include="Client\Bounds.cs" />
+    <Compile Include="Client\Functionality.cs" />
+    <Compile Include="Client\GlobeSpotterConfiguration.cs" />
+    <Compile Include="Client\Urls.cs" />
+    <Compile Include="Forms\FrmAgreement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAgreement.Designer.cs">
+      <DependentUpon>FrmAgreement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Client\SpatialReference.cs" />
+    <Compile Include="Client\SpatialReferences.cs" />
+    <Compile Include="Forms\FrmIdentify.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmIdentify.Designer.cs">
+      <DependentUpon>FrmIdentify.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmMeasurement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmMeasurement.Designer.cs">
+      <DependentUpon>FrmMeasurement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmCycloMediaOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCycloMediaOptions.Designer.cs">
+      <DependentUpon>FrmCycloMediaOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRecordingHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRecordingHistory.Designer.cs">
+      <DependentUpon>FrmRecordingHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Atlas\Image.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ImageExtensions.cs" />
+    <Compile Include="Objects\Measurement.cs" />
+    <Compile Include="Objects\MeasurementPoint.cs" />
+    <Compile Include="Utilities\CurrentCult.cs" />
+    <Compile Include="Utilities\MakeTransparant.cs" />
+    <Compile Include="AddIns\GsCycloMediaOptions.cs" />
+    <Compile Include="Forms\FrmGlobespotter.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmGlobespotter.Designer.cs">
+      <DependentUpon>FrmGlobespotter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layers\WfsLayer.cs" />
+    <Compile Include="Model\Atlas\Recording.cs" />
+    <Compile Include="Model\Capabilities\BoundingBox.cs" />
+    <Compile Include="Model\Capabilities\Name.cs" />
+    <Compile Include="Model\Capabilities\OutputFormats.cs" />
+    <Compile Include="Model\Capabilities\FeatureType.cs" />
+    <Compile Include="Model\Capabilities\Point.cs" />
+    <Compile Include="Objects\Viewer.cs" />
+    <Compile Include="Layers\HistoricalLayer.cs" />
+    <Compile Include="Layers\CycloMediaGroupLayer.cs" />
+    <Compile Include="Layers\CycloMediaLayer.cs" />
+    <Compile Include="Layers\RecordingLayer.cs" />
+    <Compile Include="Layers\VectorLayer.cs" />
+    <Compile Include="Model\Atlas\Images.cs" />
+    <Compile Include="Model\Atlas\Height.cs" />
+    <Compile Include="Model\IMappedFeature.cs" />
+    <Compile Include="Model\Namespaces.cs" />
+    <Compile Include="Model\Shape\BaseShape.cs" />
+    <Compile Include="Model\Shape\IShape.cs" />
+    <Compile Include="Model\Shape\Point.cs" />
+    <Compile Include="Model\Atlas\ProductType.cs" />
+    <Compile Include="Model\Wfs\WfsFeature.cs" />
+    <Compile Include="Model\Shape\ShapeType.cs" />
+    <Compile Include="AddIns\GsOpenLocation.cs" />
+    <Compile Include="Config.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Config.esriaddinx</DependentUpon>
+    </Compile>
+    <Compile Include="Utilities\ArcUtils.cs" />
+    <Compile Include="Objects\Arrow.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Utilities\WindowWrapper.cs" />
+    <Compile Include="Client\APIKey.cs" />
+    <Compile Include="Client\Config.cs" />
+    <Compile Include="Client\Login.cs" />
+    <Compile Include="Client\State.cs" />
+    <Compile Include="Client\Web.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Config.esriaddinx">
+      <Generator>ArcGISAddInHostGenerator</Generator>
+      <LastGenOutput>Config.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </AddInContent>
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\GsIntegrationArcMap.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddIns\GsExtension.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmAgreement.resx">
+      <DependentUpon>FrmAgreement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmIdentify.resx">
+      <DependentUpon>FrmIdentify.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmMeasurement.resx">
+      <DependentUpon>FrmMeasurement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmCycloMediaOptions.resx">
+      <DependentUpon>FrmCycloMediaOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRecordingHistory.resx">
+      <DependentUpon>FrmRecordingHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmGlobespotter.resx">
+      <DependentUpon>FrmGlobespotter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AddInContent Include="Images\GsOpenLocation.png" />
+    <EmbeddedResource Include="Images\GsOpenLocation.cur" />
+    <AddInContent Include="Images\GsCycloMediaOptions.png" />
+    <AddInContent Include="Images\GsHistoricalDataLayer.png" />
+    <AddInContent Include="Images\GsRecentDataLayer.png" />
+    <None Include="..\..\Doc\GlobeSpotter for ArcGIS Desktop Installation Manual.pdf">
+      <Link>GlobeSpotter for ArcGIS Desktop Installation Manual.pdf</Link>
+    </None>
+    <EmbeddedResource Include="..\..\Doc\GlobeSpotter for ArcGIS Desktop User Manual.pdf">
+      <Link>Doc\GlobeSpotter for ArcGIS Desktop User Manual.pdf</Link>
+    </EmbeddedResource>
+    <None Include="Images\GsDelete.png" />
+    <AddInContent Include="Images\GsRecordingHistory.png" />
+    <AddInContent Include="Images\GsHelp.png" />
+    <EmbeddedResource Include="Doc\APIKey.xml" />
+    <AddInContent Include="Images\GsMeasurementDetail.png" />
+    <None Include="Images\LeftArrow.png" />
+    <None Include="Images\RightArrow.png" />
+    <EmbeddedResource Include="Doc\Agreement.txt" />
+    <Content Include="..\..\Doc\LGPL-3.0.txt">
+      <Link>LGPL-3.0.txt</Link>
+    </Content>
+    <Content Include="..\..\Doc\Release notes.txt">
+      <Link>Release notes.txt</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RangeControl\RangeControl.csproj">
+      <Project>{3927DD62-1164-484B-9DAD-192DD87986FB}</Project>
+      <Name>RangeControl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <ZipFileExtension>esriAddIn</ZipFileExtension>
+    <AddInTargetProduct>Desktop</AddInTargetProduct>
+    <AddInTargetVersion>10.0</AddInTargetVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\ESRI\ESRI.ArcGIS.AddIns.11.targets" Condition="Exists('$(MSBuildExtensionsPath)\ESRI\ESRI.ArcGIS.AddIns.11.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  -->
+  <Target Name="AfterBuild">
+    <!-- Gives build warning when add-in targets file is not found. -->
+    <Warning Text="Unable to create .esriAddin; missing ESRI ArcGIS Add-in SDK component(s)." Condition="!Exists('$(MSBuildExtensionsPath)\ESRI\ESRI.ArcGIS.AddIns.11.targets')" />
+  </Target>
+  <ProjectExtensions>
+    <!-- Default ESRI add-in properties -->
+    <ESRIAddInProperties>
+      <Host>ArcMap</Host>
+    </ESRIAddInProperties>
+  </ProjectExtensions>
+</Project>
