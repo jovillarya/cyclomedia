@@ -5,11 +5,11 @@
   <Description>GlobeSpotter for ArcGIS Desktop
 Copyright © CycloMedia Technology 2015
   </Description>
-  <Version>1.1.31</Version>
+  <Version>1.1.32</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
   <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>01/15/2015</Date>
+  <Date>01/19/2015</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />
@@ -34,82 +34,66 @@ Copyright © CycloMedia Technology 2015
       <Commands>
         <Tool id="CycloMedia_IntegrationArcMap_GsOpenLocation"
               class="GsOpenLocation"
-              message="Open the location in a Cyclorama"
-              caption="Open location"
+              caption="Open the location in a Cyclorama..."
               tip="Open the location in a Cyclorama"
               category="CycloMedia"
               onDemand="false"
               image="Images\GsOpenLocation.png">
-          <Help heading="Open location">Opens the location in a Cyclorama</Help>
         </Tool>
         <Button id="CycloMedia_IntegrationArcMap_GsShowInCyclorama"
                 class="GsShowInCyclorama"
-                message="Show in Cyclorama"
-                caption="Show in Cyclorama"
+                caption="Show in Cyclorama..."
                 tip="Show in Cyclorama"
                 category="CycloMedia"
                 onDemand="false">
-          <Help heading="show in Cyclorama">Show in Cyclorama</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsMeasurementDetail"
                 class="GsMeasurementDetail"
-                message="Show measurement detail information"
-                caption="Show measurement detail information"
+                caption="Show measurement detail information..."
                 tip="Show measurement detail information"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsMeasurementDetail.png">
-          <Help heading="show measurement detail information">Show measurement detail information</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsRecentDataLayer"
                 class="GsRecentDataLayer"
-                message="Add recent cyclorama layer to the map"
-                caption="Add Recent Cyclorama Layer"
-                tip="Add recent cyclorama layer"
+                caption="Add Recent Cyclorama Layer to the map..."
+                tip="Add recent cyclorama layer to the map"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsRecentDataLayer.png">
-          <Help heading="Add recent cyclorama layer">Add recent cyclorama layer to the map</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsHistoricalDataLayer"
                 class="GsHistoricalDataLayer"
-                message="Add historical cyclorama layer to the map"
-                caption="Add Historical Cyclorama Layer"
-                tip="Add historical cyclorama layer"
+                caption="Add Historical Cyclorama Layer to the map..."
+                tip="Add historical cyclorama layer to the map"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsHistoricalDataLayer.png">
-          <Help heading="Add historical cyclorama layer">Add historical cyclorama layer to the map</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsCycloMediaOptions"
                 class="GsCycloMediaOptions"
-                message="GlobeSpotter for ArcGIS Desktop"
                 caption="GlobeSpotter for ArcGIS Desktop..."
                 tip="GlobeSpotter for ArcGIS Desktop"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsCycloMediaOptions.png">
-          <Help heading="GlobeSpotter for ArcGIS Desktop">GlobeSpotter for ArcGIS Desktop</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsRecordingHistory"
                 class="GsRecordingHistory"
-                message="CycloMedia Recording History"
-                caption="CycloMedia Recording History"
+                caption="CycloMedia Recording History..."
                 tip="CycloMedia Recording History"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsRecordingHistory.png">
-          <Help heading="CycloMedia Recording History">CycloMedia Recording History</Help>
         </Button>
         <Button id="CycloMedia_IntegrationArcMap_GsHelp"
                 class="GsHelp"
-                message="Help information about GlobeSpotter for ArcGIS Desktop"
-                caption="Help information about GlobeSpotter for ArcGIS Desktop"
+                caption="Help information about GlobeSpotter for ArcGIS Desktop..."
                 tip="Help information about GlobeSpotter for ArcGIS Desktop"
                 category="CycloMedia"
                 onDemand="false"
                 image="Images\GsHelp.png">
-          <Help heading="Help information about GlobeSpotter for ArcGIS Desktop">Help information about GlobeSpotter for ArcGIS Desktop</Help>
         </Button>
       </Commands>
       <Toolbars>
