@@ -463,7 +463,7 @@ namespace IntegrationArcMap.Objects
 
     public bool IsSame(IPoint point)
     {
-      return IsSame(point, (_point != null) && (!double.IsNaN(_point.Z)));
+      return IsSame(point, (_point != null) && (!_point.IsEmpty) && (!double.IsNaN(_point.Z)));
     }
 
     public bool IsSame(IPoint point, bool includeZ)
@@ -502,7 +502,7 @@ namespace IntegrationArcMap.Objects
     // =========================================================================
     private bool InsideDistance(IPoint point, double dinstance, bool includeZ)
     {
-      return ((_point != null) && (point != null)) &&
+      return ((_point != null) && (point != null) && (!_point.IsEmpty) && (!point.IsEmpty)) &&
              ((Math.Abs(_point.X - point.X) < dinstance) && (Math.Abs(_point.Y - point.Y) < dinstance) &&
               ((!includeZ) || (Math.Abs(_point.Z - point.Z) < dinstance)));
     }
