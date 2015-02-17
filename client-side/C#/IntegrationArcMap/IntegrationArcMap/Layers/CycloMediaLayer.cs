@@ -398,6 +398,23 @@ namespace IntegrationArcMap.Layers
       return result;
     }
 
+    public IFeature GetFeature(string imageId)
+    {
+      IMappedFeature mappedFeature = CreateMappedFeature(null);
+      var fields = mappedFeature.Fields;
+      string shapeFieldName = mappedFeature.ShapeFieldName;
+
+      IQueryFilter filter = new QueryFilterClass
+      {
+        WhereClause = string.Format("ImageId = '{0}'", imageId),
+        SubFields = string.Format("{0}, {1}", fields.Aggregate("ObjectId", (current, field) => string.Format
+          ("{0}{1}{2}", current, string.IsNullOrEmpty(current) ? string.Empty : ", ", field.Key)), shapeFieldName)
+      };
+
+      var existsResult = FeatureClass.Search(filter, false);
+      return existsResult.NextFeature();
+    }
+
     public void AddZToSketch(IEditSketch3 sketch)
     {
       var editor = ArcUtils.Editor;
@@ -672,7 +689,7 @@ namespace IntegrationArcMap.Layers
     /// </summary>
     /// <param name="featureMemberElements">The root node of the feature element list</param>
     /// <param name="envelope"></param>
-    private void SaveFeatureMembers(IEnumerable<XElement> featureMemberElements, IEnvelope envelope)
+    public void SaveFeatureMembers(IEnumerable<XElement> featureMemberElements, IEnvelope envelope)
     {
       // ReSharper disable PossibleMultipleEnumeration
 
@@ -714,68 +731,75 @@ namespace IntegrationArcMap.Layers
 
         if (workspaceEdit != null)
         {
-          ISpatialFilter spatialFilter = new SpatialFilterClass
-                                           {
-                                             Geometry = envelope,
-                                             GeometryField = FeatureClass.ShapeFieldName,
-                                             SpatialRel = esriSpatialRelEnum.esriSpatialRelContains,
-                                             SubFields = idField
-                                           };
-
-          workspaceEdit.StartEditing(false);
-          var existsResult = FeatureClass.Search(spatialFilter, false);
-          var existsCount = FeatureClass.FeatureCount(spatialFilter);
           var exists = new Dictionary<string, IFeature>();
-          var imId = existsResult.FindField(idField);
-          // ReSharper disable UseIndexedProperty
 
-          for (int i = 0; i < existsCount; i++)
+          if (FeatureClass != null)
           {
-            IFeature feature = existsResult.NextFeature();
-            var recValue = feature.get_Value(imId) as string;
-
-            if ((recValue != null) && (!exists.ContainsKey(recValue)))
+            ISpatialFilter spatialFilter = new SpatialFilterClass
             {
-              exists.Add(recValue, feature);
+              Geometry = envelope,
+              GeometryField = FeatureClass.ShapeFieldName,
+              SpatialRel = esriSpatialRelEnum.esriSpatialRelContains,
+              SubFields = idField
+            };
+
+            workspaceEdit.StartEditing(false);
+            var existsResult = FeatureClass.Search(spatialFilter, false);
+            var existsCount = FeatureClass.FeatureCount(spatialFilter);
+            var imId = existsResult.FindField(idField);
+            // ReSharper disable UseIndexedProperty
+
+            for (int i = 0; i < existsCount; i++)
+            {
+              IFeature feature = existsResult.NextFeature();
+              var recValue = feature.get_Value(imId) as string;
+
+              if ((recValue != null) && (!exists.ContainsKey(recValue)))
+              {
+                exists.Add(recValue, feature);
+              }
             }
           }
 
-          foreach (XElement featureMemberElement in featureMemberElements)
+          if (FeatureClass != null)
           {
-            IEnumerable<XElement> mappedFeatureElements = featureMemberElement.Descendants(objectName);
-
-            foreach (var mappedFeatureElement in mappedFeatureElements)
+            foreach (XElement featureMemberElement in featureMemberElements)
             {
-              IMappedFeature mappedFeature = CreateMappedFeature(mappedFeatureElement);
+              IEnumerable<XElement> mappedFeatureElements = featureMemberElement.Descendants(objectName);
 
-              if (mappedFeature.Shape != null)
+              foreach (var mappedFeatureElement in mappedFeatureElements)
               {
-                if (mappedFeature.Shape.Type == ShapeType.Point)
+                IMappedFeature mappedFeature = CreateMappedFeature(mappedFeatureElement);
+
+                if (mappedFeature.Shape != null)
                 {
-                  if (!exists.ContainsKey((string) mappedFeature.FieldToItem(idField)))
+                  if (mappedFeature.Shape.Type == ShapeType.Point)
                   {
-                    var shapePoint = mappedFeature.Shape as ShapePoint;
-
-                    if ((shapePoint != null) && Filter(mappedFeature))
+                    if (!exists.ContainsKey((string) mappedFeature.FieldToItem(idField)))
                     {
-                      IPoint point = new Point();
-                      point.PutCoords(shapePoint.X, shapePoint.Y);
-                      IFeature feature = FeatureClass.CreateFeature();
-                      feature.Shape = point;
+                      var shapePoint = mappedFeature.Shape as ShapePoint;
 
-                      foreach (var fieldId in fieldIds)
+                      if ((shapePoint != null) && Filter(mappedFeature))
                       {
-                        feature.set_Value(fieldId.Key, mappedFeature.FieldToItem(fieldId.Value));
-                      }
+                        IPoint point = new Point();
+                        point.PutCoords(shapePoint.X, shapePoint.Y);
+                        IFeature feature = FeatureClass.CreateFeature();
+                        feature.Shape = point;
 
-                      feature.Store();
+                        foreach (var fieldId in fieldIds)
+                        {
+                          feature.set_Value(fieldId.Key, mappedFeature.FieldToItem(fieldId.Value));
+                        }
+
+                        feature.Store();
+                      }
                     }
-                  }
-                  else
-                  {
-                    if (Filter(mappedFeature))
+                    else
                     {
-                      exists.Remove((string) mappedFeature.FieldToItem(idField));
+                      if (Filter(mappedFeature))
+                      {
+                        exists.Remove((string) mappedFeature.FieldToItem(idField));
+                      }
                     }
                   }
                 }
@@ -790,7 +814,7 @@ namespace IntegrationArcMap.Layers
 
           workspaceEdit.StopEditing(true);
 
-          if (spatialCacheManager != null)
+          if ((spatialCacheManager != null) && (envelope != null))
           {
             spatialCacheManager.FillCache(envelope);
           }

@@ -124,14 +124,20 @@ namespace IntegrationArcMap.Forms
     {
       string yearFrom, yearTo;
       rsRecordingSelector.QueryRange(out yearFrom, out yearTo);
+      int mFrom = CalculateMonth(yearFrom);
+      int mTo = CalculateMonth(yearTo);
+      yearFrom = CalculateYear(yearFrom);
+      yearTo = CalculateYear(yearTo);
       int yFrom, yTo;
 
       if ((int.TryParse(yearFrom, out yFrom)) && (int.TryParse(yearTo, out yTo)))
       {
-        if ((_config.YearFrom != yFrom) || (_config.YearTo != yTo))
+        if ((_config.YearFrom != yFrom) || (_config.YearTo != yTo || (_config.MonthFrom != mFrom) || (_config.MonthTo != mTo)))
         {
           _config.YearFrom = yFrom;
           _config.YearTo = yTo;
+          _config.MonthFrom = mFrom;
+          _config.MonthTo = mTo;
           _config.Save();
 
           if (DateRangeChanged != null)
@@ -163,6 +169,8 @@ namespace IntegrationArcMap.Forms
     {
       int yFrom = _config.YearFrom;
       int yTo = _config.YearTo;
+      int mFrom = _config.MonthFrom;
+      int mTo = _config.MonthTo;
       int? hyFrom = GetElementAt(true);
       int? hyTo = GetElementAt(false);
       string rangeValues = string.Empty;
@@ -228,8 +236,10 @@ namespace IntegrationArcMap.Forms
         }
 
         rsRecordingSelector.RangeValues = rangeValues;
-        rsRecordingSelector.Range1 = yFrom.ToString(_ci);
-        rsRecordingSelector.Range2 = yTo.ToString(_ci);
+        string monthFrom = CalculateMonthString(mFrom);
+        string monthTo = CalculateMonthString(mTo);
+        rsRecordingSelector.Range1 = yFrom.ToString(_ci) + monthFrom;
+        rsRecordingSelector.Range2 = yTo.ToString(_ci) + monthTo;
       }
     }
 
@@ -238,6 +248,23 @@ namespace IntegrationArcMap.Forms
       return ((_yearMonth == null) || (_yearMonth.Count == 0))
                ? null
                : (int?) _yearMonth.ElementAt(start ? 0 : (_yearMonth.Count - 1)).Key;
+    }
+
+    private int CalculateMonth(string year)
+    {
+      string month = (year.Length <= 5) ? string.Empty : year.Substring(5);
+      return (month == "25") ? 4 : (month == "5" ? 7 : (month == "75" ? 10 : 1));
+    }
+
+    private string CalculateYear(string year)
+    {
+      return year.Substring(0, Math.Min(year.Length, 4));
+    }
+
+    private string CalculateMonthString(int month)
+    {
+      string monthString = (Math.Floor((double) (month - 1)/3)*25).ToString(_ci);
+      return (monthString == "0") ? string.Empty : ((monthString == "50") ? ".5" : ("." + monthString));
     }
 
     #endregion

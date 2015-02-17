@@ -42,7 +42,7 @@ namespace IntegrationArcMap.Client
     // Constants
     // =========================================================================
     private const string RecordingRequest =
-      "{0}?service=WFS&version=1.1.0&request=GetFeature&srsname=EPSG:4258&featureid={1}&TYPENAME=atlas:Recording";
+      "{0}?service=WFS&version=1.1.0&request=GetFeature&srsname={1}&featureid={2}&TYPENAME=atlas:Recording";
 
     private const string WfsBboxRequest =
       "{0}?SERVICE=WFS&VERSION={1}&REQUEST=GetFeature&SRSNAME={2}&BBOX={3},{4},{5},{6},{7}&TYPENAME={8}";
@@ -125,9 +125,11 @@ namespace IntegrationArcMap.Client
     // =========================================================================
     // Interface functions
     // =========================================================================
-    public List<XElement> GetByImageId(string imageId)
+    public List<XElement> GetByImageId(string imageId, CycloMediaLayer cycloMediaLayer)
     {
-      string remoteLocation = string.Format(RecordingRequest, RecordingService, imageId);
+      string epsgCode = cycloMediaLayer.EpsgCode;
+      epsgCode = SpatialReferences.Instance.ToKnownSrsName(epsgCode);
+      string remoteLocation = string.Format(RecordingRequest, RecordingService, epsgCode, imageId);
       var xml = (string) GetRequest(remoteLocation, GetXmlCallback, XmlConfig);
       return ParseXml(xml, (Namespaces.GmlNs + "featureMembers"));
     }

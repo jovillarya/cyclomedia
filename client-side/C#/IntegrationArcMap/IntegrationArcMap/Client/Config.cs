@@ -46,6 +46,8 @@ namespace IntegrationArcMap.Client
     private bool? _bypassProxyOnLocal;
     private bool? _proxyUseDefaultCredentials;
     private bool _agreement;
+    private int _monthFrom;
+    private int _monthTo;
 
     #endregion
 
@@ -191,6 +193,18 @@ namespace IntegrationArcMap.Client
     public int YearFrom { get; set; }
     public int YearTo { get; set; }
 
+    public int MonthFrom
+    {
+      get { return Math.Min(Math.Max(_monthFrom, 1), 12); }
+      set { _monthFrom = value; }
+    }
+
+    public int MonthTo
+    {
+      get { return Math.Min(Math.Max(_monthTo, 1), 12); }
+      set { _monthTo = value; }
+    }
+
     /// <summary>
     /// Cyclorama vector layer values
     /// </summary>
@@ -313,6 +327,8 @@ namespace IntegrationArcMap.Client
         SmartClickEnabled = true,
         YearFrom = year - 3,
         YearTo = year - 1,
+        MonthFrom = 1,
+        MonthTo = 1,
         DistanceCycloramaVectorLayer = 30,
         _cycloramaVectorLayerLocationDefault = true,
         CycloramaVectorLayerLocation = string.Empty,

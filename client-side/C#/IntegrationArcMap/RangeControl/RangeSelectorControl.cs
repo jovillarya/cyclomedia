@@ -18,6 +18,7 @@
 
 using System;
 using System.Drawing;
+using System.Globalization;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -75,6 +76,7 @@ namespace RangeControl
     private readonly float _fStringOutputFontSize; // String Output Font Size
     private Color _clrStringOutputFontColor; // Color of the Output Font 
     private readonly FontFamily _fntStringOutputFontFamily; // Font Family to display the Range string
+    private int _factorNumberOfLabels = 1;
 
     /// <ControlVariables>
     /// The Above are Design time Control Variables.  These variables can be used by the client
@@ -191,7 +193,8 @@ namespace RangeControl
       {
         // Splitting the Range Value to display in the control
         _strSplitLabels = _strRange.Split(_strDelimiter.ToCharArray(), 1024);
-        _nNumberOfLabels = _strSplitLabels.Length;
+        _factorNumberOfLabels = CalculateFactorNumberOfLabels();
+        _nNumberOfLabels = ((_strSplitLabels.Length - 1) * 4 * _factorNumberOfLabels) + 1;
         _strRange = value;
 
         _strRange1 = _strRange1Temp;
@@ -761,7 +764,8 @@ namespace RangeControl
 
         // Split the Labels to be displayed below the Bar
         _strSplitLabels = _strRange.Split(_strDelimiter.ToCharArray(), 1024);
-        _nNumberOfLabels = _strSplitLabels.Length;
+        _factorNumberOfLabels = CalculateFactorNumberOfLabels();
+        _nNumberOfLabels = ((_strSplitLabels.Length - 1)*4*_factorNumberOfLabels) + 1;
 
         // If there's an image load the Image from the file
         if (null != _strLeftImagePath)
@@ -787,17 +791,18 @@ namespace RangeControl
 
         int nRangeIndex1Selected = 0;
         int nRangeIndex2Selected = _nNumberOfLabels - 1;
+        var subSplitLabels = CalculateNumSplitLabels();
 
         // This is used to calculate the Thumb Point from the  Range1, Range2 Value
         for (int nIndexer = 0; nIndexer < _nNumberOfLabels; nIndexer++)
         {
-          if (_strRange1.Equals(_strSplitLabels[nIndexer]))
+          if (_strRange1.Equals(subSplitLabels[nIndexer]))
           {
             _fThumb1Point = _fLeftCol + _fDividedWidth * nIndexer;
             nRangeIndex1Selected = nIndexer;
           }
 
-          if (_strRange2.Equals(_strSplitLabels[nIndexer]))
+          if (_strRange2.Equals(subSplitLabels[nIndexer]))
           {
             _fThumb2Point = _fLeftCol + _fDividedWidth * nIndexer;
             nRangeIndex2Selected = nIndexer;
@@ -940,17 +945,18 @@ namespace RangeControl
       // This loop is to draw the Labels on the screen.
       for (int nIndexer = 0; nIndexer < _nNumberOfLabels; nIndexer++)
       {
-        float fDividerCounter = _fLeftCol + _fDividedWidth * nIndexer;
+        int sizeLine = ((nIndexer%(4*_factorNumberOfLabels)) == 0) ? 1 : 2;
+        float fDividerCounter = _fLeftCol + _fDividedWidth*nIndexer;
 
         Color color = ((fDividerCounter >= _ptThumbPoints1[2].X) && (fDividerCounter <= _fThumb2Point))
-                        ? _clrInFocusBarColor
-                        : _clrDisabledBarColor;
+          ? _clrInFocusBarColor
+          : _clrDisabledBarColor;
         myPen = new Pen(color, _unSizeOfMiddleBar);
         myGraphics.DrawLine(myPen,
                             fDividerCounter,
-                            _ptThumbPoints1[2].Y - _fntLabelFont.SizeInPoints,
+                            _ptThumbPoints1[2].Y - (_fntLabelFont.SizeInPoints/sizeLine),
                             fDividerCounter,
-                            _ptThumbPoints1[2].Y + _fntLabelFont.SizeInPoints);
+                            _ptThumbPoints1[2].Y + (_fntLabelFont.SizeInPoints/sizeLine));
       }
 
       // If the Thumb is an Image it draws the Image or else it draws the Thumb
@@ -991,22 +997,21 @@ namespace RangeControl
           Brush brSolidBrush = new SolidBrush(_clrDisabledRangeLabelColor);
           string strNewRange1 = null;
           string strNewRange2 = null;
+          var subSplitLabels = CalculateNumSplitLabels();
 
           // This loop is to draw the Labels on the screen.
           for (int nIndexer = 0; nIndexer < _nNumberOfLabels; nIndexer++)
           {
             float fDividerCounter = _fLeftCol + _fDividedWidth * nIndexer;
-            float fIsThumb1Crossed = fDividerCounter + _strSplitLabels[nIndexer].Length * _fntLabelFont.SizeInPoints / 2;
-            float fIsThumb2Crossed = fDividerCounter - (_strSplitLabels[nIndexer].Length - 1) * _fntLabelFont.SizeInPoints / 2;
 
-            if (fIsThumb1Crossed >= _fThumb1Point && strNewRange1 == null)
+            if (fDividerCounter >= _fThumb1Point && strNewRange1 == null)
             {
               // If Thumb1 Crossed this Label Make it in Focus color
               brSolidBrush = new SolidBrush(_clrInFocusRangeLabelColor);
-              strNewRange1 = _strSplitLabels[nIndexer];
+              strNewRange1 = subSplitLabels[nIndexer];
             }
 
-            if (fIsThumb2Crossed > _fThumb2Point)
+            if (fDividerCounter > _fThumb2Point)
             {
               // If Thumb2 crossed this draw the labes following this in disabled color
               brSolidBrush = new SolidBrush(_clrDisabledRangeLabelColor);
@@ -1014,12 +1019,15 @@ namespace RangeControl
             }
             else
             {
-              strNewRange2 = _strSplitLabels[nIndexer];
+              strNewRange2 = subSplitLabels[nIndexer];
             }
 
-            myGraphics.DrawString(_strSplitLabels[nIndexer], _fntLabelFont, brSolidBrush,
-                                  fDividerCounter - ((_fntLabelFont.SizeInPoints)*_strSplitLabels[nIndexer].Length)/2,
-                                  _fLeftRow);
+            if ((nIndexer%(4*_factorNumberOfLabels)) == 0)
+            {
+              myGraphics.DrawString(subSplitLabels[nIndexer], _fntLabelFont, brSolidBrush,
+                fDividerCounter - ((_fntLabelFont.SizeInPoints)*subSplitLabels[nIndexer].Length)/2,
+                _fLeftRow);
+            }
           }
 
           // This is to draw exactly the Range String like "Range 10 to 100" 
@@ -1028,7 +1036,7 @@ namespace RangeControl
             (!_strRange1.Equals(strNewRange1) || !_strRange2.Equals(strNewRange2)) ||
             (!_bMouseEventThumb1 && !_bMouseEventThumb2))
           {
-            string strRangeOutput = string.Format("{0} - {1}", _strRange1, _strRange2);
+            string strRangeOutput = CalculateRangeOutput(_strRange1, _strRange2);
 
             if (Parent != null)
             {
@@ -1039,7 +1047,9 @@ namespace RangeControl
             }
 
             brSolidBrush = new SolidBrush(_clrStringOutputFontColor);
-            strRangeOutput = string.Format("{0} - {1}", strNewRange1, strNewRange2);
+            strNewRange1 = strNewRange1 ?? string.Empty;
+            strNewRange2 = strNewRange2 ?? string.Empty;
+            strRangeOutput = CalculateRangeOutput(strNewRange1, strNewRange2);
             myGraphics.DrawString(strRangeOutput, _fntLabelFont, brSolidBrush,
                                   _fLeftCol + _fntLabelFont.Size * _strRangeString.Length,
                                   _fLeftRow * 2 - _fntLabelFont.Size - 7);
@@ -1268,6 +1278,72 @@ namespace RangeControl
       CalculateValues();
       Refresh();
       OnPaint(_ePaintArgs);
+    }
+
+    private int CalculateFactorNumberOfLabels()
+    {
+      int result = 1;
+
+      if (_strSplitLabels.Length >= 2)
+      {
+        string number1 = _strSplitLabels[0];
+        string number2 = _strSplitLabels[1];
+        int result1;
+        int result2;
+
+        if (int.TryParse(number1, out result1) && int.TryParse(number2, out result2))
+        {
+          result = Math.Abs(result2 - result1);
+        }
+      }
+
+      return result;
+    }
+
+    private string[] CalculateNumSplitLabels()
+    {
+      var result = new string[_nNumberOfLabels];
+
+      for (int i = 0; i < _strSplitLabels.Length; i++)
+      {
+        int newLabelId = i * 4 * _factorNumberOfLabels;
+        int splitLabel;
+
+        if (!int.TryParse(_strSplitLabels[i], out splitLabel))
+        {
+          splitLabel = 0;
+        }
+
+        for (int j = 0; j < (4 * _factorNumberOfLabels); j++)
+        {
+          if (result.Length > (newLabelId + j))
+          {
+            result[newLabelId + j] = (splitLabel + (j * 0.25)).ToString(CultureInfo.InvariantCulture);
+          }
+        }
+      }
+
+      return result;
+    }
+
+    private string CalculateRangeOutput(string strRange1, string strRange2)
+    {
+      string monthFromString = CalculateMonth(strRange1);
+      string monthToString  = CalculateMonth(strRange2);
+      string yearFromString = CalculateYear(strRange1);
+      string yearToString = CalculateYear(strRange2);
+      return string.Format("{0}({1}) - {2}({3})", yearFromString, monthFromString, yearToString, monthToString);
+    }
+
+    private string CalculateMonth(string strRange)
+    {
+      string monthPart = (strRange.Length <= 5) ? string.Empty : strRange.Substring(5);
+      return (monthPart == "25") ? "April" : ((monthPart == "5") ? "July" : ((monthPart == "75") ? "October" : "January"));
+    }
+
+    private string CalculateYear(string strRange)
+    {
+      return strRange.Substring(0, Math.Min(strRange.Length, 4));
     }
   }
 }

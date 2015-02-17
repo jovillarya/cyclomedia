@@ -129,7 +129,7 @@ namespace IntegrationArcMap.Forms
       _sketchModified = false;
       _screenPointAdded = false;
       _mapPointAdded = false;
-      _measurementName = String.Empty;
+      _measurementName = string.Empty;
       _drawPoint = true;
       _observationAdded = false;
       _yearMonth = null;
@@ -307,7 +307,7 @@ namespace IntegrationArcMap.Forms
 
     private void UpdateCol(CycloMediaLayer layer, int? year)
     {
-      _imageId = String.Empty;
+      _imageId = string.Empty;
       _layer = layer;
 
       if (!_colorYears.Contains(year))
@@ -410,7 +410,7 @@ namespace IntegrationArcMap.Forms
           bool dateRange = _visibleLayers.Aggregate(false, (current, visibleLayer) =>
                                                            ((!visibleLayer.UseDateRange) &&
                                                             visibleLayer.IsVisibleInGlobespotter) || current);
-          _api.SetDateFrom(String.Format("{0}-01-01", _config.YearFrom));
+          _api.SetDateFrom(String.Format("{0}-{1}-01", _config.YearFrom, _config.MonthFrom));
           int yearTo = _config.YearTo;
 
           if (dateRange)
@@ -419,7 +419,7 @@ namespace IntegrationArcMap.Forms
             yearTo = Math.Max((_recentLayers.Concat(new[] {dateTimeTo.Year}).Min()), yearTo);
           }
 
-          _api.SetDateTo(String.Format("{0}-01-01", yearTo));
+          _api.SetDateTo(String.Format("{0}-{1}-01", yearTo, _config.MonthTo));
         }
       }
     }

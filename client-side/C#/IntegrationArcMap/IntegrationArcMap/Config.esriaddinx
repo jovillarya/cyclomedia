@@ -5,11 +5,11 @@
   <Description>GlobeSpotter for ArcGIS Desktop
 Copyright © CycloMedia Technology 2015
   </Description>
-  <Version>1.1.33</Version>
+  <Version>1.1.36</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
   <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>01/20/2015</Date>
+  <Date>2/17/2015</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />
@@ -95,6 +95,14 @@ Copyright © CycloMedia Technology 2015
                 onDemand="false"
                 image="Images\GsHelp.png">
         </Button>
+        <Button id="CycloMedia_IntegrationArcMap_GsCycloramaSearch"
+                class="GsCycloramaSearch"
+                caption="Cyclorama search..."
+                tip="Cyclorama search"
+                category="CycloMedia"
+                onDemand="false"
+                image="Images\GsCycloramaSearch.png">
+        </Button>
       </Commands>
       <Toolbars>
         <Toolbar id="CycloMedia_IntegrationArcMap_GlobeSpotterToolbar"
@@ -105,9 +113,10 @@ Copyright © CycloMedia Technology 2015
             <Button refID="CycloMedia_IntegrationArcMap_GsHistoricalDataLayer" />
             <Button refID="CycloMedia_IntegrationArcMap_GsRecordingHistory" />
             <Tool refID="CycloMedia_IntegrationArcMap_GsOpenLocation" />
+            <Button refID="CycloMedia_IntegrationArcMap_GsCycloramaSearch" />
             <Button refID="CycloMedia_IntegrationArcMap_GsCycloMediaOptions" />
             <Button refID="CycloMedia_IntegrationArcMap_GsMeasurementDetail" />
-            <Button refID="CycloMedia_IntegrationArcMap_GsHelp" />
+            <Button refID="CycloMedia_IntegrationArcMap_GsHelp" />            
           </Items>
         </Toolbar>
       </Toolbars>

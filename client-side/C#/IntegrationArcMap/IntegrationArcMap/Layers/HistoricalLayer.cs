@@ -134,7 +134,7 @@ namespace IntegrationArcMap.Layers
           var dateTime = (DateTime) recordedAt;
           int year = dateTime.Year;
           int month = dateTime.Month;
-          result = YearInsideRange(year);
+          result = YearInsideRange(year, month);
 
           if (!YearMonth.ContainsKey(year))
           {
@@ -180,11 +180,13 @@ namespace IntegrationArcMap.Layers
         object value = feature.get_Value(imId);
         var dateTime = (DateTime) value;
         int year = dateTime.Year;
+        int month = dateTime.Month;
+        int calcYear = (year*4) + (int) Math.Floor(((double) (month - 1))/3);
 
-        if (!YearToColor.ContainsKey(year))
+        if (!YearToColor.ContainsKey(calcYear))
         {
-          YearToColor.Add(year, Color.Transparent);
-          added.Add(year);
+          YearToColor.Add(calcYear, Color.Transparent);
+          added.Add(calcYear);
         }
 
         int pipId = existsResult.FindField(object2Id);
@@ -194,10 +196,10 @@ namespace IntegrationArcMap.Layers
         {
           bool pip = bool.Parse((string) pipValue);
 
-          if (pip && (!YearPip.Contains(year)))
+          if (pip && (!YearPip.Contains(calcYear)))
           {
-            YearPip.Add(year);
-            pipAdded.Add(year);
+            YearPip.Add(calcYear);
+            pipAdded.Add(calcYear);
           }
         }
 
@@ -209,10 +211,10 @@ namespace IntegrationArcMap.Layers
         {
           bool forbidden = !bool.Parse((string)forbiddenValue);
 
-          if (forbidden && (!YearForbidden.Contains(year)))
+          if (forbidden && (!YearForbidden.Contains(calcYear)))
           {
-            YearForbidden.Add(year);
-            forbiddenAdded.Add(year);
+            YearForbidden.Add(calcYear);
+            forbiddenAdded.Add(calcYear);
           }
         }
       }
@@ -228,91 +230,126 @@ namespace IntegrationArcMap.Layers
         {
           foreach (var value in added)
           {
-            // ReSharper disable CSharpWarnings::CS0612
-            // ReSharper disable CSharpWarnings::CS0618
+            bool realAdd = true;
+            var newValue = (int) Math.Floor(((double) value)/4);
 
-            var symbol = new SimpleMarkerSymbol
+            for (int i = newValue; i < (newValue + 4); i++)
+            {
+              realAdd = (!YearToColor.ContainsKey(i)) && realAdd;
+            }
+
+            if (realAdd)
+            {
+              // ReSharper disable CSharpWarnings::CS0612
+              // ReSharper disable CSharpWarnings::CS0618
+
+              var symbol = new SimpleMarkerSymbol
               {
                 Color = Converter.ToRGBColor(Color.Transparent),
                 Size = SizeLayer
               };
 
-            // ReSharper restore CSharpWarnings::CS0618
-            // ReSharper restore CSharpWarnings::CS0612
-            var markerSymbol = symbol as ISymbol;
-            string classValue = string.Format("{0}, {1}, {2}", value, false, true);
-            uniqueValueRenderer.AddValue(classValue, string.Empty, markerSymbol);
+              // ReSharper restore CSharpWarnings::CS0618
+              // ReSharper restore CSharpWarnings::CS0612
+              var markerSymbol = symbol as ISymbol;
+              string classValue = string.Format("{0}, {1}, {2}", newValue, false, true);
+              uniqueValueRenderer.AddValue(classValue, string.Empty, markerSymbol);
 
-            // ReSharper disable UseIndexedProperty
-            string label = value.ToString(CultureInfo.InvariantCulture);
-            uniqueValueRenderer.set_Label(classValue, label);
-            // ReSharper restore UseIndexedProperty
+              // ReSharper disable UseIndexedProperty
+              string label = newValue.ToString(CultureInfo.InvariantCulture);
+              uniqueValueRenderer.set_Label(classValue, label);
+              // ReSharper restore UseIndexedProperty
+            }
           }
 
           foreach (var value in pipAdded)
           {
-            var rotationRenderer = uniqueValueRenderer as IRotationRenderer;
+            bool realAdd = true;
+            var newValue = (int) Math.Floor(((double) value)/4);
 
-            if (rotationRenderer != null)
+            for (int i = newValue; i < (newValue + 4); i++)
             {
-              rotationRenderer.RotationField = "PIP1Yaw";
-              rotationRenderer.RotationType = esriSymbolRotationType.esriRotateSymbolGeographic;
+              realAdd = (!YearToColor.ContainsKey(i)) && realAdd;
             }
 
-            Color color = YearToColor.ContainsKey(value) ? YearToColor[value] : Color.Transparent;
-            ISymbol symbol = ArcUtils.GetPipSymbol(SizeLayer, color);
-            string classValue = string.Format("{0}, {1}, {2}", value, true, true);
-            uniqueValueRenderer.AddValue(classValue, string.Empty, symbol);
+            if (realAdd)
+            {
+              var rotationRenderer = uniqueValueRenderer as IRotationRenderer;
 
-            // ReSharper disable UseIndexedProperty
-            string label = string.Format("{0} (Detail images)", value);
-            uniqueValueRenderer.set_Label(classValue, label);
-            // ReSharper restore UseIndexedProperty
-            activeView.ContentsChanged();
+              if (rotationRenderer != null)
+              {
+                rotationRenderer.RotationField = "PIP1Yaw";
+                rotationRenderer.RotationType = esriSymbolRotationType.esriRotateSymbolGeographic;
+              }
+
+              Color color = YearToColor.ContainsKey(value) ? YearToColor[value] : Color.Transparent;
+              ISymbol symbol = ArcUtils.GetPipSymbol(SizeLayer, color);
+              string classValue = string.Format("{0}, {1}, {2}", newValue, true, true);
+              uniqueValueRenderer.AddValue(classValue, string.Empty, symbol);
+
+              // ReSharper disable UseIndexedProperty
+              string label = string.Format("{0} (Detail images)", newValue);
+              uniqueValueRenderer.set_Label(classValue, label);
+              // ReSharper restore UseIndexedProperty
+              activeView.ContentsChanged();
+            }
           }
 
           foreach (var value in forbiddenAdded)
           {
-            Color color = YearToColor.ContainsKey(value) ? YearToColor[value] : Color.Transparent;
-            ISymbol symbol = ArcUtils.GetForbiddenSymbol(SizeLayer, color);
-            string classValue = string.Format("{0}, {1}, {2}", value, false, false);
-            uniqueValueRenderer.AddValue(classValue, string.Empty, symbol);
+            bool realAdd = true;
+            var newValue = (int) Math.Floor(((double) value)/4);
 
-            // ReSharper disable UseIndexedProperty
-            string label = string.Format("{0} (No Authorization)", value);
-            uniqueValueRenderer.set_Label(classValue, label);
-            // ReSharper restore UseIndexedProperty
-
-            if (pipAdded.Contains(value))
+            for (int i = newValue; i < (newValue + 4); i++)
             {
-              classValue = string.Format("{0}, {1}, {2}", value, true, false);
+              realAdd = (!YearToColor.ContainsKey(i)) && realAdd;
+            }
+
+            if (realAdd)
+            {
+              Color color = YearToColor.ContainsKey(value) ? YearToColor[value] : Color.Transparent;
+              ISymbol symbol = ArcUtils.GetForbiddenSymbol(SizeLayer, color);
+              string classValue = string.Format("{0}, {1}, {2}", newValue, false, false);
               uniqueValueRenderer.AddValue(classValue, string.Empty, symbol);
 
               // ReSharper disable UseIndexedProperty
-              label = string.Format("{0} (Detail images, No Authorization)", value);
+              string label = string.Format("{0} (No Authorization)", newValue);
               uniqueValueRenderer.set_Label(classValue, label);
               // ReSharper restore UseIndexedProperty
-            }
 
-            activeView.ContentsChanged();
+              if (pipAdded.Contains(value))
+              {
+                classValue = string.Format("{0}, {1}, {2}", newValue, true, false);
+                uniqueValueRenderer.AddValue(classValue, string.Empty, symbol);
+
+                // ReSharper disable UseIndexedProperty
+                label = string.Format("{0} (Detail images, No Authorization)", newValue);
+                uniqueValueRenderer.set_Label(classValue, label);
+                // ReSharper restore UseIndexedProperty
+              }
+
+              activeView.ContentsChanged();
+            }
           }
 
           var removed = (from yearColor in YearToColor
                          select yearColor.Key
                          into year
-                         where ((!YearInsideRange(year)) && (!added.Contains(year)))
+                         where ((!YearInsideRange((int)Math.Floor(((double)year) / 4), (((year % 4) * 3) + 1))) && (!added.Contains(year)))
                          select year).ToList();
 
           foreach (var year in removed)
           {
+            var newYear = (int) Math.Floor(((double) year)/4);
+
             if (YearPip.Contains(year))
             {
-              string classValuePip = string.Format("{0}, {1}, {2}", year, true, true);
+              string classValuePip = string.Format("{0}, {1}, {2}", newYear, true, true);
               uniqueValueRenderer.RemoveValue(classValuePip);
               YearPip.Remove(year);
             }
 
-            string classValue = string.Format("{0}, {1}, {2}", year, false, true);
+            string classValue = string.Format("{0}, {1}, {2}", newYear, false, true);
             uniqueValueRenderer.RemoveValue(classValue);
             YearToColor.Remove(year);
           }
@@ -321,7 +358,8 @@ namespace IntegrationArcMap.Layers
 
       foreach (var value in added)
       {
-        FrmGlobespotter.UpdateColor(this, value);
+        var newValue = (int) Math.Floor(((double) value)/4);
+        FrmGlobespotter.UpdateColor(this, newValue);
       }
     }
 
@@ -338,27 +376,42 @@ namespace IntegrationArcMap.Layers
       if (year != null)
       {
         var doYear = (int) year;
+        int calcYear = doYear*4;
+        bool update = false;
 
-        if (YearToColor.ContainsKey(doYear))
+        for (int i = calcYear; i < (calcYear + 4); i++)
+        {
+          update = (YearToColor.ContainsKey(i)) || update;
+        }
+
+        if (update)
         {
           string classValue = string.Format("{0}, {1}, {2}", doYear, false, true);
-          YearToColor[doYear] = color;
+
+          for (int j = calcYear; j < calcYear + 4; j++)
+          {
+            if (YearToColor.ContainsKey(j))
+            {
+              YearToColor[j] = color;
+            }
+          }
+
           ArcUtils.SetColorToLayer(Layer, color, classValue);
 
-          if (YearPip.Contains(doYear))
+          if (YearPip.Contains(calcYear))
           {
             classValue = string.Format("{0}, {1}, {2}", doYear, true, true);
             ISymbol symbol = ArcUtils.GetPipSymbol(SizeLayer, color);
             ArcUtils.SetSymbolToLayer(Layer, symbol, classValue);
           }
 
-          if (YearForbidden.Contains(doYear))
+          if (YearForbidden.Contains(calcYear))
           {
             classValue = string.Format("{0}, {1}, {2}", doYear, false, false);
             ISymbol symbol = ArcUtils.GetForbiddenSymbol(SizeLayer, color);
             ArcUtils.SetSymbolToLayer(Layer, symbol, classValue);
 
-            if (YearPip.Contains(doYear))
+            if (YearPip.Contains(calcYear))
             {
               classValue = string.Format("{0}, {1}, {2}", doYear, true, false);
               ArcUtils.SetSymbolToLayer(Layer, symbol, classValue);
@@ -368,6 +421,7 @@ namespace IntegrationArcMap.Layers
           Refresh();
         }
       }
+
     }
 
     #endregion
@@ -377,10 +431,14 @@ namespace IntegrationArcMap.Layers
     // =========================================================================
     // Functions (Private)
     // =========================================================================
-    private bool YearInsideRange(int year)
+    private bool YearInsideRange(int year, int month)
     {
       Config config = Config.Instance;
-      return (year >= config.YearFrom) && (year < config.YearTo);
+      var fromDateTime = new DateTime(config.YearFrom, config.MonthFrom, 1);
+      var toDateTime = new DateTime(config.YearTo, config.MonthTo, 1);
+      var checkDateTime = new DateTime(year, month, 1);
+      return (checkDateTime.CompareTo(fromDateTime) >= 0) && (checkDateTime.CompareTo(toDateTime) < 0);
+      // return (year >= config.YearFrom) && (year < config.YearTo);
     }
 
     #endregion

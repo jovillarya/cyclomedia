@@ -31,7 +31,8 @@ namespace IntegrationArcMap.Model.Atlas
     None = -1,
     Cyclorama = 1,
     Aquarama = 2,
-    Aerial = 3
+    Aerial = 3,
+    Aerorama = 4
   }
 
   #endregion

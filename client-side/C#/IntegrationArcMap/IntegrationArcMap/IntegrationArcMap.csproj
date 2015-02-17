@@ -144,6 +144,7 @@
     <Reference Include="System.Drawing" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddIns\GsCycloramaSearch.cs" />
     <Compile Include="AddIns\GsFrmIdentify.cs" />
     <Compile Include="AddIns\GsHelp.cs" />
     <Compile Include="AddIns\GsMeasurementDetail.cs" />
@@ -158,6 +159,12 @@
     <Compile Include="Client\Functionality.cs" />
     <Compile Include="Client\GlobeSpotterConfiguration.cs" />
     <Compile Include="Client\Urls.cs" />
+    <Compile Include="Forms\FrmCycloramaSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmCycloramaSearch.Designer.cs">
+      <DependentUpon>FrmCycloramaSearch.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmAgreement.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +284,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Forms\FrmCycloramaSearch.resx">
+      <DependentUpon>FrmCycloramaSearch.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\FrmAgreement.resx">
       <DependentUpon>FrmAgreement.cs</DependentUpon>
     </EmbeddedResource>
@@ -302,6 +312,7 @@
   </ItemGroup>
   <ItemGroup>
     <AddInContent Include="Images\GsOpenLocation.png" />
+    <AddInContent Include="Images\GsCycloramaSearch.png" />
     <EmbeddedResource Include="Images\GsOpenLocation.cur" />
     <AddInContent Include="Images\GsCycloMediaOptions.png" />
     <AddInContent Include="Images\GsHistoricalDataLayer.png" />
