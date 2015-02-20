@@ -61,6 +61,7 @@
       this.btnNext = new System.Windows.Forms.Button();
       this.btnPrev = new System.Windows.Forms.Button();
       this.btnOpenClose = new System.Windows.Forms.Button();
+      this.btnUndo = new System.Windows.Forms.Button();
       this.plMeasurementDetails.SuspendLayout();
       this.plOpenFocus.SuspendLayout();
       this.tsMeasurement.SuspendLayout();
@@ -143,7 +144,7 @@
       this.btnShow.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnShow.Location = new System.Drawing.Point(5, 5);
       this.btnShow.Name = "btnShow";
-      this.btnShow.Size = new System.Drawing.Size(75, 25);
+      this.btnShow.Size = new System.Drawing.Size(65, 25);
       this.btnShow.TabIndex = 12;
       this.btnShow.Text = "Show";
       this.btnShow.UseVisualStyleBackColor = true;
@@ -382,6 +383,7 @@
       // plButtons
       // 
       this.plButtons.BackColor = System.Drawing.SystemColors.Window;
+      this.plButtons.Controls.Add(this.btnUndo);
       this.plButtons.Controls.Add(this.btnNext);
       this.plButtons.Controls.Add(this.btnPrev);
       this.plButtons.Controls.Add(this.btnOpenClose);
@@ -396,7 +398,7 @@
       // 
       this.btnNext.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnNext.Image = ((System.Drawing.Image)(resources.GetObject("btnNext.Image")));
-      this.btnNext.Location = new System.Drawing.Point(195, 5);
+      this.btnNext.Location = new System.Drawing.Point(245, 5);
       this.btnNext.Name = "btnNext";
       this.btnNext.Size = new System.Drawing.Size(25, 25);
       this.btnNext.TabIndex = 16;
@@ -407,7 +409,7 @@
       // 
       this.btnPrev.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
       this.btnPrev.Image = ((System.Drawing.Image)(resources.GetObject("btnPrev.Image")));
-      this.btnPrev.Location = new System.Drawing.Point(165, 5);
+      this.btnPrev.Location = new System.Drawing.Point(215, 5);
       this.btnPrev.Name = "btnPrev";
       this.btnPrev.Size = new System.Drawing.Size(25, 25);
       this.btnPrev.TabIndex = 15;
@@ -417,13 +419,24 @@
       // btnOpenClose
       // 
       this.btnOpenClose.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-      this.btnOpenClose.Location = new System.Drawing.Point(85, 5);
+      this.btnOpenClose.Location = new System.Drawing.Point(75, 5);
       this.btnOpenClose.Name = "btnOpenClose";
-      this.btnOpenClose.Size = new System.Drawing.Size(75, 25);
+      this.btnOpenClose.Size = new System.Drawing.Size(65, 25);
       this.btnOpenClose.TabIndex = 13;
       this.btnOpenClose.Text = "Close";
       this.btnOpenClose.UseVisualStyleBackColor = true;
       this.btnOpenClose.Click += new System.EventHandler(this.btnOpenClose_Click);
+      // 
+      // btnUndo
+      // 
+      this.btnUndo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+      this.btnUndo.Location = new System.Drawing.Point(145, 5);
+      this.btnUndo.Name = "btnUndo";
+      this.btnUndo.Size = new System.Drawing.Size(65, 25);
+      this.btnUndo.TabIndex = 17;
+      this.btnUndo.Text = "Undo";
+      this.btnUndo.UseVisualStyleBackColor = true;
+      this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
       // 
       // FrmMeasurement
       // 
@@ -487,6 +500,7 @@
     private System.Windows.Forms.Button btnNext;
     private System.Windows.Forms.Label lblNumber;
     private System.Windows.Forms.TextBox txtNumber;
+    private System.Windows.Forms.Button btnUndo;
 
   }
 }

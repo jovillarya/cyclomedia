@@ -22,6 +22,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using ESRI.ArcGIS.Editor;
 using IntegrationArcMap.AddIns;
 using IntegrationArcMap.Client;
 using IntegrationArcMap.Layers;
@@ -863,6 +864,15 @@ namespace IntegrationArcMap.Forms
       {
         btnNext.Enabled = open && (_measurementPointS != null) && (!_measurementPointS.IsLastNumber);
       }
+
+      if (btnUndo.InvokeRequired)
+      {
+        btnUndo.Invoke(new MethodInvoker(() => btnUndo.Enabled = (_measurementPoint != null) && (_frmGlobespotter != null)));
+      }
+      else
+      {
+        btnUndo.Enabled = (_measurementPoint != null) && (_frmGlobespotter != null);
+      }
     }
 
     private void OpenNewPoint(MeasurementPointS pointS)
@@ -1090,6 +1100,21 @@ namespace IntegrationArcMap.Forms
         OpenNewPoint(_measurementPointS.NextPoint);
         _goToClicked = false;
       }
+    }
+
+    private void btnUndo_Click(object sender, EventArgs e)
+    {
+      int entityId = _entityId;
+      IEditor3 editor = ArcUtils.Editor;
+      var sketch = editor as IEditSketch3;
+
+      if (sketch != null)
+      {
+        sketch.Geometry = null;
+      }
+
+      Measurement measurement = Measurement.Get(entityId);
+      measurement.RemoveMeasurement();
     }
 
     #endregion

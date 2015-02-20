@@ -138,11 +138,12 @@ namespace IntegrationArcMap.Client
           IActiveView activeView = ArcUtils.ActiveView;
           IEnvelope envelope = activeView.Extent;
           ISpatialReference spatEnv = envelope.SpatialReference;
+
           Config config = Config.Instance;
           string defaultRecordingSrs = config.DefaultRecordingSrs;
-          int spatEnvFactoryCode;
+          int spatEnvFactoryCode = 0;
 
-          if ((string.IsNullOrEmpty(defaultRecordingSrs)) || (!int.TryParse(defaultRecordingSrs, out spatEnvFactoryCode)))
+          if ((spatEnv != null) && ((string.IsNullOrEmpty(defaultRecordingSrs)) || (!int.TryParse(defaultRecordingSrs, out spatEnvFactoryCode))))
           {
             spatEnvFactoryCode = spatEnv.FactoryCode;
           }
