@@ -1004,14 +1004,14 @@ namespace RangeControl
           {
             float fDividerCounter = _fLeftCol + _fDividedWidth * nIndexer;
 
-            if (fDividerCounter >= _fThumb1Point && strNewRange1 == null)
+            if (fDividerCounter >= (_fThumb1Point - (_fDividedWidth / 2)) && strNewRange1 == null)
             {
               // If Thumb1 Crossed this Label Make it in Focus color
               brSolidBrush = new SolidBrush(_clrInFocusRangeLabelColor);
               strNewRange1 = subSplitLabels[nIndexer];
             }
 
-            if (fDividerCounter > _fThumb2Point)
+            if (fDividerCounter > (_fThumb2Point + (_fDividedWidth / 2)))
             {
               // If Thumb2 crossed this draw the labes following this in disabled color
               brSolidBrush = new SolidBrush(_clrDisabledRangeLabelColor);

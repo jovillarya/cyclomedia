@@ -22,7 +22,9 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using ESRI.ArcGIS.Carto;
 using ESRI.ArcGIS.Editor;
+using ESRI.ArcGIS.Geometry;
 using IntegrationArcMap.AddIns;
 using IntegrationArcMap.Client;
 using IntegrationArcMap.Layers;
@@ -35,6 +37,7 @@ using GlobeSpotterAPI;
 using Image = System.Drawing.Image;
 using MeasurementPoint = GlobeSpotterAPI.MeasurementPoint;
 using MeasurementPointS = IntegrationArcMap.Objects.MeasurementPoint;
+using Point = System.Drawing.Point;
 
 namespace IntegrationArcMap.Forms
 {
@@ -788,6 +791,7 @@ namespace IntegrationArcMap.Forms
     private void SetOpenClose(bool open)
     {
       _opened = open;
+      Measurement measurement = Measurement.Get(_entityId);
 
       if (btnOpenClose.InvokeRequired)
       {
@@ -867,11 +871,11 @@ namespace IntegrationArcMap.Forms
 
       if (btnUndo.InvokeRequired)
       {
-        btnUndo.Invoke(new MethodInvoker(() => btnUndo.Enabled = (_measurementPoint != null) && (_frmGlobespotter != null)));
+        btnUndo.Invoke(new MethodInvoker(() => btnUndo.Enabled = (_measurementPoint != null) && (_frmGlobespotter != null) && measurement.IsSketch));
       }
       else
       {
-        btnUndo.Enabled = (_measurementPoint != null) && (_frmGlobespotter != null);
+        btnUndo.Enabled = (_measurementPoint != null) && (_frmGlobespotter != null) && measurement.IsSketch;
       }
     }
 
@@ -1107,14 +1111,32 @@ namespace IntegrationArcMap.Forms
       int entityId = _entityId;
       IEditor3 editor = ArcUtils.Editor;
       var sketch = editor as IEditSketch3;
+      Measurement measurement = Measurement.Get(entityId);
 
       if (sketch != null)
       {
-        sketch.Geometry = null;
-      }
+        if (measurement.IsTypeOfLayer(TypeOfLayer.Point))
+        {
+          _frmGlobespotter.RemoveMeasurementPoint(entityId, _pointId);
+          _frmGlobespotter.AddMeasurementPoint(entityId);
+        }
+        else
+        {
+          int nrPoints;
+          IGeometry geometry = sketch.Geometry;
+          IPointCollection ptColl = measurement.ToPointCollection(geometry, out nrPoints);
+          int removePoints = ((measurement.IsTypeOfLayer(TypeOfLayer.Polygon)) && (ptColl.PointCount == 2) &&
+                              (nrPoints == 1)) ? 2 : 1;
+          ptColl.RemovePoints((nrPoints - 1), removePoints);
+          sketch.Geometry = ptColl as IGeometry;
+          IActiveView activeView = ArcUtils.ActiveView;
 
-      Measurement measurement = Measurement.Get(entityId);
-      measurement.RemoveMeasurement();
+          if (activeView != null)
+          {
+            activeView.Refresh();
+          }
+        }
+      }
     }
 
     #endregion

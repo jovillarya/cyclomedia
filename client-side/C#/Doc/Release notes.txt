@@ -1,6 +1,14 @@
 Release notes:
 ==============
 
+Version 1.2.4 (03/03/2015)
+============================
+ - Changed: Undo functionality with measurements will now only delete the last measurement point
+ - Changed: Undo button is only enabled when you sketch your measurement
+ - Changed: In the Cyclorama search functionality, no never put 2 image Ids in the founded imageIds.
+ - Changed: The controll bar of the Historical slider is working better now.
+
+
 Version 1.2.0 (02/20/2015)
 ============================
 - Solved: Crash if recordings are loaded of type aerorama

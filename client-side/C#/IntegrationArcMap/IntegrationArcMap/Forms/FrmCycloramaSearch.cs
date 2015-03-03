@@ -220,20 +220,23 @@ namespace IntegrationArcMap.Forms
 
           foreach (var layer in layers)
           {
-            layer.SaveFeatureMembers(featureMemberElements, null);
-            IMappedFeature mappedFeature = layer.GetLocationInfo(imageId);
-            var recording = mappedFeature as Recording;
-
-            if (recording != null)
+            if (layer.IsVisible)
             {
-              DateTime? recordedAt = recording.RecordedAt;
-              CultureInfo ci = CultureInfo.InvariantCulture;
-              string recordedAtString = (recordedAt == null) ? string.Empty : ((DateTime) recordedAt).ToString(ci);
-              string imageIdString = recording.ImageId;
-              IFeature feature = layer.GetFeature(imageId);
-              var items = new[] {imageIdString, recordedAtString};
-              var listViewItem = new ListViewItem(items) {Tag = new object[] {feature, layer}};
-              lvResults.Items.Add(listViewItem);
+              layer.SaveFeatureMembers(featureMemberElements, null);
+              IMappedFeature mappedFeature = layer.GetLocationInfo(imageId);
+              var recording = mappedFeature as Recording;
+
+              if (recording != null)
+              {
+                DateTime? recordedAt = recording.RecordedAt;
+                CultureInfo ci = CultureInfo.InvariantCulture;
+                string recordedAtString = (recordedAt == null) ? string.Empty : ((DateTime) recordedAt).ToString(ci);
+                string imageIdString = recording.ImageId;
+                IFeature feature = layer.GetFeature(imageId);
+                var items = new[] {imageIdString, recordedAtString};
+                var listViewItem = new ListViewItem(items) {Tag = new object[] {feature, layer}};
+                lvResults.Items.Add(listViewItem);
+              }
             }
           }
         }
