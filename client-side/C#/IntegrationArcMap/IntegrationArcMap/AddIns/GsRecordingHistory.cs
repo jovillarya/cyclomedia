@@ -19,6 +19,7 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Layers;
 using IntegrationArcMap.Properties;
@@ -31,7 +32,14 @@ namespace IntegrationArcMap.AddIns
   /// </summary>
   public class GsRecordingHistory : Button
   {
+    private readonly LogClient _logClient;
+
     #region event handlers
+
+    public GsRecordingHistory()
+    {
+      _logClient = new LogClient(typeof(GsRecordingHistory));
+    }
 
     protected override void OnClick()
     {
@@ -42,6 +50,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsRecordingHistory.OnClick", ex.Message, ex);
         MessageBox.Show(ex.Message, Resources.GsCycloMediaOptions_OnClick_Globespotter_integration_Addin_Error_);
       }
     }
@@ -68,6 +77,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsRecordingHistory.OnUpdate", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsRecordingHistory.OnUpdate");
       }
     }

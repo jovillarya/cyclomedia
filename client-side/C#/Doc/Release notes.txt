@@ -1,6 +1,12 @@
 Release notes:
 ==============
 
+Version 1.2.6 (11/03/2015)
+============================
+- Added: Optional logging
+- Fixed: sometimes measuring in the cyclorama doesn't work
+
+
 Version 1.2.4 (03/03/2015)
 ============================
  - Changed: Undo functionality with measurements will now only delete the last measurement point

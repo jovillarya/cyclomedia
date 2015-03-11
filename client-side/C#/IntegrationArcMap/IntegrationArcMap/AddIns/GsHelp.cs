@@ -21,6 +21,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Properties;
 using IntegrationArcMap.Utilities;
 using Microsoft.Win32;
@@ -34,10 +35,12 @@ namespace IntegrationArcMap.AddIns
   public class GsHelp : Button
   {
     private Process _process;
+    private readonly LogClient _logClient;
 
     public GsHelp()
     {
       _process = null;
+      _logClient = new LogClient(typeof(GsHelp));
     }
 
     #region event handlers
@@ -110,6 +113,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsHelp.OnClick", ex.Message, ex);
         MessageBox.Show(ex.Message, Resources.GsCycloMediaOptions_OnClick_Globespotter_integration_Addin_Error_);
       }
     }
@@ -124,6 +128,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsHelp.OnUpdate", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsHelp.OnUpdate");
       }
     }

@@ -19,6 +19,7 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Properties;
 using IntegrationArcMap.Utilities;
@@ -37,6 +38,13 @@ namespace IntegrationArcMap.AddIns
     private const string MenuItem = "esriArcMapUI.MxCustomizeMenu";
     private const string CommandItem = "CycloMedia_IntegrationArcMap_GsCycloMediaOptions";
 
+    private readonly LogClient _logClient;
+
+    public GsCycloMediaOptions()
+    {
+      _logClient = new LogClient(typeof(GsCycloMediaOptions));
+    }
+
     #region event handlers
 
     protected override void OnClick()
@@ -48,6 +56,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsCycloMediaOptions.OnClick", ex.Message, ex);
         MessageBox.Show(ex.Message, Resources.GsCycloMediaOptions_OnClick_Globespotter_integration_Addin_Error_);
       }
     }
@@ -62,6 +71,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsCycloMediaOptions.OnUpdate", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsCycloMediaOptions.OnUpdate");
       }
     }

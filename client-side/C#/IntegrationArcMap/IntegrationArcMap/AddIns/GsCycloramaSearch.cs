@@ -19,6 +19,7 @@
 using System;
 using System.Diagnostics;
 using System.Windows.Forms;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Properties;
 using Button = ESRI.ArcGIS.Desktop.AddIns.Button;
@@ -30,6 +31,13 @@ namespace IntegrationArcMap.AddIns
   /// </summary>
   public class GsCycloramaSearch : Button
   {
+    private readonly LogClient _logClient;
+
+    public GsCycloramaSearch()
+    {
+      _logClient = new LogClient(typeof(GsCycloramaSearch));
+    }
+
     #region event handlers
 
     protected override void OnClick()
@@ -41,6 +49,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsCycloramaSearch.OnClick", ex.Message, ex);
         MessageBox.Show(ex.Message, Resources.GsCycloMediaOptions_OnClick_Globespotter_integration_Addin_Error_);
       }
     }
@@ -55,6 +64,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsCycloramaSearch.OnUpdate", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsCycloramaSearch.OnUpdate");
       }
     }

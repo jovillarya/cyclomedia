@@ -18,6 +18,7 @@
 
 using System;
 using System.Diagnostics;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Layers;
 using IntegrationArcMap.Utilities;
 using ESRI.ArcGIS.ArcMapUI;
@@ -43,11 +44,13 @@ namespace IntegrationArcMap.AddIns
     private CycloMediaLayer _cycloMediaLayer;
     private VectorLayer _vectorLayer;
 
+    private readonly LogClient _logClient;
+
     #endregion
 
     public GsShowInCyclorama()
     {
-      Checked = false;
+      _logClient = new LogClient(typeof (GsShowInCyclorama));
     }
 
     #region event handlers
@@ -70,6 +73,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsShowInCyclorama.OnClick", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsShowInCyclorama.OnClick");
       }
     }
@@ -118,6 +122,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsShowInCyclorama.OnUpdate", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsShowInCyclorama.OnUpdate");
       }
     }

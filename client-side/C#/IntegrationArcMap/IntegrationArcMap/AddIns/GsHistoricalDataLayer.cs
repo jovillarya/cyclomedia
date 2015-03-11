@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
 using ESRI.ArcGIS.Geometry;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Layers;
 using IntegrationArcMap.Properties;
 using IntegrationArcMap.Utilities;
@@ -40,8 +41,11 @@ namespace IntegrationArcMap.AddIns
     private const string MenuItem = "esriArcMapUI.MxAddDataMenu";
     private const string CommandItem = "CycloMedia_IntegrationArcMap_GsHistoricalDataLayer";
 
+    private readonly LogClient _logClient;
+
     public GsHistoricalDataLayer()
     {
+      _logClient = new LogClient(typeof(GsHistoricalDataLayer));
       Checked = false;
       GsExtension extension = GsExtension.GetExtension();
       CycloMediaGroupLayer groupLayer = extension.CycloMediaGroupLayer;
@@ -87,6 +91,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsHistoricalDataLayer.OnClick", ex.Message, ex);
         MessageBox.Show(ex.Message, Resources.GsCycloMediaOptions_OnClick_Globespotter_integration_Addin_Error_);
       }
     }
@@ -101,6 +106,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsHistoricalDataLayer.OnUpdate", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsHistoricalDataLayers.OnUpdate");
       }
     }
@@ -120,6 +126,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsHistoricalDataLayer.CycloMediaLayerAdded", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsHistoricalDataLayers.CycloMediaLayerAdded");
       }
     }
@@ -135,6 +142,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsHistoricalDataLayer.CycloMediaLayerRemoved", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsHistoricalDataLayers.CycloMediaRemoved");
       }
     }

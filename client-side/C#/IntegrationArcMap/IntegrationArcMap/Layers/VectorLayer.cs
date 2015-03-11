@@ -105,6 +105,7 @@ namespace IntegrationArcMap.Layers
     private static IList<VectorLayer> _layers;
     private static Timer _editToolCheckTimer;
     private static ICommandItem _beforeTool;
+    private static readonly LogClient LogClient;
 
     private IFeatureClass _featureClass;
     private ILayer _layer;
@@ -123,6 +124,7 @@ namespace IntegrationArcMap.Layers
     {
       _editToolCheckTimer = null;
       _beforeTool = null;
+      LogClient = new LogClient(typeof(VectorLayer));
     }
 
     #endregion
@@ -720,6 +722,7 @@ namespace IntegrationArcMap.Layers
       try
       {
         var feature = obj as IFeature;
+        LogClient.Info(string.Format("On Change Feature: {0}", ((feature != null ) ? feature.Class.AliasName:string.Empty)));
 
         if ((FeatureUpdateEditEvent != null) && (feature != null))
         {
@@ -739,6 +742,7 @@ namespace IntegrationArcMap.Layers
       }
       catch (Exception ex)
       {
+        LogClient.Error("VectorLayer.OnChangeFeature", ex.Message, ex);
         Trace.WriteLine(ex.Message, "VectorLayer.OnChangeFeature");
       }
     }
@@ -748,6 +752,7 @@ namespace IntegrationArcMap.Layers
       try
       {
         IEditor3 editor = ArcUtils.Editor;
+        LogClient.Info("On Selection Changed");
 
         if (editor != null)
         {
@@ -787,6 +792,7 @@ namespace IntegrationArcMap.Layers
       }
       catch (Exception ex)
       {
+        LogClient.Error("VectorLayer.OnSelectionChanged", ex.Message, ex);
         Trace.WriteLine(ex.Message, "VectorLayer.OnSelectionChanged");
       }
     }
@@ -796,6 +802,7 @@ namespace IntegrationArcMap.Layers
       try
       {
         var feature = obj as IFeature;
+        LogClient.Info(string.Format("On Delete Feature: {0}", ((feature != null) ? feature.Class.AliasName : string.Empty)));
 
         if ((FeatureDeleteEvent != null) && (feature != null))
         {
@@ -815,6 +822,7 @@ namespace IntegrationArcMap.Layers
       }
       catch (Exception ex)
       {
+        LogClient.Error("VectorLayer.OnDeleteFeature", ex.Message, ex);
         Trace.WriteLine(ex.Message, "VectorLayer.OnDeleteFeature");
       }
     }
@@ -823,6 +831,7 @@ namespace IntegrationArcMap.Layers
     {
       try
       {
+        LogClient.Info(string.Format("On Stop Editing: {0}", save));
         EditFeatures.Clear();
 
         if (StopEditEvent != null)
@@ -839,6 +848,7 @@ namespace IntegrationArcMap.Layers
       }
       catch (Exception ex)
       {
+        LogClient.Error("VectorLayer.OnStopEditing", ex.Message, ex);
         Trace.WriteLine(ex.Message, "VectorLayer.OnStopEditing");
       }
     }
@@ -847,6 +857,8 @@ namespace IntegrationArcMap.Layers
     {
       try
       {
+        LogClient.Info("On Sketch Modified");
+
         if (_editToolCheckTimer == null)
         {
           var checkEvent = new AutoResetEvent(true);
@@ -866,9 +878,7 @@ namespace IntegrationArcMap.Layers
           {
             IEditTask task = editor.CurrentTask;
             ILayer currentLayer = editLayers.CurrentLayer;
-            VectorLayer vectorLayer = (EditFeatures.Count != 1)
-              ? ((currentLayer == null) ? null : GetLayer(currentLayer))
-              : GetLayer(EditFeatures[0]);
+            VectorLayer vectorLayer = GetLayer(currentLayer);
 
             if (task != null)
             {
@@ -910,6 +920,7 @@ namespace IntegrationArcMap.Layers
       }
       catch (Exception ex)
       {
+        LogClient.Error("VectorLayer.OnSketchModified", ex.Message, ex);
         Trace.WriteLine(ex.Message, "VectorLayer.OnSketchModified");
       }
     }
@@ -919,6 +930,7 @@ namespace IntegrationArcMap.Layers
       try
       {
         IEditor3 editor = ArcUtils.Editor;
+        LogClient.Info("On Sketch Finished");
 
         if (editor != null)
         {
@@ -928,9 +940,7 @@ namespace IntegrationArcMap.Layers
           {
             IEditTask task = editor.CurrentTask;
             ILayer currentLayer = editLayers.CurrentLayer;
-            VectorLayer vectorLayer = (EditFeatures.Count != 1)
-              ? ((currentLayer == null) ? null : GetLayer(currentLayer))
-              : GetLayer(EditFeatures[0]);
+            VectorLayer vectorLayer = GetLayer(currentLayer);
 
             if ((task != null) && ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
             {
@@ -952,6 +962,7 @@ namespace IntegrationArcMap.Layers
       }
       catch (Exception ex)
       {
+        LogClient.Error("VectorLayer.OnSketchFinished", ex.Message, ex);
         Trace.WriteLine(ex.Message, "VectorLayer.OnSketchFinished");
       }
     }
@@ -961,6 +972,7 @@ namespace IntegrationArcMap.Layers
       try
       {
         IEditor3 editor = ArcUtils.Editor;
+        LogClient.Info("On CurrentTask Changed");
 
         if (editor != null)
         {
@@ -1047,6 +1059,7 @@ namespace IntegrationArcMap.Layers
       }
       catch (Exception ex)
       {
+        LogClient.Error("VectorLayer.OnCurrentTaskChanged", ex.Message, ex);
         Trace.WriteLine(ex.Message, "VectorLayer.OnCurrentTaskChanged");
       }
     }
@@ -1056,6 +1069,7 @@ namespace IntegrationArcMap.Layers
       try
       {
         IEditor3 editor = ArcUtils.Editor;
+        LogClient.Info("On vertex selection Changed");
 
         if (editor != null)
         {
@@ -1084,6 +1098,7 @@ namespace IntegrationArcMap.Layers
       }
       catch (Exception ex)
       {
+        LogClient.Error("VectorLayer.OnVertexSelectionChanged", ex.Message, ex);
         Trace.WriteLine(ex.Message, "VectorLayer.OnVertexSelectionChanged");
       }
     }

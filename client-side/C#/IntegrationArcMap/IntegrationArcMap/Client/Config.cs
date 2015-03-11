@@ -235,6 +235,16 @@ namespace IntegrationArcMap.Client
     public bool DetailImagesEnabled { get; set; }
 
     /// <summary>
+    /// Use logging
+    /// </summary>
+    public bool UseLogging { get; set; }
+
+    /// <summary>
+    /// Logging location
+    /// </summary>
+    public string LoggingLocation { get; set; }
+
+    /// <summary>
     /// Spatial references
     /// </summary>
     public SpatialReference SpatialReference { get; set; }

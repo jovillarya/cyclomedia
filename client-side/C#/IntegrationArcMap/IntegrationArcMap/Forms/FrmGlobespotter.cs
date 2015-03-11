@@ -58,6 +58,7 @@ namespace IntegrationArcMap.Forms
     private readonly List<int> _recentLayers;
     private readonly List<CycloMediaLayer> _visibleLayers;
     private readonly List<string> _restartImages;
+    private readonly LogClient _logClient;
 
     // ReSharper disable InconsistentNaming
     private API _api;
@@ -135,6 +136,7 @@ namespace IntegrationArcMap.Forms
       _yearMonth = null;
       _toInitialize = false;
       _lookAtCoord = null;
+      _logClient = new LogClient(typeof(FrmGlobespotter));
 
       CycloMediaLayer.HistoricalDateChanged += OnHistoricalDateChanged;
       FrmRecordingHistory.DateRangeChanged += OnDateRangeChanged;
@@ -1152,6 +1154,7 @@ namespace IntegrationArcMap.Forms
       }
       catch (Exception ex)
       {
+        _logClient.Error("FrmGlobeSpotter.OnOpenImageResult", ex.Message, ex);
         Trace.WriteLine(String.Format("Exception occured, message: {0}", ex.Message));
       }
     }
@@ -1653,6 +1656,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Close measurement. EntityId: {0}", entityId));
         _api.CloseMeasurement(entityId);
       }
     }
@@ -1661,6 +1665,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Remove measurement. EntityId: {0}", entityId));
         _api.RemoveEntity(entityId);
       }
     }
@@ -1669,6 +1674,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Open measurement. EntityId: {0}", entityId));
         _api.OpenMeasurement(entityId);
         _api.SetFocusEntity(entityId);
       }
@@ -1678,6 +1684,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info("Disable measurement series");
         _api.SetMeasurementSeriesModeEnabled(false);
       }
     }
@@ -1689,6 +1696,7 @@ namespace IntegrationArcMap.Forms
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
         result = _api.GetMeasurementSeriesModeEnabled();
+        _logClient.Info(string.Format("Get measurement series mode: {0}", result));
       }
 
       return result;
@@ -1698,6 +1706,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Next / Enable measurement series. EntityId: {0}", entityId));
         _api.NextMeasurementSeries(entityId);
         _api.SetMeasurementSeriesModeEnabled(true);
       }
@@ -1707,6 +1716,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info("Enable measurement series");
         _api.SetMeasurementSeriesModeEnabled(true);
       }
     }
@@ -1715,6 +1725,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Remove measurement point. PointId: {0}, entityId: {1}", pointId, entityId));
         _api.RemoveMeasurementPoint(entityId, pointId);
       }
     }
@@ -1725,6 +1736,7 @@ namespace IntegrationArcMap.Forms
 
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Create measurementPoint. EntityId: {0}", entityId));
         var point3D = new Point3D(point.X, point.Y, point.Z);
         result = _api.CreateMeasurementPoint(entityId, point3D);
       }
@@ -1736,6 +1748,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Open measurentPoint. PointId: {0} entityId: {1}", pointId, entityId));
         _api.OpenMeasurementPoint(entityId, pointId);
         PointMeasurementData pointMeasurementData = _api.GetMeasurementPointData(entityId, pointId);
         FrmMeasurement.OpenMeasurementPoint(entityId, pointId, this, pointMeasurementData.measurementPoint);
@@ -1746,6 +1759,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Add measurementPoint. EntityId: {0}", entityId));
         _api.AddMeasurementPoint(entityId);
       }
     }
@@ -1754,6 +1768,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Set focus entityId: {0}", entityId));
         _api.SetFocusEntity(entityId);
       }
     }
@@ -1762,6 +1777,7 @@ namespace IntegrationArcMap.Forms
     {
       if (GlobeSpotterConfiguration.MeasurePermissions && (_api != null))
       {
+        _logClient.Info(string.Format("Close measurement point: {0} entityId: {1}", entityId, pointId));
         _api.CloseMeasurementPoint(entityId, pointId);
         FrmMeasurement.CloseMeasurementPoint(entityId, pointId);
       }
@@ -1776,6 +1792,7 @@ namespace IntegrationArcMap.Forms
         case TypeOfLayer.Point:
           if (GlobeSpotterConfiguration.MeasurePoint)
           {
+            _logClient.Info("Create point measurement");
             entityId = _api.AddPointMeasurement(_measurementName);
             OpenMeasurement(entityId);
             DisableMeasurementSeries();
@@ -1786,6 +1803,7 @@ namespace IntegrationArcMap.Forms
         case TypeOfLayer.Line:
           if (GlobeSpotterConfiguration.MeasureLine)
           {
+            _logClient.Info("Create line measurement");
             entityId = _api.AddLineMeasurement(_measurementName);
             OpenMeasurement(entityId);
             EnableMeasurementSeries(entityId);
@@ -1795,6 +1813,7 @@ namespace IntegrationArcMap.Forms
         case TypeOfLayer.Polygon:
           if (GlobeSpotterConfiguration.MeasurePolygon)
           {
+            _logClient.Info("Create surface measurement");
             entityId = _api.AddSurfaceMeasurement(_measurementName);
             _api.SetMeasurementExtrusionEnabled(entityId, false);
             OpenMeasurement(entityId);

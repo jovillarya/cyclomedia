@@ -21,6 +21,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.Reflection;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Layers;
 using ESRI.ArcGIS.Desktop.AddIns;
@@ -38,8 +39,14 @@ namespace IntegrationArcMap.AddIns
     #region members
 
     private Cursor _thisCursor;
+    private readonly LogClient _logClient;
 
     #endregion
+
+    public GsOpenLocation()
+    {
+      _logClient = new LogClient(typeof(GsOpenLocation));
+    }
 
     #region event handlers
 
@@ -70,6 +77,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsOpenLocation.OnUpdate", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsOpenLocation.OnUpdate");
       }
 
@@ -86,6 +94,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsOpenLocation.OnMouseMove", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsOpenLocation.OnMouseMove");
       }
 
@@ -119,6 +128,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch(Exception ex)
       {
+        _logClient.Error("GsOpenLocation.OnMouseUp", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsOpenLocation.OnMouseUp");
       }
 

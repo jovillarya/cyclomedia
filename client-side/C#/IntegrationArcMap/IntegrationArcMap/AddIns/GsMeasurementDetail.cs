@@ -20,6 +20,7 @@ using System;
 using System.Diagnostics;
 using System.Windows.Forms;
 using ESRI.ArcGIS.Editor;
+using IntegrationArcMap.Client;
 using IntegrationArcMap.Forms;
 using IntegrationArcMap.Properties;
 using IntegrationArcMap.Utilities;
@@ -38,9 +39,12 @@ namespace IntegrationArcMap.AddIns
     private const string MenuItem = "esriEditor.EditingToolbarNew";
     private const string CommandItem = "CycloMedia_IntegrationArcMap_GsMeasurementDetail";
 
+    private readonly LogClient _logClient;
+
     public GsMeasurementDetail()
     {
       Checked = false;
+      _logClient = new LogClient(typeof(GsMeasurementDetail));
     }
 
     #region event handlers
@@ -62,6 +66,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsMeasurementDetail.OnClick", ex.Message, ex);
         MessageBox.Show(ex.Message, Resources.GsCycloMediaOptions_OnClick_Globespotter_integration_Addin_Error_);
       }
     }
@@ -84,6 +89,7 @@ namespace IntegrationArcMap.AddIns
       }
       catch (Exception ex)
       {
+        _logClient.Error("GsMeasurementDetail.OnUpdate", ex.Message, ex);
         Trace.WriteLine(ex.Message, "GsMeasurementDetail.OnUpdate");
       }
     }
