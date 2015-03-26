@@ -331,6 +331,31 @@ namespace IntegrationArcMap.Client
 
           if (responce != null)
           {
+            Uri responseUri = responce.ResponseUri;
+
+            if (responseUri != null)
+            {
+              string absoluteUri = responseUri.AbsoluteUri;
+              // string absolutePath = responseUri.AbsolutePath;
+              // string host = absoluteUri.Remove(absoluteUri.IndexOf(absolutePath));
+
+              if (absoluteUri != remoteLocation)
+              {
+                remoteLocation = absoluteUri;
+                // Urls.BaseUrl = host;
+                request = OpenWebRequest(remoteLocation, WebRequestMethods.Http.Post, bytes.Length);
+                state = new State {Request = request};
+
+                lock (this)
+                {
+                  using (Stream reqstream = request.GetRequestStream())
+                  {
+                    reqstream.Write(bytes, 0, bytes.Length);
+                  }
+                }
+              }
+            }
+
             if ((responce.StatusCode == HttpStatusCode.InternalServerError) && (retry < _retryTimeService[configId]))
             {
               Thread.Sleep(_waitTimeInternalServerError[configId]);
