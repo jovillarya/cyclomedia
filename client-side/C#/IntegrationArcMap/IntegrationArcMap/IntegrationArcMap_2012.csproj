@@ -132,6 +132,9 @@
     <Reference Include="GlobeSpotterAPI">
       <HintPath>..\..\Libs\GlobeSpotterAPI2.85\GlobeSpotterAPI.dll</HintPath>
     </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\Libs\Log4net\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <Private>True</Private>
@@ -157,6 +160,7 @@
     <Compile Include="Client\Bounds.cs" />
     <Compile Include="Client\Functionality.cs" />
     <Compile Include="Client\GlobeSpotterConfiguration.cs" />
+    <Compile Include="Client\LogClient.cs" />
     <Compile Include="Client\Urls.cs" />
     <Compile Include="Forms\FrmAgreement.cs">
       <SubType>Form</SubType>
