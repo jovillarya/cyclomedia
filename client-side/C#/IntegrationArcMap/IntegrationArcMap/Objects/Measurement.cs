@@ -42,6 +42,8 @@ namespace IntegrationArcMap.Objects
     private readonly TypeOfLayer _typeOfLayer;
     private readonly int _entityId;
 
+    private static readonly LogClient LogClient;
+
     #endregion
 
     #region properties
@@ -77,8 +79,9 @@ namespace IntegrationArcMap.Objects
     static Measurement()
     {
       Measurements = new Dictionary<int, Measurement>();
+      LogClient = new LogClient(typeof(Measurement));
       _open = null;
-      Sketch = null;
+      Sketch = null;      
     }
 
     private Measurement(int entityId, string entityType, FrmGlobespotter frmGlobespotter, bool drawPoint)
@@ -285,7 +288,7 @@ namespace IntegrationArcMap.Objects
       }
     }
 
-    public void CheckSelectedVertex()
+    public bool CheckSelectedVertex()
     {
       bool opened = false;
 
@@ -306,6 +309,8 @@ namespace IntegrationArcMap.Objects
           value.ClosePoint();
         }
       }
+
+      return (Values.Count != 0);
     }
 
     public IPointCollection4 ToPointCollection(IGeometry geometry, out int nrPoints)
@@ -355,6 +360,8 @@ namespace IntegrationArcMap.Objects
 
     public void UpdateMeasurementPoints(IGeometry geometry)
     {
+      LogClient.Info(string.Format("Update MeasurementPoints. EntityId: {0}", _entityId));
+
       if ((geometry != null) && (_frmGlobespotter != null))
       {
         int nrPoints;
@@ -372,6 +379,7 @@ namespace IntegrationArcMap.Objects
 
             if (!measurementPoint.NotCreated)
             {
+              LogClient.Info(string.Format("To remove added: entityId: {0}", measurementPoint.PointId));
               toRemove.Add(measurementPoint, true);
             }
           }
@@ -383,6 +391,7 @@ namespace IntegrationArcMap.Objects
 
             if (measurementPoint == null)
             {
+              LogClient.Info(string.Format("To add added: number: {0}", j));
               toAdd.Add(point);
             }
             else

@@ -106,6 +106,7 @@ namespace IntegrationArcMap.Layers
     private static Timer _editToolCheckTimer;
     private static ICommandItem _beforeTool;
     private static readonly LogClient LogClient;
+    private static readonly object LockObject;
 
     private IFeatureClass _featureClass;
     private ILayer _layer;
@@ -125,6 +126,7 @@ namespace IntegrationArcMap.Layers
       _editToolCheckTimer = null;
       _beforeTool = null;
       LogClient = new LogClient(typeof(VectorLayer));
+      LockObject = new object();
     }
 
     #endregion
@@ -383,10 +385,12 @@ namespace IntegrationArcMap.Layers
         avEvents.ItemAdded += AvItemAdded;
         avEvents.ItemDeleted += AvItemDeleted;
         avEvents.ContentsChanged += AvContentChanged;
+        avEvents.ViewRefreshed += AvViewRefreshed;
       }
 
       if (editEvents != null)
       {
+        editEvents.OnStartEditing += OnStartEditing;
         editEvents.OnChangeFeature += OnChangeFeature;
         editEvents.OnSelectionChanged += OnSelectionChanged;
         editEvents.OnStopEditing += OnStopEditing;
@@ -700,6 +704,22 @@ namespace IntegrationArcMap.Layers
     private static void AvContentChanged()
     {
       OnLayerChanged(null);
+    }
+
+    private static void OnStartEditing()
+    {
+      IEditor3 editor = ArcUtils.Editor;
+      LogClient.Info("On StartEditing");
+
+      if (editor != null)
+      {
+        IMap map = editor.Map;
+
+        if (map != null)
+        {
+          map.ClearSelection();
+        }
+      }
     }
 
     private static void OnLayerChanged(VectorLayer layer)
@@ -1090,7 +1110,14 @@ namespace IntegrationArcMap.Layers
 
               if (measurement != null)
               {
-                measurement.CheckSelectedVertex();
+                if (!measurement.CheckSelectedVertex())
+                {
+                  SketchFinishedEvent();
+                }
+              }
+              else
+              {
+                SketchFinishedEvent();
               }
             }
           }
@@ -1114,57 +1141,18 @@ namespace IntegrationArcMap.Layers
     {
       try
       {
-        IApplication application = ArcMap.Application;
-        IEditor3 editor = ArcUtils.Editor;
-
-        if ((application != null) && (editor != null))
+        lock (LockObject)
         {
-          var editLayers = editor as IEditLayers;
+          IApplication application = ArcMap.Application;
+          IActiveView activeView = ArcUtils.ActiveView;
 
-          if (editLayers != null)
+          if ((application != null) && (activeView != null))
           {
             ICommandItem tool = application.CurrentTool;
-            ILayer currentLayer = editLayers.CurrentLayer;
-            VectorLayer vectorLayer = (EditFeatures.Count != 1)
-              ? ((currentLayer == null) ? null : GetLayer(currentLayer))
-              : GetLayer(EditFeatures[0]);
 
-            if (((tool != null) && (tool != _beforeTool)) &&
-                ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
+            if ((tool != null) && ((_beforeTool == null) || (_beforeTool.Name != tool.Name)))
             {
-              _beforeTool = tool;
-              ICommand command = tool.Command;
-              string category = tool.Category;
-
-              if (!FrmMeasurement.IsPointOpen())
-              {
-                if (((command is IEditTool) || (category != "Editor")) && (category != "CycloMedia"))
-                {
-                  OnSketchFinished();
-                }
-              }
-              else
-              {
-                if ((!(command is IEditTool)) && (category == "Editor"))
-                {
-                  FrmMeasurement.DoCloseMeasurementPoint();
-                }
-              }
-
-              if (category == "Editor")
-              {
-                var sketch = editor as IEditSketch3;
-
-                if (sketch != null)
-                {
-                  IGeometry geometry = sketch.Geometry;
-
-                  if ((editor.EditState != esriEditState.esriStateNotEditing) && (StartMeasurementEvent != null))
-                  {
-                    StartMeasurementEvent(geometry);
-                  }
-                }
-              }
+              activeView.Refresh();
             }
           }
         }
@@ -1172,6 +1160,76 @@ namespace IntegrationArcMap.Layers
       catch (Exception ex)
       {
         Trace.WriteLine(ex.Message, "VectorLayer.OnEditToolCheck");
+      }
+    }
+
+    private static void AvViewRefreshed(IActiveView view, esriViewDrawPhase phase, object data, IEnvelope envelope)
+    {
+      try
+      {
+        IEditor3 editor = ArcUtils.Editor;
+        IApplication application = ArcMap.Application;
+
+        if ((editor != null) && (application != null))
+        {
+          var editLayers = editor as IEditLayers;
+
+          if (editLayers != null)
+          {
+            ILayer currentLayer = editLayers.CurrentLayer;
+            VectorLayer vectorLayer = (currentLayer == null) ? null : GetLayer(currentLayer);
+            ICommandItem tool = application.CurrentTool;
+
+            if ((tool != null) && ((_beforeTool == null) || (_beforeTool.Name != tool.Name)))
+            {
+              _beforeTool = tool;
+
+              if ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter))
+              {
+                ICommand command = tool.Command;
+                string category = tool.Category;
+
+                if (!FrmMeasurement.IsPointOpen())
+                {
+                  if (((command is IEditTool) || (category != "Editor")) && (category != "CycloMedia"))
+                  {
+                    OnSketchFinished();
+                  }
+                }
+                else
+                {
+                  if ((!(command is IEditTool)) && (category == "Editor"))
+                  {
+                    FrmMeasurement.DoCloseMeasurementPoint();
+                  }
+                }
+
+                if (category == "Editor")
+                {
+                  var sketch = editor as IEditSketch3;
+
+                  if (sketch != null)
+                  {
+                    IGeometry geometry = sketch.Geometry;
+
+                    if ((!(command is IEditTool)) && (editor.EditState != esriEditState.esriStateNotEditing) && (StartMeasurementEvent != null))
+                    {
+                      StartMeasurementEvent(geometry);
+                    }
+                  }
+                }
+              }
+              else
+              {
+                SketchFinishedEvent();
+              }
+            }
+          }
+        }
+      }
+      catch (Exception ex)
+      {
+        Trace.WriteLine(ex.Message, "VectorLayer.AvViewRefreshed");
       }
     }
 

@@ -981,11 +981,13 @@ namespace IntegrationArcMap.Forms
 
     public void OnMeasurementCreated(int entityId, string entityType)
     {
+      _logClient.Info(string.Format("OnMeasurementCreated entityId: {0}", entityId));
       Measurement.Add(entityId, entityType, this, _drawPoint);
     }
 
     public void OnMeasurementClosed(int entityId, EntityData data)
     {
+      _logClient.Info(string.Format("OnMeasurementClosed entityId: {0}", entityId));
       Measurement measurement = Measurement.Get(entityId);
 
       if (measurement != null)
@@ -996,6 +998,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnMeasurementOpened(int entityId, EntityData data)
     {
+      _logClient.Info(string.Format("OnMeasurementOpened entityId: {0}", entityId));
       Measurement measurement = Measurement.Get(entityId);
 
       if (measurement != null)
@@ -1006,6 +1009,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnMeasurementCanceled(int entityId)
     {
+      _logClient.Info(string.Format("OnMeasurementCanceled. EntityId: {0}", entityId));
       FrmMeasurement.RemoveMeasurement(entityId);
     }
 
@@ -1016,6 +1020,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnMeasurementPointAdded(int entityId, int pointId)
     {
+      _logClient.Info(string.Format("OnMeasurementPointAdded entityId: {0}, pointId: {1}", entityId, pointId));
       Measurement measurement = Measurement.Get(entityId);
 
       if (measurement != null)
@@ -1036,6 +1041,7 @@ namespace IntegrationArcMap.Forms
     {
       if (_api != null)
       {
+        _logClient.Info(string.Format("OnMeasurementPointUpdated. entityId: {0}, pointId: {1}", entityId, pointId));
         Measurement measurement = Measurement.Get(entityId);
 
         if ((!measurement.IsPointMeasurement) || (!_observationAdded))
@@ -1052,6 +1058,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnMeasurementPointRemoved(int entityId, int pointId)
     {
+      _logClient.Info(string.Format("OnMeasurementPointRemoved entityId: {0}, pointId: {1}", entityId, pointId));
       Measurement measurement = Measurement.Get(entityId);
 
       if (measurement != null)
@@ -1063,6 +1070,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnMeasurementPointOpened(int entityId, int pointId)
     {
+      _logClient.Info(string.Format("OnMeasurementPointOpened entityId: {0}, pointId: {1}", entityId, pointId));
       Measurement measurement = Measurement.Get(entityId);
 
       if (measurement != null)
@@ -1077,6 +1085,7 @@ namespace IntegrationArcMap.Forms
 
     public void OnMeasurementPointClosed(int entityId, int pointId)
     {
+      _logClient.Info(string.Format("OnMeasurementPointClosed entityId: {0}, pointId: {1}", entityId, pointId));
       Measurement measurement = Measurement.Get(entityId);
 
       if (measurement != null)

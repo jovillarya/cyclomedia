@@ -60,6 +60,7 @@ namespace IntegrationArcMap.AddIns
       try
       {
         Checked = !Checked;
+        _logClient.Info(string.Format("Show cyclorama: {0}", Checked));
 
         if (_cycloMediaLayer != null)
         {
