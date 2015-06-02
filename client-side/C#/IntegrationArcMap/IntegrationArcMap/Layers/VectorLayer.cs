@@ -704,6 +704,23 @@ namespace IntegrationArcMap.Layers
     private static void AvContentChanged()
     {
       OnLayerChanged(null);
+
+      _layers = new List<VectorLayer>();
+      IMap map = ArcUtils.Map;
+
+      if (map != null)
+      {
+        // ReSharper disable UseIndexedProperty
+        var layers = map.get_Layers();
+        ILayer layer;
+
+        while ((layer = layers.Next()) != null)
+        {
+          AvItemAdded(layer);
+        }
+
+        // ReSharper restore UseIndexedProperty
+      }
     }
 
     private static void OnStartEditing()
