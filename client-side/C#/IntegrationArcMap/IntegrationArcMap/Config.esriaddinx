@@ -3,13 +3,13 @@
   <Name>GlobeSpotter for ArcGIS Desktop</Name>
   <AddInID>{601756f1-d4d0-4279-abad-47338704585c}</AddInID>
   <Description>GlobeSpotter for ArcGIS Desktop
-Copyright © CycloMedia Technology 2015
+Copyright © CycloMedia Technology 2014 - 2015
   </Description>
-  <Version>1.2.8</Version>
+  <Version>1.2.10</Version>
   <Image>Images\GsIntegrationArcMap.png</Image>
   <Author>CycloMedia</Author>
   <Company>CycloMedia</Company>
-  <Date>4/1/2015</Date>
+  <Date>6/25/2015</Date>
   <Targets>
     <Target name="Desktop"
             version="10.0" />

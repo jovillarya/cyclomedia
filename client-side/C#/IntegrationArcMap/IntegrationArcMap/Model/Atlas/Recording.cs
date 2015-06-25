@@ -171,7 +171,7 @@ namespace IntegrationArcMap.Model.Atlas
         ExpiredAt = (expiredAtElement == null) ? (DateTime?) null : DateTime.Parse(expiredAtElement.Value.Trim());
         Id = (mappedFeatureAttribute == null) ? null : mappedFeatureAttribute.Value.Trim();
         ImageId = (imageIdElement == null) ? null : imageIdElement.Value.Trim();
-        RecordedAt = (recordedAtElement == null) ? (DateTime?) null : DateTime.Parse(recordedAtElement.Value.Trim());
+        RecordedAt = (recordedAtElement == null) ? (DateTime?) null : DateTimeOffset.Parse(recordedAtElement.Value.Trim(), null).DateTime;
         Height = (heightElement == null) ? null : new Height(heightElement);
         LatitudePrecision = (latPrecElement == null) ? (double?) null : double.Parse(latPrecElement.Value.Trim(), _ci);
         LongitudePrecision = (lonPrecElement == null) ? (double?) null : double.Parse(lonPrecElement.Value.Trim(), _ci);

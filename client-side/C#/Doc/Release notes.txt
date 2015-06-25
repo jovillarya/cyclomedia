@@ -1,6 +1,12 @@
 Release notes:
 ==============
 
+Version 1.2.10 (25/06/2015)
+============================
+- Solved: if the location of a datastore of a feature layer has changed, the add-in detect this changes now
+- Solved: the right date and time of the recorded image is now displayed
+
+
 Version 1.2.8 (01/04/2015)
 ============================
 - Solved bug that sometimes point measurements are not active
