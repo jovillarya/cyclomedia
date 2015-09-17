@@ -161,6 +161,8 @@
     <Compile Include="Client\Bounds.cs" />
     <Compile Include="Client\Functionality.cs" />
     <Compile Include="Client\GlobeSpotterConfiguration.cs" />
+    <Compile Include="Client\StoredLayer.cs" />
+    <Compile Include="Client\StoredLayers.cs" />
     <Compile Include="Client\Urls.cs" />
     <Compile Include="Forms\FrmCycloramaSearch.cs">
       <SubType>Form</SubType>

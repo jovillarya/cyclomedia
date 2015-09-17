@@ -154,6 +154,7 @@ namespace IntegrationArcMap.Layers
       set
       {
         _isVisibleInGlobespotter = value;
+        StoredLayers.Instance.Update(Name, value);
         OnLayerChanged(this);
         IEditor3 editor = ArcUtils.Editor;
 
@@ -642,7 +643,7 @@ namespace IntegrationArcMap.Layers
                                         {
                                           _featureClass = featureClass,
                                           _layer = featureLayer,
-                                          IsVisibleInGlobespotter = false
+                                          IsVisibleInGlobespotter = StoredLayers.Instance.Get(featureLayer.Name)
                                         };
 
                     _layers.Add(vectorLayer);
