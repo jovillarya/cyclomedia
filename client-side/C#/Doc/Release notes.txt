@@ -1,6 +1,12 @@
 Release notes:
 ==============
 
+Version 1.2.11 (17/09/2015)
+============================
+- Solved: In a file are stored which layers are visible in GlobeSpotter
+
+
+
 Version 1.2.10 (25/06/2015)
 ============================
 - Solved: if the location of a datastore of a feature layer has changed, the add-in detect this changes now
