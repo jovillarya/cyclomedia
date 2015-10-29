@@ -1,6 +1,11 @@
 Release notes:
 ==============
 
+Version 1.2.12 (29/10/2015)
+============================
+- Changed: The AddIn uses now the latest version of the GlobeSpotter API 3.1
+
+
 Version 1.2.11 (17/09/2015)
 ============================
 - Solved: In a file are stored which layers are visible in GlobeSpotter

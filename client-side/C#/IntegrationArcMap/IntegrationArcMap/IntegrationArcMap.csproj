@@ -129,8 +129,9 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.TrackingAnalyst.dll</HintPath>
     </Reference>
-    <Reference Include="GlobeSpotterAPI">
-      <HintPath>..\..\Libs\GlobeSpotterAPI2.85\GlobeSpotterAPI.dll</HintPath>
+    <Reference Include="GlobeSpotterAPI, Version=2.8.5.0, Culture=neutral, PublicKeyToken=40e543d64118bdd4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Libs\GlobeSpotterAPI3.1\GlobeSpotterAPI.dll</HintPath>
     </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\Libs\Log4net\log4net.dll</HintPath>

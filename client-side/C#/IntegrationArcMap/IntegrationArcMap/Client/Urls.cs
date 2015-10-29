@@ -43,7 +43,7 @@ namespace IntegrationArcMap.Client
     /// The spatialreferences url
     /// </summary>
     public static string SpatialReferencesUrl =
-      "https://globespotter.cyclomedia.com/v285/api/config/srs/globespotterspatialreferences.xml";
+      "https://globespotter.cyclomedia.com/v31/api/config/srs/globespotterspatialreferences.xml";
 
     #endregion
   }
