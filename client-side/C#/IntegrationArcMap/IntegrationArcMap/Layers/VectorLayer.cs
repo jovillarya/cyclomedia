@@ -178,22 +178,15 @@ namespace IntegrationArcMap.Layers
                 }
                 else
                 {
-                  IEditTask task = editor.CurrentTask;
-
-                  if (task != null)
+                  if (CheckEditTask())
                   {
-                    string name = task.Name;
-
-                    if ((name == "Create New Feature") || (name == "Reshape Feature"))
+                    if (SketchFinishedEvent != null)
                     {
-                      if (SketchFinishedEvent != null)
-                      {
-                        SketchFinishedEvent();
-                        AvContentChanged();
-                      }
-
-                      OnSelectionChanged();
+                      SketchFinishedEvent();
+                      AvContentChanged();
                     }
+
+                    OnSelectionChanged();
                   }
                 }
               }
@@ -405,6 +398,30 @@ namespace IntegrationArcMap.Layers
       {
         editEvents5.OnVertexSelectionChanged += OnVertexSelectionChanged;
       }
+    }
+
+    private static bool CheckEditTask()
+    {
+      bool result = false;
+      IEditor3 editor = ArcUtils.Editor;
+
+      if (editor != null)
+      {
+        IEditTask task = editor.CurrentTask;
+
+        if (task != null)
+        {
+          IEditTaskName uniqueName = task as IEditTaskName;          
+
+          if (uniqueName != null)
+          {
+            string name = uniqueName.UniqueName;
+            result = (name == "GarciaUI_CreateNewFeatureTask") || (name == "GarciaUI_ReshapeFeatureTask");
+          }
+        }
+      }
+
+      return result;
     }
 
     #endregion
@@ -914,43 +931,34 @@ namespace IntegrationArcMap.Layers
 
           if ((sketch != null) && (editLayers != null))
           {
-            IEditTask task = editor.CurrentTask;
             ILayer currentLayer = editLayers.CurrentLayer;
             VectorLayer vectorLayer = GetLayer(currentLayer);
 
-            if (task != null)
+            if ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter) && CheckEditTask())
             {
-              if ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter))
+              IGeometry geometry = sketch.Geometry;
+              IPoint lastPoint = sketch.LastPoint;
+              // ReSharper disable CompareOfFloatsByEqualityOperator
+
+              if (lastPoint != null)
               {
-                string name = task.Name;
-
-                if ((name == "Create New Feature") || (name == "Reshape Feature"))
+                if ((lastPoint.Z == 0) && (SketchCreateEvent != null) && sketch.ZAware)
                 {
-                  IGeometry geometry = sketch.Geometry;
-                  IPoint lastPoint = sketch.LastPoint;
-                  // ReSharper disable CompareOfFloatsByEqualityOperator
-
-                  if (lastPoint != null)
-                  {
-                    if ((lastPoint.Z == 0) && (SketchCreateEvent != null) && sketch.ZAware)
-                    {
-                      SketchCreateEvent(sketch);
-                    }
-                  }
-                  else
-                  {
-                    if ((editor.EditState != esriEditState.esriStateNotEditing) && (StartMeasurementEvent != null))
-                    {
-                      StartMeasurementEvent(geometry);
-                    }
-                  }
-
-                  // ReSharper restore CompareOfFloatsByEqualityOperator
-                  if (SketchModifiedEvent != null)
-                  {
-                    SketchModifiedEvent(geometry);
-                  }
+                  SketchCreateEvent(sketch);
                 }
+              }
+              else
+              {
+                if ((editor.EditState != esriEditState.esriStateNotEditing) && (StartMeasurementEvent != null))
+                {
+                  StartMeasurementEvent(geometry);
+                }
+              }
+
+              // ReSharper restore CompareOfFloatsByEqualityOperator
+              if (SketchModifiedEvent != null)
+              {
+                SketchModifiedEvent(geometry);
               }
             }
           }
@@ -976,24 +984,18 @@ namespace IntegrationArcMap.Layers
 
           if (editLayers != null)
           {
-            IEditTask task = editor.CurrentTask;
             ILayer currentLayer = editLayers.CurrentLayer;
             VectorLayer vectorLayer = GetLayer(currentLayer);
 
-            if ((task != null) && ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
+            if (CheckEditTask() && ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
             {
-              string name = task.Name;
-
-              if ((name == "Create New Feature") || (name == "Reshape Feature"))
+              if (SketchFinishedEvent != null)
               {
-                if (SketchFinishedEvent != null)
-                {
-                  SketchFinishedEvent();
-                  AvContentChanged();
-                }
-
-                OnSelectionChanged();
+                SketchFinishedEvent();
+                AvContentChanged();
               }
+
+              OnSelectionChanged();
             }
           }
         }
@@ -1027,69 +1029,74 @@ namespace IntegrationArcMap.Layers
 
             if ((task != null) && ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
             {
-              IGeometry geometry = sketch.Geometry;
-              string name = task.Name;
+              IEditTaskName taskName = task as IEditTaskName;
 
-              if (name == "Modify Feature")
+              if (taskName != null)
               {
-                Measurement measurement = Measurement.Get(geometry, false);
+                IGeometry geometry = sketch.Geometry;
+                string name = taskName.UniqueName;
 
-                if (measurement != null)
+                if (name == "GarciaUI_ModifyFeatureTask")
                 {
-                  int nrPoints;
-                  var ptColl = measurement.ToPointCollection(geometry, out nrPoints);
+                  Measurement measurement = Measurement.Get(geometry, false);
 
-                  if (ptColl != null)
+                  if (measurement != null)
                   {
-                    ISketchOperation2 sketchOp = new SketchOperationClass();
-                    sketchOp.Start(editor);
+                    int nrPoints;
+                    var ptColl = measurement.ToPointCollection(geometry, out nrPoints);
 
-                    for (int j = 0; j < nrPoints; j++)
+                    if (ptColl != null)
                     {
-                      IPoint point = ptColl.Point[j];
-                      MeasurementPoint mpoint = measurement.IsPointMeasurement
-                        ? measurement.GetPoint(point, false)
-                        : measurement.GetPoint(point);
+                      ISketchOperation2 sketchOp = new SketchOperationClass();
+                      sketchOp.Start(editor);
 
-                      double m = (mpoint == null) ? double.NaN : mpoint.M;
-                      double z = (mpoint == null) ? double.NaN : mpoint.Z;
-                      IPoint point2 = new PointClass {X = point.X, Y = point.Y, Z = z, M = m, ZAware = sketch.ZAware};
-                      ptColl.UpdatePoint(j, point2);
-
-                      if (measurement.IsPointMeasurement)
+                      for (int j = 0; j < nrPoints; j++)
                       {
-                        sketch.Geometry = point2;
+                        IPoint point = ptColl.Point[j];
+                        MeasurementPoint mpoint = measurement.IsPointMeasurement
+                          ? measurement.GetPoint(point, false)
+                          : measurement.GetPoint(point);
+
+                        double m = (mpoint == null) ? double.NaN : mpoint.M;
+                        double z = (mpoint == null) ? double.NaN : mpoint.Z;
+                        IPoint point2 = new PointClass {X = point.X, Y = point.Y, Z = z, M = m, ZAware = sketch.ZAware};
+                        ptColl.UpdatePoint(j, point2);
+
+                        if (measurement.IsPointMeasurement)
+                        {
+                          sketch.Geometry = point2;
+                        }
+                      }
+
+                      if (!measurement.IsPointMeasurement)
+                      {
+                        sketch.Geometry = ptColl as IGeometry;
+                      }
+
+                      geometry = sketch.Geometry;
+
+                      if (geometry != null)
+                      {
+                        sketchOp.Finish(geometry.Envelope, esriSketchOperationType.esriSketchOperationGeneral, geometry);
                       }
                     }
 
-                    if (!measurement.IsPointMeasurement)
-                    {
-                      sketch.Geometry = ptColl as IGeometry;
-                    }
+                    measurement.SetSketch();
+                    measurement.OpenMeasurement();
+                    measurement.DisableMeasurementSeries();
+                  }
+                }
+                else
+                {
+                  Measurement measurement = Measurement.Get(geometry, false);
 
-                    geometry = sketch.Geometry;
-
-                    if (geometry != null)
-                    {
-                      sketchOp.Finish(geometry.Envelope, esriSketchOperationType.esriSketchOperationGeneral, geometry);
-                    }
+                  if (measurement != null)
+                  {
+                    measurement.EnableMeasurementSeries();
                   }
 
-                  measurement.SetSketch();
-                  measurement.OpenMeasurement();
-                  measurement.DisableMeasurementSeries();
+                  OnSelectionChanged();
                 }
-              }
-              else
-              {
-                Measurement measurement = Measurement.Get(geometry, false);
-
-                if (measurement != null)
-                {
-                  measurement.EnableMeasurementSeries();
-                }
-
-                OnSelectionChanged();
               }
             }
           }
