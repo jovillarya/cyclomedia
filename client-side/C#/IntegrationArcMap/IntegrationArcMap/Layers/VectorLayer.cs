@@ -411,7 +411,7 @@ namespace IntegrationArcMap.Layers
 
         if (task != null)
         {
-          IEditTaskName uniqueName = task as IEditTaskName;          
+          var uniqueName = task as IEditTaskName;          
 
           if (uniqueName != null)
           {
@@ -1029,7 +1029,7 @@ namespace IntegrationArcMap.Layers
 
             if ((task != null) && ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter)))
             {
-              IEditTaskName taskName = task as IEditTaskName;
+              var taskName = task as IEditTaskName;
 
               if (taskName != null)
               {
@@ -1211,25 +1211,27 @@ namespace IntegrationArcMap.Layers
 
               if ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter))
               {
+                ICommandItem editorMenu = application.Document.CommandBars.Find("Editor_EditTool");
+                string editorCategory = (editorMenu != null) ? editorMenu.Category : string.Empty;
                 ICommand command = tool.Command;
                 string category = tool.Category;
 
                 if (!FrmMeasurement.IsPointOpen())
                 {
-                  if (((command is IEditTool) || (category != "Editor")) && (category != "CycloMedia"))
+                  if (((command is IEditTool) || (category != editorCategory)) && (category != "CycloMedia"))
                   {
                     OnSketchFinished();
                   }
                 }
                 else
                 {
-                  if ((!(command is IEditTool)) && (category == "Editor"))
+                  if ((!(command is IEditTool)) && (category == editorCategory))
                   {
                     FrmMeasurement.DoCloseMeasurementPoint();
                   }
                 }
 
-                if (category == "Editor")
+                if (category == editorCategory)
                 {
                   var sketch = editor as IEditSketch3;
 
