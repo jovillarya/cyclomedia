@@ -688,11 +688,12 @@ namespace IntegrationArcMap.Forms
     private void DrawObservations()
     {
       int nrImages = _idBitmap.Count;
+      int obsBegin = plReliability.Height + tsMeasurement.Height + plPosition.Height;
 
       if (nrImages >= 1)
       {
-        int height = 204 / nrImages;
-        int obsStart = 170 + height;
+        int height = txtPosition.Width / nrImages;
+        int obsStart = obsBegin + height;
         plMeasurementDetails.Size = new Size(plMeasurementDetails.Size.Width, obsStart);
         plObservations.Location = new Point(plObservations.Location.X, obsStart);
         plObservations.Size = new Size(plObservations.Size.Width, (plButtons.Location.Y - plObservations.Location.Y));
@@ -702,9 +703,9 @@ namespace IntegrationArcMap.Forms
           pctImages.Image.Dispose();
         }
 
-        pctImages.Image = new Bitmap(204, height);
+        pctImages.Image = new Bitmap(txtPosition.Width, height);
         int off = 6 / nrImages;
-        int width = 192 / nrImages;
+        int width = (txtPosition.Width - 12) / nrImages;
         int line = height / 2;
 
         using (Graphics g = Graphics.FromImage(pctImages.Image))
@@ -713,7 +714,7 @@ namespace IntegrationArcMap.Forms
 
           for (int i = 0; i < nrImages; i++)
           {
-            var rect = new Rectangle(((i * 204) / nrImages) + off, off, width, width);
+            var rect = new Rectangle(((i * txtPosition.Width) / nrImages) + off, off, width, width);
             g.DrawImage(_idBitmap[i], rect);
             var pen = new Pen(Brushes.Black, 1);
             g.DrawLine(pen, (height * i) + off, line, (height * (i + 1)) - off - 1, line);
@@ -723,8 +724,9 @@ namespace IntegrationArcMap.Forms
       }
       else
       {
-        plMeasurementDetails.Size = new Size(plMeasurementDetails.Size.Width, 190);
-        plObservations.Location = new Point(plObservations.Location.X, 190);
+        int measurementDetailsHeight = obsBegin + lblMatches.Height;
+        plMeasurementDetails.Size = new Size(plMeasurementDetails.Size.Width, measurementDetailsHeight);
+        plObservations.Location = new Point(plObservations.Location.X, measurementDetailsHeight);
         plObservations.Size = new Size(plObservations.Size.Width, (plButtons.Location.Y - plObservations.Location.Y));
         pctImages.Image = null;
       }
@@ -750,8 +752,8 @@ namespace IntegrationArcMap.Forms
         }
 
         int off = 3 / nrImages;
-        int width = 198 / nrImages;
-        var rect = new Rectangle(((i * 204) / nrImages) + off, off, width, width);
+        int width = (txtPosition.Width - 6) / nrImages;
+        var rect = new Rectangle(((i * txtPosition.Width) / nrImages) + off, off, width, width);
         var pen = new Pen(colorP, off * 2);
         Image image = pctImages.Image;
 
@@ -930,14 +932,34 @@ namespace IntegrationArcMap.Forms
       {
         if (e.Header.Text == "Trash")
         {
+          int height = lvObservations.Font.Height;
+          int heightHalf = height / 2;
           var bounds = e.Bounds;
-          var size = new Rectangle(bounds.X + (bounds.Width/2) - 8, bounds.Y + (bounds.Height/2) - 8, 16, 16);
+          var size = new Rectangle(bounds.X + (bounds.Width/2) - heightHalf, bounds.Y + (bounds.Height/2) - heightHalf, height, height);
+          e.Header.Width = (int) ((lvObservations.Width*60.0)/276.0);
+
+          if (
+            !(((e.ItemState & ListViewItemStates.Selected) != 0) || lvObservations.SelectedIndices.Contains(e.ItemIndex)))
+          {
+            e.DrawBackground();
+          }
+
           e.Graphics.DrawImage(Properties.Resources.GsDelete, size);
         }
         else if (e.Header.Text == "ImageId")
         {
+          int height = lvObservations.Font.Height;
+          double factor = lvObservations.Width / 276.0;
           var bounds = e.Bounds;
-          var size = new Rectangle(bounds.X + (bounds.Width/2) - 35, bounds.Y + (bounds.Height/2) - 7, 70, 13);
+          var size = new Rectangle(bounds.X + (bounds.Width / 2) - (int) (35.0 * factor), bounds.Y + (bounds.Height / 2) - ((height / 2) - 1), (int) (70.0 * factor), (height - 3));
+          e.Header.Width = (int) (factor*132.0);
+
+          if (
+            !(((e.ItemState & ListViewItemStates.Selected) != 0) || lvObservations.SelectedIndices.Contains(e.ItemIndex)))
+          {
+            e.DrawBackground();
+          }
+
           e.Graphics.DrawRectangle(new Pen(Brushes.Black, 1), size);
 
           string imageId = e.SubItem.Text;
@@ -955,6 +977,13 @@ namespace IntegrationArcMap.Forms
           var bounds = e.Bounds;
           string imageId = e.SubItem.Text;
           sf.Alignment = StringAlignment.Center;
+          e.Header.Width = (int) ((lvObservations.Width*99.0)/276.0);
+
+          if (
+            !(((e.ItemState & ListViewItemStates.Selected) != 0) || lvObservations.SelectedIndices.Contains(e.ItemIndex)))
+          {
+            e.DrawBackground();
+          }
 
           // Draw the subitem text in red to highlight it. 
           e.Graphics.DrawString(imageId, lvObservations.Font, Brushes.Black, bounds, sf);
@@ -991,13 +1020,17 @@ namespace IntegrationArcMap.Forms
         {
           if (e.Header.Text == "Trash")
           {
+            int height = lvObservations.Font.Height;
+            int heightHalf = height / 2;
             var bounds = e.Bounds;
-            var size = new Rectangle(bounds.X + (bounds.Width/2) - 8, bounds.Y + (bounds.Height/2) - 8, 16, 16);
+            var size = new Rectangle(bounds.X + (bounds.Width/2) - heightHalf, bounds.Y + (bounds.Height/2) - heightHalf, height, height);
+            e.DrawBackground();
             e.Graphics.DrawImage(Properties.Resources.GsDelete, size);
           }
           else
           {
             sf.Alignment = StringAlignment.Center;
+            e.DrawBackground();
             e.Graphics.DrawString(e.Header.Text, headerFont, Brushes.Black, e.Bounds, sf);
           }
         }
@@ -1013,7 +1046,7 @@ namespace IntegrationArcMap.Forms
     {
       int nrImages = _idBitmap.Count;
       int off = 6/nrImages;
-      int width = 192/nrImages;
+      int width = (txtPosition.Width - 12)/nrImages;
       bool found = false;
       int i = 0;
       int x = e.X;
@@ -1021,7 +1054,7 @@ namespace IntegrationArcMap.Forms
 
       while ((i < nrImages) && (!found))
       {
-        var rect = new Rectangle(((i*204)/nrImages) + off, off, width, width);
+        var rect = new Rectangle(((i * txtPosition.Width) / nrImages) + off, off, width, width);
         found = rect.Contains(x, y);
         i++;
       }

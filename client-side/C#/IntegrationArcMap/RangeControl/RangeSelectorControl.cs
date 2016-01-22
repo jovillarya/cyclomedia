@@ -934,7 +934,7 @@ namespace RangeControl
 
       brSolidBrush = new SolidBrush(_clrStringOutputFontColor);
       myGraphics.DrawString(_strRangeString, _fntLabelFont, brSolidBrush, _fLeftCol,
-                            _fLeftRow*2 - _fntLabelFont.Size - 7);
+                            _fLeftRow*2 - _fntLabelFont.Height - 3);
 
       myPen = new Pen(_clrInFocusBarColor, _unSizeOfMiddleBar);
       myGraphics.DrawLine(myPen, _ptThumbPoints1[2].X - (_fWidthOfThumb / 2), _ptThumbPoints1[2].Y, _fThumb2Point - (_fWidthOfThumb / 2), _ptThumbPoints1[2].Y);
@@ -1025,8 +1025,8 @@ namespace RangeControl
             if ((nIndexer%(4*_factorNumberOfLabels)) == 0)
             {
               myGraphics.DrawString(subSplitLabels[nIndexer], _fntLabelFont, brSolidBrush,
-                fDividerCounter - ((_fntLabelFont.SizeInPoints)*subSplitLabels[nIndexer].Length)/2,
-                _fLeftRow);
+                fDividerCounter - (((_fntLabelFont.SizeInPoints)*subSplitLabels[nIndexer].Length)/2) -
+                (_fntLabelFont.SizeInPoints/4.0f), _fLeftRow);
             }
           }
 
@@ -1043,7 +1043,7 @@ namespace RangeControl
               brSolidBrush = new SolidBrush(Parent.BackColor);
               myGraphics.DrawString(strRangeOutput, _fntLabelFont, brSolidBrush,
                                     _fLeftCol + _fntLabelFont.Size*_strRangeString.Length,
-                                    _fLeftRow*2 - _fntLabelFont.Size - 7);
+                                    _fLeftRow*2 - _fntLabelFont.Height - 3);
             }
 
             brSolidBrush = new SolidBrush(_clrStringOutputFontColor);
@@ -1052,7 +1052,7 @@ namespace RangeControl
             strRangeOutput = CalculateRangeOutput(strNewRange1, strNewRange2);
             myGraphics.DrawString(strRangeOutput, _fntLabelFont, brSolidBrush,
                                   _fLeftCol + _fntLabelFont.Size * _strRangeString.Length,
-                                  _fLeftRow * 2 - _fntLabelFont.Size - 7);
+                                  _fLeftRow * 2 - _fntLabelFont.Height - 3);
 
             _strRange1 = strNewRange1;
             _strRange2 = strNewRange2;

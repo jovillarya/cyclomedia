@@ -1,6 +1,12 @@
 Release notes:
 ==============
 
+Version 1.2.15 (22/01/2016)
+============================
+- Fixed: Windows 10 support in combination with ArcMap 10.4: The measurement observation form works fine now.
+- Fixed: Windows 10 Support in combination with ArcMap 10.4: The historical recordings form works fine now.
+
+
 Version 1.2.13 (18/11/2015)
 ============================
 - Fixed: Multi language support, swedisch language works very well now.

@@ -11,7 +11,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("CycloMedia")]
 [assembly: AssemblyProduct("GlobeSpotter for ArcGIS Desktop")]
-[assembly: AssemblyCopyright("Copyright © CycloMedia 2014-2015")]
+[assembly: AssemblyCopyright("Copyright © CycloMedia 2014-2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -30,8 +30,8 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Revision and Build Numbers 
 // by using the '*' as shown below:
 //
-[assembly: AssemblyVersion("1.2.13.5867")]
-[assembly: AssemblyFileVersion("1.2.13.5867")]
+[assembly: AssemblyVersion("1.2.15.5947")]
+[assembly: AssemblyFileVersion("1.2.15.5947")]
 
 //
 // In order to sign your assembly you must specify a key to use. Refer to the 
