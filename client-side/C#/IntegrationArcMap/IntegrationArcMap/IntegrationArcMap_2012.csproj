@@ -84,6 +84,7 @@
     <Reference Include="ESRI.ArcGIS.Desktop.AddIns, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Desktop.AddIns.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="ESRI.ArcGIS.Display, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
@@ -161,6 +162,8 @@
     <Compile Include="Client\Functionality.cs" />
     <Compile Include="Client\GlobeSpotterConfiguration.cs" />
     <Compile Include="Client\LogClient.cs" />
+    <Compile Include="Client\StoredLayer.cs" />
+    <Compile Include="Client\StoredLayers.cs" />
     <Compile Include="Client\Urls.cs" />
     <Compile Include="Forms\FrmAgreement.cs">
       <SubType>Form</SubType>

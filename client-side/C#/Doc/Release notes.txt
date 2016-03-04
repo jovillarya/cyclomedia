@@ -1,6 +1,11 @@
 Release notes:
 ==============
 
+Version 1.2.16 (04/03/2016)
+============================
+- Updated documentation (usermanual and installation manual)
+
+
 Version 1.2.15 (22/01/2016)
 ============================
 - Fixed: Windows 10 support in combination with ArcMap 10.4: The measurement observation form works fine now.
