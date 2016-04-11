@@ -107,6 +107,8 @@ namespace IntegrationArcMap.Layers
     private static ICommandItem _beforeTool;
     private static readonly LogClient LogClient;
     private static readonly object LockObject;
+    private static bool _doSelection;
+    private static Timer _nextSelectionTimer;
 
     private IFeatureClass _featureClass;
     private ILayer _layer;
@@ -127,6 +129,7 @@ namespace IntegrationArcMap.Layers
       _beforeTool = null;
       LogClient = new LogClient(typeof(VectorLayer));
       LockObject = new object();
+      _doSelection = true;
     }
 
     #endregion
@@ -828,6 +831,7 @@ namespace IntegrationArcMap.Layers
             {
               var geometries = new List<IGeometry>();
               editSelection.Reset();
+              bool isPointLayer = false;
 
               while ((feature = editSelection.Next()) != null)
               {
@@ -836,11 +840,31 @@ namespace IntegrationArcMap.Layers
                 if ((vectorLayer != null) && (vectorLayer.IsVisibleInGlobespotter))
                 {
                   geometries.Add(feature.Shape);
+                  isPointLayer = isPointLayer || (Measurement.GetTypeOfLayer(feature.Shape) == TypeOfLayer.Point);
                 }
               }
 
-              FeatureStartEditEvent(geometries);
-              AvContentChanged();
+              if (_doSelection || (!isPointLayer))
+              {
+                FeatureStartEditEvent(geometries);
+                AvContentChanged();
+
+                _doSelection = false;
+
+                if (_nextSelectionTimer == null)
+                {
+                  var checkEvent = new AutoResetEvent(true);
+                  const int timeOutTime = 1500;
+
+                  var checkTimerCallBack = new TimerCallback(state =>
+                  {
+                    _doSelection = true;
+                    _nextSelectionTimer = null;
+                  });
+
+                  _nextSelectionTimer = new Timer(checkTimerCallBack, checkEvent, timeOutTime, -1);
+                }
+              }
             }
           }
         }
