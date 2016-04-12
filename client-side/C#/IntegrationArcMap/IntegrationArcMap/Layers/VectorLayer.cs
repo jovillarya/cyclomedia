@@ -912,6 +912,7 @@ namespace IntegrationArcMap.Layers
       {
         LogClient.Info(string.Format("On Stop Editing: {0}", save));
         EditFeatures.Clear();
+        _doSelection = true;
 
         if (StopEditEvent != null)
         {
@@ -937,6 +938,7 @@ namespace IntegrationArcMap.Layers
       try
       {
         LogClient.Info("On Sketch Modified");
+        _doSelection = true;
 
         if (_editToolCheckTimer == null)
         {
@@ -1001,6 +1003,7 @@ namespace IntegrationArcMap.Layers
       {
         IEditor3 editor = ArcUtils.Editor;
         LogClient.Info("On Sketch Finished");
+        _doSelection = true;
 
         if (editor != null)
         {
@@ -1037,6 +1040,7 @@ namespace IntegrationArcMap.Layers
       {
         IEditor3 editor = ArcUtils.Editor;
         LogClient.Info("On CurrentTask Changed");
+        _doSelection = true;
 
         if (editor != null)
         {
@@ -1139,6 +1143,7 @@ namespace IntegrationArcMap.Layers
       {
         IEditor3 editor = ArcUtils.Editor;
         LogClient.Info("On vertex selection Changed");
+        _doSelection = true;
 
         if (editor != null)
         {
