@@ -1,6 +1,11 @@
 Release notes:
 ==============
 
+Version 1.2.18 (15/04/2016)
+============================
+- Bug fixed, fixed more problems with selection points in the attribute table
+
+
 Version 1.2.17 (11/04/2016)
 ============================
 - Bug fixed, with selection points in the attribute table

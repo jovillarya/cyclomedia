@@ -809,6 +809,10 @@ namespace IntegrationArcMap.Layers
     {
       try
       {
+        IApplication application = ArcMap.Application;
+        ICommandItem tool = application.CurrentTool;
+        string name = tool.Name;
+
         IEditor3 editor = ArcUtils.Editor;
         LogClient.Info("On Selection Changed");
 
@@ -844,7 +848,7 @@ namespace IntegrationArcMap.Layers
                 }
               }
 
-              if (_doSelection || (!isPointLayer))
+              if ((_doSelection && (name != "Query_SelectFeatures")) || (!isPointLayer))
               {
                 FeatureStartEditEvent(geometries);
                 AvContentChanged();
@@ -856,11 +860,7 @@ namespace IntegrationArcMap.Layers
                   var checkEvent = new AutoResetEvent(true);
                   const int timeOutTime = 1500;
 
-                  var checkTimerCallBack = new TimerCallback(state =>
-                  {
-                    _doSelection = true;
-                    _nextSelectionTimer = null;
-                  });
+                  var checkTimerCallBack = new TimerCallback(CheckTimerCallBack);
 
                   _nextSelectionTimer = new Timer(checkTimerCallBack, checkEvent, timeOutTime, -1);
                 }
@@ -874,6 +874,12 @@ namespace IntegrationArcMap.Layers
         LogClient.Error("VectorLayer.OnSelectionChanged", ex.Message, ex);
         Trace.WriteLine(ex.Message, "VectorLayer.OnSelectionChanged");
       }
+    }
+
+    private static void CheckTimerCallBack(object state)
+    {
+      _doSelection = true;
+      _nextSelectionTimer = null;
     }
 
     private static void OnDeleteFeature(IObject obj)

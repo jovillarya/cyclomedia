@@ -81,10 +81,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
       <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.DataSourcesGDB.dll</HintPath>
     </Reference>
-    <Reference Include="ESRI.ArcGIS.Desktop.AddIns, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\Libs\ArcGIS10.0\ESRI.ArcGIS.Desktop.AddIns.dll</HintPath>
-    </Reference>
+    <Reference Include="ESRI.ArcGIS.Desktop.AddIns, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86" />
     <Reference Include="ESRI.ArcGIS.Display, Version=10.0.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
